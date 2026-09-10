@@ -77,13 +77,37 @@ h3.t{font-size:24px;font-weight:800;letter-spacing:-.02em;line-height:1.15;margi
 .prixbloc .p b{font-size:26px;font-weight:800;color:var(--ambre);line-height:1}
 .prixbloc .p span{display:block;font-size:12px;color:var(--sourd);margin-top:4px}
 .prixbloc .lien a{color:var(--ambre);text-decoration:none;font-weight:700;font-size:14px}
+
+/* ── commun à toutes les pages ── */
+.in{max-width:900px!important;margin:0 auto;padding:0 22px}
+nav{position:sticky;top:0;z-index:20;background:rgba(16,35,63,.94);backdrop-filter:blur(8px);border-bottom:1px solid var(--trait,#2A4470)}
+nav .in{display:flex;align-items:center;justify-content:space-between;gap:16px;padding:15px 22px}
+nav .brand{display:flex;align-items:center;gap:12px;text-decoration:none}
+nav .brand svg{color:var(--ambre,#F5B62E);flex:none}
+nav .brand .wm{font-size:18px;font-weight:800;letter-spacing:-.025em;line-height:1;color:var(--froid,#E9EEF6)}
+nav .brand .wm em{display:block;font-style:normal;font-size:7.5px;font-weight:800;letter-spacing:.09em;color:var(--ambre,#F5B62E);margin-top:4px;white-space:nowrap}
+nav .links{display:flex;align-items:center;gap:22px}
+nav .links a{color:var(--sourd,#9FB0C8);text-decoration:none;font-size:14px;font-weight:600;white-space:nowrap}
+nav .links a:hover,nav .links a.on{color:var(--froid,#E9EEF6)}
+nav .links a.cta{background:var(--ambre,#F5B62E);color:#1A1608;padding:10px 16px;border-radius:5px;font-weight:800}
+@media(max-width:760px){nav .links a:not(.cta){display:none}nav .brand .wm em{display:none}}
+footer{margin-top:60px;border-top:1px solid var(--trait,#2A4470);padding:24px 0 46px;font-size:12.5px;color:var(--sourd,#9FB0C8)}
+footer .row{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
+footer a{color:var(--sourd,#9FB0C8)}
+.cta-bloc{background:var(--ambre,#F5B62E);color:#1A1608;border-radius:8px;padding:32px 30px;margin-top:56px}
+.cta-bloc h2{font-size:clamp(22px,3.4vw,28px);font-weight:800;letter-spacing:-.02em;line-height:1.15}
+.cta-bloc p{font-size:15.5px;margin-top:10px;max-width:62ch;color:#1A1608}
+.cta-bloc a{display:inline-block;margin-top:18px;background:#1A1608;color:var(--ambre,#F5B62E);padding:12px 20px;border-radius:5px;font-weight:800;font-size:15px;text-decoration:none}
 </style>
 </head>
 <body>
 <nav><div class="in">
-  <a class="brand" href="index.html"><svg width="26" height="26" viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="3.4" stroke-linecap="square" aria-hidden="true"><path d="M14 8 H6 V56 H14" fill="none"/><path d="M50 8 H58 V56 H50" fill="none"/><path d="M18 44 V22 L32 36 L46 22 V44" stroke-width="4" fill="none"/></svg><span>Atelier MDT</span></a>
+  <a class="brand" href="index.html"><svg width="32" height="32" viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="3.4" stroke-linecap="square" aria-hidden="true"><path d="M14 8 H6 V56 H14" fill="none"/><path d="M50 8 H58 V56 H50" fill="none"/><path d="M18 44 V22 L32 36 L46 22 V44" stroke-width="4" fill="none"/></svg><span class="wm">Atelier MDT<em>VOTRE TEMPS VAUT MIEUX QUE ÇA</em></span></a>
   <div class="links">
-    <a href="realisations/index.html">Réalisations</a><a href="offres.html">Offres</a><a href="rentabilite.html" class="on">Rentabilité</a><a href="qui-suis-je.html">Qui suis-je</a>
+    <a href="realisations.html">Réalisations</a>
+    <a href="offres.html">Offres</a>
+    <a href="rentabilite.html" class="on">Rentabilité</a>
+    <a href="qui-suis-je.html">Qui suis-je</a>
     <a class="cta" href="contact.html">Échanger 30 min</a>
   </div>
 </div></nav>
@@ -121,7 +145,7 @@ h3.t{font-size:24px;font-weight:800;letter-spacing:-.02em;line-height:1.15;margi
   </div>
   <div class="prixbloc">
     <div class="p"><b>dès 500 € HT</b><span>Forfait unique · livré en 3 semaines · aucun abonnement</span></div>
-    <div class="lien"><a href="realisations/01-anniversaires/index.html">Voir l'exemple, pièce par pièce →</a></div>
+    <div class="lien"><a href="realisation-01-anniversaires.html">Voir l'exemple, pièce par pièce →</a></div>
   </div>
 </div></section>
 
@@ -147,7 +171,7 @@ h3.t{font-size:24px;font-weight:800;letter-spacing:-.02em;line-height:1.15;margi
   </div>
   <div class="prixbloc">
     <div class="p"><b>300 € puis 100 €/mois</b><span>Sans engagement · préavis d'un mois · première livraison sous 2 semaines</span></div>
-    <div class="lien"><a href="realisations/04-veille/index.html">Voir un livrable réel →</a></div>
+    <div class="lien"><a href="realisation-04-veille.html">Voir un livrable réel →</a></div>
   </div>
 </div></section>
 
@@ -173,7 +197,7 @@ h3.t{font-size:24px;font-weight:800;letter-spacing:-.02em;line-height:1.15;margi
   </div>
   <div class="prixbloc">
     <div class="p"><b>450 à 700 € HT</b><span>Tableau de bord · étude ponctuelle sur devis · livré en 2 à 3 semaines</span></div>
-    <div class="lien"><a href="realisations/07-granites/index.html">Voir l'étude qui a lancé un produit →</a></div>
+    <div class="lien"><a href="realisation-07-granites.html">Voir l'étude qui a lancé un produit →</a></div>
   </div>
 </div></section>
 
@@ -199,7 +223,7 @@ h3.t{font-size:24px;font-weight:800;letter-spacing:-.02em;line-height:1.15;margi
   </div>
   <div class="prixbloc">
     <div class="p"><b>dès 150 € HT</b><span>Individuel 150 € · atelier dès 400 € · déploiement dès 500 €</span></div>
-    <div class="lien"><a href="realisations/06-ia/index.html">Voir un déploiement réel →</a></div>
+    <div class="lien"><a href="realisation-06-ia.html">Voir un déploiement réel →</a></div>
   </div>
 </div></section>
 
@@ -210,7 +234,7 @@ h3.t{font-size:24px;font-weight:800;letter-spacing:-.02em;line-height:1.15;margi
     <p><strong>Et un travail qui vous appartient.</strong> Tout est construit sur vos comptes, documenté pour votre équipe, transmis à quelqu'un chez vous. Ce que je mets en place tient parce que vous pouvez le faire vivre sans moi — et ce jour-là, c'est plutôt bon signe.</p>
   </div>
 </div></section>
-<div class="in"><div class="cta">
+<div class="in"><div class="cta-bloc">
   <h2>Refaisons ces calculs avec vos chiffres</h2>
   <p>Trente minutes en visio, gratuites. On identifie la tâche qui vous coûte le plus de temps, on la chiffre avec vos données réelles, et vous repartez avec un devis. Si le calcul ne tient pas chez vous, je vous le dirai.</p>
   <a href="contact.html">Prendre contact</a>

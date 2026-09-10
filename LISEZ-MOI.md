@@ -1,30 +1,41 @@
 # Site Atelier MDT — structure multi-pages
 
-## Arborescence
+## Arborescence — tout à plat, aucun nom de fichier en double
 
 ```
 site-atelier-mdt/
-├── index.html                 Accueil — constats, offres, aperçu des 8 réalisations, contact
-├── realisations/
-│   ├── index.html             Liste des 8 réalisations
-│   ├── 01-anniversaires/      fiche autonome (images intégrées)
-│   ├── 02-devis-b2b/
-│   ├── 03-lots/
-│   ├── 04-veille/
-│   ├── 05-data/
-│   ├── 06-ia/
-│   ├── 07-granites/
-│   └── 08-benchmark/
-├── rentabilite.html           Calculs de retour sur investissement, une logique par famille d'offre
-├── offres.html                Grille complète, « à partir de », bandeau tarif de lancement, liens vers rentabilité
-├── qui-suis-je.html           Parcours, façon de travailler, photo, témoignages
-├── contact.html               Formulaire + coordonnées directes
-├── cgv.html                   Conditions générales, version en relecture
-├── assets/                    favicons, portrait, brochures PDF (longue 8 p. paysage, courte 1 p.)
+├── index.html                          Accueil
+├── realisations.html                   Liste des 8 réalisations
+├── realisation-01-anniversaires.html   fiche autonome (images et fichiers intégrés)
+├── realisation-02-devis-b2b.html
+├── realisation-03-lots.html
+├── realisation-04-veille.html
+├── realisation-05-data.html
+├── realisation-06-ia.html
+├── realisation-07-granites.html
+├── realisation-08-benchmark.html
+├── offres.html
+├── rentabilite.html
+├── qui-suis-je.html
+├── contact.html
+├── cgv.html
+├── assets/                             favicons, portrait, image de partage, brochures PDF
 └── LISEZ-MOI.md
 ```
 
-Navigation commune : Réalisations · Rentabilité · Offres · Qui suis-je · [Échanger 30 min → Contact]. Pied de page : Mentions légales · CGV.
+**Pourquoi tout à plat** : lors d'un envoi sur GitHub, des fichiers de même nom dans des dossiers différents peuvent s'écraser. Ici chaque page a un nom unique ; on peut glisser tous les fichiers d'un coup sans risque.
+
+Navigation commune : Réalisations · Offres · Rentabilité · Qui suis-je · [Échanger 30 min]. Pied de page : email · SIRET · Mentions légales · CGV.
+
+## Envoyer sur GitHub
+
+1. Dézipper l'archive.
+2. Dépôt → **Add file → Upload files**.
+3. Glisser **tous les fichiers `.html`** et le **dossier `assets`** (le dossier lui-même, pas son contenu).
+4. **Commit changes**.
+5. Vérifier que `index.html` à la racine du dépôt affiche bien l'accueil.
+
+L'ancien dossier `realisations/` du dépôt n'est plus utilisé : il peut rester (aucun lien n'y mène), ou être supprimé fichier par fichier à l'occasion.
 
 ## Choix par défaut, à valider
 
