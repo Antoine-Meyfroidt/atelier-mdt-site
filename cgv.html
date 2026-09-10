@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Conditions générales — Atelier MDT</title>
+<meta name="description" content="Conditions générales de prestation de services d'Atelier MDT, annexées à chaque devis.">
+<meta name="theme-color" content="#10233F">
+<link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32.png">
+<link rel="apple-touch-icon" sizes="180x180" href="assets/favicon-180.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{--nuit:#10233F;--panneau:#182F52;--ambre:#F5B62E;--sourd:#9FB0C8;--trait:#2A4470;--froid:#E9EEF6}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{background:var(--nuit);color:var(--froid);font-family:'Manrope',system-ui,-apple-system,sans-serif;line-height:1.6;font-size:16px;-webkit-font-smoothing:antialiased}
+a{color:inherit}
+.in{max-width:900px;margin:0 auto;padding:0 22px}
+nav{position:sticky;top:0;z-index:20;background:rgba(16,35,63,.93);backdrop-filter:blur(8px);border-bottom:1px solid var(--trait)}
+nav .in{display:flex;align-items:center;justify-content:space-between;gap:14px;padding:13px 22px}
+nav .brand{display:flex;align-items:center;gap:10px;text-decoration:none}
+nav .brand svg{color:var(--ambre);flex:none}
+nav .brand span{font-size:16px;font-weight:800;letter-spacing:-.025em}
+nav .links{display:flex;align-items:center;gap:20px}
+nav .links a{color:var(--sourd);text-decoration:none;font-size:13.5px;font-weight:600}
+nav .links a:hover,nav .links a.on{color:var(--froid)}
+nav .cta{background:var(--ambre)!important;color:#1A1608!important;padding:9px 15px;border-radius:5px;font-weight:800!important}
+@media(max-width:700px){nav .links a:not(.cta){display:none}}
+header.h{padding:60px 0 6px}
+header.h .eyebrow{font-size:11.5px;font-weight:800;letter-spacing:.09em;color:var(--ambre);margin-bottom:12px}
+header.h h1{font-size:clamp(30px,5.4vw,46px);font-weight:800;letter-spacing:-.03em;line-height:1.06;max-width:22ch}
+header.h .sub{margin-top:15px;font-size:17px;color:var(--sourd);max-width:58ch}
+section{padding:58px 0 0;scroll-margin-top:64px}
+h2.lbl{font-size:11.5px;font-weight:800;letter-spacing:.09em;color:var(--ambre);padding-bottom:10px;border-bottom:1px solid var(--trait);margin-bottom:24px}
+.txt p{font-size:15.5px;max-width:68ch;margin-bottom:12px;color:#C9D4E4}
+.txt p strong{color:#fff}
+.btn{display:inline-block;padding:13px 22px;font-size:15px;font-weight:700;text-decoration:none;border-radius:5px}
+.btn.p{background:var(--ambre);color:#1A1608}
+.btn.s{background:transparent;color:var(--froid);border:1px solid var(--trait)}
+.card{background:var(--panneau);border:1px solid var(--trait);border-radius:7px;padding:20px 22px}
+.filet{border-left:3px solid var(--ambre);padding-left:14px;margin:18px 0;font-size:14.5px;color:var(--sourd);max-width:68ch}
+.filet b{color:var(--froid)}
+footer{margin-top:60px;border-top:1px solid var(--trait);padding:24px 0 46px;font-size:12.5px;color:var(--sourd)}
+footer .row{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
+footer a{color:var(--sourd)}
+.cta{background:var(--ambre);color:#1A1608;border-radius:8px;padding:32px 30px;margin-top:56px}
+.cta h2{font-size:clamp(22px,3.4vw,28px);font-weight:800;letter-spacing:-.02em;line-height:1.15}
+.cta p{font-size:15.5px;margin-top:10px;max-width:62ch}
+.cta a{display:inline-block;margin-top:18px;background:#1A1608;color:var(--ambre);padding:12px 20px;border-radius:5px;font-weight:800;font-size:15px;text-decoration:none}
+
+.etat{background:var(--panneau);border:1px solid var(--ambre);border-radius:7px;padding:16px 20px;margin-top:24px;font-size:14.5px;display:flex;gap:14px;align-items:flex-start}
+.etat .tag{flex:none;background:var(--ambre);color:#1A1608;font-size:10px;font-weight:800;letter-spacing:.06em;padding:4px 9px;border-radius:3px;margin-top:3px}
+.etat b{color:var(--ambre)}
+.doc{background:#FFFFFF;color:#10233F;border-radius:7px;padding:36px 40px;margin-top:28px;font-size:14.2px;line-height:1.65}
+.doc h2{font-size:16px;font-weight:800;color:#10233F;margin:26px 0 8px;letter-spacing:-.01em}
+.doc h2:first-child{margin-top:0}
+.doc p{margin-bottom:9px;color:#243B5C;max-width:none}
+.doc p b{color:#10233F}
+.doc ul{margin:6px 0 10px 18px;color:#243B5C}
+.doc li{margin-bottom:4px}
+.doc .head{border-bottom:3px solid #F5B62E;padding-bottom:14px;margin-bottom:18px}
+.doc .head .t{font-size:22px;font-weight:800;letter-spacing:-.02em}
+.doc .head .s{font-size:12.5px;color:#4A6591;margin-top:4px}
+.doc .a{color:#7387A6;font-style:italic;font-size:12.5px}
+@media(max-width:600px){.doc{padding:24px 20px}}
+</style>
+</head>
+<body>
+<nav><div class="in">
+  <a class="brand" href="index.html"><svg width="26" height="26" viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="3.4" stroke-linecap="square" aria-hidden="true"><path d="M14 8 H6 V56 H14" fill="none"/><path d="M50 8 H58 V56 H50" fill="none"/><path d="M18 44 V22 L32 36 L46 22 V44" stroke-width="4" fill="none"/></svg><span>Atelier MDT</span></a>
+  <div class="links">
+    <a href="realisations/index.html">Réalisations</a><a href="offres.html">Offres</a><a href="rentabilite.html">Rentabilité</a><a href="qui-suis-je.html">Qui suis-je</a>
+    <a class="cta" href="contact.html">Échanger 30 min</a>
+  </div>
+</div></nav>
+
+<header class="h"><div class="in">
+  <div class="eyebrow">CONDITIONS GÉNÉRALES</div>
+  <h1>Conditions générales de prestation de services</h1>
+  <p class="sub">Elles s'appliquent à toute prestation d'Atelier MDT et sont annexées à chaque devis. Les points essentiels — propriété de ce qui est construit, absence de maintenance imposée, résiliation des abonnements — sont écrits noir sur blanc.</p>
+  <div class="etat"><span class="tag">EN RELECTURE</span><div><b>État au 10 septembre 2026.</b> Cette version est en cours de relecture par un professionnel du droit. Les articles relatifs à la responsabilité et à la juridiction compétente pourront être ajustés à l'issue de cette relecture. La version définitive sera datée et publiée ici.</div></div>
+</div></header>
+
+<section><div class="in">
+  <div class="doc">
+    <div class="head"><div class="t">Conditions générales de prestation de services</div><div class="s">Atelier MDT — Antoine Meyfroidt, entrepreneur individuel · 17 rue des Potiers, 35133 Lécousse · SIRET [à compléter] · Version du 8 septembre 2026, en relecture</div></div>
+    <h2>Article 1 — Objet et champ d'application</h2>
+<p>Les présentes conditions générales régissent l'ensemble des prestations fournies par Atelier MDT, entreprise individuelle sous régime de la micro-entreprise, dont le siège est situé 17 rue des Potiers, 35133 Lécousse, immatriculée sous le numéro SIRET [à compléter], ci-après « le Prestataire », à toute personne morale ou physique agissant dans le cadre de son activité professionnelle, ci-après « le Client ».</p>
+<p>Elles s'appliquent à toutes les prestations : accompagnement et ateliers à l'usage des outils numériques et d'intelligence artificielle, déploiement d'espaces de travail structurés, conception et mise en place d'automatisations de flux, création de tableaux de bord, et veille informationnelle sur abonnement.</p>
+<p>Toute commande implique l'acceptation sans réserve des présentes conditions, qui prévalent sur tout autre document du Client, notamment ses conditions générales d'achat.</p>
+<h2>Article 2 — Devis et formation du contrat</h2>
+<p>Chaque prestation fait l'objet d'un devis écrit précisant son périmètre, son prix, son délai et ses éventuelles options. Le devis est valable trente (30) jours à compter de sa date d'émission.</p>
+<p>Le contrat est formé par le retour du devis signé par le Client, portant la mention « Bon pour accord », la date et la signature. Un accord exprès par courrier électronique vaut acceptation, sous réserve de régularisation par signature du devis.</p>
+<p>Toute prestation non expressément mentionnée au devis fait l'objet d'un devis complémentaire.</p>
+<h2>Article 3 — Prix et modalités de paiement</h2>
+<p>Les prix sont exprimés en euros et s'entendent hors taxes. <b>TVA non applicable, article 293 B du Code général des impôts.</b></p>
+<p>Pour toute prestation dont le montant est égal ou supérieur à quatre cents (400) euros hors taxes, un acompte de trente pour cent (30 %) du prix total est exigible à la commande, le solde étant dû à la livraison. Les prestations inférieures à ce montant sont payables intégralement à la livraison.</p>
+<p>Le solde est exigible à la livraison de la prestation. Les factures sont payables à trente (30) jours à compter de leur date d'émission, par virement bancaire.</p>
+<p>Conformément aux articles L.441-10 et D.441-5 du Code de commerce, tout retard de paiement entraîne de plein droit l'application de pénalités de retard au taux de trois fois le taux d'intérêt légal, ainsi qu'une indemnité forfaitaire pour frais de recouvrement de quarante (40) euros, sans qu'un rappel soit nécessaire.</p>
+<p>Les abonnements de veille sont facturés mensuellement, à terme échu, en plus des frais d'installation facturés à la commande.</p>
+<h2>Article 4 — Obligations et collaboration du Client</h2>
+<p>La bonne exécution des prestations suppose une collaboration active du Client, qui s'engage à :</p>
+<ul>
+<li>fournir les informations, accès et documents nécessaires dans des délais raisonnables ;</li>
+<ul>
+<li>désigner un interlocuteur unique disposant du pouvoir de décision, ainsi que, pour les prestations d'automatisation, un référent interne destinataire de la passation ;</li>
+<ul>
+<li>disposer des comptes, abonnements et licences nécessaires à la prestation, et en assumer le coût ;</li>
+<ul>
+<li>garantir qu'il détient les droits et autorisations sur les données qu'il transmet.</li>
+</ul>
+<p>Les délais annoncés sont suspendus de plein droit en cas de manquement du Client à ces obligations. Le Prestataire ne saurait être tenu responsable d'un retard qui en découlerait.</p>
+<h2>Article 5 — Prestations d'automatisation</h2>
+<p><b>5.1 Propriété et hébergement.</b> Les automatisations sont conçues et déployées <b>sur les comptes du Client</b> (messagerie, outils d'automatisation, formulaires, espaces de stockage). Le Client en est seul titulaire et en conserve la pleine propriété et la maîtrise à l'issue de la prestation. Le Prestataire ne détient ni ne conserve aucun système au nom du Client.</p>
+<p><b>5.2 Accès.</b> Les accès nécessaires sont fournis par le Client sous forme d'accès délégué ou d'intervention accompagnée. Le Prestataire ne conserve aucun identifiant ni mot de passe après la fin de la mission et confirme par écrit le retrait de ses accès.</p>
+<p><b>5.3 Livraison et passation.</b> La prestation comprend la mise en production du flux, un document de maintenance rédigé pour des utilisateurs non techniciens, et une session de passation d'une durée d'une heure au maximum auprès du référent désigné.</p>
+<p><b>5.4 Absence de maintenance.</b> La prestation s'achève à la passation. <b>Aucune maintenance, supervision, garantie de fonctionnement dans la durée ni astreinte n'est incluse.</b> Le Client est informé que les automatisations reposent sur des services tiers dont les évolutions, modifications tarifaires ou interruptions échappent au contrôle du Prestataire.</p>
+<p><b>5.5 Interventions ultérieures.</b> Toute intervention postérieure à la passation fait l'objet d'un devis ou d'une facturation horaire au tarif de cinquante (50) euros hors taxes de l'heure, sous réserve de la disponibilité du Prestataire et sans engagement de délai.</p>
+<h2>Article 6 — Prestations de veille sur abonnement</h2>
+<p><b>6.1 Nature de la prestation.</b> L'abonnement porte sur la <b>livraison périodique d'un livrable de veille</b>, non sur la fourniture d'un système. Les outils, scénarios et configurations mis en œuvre demeurent la propriété exclusive du Prestataire, sont hébergés sur ses propres comptes et ne sont pas transférés au Client, en tout ou partie, à quelque titre que ce soit.</p>
+<p><b>6.2 Périmètre.</b> Le périmètre est arrêté lors du cadrage initial et précisé au devis : thème(s) suivi(s), sources, fréquence, destinataires. Sauf stipulation contraire, il est limité à cinq (5) concurrents suivis ou trois (3) établissements pour la veille e-réputation. Toute extension fait l'objet d'un thème supplémentaire facturé.</p>
+<p><b>6.3 Limites.</b> La veille est réalisée à partir de sources publiquement accessibles. Le Prestataire met en œuvre les moyens nécessaires à sa fiabilité mais <b>ne garantit ni l'exhaustivité, ni la disponibilité permanente des sources tierces</b>. La veille constitue un complément d'information et ne saurait se substituer à la vigilance propre du Client ni engager la responsabilité du Prestataire au titre d'une information non relevée.</p>
+<p><b>6.4 Durée et résiliation.</b> L'abonnement est conclu sans engagement de durée. Il peut être résilié par l'une ou l'autre des parties, par simple courrier électronique, moyennant un préavis de <b>trente (30) jours</b>. Les sommes dues au titre de la période en cours restent exigibles. Les frais d'installation ne sont pas remboursables.</p>
+<p><b>6.5 Interruption exceptionnelle.</b> Le Prestataire pourra suspendre temporairement les livraisons pour une durée cumulée de <b>quatre (4) semaines maximum par année civile</b>, notamment en période de congés, sous réserve d'en informer le Client au moins quinze (15) jours à l'avance. Les mensualités correspondantes restent dues, la prestation reprenant automatiquement à l'issue de la période d'interruption.</p>
+<h2>Article 7 — Prestations d'accompagnement, d'atelier et de déploiement</h2>
+<p>L'atelier équipe est limité à huit (8) participants. Le tarif de base couvre quatre (4) participants, chaque participant supplémentaire étant facturé au tarif unitaire indiqué au devis, comprenant son livrable individuel personnalisé.</p>
+<p>Le socle de déploiement structuré comprend l'audit des usages, la structuration de l'espace de travail, les instructions par domaine métier et un guide de prise en main. Les modules de formation collective et de livrables individuels font l'objet d'une facturation distincte.</p>
+<p>Les prestations sont réalisées à distance sauf mention contraire au devis. Les éventuels frais de déplacement sont facturés en sus, selon les modalités convenues.</p>
+<p><b>Annulation et report.</b> Toute demande de report formulée plus de sept (7) jours avant la date convenue est acceptée sans frais. Entre sept (7) jours et quarante-huit (48) heures avant la date convenue, cinquante pour cent (50 %) du prix de la prestation reste dû. Moins de quarante-huit (48) heures avant la date convenue, ou en cas d'absence non signalée, la totalité du prix reste due.</p>
+<h2>Article 8 — Modifications et retouches</h2>
+<p>Chaque prestation comprend <b>un (1) aller-retour de modifications</b>, dans la limite du périmètre défini au devis.</p>
+<p>Toute demande supplémentaire, ou toute demande excédant ce périmètre, fait l'objet d'un devis complémentaire ou d'une facturation horaire au tarif de cinquante (50) euros hors taxes de l'heure. Ce tarif est communiqué sur demande et s'applique à l'ensemble des interventions non comprises dans un forfait.</p>
+<h2>Article 9 — Propriété intellectuelle</h2>
+<p>Les livrables produits spécifiquement pour le Client (documents de maintenance, guides, supports personnalisés, tableaux de bord) lui sont cédés à compter du paiement intégral du prix, pour ses besoins internes.</p>
+<p>Le Prestataire conserve la propriété de ses méthodes, modèles, trames, scripts et savoir-faire préexistants ou développés à l'occasion de la mission, et demeure libre de les réutiliser.</p>
+<h2>Article 10 — Confidentialité et données personnelles</h2>
+<p>Le Prestataire s'engage à la plus stricte confidentialité sur toute information dont il aurait connaissance à l'occasion de la mission, et à ne l'utiliser qu'aux fins de son exécution.</p>
+<p>Lorsque la prestation implique le traitement de données à caractère personnel, le Prestataire agit en qualité de sous-traitant au sens du Règlement (UE) 2016/679. Il s'engage à ne traiter ces données que sur instruction du Client, à en limiter la collecte au strict nécessaire, à ne pas les conserver au-delà de la durée de la mission et à les restituer ou les supprimer à son terme. </p>
+<h2>Article 11 — Références commerciales</h2>
+<p>Sauf opposition écrite du Client, le Prestataire est autorisé à mentionner le nom du Client et la nature de la prestation réalisée à titre de référence commerciale, à l'exclusion de toute donnée chiffrée ou confidentielle.</p>
+<h2>Article 12 — Responsabilité</h2>
+<p>Le Prestataire est tenu à une obligation de moyens.</p>
+<p>Sa responsabilité ne saurait être engagée en cas de dysfonctionnement, d'indisponibilité ou d'évolution des services tiers utilisés, de manquement du Client à ses obligations, ou d'usage des livrables non conforme à leur destination.</p>
+<p>En tout état de cause, la responsabilité du Prestataire est limitée aux dommages directs et ne peut excéder le montant hors taxes effectivement perçu au titre de la prestation concernée. Sont exclus les dommages indirects, notamment les pertes d'exploitation, de chiffre d'affaires, de données ou d'opportunité commerciale.</p>
+<p>[Article à faire relire en priorité — voir avertissement en tête de document.]</p>
+<h2>Article 13 — Force majeure</h2>
+<p>Aucune des parties ne pourra être tenue responsable d'un manquement résultant d'un cas de force majeure au sens de l'article 1218 du Code civil.</p>
+<h2>Article 14 — Droit applicable et litiges</h2>
+<p>Les présentes conditions sont soumises au droit français.</p>
+<p>En cas de différend, les parties s'engagent à rechercher une solution amiable préalable. À défaut d'accord dans un délai de trente (30) jours à compter de la première réclamation écrite, le litige sera porté devant les tribunaux compétents dans le ressort du siège du Prestataire, à Rennes, dans les cas où la loi le permet.</p>
+<p class="a">Clause à faire vérifier : entre professionnels non commerçants, une clause attributive de compétence peut être inopérante.</p>
+<p>---</p>
+  </div>
+</div></section>
+
+<footer><div class="in"><div class="row">
+  <span>Atelier MDT · <a href="mailto:antoine@atelier-mdt.fr">antoine@atelier-mdt.fr</a></span>
+  <span>SIRET [À COMPLÉTER] · <a href="index.html#mentions">Mentions légales</a> · <a href="cgv.html">CGV</a></span>
+</div></div></footer>
+</body>
+</html>

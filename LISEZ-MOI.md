@@ -15,14 +15,16 @@ site-atelier-mdt/
 │   ├── 06-ia/
 │   ├── 07-granites/
 │   └── 08-benchmark/
-├── tarifs.html                Grille complète, « à partir de », mention tarif de lancement
-├── qui-suis-je.html           Parcours, façon de travailler, emplacement photo, emplacement témoignages
+├── rentabilite.html           Calculs de retour sur investissement, une logique par famille d'offre
+├── offres.html                Grille complète, « à partir de », bandeau tarif de lancement, liens vers rentabilité
+├── qui-suis-je.html           Parcours, façon de travailler, photo, témoignages
 ├── contact.html               Formulaire + coordonnées directes
-├── assets/                    favicons, image de partage, PNG du symbole
+├── cgv.html                   Conditions générales, version en relecture
+├── assets/                    favicons, portrait, brochures PDF (longue 8 p. paysage, courte 1 p.)
 └── LISEZ-MOI.md
 ```
 
-Navigation commune à toutes les pages : Réalisations · Tarifs · Qui suis-je · [Échanger 30 min → Contact].
+Navigation commune : Réalisations · Rentabilité · Offres · Qui suis-je · [Échanger 30 min → Contact]. Pied de page : Mentions légales · CGV.
 
 ## Choix par défaut, à valider
 
@@ -37,9 +39,9 @@ Navigation commune à toutes les pages : Réalisations · Tarifs · Qui suis-je 
 |---|---|
 | `contact.html` | **Formulaire** : créer un compte Formspree (gratuit) ou Tally, remplacer `VOTRE_ID` dans l'attribut `action`. Sans cela, le bouton n'envoie rien. |
 | `contact.html` | Numéro de téléphone, dès la ligne active |
-| `qui-suis-je.html` | **Photographie** : portrait sobre, format 4:5 ; remplacer le bloc pointillé |
-| `qui-suis-je.html` | **Témoignages** : un modèle HTML est en commentaire dans la section « Ils ont travaillé avec moi » |
-| `index.html` | SIRET (2 endroits), hébergeur dans les mentions légales |
+| `qui-suis-je.html` | **Témoignages** : Adrien Cornu inséré ; modèle HTML en commentaire pour les suivants |
+| `cgv.html` | Remplacer par la version définitive après retour de l'avocat, dater, retirer le bandeau « en relecture » |
+| `index.html` | SIRET (2 endroits) — hébergeur GitHub Pages déjà renseigné |
 | toutes les pages | SIRET dans le pied de page |
 
 ## RGPD, puisqu'il y a un formulaire

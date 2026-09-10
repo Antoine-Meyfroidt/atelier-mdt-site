@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Rentabilité — Atelier MDT</title>
+<meta name="description" content="Ce que chaque prestation coûte, ce qu'elle change, et en combien de temps elle se rembourse — hypothèses écrites.">
+<meta name="theme-color" content="#10233F">
+<link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32.png">
+<link rel="apple-touch-icon" sizes="180x180" href="assets/favicon-180.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{--nuit:#10233F;--panneau:#182F52;--ambre:#F5B62E;--sourd:#9FB0C8;--trait:#2A4470;--froid:#E9EEF6;--ambre-txt:#8A6210}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{background:var(--nuit);color:var(--froid);font-family:'Manrope',system-ui,-apple-system,sans-serif;line-height:1.6;font-size:16px;-webkit-font-smoothing:antialiased}
+a{color:inherit}
+.in{max-width:900px;margin:0 auto;padding:0 22px}
+nav{position:sticky;top:0;z-index:20;background:rgba(16,35,63,.93);backdrop-filter:blur(8px);border-bottom:1px solid var(--trait)}
+nav .in{display:flex;align-items:center;justify-content:space-between;gap:14px;padding:13px 22px}
+nav .brand{display:flex;align-items:center;gap:10px;text-decoration:none}
+nav .brand svg{color:var(--ambre);flex:none}
+nav .brand span{font-size:16px;font-weight:800;letter-spacing:-.025em}
+nav .links{display:flex;align-items:center;gap:18px}
+nav .links a{color:var(--sourd);text-decoration:none;font-size:13.5px;font-weight:600;white-space:nowrap}
+nav .links a:hover,nav .links a.on{color:var(--froid)}
+nav .links a.on{border-bottom:2px solid var(--ambre);padding-bottom:2px}
+nav .cta{background:var(--ambre)!important;color:#1A1608!important;padding:9px 15px;border-radius:5px;font-weight:800!important;border-bottom:0!important}
+@media(max-width:760px){nav .links a:not(.cta){display:none}}
+header.h{padding:60px 0 0}
+header.h .eyebrow{font-size:11.5px;font-weight:800;letter-spacing:.09em;color:var(--ambre);margin-bottom:12px}
+header.h h1{font-size:clamp(30px,5.4vw,46px);font-weight:800;letter-spacing:-.03em;line-height:1.06;max-width:22ch}
+header.h .sub{margin-top:15px;font-size:17px;color:var(--sourd);max-width:58ch}
+section{padding:58px 0 0;scroll-margin-top:66px}
+h2.lbl{font-size:11.5px;font-weight:800;letter-spacing:.09em;color:var(--ambre);padding-bottom:10px;border-bottom:1px solid var(--trait);margin-bottom:24px}
+.txt p{font-size:15.5px;max-width:68ch;margin-bottom:12px;color:#C9D4E4}
+.txt p strong{color:#fff}
+.btn{display:inline-block;padding:13px 22px;font-size:15px;font-weight:700;text-decoration:none;border-radius:5px}
+.btn.p{background:var(--ambre);color:#1A1608}
+.btn.s{background:transparent;color:var(--froid);border:1px solid var(--trait)}
+.card{background:var(--panneau);border:1px solid var(--trait);border-radius:7px;padding:20px 22px}
+.filet{border-left:3px solid var(--ambre);padding-left:14px;margin:18px 0;font-size:14.5px;color:var(--sourd);max-width:68ch}
+.filet b{color:var(--froid)}
+.bandeau{background:var(--panneau);border:1px solid var(--ambre);border-radius:7px;padding:18px 22px;font-size:15px;line-height:1.6}
+.bandeau b{color:var(--ambre)}
+.bandeau a{color:var(--ambre)}
+footer{margin-top:64px;border-top:1px solid var(--trait);padding:24px 0 46px;font-size:12.5px;color:var(--sourd)}
+footer .row{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
+footer a{color:var(--sourd)}
+.cta{background:var(--ambre);color:#1A1608;border-radius:8px;padding:32px 30px;margin-top:58px}
+.cta h2{font-size:clamp(22px,3.4vw,28px);font-weight:800;letter-spacing:-.02em;line-height:1.15}
+.cta p{font-size:15.5px;margin-top:10px;max-width:62ch}
+.cta a{display:inline-block;margin-top:18px;background:#1A1608;color:var(--ambre);padding:12px 20px;border-radius:5px;font-weight:800;font-size:15px;text-decoration:none}
+
+.hyp{margin-top:24px;border:1px solid var(--ambre);border-radius:6px;padding:15px 18px;font-size:13.8px;color:var(--sourd);max-width:72ch}
+.hyp b{color:var(--ambre)}
+.sommaire{margin-top:30px;display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:10px}
+.sommaire a{background:var(--panneau);border:1px solid var(--trait);border-radius:6px;padding:13px 15px;text-decoration:none;display:block}
+.sommaire a:hover{border-color:var(--ambre)}
+.sommaire b{display:block;font-size:14.5px;font-weight:800;margin-bottom:3px}
+.sommaire span{font-size:11.5px;color:var(--sourd)}
+h3.t{font-size:24px;font-weight:800;letter-spacing:-.02em;line-height:1.15;margin-bottom:12px}
+.livre{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin:18px 0 0}
+.livre div{background:var(--panneau);border:1px solid var(--trait);border-radius:5px;padding:12px 14px;font-size:13px;color:var(--sourd)}
+.livre div b{display:block;color:var(--froid);font-size:13.5px;margin-bottom:3px}
+@media(max-width:640px){.livre{grid-template-columns:1fr}}
+.calc{background:var(--panneau);border:1px solid var(--ambre);border-radius:7px;padding:20px 22px;margin-top:14px}
+.calc .t{font-size:10px;font-weight:800;letter-spacing:.08em;color:var(--ambre);margin-bottom:12px}
+.calc .row{display:grid;grid-template-columns:120px 1fr;gap:14px;align-items:baseline;padding:8px 0;border-bottom:1px solid var(--trait);font-size:14px;color:var(--sourd)}
+.calc .row:last-of-type{border-bottom:0}
+.calc .row b{color:var(--ambre);font-size:19px;font-weight:800;white-space:nowrap}
+.calc .row span strong{color:var(--froid);font-weight:700}
+.calc .note{font-size:12px;color:#7E93B4;margin-top:12px;padding-top:11px;border-top:1px solid var(--trait);line-height:1.6}
+@media(max-width:560px){.calc .row{grid-template-columns:1fr;gap:2px}}
+.prixbloc{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;align-items:baseline;margin-top:20px;padding-top:16px;border-top:1px solid var(--trait)}
+.prixbloc .p b{font-size:26px;font-weight:800;color:var(--ambre);line-height:1}
+.prixbloc .p span{display:block;font-size:12px;color:var(--sourd);margin-top:4px}
+.prixbloc .lien a{color:var(--ambre);text-decoration:none;font-weight:700;font-size:14px}
+</style>
+</head>
+<body>
+<nav><div class="in">
+  <a class="brand" href="index.html"><svg width="26" height="26" viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="3.4" stroke-linecap="square" aria-hidden="true"><path d="M14 8 H6 V56 H14" fill="none"/><path d="M50 8 H58 V56 H50" fill="none"/><path d="M18 44 V22 L32 36 L46 22 V44" stroke-width="4" fill="none"/></svg><span>Atelier MDT</span></a>
+  <div class="links">
+    <a href="realisations/index.html">Réalisations</a><a href="offres.html">Offres</a><a href="rentabilite.html" class="on">Rentabilité</a><a href="qui-suis-je.html">Qui suis-je</a>
+    <a class="cta" href="contact.html">Échanger 30 min</a>
+  </div>
+</div></nav>
+
+<header class="h"><div class="in">
+  <div class="eyebrow">RENTABILITÉ</div>
+  <h1>Un forfait, ça se rembourse. Voici en combien de temps.</h1>
+  <p class="sub">Quatre familles de prestations, quatre logiques de retour différentes. Certaines se calculent en heures récupérées, d'autres en décisions mieux prises, en avance prise sur son marché ou en compétence acquise. Voici les quatre raisonnements, hypothèses écrites.</p>
+  <div class="hyp"><b>Hypothèse commune :</b> coût horaire chargé de 25 €, 48 semaines travaillées — un ordre de grandeur ; si le vôtre est plus élevé, les remboursements raccourcissent. <b>Tout se refait avec vos chiffres au premier échange.</b></div>
+  <div class="sommaire">
+    <a href="#auto"><b>Automatisation</b><span>Des heures qui ne se rejouent plus</span></a>
+    <a href="#veille"><b>Veille</b><span>Une longueur d'avance</span></a>
+    <a href="#data"><b>Données et études</b><span>Piloter avec méthode</span></a>
+    <a href="#ia"><b>Accompagnement IA</b><span>Prendre les devants</span></a>
+  </div>
+</div></header>
+
+<section id="auto"><div class="in">
+  <h2 class="lbl">01 — AUTOMATISATION D'UN FLUX ENTRANT</h2>
+  <h3 class="t">Des heures qui ne se rejouent plus</h3>
+  <div class="txt">
+    <p>Chaque demande qui arrive par votre site ou votre boîte mail mobilise quelqu'un : lire, rédiger, envoyer — presque toujours le même message. <strong>Ce n'est pas une tâche difficile, c'est une tâche qui revient.</strong> L'automatisation supprime ce geste : la demande arrive, la réponse part, personnalisée, depuis vos adresses, y compris le samedi soir.</p>
+  </div>
+  <div class="calc">
+    <div class="t">LE CALCUL — SUR UN EXEMPLE RÉEL</div>
+    <div class="row"><b>3 h</b><span>récupérées <strong>chaque semaine</strong> sur un flux de demandes de réservation déjà en production. <strong>C'est un exemple, pas une promesse</strong> : le gain dépend entièrement de la récurrence de votre propre flux</span></div>
+    <div class="row"><b>≈ 13 h</b><span>par mois dans cet exemple, soit <strong>près de deux journées de travail</strong> rendues à l'équipe</span></div>
+    <div class="row"><b>≈ 145 h</b><span>sur une année pleine, pour un forfait payé <strong>une seule fois</strong></span></div>
+    <div class="row"><b>≈ 7 sem.</b><span>le temps qu'il faut pour rembourser 500 € au coût horaire retenu</span></div>
+    <div class="note">Hypothèses : gain de 3 h par semaine constaté sur un flux de réservations d'anniversaires en production ; coût horaire chargé de 25 € ; 48 semaines. Un flux de cinq demandes par semaine rapporte moins, un flux de cinquante rapporte davantage. Le premier échange sert précisément à compter vos demandes et à refaire ce calcul avec votre volume.</div>
+  </div>
+  <div class="livre">
+    <div><b>Ce que vous recevez</b>Le flux en production sur vos comptes, un document de maintenance écrit pour des non-techniciens, une session de passation d'une heure à votre référent interne.</div>
+    <div><b>Ce que ça change au-delà des heures</b>Plus aucune demande oubliée un jour de forte affluence. Un délai de réponse identique le lundi matin et le dimanche soir. Une équipe qui ne fait plus le travail d'un robot.</div>
+  </div>
+  <div class="prixbloc">
+    <div class="p"><b>dès 500 € HT</b><span>Forfait unique · livré en 3 semaines · aucun abonnement</span></div>
+    <div class="lien"><a href="realisations/01-anniversaires/index.html">Voir l'exemple, pièce par pièce →</a></div>
+  </div>
+</div></section>
+
+<section id="veille"><div class="in">
+  <h2 class="lbl">02 — VEILLE EN ABONNEMENT</h2>
+  <h3 class="t">Une longueur d'avance sur son marché</h3>
+  <div class="txt">
+    <p>On dit que l'information n'a pas de prix. Ici, elle en a un — et il est modeste au regard de ce qu'elle permet : <strong>connaître son environnement, s'y adapter avant les autres, et décider en sachant plutôt qu'en supposant.</strong></p>
+    <p>Un avis à une étoile qui reste quinze jours sans réponse pendant que vos futurs clients le lisent. Un concurrent qui baisse son menu du midi et que vous découvrez trois mois plus tard par un client qui négocie. Une note Google qui glisse sans que personne ne s'en aperçoive. Chacun de ces événements se joue en quelques jours ; celui qui le voit en premier a l'avantage.</p>
+    <p>Une veille ne fait pas gagner trois heures par semaine — la plupart des entreprises ne la font pas du tout, elles tiennent trois semaines puis abandonnent. La valeur n'est pas dans le temps économisé : <strong>elle est dans la régularité, et dans l'avance que cette régularité procure.</strong></p>
+  </div>
+  <div class="calc">
+    <div class="t">LE CALCUL</div>
+    <div class="row"><b>1 client</b><span>conservé grâce à un avis négatif traité à temps <strong>couvre plusieurs mois d'abonnement</strong> — à vous de savoir ce que vaut un client chez vous</span></div>
+    <div class="row"><b>1 200 €</b><span>le coût annuel d'un abonnement hebdomadaire, installation comprise</span></div>
+    <div class="row"><b>≈ 48 h</b><span>ce que coûterait le même relevé fait à la main, une heure par semaine — <strong>1 200 € de temps interne, pour un travail qui n'est jamais tenu dans la durée</strong></span></div>
+    <div class="row"><b>0</b><span>semaine manquée : le système tourne seul, il ne dépend de la disponibilité de personne</span></div>
+    <div class="note">Hypothèses : abonnement hebdomadaire à 100 €/mois plus 300 € d'installation ; relevé manuel estimé à une heure par semaine au coût horaire retenu. Ce raisonnement est volontairement différent des autres : ici la valeur n'est pas le temps, c'est l'information reçue avant les autres, chaque semaine, sans exception.</div>
+  </div>
+  <div class="livre">
+    <div><b>Ce que vous recevez</b>Un email par semaine, lisible en deux minutes : ce qui a changé, ce qui mérite une action, et pour l'e-réputation la réponse déjà rédigée, prête à publier.</div>
+    <div><b>Ce que ça change</b>Vous répondez aux avis dans la journée, pas dans le mois. Vous ajustez vos prix en connaissant ceux des autres. Vous savez ce que font vos concurrents avant vos clients.</div>
+  </div>
+  <div class="prixbloc">
+    <div class="p"><b>300 € puis 100 €/mois</b><span>Sans engagement · préavis d'un mois · première livraison sous 2 semaines</span></div>
+    <div class="lien"><a href="realisations/04-veille/index.html">Voir un livrable réel →</a></div>
+  </div>
+</div></section>
+
+<section id="data"><div class="in">
+  <h2 class="lbl">03 — TABLEAUX DE BORD ET ÉTUDES</h2>
+  <h3 class="t">Piloter avec méthode, pas au feeling</h3>
+  <div class="txt">
+    <p>Un tableau de bord ne fait pas gagner de temps : il fait prendre de meilleures décisions. Et une étude qui justifie — ou écarte — un partenariat, un produit, un investissement, <strong>peut changer bien plus de choses qu'une automatisation</strong>, parce qu'elle engage l'entreprise sur des mois ou des années.</p>
+    <p>La différence n'est pas entre décider et ne pas décider. Elle est entre décider au ressenti et décider avec méthode : un coût complet reconstitué, un seuil de rentabilité en unités, des scénarios prudents, une recommandation explicite. Le dirigeant qui a ça sous les yeux ne prend pas forcément une autre décision — mais il la prend en sachant pourquoi, et il peut la défendre devant un associé ou un banquier.</p>
+    <p>Votre logiciel de caisse sait déjà quels jours, quelles offres et quels clients font votre marge. Ces exports dorment parce que personne n'a le temps de les empiler. Assemblés, ils répondent aux questions concrètes : faut-il ouvrir ce créneau, ce produit est-il rentable, ce tarif est-il aligné sur le marché.</p>
+  </div>
+  <div class="calc">
+    <div class="t">LE CALCUL — SUR DEUX CAS RÉELS</div>
+    <div class="row"><b>1 décision</b><span>tarifaire mieux prise sur une offre régulière <strong>rembourse le tableau de bord dès la première année</strong></span></div>
+    <div class="row"><b>+0,50 €</b><span>de marge sur un produit vendu 20 fois par semaine, c'est <strong>480 € sur l'année</strong> — l'ordre de grandeur d'un tableau de bord</span></div>
+    <div class="row"><b>≈ 21</b><span>ventes par mois : le seuil de rentabilité d'un nouveau produit, calculé <strong>avant de signer un contrat fournisseur de trois ans</strong>. L'étude a conclu, le produit a été lancé</span></div>
+    <div class="row"><b>1 question</b><span>reposée : un benchmark tarifaire régional a montré que le format à comparer n'existait nulle part ailleurs — <strong>la bonne décision n'était pas d'aligner le prix, mais de repositionner l'offre</strong></span></div>
+    <div class="note">Hypothèses : marge supplémentaire de 0,50 € sur 20 ventes hebdomadaires, 48 semaines — un ordre de grandeur, pas une promesse. Les deux derniers cas sont réels et consultables dans les réalisations. La valeur d'une étude dépend de la décision qu'elle éclaire : c'est la prestation la plus variable des quatre, et il faut le dire.</div>
+  </div>
+  <div class="livre">
+    <div><b>Ce que vous recevez</b>Vos exports nettoyés et fusionnés en une base documentée, un tableau de bord lisible en cinq minutes, un manuel de lecture. Ou une étude ponctuelle : sources citées, hypothèses écrites, conclusion.</div>
+    <div><b>Ce que ça change</b>Une révision tarifaire, un investissement ou l'abandon d'un produit se décident sur des chiffres. On arrête d'arbitrer au ressenti quand la donnée existe déjà.</div>
+  </div>
+  <div class="prixbloc">
+    <div class="p"><b>450 à 700 € HT</b><span>Tableau de bord · étude ponctuelle sur devis · livré en 2 à 3 semaines</span></div>
+    <div class="lien"><a href="realisations/07-granites/index.html">Voir l'étude qui a lancé un produit →</a></div>
+  </div>
+</div></section>
+
+<section id="ia"><div class="in">
+  <h2 class="lbl">04 — ACCOMPAGNEMENT ET DÉPLOIEMENT IA</h2>
+  <h3 class="t">Prendre les devants plutôt que de se faire distancer</h3>
+  <div class="txt">
+    <p><strong>L'IA n'est plus l'avenir : elle fait déjà partie du quotidien</strong> — de vos concurrents, de vos fournisseurs, de vos clients. La question n'est plus de s'y mettre ou non, mais d'éviter de perdre des mois à tâtonner seul pendant que d'autres avancent.</p>
+    <p>Le piège classique en petite entreprise est de donner un accès à tout le monde et d'attendre que ça prenne. Ça ne prend pas : chacun tâtonne, obtient des résultats génériques, et abandonne en trois semaines. Ce qui fonctionne, c'est un espace organisé par métier, des instructions qui situent l'assistant, et une formation sur les tâches réelles des gens — pas sur l'outil.</p>
+    <p>C'est la seule des quatre prestations dont la valeur augmente avec le temps : <strong>la compétence reste quand la mission est finie.</strong></p>
+  </div>
+  <div class="calc">
+    <div class="t">LE CALCUL</div>
+    <div class="row"><b>1 h</b><span>gagnée par semaine et par personne : <strong>le minimum observé</strong> chez quelqu'un correctement accompagné sur ses tâches de rédaction, de synthèse et de préparation</span></div>
+    <div class="row"><b>≈ 6 sem.</b><span>pour rembourser un accompagnement individuel à 150 €, sur cette seule base</span></div>
+    <div class="row"><b>≈ 4 sem.</b><span>pour rembourser un atelier d'équipe de quatre personnes à 400 €</span></div>
+    <div class="row"><b>≈ 1 200 €</b><span>de temps rendu par personne et par an — et la compétence reste</span></div>
+    <div class="note">Hypothèses : une heure gagnée par semaine et par personne, coût horaire chargé de 25 €, 48 semaines. Un plancher volontairement prudent : dès que l'IA est située sur les tâches du métier — rédaction, synthèse, préparation — il est généralement dépassé. Mais un plancher qui tient vaut mieux qu'une promesse qui déçoit.</div>
+  </div>
+  <div class="livre">
+    <div><b>Ce que vous recevez</b>Selon le format : deux heures individuelles avec un support personnalisé, une demi-journée d'atelier sur vos cas concrets, ou un espace de travail structuré par domaine métier avec ses instructions et son guide de prise en main.</div>
+    <div><b>Ce que ça change</b>Vos équipes cessent d'attendre qu'on fasse les choses pour elles. Rédiger, résumer, comparer, préparer : ces demandes se traitent au niveau où elles naissent.</div>
+  </div>
+  <div class="prixbloc">
+    <div class="p"><b>dès 150 € HT</b><span>Individuel 150 € · atelier dès 400 € · déploiement dès 500 €</span></div>
+    <div class="lien"><a href="realisations/06-ia/index.html">Voir un déploiement réel →</a></div>
+  </div>
+</div></section>
+
+<section><div class="in">
+  <h2 class="lbl">CE QUE JE VOUS PROMETS</h2>
+  <div class="txt">
+    <p><strong>Mon but n'est pas de vous faire ramener plus, mais de vous faire dépenser moins.</strong> Moins de temps sur ce qui se répète, des méthodes plus simples, une productivité qui monte — pour que vous passiez vos heures là où elles comptent vraiment : vos clients, vos décisions, votre métier.</p>
+    <p><strong>Et un travail qui vous appartient.</strong> Tout est construit sur vos comptes, documenté pour votre équipe, transmis à quelqu'un chez vous. Ce que je mets en place tient parce que vous pouvez le faire vivre sans moi — et ce jour-là, c'est plutôt bon signe.</p>
+  </div>
+</div></section>
+<div class="in"><div class="cta">
+  <h2>Refaisons ces calculs avec vos chiffres</h2>
+  <p>Trente minutes en visio, gratuites. On identifie la tâche qui vous coûte le plus de temps, on la chiffre avec vos données réelles, et vous repartez avec un devis. Si le calcul ne tient pas chez vous, je vous le dirai.</p>
+  <a href="contact.html">Prendre contact</a>
+</div></div>
+
+<footer><div class="in"><div class="row">
+  <span>Atelier MDT · <a href="mailto:antoine@atelier-mdt.fr">antoine@atelier-mdt.fr</a></span>
+  <span>SIRET [À COMPLÉTER] · <a href="index.html#mentions">Mentions légales</a> · <a href="cgv.html">CGV</a></span>
+</div></div></footer>
+</body>
+</html>
