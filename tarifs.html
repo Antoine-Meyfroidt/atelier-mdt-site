@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Tarifs — Atelier MDT</title>
+<meta name="description" content="Tarifs de lancement d'Atelier MDT : automatisation dès 500 €, veille en abonnement dès 60 €/mois, tableaux de bord, accompagnement IA. Forfaits écrits, sans engagement.">
+<meta name="theme-color" content="#10233F">
+<link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32.png">
+<link rel="apple-touch-icon" sizes="180x180" href="assets/favicon-180.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{--nuit:#10233F;--panneau:#182F52;--ambre:#F5B62E;--sourd:#9FB0C8;--trait:#2A4470;--froid:#E9EEF6}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{background:var(--nuit);color:var(--froid);font-family:'Manrope',system-ui,-apple-system,sans-serif;line-height:1.6;font-size:16px;-webkit-font-smoothing:antialiased}
+a{color:inherit}
+.in{max-width:900px;margin:0 auto;padding:0 22px}
+nav{position:sticky;top:0;z-index:20;background:rgba(16,35,63,.92);backdrop-filter:blur(8px);border-bottom:1px solid var(--trait)}
+nav .in{display:flex;align-items:center;justify-content:space-between;gap:14px;padding:13px 22px}
+nav .brand{display:flex;align-items:center;gap:10px;text-decoration:none}
+nav .brand svg{color:var(--ambre);flex:none}
+nav .brand span{font-size:16px;font-weight:800;letter-spacing:-.025em}
+nav .links{display:flex;align-items:center;gap:20px}
+nav .links a{color:var(--sourd);text-decoration:none;font-size:13.5px;font-weight:600}
+nav .links a:hover,nav .links a.on{color:var(--froid)}
+nav .cta{background:var(--ambre)!important;color:#1A1608!important;padding:9px 15px;border-radius:5px;font-weight:800!important}
+@media(max-width:660px){nav .links a:not(.cta){display:none}}
+header.h{padding:60px 0 6px}
+header.h .eyebrow{font-size:11.5px;font-weight:800;letter-spacing:.09em;color:var(--ambre);margin-bottom:12px}
+header.h h1{font-size:clamp(30px,5.4vw,46px);font-weight:800;letter-spacing:-.03em;line-height:1.06;max-width:22ch}
+header.h .sub{margin-top:15px;font-size:17px;color:var(--sourd);max-width:58ch}
+section{padding:58px 0 0;scroll-margin-top:64px}
+h2.lbl{font-size:11.5px;font-weight:800;letter-spacing:.09em;color:var(--ambre);padding-bottom:10px;border-bottom:1px solid var(--trait);margin-bottom:24px}
+.txt p{font-size:15.5px;max-width:68ch;margin-bottom:12px}
+.txt p strong{color:#fff}
+.btn{display:inline-block;padding:13px 22px;font-size:15px;font-weight:700;text-decoration:none;border-radius:5px}
+.btn.p{background:var(--ambre);color:#1A1608}
+.btn.s{background:transparent;color:var(--froid);border:1px solid var(--trait)}
+.card{background:var(--panneau);border:1px solid var(--trait);border-radius:7px;padding:20px 22px}
+.filet{border-left:3px solid var(--ambre);padding-left:14px;margin:18px 0;font-size:14.5px;color:var(--sourd);max-width:68ch}
+.filet b{color:var(--froid)}
+footer{margin-top:60px;border-top:1px solid var(--trait);padding:24px 0 46px;font-size:12.5px;color:var(--sourd)}
+footer .row{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
+footer a{color:var(--sourd)}
+.cta{background:var(--ambre);color:#1A1608;border-radius:8px;padding:32px 30px;margin-top:56px}
+.cta h2{font-size:clamp(22px,3.4vw,28px);font-weight:800;letter-spacing:-.02em;line-height:1.15}
+.cta p{font-size:15.5px;margin-top:10px;max-width:62ch}
+.cta a{display:inline-block;margin-top:18px;background:#1A1608;color:var(--ambre);padding:12px 20px;border-radius:5px;font-weight:800;font-size:15px;text-decoration:none}
+
+.off{display:grid;grid-template-columns:1fr auto;gap:18px;padding:24px 0;border-bottom:1px solid var(--trait);align-items:start}
+.off:last-of-type{border-bottom:0}
+@media(max-width:640px){.off{grid-template-columns:1fr}}
+.off h3{font-size:20px;font-weight:800;letter-spacing:-.015em;line-height:1.22}
+.off .d{font-size:14.5px;color:var(--sourd);margin-top:7px;max-width:60ch}
+.off ul{list-style:none;margin-top:9px}
+.off li{font-size:13.8px;color:var(--sourd);padding-left:16px;position:relative;margin-bottom:5px}
+.off li::before{content:"";position:absolute;left:0;top:9px;width:6px;height:6px;background:var(--ambre);border-radius:1px}
+.off li b{color:var(--froid);font-weight:700}
+.prix{text-align:right;min-width:190px}
+.prix .from{font-size:10.5px;font-weight:800;letter-spacing:.06em;color:var(--sourd)}
+.prix b{display:block;font-size:30px;font-weight:800;color:var(--ambre);line-height:1.05;margin-top:2px}
+.prix span{display:block;font-size:12.5px;color:var(--sourd);margin-top:5px;line-height:1.4}
+.prix .delai{display:inline-block;margin-top:9px;font-size:11px;font-weight:800;letter-spacing:.04em;padding:3px 8px;border:1px solid var(--trait);border-radius:3px;color:var(--sourd)}
+@media(max-width:640px){.prix{text-align:left}}
+.bandeau{background:var(--panneau);border:1px solid var(--ambre);border-radius:7px;padding:18px 22px;margin-top:26px;font-size:15px}
+.bandeau b{color:var(--ambre)}
+.regles{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+@media(max-width:640px){.regles{grid-template-columns:1fr}}
+.regles .card h3{font-size:15.5px;font-weight:800;margin-bottom:7px}
+.regles .card p{font-size:14px;color:var(--sourd)}
+</style>
+</head>
+<body>
+<nav><div class="in">
+  <a class="brand" href="index.html"><svg width="26" height="26" viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="3.4" stroke-linecap="square" aria-hidden="true"><path d="M14 8 H6 V56 H14" fill="none"/><path d="M50 8 H58 V56 H50" fill="none"/><path d="M18 44 V22 L32 36 L46 22 V44" stroke-width="4" fill="none"/></svg><span>Atelier MDT</span></a>
+  <div class="links">
+    <a href="realisations/index.html">Réalisations</a><a href="tarifs.html" class="on">Tarifs</a><a href="qui-suis-je.html">Qui suis-je</a>
+    <a class="cta" href="contact.html">Échanger 30 min</a>
+  </div>
+</div></nav>
+
+<header class="h"><div class="in">
+  <div class="eyebrow">TARIFS</div>
+  <h1>Des prix écrits, avant qu'on se parle</h1>
+  <p class="sub">Tout est en forfait ou en abonnement sans engagement. Pas de taux horaire caché, pas de surprise en fin de mission. Ce que vous voyez ici est ce que vous lirez sur le devis.</p>
+  <div class="bandeau"><b>Tarifs de lancement.</b> Ces prix sont volontairement bas : je constitue mes premières références en dehors de mon entreprise d'origine, et je préfère le dire que le cacher. Ils sont valables pour mes trois premiers clients sur chaque offre, puis seront révisés. Le travail livré ne change pas — les <a href="realisations/index.html" style="color:var(--ambre)">réalisations</a> montrent ce que vous obtenez.</div>
+</div></header>
+
+<section><div class="in">
+  <h2 class="lbl">AUTOMATISATION</h2>
+  <div class="off">
+  <div><h3>Automatiser un flux entrant</h3><p class="d">Demandes de réservation, de devis, de contact, de partenariat : chaque message reçoit une réponse immédiate et personnalisée, envoyée depuis vos adresses. Votre équipe ne traite plus que ce qui demande un jugement.</p><ul><li>Construit <b>sur vos comptes</b> : vous en restez propriétaire</li><li>Document de maintenance rédigé pour des non-techniciens</li><li>Session de passation d'une heure à votre référent interne</li><li>Aucune maintenance imposée — interventions ultérieures à l'heure, si vous le souhaitez</li></ul></div>
+  <div class="prix"><div class="from">FORFAIT, À PARTIR DE</div><b>500 €</b><span>HT · selon la complexité du flux</span><span class="delai">LIVRÉ EN 3 SEMAINES</span></div>
+</div>
+</div></section>
+
+<section><div class="in">
+  <h2 class="lbl">VEILLE EN ABONNEMENT</h2>
+  <div class="off">
+  <div><h3>Veille hebdomadaire</h3><p class="d">E-réputation — alerte à chaque nouvel avis Google ou Tripadvisor, synthèse, réponse rédigée prête à publier. Ou concurrence — notes, avis, prix et activité réseaux de vos concurrents directs, chiffre par chiffre.</p><ul><li>Livrée chaque semaine dans votre boîte mail, lisible en deux minutes</li><li>Jusqu'à 5 concurrents ou 3 établissements suivis</li><li><b>Sans engagement</b>, résiliable avec un mois de préavis</li><li>Le système tourne de mon côté : rien à installer chez vous</li></ul></div>
+  <div class="prix"><div class="from">INSTALLATION 300 € PUIS</div><b>100 €</b><span>HT par mois</span><span class="delai">1RE LIVRAISON SOUS 2 SEMAINES</span></div>
+</div>
+  <div class="off">
+  <div><h3>Veille mensuelle</h3><p class="d">IA appliquée à votre métier — ce qui a réellement changé ce mois-ci et ce que vous pouvez en faire, avec un cas d'usage concret. Ou tendances de votre secteur, à partir de sources publiques.</p><ul><li>Une édition par mois, plus fouillée</li><li>Même principe : sans engagement, préavis d'un mois</li><li>Thème supplémentaire sur un abonnement existant : <b>+40 € par mois</b></li></ul></div>
+  <div class="prix"><div class="from">INSTALLATION 200 € PUIS</div><b>60 €</b><span>HT par mois</span><span class="delai">1RE LIVRAISON SOUS 2 SEMAINES</span></div>
+</div>
+</div></section>
+
+<section><div class="in">
+  <h2 class="lbl">DONNÉES ET PILOTAGE</h2>
+  <div class="off">
+  <div><h3>Tableau de bord</h3><p class="d">Vos exports de caisse ou de facturation deviennent un pilotage lisible : saisonnalité, performance par activité, écarts d'une année sur l'autre. Livré avec sa méthodologie.</p><ul><li>Vous m'envoyez vos exports, je nettoie, je fusionne, je construis</li><li>Lisible par un dirigeant en cinq minutes, pas un outil d'analyste</li><li>Option mise à jour périodique : <b>60 € par trimestre</b></li><li>Prérequis : pouvoir exporter vos données — c'est la première question que je pose</li></ul></div>
+  <div class="prix"><div class="from">FORFAIT, ENTRE</div><b>450 et 700 €</b><span>HT · selon le volume</span><span class="delai">LIVRÉ EN 2 SEMAINES</span></div>
+</div>
+</div></section>
+
+<section><div class="in">
+  <h2 class="lbl">IA — MONTÉE EN COMPÉTENCE</h2>
+  <div class="off">
+  <div><h3>Accompagnement individuel</h3><p class="d">Deux heures en visio sur vos tâches réelles — pas de théorie — puis un support personnalisé rédigé après la séance, selon votre métier.</p><ul><li>Pour un dirigeant, un libéral, un responsable</li><li>Vous repartez avec des usages que vous pouvez reproduire le lendemain</li></ul></div>
+  <div class="prix"><div class="from">FORFAIT</div><b>150 €</b><span>HT</span><span class="delai">SOUS 2 SEMAINES</span></div>
+</div>
+  <div class="off">
+  <div><h3>Atelier d'équipe</h3><p class="d">Une demi-journée sur les cas concrets de votre équipe. Chaque participant reçoit ensuite un complément personnalisé.</p><ul><li>Jusqu'à 4 participants inclus</li><li>Participant supplémentaire, complément inclus : <b>+50 €</b> — plafond 8 personnes</li></ul></div>
+  <div class="prix"><div class="from">FORFAIT, À PARTIR DE</div><b>400 €</b><span>HT</span><span class="delai">SOUS 2 SEMAINES</span></div>
+</div>
+  <div class="off">
+  <div><h3>Déploiement structuré</h3><p class="d">Pour les structures de dix personnes et plus : un espace de travail IA organisé par domaine métier, avec instructions sur mesure et documents de référence, comme celui présenté dans les réalisations.</p><ul><li>Socle : audit des usages, espace structuré, instructions par métier, guide de prise en main</li><li>Module formation collective d'une demi-journée : <b>+400 €</b></li><li>Module livrables individuels : <b>+50 € par personne</b></li><li>Le socle ne se vend pas seul : un espace que personne n'utilise ne sert à rien</li></ul></div>
+  <div class="prix"><div class="from">SOCLE</div><b>500 €</b><span>HT · modules en option</span><span class="delai">LIVRÉ EN 3 SEMAINES</span></div>
+</div>
+</div></section>
+
+<section><div class="in">
+  <h2 class="lbl">COMMENT ÇA SE PASSE</h2>
+  <div class="regles">
+    <div class="card"><h3>Un premier échange, gratuit</h3><p>Trente minutes en visio pour comprendre ce qui vous coûte du temps. Si je ne suis pas le bon interlocuteur, je vous le dis à ce moment-là.</p></div>
+    <div class="card"><h3>Un devis écrit, toujours</h3><p>Périmètre, prix, délai, ce qui est inclus et ce qui ne l'est pas. Rien ne démarre sans votre signature.</p></div>
+    <div class="card"><h3>Acompte de 30 % dès 400 €</h3><p>Rien en dessous. Le solde à la livraison, par virement à 30 jours.</p></div>
+    <div class="card"><h3>Un aller-retour inclus</h3><p>Une série de modifications comprise dans chaque forfait. Au-delà, 50 € HT de l'heure, annoncé à l'avance.</p></div>
+  </div>
+  <div class="filet"><b>Ce que je ne fais pas :</b> création graphique, réseaux sociaux, développement lourd, veille réglementaire ou juridique. Si votre besoin est là, je vous le dis au premier échange. · TVA non applicable, article 293 B du CGI.</div>
+</div></section>
+<div class="in"><div class="cta">
+  <h2>On regarde ce que vous perdez ?</h2>
+  <p>Trente minutes en visio pour identifier la tâche qui vous coûte le plus de temps. Vous repartez avec un devis chiffré, et vous décidez ensuite. Aucun engagement.</p>
+  <a href="contact.html">Prendre contact</a>
+</div></div>
+
+<footer><div class="in"><div class="row">
+  <span>© 2026 Atelier MDT — Antoine Meyfroidt · <em>Votre temps vaut mieux que ça</em></span>
+  <span>Micro-entreprise · SIRET [À COMPLÉTER] · <a href="index.html#mentions">Mentions légales</a></span>
+</div></div></footer>
+</body>
+</html>

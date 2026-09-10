@@ -1,0 +1,289 @@
+<div style="background:#8A6210;color:#fff;padding:10px 16px;font:600 13px/1.5 system-ui,sans-serif;text-align:center">Données de démonstration — les montants et volumes ont été modifiés. Structure, calculs et écarts sont ceux du rapport d'origine.</div><title>Client démo — Vue pluriannuelle 2023-2026</title>
+<style>
+  :root{
+    --bg:#F4F6FA; --surface:#FFFFFF; --surface2:#FAFBFE; --border:#E4E8F1;
+    --ink:#161A24; --muted:#616B7C; --faint:#9AA3B4;
+    --accent:#2A4A8C; --accent-soft:#EAF0FB;
+    --pos:#1C9266; --pos-soft:#E4F3EC; --neg:#D1503A; --neg-soft:#FBEAE5; --warn:#B4842A;
+    --grid:#EEF1F7;
+    --y23:#B48DD6; --y24:#5B8FD9; --y25:#2A4A8C; --y26:#E2933C;
+    --font:"Segoe UI",system-ui,-apple-system,Roboto,Helvetica,Arial,sans-serif;
+    --shadow:0 1px 2px rgba(20,30,60,.04),0 4px 16px rgba(20,30,60,.05);
+  }
+  @media (prefers-color-scheme:dark){
+    :root{
+      --bg:#0E1016; --surface:#171B24; --surface2:#1C212B; --border:#2A303D;
+      --ink:#ECEEF4; --muted:#9BA4B5; --faint:#6C7686;
+      --accent:#7F9CE2; --accent-soft:#1D2740;
+      --pos:#48B98A; --pos-soft:#16281F; --neg:#E67C63; --neg-soft:#2C1B16; --warn:#D4AC52;
+      --grid:#232A36; --y23:#9D7BC0; --y24:#6E9DE0; --y25:#8FA9E8; --y26:#E2A35C;
+      --shadow:0 1px 2px rgba(0,0,0,.3),0 6px 20px rgba(0,0,0,.28);
+    }
+  }
+  :root[data-theme="dark"]{
+    --bg:#0E1016; --surface:#171B24; --surface2:#1C212B; --border:#2A303D;
+    --ink:#ECEEF4; --muted:#9BA4B5; --faint:#6C7686;
+    --accent:#7F9CE2; --accent-soft:#1D2740;
+    --pos:#48B98A; --pos-soft:#16281F; --neg:#E67C63; --neg-soft:#2C1B16; --warn:#D4AC52;
+    --grid:#232A36; --y23:#9D7BC0; --y24:#6E9DE0; --y25:#8FA9E8; --y26:#E2A35C;
+    --shadow:0 1px 2px rgba(0,0,0,.3),0 6px 20px rgba(0,0,0,.28);
+  }
+  :root[data-theme="light"]{
+    --bg:#F4F6FA; --surface:#FFFFFF; --surface2:#FAFBFE; --border:#E4E8F1;
+    --ink:#161A24; --muted:#616B7C; --faint:#9AA3B4;
+    --accent:#2A4A8C; --accent-soft:#EAF0FB;
+    --pos:#1C9266; --pos-soft:#E4F3EC; --neg:#D1503A; --neg-soft:#FBEAE5; --warn:#B4842A;
+    --grid:#EEF1F7; --y23:#B48DD6; --y24:#5B8FD9; --y25:#2A4A8C; --y26:#E2933C;
+    --shadow:0 1px 2px rgba(20,30,60,.04),0 4px 16px rgba(20,30,60,.05);
+  }
+  *{box-sizing:border-box}
+  body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--font);font-size:15px;line-height:1.5;-webkit-font-smoothing:antialiased}
+  .wrap{max-width:1180px;margin:0 auto;padding:28px 20px 60px}
+  .tnum{font-variant-numeric:tabular-nums}
+  h1,h2,h3{margin:0;text-wrap:balance}
+  header{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:14px;margin-bottom:18px}
+  .brand{display:flex;align-items:center;gap:12px}
+  .mark{width:40px;height:40px;border-radius:10px;background:var(--accent);color:#fff;display:grid;place-items:center;font-weight:800;font-size:18px}
+  .brand h1{font-size:19px;font-weight:700}
+  .brand .sub{font-size:12.5px;color:var(--muted)}
+  nav{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:22px;align-items:center}
+  .nlab{font-size:11px;text-transform:uppercase;letter-spacing:.08em;color:var(--faint);font-weight:700;margin-right:2px}
+  .tab{border:1px solid var(--border);background:var(--surface);color:var(--ink);border-radius:999px;
+    padding:6px 14px;font-size:13px;font-weight:600;cursor:pointer;font-family:var(--font)}
+  .tab:hover{border-color:var(--accent)}
+  .tab.on{background:var(--accent);border-color:var(--accent);color:#fff}
+  .tab:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+  .tab.mini{padding:5px 11px;font-size:12.5px}
+  .sep{width:1px;height:22px;background:var(--border);margin:0 6px}
+  .card{background:var(--surface);border:1px solid var(--border);border-radius:16px;padding:20px;box-shadow:var(--shadow);min-width:0}
+  .card h2{font-size:15px;font-weight:700;margin-bottom:2px}
+  .card .cap{font-size:12.5px;color:var(--muted);margin-bottom:14px}
+  .grid{display:grid;grid-template-columns:repeat(12,1fr);gap:16px}
+  .col12{grid-column:span 12}.col6{grid-column:span 6}.col5{grid-column:span 5}.col7{grid-column:span 7}.col4{grid-column:span 4}.col8{grid-column:span 8}
+  .kpis{display:grid;grid-template-columns:repeat(6,1fr);gap:12px;margin-bottom:16px}
+  .kpi{background:var(--surface);border:1px solid var(--border);border-radius:14px;padding:13px 15px;box-shadow:var(--shadow)}
+  .kpi .k{font-size:11.5px;color:var(--muted);margin-bottom:6px;min-height:26px}
+  .kpi .v{font-size:20px;font-weight:800}
+  .kpi .e{font-size:12px;font-weight:700;margin-top:2px}
+  .up{color:var(--pos)}.down{color:var(--neg)}
+  .rows{display:flex;flex-direction:column;gap:10px}
+  .row{display:grid;grid-template-columns:120px 1fr auto;align-items:center;gap:12px}
+  .row .rl{font-size:13px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+  .track{position:relative;height:20px;background:var(--grid);border-radius:6px;overflow:hidden}
+  .fill{position:absolute;left:0;top:0;bottom:0;border-radius:6px;background:var(--accent)}
+  .fill.ghost{background:var(--faint);opacity:.5}
+  .row .rv{font-size:13px;font-weight:700;text-align:right;min-width:60px}
+  .rv small{font-weight:600;color:var(--muted)}
+  .legend{display:flex;flex-wrap:wrap;gap:14px;font-size:12px;color:var(--muted);margin-bottom:12px;align-items:center}
+  .sw{display:inline-block;width:11px;height:11px;border-radius:3px;vertical-align:-1px;margin-right:5px}
+  svg{width:100%;height:auto;display:block}
+  table{width:100%;border-collapse:collapse;font-size:13px}
+  th{text-align:right;padding:8px 10px;background:var(--accent);color:#fff;font-weight:700;font-size:12px}
+  th:first-child{text-align:left;border-radius:8px 0 0 8px}
+  th:last-child{border-radius:0 8px 8px 0}
+  td{padding:7px 10px;text-align:right;border-bottom:1px solid var(--grid)}
+  td:first-child{text-align:left;font-weight:600}
+  tr.hl td{background:var(--accent-soft);font-weight:700}
+  .note{font-size:12px;color:var(--muted);margin-top:10px}
+  .view{display:none}.view.on{display:block}
+  .tablewrap{overflow-x:auto}
+  @media (max-width:820px){
+    .kpis{grid-template-columns:repeat(2,1fr)}
+    .grid>[class*="col"]{grid-column:span 12}
+    .row{grid-template-columns:100px 1fr auto}
+  }
+  @media (prefers-reduced-motion:reduce){*{transition:none!important}}
+</style>
+
+<div class="wrap">
+  <header>
+    <div class="brand">
+      <div class="mark">K</div>
+      <div>
+        <h1>Client démo — Vue pluriannuelle</h1>
+        <div class="sub">Juin 2023 → Août 2026 · 39 mois · source Qweekle · CA net</div>
+      </div>
+    </div>
+  </header>
+
+  <nav id="nav" aria-label="Navigation des vues"></nav>
+
+  <div id="views"></div>
+</div>
+
+<script>
+const DATA={"mois": [{"mois": 1, "nom": "Janvier", "annees": {"2024": {"ca_net": 45424.15, "tickets": 2654, "visiteurs": 3649, "jours": 16, "panier": 17.53, "ca_jour": 2908.38, "anniv_fetes": 80, "anniv_ca": 8650.5, "cat": {"Activites": 27396.05, "Anniversaires": 8650.5, "Boissons": 3198.7, "Snack": 2431.4, "Confiseries": 1503, "BonsCadeaux": 226.5, "CE": 1985}}, "2025": {"ca_net": 38839.64, "tickets": 2223, "visiteurs": 3013, "jours": 15, "panier": 18.04, "ca_jour": 2673.84, "anniv_fetes": 61, "anniv_ca": 6457, "cat": {"Activites": 23213.5, "Anniversaires": 6457, "Boissons": 2965.88, "Snack": 1978.3, "Confiseries": 1206.8, "BonsCadeaux": -23.5, "CE": 2991.66}}, "2026": {"ca_net": 39506.18, "tickets": 2256, "visiteurs": 2970, "jours": 15, "panier": 19, "ca_jour": 2857.78, "anniv_fetes": 82, "anniv_ca": 10628, "cat": {"Activites": 21954.36, "Anniversaires": 9888.5, "Boissons": 2566.2, "Snack": 1660, "Confiseries": 1348, "BonsCadeaux": 73.5, "CE": 2015.62}}}, "moyenne": {"ca_net": 42131.9, "ca_min": 38839.64, "ca_max": 45424.15, "tickets": 2438, "visiteurs": 3331, "jours": 15.5, "panier": 17.78, "ca_jour": 2791.11, "anniv_fetes": 70, "anniv_ca": 7553.75, "nb_ref": 2, "cat": {"Activites": 25304.78, "Anniversaires": 7553.75, "Boissons": 3082.29, "Snack": 2204.85, "Confiseries": 1354.9, "BonsCadeaux": 101.5, "CE": 2488.33}}}, {"mois": 2, "nom": "Février", "annees": {"2024": {"ca_net": 53086.64, "tickets": 3088, "visiteurs": 4535, "jours": 15, "panier": 17.43, "ca_jour": 3588.11, "anniv_fetes": 99, "anniv_ca": 10989.5, "cat": {"Activites": 33523.9, "Anniversaires": 10820.5, "Boissons": 3549.6, "Snack": 2859, "Confiseries": 1885.4, "BonsCadeaux": -101, "CE": 519.24}}, "2025": {"ca_net": 70220.27, "tickets": 4068, "visiteurs": 6412, "jours": 20, "panier": 17.55, "ca_jour": 3570.06, "anniv_fetes": 67, "anniv_ca": 6755, "cat": {"Activites": 51633.7, "Anniversaires": 6755, "Boissons": 5312.2, "Snack": 4262.38, "Confiseries": 2015.92, "BonsCadeaux": -224, "CE": 454.07}}, "2026": {"ca_net": 75940.24, "tickets": 4326, "visiteurs": 6762, "jours": 20, "panier": 17.15, "ca_jour": 3709.34, "anniv_fetes": 77, "anniv_ca": 8829.5, "cat": {"Activites": 55758.24, "Anniversaires": 7544.5, "Boissons": 4934.3, "Snack": 4574.2, "Confiseries": 3451, "BonsCadeaux": -323, "CE": 0}}}, "moyenne": {"ca_net": 61653.46, "ca_min": 53086.64, "ca_max": 70220.27, "tickets": 3578, "visiteurs": 5474, "jours": 17.5, "panier": 17.49, "ca_jour": 3579.08, "anniv_fetes": 83, "anniv_ca": 8872.25, "nb_ref": 2, "cat": {"Activites": 42578.8, "Anniversaires": 8787.75, "Boissons": 4430.9, "Snack": 3560.69, "Confiseries": 1950.66, "BonsCadeaux": -162.5, "CE": 486.66}}}, {"mois": 3, "nom": "Mars", "annees": {"2024": {"ca_net": 60551.8, "tickets": 3431, "visiteurs": 5245, "jours": 19, "panier": 17.33, "ca_jour": 3129.52, "anniv_fetes": 85, "anniv_ca": 9043.5, "cat": {"Activites": 41586.9, "Anniversaires": 9043.5, "Boissons": 4332.1, "Snack": 3401.1, "Confiseries": 2140.8, "BonsCadeaux": 36.9, "CE": 0}}, "2025": {"ca_net": 35334.52, "tickets": 1701, "visiteurs": 2668, "jours": 14, "panier": 20.21, "ca_jour": 2456.04, "anniv_fetes": 97, "anniv_ca": 11173, "cat": {"Activites": 18291.9, "Anniversaires": 11173, "Boissons": 2388.98, "Snack": 1531.5, "Confiseries": 847.1, "BonsCadeaux": 149.5, "CE": 952.54}}, "2026": {"ca_net": 32356.3, "tickets": 1606, "visiteurs": 2373, "jours": 13, "panier": 19.53, "ca_jour": 2412.97, "anniv_fetes": 94, "anniv_ca": 12327.5, "cat": {"Activites": 16005.84, "Anniversaires": 12157.5, "Boissons": 1782.48, "Snack": 1353, "Confiseries": 1157.2, "BonsCadeaux": 69, "CE": -168.72}}}, "moyenne": {"ca_net": 47943.16, "ca_min": 35334.52, "ca_max": 60551.8, "tickets": 2566, "visiteurs": 3956, "jours": 16.5, "panier": 18.77, "ca_jour": 2792.78, "anniv_fetes": 91, "anniv_ca": 10108.25, "nb_ref": 2, "cat": {"Activites": 29939.4, "Anniversaires": 10108.25, "Boissons": 3360.54, "Snack": 2466.3, "Confiseries": 1493.95, "BonsCadeaux": 93.2, "CE": 952.54}}}, {"mois": 4, "nom": "Avril", "annees": {"2024": {"ca_net": 44664.52, "tickets": 2380, "visiteurs": 3751, "jours": 19, "panier": 18.7, "ca_jour": 2342.92, "anniv_fetes": 73, "anniv_ca": 8787, "cat": {"Activites": 28546.95, "Anniversaires": 8787, "Boissons": 2881.9, "Snack": 2248.5, "Confiseries": 1329.1, "BonsCadeaux": 83, "CE": 691.07}}, "2025": {"ca_net": 51634.37, "tickets": 2944, "visiteurs": 4639, "jours": 22, "panier": 17.45, "ca_jour": 2335.04, "anniv_fetes": 51, "anniv_ca": 5950, "cat": {"Activites": 36708.6, "Anniversaires": 5937, "Boissons": 3622.4, "Snack": 2671.1, "Confiseries": 1235.62, "BonsCadeaux": -246, "CE": 1705.65}}, "2026": {"ca_net": 44230.54, "tickets": 2534, "visiteurs": 3860, "jours": 22, "panier": 17.18, "ca_jour": 1978.98, "anniv_fetes": 42, "anniv_ca": 5250.5, "cat": {"Activites": 31276.35, "Anniversaires": 5250.5, "Boissons": 2733.82, "Snack": 2496.3, "Confiseries": 2149, "BonsCadeaux": -8.3, "CE": 332.87}}}, "moyenne": {"ca_net": 48149.44, "ca_min": 44664.52, "ca_max": 51634.37, "tickets": 2662, "visiteurs": 4195, "jours": 20.5, "panier": 18.08, "ca_jour": 2338.98, "anniv_fetes": 62, "anniv_ca": 7368.5, "nb_ref": 2, "cat": {"Activites": 32627.78, "Anniversaires": 7362, "Boissons": 3252.15, "Snack": 2459.8, "Confiseries": 1282.36, "BonsCadeaux": -81.5, "CE": 1198.36}}}, {"mois": 5, "nom": "Mai", "annees": {"2024": {"ca_net": 32902.95, "tickets": 1932, "visiteurs": 2753, "jours": 17, "panier": 17.53, "ca_jour": 1992.7, "anniv_fetes": 51, "anniv_ca": 5590, "cat": {"Activites": 21576.65, "Anniversaires": 5590, "Boissons": 2348.5, "Snack": 1960.5, "Confiseries": 998.9, "BonsCadeaux": 134, "CE": 287.4}}, "2025": {"ca_net": 28607.6, "tickets": 1442, "visiteurs": 2180, "jours": 16, "panier": 20.2, "ca_jour": 1820.6, "anniv_fetes": 64, "anniv_ca": 7533, "cat": {"Activites": 19910.84, "Anniversaires": 7458, "Boissons": 1795.06, "Snack": 1282.2, "Confiseries": 802.3, "BonsCadeaux": 103, "CE": -2743.8}}, "2026": {"ca_net": 30318.04, "tickets": 1866, "visiteurs": 2399, "jours": 17, "panier": 17.92, "ca_jour": 1966.59, "anniv_fetes": 42, "anniv_ca": 5453.4, "cat": {"Activites": 18914.75, "Anniversaires": 5531.4, "Boissons": 2251.5, "Snack": 1563.6, "Confiseries": 1352.06, "BonsCadeaux": 231.1, "CE": 473.63}}}, "moyenne": {"ca_net": 30755.28, "ca_min": 28607.6, "ca_max": 32902.95, "tickets": 1687, "visiteurs": 2466, "jours": 16.5, "panier": 18.87, "ca_jour": 1906.65, "anniv_fetes": 58, "anniv_ca": 6561.5, "nb_ref": 2, "cat": {"Activites": 20743.75, "Anniversaires": 6524, "Boissons": 2071.78, "Snack": 1621.35, "Confiseries": 900.6, "BonsCadeaux": 118.5, "CE": -1228.2}}}, {"mois": 6, "nom": "Juin", "annees": {"2023": {"ca_net": 23669.17, "tickets": 1084, "visiteurs": 1745, "jours": 12, "panier": 21.59, "ca_jour": 1950.1, "anniv_fetes": 99, "anniv_ca": 10265, "cat": {"Activites": 9807.25, "Anniversaires": 10148, "Boissons": 1353.5, "Snack": 1046.1, "Confiseries": 640.8, "BonsCadeaux": 240, "CE": 423.02}}, "2024": {"ca_net": 30548.05, "tickets": 1285, "visiteurs": 2307, "jours": 15, "panier": 22.82, "ca_jour": 1954.54, "anniv_fetes": 106, "anniv_ca": 11723, "cat": {"Activites": 14049.15, "Anniversaires": 11723, "Boissons": 1590.3, "Snack": 1044.1, "Confiseries": 914.9, "BonsCadeaux": 183, "CE": 1033.1}}, "2025": {"ca_net": 27930.36, "tickets": 1239, "visiteurs": 2070, "jours": 14, "panier": 21.75, "ca_jour": 1924.88, "anniv_fetes": 97, "anniv_ca": 11427.5, "cat": {"Activites": 13131.67, "Anniversaires": 11027.5, "Boissons": 1434.7, "Snack": 723.5, "Confiseries": 1070, "BonsCadeaux": 141.5, "CE": 401.49}}, "2026": {"ca_net": 24727.95, "tickets": 976, "visiteurs": 1610, "jours": 12, "panier": 22.73, "ca_jour": 1848.37, "anniv_fetes": 110, "anniv_ca": 14342.3, "cat": {"Activites": 8025.85, "Anniversaires": 14017.3, "Boissons": 1193.5, "Snack": 660.5, "Confiseries": 719.1, "BonsCadeaux": 111.7, "CE": 0}}}, "moyenne": {"ca_net": 27382.53, "ca_min": 23669.17, "ca_max": 30548.05, "tickets": 1203, "visiteurs": 2041, "jours": 13.7, "panier": 22.05, "ca_jour": 1943.17, "anniv_fetes": 101, "anniv_ca": 11138.5, "nb_ref": 3, "cat": {"Activites": 12329.36, "Anniversaires": 10966.17, "Boissons": 1459.5, "Snack": 937.9, "Confiseries": 875.23, "BonsCadeaux": 188.17, "CE": 619.2}}}, {"mois": 7, "nom": "Juillet", "annees": {"2023": {"ca_net": 57131.46, "tickets": 3362, "visiteurs": 5095, "jours": 27, "panier": 16.44, "ca_jour": 2046.79, "anniv_fetes": 60, "anniv_ca": 6114.5, "cat": {"Activites": 40633.85, "Anniversaires": 6114.5, "Boissons": 4316, "Snack": 3713.3, "Confiseries": 1985, "BonsCadeaux": -170, "CE": 521.31}}, "2024": {"ca_net": 53981.17, "tickets": 2571, "visiteurs": 4047, "jours": 26, "panier": 20.6, "ca_jour": 2036.81, "anniv_fetes": 46, "anniv_ca": 5500, "cat": {"Activites": 33014.8, "Anniversaires": 5500, "Boissons": 3080.3, "Snack": 2156.8, "Confiseries": 1662.7, "BonsCadeaux": 385, "CE": 7958.57}}, "2025": {"ca_net": 60677.25, "tickets": 3199, "visiteurs": 4961, "jours": 28, "panier": 18.65, "ca_jour": 2130.9, "anniv_fetes": 44, "anniv_ca": 4726, "cat": {"Activites": 40652.99, "Anniversaires": 4544, "Boissons": 4134.04, "Snack": 2866, "Confiseries": 2763.9, "BonsCadeaux": 112, "CE": 5604.32}}, "2026": {"ca_net": 40493.86, "tickets": 2271, "visiteurs": 3455, "jours": 29, "panier": 17.39, "ca_jour": 1361.83, "anniv_fetes": 41, "anniv_ca": 5619.2, "cat": {"Activites": 27896.25, "Anniversaires": 5103.7, "Boissons": 2570.2, "Snack": 2557.96, "Confiseries": 2096.45, "BonsCadeaux": 270.3, "CE": 0}}}, "moyenne": {"ca_net": 57263.29, "ca_min": 53981.17, "ca_max": 60677.25, "tickets": 3044, "visiteurs": 4701, "jours": 27, "panier": 18.56, "ca_jour": 2071.5, "anniv_fetes": 50, "anniv_ca": 5446.83, "nb_ref": 3, "cat": {"Activites": 38100.55, "Anniversaires": 5386.17, "Boissons": 3843.45, "Snack": 2912.03, "Confiseries": 2137.2, "BonsCadeaux": 109, "CE": 4694.73}}}, {"mois": 8, "nom": "Août", "annees": {"2023": {"ca_net": 68662.31, "tickets": 3951, "visiteurs": 5711, "jours": 31, "panier": 17.41, "ca_jour": 2219.43, "anniv_fetes": 3, "anniv_ca": 241.5, "cat": {"Activites": 50574.25, "Anniversaires": 241.5, "Boissons": 5056.9, "Snack": 4812.4, "Confiseries": 2080.2, "BonsCadeaux": -142, "CE": 3258.06}}, "2024": {"ca_net": 45097.74, "tickets": 2717, "visiteurs": 4047, "jours": 31, "panier": 16.66, "ca_jour": 1460.12, "anniv_fetes": 12, "anniv_ca": 1122, "cat": {"Activites": 36004.8, "Anniversaires": 1122, "Boissons": 3072.3, "Snack": 2905.1, "Confiseries": 1445.7, "BonsCadeaux": -190, "CE": 713.34}}, "2025": {"ca_net": 51025.69, "tickets": 3315, "visiteurs": 4793, "jours": 31, "panier": 15.46, "ca_jour": 1653.44, "anniv_fetes": 12, "anniv_ca": 1346.5, "cat": {"Activites": 39844.1, "Anniversaires": 1346.5, "Boissons": 3854.2, "Snack": 2840, "Confiseries": 2526.3, "BonsCadeaux": 70, "CE": 544.59}}, "2026": {"ca_net": 53635.66, "tickets": 3563, "visiteurs": 4712, "jours": 31, "panier": 15.21, "ca_jour": 1748.19, "anniv_fetes": 9, "anniv_ca": 1131.3, "cat": {"Activites": 42116.74, "Anniversaires": 1131.3, "Boissons": 4180.54, "Snack": 3738.68, "Confiseries": 2569.2, "BonsCadeaux": -100.8, "CE": 0}}}, "moyenne": {"ca_net": 54928.58, "ca_min": 45097.74, "ca_max": 68662.31, "tickets": 3328, "visiteurs": 4850, "jours": 31, "panier": 16.51, "ca_jour": 1777.66, "anniv_fetes": 9, "anniv_ca": 903.33, "nb_ref": 3, "cat": {"Activites": 42141.05, "Anniversaires": 903.33, "Boissons": 3994.47, "Snack": 3519.17, "Confiseries": 2017.4, "BonsCadeaux": -87.33, "CE": 1505.33}}}, {"mois": 9, "nom": "Septembre", "annees": {"2023": {"ca_net": 25638.94, "tickets": 1258, "visiteurs": 1823, "jours": 14, "panier": 21.12, "ca_jour": 1897.57, "anniv_fetes": 72, "anniv_ca": 7894, "cat": {"Activites": 12084.2, "Anniversaires": 7816, "Boissons": 1491.8, "Snack": 1252.7, "Confiseries": 504.5, "BonsCadeaux": 185, "CE": 2267.04}}, "2024": {"ca_net": 24655.7, "tickets": 1468, "visiteurs": 1867, "jours": 13, "panier": 17.68, "ca_jour": 1996.55, "anniv_fetes": 58, "anniv_ca": 6656.5, "cat": {"Activites": 13239.4, "Anniversaires": 6656.5, "Boissons": 2098.6, "Snack": 1622, "Confiseries": 705.3, "BonsCadeaux": 106, "CE": 224.4}}, "2025": {"ca_net": 26962.54, "tickets": 1499, "visiteurs": 2055, "jours": 12, "panier": 19.19, "ca_jour": 2397, "anniv_fetes": 50, "anniv_ca": 6838.2, "cat": {"Activites": 14647.94, "Anniversaires": 6680.7, "Boissons": 1923.5, "Snack": 1150.2, "Confiseries": 1162.7, "BonsCadeaux": 75.5, "CE": 1322}}}, "moyenne": {"ca_net": 25752.39, "ca_min": 24655.7, "ca_max": 26962.54, "tickets": 1408, "visiteurs": 1915, "jours": 13, "panier": 19.33, "ca_jour": 2097.04, "anniv_fetes": 60, "anniv_ca": 7129.57, "nb_ref": 3, "cat": {"Activites": 13323.85, "Anniversaires": 7051.07, "Boissons": 1837.97, "Snack": 1341.63, "Confiseries": 790.83, "BonsCadeaux": 122.17, "CE": 1271.15}}}, {"mois": 10, "nom": "Octobre", "annees": {"2023": {"ca_net": 56881.7, "tickets": 2817, "visiteurs": 4404, "jours": 20, "panier": 20.63, "ca_jour": 2905.19, "anniv_fetes": 87, "anniv_ca": 10065, "cat": {"Activites": 32965.15, "Anniversaires": 9853, "Boissons": 3377.8, "Snack": 3049.5, "Confiseries": 1532.5, "BonsCadeaux": 447, "CE": 5588.55}}, "2024": {"ca_net": 69534.37, "tickets": 3302, "visiteurs": 5286, "jours": 20, "panier": 21.42, "ca_jour": 3535.84, "anniv_fetes": 91, "anniv_ca": 9559.5, "cat": {"Activites": 40806.75, "Anniversaires": 9360.5, "Boissons": 3502.36, "Snack": 2961.8, "Confiseries": 2103.8, "BonsCadeaux": 109.2, "CE": 10659.96}}, "2025": {"ca_net": 76982.14, "tickets": 3838, "visiteurs": 6783, "jours": 21, "panier": 20.41, "ca_jour": 3730.48, "anniv_fetes": 86, "anniv_ca": 10697, "cat": {"Activites": 51563.91, "Anniversaires": 10919, "Boissons": 4075.6, "Snack": 3602.7, "Confiseries": 2517.44, "BonsCadeaux": -159, "CE": 3462.49}}}, "moyenne": {"ca_net": 67799.4, "ca_min": 56881.7, "ca_max": 76982.14, "tickets": 3319, "visiteurs": 5491, "jours": 20.3, "panier": 20.82, "ca_jour": 3390.5, "anniv_fetes": 88, "anniv_ca": 10107.17, "nb_ref": 3, "cat": {"Activites": 41778.6, "Anniversaires": 10044.17, "Boissons": 3651.92, "Snack": 3204.67, "Confiseries": 2051.25, "BonsCadeaux": 132.4, "CE": 6570.33}}}, {"mois": 11, "nom": "Novembre", "annees": {"2023": {"ca_net": 40516, "tickets": 2145, "visiteurs": 3465, "jours": 15, "panier": 18.49, "ca_jour": 2643.47, "anniv_fetes": 109, "anniv_ca": 11312, "cat": {"Activites": 23537.7, "Anniversaires": 11221, "Boissons": 2629.3, "Snack": 1739, "Confiseries": 1077.9, "BonsCadeaux": -79, "CE": 346.1}}, "2024": {"ca_net": 43291.19, "tickets": 1853, "visiteurs": 3184, "jours": 17, "panier": 21.6, "ca_jour": 2354.83, "anniv_fetes": 116, "anniv_ca": 12867, "cat": {"Activites": 21975, "Anniversaires": 12789, "Boissons": 2549.34, "Snack": 1550, "Confiseries": 970.02, "BonsCadeaux": 313.8, "CE": 3144.03}}, "2025": {"ca_net": 46338.03, "tickets": 1838, "visiteurs": 2851, "jours": 15, "panier": 24.73, "ca_jour": 3030.24, "anniv_fetes": 92, "anniv_ca": 11694, "cat": {"Activites": 22059.51, "Anniversaires": 11682, "Boissons": 2534.08, "Snack": 1428.9, "Confiseries": 1168.28, "BonsCadeaux": -31, "CE": 7496.26}}}, "moyenne": {"ca_net": 43381.74, "ca_min": 40516, "ca_max": 46338.03, "tickets": 1945, "visiteurs": 3167, "jours": 15.7, "panier": 21.61, "ca_jour": 2676.18, "anniv_fetes": 106, "anniv_ca": 11957.67, "nb_ref": 3, "cat": {"Activites": 22524.07, "Anniversaires": 11897.33, "Boissons": 2570.91, "Snack": 1572.63, "Confiseries": 1072.07, "BonsCadeaux": 67.93, "CE": 3662.13}}}, {"mois": 12, "nom": "Décembre", "annees": {"2023": {"ca_net": 68147.59, "tickets": 1952, "visiteurs": 2691, "jours": 15, "panier": 34.58, "ca_jour": 4500.04, "anniv_fetes": 74, "anniv_ca": 8127.5, "cat": {"Activites": 20689.65, "Anniversaires": 8127.5, "Boissons": 2550.7, "Snack": 2078, "Confiseries": 927.4, "BonsCadeaux": 747, "CE": 32995.84}}, "2024": {"ca_net": 62446.96, "tickets": 1987, "visiteurs": 2869, "jours": 17, "panier": 30.97, "ca_jour": 3619.76, "anniv_fetes": 60, "anniv_ca": 5982, "cat": {"Activites": 23364.12, "Anniversaires": 5910, "Boissons": 2673.42, "Snack": 1229.02, "Confiseries": 916.2, "BonsCadeaux": 699, "CE": 26655.2}}, "2025": {"ca_net": 44899.4, "tickets": 1993, "visiteurs": 3068, "jours": 16, "panier": 21.17, "ca_jour": 2637.18, "anniv_fetes": 59, "anniv_ca": 7184.5, "cat": {"Activites": 30512.37, "Anniversaires": 7214, "Boissons": 2667.3, "Snack": 1404.7, "Confiseries": 1272.5, "BonsCadeaux": 853, "CE": 826.53}}}, "moyenne": {"ca_net": 58497.98, "ca_min": 44899.4, "ca_max": 68147.59, "tickets": 1977, "visiteurs": 2876, "jours": 16, "panier": 28.91, "ca_jour": 3585.66, "anniv_fetes": 64, "anniv_ca": 7098, "nb_ref": 3, "cat": {"Activites": 24855.38, "Anniversaires": 7083.83, "Boissons": 2630.47, "Snack": 1570.57, "Confiseries": 1038.7, "BonsCadeaux": 766.33, "CE": 20159.19}}}], "annees": [{"annee": 2023, "nb_mois": 5, "ca_net": 267067.38, "tickets": 12990, "visiteurs": 19548, "jours": 105, "anniv_fetes": 395, "anniv_ca": 42351.29, "panier": 16.06, "cat": {"Activites": 149188.97, "Anniversaires": 41960.86, "Boissons": 16288, "Snack": 13870, "Confiseries": 6858.67, "BonsCadeaux": 963, "CE": 35593.54}, "mensuel": [{"m": 5, "ca": 18556.63, "tickets": 850}, {"m": 5, "ca": 44791.06, "tickets": 2636}, {"m": 6, "ca": 53831.25, "tickets": 3098}, {"m": 7, "ca": 20100.93, "tickets": 986}, {"m": 8, "ca": 44595.25, "tickets": 2209}, {"m": 9, "ca": 31765, "tickets": 1682}, {"m": 9, "ca": 53427.71, "tickets": 1530}]}, {"annee": 2024, "nb_mois": 9, "ca_net": 443889.23, "tickets": 22476, "visiteurs": 34135, "jours": 176, "anniv_fetes": 688, "anniv_ca": 75632.87, "panier": 15.42, "cat": {"Activites": 262706.22, "Anniversaires": 75226.76, "Boissons": 27343.9, "Snack": 20673.55, "Confiseries": 12995.44, "BonsCadeaux": 1556.55, "CE": 42235.11}, "mensuel": [{"m": 1, "ca": 35612.53, "tickets": 2081}, {"m": 2, "ca": 41619.93, "tickets": 2421}, {"m": 2, "ca": 47472.61, "tickets": 2690}, {"m": 3, "ca": 35016.98, "tickets": 1866}, {"m": 4, "ca": 25795.91, "tickets": 1515}, {"m": 5, "ca": 23949.67, "tickets": 1007}, {"m": 5, "ca": 42321.24, "tickets": 2016}, {"m": 6, "ca": 35356.63, "tickets": 2130}, {"m": 7, "ca": 19330.07, "tickets": 1151}, {"m": 8, "ca": 54514.95, "tickets": 2589}, {"m": 9, "ca": 33940.29, "tickets": 1453}, {"m": 9, "ca": 48958.42, "tickets": 1558}]}, {"annee": 2025, "nb_mois": 9, "ca_net": 438610.22, "tickets": 22970, "visiteurs": 35667, "jours": 176, "anniv_fetes": 612, "anniv_ca": 71956.85, "panier": 14.96, "cat": {"Activites": 283942.09, "Anniversaires": 71495.86, "Boissons": 28779.02, "Snack": 20181.32, "Confiseries": 14573.67, "BonsCadeaux": 644, "CE": 18045.96}, "mensuel": [{"m": 1, "ca": 30450.28, "tickets": 1743}, {"m": 2, "ca": 55052.69, "tickets": 3189}, {"m": 2, "ca": 27702.26, "tickets": 1334}, {"m": 3, "ca": 40481.35, "tickets": 2308}, {"m": 4, "ca": 22428.36, "tickets": 1131}, {"m": 5, "ca": 21897.4, "tickets": 971}, {"m": 5, "ca": 47570.96, "tickets": 2508}, {"m": 6, "ca": 40004.14, "tickets": 2599}, {"m": 7, "ca": 21138.63, "tickets": 1175}, {"m": 8, "ca": 60354.0, "tickets": 3009}, {"m": 9, "ca": 36329.02, "tickets": 1441}, {"m": 9, "ca": 35201.13, "tickets": 1563}]}, {"annee": 2026, "nb_mois": 6, "ca_net": 267507.68, "tickets": 15208, "visiteurs": 22063, "jours": 125, "anniv_fetes": 390, "anniv_ca": 49848.05, "panier": 13.79, "cat": {"Activites": 174007.53, "Anniversaires": 47529.76, "Boissons": 17414.63, "Snack": 14585.72, "Confiseries": 11636.14, "BonsCadeaux": 253.62, "CE": 2080.27}, "mensuel": [{"m": 1, "ca": 30972.85, "tickets": 1769}, {"m": 2, "ca": 59537.15, "tickets": 3392}, {"m": 2, "ca": 25367.34, "tickets": 1259}, {"m": 3, "ca": 34676.74, "tickets": 1987}, {"m": 4, "ca": 23769.34, "tickets": 1463}, {"m": 5, "ca": 19386.71, "tickets": 765}, {"m": 5, "ca": 31747.19, "tickets": 1780}, {"m": 6, "ca": 42050.36, "tickets": 2793}]}]};
+const MN=['','Janvier','Février','Mars','Avril','Mai','Juin','Juillet','Août','Septembre','Octobre','Novembre','Décembre'];
+const MA=['','Janv','Févr','Mars','Avr','Mai','Juin','Juil','Août','Sept','Oct','Nov','Déc'];
+const eur0=v=>Math.round(v).toLocaleString('fr-FR')+' €';
+const eurK=v=>(v>=1000?(v/1000).toLocaleString('fr-FR',{maximumFractionDigits:1})+' k€':Math.round(v)+' €');
+const num=v=>Math.round(v).toLocaleString('fr-FR');
+const pct=f=>f===null||f===undefined?'—':(f>=0?'+':'')+(f*100).toFixed(1).replace('.',',')+' %';
+const CATLABEL={Activites:'Activités',Anniversaires:'Anniversaires',Boissons:'Boissons',Snack:'Snack',Confiseries:'Confiseries / Glaces',BonsCadeaux:'Bons cadeaux',CE:'CE / Entreprises'};
+const YCOL={2023:'var(--y23)',2024:'var(--y24)',2025:'var(--y25)',2026:'var(--y26)'};
+
+/* ---------- nav ---------- */
+const views=[{id:'sais',label:'📈 Saisonnier'}];
+DATA.mois.forEach(m=>views.push({id:'m'+m.mois,label:MA[m.mois],mini:true}));
+DATA.annees.forEach(a=>views.push({id:'y'+a.annee,label:String(a.annee)+(a.nb_mois<12?'*':'')}));
+const nav=document.getElementById('nav');
+nav.innerHTML='<span class="nlab">Vue</span>'+views.map((v,i)=>{
+  let pre='';
+  if(i===1)pre='<span class="sep"></span><span class="nlab">Mois type</span>';
+  if(v.id==='y2023')pre='<span class="sep"></span><span class="nlab">Années</span>';
+  return pre+`<button class="tab${v.mini?' mini':''}${i===0?' on':''}" data-v="${v.id}">${v.label}</button>`;
+}).join('');
+nav.addEventListener('click',e=>{
+  const b=e.target.closest('.tab'); if(!b)return;
+  document.querySelectorAll('.tab').forEach(t=>t.classList.remove('on'));
+  b.classList.add('on');
+  document.querySelectorAll('.view').forEach(v=>v.classList.remove('on'));
+  document.getElementById('v-'+b.dataset.v).classList.add('on');
+});
+
+/* ---------- container ---------- */
+const V=document.getElementById('views');
+function view(id,html,on){const d=document.createElement('div');d.className='view'+(on?' on':'');d.id='v-'+id;d.innerHTML=html;V.appendChild(d);return d}
+
+/* ---------- Vue saisonnière ---------- */
+(function(){
+  const W=1120,H=360,pT=30,pB=40,pL=52,pR=8;
+  const maxCA=Math.max(...DATA.mois.map(m=>Math.max(m.moyenne.ca_max||0,...(Object.values(m.annees).map(a=>a.ca_net)))))*1.06;
+  const y=v=>pT+(H-pT-pB)*(1-v/maxCA);
+  const bw=(W-pL-pR)/12;
+  let svg='';
+  for(let g=0;g<=4;g++){const gv=maxCA*g/4;svg+=`<line x1="${pL}" y1="${y(gv)}" x2="${W-pR}" y2="${y(gv)}" style="stroke:var(--grid)"/><text x="${pL-6}" y="${y(gv)+4}" text-anchor="end" font-size="10.5" style="fill:var(--faint)">${eurK(gv)}</text>`;}
+  DATA.mois.forEach((m,i)=>{
+    const x=pL+i*bw;
+    if(m.moyenne.ca_net){
+      const bx=x+bw*0.22,bwid=bw*0.42;
+      svg+=`<rect x="${bx}" y="${y(m.moyenne.ca_net)}" width="${bwid}" height="${y(0)-y(m.moyenne.ca_net)}" rx="4" style="fill:var(--accent)" opacity=".82"/>`;
+      svg+=`<line x1="${bx+bwid/2}" y1="${y(m.moyenne.ca_min)}" x2="${bx+bwid/2}" y2="${y(m.moyenne.ca_max)}" style="stroke:var(--ink)" stroke-width="1.4" opacity=".45"/>`;
+      svg+=`<line x1="${bx+bwid/2-5}" y1="${y(m.moyenne.ca_min)}" x2="${bx+bwid/2+5}" y2="${y(m.moyenne.ca_min)}" style="stroke:var(--ink)" stroke-width="1.4" opacity=".45"/>`;
+      svg+=`<line x1="${bx+bwid/2-5}" y1="${y(m.moyenne.ca_max)}" x2="${bx+bwid/2+5}" y2="${y(m.moyenne.ca_max)}" style="stroke:var(--ink)" stroke-width="1.4" opacity=".45"/>`;
+    }
+    const a26=m.annees['2026'];
+    if(a26){const cx=x+bw*0.78;svg+=`<circle cx="${cx}" cy="${y(a26.ca_net)}" r="5" style="fill:var(--y26)"/><line x1="${cx}" y1="${y(0)}" x2="${cx}" y2="${y(a26.ca_net)}" style="stroke:var(--y26)" stroke-width="1.6" opacity=".4"/>`;}
+    svg+=`<text x="${x+bw/2}" y="${H-pB+16}" text-anchor="middle" font-size="11.5" style="fill:var(--muted)">${MA[m.mois]}</text>`;
+  });
+  const rowsHtml=DATA.mois.filter(m=>m.moyenne.ca_net).map(m=>{
+    const a26=m.annees['2026'];
+    return `<tr><td>${MN[m.mois]}</td><td class="tnum">${eur0(m.moyenne.ca_net)}</td><td class="tnum">${eur0(m.moyenne.ca_min)} – ${eur0(m.moyenne.ca_max)}</td><td class="tnum">${num(m.moyenne.tickets)}</td><td class="tnum">${num(m.moyenne.visiteurs)}</td><td class="tnum">${m.moyenne.panier.toLocaleString('fr-FR',{minimumFractionDigits:2})} €</td><td class="tnum">${m.moyenne.anniv_fetes}</td><td class="tnum">${a26?eur0(a26.ca_net):'—'}</td><td class="tnum ${a26?(a26.ca_net>=m.moyenne.ca_net?'up':'down'):''}">${a26?pct((a26.ca_net-m.moyenne.ca_net)/m.moyenne.ca_net):'—'}</td></tr>`;
+  }).join('');
+  view('sais',`
+    <div class="card col12" style="margin-bottom:16px">
+      <h2>Profil saisonnier — CA net moyen par mois (2023-2025)</h2>
+      <div class="cap">Barres = moyenne 3 ans · moustaches = min-max · points orange = réalisé 2026.</div>
+      <div class="legend"><span><span class="sw" style="background:var(--accent)"></span>Moyenne 23-25</span><span><span class="sw" style="background:var(--y26)"></span>2026</span></div>
+      <svg viewBox="0 0 ${W} ${H}" role="img" aria-label="CA moyen par mois">${svg}</svg>
+      <div class="note">Deux saisons hautes : l'hiver-vacances (févr, déc) et l'automne (oct) ; l'été (juil-août, ouverture 7j/7) ; creux structurels : mai, juin, sept. Janv et mars dépendent du placement des vacances.</div>
+    </div>
+    <div class="card col12">
+      <h2>Mois types — moyennes 2023-2025</h2>
+      <div class="cap">Référentiel : cliquer un mois dans la barre de navigation pour sa fiche détaillée.</div>
+      <div class="tablewrap"><table>
+        <tr><th>Mois</th><th>CA net moyen</th><th>Fourchette</th><th>Tickets</th><th>Visiteurs</th><th>Panier</th><th>Fêtes anniv</th><th>2026 réalisé</th><th>2026 vs moy.</th></tr>
+        ${rowsHtml}
+      </table></div>
+    </div>`,true);
+})();
+
+/* ---------- Fiches mois type ---------- */
+DATA.mois.forEach(m=>{
+  const avg=m.moyenne;
+  if(!avg.ca_net){view('m'+m.mois,`<div class="card"><h2>${MN[m.mois]}</h2><div class="cap">Pas de données de référence.</div></div>`);return;}
+  const years=[2023,2024,2025,2026].filter(y=>m.annees[String(y)]);
+  const maxY=Math.max(...years.map(y=>m.annees[String(y)].ca_net));
+  const yearBars=years.map(y=>{
+    const a=m.annees[String(y)];
+    return `<div class="row"><div class="rl">${y}${y===2026?' ←':''}</div><div class="track"><div class="fill" style="width:${Math.max(2,100*a.ca_net/maxY)}%;background:${YCOL[y]}"></div></div><div class="rv tnum">${eurK(a.ca_net)}</div></div>`;
+  }).join('');
+  const cats=Object.keys(avg.cat).filter(k=>avg.cat[k]>0).sort((a,b)=>avg.cat[b]-avg.cat[a]);
+  const maxC=Math.max(...cats.map(k=>avg.cat[k]));
+  const catBars=cats.map(k=>`<div class="row"><div class="rl">${CATLABEL[k]}</div><div class="track"><div class="fill" style="width:${Math.max(2,100*avg.cat[k]/maxC)}%"></div></div><div class="rv tnum">${eurK(avg.cat[k])} <small>${Math.round(100*avg.cat[k]/avg.ca_net)}%</small></div></div>`).join('');
+  const a26=m.annees['2026'];
+  view('m'+m.mois,`
+    <div class="kpis">
+      <div class="kpi"><div class="k">CA net moyen (23-25)</div><div class="v tnum">${eur0(avg.ca_net)}</div><div class="e" style="color:var(--muted)">${avg.nb_ref} années réf.</div></div>
+      <div class="kpi"><div class="k">Fourchette</div><div class="v tnum" style="font-size:15px;line-height:1.8">${eurK(avg.ca_min)} – ${eurK(avg.ca_max)}</div></div>
+      <div class="kpi"><div class="k">Tickets moyens</div><div class="v tnum">${num(avg.tickets)}</div></div>
+      <div class="kpi"><div class="k">Visiteurs moyens</div><div class="v tnum">${num(avg.visiteurs)}</div></div>
+      <div class="kpi"><div class="k">Panier moyen</div><div class="v tnum">${avg.panier.toLocaleString('fr-FR',{minimumFractionDigits:2})} €</div></div>
+      <div class="kpi"><div class="k">Fêtes anniv (moy.)</div><div class="v tnum">${avg.anniv_fetes}</div><div class="e" style="color:var(--muted)">${eurK(avg.anniv_ca)}</div></div>
+    </div>
+    <div class="grid">
+      <div class="card col6">
+        <h2>${MN[m.mois]} — année par année</h2>
+        <div class="cap">CA net réalisé chaque année.${a26?` 2026 : <b class="${a26.ca_net>=avg.ca_net?'up':'down'}">${pct((a26.ca_net-avg.ca_net)/avg.ca_net)} vs moyenne</b>.`:''}</div>
+        <div class="rows">${yearBars}</div>
+        <div class="note">Jours d'ouverture moyens : ${avg.jours} · CA/jour ouvré moyen : ${eur0(avg.ca_jour)}</div>
+      </div>
+      <div class="card col6">
+        <h2>Mix moyen par catégorie</h2>
+        <div class="cap">Structure type du CA d'un mois de ${MN[m.mois].toLowerCase()} (moyenne 23-25).</div>
+        <div class="rows">${catBars}</div>
+      </div>
+    </div>`);
+});
+
+/* ---------- Vues annuelles ---------- */
+DATA.annees.forEach(a=>{
+  const prev=DATA.annees.find(p=>p.annee===a.annee-1);
+  let compHtml='';
+  if(prev){
+    const common=a.mensuel.map(x=>x.m).filter(mm=>prev.mensuel.some(p=>p.m===mm));
+    const sumA=a.mensuel.filter(x=>common.includes(x.m)).reduce((s,x)=>s+x.ca,0);
+    const sumP=prev.mensuel.filter(x=>common.includes(x.m)).reduce((s,x)=>s+x.ca,0);
+    const f=(sumA-sumP)/sumP;
+    compHtml=`<div class="e ${f>=0?'up':'down'}">${pct(f)} vs ${prev.annee} à périmètre égal (${common.length} mois)</div>`;
+  }
+  const W=1120,H=260,pT=24,pB=34,pL=52,pR=8;
+  const allCA=a.mensuel.map(x=>x.ca);
+  const maxCA=Math.max(...allCA)*1.12;
+  const y=v=>pT+(H-pT-pB)*(1-v/maxCA);
+  const bw=(W-pL-pR)/12;
+  let svg='';
+  for(let g=0;g<=3;g++){const gv=maxCA*g/3;svg+=`<line x1="${pL}" y1="${y(gv)}" x2="${W-pR}" y2="${y(gv)}" style="stroke:var(--grid)"/><text x="${pL-6}" y="${y(gv)+4}" text-anchor="end" font-size="10.5" style="fill:var(--faint)">${eurK(gv)}</text>`;}
+  for(let mm=1;mm<=12;mm++){
+    const x=pL+(mm-1)*bw;
+    const d=a.mensuel.find(z=>z.m===mm);
+    if(d){svg+=`<rect x="${x+bw*0.2}" y="${y(d.ca)}" width="${bw*0.6}" height="${y(0)-y(d.ca)}" rx="4" style="fill:${YCOL[a.annee]}"/><text x="${x+bw/2}" y="${y(d.ca)-6}" text-anchor="middle" font-size="10.5" font-weight="700" style="fill:var(--muted)">${eurK(d.ca)}</text>`;}
+    svg+=`<text x="${x+bw/2}" y="${H-pB+15}" text-anchor="middle" font-size="11" style="fill:var(--muted)">${MA[mm]}</text>`;
+  }
+  const sorted=[...a.mensuel].sort((x,z)=>z.ca-x.ca);
+  const top3=sorted.slice(0,3), flop3=sorted.slice(-3).reverse();
+  const cats=Object.keys(a.cat).filter(k=>a.cat[k]>0).sort((x,z)=>a.cat[z]-a.cat[x]);
+  const maxC=Math.max(...cats.map(k=>a.cat[k]));
+  const catBars=cats.map(k=>`<div class="row"><div class="rl">${CATLABEL[k]}</div><div class="track"><div class="fill" style="width:${Math.max(2,100*a.cat[k]/maxC)}%"></div></div><div class="rv tnum">${eurK(a.cat[k])} <small>${Math.round(100*a.cat[k]/a.ca_net)}%</small></div></div>`).join('');
+  view('y'+a.annee,`
+    <div class="kpis">
+      <div class="kpi"><div class="k">CA net ${a.annee}${a.nb_mois<12?' ('+a.nb_mois+' mois)':''}</div><div class="v tnum">${eurK(a.ca_net)}</div>${compHtml}</div>
+      <div class="kpi"><div class="k">Tickets</div><div class="v tnum">${num(a.tickets)}</div></div>
+      <div class="kpi"><div class="k">Visiteurs</div><div class="v tnum">${num(a.visiteurs)}</div></div>
+      <div class="kpi"><div class="k">Panier moyen</div><div class="v tnum">${a.panier.toLocaleString('fr-FR',{minimumFractionDigits:2})} €</div></div>
+      <div class="kpi"><div class="k">Fêtes d'anniversaire</div><div class="v tnum">${num(a.anniv_fetes)}</div><div class="e" style="color:var(--muted)">${eurK(a.anniv_ca)}</div></div>
+      <div class="kpi"><div class="k">Jours ouverts</div><div class="v tnum">${num(a.jours)}</div></div>
+    </div>
+    <div class="card col12" style="margin-bottom:16px">
+      <h2>${a.annee} — CA net mois par mois</h2>
+      <div class="cap">${a.nb_mois<12?'Année partielle : '+a.nb_mois+' mois couverts.':'Année complète.'}</div>
+      <svg viewBox="0 0 ${W} ${H}" role="img" aria-label="CA mensuel ${a.annee}">${svg}</svg>
+    </div>
+    <div class="grid">
+      <div class="card col6">
+        <h2>Mix par catégorie</h2>
+        <div class="cap">Structure du CA ${a.annee}.</div>
+        <div class="rows">${catBars}</div>
+      </div>
+      <div class="card col6">
+        <h2>Meilleurs / plus faibles mois</h2>
+        <div class="cap">CA net ${a.annee}.</div>
+        <div class="rows">
+          ${top3.map((x,i)=>`<div class="row"><div class="rl">🏆 ${MN[x.m]}</div><div class="track"><div class="fill" style="width:${100*x.ca/sorted[0].ca}%;background:var(--pos)"></div></div><div class="rv tnum">${eurK(x.ca)}</div></div>`).join('')}
+          ${flop3.map(x=>`<div class="row"><div class="rl">▽ ${MN[x.m]}</div><div class="track"><div class="fill" style="width:${Math.max(2,100*x.ca/sorted[0].ca)}%;background:var(--neg)"></div></div><div class="rv tnum">${eurK(x.ca)}</div></div>`).join('')}
+        </div>
+        <div class="note">Panier moyen ${a.annee} : ${a.panier.toLocaleString('fr-FR',{minimumFractionDigits:2})} € · ${num(a.visiteurs)} visiteurs sur ${num(a.jours)} jours ouverts.</div>
+      </div>
+    </div>`);
+});
+</script>

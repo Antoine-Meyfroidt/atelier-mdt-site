@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Contact — Atelier MDT</title>
+<meta name="description" content="Trente minutes gratuites en visio pour identifier la tâche qui vous coûte le plus de temps. Devis écrit, sans engagement.">
+<meta name="theme-color" content="#10233F">
+<link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32.png">
+<link rel="apple-touch-icon" sizes="180x180" href="assets/favicon-180.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{--nuit:#10233F;--panneau:#182F52;--ambre:#F5B62E;--sourd:#9FB0C8;--trait:#2A4470;--froid:#E9EEF6}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{background:var(--nuit);color:var(--froid);font-family:'Manrope',system-ui,-apple-system,sans-serif;line-height:1.6;font-size:16px;-webkit-font-smoothing:antialiased}
+a{color:inherit}
+.in{max-width:900px;margin:0 auto;padding:0 22px}
+nav{position:sticky;top:0;z-index:20;background:rgba(16,35,63,.92);backdrop-filter:blur(8px);border-bottom:1px solid var(--trait)}
+nav .in{display:flex;align-items:center;justify-content:space-between;gap:14px;padding:13px 22px}
+nav .brand{display:flex;align-items:center;gap:10px;text-decoration:none}
+nav .brand svg{color:var(--ambre);flex:none}
+nav .brand span{font-size:16px;font-weight:800;letter-spacing:-.025em}
+nav .links{display:flex;align-items:center;gap:20px}
+nav .links a{color:var(--sourd);text-decoration:none;font-size:13.5px;font-weight:600}
+nav .links a:hover,nav .links a.on{color:var(--froid)}
+nav .cta{background:var(--ambre)!important;color:#1A1608!important;padding:9px 15px;border-radius:5px;font-weight:800!important}
+@media(max-width:660px){nav .links a:not(.cta){display:none}}
+header.h{padding:60px 0 6px}
+header.h .eyebrow{font-size:11.5px;font-weight:800;letter-spacing:.09em;color:var(--ambre);margin-bottom:12px}
+header.h h1{font-size:clamp(30px,5.4vw,46px);font-weight:800;letter-spacing:-.03em;line-height:1.06;max-width:22ch}
+header.h .sub{margin-top:15px;font-size:17px;color:var(--sourd);max-width:58ch}
+section{padding:58px 0 0;scroll-margin-top:64px}
+h2.lbl{font-size:11.5px;font-weight:800;letter-spacing:.09em;color:var(--ambre);padding-bottom:10px;border-bottom:1px solid var(--trait);margin-bottom:24px}
+.txt p{font-size:15.5px;max-width:68ch;margin-bottom:12px}
+.txt p strong{color:#fff}
+.btn{display:inline-block;padding:13px 22px;font-size:15px;font-weight:700;text-decoration:none;border-radius:5px}
+.btn.p{background:var(--ambre);color:#1A1608}
+.btn.s{background:transparent;color:var(--froid);border:1px solid var(--trait)}
+.card{background:var(--panneau);border:1px solid var(--trait);border-radius:7px;padding:20px 22px}
+.filet{border-left:3px solid var(--ambre);padding-left:14px;margin:18px 0;font-size:14.5px;color:var(--sourd);max-width:68ch}
+.filet b{color:var(--froid)}
+footer{margin-top:60px;border-top:1px solid var(--trait);padding:24px 0 46px;font-size:12.5px;color:var(--sourd)}
+footer .row{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
+footer a{color:var(--sourd)}
+.cta{background:var(--ambre);color:#1A1608;border-radius:8px;padding:32px 30px;margin-top:56px}
+.cta h2{font-size:clamp(22px,3.4vw,28px);font-weight:800;letter-spacing:-.02em;line-height:1.15}
+.cta p{font-size:15.5px;margin-top:10px;max-width:62ch}
+.cta a{display:inline-block;margin-top:18px;background:#1A1608;color:var(--ambre);padding:12px 20px;border-radius:5px;font-weight:800;font-size:15px;text-decoration:none}
+
+.cgrid{display:grid;grid-template-columns:1fr 1fr;gap:26px;align-items:start}
+@media(max-width:720px){.cgrid{grid-template-columns:1fr}}
+.form label{display:block;font-size:12.5px;font-weight:800;letter-spacing:.04em;color:var(--sourd);margin:14px 0 6px}
+.form input,.form select,.form textarea{width:100%;background:var(--panneau);border:1px solid var(--trait);border-radius:5px;color:var(--froid);font:inherit;font-size:15px;padding:11px 13px}
+.form input:focus,.form textarea:focus,.form select:focus{outline:none;border-color:var(--ambre)}
+.form textarea{min-height:130px;resize:vertical}
+.form .rgpd{font-size:12px;color:var(--sourd);margin-top:12px;line-height:1.5}
+.form button{margin-top:16px;background:var(--ambre);color:#1A1608;border:0;border-radius:5px;padding:13px 22px;font:inherit;font-size:15px;font-weight:800;cursor:pointer}
+.side .card{margin-bottom:14px}
+.side .card h3{font-size:14.5px;font-weight:800;margin-bottom:6px}
+.side .card p{font-size:14px;color:var(--sourd)}
+.side .card a{color:var(--ambre);text-decoration:none;font-weight:700}
+.todo{border:1px dashed var(--ambre);border-radius:6px;padding:12px 15px;font-size:13px;color:var(--sourd);margin-top:16px}
+</style>
+</head>
+<body>
+<nav><div class="in">
+  <a class="brand" href="index.html"><svg width="26" height="26" viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="3.4" stroke-linecap="square" aria-hidden="true"><path d="M14 8 H6 V56 H14" fill="none"/><path d="M50 8 H58 V56 H50" fill="none"/><path d="M18 44 V22 L32 36 L46 22 V44" stroke-width="4" fill="none"/></svg><span>Atelier MDT</span></a>
+  <div class="links">
+    <a href="realisations/index.html">Réalisations</a><a href="tarifs.html">Tarifs</a><a href="qui-suis-je.html">Qui suis-je</a>
+    <a class="cta" href="contact.html">Échanger 30 min</a>
+  </div>
+</div></nav>
+
+<header class="h"><div class="in">
+  <div class="eyebrow">CONTACT</div>
+  <h1>On regarde ce que vous perdez ?</h1>
+  <p class="sub">Trente minutes en visio, gratuites, pour identifier la tâche qui vous coûte le plus de temps. Vous repartez avec un devis chiffré et vous décidez ensuite — aucun engagement.</p>
+</div></header>
+
+<section><div class="in">
+  <div class="cgrid">
+    <div>
+      <h2 class="lbl">DÉCRIVEZ VOTRE SITUATION</h2>
+      <form class="form" action="https://formspree.io/f/VOTRE_ID" method="POST">
+        <label for="nom">Votre nom</label>
+        <input id="nom" name="nom" type="text" required autocomplete="name">
+        <label for="email">Votre email</label>
+        <input id="email" name="email" type="email" required autocomplete="email">
+        <label for="entreprise">Votre entreprise et votre activité</label>
+        <input id="entreprise" name="entreprise" type="text" placeholder="Ex. : cabinet de kinésithérapie, 4 personnes">
+        <label for="sujet">Ce qui vous prend du temps</label>
+        <select id="sujet" name="sujet">
+          <option>Des demandes clients à traiter à la main</option>
+          <option>Suivre mes avis ou mes concurrents</option>
+          <option>Comprendre mes chiffres de vente</option>
+          <option>Former mon équipe à l'IA</option>
+          <option>Autre chose</option>
+        </select>
+        <label for="message">En quelques lignes</label>
+        <textarea id="message" name="message" placeholder="Quelle tâche, à quelle fréquence, qui s'en occupe aujourd'hui…"></textarea>
+        <input type="hidden" name="_subject" value="Demande de contact — atelier-mdt.fr">
+        <p class="rgpd">Les informations saisies servent uniquement à vous répondre. Elles ne sont ni stockées dans une base commerciale, ni transmises à des tiers, et sont supprimées une fois l'échange terminé. Vous pouvez demander leur suppression à tout moment à antoine@atelier-mdt.fr.</p>
+        <button type="submit">Envoyer</button>
+      </form>
+      <div class="todo"><b>À configurer avant mise en ligne :</b> créer un formulaire sur Formspree (gratuit) et remplacer <code>VOTRE_ID</code> dans l'attribut <code>action</code>. Sans cela, le bouton n'envoie rien. Alternative : Tally, ou tout service équivalent.</div>
+    </div>
+    <div class="side">
+      <h2 class="lbl">OU DIRECTEMENT</h2>
+      <div class="card"><h3>Par email</h3><p><a href="mailto:antoine@atelier-mdt.fr?subject=Demande%20d%27%C3%A9change%20-%20Atelier%20MDT">antoine@atelier-mdt.fr</a><br>Réponse sous 48 heures ouvrées.</p></div>
+      <div class="card"><h3>Par téléphone</h3><p>[Numéro à ajouter dès la ligne active]<br>Créneaux de rappel en fin de journée.</p></div>
+      <div class="card"><h3>LinkedIn</h3><p><a href="https://www.linkedin.com/in/antoine-meyfroidt/" rel="noopener">linkedin.com/in/antoine-meyfroidt</a></p></div>
+      <div class="card"><h3>Où</h3><p>À distance en priorité — visio pour l'échange comme pour la plupart des missions. Déplacement possible autour de Rennes quand c'est utile.</p></div>
+      <div class="card"><h3>Ce que vous recevez après l'échange</h3><p>Un devis écrit sous quelques jours : périmètre, prix, délai, ce qui est inclus et ce qui ne l'est pas. Puis c'est vous qui décidez.</p></div>
+    </div>
+  </div>
+</div></section>
+
+<footer><div class="in"><div class="row">
+  <span>© 2026 Atelier MDT — Antoine Meyfroidt · <em>Votre temps vaut mieux que ça</em></span>
+  <span>Micro-entreprise · SIRET [À COMPLÉTER] · <a href="index.html#mentions">Mentions légales</a></span>
+</div></div></footer>
+</body>
+</html>

@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Qui suis-je — Atelier MDT</title>
+<meta name="description" content="Antoine Meyfroidt, Atelier MDT. Parcours, façon de travailler, et ce que je promets — et ne promets pas.">
+<meta name="theme-color" content="#10233F">
+<link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32.png">
+<link rel="apple-touch-icon" sizes="180x180" href="assets/favicon-180.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{--nuit:#10233F;--panneau:#182F52;--ambre:#F5B62E;--sourd:#9FB0C8;--trait:#2A4470;--froid:#E9EEF6}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{background:var(--nuit);color:var(--froid);font-family:'Manrope',system-ui,-apple-system,sans-serif;line-height:1.6;font-size:16px;-webkit-font-smoothing:antialiased}
+a{color:inherit}
+.in{max-width:900px;margin:0 auto;padding:0 22px}
+nav{position:sticky;top:0;z-index:20;background:rgba(16,35,63,.92);backdrop-filter:blur(8px);border-bottom:1px solid var(--trait)}
+nav .in{display:flex;align-items:center;justify-content:space-between;gap:14px;padding:13px 22px}
+nav .brand{display:flex;align-items:center;gap:10px;text-decoration:none}
+nav .brand svg{color:var(--ambre);flex:none}
+nav .brand span{font-size:16px;font-weight:800;letter-spacing:-.025em}
+nav .links{display:flex;align-items:center;gap:20px}
+nav .links a{color:var(--sourd);text-decoration:none;font-size:13.5px;font-weight:600}
+nav .links a:hover,nav .links a.on{color:var(--froid)}
+nav .cta{background:var(--ambre)!important;color:#1A1608!important;padding:9px 15px;border-radius:5px;font-weight:800!important}
+@media(max-width:660px){nav .links a:not(.cta){display:none}}
+header.h{padding:60px 0 6px}
+header.h .eyebrow{font-size:11.5px;font-weight:800;letter-spacing:.09em;color:var(--ambre);margin-bottom:12px}
+header.h h1{font-size:clamp(30px,5.4vw,46px);font-weight:800;letter-spacing:-.03em;line-height:1.06;max-width:22ch}
+header.h .sub{margin-top:15px;font-size:17px;color:var(--sourd);max-width:58ch}
+section{padding:58px 0 0;scroll-margin-top:64px}
+h2.lbl{font-size:11.5px;font-weight:800;letter-spacing:.09em;color:var(--ambre);padding-bottom:10px;border-bottom:1px solid var(--trait);margin-bottom:24px}
+.txt p{font-size:15.5px;max-width:68ch;margin-bottom:12px}
+.txt p strong{color:#fff}
+.btn{display:inline-block;padding:13px 22px;font-size:15px;font-weight:700;text-decoration:none;border-radius:5px}
+.btn.p{background:var(--ambre);color:#1A1608}
+.btn.s{background:transparent;color:var(--froid);border:1px solid var(--trait)}
+.card{background:var(--panneau);border:1px solid var(--trait);border-radius:7px;padding:20px 22px}
+.filet{border-left:3px solid var(--ambre);padding-left:14px;margin:18px 0;font-size:14.5px;color:var(--sourd);max-width:68ch}
+.filet b{color:var(--froid)}
+footer{margin-top:60px;border-top:1px solid var(--trait);padding:24px 0 46px;font-size:12.5px;color:var(--sourd)}
+footer .row{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
+footer a{color:var(--sourd)}
+.cta{background:var(--ambre);color:#1A1608;border-radius:8px;padding:32px 30px;margin-top:56px}
+.cta h2{font-size:clamp(22px,3.4vw,28px);font-weight:800;letter-spacing:-.02em;line-height:1.15}
+.cta p{font-size:15.5px;margin-top:10px;max-width:62ch}
+.cta a{display:inline-block;margin-top:18px;background:#1A1608;color:var(--ambre);padding:12px 20px;border-radius:5px;font-weight:800;font-size:15px;text-decoration:none}
+
+.duo{display:grid;grid-template-columns:260px 1fr;gap:34px;align-items:start}
+@media(max-width:700px){.duo{grid-template-columns:1fr}}
+.photo{aspect-ratio:4/5;background:var(--panneau);border:1px dashed var(--trait);border-radius:7px;display:flex;align-items:center;justify-content:center;color:var(--sourd);font-size:12.5px;text-align:center;padding:18px}
+.tl{list-style:none;border-left:2px solid var(--trait);margin-left:6px;padding-left:22px}
+.tl li{position:relative;margin-bottom:20px;font-size:14.8px}
+.tl li::before{content:"";position:absolute;left:-28px;top:7px;width:10px;height:10px;background:var(--ambre);border-radius:1px}
+.tl li b{display:block;color:var(--froid);font-size:15.5px;font-weight:800;margin-bottom:2px}
+.tl li span{color:var(--sourd)}
+.grid3{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:14px}
+.grid3 .card h3{font-size:15.5px;font-weight:800;margin-bottom:7px}
+.grid3 .card p{font-size:14px;color:var(--sourd)}
+.temoin{background:var(--panneau);border:1px solid var(--trait);border-radius:7px;padding:22px 24px;margin-bottom:14px}
+.temoin p{font-size:15.5px;line-height:1.6}
+.temoin .qui{margin-top:12px;font-size:13px;color:var(--sourd)}
+.temoin .qui b{color:var(--froid)}
+.temoin.att{border-style:dashed;color:var(--sourd);font-size:14px}
+</style>
+</head>
+<body>
+<nav><div class="in">
+  <a class="brand" href="index.html"><svg width="26" height="26" viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="3.4" stroke-linecap="square" aria-hidden="true"><path d="M14 8 H6 V56 H14" fill="none"/><path d="M50 8 H58 V56 H50" fill="none"/><path d="M18 44 V22 L32 36 L46 22 V44" stroke-width="4" fill="none"/></svg><span>Atelier MDT</span></a>
+  <div class="links">
+    <a href="realisations/index.html">Réalisations</a><a href="tarifs.html">Tarifs</a><a href="qui-suis-je.html" class="on">Qui suis-je</a>
+    <a class="cta" href="contact.html">Échanger 30 min</a>
+  </div>
+</div></nav>
+
+<header class="h"><div class="in">
+  <div class="eyebrow">QUI SUIS-JE</div>
+  <h1>Antoine Meyfroidt</h1>
+  <p class="sub">Vingt-cinq ans. Responsable marketing et développement commercial dans un parc de loisirs près de Rennes, en parallèle duquel j'aide les petites entreprises à récupérer le temps qu'elles perdent.</p>
+</div></header>
+
+<section><div class="in">
+  <div class="duo">
+    <div class="photo">[Photographie — à ajouter]<br><br>Portrait sobre, fond neutre, format 4:5</div>
+    <div class="txt">
+      <p>Je ne viens pas de l'informatique. Je viens de l'animation : près de cinq ans à encadrer des groupes, des colonies aux clubs de vacances, jusqu'à devenir responsable d'animation dans des villages à l'étranger. On y apprend une chose qu'aucune formation technique n'enseigne : <strong>tenir un engagement sur une saison entière, avec des gens qu'on n'a pas choisis, et trouver une solution quand quelque chose tombe à l'eau.</strong></p>
+      <p>Depuis 2025, je suis en alternance chez Kampus 137, parc de loisirs indoor de 1 500 m² à Crevin, dans le cadre d'un MBA en management de l'événementiel sportif. Ma mission : remplir les créneaux creux, développer le B2B, et outiller une équipe de dix personnes. C'est là que j'ai construit tout ce qui est présenté dans les <a href="realisations/index.html" style="color:var(--ambre)">réalisations</a> : automatisations, veilles, tableaux de bord, déploiement de l'IA.</p>
+      <p>Ce que j'ai compris en le faisant : <strong>une petite entreprise ne manque pas d'outils, elle manque de quelqu'un qui les fasse tourner ensemble</strong> et qui laisse une documentation lisible derrière lui. C'est ce que je vends.</p>
+    </div>
+  </div>
+</div></section>
+
+<section><div class="in">
+  <h2 class="lbl">PARCOURS</h2>
+  <ul class="tl">
+    <li><b>2025 — aujourd'hui · Kampus 137, Crevin</b><span>Marketing, communication, développement commercial B2B et automatisation. Création d'une marque B2B de zéro, huit systèmes en production, équipe formée à l'IA.</span></li>
+    <li><b>2025 — 2027 · WIN Sport School, Rennes</b><span>MBA Management de l'Événementiel Sportif, en alternance. Première année validée.</span></li>
+    <li><b>2023 — 2025 · Villages de vacances, France et étranger</b><span>Animateur polyvalent puis responsable d'animation. Crète, Croatie, Madère, Lanzarote, Laponie, Fuerteventura, Rhodes. Encadrement d'équipes, gestion de programmes, relation client au quotidien.</span></li>
+    <li><b>2019 — 2023 · Formation en gestion</b><span>DUT Gestion des entreprises, licence en diagnostic et stratégie d'entreprise. Stages en contrôle de gestion : reporting, outils d'aide à la décision, analyse de coûts.</span></li>
+    <li><b>2018 — 2023 · Animation</b><span>Centres de loisirs, colonies, clubs. Publics de 5 à 17 ans. Brevet de surveillant de baignade.</span></li>
+  </ul>
+</div></section>
+
+<section><div class="in">
+  <h2 class="lbl">COMMENT JE TRAVAILLE</h2>
+  <div class="grid3">
+    <div class="card"><h3>Sur vos comptes</h3><p>Ce que je construis vous appartient. Si on arrête de travailler ensemble, rien ne casse et rien ne vous échappe.</p></div>
+    <div class="card"><h3>Documenté pour des humains</h3><p>Chaque système est livré avec un mode d'emploi écrit pour votre équipe, pas pour un technicien. Vous pouvez le maintenir sans moi — ou le confier à quelqu'un d'autre.</p></div>
+    <div class="card"><h3>Avec l'IA, et je le dis</h3><p>Je construis avec les outils d'intelligence artificielle actuels. C'est ce qui me permet de livrer en trois semaines et à ces prix. Je ne vends pas de la magie : je vends la capacité à faire travailler ces outils ensemble, pour votre cas précis.</p></div>
+    <div class="card"><h3>En chiffres</h3><p>Une décision se prend sur un coût, un délai, un seuil. Je mesure avant, je mesure après, et je vous dis ce que je ne sais pas.</p></div>
+    <div class="card"><h3>Dépenser moins, décider mieux</h3><p>Je ne promets pas de faire rentrer plus d'argent. Je supprime des heures de travail récurrentes et je vous donne les outils pour comprendre ce qui se passe dans votre activité. Le reste, c'est vous.</p></div>
+    <div class="card"><h3>À distance, en priorité</h3><p>Visio pour l'essentiel, déplacement possible autour de Rennes quand c'est utile. Réponse sous 48 heures ouvrées.</p></div>
+  </div>
+</div></section>
+
+<section><div class="in">
+  <h2 class="lbl">ILS ONT TRAVAILLÉ AVEC MOI</h2>
+  <div class="temoin att">Témoignages en cours de recueil. Cette section accueillera les retours de la direction de Kampus 137 sur les systèmes mis en place, et ceux d'anciens responsables avec qui j'ai travaillé en animation — sur la fiabilité, la tenue dans la durée et le travail d'équipe.</div>
+  <!-- MODÈLE À DUPLIQUER
+  <div class="temoin">
+    <p>« … »</p>
+    <div class="qui"><b>Prénom Nom</b> — Fonction, Entreprise</div>
+  </div>
+  -->
+</div></section>
+<div class="in"><div class="cta">
+  <h2>On regarde ce que vous perdez ?</h2>
+  <p>Trente minutes en visio pour identifier la tâche qui vous coûte le plus de temps. Vous repartez avec un devis chiffré, et vous décidez ensuite. Aucun engagement.</p>
+  <a href="contact.html">Prendre contact</a>
+</div></div>
+
+<footer><div class="in"><div class="row">
+  <span>© 2026 Atelier MDT — Antoine Meyfroidt · <em>Votre temps vaut mieux que ça</em></span>
+  <span>Micro-entreprise · SIRET [À COMPLÉTER] · <a href="index.html#mentions">Mentions légales</a></span>
+</div></div></footer>
+</body>
+</html>
