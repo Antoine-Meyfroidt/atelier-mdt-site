@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Contact — Atelier MDT</title>
-<meta name="description" content="Trente minutes gratuites en visio pour identifier la tâche qui vous coûte le plus de temps. Devis écrit, sans engagement.">
+<title>Mentions légales — Atelier MDT</title>
+<meta name="description" content="Mentions légales du site atelier-mdt.fr — éditeur, hébergement, données personnelles, propriété intellectuelle.">
 <meta name="theme-color" content="#10233F">
 <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32.png">
 <link rel="apple-touch-icon" sizes="180x180" href="assets/favicon-180.png">
@@ -17,7 +17,7 @@ html{scroll-behavior:smooth}
 body{background:var(--nuit);color:var(--froid);font-family:'Manrope',system-ui,-apple-system,sans-serif;line-height:1.6;font-size:16px;-webkit-font-smoothing:antialiased}
 a{color:inherit}
 .in{max-width:900px;margin:0 auto;padding:0 22px}
-nav{position:sticky;top:0;z-index:20;background:rgba(16,35,63,.92);backdrop-filter:blur(8px);border-bottom:1px solid var(--trait)}
+nav{position:sticky;top:0;z-index:20;background:rgba(16,35,63,.93);backdrop-filter:blur(8px);border-bottom:1px solid var(--trait)}
 nav .in{display:flex;align-items:center;justify-content:space-between;gap:14px;padding:13px 22px}
 nav .brand{display:flex;align-items:center;gap:10px;text-decoration:none}
 nav .brand svg{color:var(--ambre);flex:none}
@@ -26,14 +26,14 @@ nav .links{display:flex;align-items:center;gap:20px}
 nav .links a{color:var(--sourd);text-decoration:none;font-size:13.5px;font-weight:600}
 nav .links a:hover,nav .links a.on{color:var(--froid)}
 nav .cta{background:var(--ambre)!important;color:#1A1608!important;padding:9px 15px;border-radius:5px;font-weight:800!important}
-@media(max-width:660px){nav .links a:not(.cta){display:none}}
+@media(max-width:700px){nav .links a:not(.cta){display:none}}
 header.h{padding:60px 0 6px}
 header.h .eyebrow{font-size:11.5px;font-weight:800;letter-spacing:.09em;color:var(--ambre);margin-bottom:12px}
 header.h h1{font-size:clamp(30px,5.4vw,46px);font-weight:800;letter-spacing:-.03em;line-height:1.06;max-width:22ch}
 header.h .sub{margin-top:15px;font-size:17px;color:var(--sourd);max-width:58ch}
 section{padding:58px 0 0;scroll-margin-top:64px}
 h2.lbl{font-size:11.5px;font-weight:800;letter-spacing:.09em;color:var(--ambre);padding-bottom:10px;border-bottom:1px solid var(--trait);margin-bottom:24px}
-.txt p{font-size:15.5px;max-width:68ch;margin-bottom:12px}
+.txt p{font-size:15.5px;max-width:68ch;margin-bottom:12px;color:#C9D4E4}
 .txt p strong{color:#fff}
 .btn{display:inline-block;padding:13px 22px;font-size:15px;font-weight:700;text-decoration:none;border-radius:5px}
 .btn.p{background:var(--ambre);color:#1A1608}
@@ -49,22 +49,21 @@ footer a{color:var(--sourd)}
 .cta p{font-size:15.5px;margin-top:10px;max-width:62ch}
 .cta a{display:inline-block;margin-top:18px;background:#1A1608;color:var(--ambre);padding:12px 20px;border-radius:5px;font-weight:800;font-size:15px;text-decoration:none}
 
-.cgrid{display:grid;grid-template-columns:1fr 1fr;gap:26px;align-items:start}
-@media(max-width:720px){.cgrid{grid-template-columns:1fr}}
-.form label{display:block;font-size:12.5px;font-weight:800;letter-spacing:.04em;color:var(--sourd);margin:14px 0 6px}
-.form input,.form select,.form textarea{width:100%;background:var(--panneau);border:1px solid var(--trait);border-radius:5px;color:var(--froid);font:inherit;font-size:15px;padding:11px 13px}
-.form input:focus,.form textarea:focus,.form select:focus{outline:none;border-color:var(--ambre)}
-.form textarea{min-height:130px;resize:vertical}
-.form .rgpd{font-size:12px;color:var(--sourd);margin-top:12px;line-height:1.5}
-.form button{margin-top:16px;background:var(--ambre);color:#1A1608;border:0;border-radius:5px;padding:13px 22px;font:inherit;font-size:15px;font-weight:800;cursor:pointer}
-.side .card{margin-bottom:14px}
-.side .card h3{font-size:14.5px;font-weight:800;margin-bottom:6px}
-.side .card p{font-size:14px;color:var(--sourd)}
-.side .card a{color:var(--ambre);text-decoration:none;font-weight:700}
-.todo{border:1px dashed var(--ambre);border-radius:6px;padding:12px 15px;font-size:13px;color:var(--sourd);margin-top:16px}
-nav .links a.on{color:var(--froid);border-bottom:2px solid var(--ambre);padding-bottom:2px}
-nav .cta{border-bottom:0!important}
-@media(max-width:760px){nav .links a:not(.cta){display:none}}
+.etat{background:var(--panneau);border:1px solid var(--ambre);border-radius:7px;padding:16px 20px;margin-top:24px;font-size:14.5px;display:flex;gap:14px;align-items:flex-start}
+.etat .tag{flex:none;background:var(--ambre);color:#1A1608;font-size:10px;font-weight:800;letter-spacing:.06em;padding:4px 9px;border-radius:3px;margin-top:3px}
+.etat b{color:var(--ambre)}
+.doc{background:#FFFFFF;color:#10233F;border-radius:7px;padding:36px 40px;margin-top:28px;font-size:14.2px;line-height:1.65}
+.doc h2{font-size:16px;font-weight:800;color:#10233F;margin:26px 0 8px;letter-spacing:-.01em}
+.doc h2:first-child{margin-top:0}
+.doc p{margin-bottom:9px;color:#243B5C;max-width:none}
+.doc p b{color:#10233F}
+.doc ul{margin:6px 0 10px 18px;color:#243B5C}
+.doc li{margin-bottom:4px}
+.doc .head{border-bottom:3px solid #F5B62E;padding-bottom:14px;margin-bottom:18px}
+.doc .head .t{font-size:22px;font-weight:800;letter-spacing:-.02em}
+.doc .head .s{font-size:12.5px;color:#4A6591;margin-top:4px}
+.doc .a{color:#7387A6;font-style:italic;font-size:12.5px}
+@media(max-width:600px){.doc{padding:24px 20px}}
 
 /* ── commun à toutes les pages ── */
 .in{max-width:900px!important;margin:0 auto;padding:0 22px}
@@ -115,45 +114,22 @@ nav .links a.btn-nav:hover{color:#1A1608!important}
 </div></nav>
 
 <header class="h"><div class="in">
-  <div class="eyebrow">CONTACT</div>
-  <h1>On regarde ce que vous perdez ?</h1>
-  <p class="sub">Trente minutes en visio, gratuites, pour identifier la tâche qui vous coûte le plus de temps. Vous repartez avec un devis chiffré et vous décidez ensuite — aucun engagement.</p>
+  <div class="eyebrow">INFORMATIONS LÉGALES</div>
+  <h1>Mentions légales</h1>
+  <p class="sub">Éditeur du site, hébergement, traitement des données et propriété intellectuelle.</p>
 </div></header>
 
 <section><div class="in">
-  <div class="cgrid">
-    <div>
-      <h2 class="lbl">DÉCRIVEZ VOTRE SITUATION</h2>
-      <form class="form" action="https://formspree.io/f/maeyvaae" method="POST">
-        <label for="nom">Votre nom</label>
-        <input id="nom" name="nom" type="text" required autocomplete="name">
-        <label for="email">Votre email</label>
-        <input id="email" name="email" type="email" required autocomplete="email">
-        <label for="entreprise">Votre entreprise et votre activité</label>
-        <input id="entreprise" name="entreprise" type="text" placeholder="Ex. : cabinet de kinésithérapie, 4 personnes">
-        <label for="sujet">Ce qui vous prend du temps</label>
-        <select id="sujet" name="sujet">
-          <option>Des demandes clients à traiter à la main</option>
-          <option>Suivre mes avis ou mes concurrents</option>
-          <option>Comprendre mes chiffres de vente</option>
-          <option>Former mon équipe à l'IA</option>
-          <option>Autre chose</option>
-        </select>
-        <label for="message">En quelques lignes</label>
-        <textarea id="message" name="message" placeholder="Quelle tâche, à quelle fréquence, qui s'en occupe aujourd'hui…"></textarea>
-        <input type="hidden" name="_subject" value="Demande de contact — atelier-mdt.fr">
-        <p class="rgpd">Les informations saisies servent uniquement à vous répondre. Elles ne sont ni stockées dans une base commerciale, ni transmises à des tiers, et sont supprimées une fois l'échange terminé. Vous pouvez demander leur suppression à tout moment à antoine@atelier-mdt.fr.</p>
-        <button type="submit">Envoyer</button>
-      </form>
-      </div>
-    <div class="side">
-      <h2 class="lbl">OU DIRECTEMENT</h2>
-      <div class="card"><h3>Par email</h3><p><a href="mailto:antoine@atelier-mdt.fr?subject=Demande%20d%27%C3%A9change%20-%20Atelier%20MDT">antoine@atelier-mdt.fr</a><br>Réponse sous 48 heures ouvrées.</p></div>
-      <div class="card"><h3>Par téléphone</h3><p><a href="tel:+33743688097">07 43 68 80 97</a><br>Si je ne réponds pas, laissez un message : je rappelle en fin de journée.</p></div>
-      <div class="card"><h3>LinkedIn</h3><p><a href="https://www.linkedin.com/in/antoine-meyfroidt/" rel="noopener">linkedin.com/in/antoine-meyfroidt</a></p></div>
-      <div class="card"><h3>Où</h3><p>À distance en priorité — visio pour l'échange comme pour la plupart des missions. Déplacement possible autour de Rennes quand c'est utile.</p></div>
-      <div class="card"><h3>Ce que vous recevez après l'échange</h3><p>Un devis écrit sous quelques jours : périmètre, prix, délai, ce qui est inclus et ce qui ne l'est pas. Puis c'est vous qui décidez.</p></div>
-    </div>
+  <div class="doc">
+    <div class="head"><div class="t">Mentions légales</div><div class="s">atelier-mdt.fr — mise à jour du 11 septembre 2026</div></div>
+
+      <p><strong>Éditeur du site</strong> — Antoine Meyfroidt, entrepreneur individuel exerçant sous le nom commercial Atelier MDT. Siège : 17 rue des Potiers, 35133 Lécousse, France. SIREN 109 757 526 · SIRET 109 757 526 00016 · Code APE 7022Z (conseil pour les affaires et autres conseils de gestion) · Immatriculé au Registre national des entreprises le 10 septembre 2026. Courriel : antoine@atelier-mdt.fr. TVA non applicable, article 293 B du Code général des impôts.</p>
+      <p><strong>Directeur de la publication</strong> — Antoine Meyfroidt.</p>
+      <p><strong>Hébergement</strong> — GitHub, Inc., 88 Colin P. Kelly Jr. Street, San Francisco, CA 94107, États-Unis (GitHub Pages).</p>
+      <p><strong>Données personnelles et cookies</strong> — ce site ne dépose aucun cookie et n'utilise aucun outil de mesure d'audience. Les seules données collectées sont celles que vous transmettez volontairement via le formulaire de contact ou par courriel ; elles servent uniquement à répondre à votre demande, ne sont ni cédées ni revendues, et peuvent être supprimées sur simple demande à antoine@atelier-mdt.fr.</p>
+      <p><strong>Propriété intellectuelle</strong> — l'ensemble des contenus de ce site, textes et éléments graphiques, est la propriété d'Antoine Meyfroidt. Les réalisations présentées ont été menées dans le cadre d'un contrat d'apprentissage chez Kampus 137 et sont citées avec l'accord de l'entreprise ; les données personnelles et confidentielles y ont été masquées ou remplacées.</p>
+      <p><strong>Conditions générales</strong> — les conditions générales de prestation de services sont consultables sur la <a href="cgv.html" style="color:var(--ambre)">page dédiée</a> et annexées à chaque devis.</p>
+    
   </div>
 </div></section>
 

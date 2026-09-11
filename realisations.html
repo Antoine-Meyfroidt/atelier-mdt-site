@@ -53,8 +53,8 @@ nav .brand .wm em{display:block;font-style:normal;font-size:7.5px;font-weight:80
 nav .links{display:flex;align-items:center;gap:22px}
 nav .links a{color:var(--sourd,#9FB0C8);text-decoration:none;font-size:14px;font-weight:600;white-space:nowrap}
 nav .links a:hover,nav .links a.on{color:var(--froid,#E9EEF6)}
-nav .links a.cta{background:var(--ambre,#F5B62E);color:#1A1608;padding:10px 16px;border-radius:5px;font-weight:800}
-@media(max-width:760px){nav .links a:not(.cta){display:none}nav .brand .wm em{display:none}}
+nav .links a.btn-nav{background:var(--ambre,#F5B62E);color:#1A1608;padding:10px 16px;border-radius:5px;font-weight:800;margin:0;display:inline-block;line-height:1.2}
+@media(max-width:760px){nav .links a:not(.btn-nav){display:none}nav .brand .wm em{display:none}}
 footer{margin-top:60px;border-top:1px solid var(--trait,#2A4470);padding:24px 0 46px;font-size:12.5px;color:var(--sourd,#9FB0C8)}
 footer .row{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
 footer a{color:var(--sourd,#9FB0C8)}
@@ -62,6 +62,20 @@ footer a{color:var(--sourd,#9FB0C8)}
 .cta-bloc h2{font-size:clamp(22px,3.4vw,28px);font-weight:800;letter-spacing:-.02em;line-height:1.15}
 .cta-bloc p{font-size:15.5px;margin-top:10px;max-width:62ch;color:#1A1608}
 .cta-bloc a{display:inline-block;margin-top:18px;background:#1A1608;color:var(--ambre,#F5B62E);padding:12px 20px;border-radius:5px;font-weight:800;font-size:15px;text-decoration:none}
+
+/* ── NAVIGATION UNIFIÉE (bloc final, prioritaire) ── */
+nav .in{display:flex!important;align-items:center!important;justify-content:space-between!important;gap:18px!important;padding:0 22px!important;min-height:74px!important}
+nav .brand{display:flex!important;align-items:center!important;gap:12px!important;text-decoration:none!important}
+nav .brand svg{color:var(--ambre,#F5B62E)!important;flex:none!important;width:32px!important;height:32px!important}
+nav .brand .wm{font-size:18px!important;font-weight:800!important;letter-spacing:-.025em!important;line-height:1!important;color:var(--froid,#E9EEF6)!important}
+nav .brand .wm em{display:block!important;font-style:normal!important;font-size:7.5px!important;font-weight:800!important;letter-spacing:.09em!important;color:var(--ambre,#F5B62E)!important;margin-top:4px!important;white-space:nowrap!important}
+nav .links{display:flex!important;align-items:center!important;gap:24px!important;height:100%!important}
+nav .links a{display:inline-flex!important;align-items:center!important;height:36px!important;margin:0!important;color:var(--sourd,#9FB0C8)!important;text-decoration:none!important;font-size:14px!important;font-weight:600!important;white-space:nowrap!important;border-bottom:2px solid transparent!important;line-height:1!important}
+nav .links a:hover{color:var(--froid,#E9EEF6)!important}
+nav .links a.on{color:var(--froid,#E9EEF6)!important;border-bottom:2px solid var(--ambre,#F5B62E)!important}
+nav .links a.btn-nav{background:var(--ambre,#F5B62E)!important;color:#1A1608!important;padding:0 18px!important;border-radius:5px!important;font-weight:800!important;border-bottom:2px solid transparent!important;height:40px!important}
+nav .links a.btn-nav:hover{color:#1A1608!important}
+@media(max-width:760px){nav .links a:not(.btn-nav){display:none!important}nav .brand .wm em{display:none!important}nav .in{min-height:62px!important}}
 </style>
 </head>
 <body>
@@ -73,7 +87,7 @@ footer a{color:var(--sourd,#9FB0C8)}
     <a href="offres.html">Offres</a>
     <a href="rentabilite.html">Rentabilité</a>
     <a href="qui-suis-je.html">Qui suis-je</a>
-    <a class="cta" href="contact.html">Échanger 30 min</a>
+    <a class="btn-nav" href="contact.html">Échanger 30 min</a>
   </div>
 </div></nav>
 
@@ -155,7 +169,7 @@ footer a{color:var(--sourd,#9FB0C8)}
 
 <footer><div class="in"><div class="row">
   <span>Atelier MDT · <a href="mailto:antoine@atelier-mdt.fr">antoine@atelier-mdt.fr</a></span>
-  <span>SIRET [À COMPLÉTER] · <a href="index.html#mentions">Mentions légales</a> · <a href="cgv.html">CGV</a></span>
+  <span>SIRET 109 757 526 00016 · <a href="mentions-legales.html">Mentions légales</a> · <a href="cgv.html">CGV</a></span>
 </div></div></footer>
 
 </body>
