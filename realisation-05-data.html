@@ -18,14 +18,20 @@
 <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32.png">
 <link rel="apple-touch-icon" sizes="180x180" href="assets/favicon-180.png">
 <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="assets/site.css">
 <style>
 :root{--nuit:#10233F;--panneau:#182F52;--ambre:#F5B62E;--sourd:#9FB0C8;--trait:#2A4470;--froid:#E9EEF6}
 *{margin:0;padding:0;box-sizing:border-box}
 html{scroll-behavior:smooth}
 body{background:var(--nuit);color:var(--froid);font-family:'Manrope',system-ui,-apple-system,sans-serif;line-height:1.6;font-size:16px}
 a{color:inherit}
-.in{max-width:900px;margin:0 auto;padding:0 22px}
+.in{max-width:940px;margin:0 auto;padding:0 22px}
+nav{position:sticky;top:0;z-index:20;background:rgba(16,35,63,.93);backdrop-filter:blur(8px);border-bottom:1px solid var(--trait)}
+nav .in{display:flex;align-items:center;justify-content:space-between;gap:14px;padding:12px 22px}
+nav .brand{display:flex;align-items:center;gap:10px;text-decoration:none}
+nav .brand svg{color:var(--ambre);flex:none}
+nav .brand span{font-size:15.5px;font-weight:800;letter-spacing:-.025em}
+nav .back{color:var(--sourd);text-decoration:none;font-size:13.5px;font-weight:600}
+nav .back:hover{color:var(--froid)}
 header{padding:52px 0 0}
 header .eyebrow{font-size:11.5px;font-weight:800;letter-spacing:.09em;color:var(--ambre);margin-bottom:12px}
 header h1{font-size:clamp(28px,5vw,42px);font-weight:800;letter-spacing:-.03em;line-height:1.08;max-width:24ch}
@@ -55,26 +61,76 @@ h2.lbl{font-size:11.5px;font-weight:800;letter-spacing:.09em;color:var(--ambre);
 .piece .dl span{color:#6E82A0}
 .note{margin-top:26px;border:1px solid var(--ambre);border-radius:6px;padding:16px 19px;font-size:14.5px}
 .note b{color:var(--ambre)}
+footer{margin-top:56px;border-top:1px solid var(--trait);padding:22px 0 46px;font-size:12.5px;color:var(--sourd)}
+footer .row{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
 .cta{background:var(--ambre);color:#1A1608;border-radius:8px;padding:28px 28px;margin-top:44px}
 .cta h2{font-size:23px;font-weight:800;letter-spacing:-.02em}
 .cta p{font-size:15px;margin-top:9px;max-width:62ch}
 .cta a{display:inline-block;margin-top:16px;background:#1A1608;color:var(--ambre);padding:11px 19px;border-radius:5px;font-weight:800;font-size:14.5px;text-decoration:none}
+
+/* ── commun à toutes les pages ── */
+.in{max-width:900px!important;margin:0 auto;padding:0 22px}
+nav{position:sticky;top:0;z-index:20;background:rgba(16,35,63,.94);backdrop-filter:blur(8px);border-bottom:1px solid var(--trait,#2A4470)}
+nav .in{display:flex;align-items:center;justify-content:space-between;gap:16px;padding:15px 22px}
+nav .brand{display:flex;align-items:center;gap:12px;text-decoration:none}
+nav .brand svg{color:var(--ambre,#F5B62E);flex:none}
+nav .brand .wm{font-size:18px;font-weight:800;letter-spacing:-.025em;line-height:1;color:var(--froid,#E9EEF6)}
+nav .brand .wm em{display:block;font-style:normal;font-size:7.5px;font-weight:800;letter-spacing:.09em;color:var(--ambre,#F5B62E);margin-top:4px;white-space:nowrap}
+nav .links{display:flex;align-items:center;gap:22px}
+nav .links a{color:var(--sourd,#9FB0C8);text-decoration:none;font-size:14px;font-weight:600;white-space:nowrap}
+nav .links a:hover,nav .links a.on{color:var(--froid,#E9EEF6)}
+nav .links a.btn-nav{background:var(--ambre,#F5B62E);color:#1A1608;padding:10px 16px;border-radius:5px;font-weight:800;margin:0;display:inline-block;line-height:1.2}
+@media(max-width:760px){nav .links a:not(.btn-nav){display:none}nav .brand .wm em{display:none}}
+footer{margin-top:60px;border-top:1px solid var(--trait,#2A4470);padding:24px 0 46px;font-size:12.5px;color:var(--sourd,#9FB0C8)}
+footer .row{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
+footer a{color:var(--sourd,#9FB0C8)}
+.cta-bloc{background:var(--ambre,#F5B62E);color:#1A1608;border-radius:8px;padding:32px 30px;margin-top:56px}
+.cta-bloc h2{font-size:clamp(22px,3.4vw,28px);font-weight:800;letter-spacing:-.02em;line-height:1.15}
+.cta-bloc p{font-size:15.5px;margin-top:10px;max-width:62ch;color:#1A1608}
+.cta-bloc a{display:inline-block;margin-top:18px;background:#1A1608;color:var(--ambre,#F5B62E);padding:12px 20px;border-radius:5px;font-weight:800;font-size:15px;text-decoration:none}
+
+/* ── NAVIGATION UNIFIÉE (bloc final, prioritaire) ── */
+nav .in{display:flex!important;align-items:center!important;justify-content:space-between!important;gap:18px!important;padding:0 22px!important;min-height:74px!important}
+nav .brand{display:flex!important;align-items:center!important;gap:12px!important;text-decoration:none!important}
+nav .brand svg{color:var(--ambre,#F5B62E)!important;flex:none!important;width:32px!important;height:32px!important}
+nav .brand .wm{font-size:18px!important;font-weight:800!important;letter-spacing:-.025em!important;line-height:1!important;color:var(--froid,#E9EEF6)!important}
+nav .brand .wm em{display:block!important;font-style:normal!important;font-size:7.5px!important;font-weight:800!important;letter-spacing:.09em!important;color:var(--ambre,#F5B62E)!important;margin-top:4px!important;white-space:nowrap!important}
+nav .links{display:flex!important;align-items:center!important;gap:24px!important;height:100%!important}
+nav .links a{display:inline-flex!important;align-items:center!important;height:36px!important;margin:0!important;color:var(--sourd,#9FB0C8)!important;text-decoration:none!important;font-size:14px!important;font-weight:600!important;white-space:nowrap!important;border-bottom:2px solid transparent!important;line-height:1!important}
+nav .links a:hover{color:var(--froid,#E9EEF6)!important}
+nav .links a.on{color:var(--froid,#E9EEF6)!important;border-bottom:2px solid var(--ambre,#F5B62E)!important}
+nav .links a.btn-nav{background:var(--ambre,#F5B62E)!important;color:#1A1608!important;padding:0 18px!important;border-radius:5px!important;font-weight:800!important;border-bottom:2px solid transparent!important;height:40px!important}
+nav .links a.btn-nav:hover{color:#1A1608!important}
+@media(max-width:760px){nav .links a:not(.btn-nav){display:none!important}nav .brand .wm em{display:none!important}nav .in{min-height:62px!important}}
+
+
+/* ══ MENU MOBILE — bloc autonome, aucune dépendance externe ══ */
+nav .burger{display:none}
+@media(max-width:760px){
+  nav .burger{display:flex;flex:none;flex-direction:column;justify-content:center;gap:5px;width:44px;height:38px;padding:0 11px;background:transparent;border:1px solid var(--trait,#2A4470);border-radius:5px;cursor:pointer;-webkit-tap-highlight-color:transparent}
+  nav .burger span{display:block;height:2px;background:var(--froid,#E9EEF6);border-radius:1px;transition:transform .2s ease,opacity .2s ease}
+  nav.ouvert .burger span:nth-child(1){transform:translateY(7px) rotate(45deg)}
+  nav.ouvert .burger span:nth-child(2){opacity:0}
+  nav.ouvert .burger span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
+  nav .in .links{display:none!important;position:absolute;top:100%;left:0;right:0;flex-direction:column!important;align-items:stretch!important;gap:0!important;height:auto!important;background:var(--nuit,#10233F);border-bottom:1px solid var(--trait,#2A4470);padding:4px 22px 20px!important;box-shadow:0 16px 34px rgba(0,0,0,.45)}
+  nav.ouvert .in .links{display:flex!important}
+  nav.ouvert .in .links a{display:flex!important;align-items:center!important;width:100%;height:auto!important;margin:0!important;padding:15px 0!important;font-size:16px!important;font-weight:600!important;color:var(--sourd,#9FB0C8)!important;background:transparent!important;border:0!important;border-bottom:1px solid var(--trait,#2A4470)!important;border-radius:0!important}
+  nav.ouvert .in .links a.on{color:var(--ambre,#F5B62E)!important}
+  nav.ouvert .in .links a.btn-nav{justify-content:center!important;margin-top:16px!important;height:46px!important;padding:0 18px!important;border:0!important;border-radius:5px!important;background:var(--ambre,#F5B62E)!important;color:#1A1608!important;font-weight:800!important}
+}
 </style>
 </head>
 <body>
 <nav><div class="in">
   <a class="brand" href="index.html"><svg width="32" height="32" viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="3.4" stroke-linecap="square" aria-hidden="true"><path d="M14 8 H6 V56 H14" fill="none"/><path d="M50 8 H58 V56 H50" fill="none"/><path d="M18 44 V22 L32 36 L46 22 V44" stroke-width="4" fill="none"/></svg><span class="wm">Atelier MDT<em>VOTRE TEMPS VAUT MIEUX QUE ÇA</em></span></a>
-  <div class="menu">
-    <div class="links" id="liens-nav">
+  <div class="links" id="nav-liens">
       <a href="realisations.html" class="on">Réalisations</a>
       <a href="offres.html">Offres</a>
       <a href="rentabilite.html">Rentabilité</a>
       <a href="qui-suis-je.html">Qui suis-je</a>
-      <a class="btn-nav m" href="contact.html">Échanger 30 min</a>
-    </div>
-    <a class="btn-nav d" href="contact.html">Échanger 30 min</a>
-    <button class="burger" type="button" aria-label="Ouvrir le menu" aria-expanded="false" aria-controls="liens-nav"><span></span><span></span><span></span></button>
+      <a class="btn-nav" href="contact.html">Échanger 30 min</a>
   </div>
+  <button class="burger" type="button" aria-label="Ouvrir le menu" aria-expanded="false" aria-controls="nav-liens"><span></span><span></span><span></span></button>
 </div></nav>
 <header><div class="in"><p style="font-size:12.5px;color:var(--sourd);margin-bottom:18px"><a href="realisations.html" style="color:var(--sourd);text-decoration:none">← Toutes les réalisations</a></p>
   <div class="eyebrow">RÉALISATION 05 · DONNÉES ET TABLEAUX DE BORD</div>
@@ -119,6 +175,22 @@ h2.lbl{font-size:11.5px;font-weight:800;letter-spacing:.09em;color:var(--ambre);
   <span>Atelier MDT · Automatisation · Veille · Tableaux de bord · Accompagnement IA</span>
   <span><a href="mailto:antoine@atelier-mdt.fr">antoine@atelier-mdt.fr</a> · <a href="mentions-legales.html">Mentions légales</a> · <a href="cgv.html">CGV</a></span>
 </div></div></footer>
-<script src="assets/site.js" defer></script>
+<script>
+/* Menu mobile — autonome, aucune dépendance externe. */
+(function(){
+  var n=document.querySelector('nav');if(!n)return;
+  var b=n.querySelector('.burger'),l=n.querySelector('.links');if(!b||!l)return;
+  function etat(o){
+    n.classList.toggle('ouvert',o);
+    b.setAttribute('aria-expanded',o?'true':'false');
+    b.setAttribute('aria-label',o?'Fermer le menu':'Ouvrir le menu');
+  }
+  b.addEventListener('click',function(){etat(!n.classList.contains('ouvert'));});
+  l.addEventListener('click',function(e){if(e.target.closest('a'))etat(false);});
+  document.addEventListener('click',function(e){if(n.classList.contains('ouvert')&&!n.contains(e.target))etat(false);});
+  document.addEventListener('keydown',function(e){if(e.key==='Escape')etat(false);});
+  window.addEventListener('resize',function(){if(window.innerWidth>760)etat(false);});
+})();
+</script>
 </body>
 </html>
