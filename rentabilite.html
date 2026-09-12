@@ -5,11 +5,21 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Rentabilité — Atelier MDT</title>
 <meta name="description" content="Ce que chaque prestation coûte, ce qu'elle change, et en combien de temps elle se rembourse — hypothèses écrites.">
+<link rel="canonical" href="https://atelier-mdt.fr/rentabilite.html">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://atelier-mdt.fr/rentabilite.html">
+<meta property="og:site_name" content="Atelier MDT">
+<meta property="og:title" content="Rentabilité — Atelier MDT">
+<meta property="og:description" content="Ce que chaque prestation coûte, ce qu'elle change, et en combien de temps elle se rembourse — hypothèses écrites.">
+<meta property="og:image" content="https://atelier-mdt.fr/assets/verrouillage-baseline-ambre.png">
+<meta property="og:locale" content="fr_FR">
+<meta name="twitter:card" content="summary_large_image">
 <meta name="theme-color" content="#10233F">
 <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32.png">
 <link rel="apple-touch-icon" sizes="180x180" href="assets/favicon-180.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/site.css">
 <style>
 :root{--nuit:#10233F;--panneau:#182F52;--ambre:#F5B62E;--sourd:#9FB0C8;--trait:#2A4470;--froid:#E9EEF6;--ambre-txt:#8A6210}
 *{margin:0;padding:0;box-sizing:border-box}
@@ -17,17 +27,6 @@ html{scroll-behavior:smooth}
 body{background:var(--nuit);color:var(--froid);font-family:'Manrope',system-ui,-apple-system,sans-serif;line-height:1.6;font-size:16px;-webkit-font-smoothing:antialiased}
 a{color:inherit}
 .in{max-width:900px;margin:0 auto;padding:0 22px}
-nav{position:sticky;top:0;z-index:20;background:rgba(16,35,63,.93);backdrop-filter:blur(8px);border-bottom:1px solid var(--trait)}
-nav .in{display:flex;align-items:center;justify-content:space-between;gap:14px;padding:13px 22px}
-nav .brand{display:flex;align-items:center;gap:10px;text-decoration:none}
-nav .brand svg{color:var(--ambre);flex:none}
-nav .brand span{font-size:16px;font-weight:800;letter-spacing:-.025em}
-nav .links{display:flex;align-items:center;gap:18px}
-nav .links a{color:var(--sourd);text-decoration:none;font-size:13.5px;font-weight:600;white-space:nowrap}
-nav .links a:hover,nav .links a.on{color:var(--froid)}
-nav .links a.on{border-bottom:2px solid var(--ambre);padding-bottom:2px}
-nav .cta{background:var(--ambre)!important;color:#1A1608!important;padding:9px 15px;border-radius:5px;font-weight:800!important;border-bottom:0!important}
-@media(max-width:760px){nav .links a:not(.cta){display:none}}
 header.h{padding:60px 0 0}
 header.h .eyebrow{font-size:11.5px;font-weight:800;letter-spacing:.09em;color:var(--ambre);margin-bottom:12px}
 header.h h1{font-size:clamp(30px,5.4vw,46px);font-weight:800;letter-spacing:-.03em;line-height:1.06;max-width:22ch}
@@ -45,9 +44,6 @@ h2.lbl{font-size:11.5px;font-weight:800;letter-spacing:.09em;color:var(--ambre);
 .bandeau{background:var(--panneau);border:1px solid var(--ambre);border-radius:7px;padding:18px 22px;font-size:15px;line-height:1.6}
 .bandeau b{color:var(--ambre)}
 .bandeau a{color:var(--ambre)}
-footer{margin-top:64px;border-top:1px solid var(--trait);padding:24px 0 46px;font-size:12.5px;color:var(--sourd)}
-footer .row{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
-footer a{color:var(--sourd)}
 .cta{background:var(--ambre);color:#1A1608;border-radius:8px;padding:32px 30px;margin-top:58px}
 .cta h2{font-size:clamp(22px,3.4vw,28px);font-weight:800;letter-spacing:-.02em;line-height:1.15}
 .cta p{font-size:15.5px;margin-top:10px;max-width:62ch}
@@ -77,52 +73,21 @@ h3.t{font-size:24px;font-weight:800;letter-spacing:-.02em;line-height:1.15;margi
 .prixbloc .p b{font-size:26px;font-weight:800;color:var(--ambre);line-height:1}
 .prixbloc .p span{display:block;font-size:12px;color:var(--sourd);margin-top:4px}
 .prixbloc .lien a{color:var(--ambre);text-decoration:none;font-weight:700;font-size:14px}
-
-/* ── commun à toutes les pages ── */
-.in{max-width:900px!important;margin:0 auto;padding:0 22px}
-nav{position:sticky;top:0;z-index:20;background:rgba(16,35,63,.94);backdrop-filter:blur(8px);border-bottom:1px solid var(--trait,#2A4470)}
-nav .in{display:flex;align-items:center;justify-content:space-between;gap:16px;padding:15px 22px}
-nav .brand{display:flex;align-items:center;gap:12px;text-decoration:none}
-nav .brand svg{color:var(--ambre,#F5B62E);flex:none}
-nav .brand .wm{font-size:18px;font-weight:800;letter-spacing:-.025em;line-height:1;color:var(--froid,#E9EEF6)}
-nav .brand .wm em{display:block;font-style:normal;font-size:7.5px;font-weight:800;letter-spacing:.09em;color:var(--ambre,#F5B62E);margin-top:4px;white-space:nowrap}
-nav .links{display:flex;align-items:center;gap:22px}
-nav .links a{color:var(--sourd,#9FB0C8);text-decoration:none;font-size:14px;font-weight:600;white-space:nowrap}
-nav .links a:hover,nav .links a.on{color:var(--froid,#E9EEF6)}
-nav .links a.btn-nav{background:var(--ambre,#F5B62E);color:#1A1608;padding:10px 16px;border-radius:5px;font-weight:800;margin:0;display:inline-block;line-height:1.2}
-@media(max-width:760px){nav .links a:not(.btn-nav){display:none}nav .brand .wm em{display:none}}
-footer{margin-top:60px;border-top:1px solid var(--trait,#2A4470);padding:24px 0 46px;font-size:12.5px;color:var(--sourd,#9FB0C8)}
-footer .row{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
-footer a{color:var(--sourd,#9FB0C8)}
-.cta-bloc{background:var(--ambre,#F5B62E);color:#1A1608;border-radius:8px;padding:32px 30px;margin-top:56px}
-.cta-bloc h2{font-size:clamp(22px,3.4vw,28px);font-weight:800;letter-spacing:-.02em;line-height:1.15}
-.cta-bloc p{font-size:15.5px;margin-top:10px;max-width:62ch;color:#1A1608}
-.cta-bloc a{display:inline-block;margin-top:18px;background:#1A1608;color:var(--ambre,#F5B62E);padding:12px 20px;border-radius:5px;font-weight:800;font-size:15px;text-decoration:none}
-
-/* ── NAVIGATION UNIFIÉE (bloc final, prioritaire) ── */
-nav .in{display:flex!important;align-items:center!important;justify-content:space-between!important;gap:18px!important;padding:0 22px!important;min-height:74px!important}
-nav .brand{display:flex!important;align-items:center!important;gap:12px!important;text-decoration:none!important}
-nav .brand svg{color:var(--ambre,#F5B62E)!important;flex:none!important;width:32px!important;height:32px!important}
-nav .brand .wm{font-size:18px!important;font-weight:800!important;letter-spacing:-.025em!important;line-height:1!important;color:var(--froid,#E9EEF6)!important}
-nav .brand .wm em{display:block!important;font-style:normal!important;font-size:7.5px!important;font-weight:800!important;letter-spacing:.09em!important;color:var(--ambre,#F5B62E)!important;margin-top:4px!important;white-space:nowrap!important}
-nav .links{display:flex!important;align-items:center!important;gap:24px!important;height:100%!important}
-nav .links a{display:inline-flex!important;align-items:center!important;height:36px!important;margin:0!important;color:var(--sourd,#9FB0C8)!important;text-decoration:none!important;font-size:14px!important;font-weight:600!important;white-space:nowrap!important;border-bottom:2px solid transparent!important;line-height:1!important}
-nav .links a:hover{color:var(--froid,#E9EEF6)!important}
-nav .links a.on{color:var(--froid,#E9EEF6)!important;border-bottom:2px solid var(--ambre,#F5B62E)!important}
-nav .links a.btn-nav{background:var(--ambre,#F5B62E)!important;color:#1A1608!important;padding:0 18px!important;border-radius:5px!important;font-weight:800!important;border-bottom:2px solid transparent!important;height:40px!important}
-nav .links a.btn-nav:hover{color:#1A1608!important}
-@media(max-width:760px){nav .links a:not(.btn-nav){display:none!important}nav .brand .wm em{display:none!important}nav .in{min-height:62px!important}}
 </style>
 </head>
 <body>
 <nav><div class="in">
   <a class="brand" href="index.html"><svg width="32" height="32" viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="3.4" stroke-linecap="square" aria-hidden="true"><path d="M14 8 H6 V56 H14" fill="none"/><path d="M50 8 H58 V56 H50" fill="none"/><path d="M18 44 V22 L32 36 L46 22 V44" stroke-width="4" fill="none"/></svg><span class="wm">Atelier MDT<em>VOTRE TEMPS VAUT MIEUX QUE ÇA</em></span></a>
-  <div class="links">
-    <a href="realisations.html">Réalisations</a>
-    <a href="offres.html">Offres</a>
-    <a href="rentabilite.html" class="on">Rentabilité</a>
-    <a href="qui-suis-je.html">Qui suis-je</a>
-    <a class="btn-nav" href="contact.html">Échanger 30 min</a>
+  <div class="menu">
+    <div class="links" id="liens-nav">
+      <a href="realisations.html">Réalisations</a>
+      <a href="offres.html">Offres</a>
+      <a href="rentabilite.html" class="on">Rentabilité</a>
+      <a href="qui-suis-je.html">Qui suis-je</a>
+      <a class="btn-nav m" href="contact.html">Échanger 30 min</a>
+    </div>
+    <a class="btn-nav d" href="contact.html">Échanger 30 min</a>
+    <button class="burger" type="button" aria-label="Ouvrir le menu" aria-expanded="false" aria-controls="liens-nav"><span></span><span></span><span></span></button>
   </div>
 </div></nav>
 
@@ -220,7 +185,7 @@ nav .links a.btn-nav:hover{color:#1A1608!important}
   <h3 class="t">Prendre les devants plutôt que de se faire distancer</h3>
   <div class="txt">
     <p><strong>L'IA n'est plus l'avenir : elle fait déjà partie du quotidien</strong> — de vos concurrents, de vos fournisseurs, de vos clients. La question n'est plus de s'y mettre ou non, mais d'éviter de perdre des mois à tâtonner seul pendant que d'autres avancent.</p>
-    <p>Le piège classique en petite entreprise est de donner un accès à tout le monde et d'attendre que ça prenne. Ça ne prend pas : chacun tâtonne, obtient des résultats génériques, et abandonne en trois semaines. Ce qui fonctionne, c'est un espace organisé par métier, des instructions qui situent l'assistant, et une formation sur les tâches réelles des gens — pas sur l'outil.</p>
+    <p>Le piège classique en petite entreprise est de donner un accès à tout le monde et d'attendre que ça prenne. Ça ne prend pas : chacun tâtonne, obtient des résultats génériques, et abandonne en trois semaines. Ce qui fonctionne, c'est un espace organisé par métier, des instructions qui situent l'assistant, et un accompagnement sur les tâches réelles des gens — pas sur l'outil.</p>
     <p>C'est la seule des quatre prestations dont la valeur augmente avec le temps : <strong>la compétence reste quand la mission est finie.</strong></p>
   </div>
   <div class="calc">
@@ -255,8 +220,9 @@ nav .links a.btn-nav:hover{color:#1A1608!important}
 </div></div>
 
 <footer><div class="in"><div class="row">
-  <span>Atelier MDT · <a href="mailto:antoine@atelier-mdt.fr">antoine@atelier-mdt.fr</a></span>
-  <span>SIRET 109 757 526 00016 · <a href="mentions-legales.html">Mentions légales</a> · <a href="cgv.html">CGV</a></span>
+  <span>Atelier MDT · Automatisation · Veille · Tableaux de bord · Accompagnement IA</span>
+  <span><a href="mailto:antoine@atelier-mdt.fr">antoine@atelier-mdt.fr</a> · <a href="mentions-legales.html">Mentions légales</a> · <a href="cgv.html">CGV</a></span>
 </div></div></footer>
+<script src="assets/site.js" defer></script>
 </body>
 </html>

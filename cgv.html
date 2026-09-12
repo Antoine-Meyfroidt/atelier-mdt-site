@@ -5,11 +5,21 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Conditions générales — Atelier MDT</title>
 <meta name="description" content="Conditions générales de prestation de services d'Atelier MDT, annexées à chaque devis.">
+<link rel="canonical" href="https://atelier-mdt.fr/cgv.html">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://atelier-mdt.fr/cgv.html">
+<meta property="og:site_name" content="Atelier MDT">
+<meta property="og:title" content="Conditions générales — Atelier MDT">
+<meta property="og:description" content="Conditions générales de prestation de services d'Atelier MDT, annexées à chaque devis.">
+<meta property="og:image" content="https://atelier-mdt.fr/assets/verrouillage-baseline-ambre.png">
+<meta property="og:locale" content="fr_FR">
+<meta name="twitter:card" content="summary_large_image">
 <meta name="theme-color" content="#10233F">
 <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32.png">
 <link rel="apple-touch-icon" sizes="180x180" href="assets/favicon-180.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/site.css">
 <style>
 :root{--nuit:#10233F;--panneau:#182F52;--ambre:#F5B62E;--sourd:#9FB0C8;--trait:#2A4470;--froid:#E9EEF6}
 *{margin:0;padding:0;box-sizing:border-box}
@@ -17,16 +27,6 @@ html{scroll-behavior:smooth}
 body{background:var(--nuit);color:var(--froid);font-family:'Manrope',system-ui,-apple-system,sans-serif;line-height:1.6;font-size:16px;-webkit-font-smoothing:antialiased}
 a{color:inherit}
 .in{max-width:900px;margin:0 auto;padding:0 22px}
-nav{position:sticky;top:0;z-index:20;background:rgba(16,35,63,.93);backdrop-filter:blur(8px);border-bottom:1px solid var(--trait)}
-nav .in{display:flex;align-items:center;justify-content:space-between;gap:14px;padding:13px 22px}
-nav .brand{display:flex;align-items:center;gap:10px;text-decoration:none}
-nav .brand svg{color:var(--ambre);flex:none}
-nav .brand span{font-size:16px;font-weight:800;letter-spacing:-.025em}
-nav .links{display:flex;align-items:center;gap:20px}
-nav .links a{color:var(--sourd);text-decoration:none;font-size:13.5px;font-weight:600}
-nav .links a:hover,nav .links a.on{color:var(--froid)}
-nav .cta{background:var(--ambre)!important;color:#1A1608!important;padding:9px 15px;border-radius:5px;font-weight:800!important}
-@media(max-width:700px){nav .links a:not(.cta){display:none}}
 header.h{padding:60px 0 6px}
 header.h .eyebrow{font-size:11.5px;font-weight:800;letter-spacing:.09em;color:var(--ambre);margin-bottom:12px}
 header.h h1{font-size:clamp(30px,5.4vw,46px);font-weight:800;letter-spacing:-.03em;line-height:1.06;max-width:22ch}
@@ -41,9 +41,6 @@ h2.lbl{font-size:11.5px;font-weight:800;letter-spacing:.09em;color:var(--ambre);
 .card{background:var(--panneau);border:1px solid var(--trait);border-radius:7px;padding:20px 22px}
 .filet{border-left:3px solid var(--ambre);padding-left:14px;margin:18px 0;font-size:14.5px;color:var(--sourd);max-width:68ch}
 .filet b{color:var(--froid)}
-footer{margin-top:60px;border-top:1px solid var(--trait);padding:24px 0 46px;font-size:12.5px;color:var(--sourd)}
-footer .row{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
-footer a{color:var(--sourd)}
 .cta{background:var(--ambre);color:#1A1608;border-radius:8px;padding:32px 30px;margin-top:56px}
 .cta h2{font-size:clamp(22px,3.4vw,28px);font-weight:800;letter-spacing:-.02em;line-height:1.15}
 .cta p{font-size:15.5px;margin-top:10px;max-width:62ch}
@@ -64,52 +61,21 @@ footer a{color:var(--sourd)}
 .doc .head .s{font-size:12.5px;color:#4A6591;margin-top:4px}
 .doc .a{color:#7387A6;font-style:italic;font-size:12.5px}
 @media(max-width:600px){.doc{padding:24px 20px}}
-
-/* ── commun à toutes les pages ── */
-.in{max-width:900px!important;margin:0 auto;padding:0 22px}
-nav{position:sticky;top:0;z-index:20;background:rgba(16,35,63,.94);backdrop-filter:blur(8px);border-bottom:1px solid var(--trait,#2A4470)}
-nav .in{display:flex;align-items:center;justify-content:space-between;gap:16px;padding:15px 22px}
-nav .brand{display:flex;align-items:center;gap:12px;text-decoration:none}
-nav .brand svg{color:var(--ambre,#F5B62E);flex:none}
-nav .brand .wm{font-size:18px;font-weight:800;letter-spacing:-.025em;line-height:1;color:var(--froid,#E9EEF6)}
-nav .brand .wm em{display:block;font-style:normal;font-size:7.5px;font-weight:800;letter-spacing:.09em;color:var(--ambre,#F5B62E);margin-top:4px;white-space:nowrap}
-nav .links{display:flex;align-items:center;gap:22px}
-nav .links a{color:var(--sourd,#9FB0C8);text-decoration:none;font-size:14px;font-weight:600;white-space:nowrap}
-nav .links a:hover,nav .links a.on{color:var(--froid,#E9EEF6)}
-nav .links a.btn-nav{background:var(--ambre,#F5B62E);color:#1A1608;padding:10px 16px;border-radius:5px;font-weight:800;margin:0;display:inline-block;line-height:1.2}
-@media(max-width:760px){nav .links a:not(.btn-nav){display:none}nav .brand .wm em{display:none}}
-footer{margin-top:60px;border-top:1px solid var(--trait,#2A4470);padding:24px 0 46px;font-size:12.5px;color:var(--sourd,#9FB0C8)}
-footer .row{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
-footer a{color:var(--sourd,#9FB0C8)}
-.cta-bloc{background:var(--ambre,#F5B62E);color:#1A1608;border-radius:8px;padding:32px 30px;margin-top:56px}
-.cta-bloc h2{font-size:clamp(22px,3.4vw,28px);font-weight:800;letter-spacing:-.02em;line-height:1.15}
-.cta-bloc p{font-size:15.5px;margin-top:10px;max-width:62ch;color:#1A1608}
-.cta-bloc a{display:inline-block;margin-top:18px;background:#1A1608;color:var(--ambre,#F5B62E);padding:12px 20px;border-radius:5px;font-weight:800;font-size:15px;text-decoration:none}
-
-/* ── NAVIGATION UNIFIÉE (bloc final, prioritaire) ── */
-nav .in{display:flex!important;align-items:center!important;justify-content:space-between!important;gap:18px!important;padding:0 22px!important;min-height:74px!important}
-nav .brand{display:flex!important;align-items:center!important;gap:12px!important;text-decoration:none!important}
-nav .brand svg{color:var(--ambre,#F5B62E)!important;flex:none!important;width:32px!important;height:32px!important}
-nav .brand .wm{font-size:18px!important;font-weight:800!important;letter-spacing:-.025em!important;line-height:1!important;color:var(--froid,#E9EEF6)!important}
-nav .brand .wm em{display:block!important;font-style:normal!important;font-size:7.5px!important;font-weight:800!important;letter-spacing:.09em!important;color:var(--ambre,#F5B62E)!important;margin-top:4px!important;white-space:nowrap!important}
-nav .links{display:flex!important;align-items:center!important;gap:24px!important;height:100%!important}
-nav .links a{display:inline-flex!important;align-items:center!important;height:36px!important;margin:0!important;color:var(--sourd,#9FB0C8)!important;text-decoration:none!important;font-size:14px!important;font-weight:600!important;white-space:nowrap!important;border-bottom:2px solid transparent!important;line-height:1!important}
-nav .links a:hover{color:var(--froid,#E9EEF6)!important}
-nav .links a.on{color:var(--froid,#E9EEF6)!important;border-bottom:2px solid var(--ambre,#F5B62E)!important}
-nav .links a.btn-nav{background:var(--ambre,#F5B62E)!important;color:#1A1608!important;padding:0 18px!important;border-radius:5px!important;font-weight:800!important;border-bottom:2px solid transparent!important;height:40px!important}
-nav .links a.btn-nav:hover{color:#1A1608!important}
-@media(max-width:760px){nav .links a:not(.btn-nav){display:none!important}nav .brand .wm em{display:none!important}nav .in{min-height:62px!important}}
 </style>
 </head>
 <body>
 <nav><div class="in">
   <a class="brand" href="index.html"><svg width="32" height="32" viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="3.4" stroke-linecap="square" aria-hidden="true"><path d="M14 8 H6 V56 H14" fill="none"/><path d="M50 8 H58 V56 H50" fill="none"/><path d="M18 44 V22 L32 36 L46 22 V44" stroke-width="4" fill="none"/></svg><span class="wm">Atelier MDT<em>VOTRE TEMPS VAUT MIEUX QUE ÇA</em></span></a>
-  <div class="links">
-    <a href="realisations.html">Réalisations</a>
-    <a href="offres.html">Offres</a>
-    <a href="rentabilite.html">Rentabilité</a>
-    <a href="qui-suis-je.html">Qui suis-je</a>
-    <a class="btn-nav" href="contact.html">Échanger 30 min</a>
+  <div class="menu">
+    <div class="links" id="liens-nav">
+      <a href="realisations.html">Réalisations</a>
+      <a href="offres.html">Offres</a>
+      <a href="rentabilite.html">Rentabilité</a>
+      <a href="qui-suis-je.html">Qui suis-je</a>
+      <a class="btn-nav m" href="contact.html">Échanger 30 min</a>
+    </div>
+    <a class="btn-nav d" href="contact.html">Échanger 30 min</a>
+    <button class="burger" type="button" aria-label="Ouvrir le menu" aria-expanded="false" aria-controls="liens-nav"><span></span><span></span><span></span></button>
   </div>
 </div></nav>
 
@@ -117,18 +83,18 @@ nav .links a.btn-nav:hover{color:#1A1608!important}
   <div class="eyebrow">CONDITIONS GÉNÉRALES</div>
   <h1>Conditions générales de prestation de services</h1>
   <p class="sub">Elles s'appliquent à toute prestation d'Atelier MDT et sont annexées à chaque devis. Les points essentiels — propriété de ce qui est construit, absence de maintenance imposée, résiliation des abonnements — sont écrits noir sur blanc.</p>
-  <div class="etat"><span class="tag">EN RELECTURE</span><div><b>État au 10 septembre 2026.</b> Cette version est en cours de relecture par un professionnel du droit. Les articles relatifs à la responsabilité et à la juridiction compétente pourront être ajustés à l'issue de cette relecture. La version définitive sera datée et publiée ici.</div></div>
+  <div class="etat"><span class="tag">EN RELECTURE</span><div><b>État au 11 septembre 2026.</b> Cette version est en cours de relecture par un professionnel du droit. Les articles relatifs à la responsabilité et à la juridiction compétente pourront être ajustés à l'issue de cette relecture. La version définitive sera datée et publiée ici.</div></div>
   <div style="margin-top:22px"><a class="btn p" href="assets/CGV-Atelier-MDT.pdf" download style="display:inline-block;padding:13px 22px;font-size:15px;font-weight:700;text-decoration:none;border-radius:5px;background:var(--ambre);color:#1A1608">Télécharger les CGV en PDF</a></div>
 </div></header>
 
 <section><div class="in">
   <div class="doc">
-    <div class="head"><div class="t">Conditions générales de prestation de services</div><div class="s">Atelier MDT — Antoine Meyfroidt, entrepreneur individuel · 17 rue des Potiers, 35133 Lécousse · SIRET 109 757 526 00016 · Version du 8 septembre 2026, en relecture</div></div>
+    <div class="head"><div class="t">Conditions générales de prestation de services</div><div class="s">Atelier MDT — Antoine Meyfroidt, entrepreneur individuel · 17 rue des Potiers, 35133 Lécousse · SIRET 109 757 526 00016 · Version du 11 septembre 2026, en relecture</div></div>
     <h2>Article 1 — Objet et champ d'application</h2>
 <p>Les présentes conditions générales régissent l'ensemble des prestations fournies par Atelier MDT, entreprise individuelle sous régime de la micro-entreprise, dont le siège est situé 17 rue des Potiers, 35133 Lécousse, immatriculée sous le numéro SIRET 109 757 526 00016, ci-après « le Prestataire », à toute personne morale ou physique agissant dans le cadre de son activité professionnelle, ci-après « le Client ».</p>
 <p>Elles s'appliquent à toutes les prestations : accompagnement et ateliers à l'usage des outils numériques et d'intelligence artificielle, déploiement d'espaces de travail structurés, conception et mise en place d'automatisations de flux, création de tableaux de bord, et veille informationnelle sur abonnement.</p>
 <p>Toute commande implique l'acceptation sans réserve des présentes conditions, qui prévalent sur tout autre document du Client, notamment ses conditions générales d'achat.</p>
-<h2>Article 2 — Devis et formation du contrat</h2>
+<h2>Article 2 — Devis et conclusion du contrat</h2>
 <p>Chaque prestation fait l'objet d'un devis écrit précisant son périmètre, son prix, son délai et ses éventuelles options. Le devis est valable trente (30) jours à compter de sa date d'émission.</p>
 <p>Le contrat est formé par le retour du devis signé par le Client, portant la mention « Bon pour accord », la date et la signature. Un accord exprès par courrier électronique vaut acceptation, sous réserve de régularisation par signature du devis.</p>
 <p>Toute prestation non expressément mentionnée au devis fait l'objet d'un devis complémentaire.</p>
@@ -142,11 +108,8 @@ nav .links a.btn-nav:hover{color:#1A1608!important}
 <p>La bonne exécution des prestations suppose une collaboration active du Client, qui s'engage à :</p>
 <ul>
 <li>fournir les informations, accès et documents nécessaires dans des délais raisonnables ;</li>
-<ul>
 <li>désigner un interlocuteur unique disposant du pouvoir de décision, ainsi que, pour les prestations d'automatisation, un référent interne destinataire de la passation ;</li>
-<ul>
 <li>disposer des comptes, abonnements et licences nécessaires à la prestation, et en assumer le coût ;</li>
-<ul>
 <li>garantir qu'il détient les droits et autorisations sur les données qu'il transmet.</li>
 </ul>
 <p>Les délais annoncés sont suspendus de plein droit en cas de manquement du Client à ces obligations. Le Prestataire ne saurait être tenu responsable d'un retard qui en découlerait.</p>
@@ -164,7 +127,7 @@ nav .links a.btn-nav:hover{color:#1A1608!important}
 <p><b>6.5 Interruption exceptionnelle.</b> Le Prestataire pourra suspendre temporairement les livraisons pour une durée cumulée de <b>quatre (4) semaines maximum par année civile</b>, notamment en période de congés, sous réserve d'en informer le Client au moins quinze (15) jours à l'avance. Les mensualités correspondantes restent dues, la prestation reprenant automatiquement à l'issue de la période d'interruption.</p>
 <h2>Article 7 — Prestations d'accompagnement, d'atelier et de déploiement</h2>
 <p>L'atelier équipe est limité à huit (8) participants. Le tarif de base couvre quatre (4) participants, chaque participant supplémentaire étant facturé au tarif unitaire indiqué au devis, comprenant son livrable individuel personnalisé.</p>
-<p>Le socle de déploiement structuré comprend l'audit des usages, la structuration de l'espace de travail, les instructions par domaine métier et un guide de prise en main. Les modules de formation collective et de livrables individuels font l'objet d'une facturation distincte.</p>
+<p>Le socle de déploiement structuré comprend l'audit des usages, la structuration de l'espace de travail, les instructions par domaine métier et un guide de prise en main. Les modules d'atelier collectif et de livrables individuels font l'objet d'une facturation distincte.</p>
 <p>Les prestations sont réalisées à distance sauf mention contraire au devis. Les éventuels frais de déplacement sont facturés en sus, selon les modalités convenues.</p>
 <p><b>Annulation et report.</b> Toute demande de report formulée plus de sept (7) jours avant la date convenue est acceptée sans frais. Entre sept (7) jours et quarante-huit (48) heures avant la date convenue, cinquante pour cent (50 %) du prix de la prestation reste dû. Moins de quarante-huit (48) heures avant la date convenue, ou en cas d'absence non signalée, la totalité du prix reste due.</p>
 <h2>Article 8 — Modifications et retouches</h2>
@@ -189,13 +152,13 @@ nav .links a.btn-nav:hover{color:#1A1608!important}
 <p>Les présentes conditions sont soumises au droit français.</p>
 <p>En cas de différend, les parties s'engagent à rechercher une solution amiable préalable. À défaut d'accord dans un délai de trente (30) jours à compter de la première réclamation écrite, le litige sera porté devant les tribunaux compétents dans le ressort du siège du Prestataire, à Rennes, dans les cas où la loi le permet.</p>
 <p class="a">Clause à faire vérifier : entre professionnels non commerçants, une clause attributive de compétence peut être inopérante.</p>
-<p>---</p>
   </div>
 </div></section>
 
 <footer><div class="in"><div class="row">
-  <span>Atelier MDT · <a href="mailto:antoine@atelier-mdt.fr">antoine@atelier-mdt.fr</a></span>
-  <span>SIRET 109 757 526 00016 · <a href="mentions-legales.html">Mentions légales</a> · <a href="cgv.html">CGV</a></span>
+  <span>Atelier MDT · Automatisation · Veille · Tableaux de bord · Accompagnement IA</span>
+  <span><a href="mailto:antoine@atelier-mdt.fr">antoine@atelier-mdt.fr</a> · <a href="mentions-legales.html">Mentions légales</a> · <a href="cgv.html">CGV</a></span>
 </div></div></footer>
+<script src="assets/site.js" defer></script>
 </body>
 </html>

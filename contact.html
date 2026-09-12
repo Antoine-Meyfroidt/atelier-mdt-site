@@ -5,11 +5,21 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Contact — Atelier MDT</title>
 <meta name="description" content="Trente minutes gratuites en visio pour identifier la tâche qui vous coûte le plus de temps. Devis écrit, sans engagement.">
+<link rel="canonical" href="https://atelier-mdt.fr/contact.html">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://atelier-mdt.fr/contact.html">
+<meta property="og:site_name" content="Atelier MDT">
+<meta property="og:title" content="Contact — Atelier MDT">
+<meta property="og:description" content="Trente minutes gratuites en visio pour identifier la tâche qui vous coûte le plus de temps. Devis écrit, sans engagement.">
+<meta property="og:image" content="https://atelier-mdt.fr/assets/verrouillage-baseline-ambre.png">
+<meta property="og:locale" content="fr_FR">
+<meta name="twitter:card" content="summary_large_image">
 <meta name="theme-color" content="#10233F">
 <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32.png">
 <link rel="apple-touch-icon" sizes="180x180" href="assets/favicon-180.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/site.css">
 <style>
 :root{--nuit:#10233F;--panneau:#182F52;--ambre:#F5B62E;--sourd:#9FB0C8;--trait:#2A4470;--froid:#E9EEF6}
 *{margin:0;padding:0;box-sizing:border-box}
@@ -17,16 +27,6 @@ html{scroll-behavior:smooth}
 body{background:var(--nuit);color:var(--froid);font-family:'Manrope',system-ui,-apple-system,sans-serif;line-height:1.6;font-size:16px;-webkit-font-smoothing:antialiased}
 a{color:inherit}
 .in{max-width:900px;margin:0 auto;padding:0 22px}
-nav{position:sticky;top:0;z-index:20;background:rgba(16,35,63,.92);backdrop-filter:blur(8px);border-bottom:1px solid var(--trait)}
-nav .in{display:flex;align-items:center;justify-content:space-between;gap:14px;padding:13px 22px}
-nav .brand{display:flex;align-items:center;gap:10px;text-decoration:none}
-nav .brand svg{color:var(--ambre);flex:none}
-nav .brand span{font-size:16px;font-weight:800;letter-spacing:-.025em}
-nav .links{display:flex;align-items:center;gap:20px}
-nav .links a{color:var(--sourd);text-decoration:none;font-size:13.5px;font-weight:600}
-nav .links a:hover,nav .links a.on{color:var(--froid)}
-nav .cta{background:var(--ambre)!important;color:#1A1608!important;padding:9px 15px;border-radius:5px;font-weight:800!important}
-@media(max-width:660px){nav .links a:not(.cta){display:none}}
 header.h{padding:60px 0 6px}
 header.h .eyebrow{font-size:11.5px;font-weight:800;letter-spacing:.09em;color:var(--ambre);margin-bottom:12px}
 header.h h1{font-size:clamp(30px,5.4vw,46px);font-weight:800;letter-spacing:-.03em;line-height:1.06;max-width:22ch}
@@ -41,9 +41,6 @@ h2.lbl{font-size:11.5px;font-weight:800;letter-spacing:.09em;color:var(--ambre);
 .card{background:var(--panneau);border:1px solid var(--trait);border-radius:7px;padding:20px 22px}
 .filet{border-left:3px solid var(--ambre);padding-left:14px;margin:18px 0;font-size:14.5px;color:var(--sourd);max-width:68ch}
 .filet b{color:var(--froid)}
-footer{margin-top:60px;border-top:1px solid var(--trait);padding:24px 0 46px;font-size:12.5px;color:var(--sourd)}
-footer .row{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
-footer a{color:var(--sourd)}
 .cta{background:var(--ambre);color:#1A1608;border-radius:8px;padding:32px 30px;margin-top:56px}
 .cta h2{font-size:clamp(22px,3.4vw,28px);font-weight:800;letter-spacing:-.02em;line-height:1.15}
 .cta p{font-size:15.5px;margin-top:10px;max-width:62ch}
@@ -61,105 +58,116 @@ footer a{color:var(--sourd)}
 .side .card h3{font-size:14.5px;font-weight:800;margin-bottom:6px}
 .side .card p{font-size:14px;color:var(--sourd)}
 .side .card a{color:var(--ambre);text-decoration:none;font-weight:700}
-.todo{border:1px dashed var(--ambre);border-radius:6px;padding:12px 15px;font-size:13px;color:var(--sourd);margin-top:16px}
-nav .links a.on{color:var(--froid);border-bottom:2px solid var(--ambre);padding-bottom:2px}
-nav .cta{border-bottom:0!important}
-@media(max-width:760px){nav .links a:not(.cta){display:none}}
-
-/* ── commun à toutes les pages ── */
-.in{max-width:900px!important;margin:0 auto;padding:0 22px}
-nav{position:sticky;top:0;z-index:20;background:rgba(16,35,63,.94);backdrop-filter:blur(8px);border-bottom:1px solid var(--trait,#2A4470)}
-nav .in{display:flex;align-items:center;justify-content:space-between;gap:16px;padding:15px 22px}
-nav .brand{display:flex;align-items:center;gap:12px;text-decoration:none}
-nav .brand svg{color:var(--ambre,#F5B62E);flex:none}
-nav .brand .wm{font-size:18px;font-weight:800;letter-spacing:-.025em;line-height:1;color:var(--froid,#E9EEF6)}
-nav .brand .wm em{display:block;font-style:normal;font-size:7.5px;font-weight:800;letter-spacing:.09em;color:var(--ambre,#F5B62E);margin-top:4px;white-space:nowrap}
-nav .links{display:flex;align-items:center;gap:22px}
-nav .links a{color:var(--sourd,#9FB0C8);text-decoration:none;font-size:14px;font-weight:600;white-space:nowrap}
-nav .links a:hover,nav .links a.on{color:var(--froid,#E9EEF6)}
-nav .links a.btn-nav{background:var(--ambre,#F5B62E);color:#1A1608;padding:10px 16px;border-radius:5px;font-weight:800;margin:0;display:inline-block;line-height:1.2}
-@media(max-width:760px){nav .links a:not(.btn-nav){display:none}nav .brand .wm em{display:none}}
-footer{margin-top:60px;border-top:1px solid var(--trait,#2A4470);padding:24px 0 46px;font-size:12.5px;color:var(--sourd,#9FB0C8)}
-footer .row{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
-footer a{color:var(--sourd,#9FB0C8)}
-.cta-bloc{background:var(--ambre,#F5B62E);color:#1A1608;border-radius:8px;padding:32px 30px;margin-top:56px}
-.cta-bloc h2{font-size:clamp(22px,3.4vw,28px);font-weight:800;letter-spacing:-.02em;line-height:1.15}
-.cta-bloc p{font-size:15.5px;margin-top:10px;max-width:62ch;color:#1A1608}
-.cta-bloc a{display:inline-block;margin-top:18px;background:#1A1608;color:var(--ambre,#F5B62E);padding:12px 20px;border-radius:5px;font-weight:800;font-size:15px;text-decoration:none}
-
-/* ── NAVIGATION UNIFIÉE (bloc final, prioritaire) ── */
-nav .in{display:flex!important;align-items:center!important;justify-content:space-between!important;gap:18px!important;padding:0 22px!important;min-height:74px!important}
-nav .brand{display:flex!important;align-items:center!important;gap:12px!important;text-decoration:none!important}
-nav .brand svg{color:var(--ambre,#F5B62E)!important;flex:none!important;width:32px!important;height:32px!important}
-nav .brand .wm{font-size:18px!important;font-weight:800!important;letter-spacing:-.025em!important;line-height:1!important;color:var(--froid,#E9EEF6)!important}
-nav .brand .wm em{display:block!important;font-style:normal!important;font-size:7.5px!important;font-weight:800!important;letter-spacing:.09em!important;color:var(--ambre,#F5B62E)!important;margin-top:4px!important;white-space:nowrap!important}
-nav .links{display:flex!important;align-items:center!important;gap:24px!important;height:100%!important}
-nav .links a{display:inline-flex!important;align-items:center!important;height:36px!important;margin:0!important;color:var(--sourd,#9FB0C8)!important;text-decoration:none!important;font-size:14px!important;font-weight:600!important;white-space:nowrap!important;border-bottom:2px solid transparent!important;line-height:1!important}
-nav .links a:hover{color:var(--froid,#E9EEF6)!important}
-nav .links a.on{color:var(--froid,#E9EEF6)!important;border-bottom:2px solid var(--ambre,#F5B62E)!important}
-nav .links a.btn-nav{background:var(--ambre,#F5B62E)!important;color:#1A1608!important;padding:0 18px!important;border-radius:5px!important;font-weight:800!important;border-bottom:2px solid transparent!important;height:40px!important}
-nav .links a.btn-nav:hover{color:#1A1608!important}
-@media(max-width:760px){nav .links a:not(.btn-nav){display:none!important}nav .brand .wm em{display:none!important}nav .in{min-height:62px!important}}
+.form .deux{display:grid;grid-template-columns:1fr 1fr;gap:0 14px}
+@media(max-width:480px){.form .deux{grid-template-columns:1fr}}
+.form .hp{position:absolute;left:-9999px;width:1px;height:1px;overflow:hidden}
+.form button:disabled{opacity:.6;cursor:wait}
+.form .erreur{margin-top:14px;border:1px solid #E0663D;border-radius:5px;padding:12px 14px;font-size:13.5px;color:var(--froid);background:rgba(224,102,61,.12)}
+.form .erreur a{color:var(--ambre);font-weight:700}
+.side .card p+p{margin-top:8px}
 </style>
 </head>
 <body>
 <nav><div class="in">
   <a class="brand" href="index.html"><svg width="32" height="32" viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="3.4" stroke-linecap="square" aria-hidden="true"><path d="M14 8 H6 V56 H14" fill="none"/><path d="M50 8 H58 V56 H50" fill="none"/><path d="M18 44 V22 L32 36 L46 22 V44" stroke-width="4" fill="none"/></svg><span class="wm">Atelier MDT<em>VOTRE TEMPS VAUT MIEUX QUE ÇA</em></span></a>
-  <div class="links">
-    <a href="realisations.html">Réalisations</a>
-    <a href="offres.html">Offres</a>
-    <a href="rentabilite.html">Rentabilité</a>
-    <a href="qui-suis-je.html">Qui suis-je</a>
-    <a class="btn-nav" href="contact.html">Échanger 30 min</a>
+  <div class="menu">
+    <div class="links" id="liens-nav">
+      <a href="realisations.html">Réalisations</a>
+      <a href="offres.html">Offres</a>
+      <a href="rentabilite.html">Rentabilité</a>
+      <a href="qui-suis-je.html">Qui suis-je</a>
+      <a class="btn-nav m" href="contact.html">Échanger 30 min</a>
+    </div>
+    <a class="btn-nav d" href="contact.html">Échanger 30 min</a>
+    <button class="burger" type="button" aria-label="Ouvrir le menu" aria-expanded="false" aria-controls="liens-nav"><span></span><span></span><span></span></button>
   </div>
 </div></nav>
 
 <header class="h"><div class="in">
   <div class="eyebrow">CONTACT</div>
   <h1>On regarde ce que vous perdez ?</h1>
-  <p class="sub">Trente minutes en visio, gratuites, pour identifier la tâche qui vous coûte le plus de temps. Vous repartez avec un devis chiffré et vous décidez ensuite — aucun engagement.</p>
+  <p class="sub">Trente minutes en visio, gratuites, pour identifier la tâche qui vous coûte le plus de temps. Vous repartez avec un devis chiffré et vous décidez ensuite — aucun engagement. Réponse sous 48 heures ouvrées.</p>
 </div></header>
 
 <section><div class="in">
   <div class="cgrid">
     <div>
       <h2 class="lbl">DÉCRIVEZ VOTRE SITUATION</h2>
-      <form class="form" action="https://formspree.io/f/maeyvaae" method="POST">
-        <label for="nom">Votre nom</label>
-        <input id="nom" name="nom" type="text" required autocomplete="name">
-        <label for="email">Votre email</label>
-        <input id="email" name="email" type="email" required autocomplete="email">
-        <label for="entreprise">Votre entreprise et votre activité</label>
-        <input id="entreprise" name="entreprise" type="text" placeholder="Ex. : cabinet de kinésithérapie, 4 personnes">
+      <form class="form" id="form-contact" action="https://formspree.io/f/maeyvaae" method="POST">
+        <div class="deux">
+          <div>
+            <label for="nom">Votre nom</label>
+            <input id="nom" name="nom" type="text" required autocomplete="name">
+          </div>
+          <div>
+            <label for="email">Votre email</label>
+            <input id="email" name="email" type="email" required autocomplete="email">
+          </div>
+        </div>
+        <label for="entreprise">Nom de l'entreprise</label>
+        <input id="entreprise" name="entreprise" type="text" required autocomplete="organization" placeholder="Ex. : Cabinet Le Guen">
+        <div class="deux">
+          <div>
+            <label for="effectif">Nombre de salariés</label>
+            <select id="effectif" name="effectif" required>
+              <option value="" selected disabled>Choisir…</option>
+              <option>Je travaille seul(e)</option>
+              <option>2 à 5</option>
+              <option>6 à 10</option>
+              <option>11 à 20</option>
+              <option>Plus de 20</option>
+            </select>
+          </div>
+          <div>
+            <label for="activite">Activité / domaine</label>
+            <input id="activite" name="activite" type="text" required placeholder="Ex. : kinésithérapie, boulangerie, agence immobilière">
+          </div>
+        </div>
         <label for="sujet">Ce qui vous prend du temps</label>
         <select id="sujet" name="sujet">
           <option>Des demandes clients à traiter à la main</option>
           <option>Suivre mes avis ou mes concurrents</option>
           <option>Comprendre mes chiffres de vente</option>
-          <option>Former mon équipe à l'IA</option>
+          <option>Rendre mon équipe autonome avec l'IA</option>
           <option>Autre chose</option>
         </select>
         <label for="message">En quelques lignes</label>
         <textarea id="message" name="message" placeholder="Quelle tâche, à quelle fréquence, qui s'en occupe aujourd'hui…"></textarea>
         <input type="hidden" name="_subject" value="Demande de contact — atelier-mdt.fr">
-        <p class="rgpd">Les informations saisies servent uniquement à vous répondre. Elles ne sont ni stockées dans une base commerciale, ni transmises à des tiers, et sont supprimées une fois l'échange terminé. Vous pouvez demander leur suppression à tout moment à antoine@atelier-mdt.fr.</p>
+        <label class="hp" for="_gotcha" aria-hidden="true">Ne pas remplir</label>
+        <input class="hp" id="_gotcha" type="text" name="_gotcha" tabindex="-1" autocomplete="off" aria-hidden="true">
+        <p class="rgpd">Ces informations me servent à vous répondre, puis à assurer le suivi de notre échange : elles sont enregistrées dans mon outil de suivi commercial et conservées trois ans à compter de notre dernier contact. Elles ne sont ni cédées ni revendues. Le formulaire transite par Formspree (hébergement aux États-Unis). Vous pouvez à tout moment demander l'accès, la rectification ou la suppression de vos données, ou vous opposer à leur utilisation, en écrivant à antoine@atelier-mdt.fr. <a href="mentions-legales.html#donnees" style="color:var(--ambre)">Détails dans les mentions légales</a>.</p>
         <button type="submit">Envoyer</button>
+        <div class="erreur" id="form-erreur" hidden>L'envoi n'a pas abouti. Vous pouvez réessayer, ou m'écrire directement à <a href="mailto:antoine@atelier-mdt.fr">antoine@atelier-mdt.fr</a>.</div>
       </form>
-      </div>
+    </div>
     <div class="side">
       <h2 class="lbl">OU DIRECTEMENT</h2>
-      <div class="card"><h3>Par email</h3><p><a href="mailto:antoine@atelier-mdt.fr?subject=Demande%20d%27%C3%A9change%20-%20Atelier%20MDT">antoine@atelier-mdt.fr</a><br>Réponse sous 48 heures ouvrées.</p></div>
-      <div class="card"><h3>Par téléphone</h3><p><a href="tel:+33743688097">07 43 68 80 97</a><br>Si je ne réponds pas, laissez un message : je rappelle en fin de journée.</p></div>
+      <div class="card"><h3>Par email</h3><p><a href="mailto:antoine@atelier-mdt.fr?subject=Demande%20d%27%C3%A9change%20-%20Atelier%20MDT">antoine@atelier-mdt.fr</a></p></div>
+      <div class="card"><h3>Par téléphone</h3><p><a href="tel:+33743688097">07 43 68 80 97</a></p></div>
       <div class="card"><h3>LinkedIn</h3><p><a href="https://www.linkedin.com/in/antoine-meyfroidt/" rel="noopener">linkedin.com/in/antoine-meyfroidt</a></p></div>
-      <div class="card"><h3>Où</h3><p>À distance en priorité — visio pour l'échange comme pour la plupart des missions. Déplacement possible autour de Rennes quand c'est utile.</p></div>
-      <div class="card"><h3>Ce que vous recevez après l'échange</h3><p>Un devis écrit sous quelques jours : périmètre, prix, délai, ce qui est inclus et ce qui ne l'est pas. Puis c'est vous qui décidez.</p></div>
     </div>
   </div>
 </div></section>
 
 <footer><div class="in"><div class="row">
-  <span>Atelier MDT · <a href="mailto:antoine@atelier-mdt.fr">antoine@atelier-mdt.fr</a></span>
-  <span>SIRET 109 757 526 00016 · <a href="mentions-legales.html">Mentions légales</a> · <a href="cgv.html">CGV</a></span>
+  <span>Atelier MDT · Automatisation · Veille · Tableaux de bord · Accompagnement IA</span>
+  <span><a href="mailto:antoine@atelier-mdt.fr">antoine@atelier-mdt.fr</a> · <a href="mentions-legales.html">Mentions légales</a> · <a href="cgv.html">CGV</a></span>
 </div></div></footer>
+<script>
+(function(){
+  var f=document.getElementById('form-contact');if(!f)return;
+  var btn=f.querySelector('button[type=submit]'),err=document.getElementById('form-erreur');
+  f.addEventListener('submit',function(e){
+    e.preventDefault();
+    if(!f.checkValidity()){f.reportValidity();return;}
+    btn.disabled=true;btn.textContent='Envoi en cours…';err.hidden=true;
+    fetch(f.action,{method:'POST',body:new FormData(f),headers:{'Accept':'application/json'}})
+      .then(function(r){if(r.ok){window.location.href='merci.html';}else{throw new Error('HTTP '+r.status);}})
+      .catch(function(){btn.disabled=false;btn.textContent='Envoyer';err.hidden=false;});
+  });
+})();
+</script>
+<script src="assets/site.js" defer></script>
 </body>
 </html>

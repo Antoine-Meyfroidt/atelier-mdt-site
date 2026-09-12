@@ -1,4 +1,6 @@
-# Site Atelier MDT — structure multi-pages
+# Site Atelier MDT — structure et mise à jour
+
+*Version du 12 septembre 2026 — archive complète, 17 pages.*
 
 ## Arborescence — tout à plat, aucun nom de fichier en double
 
@@ -15,106 +17,82 @@ site-atelier-mdt/
 ├── realisation-07-granites.html
 ├── realisation-08-benchmark.html
 ├── offres.html
-├── rentabilite.html
+├── rentabilite.html                    (intégrée le 12/09, même traitement que les autres)
 ├── qui-suis-je.html
-├── contact.html
+├── contact.html                        formulaire Formspree, envoi AJAX → merci.html
+├── merci.html                          page de remerciement (noindex)
 ├── cgv.html
-├── assets/                             favicons, portrait, image de partage, brochures PDF
+├── mentions-legales.html
+├── assets/
+│   ├── site.css                        ← navigation, menu mobile, pied de page, bloc d'appel (commun à toutes les pages)
+│   ├── site.js                         ← ouverture/fermeture du menu mobile
+│   ├── favicon-16.png, favicon-32.png, favicon-180.png
+│   ├── verrouillage-baseline-ambre.png image de partage (Open Graph) de toutes les pages
+│   ├── brochure-atelier-mdt.pdf
+│   └── CGV-Atelier-MDT.pdf
 └── LISEZ-MOI.md
 ```
 
 **Pourquoi tout à plat** : lors d'un envoi sur GitHub, des fichiers de même nom dans des dossiers différents peuvent s'écraser. Ici chaque page a un nom unique ; on peut glisser tous les fichiers d'un coup sans risque.
 
-Navigation commune : Réalisations · Offres · Rentabilité · Qui suis-je · [Échanger 30 min]. Pied de page : email · SIRET · Mentions légales · CGV.
+## Ce qui est commun à toutes les pages — et où le modifier
+
+| Élément | Où | Remarque |
+|---|---|---|
+| Navigation (liens, bouton « Échanger 30 min », menu mobile) | `assets/site.css` + le bloc `<nav>` de chaque page | Le HTML de la nav est identique sur toutes les pages ; pour ajouter un lien, le faire dans chaque page (16 fois) ou me redemander une passe. |
+| Menu mobile (burger, sous 760 px) | `assets/site.css` + `assets/site.js` | Sous 430 px, le bouton « Échanger 30 min » quitte la barre et passe dans le menu déroulant. |
+| Pied de page | bloc `<footer>` de chaque page | Gauche : domaines. Droite : email · Mentions légales · CGV. Le SIRET n'y figure plus (il est dans les mentions légales et les CGV). |
+| Bloc d'appel jaune de fin de page (`.cta-bloc`) | `assets/site.css` | Tous les blocs pointent vers `contact.html`. |
+
+Les styles propres à chaque page restent dans son `<style>`. **Ne jamais recopier des règles `nav`, `footer` ou `.cta-bloc` dans une page** : elles vivent uniquement dans `site.css`.
 
 ## Envoyer sur GitHub
 
 1. Dézipper l'archive.
 2. Dépôt → **Add file → Upload files**.
-3. Glisser **tous les fichiers `.html`** et le **dossier `assets`** (le dossier lui-même, pas son contenu).
+3. Glisser **tous les fichiers `.html`** et le **dossier `assets`** (le dossier lui-même, pas son contenu). GitHub ajoute ou remplace les fichiers par chemin : les PDF, favicons et images déjà présents dans `assets/` ne sont pas touchés.
 4. **Commit changes**.
-5. Vérifier que `index.html` à la racine du dépôt affiche bien l'accueil.
+5. Vérifier en ligne : l'accueil s'affiche, le menu mobile s'ouvre sur téléphone, le pied de page ne montre plus le SIRET, `merci.html` s'ouvre.
 
-L'ancien dossier `realisations/` du dépôt n'est plus utilisé : il peut rester (aucun lien n'y mène), ou être supprimé fichier par fichier à l'occasion.
+## Formulaire de contact — comment ça marche
 
-## Choix par défaut, à valider
+- Envoi vers Formspree (`maeyvaae`) **en JavaScript** : à la réussite, redirection vers `merci.html`. Cette méthode fonctionne sur le plan gratuit ; la redirection « native » de Formspree est réservée aux plans payants.
+- Sans JavaScript, le formulaire s'envoie quand même (POST classique) et Formspree affiche sa propre page de confirmation.
+- Champ anti-spam `_gotcha` (invisible) : les robots qui le remplissent sont ignorés.
+- Champs collectés : nom, email, nom de l'entreprise, nombre de salariés (tranches), activité / domaine, sujet, message.
 
-- **« Qui suis-je »** plutôt que « Qui sommes-nous » : l'entreprise est une personne, et le site le dit partout ailleurs. Un pluriel serait incohérent avec le refus des titres inflatés. À changer si tu préfères.
-- **Prix affichés en « à partir de »** avec le bandeau « tarifs de lancement, trois premiers clients », comme décidé.
-- **La dépendance à l'IA est assumée** dans la page Qui suis-je, section « Avec l'IA, et je le dis ».
-- **L'angle « dépenser moins, décider mieux »** remplace toute promesse de chiffre d'affaires, conformément à ton cadrage.
+### À faire pour tenir la promesse de `merci.html`
 
-## À compléter avant mise en ligne
+La page merci dit : « Vous recevrez un récapitulatif par mail. » **Ce n'est pas encore vrai.** L'email automatique au visiteur (autoresponse) est réservé aux plans Formspree Professional et Business. Deux options :
 
-| Où | Quoi |
-|---|---|
-| `contact.html` | **Formulaire** : créer un compte Formspree (gratuit) ou Tally, remplacer `VOTRE_ID` dans l'attribut `action`. Sans cela, le bouton n'envoie rien. |
-| `contact.html` | Numéro de téléphone, dès la ligne active |
-| `qui-suis-je.html` | **Témoignages** : Adrien Cornu inséré ; modèle HTML en commentaire pour les suivants |
-| `cgv.html` | Remplacer par la version définitive après retour de l'avocat, dater, retirer le bandeau « en relecture » |
-| `index.html` | SIRET (2 endroits) — hébergeur GitHub Pages déjà renseigné |
-| toutes les pages | SIRET dans le pied de page |
+1. Construire un scénario Make / Power Automate qui lit la notification Formspree reçue dans la boîte antoine@atelier-mdt.fr et renvoie un récapitulatif au visiteur (même logique que la réalisation 01). **Décision prise : cette option.**
+2. Ou retirer la phrase de `merci.html` tant que le flux n'est pas en production.
 
-## RGPD, puisqu'il y a un formulaire
+## RGPD — ce que le site dit, et ce qu'il faut tenir
 
-Le formulaire collecte nom, email, entreprise et message. Une mention d'information figure sous le formulaire. Les données transitent par le prestataire de formulaire choisi : vérifie ses conditions (hébergement, durée de conservation) et mentionne-le dans les mentions légales une fois choisi. Ne stocke pas ces contacts dans un fichier de prospection sans base légale.
+- Les données du formulaire sont annoncées comme **conservées trois ans à compter du dernier contact** dans un outil de suivi commercial, puis supprimées. C'est la durée recommandée par la CNIL pour les prospects.
+- Formspree est nommé comme sous-traitant (hébergement AWS États-Unis, clauses contractuelles types).
+- **À compléter dès que l'outil CRM est choisi** : son nom et son pays d'hébergement dans `mentions-legales.html`, section « Données personnelles » (un commentaire HTML `À COMPLÉTER` marque l'endroit).
+- Les mentions légales signalent que Google Fonts transmet l'adresse IP du visiteur à Google. Pour éviter ce transfert, héberger la police Manrope dans `assets/` (un fichier `.woff2` et une règle `@font-face`).
+- Ces textes ont été rédigés avec soin mais **n'ont pas été relus par un professionnel du droit**. À faire relire avec les CGV.
 
----
+## CGV
 
-## Déploiement
+Version du 11 septembre 2026, en relecture. Le mot « formation » a été remplacé par « atelier » (article 7) et « conclusion du contrat » (article 2) : **signaler ces deux changements à l'avocat**, qui relit une version datée du 8 septembre. Quand la version définitive arrive : remplacer le texte, dater, retirer le bandeau « EN RELECTURE », régénérer `assets/CGV-Atelier-MDT.pdf`.
 
-## Option A — Cloudflare Pages *(recommandée)*
+## Choix éditoriaux en vigueur
 
-1. Crée un compte sur `dash.cloudflare.com`
-2. **Workers & Pages** → **Create** → **Pages** → **Upload assets**
-3. Glisse le dossier `site-atelier-mdt` entier, valide
-4. Le site est en ligne sur une adresse en `.pages.dev`
-5. **Custom domains** → ajoute `atelier-mdt.fr` et `www.atelier-mdt.fr`
-6. Cloudflare t'indique les enregistrements DNS à créer — reporte-les dans **Gandi → atelier-mdt.fr → Enregistrements DNS**
+- « Qui suis-je » plutôt que « Qui sommes-nous » : l'entreprise est une personne.
+- Prix affichés en « à partir de », bandeau « prix de lancement, trois premiers clients ».
+- Le mot **« formation » n'apparaît nulle part** (cadre réglementaire non clarifié) : « atelier », « accompagnement », « support ». À maintenir dans tout nouveau texte.
+- La veille hebdomadaire est présentée comme **formule de base** (5 concurrents ou 3 établissements) ; d'autres formules viendront plus tard.
+- Angle « dépenser moins, décider mieux » : aucune promesse de chiffre d'affaires.
+- Pas de mesure d'audience, pas de cookie, donc pas de bandeau.
+- Pas de blog ni de page par offre tant que le référencement n'est pas une priorité.
 
-Avantages : gratuit, certificat HTTPS automatique, très rapide, mise à jour par simple nouveau dépôt du dossier.
+## Après chaque mise en ligne
 
-## Option B — GitHub Pages
-
-1. Crée un dépôt public, par exemple `atelier-mdt-site`
-2. Dépose `index.html` et le dossier `assets/` à la racine
-3. **Settings** → **Pages** → source : branche `main`, dossier `/root`
-4. **Custom domain** → `atelier-mdt.fr`, puis coche *Enforce HTTPS*
-5. Chez Gandi, crée un enregistrement `CNAME` pour `www` pointant vers `<ton-pseudo>.github.io`, et les enregistrements `A` de la racine vers les adresses indiquées par GitHub dans sa documentation
-
-Avantages : historique des versions. Inconvénient : un peu plus long à configurer que Cloudflare.
-
----
-
-## La configuration DNS chez Gandi
-
-Tu iras dans **Nom de domaine → atelier-mdt.fr → Enregistrements DNS**. Attention à un point important : **ne touche pas aux enregistrements existants** de type `MX`, ni au `TXT` qui contient `v=spf1`, ni aux `SRV`. Ce sont ceux de ta boîte mail — les supprimer casserait `antoine@atelier-mdt.fr`.
-
-Tu ne modifieras que l'enregistrement `A` de la racine (`@`) et ajouteras un `CNAME` pour `www`, avec les valeurs exactes fournies par l'hébergeur retenu.
-
-Compte de quelques minutes à quelques heures pour que la propagation soit effective.
-
----
-
-## Après la mise en ligne
-
-**Vérifier** — le site s'ouvre bien en `https://atelier-mdt.fr`, le favicon apparaît dans l'onglet, les liens d'ancrage de la navigation fonctionnent, l'affichage tient sur téléphone, et le lien de partage affiche correctement le logo sur LinkedIn.
-
-**Déclarer le site** — Google Search Console pour le référencement, et la fiche d'établissement Google si tu veux apparaître dans les recherches locales rennaises.
-
-**Héberger le PNG de la signature** — une fois le site en ligne, `https://atelier-mdt.fr/assets/symbole-baseline-encre.png` devient l'adresse à utiliser dans ta signature email.
-
----
-
-## Ce que le site ne fait pas, volontairement
-
-**Pas de prix affichés.** Décision actée : les tarifs se donnent au devis, ce qui te laisse ajuster par client et monter sans réimprimer quoi que ce soit.
-
-**Pas de formulaire de contact.** Un lien `mailto:` suffit à ton volume, ne nécessite aucun service tiers et n'entraîne aucune obligation de traitement de données. Un formulaire pourra s'ajouter plus tard si le volume le justifie.
-
-**Pas de blog ni de page par offre.** À ajouter seulement si tu décides d'investir dans le référencement — ce qui n'est pas la priorité aujourd'hui.
-
-**Pas de mesure d'audience.** Ça t'évite le bandeau de cookies et toute déclaration. Si tu veux compter les visites plus tard, choisis un outil sans cookie.
+Vérifier : `https://atelier-mdt.fr` s'ouvre, favicon présent, menu mobile fonctionnel, partage d'un lien (offres, fiche) sur LinkedIn affiche image et description, formulaire testé une fois avec une vraie adresse.
 
 ---
 
