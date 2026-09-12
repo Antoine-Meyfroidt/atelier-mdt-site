@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Exemples · Veille en abonnement — Atelier MDT</title>
+<meta name="description" content="Six exemples de veille en abonnement : concurrence, prix publics, recrutements, revue de presse métier, publications concurrentes, IA appliquée à votre métier.">
+<link rel="canonical" href="https://atelier-mdt.fr/exemples-veille.html">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://atelier-mdt.fr/exemples-veille.html">
+<meta property="og:site_name" content="Atelier MDT">
+<meta property="og:title" content="Exemples · Veille en abonnement — Atelier MDT">
+<meta property="og:description" content="Six exemples de veille en abonnement : concurrence, prix publics, recrutements, revue de presse métier, publications concurrentes, IA appliquée à votre métier.">
+<meta property="og:image" content="https://atelier-mdt.fr/assets/verrouillage-baseline-ambre.png">
+<meta property="og:locale" content="fr_FR">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#10233F">
+<link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32.png">
+<link rel="apple-touch-icon" sizes="180x180" href="assets/favicon-180.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{--nuit:#10233F;--panneau:#182F52;--ambre:#F5B62E;--sourd:#9FB0C8;--trait:#2A4470;--froid:#E9EEF6}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{background:var(--nuit);color:var(--froid);font-family:'Manrope',system-ui,-apple-system,sans-serif;line-height:1.6;font-size:16px;-webkit-font-smoothing:antialiased}
+a{color:inherit}
+.in{max-width:900px;margin:0 auto;padding:0 22px}
+nav{position:sticky;top:0;z-index:20;background:rgba(16,35,63,.93);backdrop-filter:blur(8px);border-bottom:1px solid var(--trait)}
+nav .in{display:flex;align-items:center;justify-content:space-between;gap:14px;padding:13px 22px}
+nav .brand{display:flex;align-items:center;gap:10px;text-decoration:none}
+nav .brand svg{color:var(--ambre);flex:none}
+nav .brand span{font-size:16px;font-weight:800;letter-spacing:-.025em}
+nav .links{display:flex;align-items:center;gap:20px}
+nav .links a{color:var(--sourd);text-decoration:none;font-size:13.5px;font-weight:600}
+nav .links a:hover,nav .links a.on{color:var(--froid)}
+nav .cta{background:var(--ambre)!important;color:#1A1608!important;padding:9px 15px;border-radius:5px;font-weight:800!important}
+@media(max-width:700px){nav .links a:not(.cta){display:none}}
+header.h{padding:60px 0 6px}
+header.h .eyebrow{font-size:11.5px;font-weight:800;letter-spacing:.09em;color:var(--ambre);margin-bottom:12px}
+header.h h1{font-size:clamp(30px,5.4vw,46px);font-weight:800;letter-spacing:-.03em;line-height:1.06;max-width:22ch}
+header.h .sub{margin-top:15px;font-size:17px;color:var(--sourd);max-width:58ch}
+section{padding:58px 0 0;scroll-margin-top:64px}
+h2.lbl{font-size:11.5px;font-weight:800;letter-spacing:.09em;color:var(--ambre);padding-bottom:10px;border-bottom:1px solid var(--trait);margin-bottom:24px}
+.txt p{font-size:15.5px;max-width:68ch;margin-bottom:12px;color:#C9D4E4}
+.txt p strong{color:#fff}
+.btn{display:inline-block;padding:13px 22px;font-size:15px;font-weight:700;text-decoration:none;border-radius:5px}
+.btn.p{background:var(--ambre);color:#1A1608}
+.btn.s{background:transparent;color:var(--froid);border:1px solid var(--trait)}
+.card{background:var(--panneau);border:1px solid var(--trait);border-radius:7px;padding:20px 22px}
+.filet{border-left:3px solid var(--ambre);padding-left:14px;margin:18px 0;font-size:14.5px;color:var(--sourd);max-width:68ch}
+.filet b{color:var(--froid)}
+footer{margin-top:60px;border-top:1px solid var(--trait);padding:24px 0 46px;font-size:12.5px;color:var(--sourd)}
+footer .row{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
+footer a{color:var(--sourd)}
+.cta{background:var(--ambre);color:#1A1608;border-radius:8px;padding:32px 30px;margin-top:56px}
+.cta h2{font-size:clamp(22px,3.4vw,28px);font-weight:800;letter-spacing:-.02em;line-height:1.15}
+.cta p{font-size:15.5px;margin-top:10px;max-width:62ch}
+.cta a{display:inline-block;margin-top:18px;background:#1A1608;color:var(--ambre);padding:12px 20px;border-radius:5px;font-weight:800;font-size:15px;text-decoration:none}
+
+/* ── commun à toutes les pages ── */
+.in{max-width:900px!important;margin:0 auto;padding:0 22px}
+nav{position:sticky;top:0;z-index:20;background:rgba(16,35,63,.94);backdrop-filter:blur(8px);border-bottom:1px solid var(--trait,#2A4470)}
+nav .in{display:flex;align-items:center;justify-content:space-between;gap:16px;padding:15px 22px}
+nav .brand{display:flex;align-items:center;gap:12px;text-decoration:none}
+nav .brand svg{color:var(--ambre,#F5B62E);flex:none}
+nav .brand .wm{font-size:18px;font-weight:800;letter-spacing:-.025em;line-height:1;color:var(--froid,#E9EEF6)}
+nav .brand .wm em{display:block;font-style:normal;font-size:7.5px;font-weight:800;letter-spacing:.09em;color:var(--ambre,#F5B62E);margin-top:4px;white-space:nowrap}
+nav .links{display:flex;align-items:center;gap:22px}
+nav .links a{color:var(--sourd,#9FB0C8);text-decoration:none;font-size:14px;font-weight:600;white-space:nowrap}
+nav .links a:hover,nav .links a.on{color:var(--froid,#E9EEF6)}
+nav .links a.btn-nav{background:var(--ambre,#F5B62E);color:#1A1608;padding:10px 16px;border-radius:5px;font-weight:800;margin:0;display:inline-block;line-height:1.2}
+@media(max-width:760px){nav .links a:not(.btn-nav){display:none}nav .brand .wm em{display:none}}
+footer{margin-top:60px;border-top:1px solid var(--trait,#2A4470);padding:24px 0 46px;font-size:12.5px;color:var(--sourd,#9FB0C8)}
+footer .row{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
+footer a{color:var(--sourd,#9FB0C8)}
+.cta-bloc{background:var(--ambre,#F5B62E);color:#1A1608;border-radius:8px;padding:32px 30px;margin-top:56px}
+.cta-bloc h2{font-size:clamp(22px,3.4vw,28px);font-weight:800;letter-spacing:-.02em;line-height:1.15}
+.cta-bloc p{font-size:15.5px;margin-top:10px;max-width:62ch;color:#1A1608}
+.cta-bloc a{display:inline-block;margin-top:18px;background:#1A1608;color:var(--ambre,#F5B62E);padding:12px 20px;border-radius:5px;font-weight:800;font-size:15px;text-decoration:none}
+
+/* ── NAVIGATION UNIFIÉE (bloc final, prioritaire) ── */
+nav .in{display:flex!important;align-items:center!important;justify-content:space-between!important;gap:18px!important;padding:0 22px!important;min-height:74px!important}
+nav .brand{display:flex!important;align-items:center!important;gap:12px!important;text-decoration:none!important}
+nav .brand svg{color:var(--ambre,#F5B62E)!important;flex:none!important;width:32px!important;height:32px!important}
+nav .brand .wm{font-size:18px!important;font-weight:800!important;letter-spacing:-.025em!important;line-height:1!important;color:var(--froid,#E9EEF6)!important}
+nav .brand .wm em{display:block!important;font-style:normal!important;font-size:7.5px!important;font-weight:800!important;letter-spacing:.09em!important;color:var(--ambre,#F5B62E)!important;margin-top:4px!important;white-space:nowrap!important}
+nav .links{display:flex!important;align-items:center!important;gap:16px!important;height:100%!important}
+nav .links a{display:inline-flex!important;align-items:center!important;height:36px!important;margin:0!important;color:var(--sourd,#9FB0C8)!important;text-decoration:none!important;font-size:14px!important;font-weight:600!important;white-space:nowrap!important;border-bottom:2px solid transparent!important;line-height:1!important;font-size:13.5px!important}
+nav .links a:hover{color:var(--froid,#E9EEF6)!important}
+nav .links a.on{color:var(--froid,#E9EEF6)!important;border-bottom:2px solid var(--ambre,#F5B62E)!important}
+nav .links a.btn-nav{background:var(--ambre,#F5B62E)!important;color:#1A1608!important;padding:0 18px!important;border-radius:5px!important;font-weight:800!important;border-bottom:2px solid transparent!important;height:40px!important}
+nav .links a.btn-nav:hover{color:#1A1608!important}
+@media(max-width:760px){nav .links a:not(.btn-nav){display:none!important}nav .brand .wm em{display:none!important}nav .in{min-height:62px!important}}
+
+
+/* ══ MENU MOBILE — bloc autonome, aucune dépendance externe ══ */
+nav .burger{display:none}
+@media(max-width:760px){
+  nav .burger{display:flex;flex:none;flex-direction:column;justify-content:center;gap:5px;width:44px;height:38px;padding:0 11px;background:transparent;border:1px solid var(--trait,#2A4470);border-radius:5px;cursor:pointer;-webkit-tap-highlight-color:transparent}
+  nav .burger span{display:block;height:2px;background:var(--froid,#E9EEF6);border-radius:1px;transition:transform .2s ease,opacity .2s ease}
+  nav.ouvert .burger span:nth-child(1){transform:translateY(7px) rotate(45deg)}
+  nav.ouvert .burger span:nth-child(2){opacity:0}
+  nav.ouvert .burger span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
+  nav .in .links{display:none!important;position:absolute;top:100%;left:0;right:0;flex-direction:column!important;align-items:stretch!important;gap:0!important;height:auto!important;background:var(--nuit,#10233F);border-bottom:1px solid var(--trait,#2A4470);padding:4px 22px 20px!important;box-shadow:0 16px 34px rgba(0,0,0,.45)}
+  nav.ouvert .in .links{display:flex!important}
+  nav.ouvert .in .links a{display:flex!important;align-items:center!important;width:100%;height:auto!important;margin:0!important;padding:15px 0!important;font-size:16px!important;font-weight:600!important;color:var(--sourd,#9FB0C8)!important;background:transparent!important;border:0!important;border-bottom:1px solid var(--trait,#2A4470)!important;border-radius:0!important}
+  nav.ouvert .in .links a.on{color:var(--ambre,#F5B62E)!important}
+  nav.ouvert .in .links a.btn-nav{justify-content:center!important;margin-top:16px!important;height:46px!important;padding:0 18px!important;border:0!important;border-radius:5px!important;background:var(--ambre,#F5B62E)!important;color:#1A1608!important;font-weight:800!important}
+}
+
+/* ── page Exemples : mise en page allégée ── */
+.fil{font-size:12.5px;margin-bottom:18px}
+.fil a{color:var(--sourd);text-decoration:none;font-weight:700}
+.fil a:hover{color:var(--froid)}
+.chapo{margin-top:22px;border-left:2px solid var(--trait);padding-left:16px;font-size:13.8px;color:#7E93B4;max-width:74ch;line-height:1.6}
+.chapo b{color:var(--sourd)}
+.chapo a{color:var(--ambre);text-decoration:none;font-weight:700}
+
+.liste{margin-top:6px;border-top:1px solid var(--trait)}
+.ex{padding:26px 0;border-bottom:1px solid var(--trait);scroll-margin-top:88px}
+.ex h3{font-size:19px;font-weight:800;letter-spacing:-.015em;line-height:1.25;color:var(--froid)}
+.ex .src{margin-top:5px;font-size:11.5px;font-weight:700;letter-spacing:.02em}
+.ex .src a{color:var(--ambre);text-decoration:none}
+.ex .src a:hover{text-decoration:underline}
+.ex .src.nb{color:#61748F;font-weight:600}
+.ex .src.nb a{color:#7E93B4;font-weight:700}
+.ex p.c{margin-top:12px;font-size:14.6px;color:var(--sourd);max-width:74ch;line-height:1.65}
+.ex p.c b{color:var(--froid)}
+.ex p.c .q{color:#7E93B4}
+.ex details{margin-top:13px;max-width:74ch}
+.ex summary{cursor:pointer;font-size:12.5px;font-weight:800;letter-spacing:.03em;color:#7E93B4;list-style:none;display:inline-flex;align-items:center;gap:7px}
+.ex summary::-webkit-details-marker{display:none}
+.ex summary::before{content:"+";display:inline-flex;align-items:center;justify-content:center;width:16px;height:16px;border:1px solid var(--trait);border-radius:3px;font-size:12px;font-weight:700;line-height:1}
+.ex details[open] summary::before{content:"–"}
+.ex summary:hover{color:var(--ambre)}
+.ex details[open] summary{color:var(--ambre)}
+.ex details p{margin-top:10px;font-size:13.8px;color:#7E93B4;line-height:1.6;padding-left:23px}
+
+/* ── bloc des limites, en bas de page ── */
+section.limites{background:#0C1B32;border-top:1px solid var(--trait);border-bottom:1px solid var(--trait);padding:50px 0 54px;margin-top:56px}
+.cadre{display:grid;grid-template-columns:1fr 1fr;gap:14px;align-items:start}
+@media(max-width:780px){.cadre{grid-template-columns:1fr}}
+.cadre .oui,.cadre .non{border-radius:7px;padding:19px 21px}
+.cadre .oui{background:rgba(245,182,46,.06);border:1px solid rgba(245,182,46,.35)}
+.cadre .non{background:var(--panneau);border:1px solid var(--trait)}
+.cadre .k{font-size:10.5px;font-weight:800;letter-spacing:.08em;margin-bottom:10px}
+.cadre .oui .k{color:var(--ambre)}
+.cadre .non .k{color:#9FB0C8}
+.cadre p{font-size:14px;color:var(--sourd);line-height:1.6}
+.cadre p b{color:var(--froid)}
+.cadre ul{list-style:none}
+.cadre li{font-size:13.5px;color:#8FA2BC;margin-bottom:11px;padding-left:16px;position:relative;line-height:1.55}
+.cadre li::before{content:"";position:absolute;left:0;top:9px;width:7px;height:1px;background:#5A7091}
+.cadre .dem{color:var(--froid);font-weight:700}
+.cadre .fin{margin-top:13px;padding-top:12px;border-top:1px solid var(--trait);font-size:13.5px;color:#8FA2BC}
+
+.suite{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:12px}
+.suite a{display:flex;flex-direction:column;gap:5px;background:var(--panneau);border:1px solid var(--trait);border-radius:7px;padding:17px 19px;text-decoration:none;transition:border-color .15s}
+.suite a:hover{border-color:var(--ambre)}
+.suite a b{font-size:15.5px;font-weight:800;letter-spacing:-.01em}
+.suite a span{font-size:12.5px;color:var(--sourd)}
+.suite a .go{margin-top:auto;padding-top:7px;font-size:12px;font-weight:800;color:var(--ambre)}
+.retour{margin-top:20px;font-size:14px}
+.retour a{color:var(--ambre);text-decoration:none;font-weight:700}
+</style>
+</head>
+<body>
+<nav><div class="in">
+  <a class="brand" href="index.html"><svg width="32" height="32" viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="3.4" stroke-linecap="square" aria-hidden="true"><path d="M14 8 H6 V56 H14" fill="none"/><path d="M50 8 H58 V56 H50" fill="none"/><path d="M18 44 V22 L32 36 L46 22 V44" stroke-width="4" fill="none"/></svg><span class="wm">Atelier MDT<em>VOTRE TEMPS VAUT MIEUX QUE ÇA</em></span></a>
+  <div class="links" id="nav-liens">
+      <a href="realisations.html">Réalisations</a>
+      <a href="offres.html">Offres</a>
+      <a href="exemples.html" class="on">Exemples</a>
+      <a href="rentabilite.html">Rentabilité</a>
+      <a href="qui-suis-je.html">Qui suis-je</a>
+      <a class="btn-nav" href="contact.html">Échanger 30 min</a>
+  </div>
+  <button class="burger" type="button" aria-label="Ouvrir le menu" aria-expanded="false" aria-controls="nav-liens"><span></span><span></span><span></span></button>
+</div></nav>
+<header class="h"><div class="in">
+  <p class="fil"><a href="exemples.html">← Les 25 exemples</a></p>
+  <div class="eyebrow">EXEMPLES · FAMILLE 02 — VEILLE EN ABONNEMENT</div>
+  <h1>Six veilles qui tournent sans vous</h1>
+  <p class="sub">Ce que votre marché publie, relevé, historisé, et livré dans votre boîte mail sous une forme lisible en deux minutes.</p>
+  <p class="chapo">Un seul de ces 6 exemples s'appuie sur une réalisation publiée ; les 5 autres reprennent une brique technique déjà livrée, et le disent. <b>Aucun exemple sans cas publié n'affiche de chiffre.</b> Pour votre situation, le calcul se fait au premier échange — hypothèses sur la <a href="rentabilite.html">page rentabilité</a>. Offre correspondante : <a href="offres.html">Veille en abonnement</a>, 300 € d'installation puis dès 70 €/mois selon le rythme.</p>
+</div></header>
+
+<section><div class="in">
+  <div class="liste">
+<article class="ex" id="veille-concurrence">
+  <h3>Votre concurrence, semaine après semaine</h3>
+  <p class="src"><a href="realisation-04-veille.html">Réalisation 04 — voir les pièces →</a></p>
+  <p class="c"><span class="q">Suivre ses concurrents à la main coûte une à deux heures par semaine et finit toujours abandonné.</span></p>
+  <p class="c">Un instantané ne dit rien, une série chronologique dit tout : pas « il a 340 avis », mais « il en a pris seize ce mois-ci quand j'en prenais un ». Sur le cas livré : huit concurrents, six indicateurs, chaque lundi à 8&nbsp;h&nbsp;01 depuis juin 2026.</p>
+  <details><summary>Ce dont j'ai besoin de votre côté</summary><p>La liste des concurrents et leurs pages publiques, les indicateurs qui comptent pour vous, et vingt minutes pour définir ce qui doit déclencher une décision.</p></details>
+</article>
+<article class="ex" id="veille-prix">
+  <h3>Les prix publics d'un panier de références</h3>
+  <p class="src nb">Pas encore de cas publié · même brique que la <a href="realisation-04-veille.html">Réalisation 04</a></p>
+  <p class="c"><span class="q">Vous vendez trente références aussi vendues ailleurs. Savoir quand un concurrent bouge suppose de regarder trente pages par semaine.</span></p>
+  <p class="c">Le relevé devient un tableau d'écarts : où vous êtes au-dessus, de combien, depuis quand. Pas un outil de guerre des prix — un outil pour ne pas découvrir qu'on est hors marché sur les trois références qui font venir les clients.</p>
+  <details><summary>Ce dont j'ai besoin de votre côté</summary><p>Les références à suivre et les pages où leur prix est affiché, la fréquence utile, et un arbitrage sur les références non comparables.</p></details>
+</article>
+<article class="ex" id="veille-recrutement">
+  <h3>Ce que recrutent vos concurrents</h3>
+  <p class="src nb">Pas encore de cas publié · même brique que la <a href="realisation-04-veille.html">Réalisation 04</a></p>
+  <p class="c"><span class="q">Les mouvements d'un concurrent se voient quand ils produisent leurs effets. Trop tard pour réagir.</span></p>
+  <p class="c">Une offre d'emploi est un investissement annoncé des mois à l'avance : deux commerciaux, c'est une offensive ; un responsable de site, une ouverture ; plus rien depuis huit mois, autre chose. Utile aussi avant de publier votre propre annonce.</p>
+  <details><summary>Ce dont j'ai besoin de votre côté</summary><p>Les entreprises à suivre et leurs pages carrière publiques. Les sources sont qualifiées au cadrage : je ne retiens que celles qui autorisent la collecte automatique.</p></details>
+</article>
+<article class="ex" id="veille-presse">
+  <h3>Une revue de presse de votre métier, chaque mois</h3>
+  <p class="src nb">Pas encore de cas publié · même brique que la <a href="realisation-04-veille.html">Réalisation 04</a></p>
+  <p class="c"><span class="q">Vous avez mis quinze sources en favoris et vous n'en ouvrez aucune.</span></p>
+  <p class="c">Une synthèse mensuelle courte, construite sur les sources que vous auriez lues si vous en aviez eu le temps. C'est l'offre la moins chère du catalogue et la plus facile à tenir — et elle vous donne matière à parler à vos clients d'autre chose que de vos prestations.</p>
+  <details><summary>Ce dont j'ai besoin de votre côté</summary><p>Vos sources, ou une heure pour les choisir ensemble, et les trois ou quatre sujets à faire remonter en priorité.</p></details>
+</article>
+<article class="ex" id="veille-editoriale">
+  <h3>Ce que publient vos concurrents</h3>
+  <p class="src nb">Pas encore de cas publié · même brique que la <a href="realisation-04-veille.html">Réalisation 04</a></p>
+  <p class="c"><span class="q">Vous ne savez pas quoi publier. Vos concurrents, si — ou en tout cas ils publient.</span></p>
+  <p class="c">Le relevé de ce qu'ils annoncent : nouveautés, opérations commerciales, angles, formats. Vous n'y cherchez pas quoi copier, vous y cherchez ce que personne ne dit. <b>Observer n'est pas gérer</b> : je ne rédige pas vos publications et je ne tiens pas vos réseaux.</p>
+  <details><summary>Ce dont j'ai besoin de votre côté</summary><p>Les comptes et pages publiques à suivre, le rythme, et une acceptation claire de la limite ci-dessus.</p></details>
+</article>
+<article class="ex" id="veille-ia">
+  <h3>L'IA appliquée à votre métier</h3>
+  <p class="src nb">Pas encore de cas publié · même brique que la <a href="realisation-04-veille.html">Réalisation 04</a></p>
+  <p class="c"><span class="q">Le sujet bouge tous les mois, tout le monde en parle, et rien de ce qui se dit n'est trié pour votre métier.</span></p>
+  <p class="c">Une livraison mensuelle qui ne raconte pas l'actualité de l'IA mais ce qui change pour vous : les outils que vous utilisez déjà et qui gagnent une fonction utile, ce qui marche ailleurs à votre taille, et ce qu'il ne faut pas essayer.</p>
+  <details><summary>Ce dont j'ai besoin de votre côté</summary><p>Votre métier, vos outils actuels, la taille de l'équipe, et les sujets à exclure.</p></details>
+</article>
+  </div>
+</div></section>
+
+<section class="limites"><div class="in">
+  <h2 class="lbl">CE QUE JE PEUX FAIRE, ET CE QUE JE NE PEUX PAS</h2>
+  <div class="cadre">
+    <div class="oui"><div class="k">CE QUI EST FAISABLE</div><p>Relever chaque semaine ou chaque mois ce que votre marché publie — prix affichés, avis, notes, publications, annonces, nouveautés — l'historiser pour que l'évolution devienne visible, le faire analyser, et vous l'envoyer sous une forme lisible en deux minutes. Aucune intervention humaine entre la collecte et l'email. Le système reste de mon côté : la prestation, c'est la livraison régulière.</p></div>
+    <div class="non"><div class="k">CE QUI N'EST PAS FAISABLE</div>
+      <ul>
+      <li><span class="dem">« Vous saurez tout ce qui se dit sur moi. »</span> Sources publiques uniquement, et pas celles dont les conditions d'utilisation interdisent la collecte automatique — LinkedIn en fait partie, et c'est pour ça que vous ne le verrez jamais dans un devis de veille.</li>
+      <li><span class="dem">« Donnez-moi les chiffres de mes concurrents. »</span> Chiffre d'affaires, marge et fréquentation ne sont pas publics. On relève ce qui est publié — c'est-à-dire beaucoup, mais pas ça.</li>
+      <li><span class="dem">« Une alerte en temps réel. »</span> Non, et c'est un choix : une alerte permanente n'est jamais lue. La valeur est dans un rendez-vous régulier, court, qui arrive toujours.</li>
+      <li><span class="dem">« Le suivi des avis, une fois par mois. »</span> Non plus : ce thème n'est proposé qu'en hebdomadaire ou toutes les deux semaines. Un avis négatif découvert trois semaines plus tard, on n'en fait plus rien. Les autres thèmes sont disponibles aux trois rythmes.</li>
+      <li><span class="dem">« Vous ne raterez rien. »</span> Impossible à garantir. Une source publique peut tomber, changer de format, se fermer. Le rapport signale lui-même les sources qu'il n'a pas récupérées : une veille honnête dit ce qu'elle n'a pas vu.</li>
+      </ul>
+      <p class="fin"><b>Hors périmètre, définitivement :</b> veille réglementaire, veille juridique, veille appels d'offres. Ce sont des métiers avec une responsabilité que je ne prends pas.</p>
+    </div>
+  </div>
+</div></section>
+
+<section><div class="in">
+  <h2 class="lbl">LES AUTRES FAMILLES</h2>
+  <div class="suite">
+    <a href="exemples-automatisation.html"><b>Automatisation d'un flux</b><span>7 exemples</span><span class="go">Voir →</span></a>
+    <a href="exemples-donnees.html"><b>Données et études</b><span>6 exemples</span><span class="go">Voir →</span></a>
+    <a href="exemples-ia.html"><b>Accompagnement IA</b><span>6 exemples</span><span class="go">Voir →</span></a>
+  </div>
+  <p class="retour"><a href="exemples.html">← Les 25 exemples</a> &nbsp;·&nbsp; <a href="offres.html">Les offres et les prix</a> &nbsp;·&nbsp; <a href="index.html">L'accueil</a></p>
+</div></section>
+
+<div class="in"><div class="cta-bloc">
+  <h2>Lequel de ces cas est le vôtre&nbsp;?</h2>
+  <p>Trente minutes en visio pour identifier la tâche qui vous coûte le plus de temps, vérifier qu'elle est automatisable ou mesurable, et la chiffrer. Si aucun de ces exemples ne correspond, je vous le dis à ce moment-là.</p>
+  <a href="contact.html">Prendre contact</a>
+</div></div>
+<footer><div class="in"><div class="row">
+  <span>Atelier MDT · Automatisation · Veille · Tableaux de bord · Accompagnement IA</span>
+  <span><a href="mailto:antoine@atelier-mdt.fr">antoine@atelier-mdt.fr</a> · <a href="mentions-legales.html">Mentions légales</a> · <a href="cgv.html">CGV</a></span>
+</div></div></footer>
+<script>
+/* Menu mobile — autonome, aucune dépendance externe. */
+(function(){
+  var n=document.querySelector('nav');if(!n)return;
+  var b=n.querySelector('.burger'),l=n.querySelector('.links');if(!b||!l)return;
+  function etat(o){
+    n.classList.toggle('ouvert',o);
+    b.setAttribute('aria-expanded',o?'true':'false');
+    b.setAttribute('aria-label',o?'Fermer le menu':'Ouvrir le menu');
+  }
+  b.addEventListener('click',function(){etat(!n.classList.contains('ouvert'));});
+  l.addEventListener('click',function(e){if(e.target.closest('a'))etat(false);});
+  document.addEventListener('click',function(e){if(n.classList.contains('ouvert')&&!n.contains(e.target))etat(false);});
+  document.addEventListener('keydown',function(e){if(e.key==='Escape')etat(false);});
+  window.addEventListener('resize',function(){if(window.innerWidth>760)etat(false);});
+})();
+</script>
+</body>
+</html>

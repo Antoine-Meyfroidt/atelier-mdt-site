@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Exemples · Données et études — Atelier MDT</title>
+<meta name="description" content="Six exemples de tableaux de bord et d'études : historique de ventes, rentabilité par client, heures facturables, point mort, benchmark tarifaire.">
+<link rel="canonical" href="https://atelier-mdt.fr/exemples-donnees.html">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://atelier-mdt.fr/exemples-donnees.html">
+<meta property="og:site_name" content="Atelier MDT">
+<meta property="og:title" content="Exemples · Données et études — Atelier MDT">
+<meta property="og:description" content="Six exemples de tableaux de bord et d'études : historique de ventes, rentabilité par client, heures facturables, point mort, benchmark tarifaire.">
+<meta property="og:image" content="https://atelier-mdt.fr/assets/verrouillage-baseline-ambre.png">
+<meta property="og:locale" content="fr_FR">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#10233F">
+<link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32.png">
+<link rel="apple-touch-icon" sizes="180x180" href="assets/favicon-180.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{--nuit:#10233F;--panneau:#182F52;--ambre:#F5B62E;--sourd:#9FB0C8;--trait:#2A4470;--froid:#E9EEF6}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{background:var(--nuit);color:var(--froid);font-family:'Manrope',system-ui,-apple-system,sans-serif;line-height:1.6;font-size:16px;-webkit-font-smoothing:antialiased}
+a{color:inherit}
+.in{max-width:900px;margin:0 auto;padding:0 22px}
+nav{position:sticky;top:0;z-index:20;background:rgba(16,35,63,.93);backdrop-filter:blur(8px);border-bottom:1px solid var(--trait)}
+nav .in{display:flex;align-items:center;justify-content:space-between;gap:14px;padding:13px 22px}
+nav .brand{display:flex;align-items:center;gap:10px;text-decoration:none}
+nav .brand svg{color:var(--ambre);flex:none}
+nav .brand span{font-size:16px;font-weight:800;letter-spacing:-.025em}
+nav .links{display:flex;align-items:center;gap:20px}
+nav .links a{color:var(--sourd);text-decoration:none;font-size:13.5px;font-weight:600}
+nav .links a:hover,nav .links a.on{color:var(--froid)}
+nav .cta{background:var(--ambre)!important;color:#1A1608!important;padding:9px 15px;border-radius:5px;font-weight:800!important}
+@media(max-width:700px){nav .links a:not(.cta){display:none}}
+header.h{padding:60px 0 6px}
+header.h .eyebrow{font-size:11.5px;font-weight:800;letter-spacing:.09em;color:var(--ambre);margin-bottom:12px}
+header.h h1{font-size:clamp(30px,5.4vw,46px);font-weight:800;letter-spacing:-.03em;line-height:1.06;max-width:22ch}
+header.h .sub{margin-top:15px;font-size:17px;color:var(--sourd);max-width:58ch}
+section{padding:58px 0 0;scroll-margin-top:64px}
+h2.lbl{font-size:11.5px;font-weight:800;letter-spacing:.09em;color:var(--ambre);padding-bottom:10px;border-bottom:1px solid var(--trait);margin-bottom:24px}
+.txt p{font-size:15.5px;max-width:68ch;margin-bottom:12px;color:#C9D4E4}
+.txt p strong{color:#fff}
+.btn{display:inline-block;padding:13px 22px;font-size:15px;font-weight:700;text-decoration:none;border-radius:5px}
+.btn.p{background:var(--ambre);color:#1A1608}
+.btn.s{background:transparent;color:var(--froid);border:1px solid var(--trait)}
+.card{background:var(--panneau);border:1px solid var(--trait);border-radius:7px;padding:20px 22px}
+.filet{border-left:3px solid var(--ambre);padding-left:14px;margin:18px 0;font-size:14.5px;color:var(--sourd);max-width:68ch}
+.filet b{color:var(--froid)}
+footer{margin-top:60px;border-top:1px solid var(--trait);padding:24px 0 46px;font-size:12.5px;color:var(--sourd)}
+footer .row{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
+footer a{color:var(--sourd)}
+.cta{background:var(--ambre);color:#1A1608;border-radius:8px;padding:32px 30px;margin-top:56px}
+.cta h2{font-size:clamp(22px,3.4vw,28px);font-weight:800;letter-spacing:-.02em;line-height:1.15}
+.cta p{font-size:15.5px;margin-top:10px;max-width:62ch}
+.cta a{display:inline-block;margin-top:18px;background:#1A1608;color:var(--ambre);padding:12px 20px;border-radius:5px;font-weight:800;font-size:15px;text-decoration:none}
+
+/* ── commun à toutes les pages ── */
+.in{max-width:900px!important;margin:0 auto;padding:0 22px}
+nav{position:sticky;top:0;z-index:20;background:rgba(16,35,63,.94);backdrop-filter:blur(8px);border-bottom:1px solid var(--trait,#2A4470)}
+nav .in{display:flex;align-items:center;justify-content:space-between;gap:16px;padding:15px 22px}
+nav .brand{display:flex;align-items:center;gap:12px;text-decoration:none}
+nav .brand svg{color:var(--ambre,#F5B62E);flex:none}
+nav .brand .wm{font-size:18px;font-weight:800;letter-spacing:-.025em;line-height:1;color:var(--froid,#E9EEF6)}
+nav .brand .wm em{display:block;font-style:normal;font-size:7.5px;font-weight:800;letter-spacing:.09em;color:var(--ambre,#F5B62E);margin-top:4px;white-space:nowrap}
+nav .links{display:flex;align-items:center;gap:22px}
+nav .links a{color:var(--sourd,#9FB0C8);text-decoration:none;font-size:14px;font-weight:600;white-space:nowrap}
+nav .links a:hover,nav .links a.on{color:var(--froid,#E9EEF6)}
+nav .links a.btn-nav{background:var(--ambre,#F5B62E);color:#1A1608;padding:10px 16px;border-radius:5px;font-weight:800;margin:0;display:inline-block;line-height:1.2}
+@media(max-width:760px){nav .links a:not(.btn-nav){display:none}nav .brand .wm em{display:none}}
+footer{margin-top:60px;border-top:1px solid var(--trait,#2A4470);padding:24px 0 46px;font-size:12.5px;color:var(--sourd,#9FB0C8)}
+footer .row{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
+footer a{color:var(--sourd,#9FB0C8)}
+.cta-bloc{background:var(--ambre,#F5B62E);color:#1A1608;border-radius:8px;padding:32px 30px;margin-top:56px}
+.cta-bloc h2{font-size:clamp(22px,3.4vw,28px);font-weight:800;letter-spacing:-.02em;line-height:1.15}
+.cta-bloc p{font-size:15.5px;margin-top:10px;max-width:62ch;color:#1A1608}
+.cta-bloc a{display:inline-block;margin-top:18px;background:#1A1608;color:var(--ambre,#F5B62E);padding:12px 20px;border-radius:5px;font-weight:800;font-size:15px;text-decoration:none}
+
+/* ── NAVIGATION UNIFIÉE (bloc final, prioritaire) ── */
+nav .in{display:flex!important;align-items:center!important;justify-content:space-between!important;gap:18px!important;padding:0 22px!important;min-height:74px!important}
+nav .brand{display:flex!important;align-items:center!important;gap:12px!important;text-decoration:none!important}
+nav .brand svg{color:var(--ambre,#F5B62E)!important;flex:none!important;width:32px!important;height:32px!important}
+nav .brand .wm{font-size:18px!important;font-weight:800!important;letter-spacing:-.025em!important;line-height:1!important;color:var(--froid,#E9EEF6)!important}
+nav .brand .wm em{display:block!important;font-style:normal!important;font-size:7.5px!important;font-weight:800!important;letter-spacing:.09em!important;color:var(--ambre,#F5B62E)!important;margin-top:4px!important;white-space:nowrap!important}
+nav .links{display:flex!important;align-items:center!important;gap:16px!important;height:100%!important}
+nav .links a{display:inline-flex!important;align-items:center!important;height:36px!important;margin:0!important;color:var(--sourd,#9FB0C8)!important;text-decoration:none!important;font-size:14px!important;font-weight:600!important;white-space:nowrap!important;border-bottom:2px solid transparent!important;line-height:1!important;font-size:13.5px!important}
+nav .links a:hover{color:var(--froid,#E9EEF6)!important}
+nav .links a.on{color:var(--froid,#E9EEF6)!important;border-bottom:2px solid var(--ambre,#F5B62E)!important}
+nav .links a.btn-nav{background:var(--ambre,#F5B62E)!important;color:#1A1608!important;padding:0 18px!important;border-radius:5px!important;font-weight:800!important;border-bottom:2px solid transparent!important;height:40px!important}
+nav .links a.btn-nav:hover{color:#1A1608!important}
+@media(max-width:760px){nav .links a:not(.btn-nav){display:none!important}nav .brand .wm em{display:none!important}nav .in{min-height:62px!important}}
+
+
+/* ══ MENU MOBILE — bloc autonome, aucune dépendance externe ══ */
+nav .burger{display:none}
+@media(max-width:760px){
+  nav .burger{display:flex;flex:none;flex-direction:column;justify-content:center;gap:5px;width:44px;height:38px;padding:0 11px;background:transparent;border:1px solid var(--trait,#2A4470);border-radius:5px;cursor:pointer;-webkit-tap-highlight-color:transparent}
+  nav .burger span{display:block;height:2px;background:var(--froid,#E9EEF6);border-radius:1px;transition:transform .2s ease,opacity .2s ease}
+  nav.ouvert .burger span:nth-child(1){transform:translateY(7px) rotate(45deg)}
+  nav.ouvert .burger span:nth-child(2){opacity:0}
+  nav.ouvert .burger span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
+  nav .in .links{display:none!important;position:absolute;top:100%;left:0;right:0;flex-direction:column!important;align-items:stretch!important;gap:0!important;height:auto!important;background:var(--nuit,#10233F);border-bottom:1px solid var(--trait,#2A4470);padding:4px 22px 20px!important;box-shadow:0 16px 34px rgba(0,0,0,.45)}
+  nav.ouvert .in .links{display:flex!important}
+  nav.ouvert .in .links a{display:flex!important;align-items:center!important;width:100%;height:auto!important;margin:0!important;padding:15px 0!important;font-size:16px!important;font-weight:600!important;color:var(--sourd,#9FB0C8)!important;background:transparent!important;border:0!important;border-bottom:1px solid var(--trait,#2A4470)!important;border-radius:0!important}
+  nav.ouvert .in .links a.on{color:var(--ambre,#F5B62E)!important}
+  nav.ouvert .in .links a.btn-nav{justify-content:center!important;margin-top:16px!important;height:46px!important;padding:0 18px!important;border:0!important;border-radius:5px!important;background:var(--ambre,#F5B62E)!important;color:#1A1608!important;font-weight:800!important}
+}
+
+/* ── page Exemples : mise en page allégée ── */
+.fil{font-size:12.5px;margin-bottom:18px}
+.fil a{color:var(--sourd);text-decoration:none;font-weight:700}
+.fil a:hover{color:var(--froid)}
+.chapo{margin-top:22px;border-left:2px solid var(--trait);padding-left:16px;font-size:13.8px;color:#7E93B4;max-width:74ch;line-height:1.6}
+.chapo b{color:var(--sourd)}
+.chapo a{color:var(--ambre);text-decoration:none;font-weight:700}
+
+.liste{margin-top:6px;border-top:1px solid var(--trait)}
+.ex{padding:26px 0;border-bottom:1px solid var(--trait);scroll-margin-top:88px}
+.ex h3{font-size:19px;font-weight:800;letter-spacing:-.015em;line-height:1.25;color:var(--froid)}
+.ex .src{margin-top:5px;font-size:11.5px;font-weight:700;letter-spacing:.02em}
+.ex .src a{color:var(--ambre);text-decoration:none}
+.ex .src a:hover{text-decoration:underline}
+.ex .src.nb{color:#61748F;font-weight:600}
+.ex .src.nb a{color:#7E93B4;font-weight:700}
+.ex p.c{margin-top:12px;font-size:14.6px;color:var(--sourd);max-width:74ch;line-height:1.65}
+.ex p.c b{color:var(--froid)}
+.ex p.c .q{color:#7E93B4}
+.ex details{margin-top:13px;max-width:74ch}
+.ex summary{cursor:pointer;font-size:12.5px;font-weight:800;letter-spacing:.03em;color:#7E93B4;list-style:none;display:inline-flex;align-items:center;gap:7px}
+.ex summary::-webkit-details-marker{display:none}
+.ex summary::before{content:"+";display:inline-flex;align-items:center;justify-content:center;width:16px;height:16px;border:1px solid var(--trait);border-radius:3px;font-size:12px;font-weight:700;line-height:1}
+.ex details[open] summary::before{content:"–"}
+.ex summary:hover{color:var(--ambre)}
+.ex details[open] summary{color:var(--ambre)}
+.ex details p{margin-top:10px;font-size:13.8px;color:#7E93B4;line-height:1.6;padding-left:23px}
+
+/* ── bloc des limites, en bas de page ── */
+section.limites{background:#0C1B32;border-top:1px solid var(--trait);border-bottom:1px solid var(--trait);padding:50px 0 54px;margin-top:56px}
+.cadre{display:grid;grid-template-columns:1fr 1fr;gap:14px;align-items:start}
+@media(max-width:780px){.cadre{grid-template-columns:1fr}}
+.cadre .oui,.cadre .non{border-radius:7px;padding:19px 21px}
+.cadre .oui{background:rgba(245,182,46,.06);border:1px solid rgba(245,182,46,.35)}
+.cadre .non{background:var(--panneau);border:1px solid var(--trait)}
+.cadre .k{font-size:10.5px;font-weight:800;letter-spacing:.08em;margin-bottom:10px}
+.cadre .oui .k{color:var(--ambre)}
+.cadre .non .k{color:#9FB0C8}
+.cadre p{font-size:14px;color:var(--sourd);line-height:1.6}
+.cadre p b{color:var(--froid)}
+.cadre ul{list-style:none}
+.cadre li{font-size:13.5px;color:#8FA2BC;margin-bottom:11px;padding-left:16px;position:relative;line-height:1.55}
+.cadre li::before{content:"";position:absolute;left:0;top:9px;width:7px;height:1px;background:#5A7091}
+.cadre .dem{color:var(--froid);font-weight:700}
+.cadre .fin{margin-top:13px;padding-top:12px;border-top:1px solid var(--trait);font-size:13.5px;color:#8FA2BC}
+
+.suite{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:12px}
+.suite a{display:flex;flex-direction:column;gap:5px;background:var(--panneau);border:1px solid var(--trait);border-radius:7px;padding:17px 19px;text-decoration:none;transition:border-color .15s}
+.suite a:hover{border-color:var(--ambre)}
+.suite a b{font-size:15.5px;font-weight:800;letter-spacing:-.01em}
+.suite a span{font-size:12.5px;color:var(--sourd)}
+.suite a .go{margin-top:auto;padding-top:7px;font-size:12px;font-weight:800;color:var(--ambre)}
+.retour{margin-top:20px;font-size:14px}
+.retour a{color:var(--ambre);text-decoration:none;font-weight:700}
+</style>
+</head>
+<body>
+<nav><div class="in">
+  <a class="brand" href="index.html"><svg width="32" height="32" viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="3.4" stroke-linecap="square" aria-hidden="true"><path d="M14 8 H6 V56 H14" fill="none"/><path d="M50 8 H58 V56 H50" fill="none"/><path d="M18 44 V22 L32 36 L46 22 V44" stroke-width="4" fill="none"/></svg><span class="wm">Atelier MDT<em>VOTRE TEMPS VAUT MIEUX QUE ÇA</em></span></a>
+  <div class="links" id="nav-liens">
+      <a href="realisations.html">Réalisations</a>
+      <a href="offres.html">Offres</a>
+      <a href="exemples.html" class="on">Exemples</a>
+      <a href="rentabilite.html">Rentabilité</a>
+      <a href="qui-suis-je.html">Qui suis-je</a>
+      <a class="btn-nav" href="contact.html">Échanger 30 min</a>
+  </div>
+  <button class="burger" type="button" aria-label="Ouvrir le menu" aria-expanded="false" aria-controls="nav-liens"><span></span><span></span><span></span></button>
+</div></nav>
+<header class="h"><div class="in">
+  <p class="fil"><a href="exemples.html">← Les 25 exemples</a></p>
+  <div class="eyebrow">EXEMPLES · FAMILLE 03 — DONNÉES ET ÉTUDES</div>
+  <h1>Six façons de décider sur des chiffres</h1>
+  <p class="sub">Des exports en désordre transformés en tableaux lisibles. Et des modèles chiffrés avant une décision qui engage.</p>
+  <p class="chapo">Trois de ces 6 exemples s'appuient sur une réalisation publiée ; les 3 autres reprennent une brique technique déjà livrée, et le disent. <b>Aucun exemple sans cas publié n'affiche de chiffre.</b> Pour votre situation, le calcul se fait au premier échange — hypothèses sur la <a href="rentabilite.html">page rentabilité</a>. Offre correspondante : <a href="offres.html">Tableau de bord et étude ponctuelle</a>, de 450 à 700 € HT.</p>
+</div></header>
+
+<section><div class="in">
+  <div class="liste">
+<article class="ex" id="data-historique">
+  <h3>Des années d'exports enfin comparables</h3>
+  <p class="src"><a href="realisation-05-data.html">Réalisation 05 — voir les pièces →</a></p>
+  <p class="c"><span class="q">Trois ans d'exports mensuels, trente-sept fichiers au format variable, et aucune question un peu large ne trouve de réponse.</span></p>
+  <p class="c">Une base unique et documentée, puis deux tableaux — mensuel et pluriannuel — avec l'écart d'une année sur l'autre sur chaque ligne. Quels jours portent le chiffre, quelle famille décroche, quel mois était une anomalie. Manuel de lecture inclus.</p>
+  <details><summary>Ce dont j'ai besoin de votre côté</summary><p>Vos exports tels qu'ils sortent, la période à couvrir, le dictionnaire de vos libellés internes, et une heure avec quelqu'un qui sait arbitrer quand deux fichiers se contredisent.</p></details>
+</article>
+<article class="ex" id="data-rentabilite-client">
+  <h3>Quel client vous rapporte vraiment</h3>
+  <p class="src nb">Pas encore de cas publié · même brique que la <a href="realisation-07-granites.html">Réalisation 07</a></p>
+  <p class="c"><span class="q">Tout le monde connaît son plus gros client en chiffre d'affaires. Presque personne ne connaît son plus rentable.</span></p>
+  <p class="c">Le croisement du temps passé, des remises et du facturé, client par client. Le résultat est souvent inconfortable : une partie du portefeuille travaille à perte, rarement celle qu'on croit. C'est l'étude qui a le plus d'effet sur le résultat, parce qu'elle ne demande aucun investissement pour être appliquée.</p>
+  <details><summary>Ce dont j'ai besoin de votre côté</summary><p>Un suivi du temps même approximatif — sans lui l'étude n'est pas faisable, et je le dirai —, vos factures sur la période, et les remises accordées.</p></details>
+</article>
+<article class="ex" id="data-heures">
+  <h3>Heures facturées contre heures facturables</h3>
+  <p class="src nb">Pas encore de cas publié · même brique que la <a href="realisation-05-data.html">Réalisation 05</a></p>
+  <p class="c"><span class="q">L'écart entre le temps saisi et le temps facturé est le premier poste de perte d'un cabinet, et il n'apparaît sur aucun document comptable.</span></p>
+  <p class="c">Sa mesure par dossier, par associé et par type de mission, avec son évolution. De quoi refacturer ce qui doit l'être et réviser les forfaits systématiquement dépassés. Le gain, ce sont des heures déjà travaillées qui deviennent payées.</p>
+  <details><summary>Ce dont j'ai besoin de votre côté</summary><p>Les exports de votre outil de saisie des temps, les montants facturés sur la même période, votre taux horaire cible, et l'accord de la direction sur le fait que les résultats seront lisibles par personne.</p></details>
+</article>
+<article class="ex" id="data-point-mort">
+  <h3>Faut-il acheter, louer, embaucher&nbsp;?</h3>
+  <p class="src"><a href="realisation-07-granites.html">Réalisation 07 — voir les pièces →</a></p>
+  <p class="c"><span class="q">Une machine, un véhicule, un contrat sur trente-six mois. Le vendeur a ses chiffres. Vous n'avez pas les vôtres.</span></p>
+  <p class="c">Une réponse à une seule question, mais la bonne : à partir de combien c'est rentable, dans votre unité à vous. Sur le cas livré : point mort à 1,1 vente par jour, trois scénarios sur douze mois, recommandation argumentée, produit lancé. Le classeur vous reste, formules visibles.</p>
+  <details><summary>Ce dont j'ai besoin de votre côté</summary><p>La proposition commerciale complète, frais annexes compris, votre prix de vente envisagé, votre saisonnalité même de mémoire, et vos contraintes.</p></details>
+</article>
+<article class="ex" id="data-benchmark">
+  <h3>À quel prix vend réellement le marché</h3>
+  <p class="src"><a href="realisation-08-benchmark.html">Réalisation 08 — voir les pièces →</a></p>
+  <p class="c"><span class="q">Vous devez réviser vos prix. Vous avez une intuition et deux ou trois chiffres entendus.</span></p>
+  <p class="c">Un relevé sur des critères explicites, chaque donnée notée en fiabilité — confirmée par deux sources, par une seule, ou estimée. C'est cette notation qui sépare une étude d'une compilation. Sur le cas livré, la conclusion utile n'était pas le prix moyen : c'était qu'un format n'existait nulle part ailleurs.</p>
+  <details><summary>Ce dont j'ai besoin de votre côté</summary><p>Votre prestation décrite précisément, la zone géographique pertinente, vos concurrents supposés comparables — et votre taux de remplissage réel, que vous seul avez.</p></details>
+</article>
+<article class="ex" id="data-adhesions">
+  <h3>Adhésions, renouvellements, départs</h3>
+  <p class="src nb">Pas encore de cas publié · même brique que la <a href="realisation-05-data.html">Réalisation 05</a></p>
+  <p class="c"><span class="q">Une association sait combien elle a d'adhérents. Rarement combien elle en perd, ni à quel moment.</span></p>
+  <p class="c">Le taux de renouvellement par catégorie et par ancienneté, et le moment précis où les gens partent : après la première année, après un changement d'horaire, après une hausse de cotisation. Utile aussi pour un dossier de subvention.</p>
+  <details><summary>Ce dont j'ai besoin de votre côté</summary><p>Les listes des saisons passées même dans des fichiers différents, les tarifs et leurs évolutions, et un identifiant stable d'une année sur l'autre.</p></details>
+</article>
+  </div>
+</div></section>
+
+<section class="limites"><div class="in">
+  <h2 class="lbl">CE QUE JE PEUX FAIRE, ET CE QUE JE NE PEUX PAS</h2>
+  <div class="cadre">
+    <div class="oui"><div class="k">CE QUI EST FAISABLE</div><p>Prendre des exports hétérogènes accumulés pendant des années, les normaliser en une base documentée, les rendre comparables, et en tirer des tableaux lisibles par quelqu'un qui n'est pas analyste — avec un manuel de lecture, parce qu'un tableau de bord sans mode d'emploi n'est pas utilisé. Et construire un modèle chiffré avant une décision : point mort, scénarios, comparatif de marché, hypothèses écrites et visibles.</p></div>
+    <div class="non"><div class="k">CE QUI N'EST PAS FAISABLE</div>
+      <ul>
+      <li><span class="dem">« Un tableau de bord en temps réel branché sur tout. »</span> Non. Je travaille sur exports. C'est un choix assumé : ça coûte cent fois moins cher, ça n'installe aucune infrastructure chez vous, et pour décider on n'a pas besoin de la minute — on a besoin du mois dernier, juste.</li>
+      <li><span class="dem">« Vous allez trouver de l'argent caché. »</span> Je rends les écarts lisibles. La décision reste la vôtre, et parfois la donnée confirme simplement ce que vous saviez : c'est un résultat aussi.</li>
+      <li><span class="dem">« Reconstituez les données que je n'ai pas gardées. »</span> Impossible. Si l'historique n'existe pas, il n'existe pas. Ce qui existe est parfois contradictoire : dans ce cas j'arbitre et j'écris l'arbitrage, je n'invente pas.</li>
+      <li><span class="dem">« Dites-moi ce que je ferai l'an prochain. »</span> Je projette des scénarios sur des hypothèses écrites, prudentes et discutables. Ce n'est pas une prévision, et une étude qui se présenterait comme telle vous mentirait.</li>
+      </ul>
+      <p class="fin"><b>Hors périmètre :</b> conseil comptable, fiscal et juridique. Ce n'est pas ma qualification, et sur ces sujets je renvoie à votre expert-comptable ou à votre avocat.</p>
+    </div>
+  </div>
+</div></section>
+
+<section><div class="in">
+  <h2 class="lbl">LES AUTRES FAMILLES</h2>
+  <div class="suite">
+    <a href="exemples-automatisation.html"><b>Automatisation d'un flux</b><span>7 exemples</span><span class="go">Voir →</span></a>
+    <a href="exemples-veille.html"><b>Veille en abonnement</b><span>6 exemples</span><span class="go">Voir →</span></a>
+    <a href="exemples-ia.html"><b>Accompagnement IA</b><span>6 exemples</span><span class="go">Voir →</span></a>
+  </div>
+  <p class="retour"><a href="exemples.html">← Les 25 exemples</a> &nbsp;·&nbsp; <a href="offres.html">Les offres et les prix</a> &nbsp;·&nbsp; <a href="index.html">L'accueil</a></p>
+</div></section>
+
+<div class="in"><div class="cta-bloc">
+  <h2>Lequel de ces cas est le vôtre&nbsp;?</h2>
+  <p>Trente minutes en visio pour identifier la tâche qui vous coûte le plus de temps, vérifier qu'elle est automatisable ou mesurable, et la chiffrer. Si aucun de ces exemples ne correspond, je vous le dis à ce moment-là.</p>
+  <a href="contact.html">Prendre contact</a>
+</div></div>
+<footer><div class="in"><div class="row">
+  <span>Atelier MDT · Automatisation · Veille · Tableaux de bord · Accompagnement IA</span>
+  <span><a href="mailto:antoine@atelier-mdt.fr">antoine@atelier-mdt.fr</a> · <a href="mentions-legales.html">Mentions légales</a> · <a href="cgv.html">CGV</a></span>
+</div></div></footer>
+<script>
+/* Menu mobile — autonome, aucune dépendance externe. */
+(function(){
+  var n=document.querySelector('nav');if(!n)return;
+  var b=n.querySelector('.burger'),l=n.querySelector('.links');if(!b||!l)return;
+  function etat(o){
+    n.classList.toggle('ouvert',o);
+    b.setAttribute('aria-expanded',o?'true':'false');
+    b.setAttribute('aria-label',o?'Fermer le menu':'Ouvrir le menu');
+  }
+  b.addEventListener('click',function(){etat(!n.classList.contains('ouvert'));});
+  l.addEventListener('click',function(e){if(e.target.closest('a'))etat(false);});
+  document.addEventListener('click',function(e){if(n.classList.contains('ouvert')&&!n.contains(e.target))etat(false);});
+  document.addEventListener('keydown',function(e){if(e.key==='Escape')etat(false);});
+  window.addEventListener('resize',function(){if(window.innerWidth>760)etat(false);});
+})();
+</script>
+</body>
+</html>

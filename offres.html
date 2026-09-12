@@ -4,13 +4,13 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Offres — Atelier MDT</title>
-<meta name="description" content="Tarifs de lancement d'Atelier MDT : automatisation dès 500 €, veille en abonnement dès 60 €/mois, tableaux de bord, accompagnement IA. Forfaits écrits, sans engagement.">
+<meta name="description" content="Tarifs d'Atelier MDT : automatisation dès 500 €, veille 300 € puis dès 70 €/mois, tableau de bord de 450 à 700 € en quatre paliers, accompagnement IA dès 150 €.">
 <link rel="canonical" href="https://atelier-mdt.fr/offres.html">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://atelier-mdt.fr/offres.html">
 <meta property="og:site_name" content="Atelier MDT">
 <meta property="og:title" content="Offres — Atelier MDT">
-<meta property="og:description" content="Tarifs de lancement d'Atelier MDT : automatisation dès 500 €, veille en abonnement dès 60 €/mois, tableaux de bord, accompagnement IA. Forfaits écrits, sans engagement.">
+<meta property="og:description" content="Tarifs d'Atelier MDT : automatisation dès 500 €, veille 300 € puis dès 70 €/mois, tableau de bord de 450 à 700 € en quatre paliers, accompagnement IA dès 150 €.">
 <meta property="og:image" content="https://atelier-mdt.fr/assets/verrouillage-baseline-ambre.png">
 <meta property="og:locale" content="fr_FR">
 <meta name="twitter:card" content="summary_large_image">
@@ -86,6 +86,50 @@ footer a{color:var(--sourd)}
 @media(max-width:640px){.regles{grid-template-columns:1fr}}
 .regles .card h3{font-size:15.5px;font-weight:800;margin-bottom:7px}
 .regles .card p{font-size:14px;color:var(--sourd)}
+.pourquoi{border-left:3px solid var(--ambre);padding-left:15px;margin:18px 0 4px;font-size:14.5px;color:var(--sourd);max-width:70ch}
+.pourquoi b{color:var(--froid)}
+.paliers{margin-top:20px;overflow-x:auto;-webkit-overflow-scrolling:touch}
+.paliers table{width:100%;min-width:620px;border-collapse:collapse;font-size:13.2px}
+.paliers th,.paliers td{padding:10px 12px;text-align:left;border-bottom:1px solid var(--trait);vertical-align:top}
+.paliers thead th{font-size:11px;font-weight:800;letter-spacing:.04em;color:var(--sourd);text-transform:uppercase;border-bottom:1px solid var(--ambre)}
+.paliers thead th.p{color:var(--ambre)}
+.paliers thead th.p em{display:block;font-style:normal;font-size:17px;font-weight:800;color:var(--ambre);letter-spacing:-.01em;margin-top:3px}
+.paliers tbody th{font-weight:700;color:var(--froid);width:150px}
+.paliers td{color:var(--sourd)}
+.paliers tr:last-child th,.paliers tr:last-child td{border-bottom:0}
+.glisser{font-size:11.5px;color:#6E82A0;margin-top:7px;display:none}
+@media(max-width:700px){.glisser{display:block}}
+.incl{margin-top:18px;display:grid;grid-template-columns:1fr 1fr;gap:12px}
+@media(max-width:640px){.incl{grid-template-columns:1fr}}
+.incl div{background:var(--panneau);border:1px solid var(--trait);border-radius:6px;padding:15px 17px;font-size:13.8px;color:var(--sourd)}
+.incl div b{display:block;color:var(--froid);font-size:14px;margin-bottom:5px}
+.exlien{margin-top:9px;font-size:13px}
+.exlien a{color:var(--ambre);text-decoration:none;font-weight:700}
+.rythmes{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:22px}
+@media(max-width:700px){.rythmes{grid-template-columns:1fr}}
+.ry{background:var(--panneau);border:1px solid var(--trait);border-radius:7px;padding:18px 20px;position:relative;display:flex;flex-direction:column}
+.ry.reco{border-color:var(--ambre);background:rgba(245,182,46,.06)}
+.ry .tag{position:absolute;top:-9px;right:14px;background:var(--ambre);color:#1A1608;font-size:9.5px;font-weight:800;letter-spacing:.06em;padding:3px 8px;border-radius:3px}
+.ry .nom{font-size:13px;font-weight:800;letter-spacing:.02em;color:var(--froid)}
+.ry .prix2{font-size:27px;font-weight:800;color:var(--ambre);line-height:1;margin-top:8px}
+.ry .prix2 em{font-style:normal;font-size:13px;font-weight:700;color:var(--sourd)}
+.ry .det{margin-top:11px;padding-top:10px;border-top:1px solid var(--trait);font-size:12.8px;color:var(--sourd);line-height:1.75}
+.ry .det b{color:var(--froid);font-weight:700;white-space:nowrap}
+.rythmes{overflow:visible}
+.ry .det .m{white-space:nowrap}
+.socle{margin-top:12px;font-size:13.5px;color:var(--sourd);line-height:1.6}
+.socle b{color:var(--froid)}
+.choisir{margin-top:26px;display:grid;grid-template-columns:1fr 1fr 1fr;gap:14px}
+@media(max-width:820px){.choisir{grid-template-columns:1fr}}
+.choisir div{border-left:2px solid var(--trait);padding-left:15px;font-size:13.8px;color:var(--sourd);line-height:1.6}
+.choisir div b{display:block;color:var(--froid);font-size:14.5px;margin-bottom:5px}
+.choisir div.r{border-left-color:var(--ambre)}
+.apres{margin-top:20px;display:grid;grid-template-columns:1fr 1fr;gap:14px}
+@media(max-width:700px){.apres{grid-template-columns:1fr}}
+.apres div{background:var(--panneau);border:1px solid var(--trait);border-radius:6px;padding:15px 17px;font-size:13.8px;color:var(--sourd);line-height:1.6}
+.apres div b{display:block;color:var(--froid);margin-bottom:4px}
+.apres div.excep{border-color:rgba(245,182,46,.45)}
+.apres div.excep b{color:var(--ambre)}
 
 /* ── commun à toutes les pages ── */
 .in{max-width:900px!important;margin:0 auto;padding:0 22px}
@@ -114,8 +158,8 @@ nav .brand{display:flex!important;align-items:center!important;gap:12px!importan
 nav .brand svg{color:var(--ambre,#F5B62E)!important;flex:none!important;width:32px!important;height:32px!important}
 nav .brand .wm{font-size:18px!important;font-weight:800!important;letter-spacing:-.025em!important;line-height:1!important;color:var(--froid,#E9EEF6)!important}
 nav .brand .wm em{display:block!important;font-style:normal!important;font-size:7.5px!important;font-weight:800!important;letter-spacing:.09em!important;color:var(--ambre,#F5B62E)!important;margin-top:4px!important;white-space:nowrap!important}
-nav .links{display:flex!important;align-items:center!important;gap:24px!important;height:100%!important}
-nav .links a{display:inline-flex!important;align-items:center!important;height:36px!important;margin:0!important;color:var(--sourd,#9FB0C8)!important;text-decoration:none!important;font-size:14px!important;font-weight:600!important;white-space:nowrap!important;border-bottom:2px solid transparent!important;line-height:1!important}
+nav .links{display:flex!important;align-items:center!important;gap:16px!important;height:100%!important}
+nav .links a{display:inline-flex!important;align-items:center!important;height:36px!important;margin:0!important;color:var(--sourd,#9FB0C8)!important;text-decoration:none!important;font-size:14px!important;font-weight:600!important;white-space:nowrap!important;border-bottom:2px solid transparent!important;line-height:1!important;font-size:13.5px!important}
 nav .links a:hover{color:var(--froid,#E9EEF6)!important}
 nav .links a.on{color:var(--froid,#E9EEF6)!important;border-bottom:2px solid var(--ambre,#F5B62E)!important}
 nav .links a.btn-nav{background:var(--ambre,#F5B62E)!important;color:#1A1608!important;padding:0 18px!important;border-radius:5px!important;font-weight:800!important;border-bottom:2px solid transparent!important;height:40px!important}
@@ -145,6 +189,7 @@ nav .burger{display:none}
   <div class="links" id="nav-liens">
       <a href="realisations.html">Réalisations</a>
       <a href="offres.html" class="on">Offres</a>
+      <a href="exemples.html">Exemples</a>
       <a href="rentabilite.html">Rentabilité</a>
       <a href="qui-suis-je.html">Qui suis-je</a>
       <a class="btn-nav" href="contact.html">Échanger 30 min</a>
@@ -156,17 +201,18 @@ nav .burger{display:none}
   <div class="eyebrow">OFFRES</div>
   <h1>Des prix écrits, avant qu'on se parle</h1>
   <p class="sub">Tout est en forfait ou en abonnement sans engagement. Pas de taux horaire caché, pas de surprise en fin de mission. Ce que vous lisez ici est ce que vous lirez sur le devis.</p>
-  <div class="bandeau"><span class="tag">PRIX DE LANCEMENT</span><div><b>Valables pour les trois premiers clients de chaque offre.</b></div></div>
+  <div class="bandeau"><span class="tag">PRIX DE LANCEMENT</span><div><b>Valables pour mes trois premiers clients.</b> Ensuite, la grille est revue.</div></div>
   <div class="liens2">
     <a href="realisations.html">Voir ce qui a déjà été fait →</a>
     <a href="rentabilite.html">Serais-je rentable ? →</a>
+    <a href="exemples.html">25 exemples concrets →</a>
   </div>
 </div></header>
 
 <section><div class="in">
   <h2 class="lbl">AUTOMATISATION</h2>
   <div class="off">
-  <div><h3>Automatiser un flux entrant</h3><p class="d">Demandes de réservation, de devis, de contact, de partenariat : chaque message reçoit une réponse immédiate et personnalisée, envoyée depuis vos adresses. Votre équipe ne traite plus que ce qui demande un jugement.</p><ul><li>Construit <b>sur vos comptes</b> : vous en restez propriétaire</li><li>Document de maintenance rédigé pour des non-techniciens</li><li>Session de passation d'une heure à votre référent interne</li><li>Aucune maintenance imposée — interventions ultérieures à l'heure, si vous le souhaitez</li></ul><p class="renta"><a href="rentabilite.html#auto">Ce que ça rapporte, en chiffres →</a></p></div>
+  <div><h3>Automatiser un flux entrant</h3><p class="d">Demandes de réservation, de devis, de contact, de partenariat : chaque message reçoit une réponse immédiate et personnalisée, envoyée depuis vos adresses. Votre équipe ne traite plus que ce qui demande un jugement.</p><ul><li>Construit <b>sur vos comptes</b> : vous en restez propriétaire</li><li>Document de maintenance rédigé pour des non-techniciens</li><li>Session de passation d'une heure à votre référent interne</li><li>Aucune maintenance imposée — interventions ultérieures à l'heure, si vous le souhaitez</li></ul><p class="renta"><a href="rentabilite.html#auto">Ce que ça rapporte, en chiffres →</a></p><p class="exlien"><a href="exemples-automatisation.html">Sept exemples de flux automatisables →</a></p></div>
   <div class="prix"><div class="from">FORFAIT, À PARTIR DE</div><b>500 €</b><span>HT · selon la complexité du flux</span><span class="delai">LIVRÉ EN 3 SEMAINES</span></div>
 </div>
 </div></section>
@@ -174,23 +220,78 @@ nav .burger{display:none}
 <section><div class="in">
   <h2 class="lbl">VEILLE EN ABONNEMENT</h2>
   <div class="off">
-  <div><h3>Veille hebdomadaire</h3><p class="d">E-réputation — alerte à chaque nouvel avis, synthèse, réponse rédigée prête à publier. Ou concurrence — notes, avis, prix et activité réseaux de vos concurrents directs, chiffre par chiffre.</p><ul><li>Livrée chaque semaine dans votre boîte mail, lisible en deux minutes</li><li>Formule de base : jusqu'à 5 concurrents ou 3 établissements suivis</li><li><b>Sans engagement</b>, résiliable avec un mois de préavis</li><li>Le système tourne de mon côté : rien à installer chez vous</li></ul><p class="renta"><a href="rentabilite.html#veille">Ce que ça rapporte, en chiffres →</a></p></div>
-  <div class="prix"><div class="from">INSTALLATION 300 € PUIS</div><b>100 €</b><span>HT par mois</span><span class="delai">1RE LIVRAISON SOUS 2 SEMAINES</span></div>
+  <div><h3>Veille en abonnement</h3><p class="d">Vous recevez par email ce qui a bougé sur votre marché : les prix, les avis, les offres et les nouveautés de vos concurrents, ou les usages de l'IA dans votre métier. Lisible en deux minutes. Le système tourne de mon côté — vous n'avez rien à installer ni à surveiller.</p><ul><li>Vous choisissez <b>le thème, la fréquence, le jour et l'heure</b> de réception</li><li>Formule de base : jusqu'à 5 concurrents ou 3 établissements suivis</li><li><b>Sans engagement</b>, résiliable avec un mois de préavis</li><li>Changement de fréquence à tout moment, sans frais ni nouvelle installation</li></ul><p class="renta"><a href="rentabilite.html#veille">Ce que ça rapporte, en chiffres →</a></p><p class="exlien"><a href="exemples-veille.html">Six exemples de veilles →</a></p></div>
+  <div class="prix"><div class="from">INSTALLATION 300 € PUIS</div><b>dès 70 €</b><span>HT par mois · selon le rythme</span><span class="delai">1RE LIVRAISON SOUS 2 SEMAINES</span></div>
 </div>
-  <div class="off">
-  <div><h3>Veille mensuelle</h3><p class="d">IA appliquée à votre métier — ce qui a réellement changé ce mois-ci et ce que vous pouvez en faire, avec un cas d'usage concret. Ou tendances de votre secteur, à partir de sources publiques.</p><ul><li>Une édition par mois, plus fouillée</li><li>Même principe : sans engagement, préavis d'un mois</li><li>Thème supplémentaire sur un abonnement existant : <b>+40 € par mois</b></li></ul><p class="renta"><a href="rentabilite.html#veille">Ce que ça rapporte, en chiffres →</a></p></div>
-  <div class="prix"><div class="from">INSTALLATION 200 € PUIS</div><b>60 €</b><span>HT par mois</span><span class="delai">1RE LIVRAISON SOUS 2 SEMAINES</span></div>
-</div>
+  <div class="rythmes">
+    <div class="ry">
+      <div class="nom">MENSUELLE</div>
+      <div class="prix2">70 €<em> /mois</em></div>
+      <div class="det"><b>1 édition</b> par mois<br>Thème supplémentaire : <b>+35&nbsp;€/mois</b></div>
+    </div>
+    <div class="ry">
+      <div class="nom">TOUTES LES 2 SEMAINES</div>
+      <div class="prix2">85 €<em> /mois</em></div>
+      <div class="det"><b>2 éditions</b> par mois<br>Thème supplémentaire : <b>+40&nbsp;€/mois</b></div>
+    </div>
+    <div class="ry reco">
+      <span class="tag">RECOMMANDÉ</span>
+      <div class="nom">HEBDOMADAIRE</div>
+      <div class="prix2">100 €<em> /mois</em></div>
+      <div class="det"><b>4 éditions</b> par mois<br>Thème supplémentaire : <b>+50&nbsp;€/mois</b></div>
+    </div>
+  </div>
+  <p class="socle"><b>Installation : 300 € HT, quel que soit le rythme choisi.</b> Premier envoi sous deux semaines. Thème supplémentaire : +150 € à l'installation, puis le montant mensuel indiqué ci-dessus.</p>
+
+  <h2 class="lbl" style="margin-top:34px">COMMENT CHOISIR VOTRE FRÉQUENCE</h2>
+  <p class="socle" style="margin-top:0"><b>Le contenu est le même dans les trois cas.</b> Ce qui change, c'est la période couverte — donc la longueur du rapport — et ce que vous pouvez en faire.</p>
+  <div class="choisir">
+    <div class="r"><b>Hebdomadaire : vous suivez les mouvements</b>Un prix qui change, un avis qui tombe, une offre qui apparaît : vous le savez dans les jours qui suivent et vous avez encore le temps d'y répondre. Le rapport est court et finit par s'installer dans votre semaine. C'est le rythme que je recommande, et celui que choisissent les entreprises dont le marché bouge : commerce, loisirs, restauration, services aux particuliers.</div>
+    <div><b>Toutes les deux semaines : vous gardez le fil</b>Assez fréquent pour ne pas découvrir les choses trop tard, assez espacé pour ne pas y penser entre deux envois. Le bon compromis si votre marché évolue sans à-coups, ou si vous démarrez et préférez voir ce que la veille vous apporte avant d'accélérer.</div>
+    <div><b>Mensuelle : vous prenez du recul</b>Le rapport est plus long, simplement parce qu'il couvre quatre semaines d'un coup : vous y voyez des tendances plutôt que des mouvements. Suffisant pour une décision de fond — repositionner une offre, préparer une saison — mais trop lent pour réagir à ce qui se passe cette semaine.</div>
+  </div>
+  <div class="apres">
+    <div><b>Vous choisissez le jour et le créneau</b>Le lundi matin pour ouvrir la semaine avec, le vendredi pour faire le point avant de partir : le rapport arrive quand ça vous arrange. La collecte tourne pendant la nuit, la livraison se fait le matin — ce qui me laisse le temps de rattraper un incident avant que vous ne le voyiez.</div>
+    <div class="excep"><b>Une exception : le suivi des avis</b>Ce thème n'est proposé qu'en hebdomadaire ou toutes les deux semaines. Un avis négatif que vous découvrez trois semaines plus tard, vous ne pouvez plus rien en faire — et je préfère ne pas vous vendre une alerte qui arrive trop tard. Les autres thèmes sont disponibles aux trois rythmes.</div>
+  </div>
 </div></section>
 
 <section><div class="in">
   <h2 class="lbl">DONNÉES ET PILOTAGE</h2>
   <div class="off">
-  <div><h3>Tableau de bord</h3><p class="d">Vos exports de caisse ou de facturation deviennent un pilotage lisible : saisonnalité, performance par activité, écarts d'une année sur l'autre. Livré avec sa méthodologie.</p><ul><li>Vous m'envoyez vos exports, je nettoie, je fusionne, je construis</li><li>Lisible par un dirigeant en cinq minutes, pas un outil d'analyste</li><li>Option mise à jour périodique : <b>60 € par trimestre</b></li><li>Prérequis : pouvoir exporter vos données — c'est la première question que je pose</li></ul><p class="renta"><a href="rentabilite.html#data">Ce que ça rapporte, en chiffres →</a></p></div>
-  <div class="prix"><div class="from">FORFAIT, ENTRE</div><b>450 et 700 €</b><span>HT · selon le volume</span><span class="delai">LIVRÉ EN 2 SEMAINES</span></div>
+  <div><h3>Tableau de bord</h3><p class="d">Vos exports de caisse ou de facturation deviennent un pilotage lisible : saisonnalité, performance par activité, écarts d'une année sur l'autre. Livré avec sa méthodologie.</p><ul><li>Vous m'envoyez vos exports, je nettoie, je fusionne, je construis</li><li>Lisible par un dirigeant en cinq minutes, pas un outil d'analyste</li><li>Option mise à jour périodique : <b>150 € par trimestre</b></li><li>Prérequis : pouvoir exporter vos données — c'est la première question que je pose</li></ul><p class="renta"><a href="rentabilite.html#data">Ce que ça rapporte, en chiffres →</a></p><p class="exlien"><a href="exemples-donnees.html">Des exemples concrets de tableaux de bord et d'études →</a></p></div>
+  <div class="prix"><div class="from">FORFAIT, DE</div><b>450 à 700 €</b><span>HT · quatre paliers, détail ci-dessous</span><span class="delai">LIVRÉ EN 2 SEMAINES</span></div>
 </div>
+  <div style="padding-bottom:24px;border-bottom:1px solid var(--trait)">
+    <p class="pourquoi"><b>Pourquoi le prix varie.</b> Construire le tableau prend le même temps chez tout le monde. Ce qui change, c'est ce qu'il y a avant : remettre vos exports en ordre. Un an de ventes exportées d'un seul logiciel, c'est une demi-journée. Trois ans exportés de deux logiciels qui ont changé de format en cours de route, c'est trois fois plus long — et c'est la partie que personne n'a envie de faire. Le prix dépend donc de la quantité de données à remettre en ordre, pas du tableau lui-même. Vous connaissez déjà les réponses : elles sont dans votre logiciel de caisse.</p>
+    <div class="paliers">
+      <table>
+        <thead><tr>
+          <th></th>
+          <th class="p">Essentiel<em>450 €</em></th>
+          <th class="p">Étendu<em>550 €</em></th>
+          <th class="p">Complet<em>700 €</em></th>
+          <th class="p">Sur mesure<em>devis</em></th>
+        </tr></thead>
+        <tbody>
+          <tr><th>Sources de données</th><td>1 (caisse <b>ou</b> facturation)</td><td>2</td><td>2 à 3</td><td>4 et plus</td></tr>
+          <tr><th>Fichiers à fusionner</th><td>jusqu'à 6</td><td>jusqu'à 18</td><td>jusqu'à 40</td><td>plus de 40</td></tr>
+          <tr><th>Historique</th><td>1 an</td><td>2 ans</td><td>3 ans</td><td>plus de 3 ans</td></tr>
+          <tr><th>Format des exports</th><td>identique sur toute la période</td><td>2 formats au plus</td><td>2 formats au plus</td><td>formats multiples, ou export à reconstruire</td></tr>
+          <tr><th>Activités analysées</th><td>jusqu'à 5</td><td>jusqu'à 10</td><td>jusqu'à 15</td><td>plus de 15</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="glisser">Faites glisser le tableau vers la gauche pour voir les quatre paliers.</p>
+    <div class="incl">
+      <div><b>Comment lire ce tableau</b>Le palier retenu est celui du critère le plus élevé : un seul critère dans une colonne supérieure fait basculer l'ensemble. Une seule source mais quatre ans d'historique, et vous êtes en Complet.</div>
+      <div><b>Inclus dans les quatre paliers</b>Le nettoyage et la fusion de vos exports, un tableau lisible en cinq minutes, la méthodologie écrite pour que vous sachiez d'où vient chaque chiffre, une série de modifications après livraison, et le fichier qui reste chez vous, sans licence à payer.</div>
+      <div><b>Ce qui peut faire basculer en sur mesure</b>Les paliers valent pour des exports que votre logiciel produit en Excel ou en CSV lisible. Si les fichiers sont illisibles ou doivent être reconstitués, je vous le dis avant de commencer, pas à la facture — et vous décidez de continuer ou non.</div>
+      <div><b>Vous ne savez pas dans quel palier vous êtes ?</b>C'est normal, et c'est le but des trente minutes d'échange. Quatre questions suffisent à trancher, et vous repartez avec le prix ferme, écrit.</div>
+    </div>
+  </div>
   <div class="off">
-  <div><h3>Étude ponctuelle</h3><p class="d">Rentabilité d'un produit ou d'un partenariat, benchmark tarifaire de votre marché : une décision qui engage mérite un chiffrage avant, pas un regret après.</p><ul><li>Coût complet, point mort, scénarios prudents, recommandation explicite</li><li>Sources publiques croisées et notées en fiabilité pour un benchmark</li><li>Périmètre fermé et prix fixé au devis</li></ul><p class="renta"><a href="rentabilite.html#data">Ce que ça rapporte, en chiffres →</a></p></div>
+  <div><h3>Étude ponctuelle</h3><p class="d">Rentabilité d'un produit ou d'un partenariat, benchmark tarifaire de votre marché : une décision qui engage mérite un chiffrage avant, pas un regret après.</p><ul><li>Coût complet, point mort, scénarios prudents, recommandation explicite</li><li>Sources publiques croisées et notées en fiabilité pour un benchmark</li><li>Périmètre fermé et prix fixé au devis</li></ul><p class="renta"><a href="rentabilite.html#data">Ce que ça rapporte, en chiffres →</a></p><p class="exlien"><a href="exemples-donnees.html">Des exemples d'études →</a></p></div>
   <div class="prix"><div class="from">SUR DEVIS, À PARTIR DE</div><b>450 €</b><span>HT · selon le périmètre</span><span class="delai">2 À 3 SEMAINES</span></div>
 </div>
 </div></section>
@@ -198,15 +299,15 @@ nav .burger{display:none}
 <section><div class="in">
   <h2 class="lbl">IA — MONTÉE EN COMPÉTENCE</h2>
   <div class="off">
-  <div><h3>Accompagnement individuel</h3><p class="d">Deux heures en visio sur vos tâches réelles — pas de théorie — puis un support personnalisé rédigé après la séance, selon votre métier.</p><ul><li>Pour un dirigeant, un libéral, un responsable</li><li>Vous repartez avec des usages que vous pouvez reproduire le lendemain</li></ul><p class="renta"><a href="rentabilite.html#ia">Ce que ça rapporte, en chiffres →</a></p></div>
+  <div><h3>Accompagnement individuel</h3><p class="d">Deux heures en visio sur vos tâches réelles — pas de théorie — puis un support personnalisé rédigé après la séance, selon votre métier.</p><ul><li>Pour un dirigeant, un libéral, un responsable</li><li>Vous repartez avec des usages que vous pouvez reproduire le lendemain</li></ul><p class="renta"><a href="rentabilite.html#ia">Ce que ça rapporte, en chiffres →</a></p><p class="exlien"><a href="exemples-ia.html">Six exemples d'accompagnement →</a></p></div>
   <div class="prix"><div class="from">FORFAIT</div><b>150 €</b><span>HT</span><span class="delai">SOUS 2 SEMAINES</span></div>
 </div>
   <div class="off">
-  <div><h3>Atelier d'équipe</h3><p class="d">Une demi-journée sur les cas concrets de votre équipe. Chaque participant reçoit ensuite un complément personnalisé.</p><ul><li>Jusqu'à 4 participants inclus</li><li>Participant supplémentaire, complément inclus : <b>+50 €</b> — plafond 8 personnes</li></ul><p class="renta"><a href="rentabilite.html#ia">Ce que ça rapporte, en chiffres →</a></p></div>
+  <div><h3>Atelier d'équipe</h3><p class="d">Une demi-journée sur les cas concrets de votre équipe. Chaque participant reçoit ensuite un complément personnalisé.</p><ul><li>Jusqu'à 4 participants inclus</li><li>Participant supplémentaire, complément inclus : <b>+50 €</b> — plafond 8 personnes</li></ul><p class="renta"><a href="rentabilite.html#ia">Ce que ça rapporte, en chiffres →</a></p><p class="exlien"><a href="exemples-ia.html">Six exemples d'accompagnement →</a></p></div>
   <div class="prix"><div class="from">FORFAIT, À PARTIR DE</div><b>400 €</b><span>HT</span><span class="delai">SOUS 2 SEMAINES</span></div>
 </div>
   <div class="off">
-  <div><h3>Déploiement structuré</h3><p class="d">Pour les structures de dix personnes et plus : un espace de travail IA organisé par domaine métier, avec instructions sur mesure et documents de référence, comme celui présenté dans les réalisations.</p><ul><li>Socle : audit des usages, espace structuré, instructions par métier, guide de prise en main</li><li>Module atelier d'équipe d'une demi-journée : <b>+400 €</b></li><li>Module livrables individuels : <b>+50 € par personne</b></li><li>Le socle ne se vend pas seul : un espace que personne n'utilise ne sert à rien</li></ul><p class="renta"><a href="rentabilite.html#ia">Ce que ça rapporte, en chiffres →</a></p></div>
+  <div><h3>Déploiement structuré</h3><p class="d">Pour les structures de dix personnes et plus : un espace de travail IA organisé par domaine métier, avec instructions sur mesure et documents de référence, comme celui présenté dans les réalisations.</p><ul><li>Socle : audit des usages, espace structuré, instructions par métier, guide de prise en main</li><li>Module atelier d'équipe d'une demi-journée : <b>+400 €</b></li><li>Module livrables individuels : <b>+50 € par personne</b></li><li>Le socle ne se vend pas seul : un espace que personne n'utilise ne sert à rien</li></ul><p class="renta"><a href="rentabilite.html#ia">Ce que ça rapporte, en chiffres →</a></p><p class="exlien"><a href="exemples-ia.html">Six exemples d'accompagnement →</a></p></div>
   <div class="prix"><div class="from">SOCLE</div><b>500 €</b><span>HT · modules en option</span><span class="delai">LIVRÉ EN 3 SEMAINES</span></div>
 </div>
 </div></section>
