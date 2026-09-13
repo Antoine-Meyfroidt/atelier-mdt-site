@@ -74,6 +74,17 @@
   .kpis span{display:block;font-size:11.5px;color:var(--sourd);margin-top:4px;line-height:1.4}
   @media(max-width:660px){.kpis{grid-template-columns:1fr 1fr}}
 
+  /* ── quatre familles ── */
+  .familles{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+  @media(max-width:700px){.familles{grid-template-columns:1fr}}
+  .familles a.f{background:var(--panneau);border:1px solid var(--trait);border-radius:6px;padding:20px 22px;text-decoration:none;display:flex;flex-direction:column;transition:border-color .15s}
+  .familles a.f:hover{border-color:var(--ambre)}
+  .familles .n{font-size:10.5px;font-weight:800;letter-spacing:.08em;color:var(--ambre)}
+  .familles h3{font-size:19px;font-weight:800;line-height:1.2;letter-spacing:-.015em;margin:8px 0 8px;color:var(--froid)}
+  .familles p{font-size:14px;color:var(--sourd);flex:1}
+  .familles .px{margin-top:14px;padding-top:11px;border-top:1px solid var(--trait);font-size:13px;font-weight:800;color:var(--ambre)}
+  .familles .px span{color:var(--sourd);font-weight:600}
+
   /* ── sections ── */
   section{padding:64px 0 0;scroll-margin-top:64px}
   h2.lbl{font-size:11.5px;font-weight:800;letter-spacing:.09em;color:var(--ambre);padding-bottom:10px;border-bottom:1px solid var(--trait);margin-bottom:26px}
@@ -109,7 +120,8 @@
   .pc .kl{font-size:11px;font-weight:800;letter-spacing:.05em;color:var(--sourd);margin-top:5px}
   .pc h3{font-size:16px;font-weight:800;margin:13px 0 6px;line-height:1.3}
   .pc p{font-size:13.5px;color:var(--sourd);flex:1}
-  .pc .tools{font-size:12px;color:#6E82A0;margin-top:11px;padding-top:9px;border-top:1px solid var(--trait)}
+  .pc .kl{font-size:11px;font-weight:800;letter-spacing:.05em;color:var(--sourd);margin-top:5px}
+  .pc p.res{font-size:13.5px;color:var(--sourd);margin-top:6px}
 
   /* contact */
   #contact{padding-bottom:0}
@@ -144,6 +156,9 @@ nav .cta{border-bottom:0!important}
 #brochure .carte h3{font-size:19px;font-weight:800;letter-spacing:-.015em;line-height:1.25}
 #brochure .carte p{font-size:14.5px;color:var(--sourd);margin-top:9px;flex:1}
 #brochure .carte .btn{margin-top:18px;align-self:flex-start}
+#brochure .carte .btns{margin-top:18px;display:flex;flex-direction:column;align-items:stretch;gap:9px}
+#brochure .carte .btns .btn{margin-top:0;align-self:stretch;text-align:center;font-size:14.5px;padding:12px 16px}
+#brochure .carte .fmt{font-size:12.5px;color:#6E82A0;margin-top:12px;line-height:1.5}
 @media(max-width:640px){#brochure .deux{grid-template-columns:1fr}}
 
 /* ── commun à toutes les pages ── */
@@ -237,13 +252,51 @@ nav .burger{display:none}
       <a class="btn s" href="realisations.html">Voir les réalisations</a>
     </div>
     <div class="kpis">
-      <div><b>5&nbsp;h</b><span>récupérées par semaine sur deux flux</span></div>
-      <div><b>8&nbsp;h&nbsp;00</b><span>la veille arrive, chaque lundi</span></div>
-      <div><b>37</b><span>exports fusionnés en un pilotage</span></div>
+      <div><b>145&nbsp;h</b><span>rendues sur un an, pour un seul flux automatisé</span></div>
+      <div><b>0</b><span>semaine de veille manquée depuis juin 2026</span></div>
+      <div><b>37</b><span>exports fusionnés, trois ans devenus comparables</span></div>
       <div><b>10</b><span>domaines métier équipés en IA</span></div>
     </div>
   </div>
 </header>
+
+<section id="offres">
+  <div class="in">
+    <h2 class="lbl">QUATRE FAMILLES, UNE SEULE RÈGLE</h2>
+    <p class="pintro">Ce qui se répète peut tourner sans vous. Ce qui bouge chez vos concurrents peut arriver chaque semaine dans votre boîte mail. Ce que vos chiffres savent déjà peut se lire en cinq minutes. Et ce que votre équipe fait encore à la main peut aller deux fois plus vite. Quatre chantiers différents, une seule règle&nbsp;: <strong>sur vos outils, documenté, transmis.</strong></p>
+    <div class="familles">
+      <a class="f" href="exemples-automatisation.html">
+        <div class="n">01 — AUTOMATISATION</div>
+        <h3>Automatiser un flux entrant</h3>
+        <p>Une demande arrive par un formulaire, un email ou un fichier, et déclenche une suite d'actions écrites à l'avance&nbsp;: accuser réception, trier, router, relancer tant qu'une pièce manque, s'arrêter quand c'est réglé.</p>
+        <div class="px">dès 500 € HT <span>· 7 exemples →</span></div>
+      </a>
+      <a class="f" href="exemples-veille.html">
+        <div class="n">02 — VEILLE EN ABONNEMENT</div>
+        <h3>Savoir ce qui a bougé, chaque semaine</h3>
+        <p>Les prix, les avis, les offres et les nouveautés de vos concurrents, ou les usages de l'IA dans votre métier&nbsp;: relevés, historisés, analysés, et envoyés par email sous une forme lisible en deux minutes.</p>
+        <div class="px">300 € puis dès 70 €/mois <span>· 6 exemples →</span></div>
+      </a>
+      <a class="f" href="exemples-donnees.html">
+        <div class="n">03 — DONNÉES ET ÉTUDES</div>
+        <h3>Rendre vos chiffres lisibles</h3>
+        <p>Des exports accumulés pendant des années, normalisés en une base comparable, puis des tableaux lisibles par quelqu'un qui n'est pas analyste. Et, avant une décision qui engage, un modèle chiffré aux hypothèses visibles.</p>
+        <div class="px">450 à 700 € HT <span>· 6 exemples →</span></div>
+      </a>
+      <a class="f" href="exemples-ia.html">
+        <div class="n">04 — ACCOMPAGNEMENT À L'IA</div>
+        <h3>Rendre votre équipe autonome</h3>
+        <p>Des assistants par métier avec leurs instructions, leur périmètre et leurs interdits écrits&nbsp;; les gestes qui reviennent transformés en modèles réutilisables&nbsp;; et des personnes accompagnées sur leurs tâches réelles.</p>
+        <div class="px">dès 150 € HT <span>· 6 exemples →</span></div>
+      </a>
+    </div>
+    <div style="margin-top:22px;display:flex;gap:11px;flex-wrap:wrap">
+      <a class="btn s" href="offres.html">Les prix, en détail →</a>
+      <a class="btn s" href="rentabilite.html">Ce que ça rapporte →</a>
+    </div>
+    <p class="nofais"><b>Ce que je ne fais pas&nbsp;:</b> création graphique, gestion de réseaux sociaux, développement lourd, veille juridique ou réglementaire, réponses à appels d'offres. Si votre besoin est là, je vous le dis dès le premier échange.</p>
+  </div>
+</section>
 
 <section id="constats" class="band">
   <div class="in">
@@ -260,102 +313,51 @@ nav .burger{display:none}
   </div>
 </section>
 
-<section id="offres">
-  <div class="in">
-    <h2 class="lbl">CE QUE JE PEUX FAIRE</h2>
-
-    <div class="offre">
-      <h3>Automatiser vos flux entrants</h3>
-      <div>
-        <p class="desc">Chaque demande — réservation, devis, don, contact — reçoit une réponse immédiate et personnalisée, envoyée depuis vos adresses. Votre équipe ne traite plus que ce qui demande un vrai jugement.</p>
-        <p class="how"><b>Comment&nbsp;:</b> un échange de 30 minutes pour cartographier ce qui vous coûte le plus, un devis chiffré, puis je construis sur <b>vos comptes</b>, je documente pour des non-techniciens et je passe la main à votre référent interne. Forfait fixe. Si on arrête de travailler ensemble, rien ne casse&nbsp;: tout vous appartient.</p>
-      </div>
-    </div>
-
-    <div class="offre">
-      <h3>Mettre votre veille en pilote automatique</h3>
-      <div>
-        <ul>
-          <li><b>E-réputation</b> — alerte à chaque nouvel avis Google ou Tripadvisor, synthèse, réponse rédigée prête à publier.</li>
-          <li><b>Concurrence</b> — notes, avis, prix et activité réseaux de vos concurrents directs, suivis chiffre par chiffre.</li>
-          <li><b>IA appliquée à votre métier</b> — chaque mois, ce qui a réellement changé et ce que vous pouvez en faire, avec un cas d'usage concret.</li>
-        </ul>
-        <p class="how"><b>Comment&nbsp;:</b> un cadrage de vos sources, puis j'installe le système de mon côté et vous recevez le livrable dans votre boîte mail. <b>Vous choisissez la fréquence</b> — chaque semaine, toutes les deux semaines ou chaque mois — ainsi que le jour et l'heure. Installation unique de 300 €, puis dès 70 € par mois. Sans engagement&nbsp;: vous arrêtez quand vous voulez, rien n'était sur vos épaules.</p>
-      </div>
-    </div>
-
-    <div class="offre">
-      <h3>Transformer vos données en tableau de bord</h3>
-      <div>
-        <p class="desc">Vos exports de caisse ou de facturation deviennent un pilotage lisible&nbsp;: saisonnalité, performance par activité, de quoi décider.</p>
-        <p class="how"><b>Comment&nbsp;:</b> vous m'envoyez vos exports, je nettoie, je fusionne, je construis le tableau de bord et je vous le remets avec sa méthodologie. Forfait, avec une option de mise à jour périodique si vous préférez déléguer.</p>
-      </div>
-    </div>
-
-    <div class="offre">
-      <h3>Rendre votre équipe autonome avec l'IA</h3>
-      <div>
-        <p class="desc">Un accompagnement individuel, un atelier d'équipe sur vos cas concrets, ou un espace de travail structuré par métier avec des assistants sur mesure. Pas de théorie.</p>
-        <p class="how"><b>Comment&nbsp;:</b> un état des lieux de vos tâches et de vos outils, puis le format qui correspond à votre taille — deux heures pour une personne, une demi-journée pour une équipe, un déploiement complet au-delà de dix personnes. L'objectif est que vous n'ayez plus besoin de moi.</p>
-      </div>
-    </div>
-
-    <p class="nofais"><b>Ce que je ne fais pas&nbsp;:</b> création graphique, gestion de réseaux sociaux, développement lourd. Si votre besoin est là, je vous le dis dès le premier échange.</p>
-  </div>
-</section>
 
 <section id="preuves" class="band">
   <div class="in">
     <h2 class="lbl">CE QUI A DÉJÀ ÉTÉ MIS EN PLACE</h2>
-    <p class="pintro">Tout ce qui suit tourne en production chez <strong>Kampus 137</strong>, parc de loisirs indoor à Crevin près de Rennes — 1 500 m², environ 55 000 visiteurs par an, une équipe de 10 personnes. Des systèmes utilisés tous les jours, pas des maquettes.</p>
+    <p class="pintro">Tout ce qui suit tourne en production chez <strong>Kampus 137</strong>, parc de loisirs indoor à Crevin près de Rennes — 1 500 m², environ 55 000 visiteurs par an, une équipe de 10 personnes. Des systèmes utilisés tous les jours, pas des maquettes. Le détail de chaque cas, pièce par pièce, est sur la page réalisations.</p>
     <div class="preuves">
       <div class="pc">
         <div class="kpi">3&nbsp;h</div><div class="kl">RÉCUPÉRÉES / SEMAINE</div>
         <h3>Les demandes d'anniversaire se confirment toutes seules</h3>
-        <p>Formulaire du site, tri automatique, confirmation personnalisée envoyée depuis la boîte de l'équipe — même le dimanche. Livré avec un document de maintenance de 4 pages pour non-techniciens. En production depuis juillet 2026.</p>
-        <p class="tools">Gravity Forms · Outlook · Power Automate</p>
+        <p class="res">Plus une seule confirmation tapée à la main, le dimanche compris.</p>
       </div>
       <div class="pc">
         <div class="kpi">2&nbsp;h</div><div class="kl">RÉCUPÉRÉES / SEMAINE</div>
         <h3>Les demandes de devis B2B arrivent qualifiées</h3>
-        <p>Formulaire structuré (type d'événement, effectif, date), confirmation automatique adaptée au type de projet, envoyée depuis l'adresse commerciale. Aucun lead sans réponse.</p>
-        <p class="tools">Formulaire en ligne · Automatisation d'emails</p>
+        <p class="res">Le commercial ouvre l'email et sait immédiatement s'il traite en priorité.</p>
       </div>
       <div class="pc">
         <div class="kpi">100&nbsp;%</div><div class="kl">DES DEMANDES TRAITÉES</div>
         <h3>Les demandes de dons ne débordent plus le budget</h3>
-        <p>Flux automatisé avec fichier de pilotage&nbsp;: statuts, suivi des envois, jauge mensuelle plafonnée. Réponse systématique aux associations et aux écoles, budget sous contrôle. En production depuis juin 2026.</p>
-        <p class="tools">Make · Power Automate · Excel</p>
+        <p class="res">Chaque association reçoit une réponse, et l'enveloppe se voit avant d'être franchie.</p>
       </div>
       <div class="pc">
         <div class="kpi">8&nbsp;h&nbsp;00</div><div class="kl">CHAQUE LUNDI, SANS FAUTE</div>
-        <h3>La veille arrive toute seule</h3>
-        <p>Synthèse hebdomadaire automatisée adaptée au métier, plus un relevé concurrentiel chiffré — notes Google, avis, réseaux — qui alimente les décisions tarifaires. Tourne seule depuis juin 2026.</p>
-        <p class="tools">Make · Claude · Excel</p>
+        <h3>La veille concurrentielle arrive toute seule</h3>
+        <p class="res">Les décisions tarifaires se prennent désormais sur un relevé chiffré, pas au ressenti.</p>
       </div>
       <div class="pc">
         <div class="kpi">37</div><div class="kl">EXPORTS FUSIONNÉS · 3 ANS</div>
         <h3>Trois ans de ventes sont devenus lisibles</h3>
-        <p>Exports mensuels du logiciel de billetterie collectés, normalisés, fusionnés en une base d'analyse documentée, puis des tableaux de bord&nbsp;: reporting mensuel et vue pluriannuelle 2023-2026. Base des arbitrages tarifaires de l'année.</p>
-        <p class="tools">Qweekle · Excel</p>
+        <p class="res">Les arbitrages tarifaires de l'année se sont pris là-dessus.</p>
       </div>
       <div class="pc">
         <div class="kpi">10</div><div class="kl">DOMAINES MÉTIER ÉQUIPÉS</div>
         <h3>Une équipe de terrain utilise l'IA au quotidien</h3>
-        <p>Espace de travail structuré avec instructions sur mesure par métier, deux ateliers internes créés et animés, assistants spécialisés fabriqués pour des collègues précis — dont un assistant commercial clé en main. Déployé depuis juin 2026.</p>
-        <p class="tools">Claude</p>
+        <p class="res">Y compris des collègues qui n'auraient jamais adopté l'outil seuls.</p>
       </div>
       <div class="pc">
         <div class="kpi">1</div><div class="kl">NOUVEAU PRODUIT LANCÉ</div>
         <h3>Une étude de rentabilité a lancé un produit</h3>
-        <p>Rencontre du fournisseur en salon professionnel, étude de rentabilité chiffrée remise à la direction, décision, mise en vente d'une nouvelle offre. Du benchmark au produit en rayon.</p>
-        <p class="tools">Excel · Analyse fournisseur</p>
+        <p class="res">Du fournisseur rencontré en salon au produit mis en vente.</p>
       </div>
       <div class="pc">
         <div class="kpi">0</div><div class="kl">PRIX FIXÉ AU DOIGT MOUILLÉ</div>
         <h3>Les tarifs se décident sur étude de marché</h3>
-        <p>Benchmark complet des prix pratiqués par les salles de quiz de Bretagne pour objectiver une proposition de révision tarifaire, argumentée et remise à la direction.</p>
-        <p class="tools">Étude de marché · Excel</p>
+        <p class="res">Une révision tarifaire argumentée, remise à la direction.</p>
       </div>
     </div>
     <div style="margin-top:22px"><a class="btn s" href="realisations.html">Voir chaque réalisation en détail, pièce par pièce →</a></div>
@@ -368,10 +370,14 @@ nav .burger{display:none}
     <h2 class="lbl">POUR ALLER PLUS LOIN</h2>
     <div class="deux">
       <div class="carte">
-        <div class="k">BROCHURE COMPLÈTE</div>
-        <h3>Tout en huit pages, à lire ou à faire circuler</h3>
-        <p>Ce que je fais, une page par famille de prestations avec ce qu'elle change pour vous, les tarifs, le contact. Le format à transmettre en interne quand la décision ne se prend pas seul.</p>
-        <a class="btn p" href="assets/brochure-atelier-mdt.pdf" download>Télécharger la brochure</a>
+        <div class="k">LA BROCHURE</div>
+        <h3>Tout le détail, dans un document qui tient tout seul</h3>
+        <p>Une page par famille avec ce qu'elle change pour vous, les grilles de prix complètes, le déroulé d'une mission et ce que je ne promets pas. Deux formats, même contenu.</p>
+        <div class="btns">
+          <a class="btn p" href="assets/brochure-atelier-mdt.pdf" download>À lire — 9 pages</a>
+          <a class="btn s" href="assets/brochure-atelier-mdt-presentation.pdf" download>À montrer — 10 pages</a>
+        </div>
+        <p class="fmt"><b>À lire</b>&nbsp;: le document de référence, à imprimer et à annoter, celui qu'on transmet à un associé ou à un comptable. <b>À montrer</b>&nbsp;: la même offre en version présentation, gros caractères, pour projeter ou faire circuler en interne.</p>
       </div>
       <div class="carte">
         <div class="k">INCERTAIN DES RETOMBÉES ?</div>
