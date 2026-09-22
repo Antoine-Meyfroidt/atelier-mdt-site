@@ -1,0 +1,9 @@
+ATELIER MDT — mise a jour du 22 septembre 2026
+==============================================
+
+1) A la RACINE du depot :  cgv.html  offres.html  index.html
+2) DANS le dossier assets :  brochure-atelier-mdt.pdf
+                             brochure-atelier-mdt-presentation.pdf
+
+Les deux brochures courtes ne vont PAS sur le site : ce sont des pieces
+jointes de mails froids. Ne pas charger ce fichier A-LIRE.txt.
