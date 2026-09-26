@@ -159,12 +159,22 @@ nav .burger{display:none}
       <form class="form" id="form-contact" action="https://formspree.io/f/maeyvaae" method="POST">
         <div class="deux">
           <div>
-            <label for="nom">Votre nom</label>
-            <input id="nom" name="nom" type="text" required autocomplete="name">
+            <label for="prenom">Votre prénom</label>
+            <input id="prenom" name="prenom" type="text" required maxlength="40" autocomplete="given-name">
           </div>
+          <div>
+            <label for="nom">Votre nom</label>
+            <input id="nom" name="nom" type="text" required maxlength="60" autocomplete="family-name">
+          </div>
+        </div>
+        <div class="deux">
           <div>
             <label for="email">Votre email</label>
             <input id="email" name="email" type="email" required autocomplete="email">
+          </div>
+          <div>
+            <label for="telephone">Votre téléphone <span style="font-weight:400;opacity:.7">(facultatif)</span></label>
+            <input id="telephone" name="telephone" type="tel" maxlength="20" autocomplete="tel" inputmode="tel">
           </div>
         </div>
         <label for="entreprise">Nom de l'entreprise</label>
@@ -223,10 +233,19 @@ nav .burger{display:none}
 (function(){
   var f=document.getElementById('form-contact');if(!f)return;
   var btn=f.querySelector('button[type=submit]'),err=document.getElementById('form-erreur');
+  /* Copie parallèle vers Make (classeur + accusé), sans attente : si Make
+     échoue, Formspree et la redirection fonctionnent quand même. */
+  var MAKE_URL='https://hook.eu1.make.com/8ujqew8r14citbkg4x40fjb3jod830e5';
+  var MAKE_CLE='6jh2HE4rrYuoUNxPIqrPdU5l';
   f.addEventListener('submit',function(e){
     e.preventDefault();
     if(!f.checkValidity()){f.reportValidity();return;}
     btn.disabled=true;btn.textContent='Envoi en cours…';err.hidden=true;
+    try{
+      var d=new URLSearchParams(new FormData(f));
+      d.append('cle',MAKE_CLE);
+      fetch(MAKE_URL,{method:'POST',mode:'no-cors',keepalive:true,body:d}).catch(function(){});
+    }catch(x){}
     fetch(f.action,{method:'POST',body:new FormData(f),headers:{'Accept':'application/json'}})
       .then(function(r){if(r.ok){window.location.href='merci.html';}else{throw new Error(r.status);}})
       .catch(function(){btn.disabled=false;btn.textContent='Envoyer';err.hidden=false;});
