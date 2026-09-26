@@ -36,6 +36,15 @@ nav .links a{color:var(--sourd);text-decoration:none;font-size:13.5px;font-weigh
 nav .links a:hover,nav .links a.on{color:var(--froid)}
 nav .cta{background:var(--ambre)!important;color:#1A1608!important;padding:9px 15px;border-radius:5px;font-weight:800!important}
 @media(max-width:700px){nav .links a:not(.cta){display:none}}
+.sommaire{margin-top:26px;padding-top:20px;border-top:1px solid var(--trait)}
+.sommaire .k{font-size:10.5px;font-weight:800;letter-spacing:.08em;color:var(--ambre);margin-bottom:11px}
+.sommaire .l{display:flex;flex-wrap:wrap;gap:9px}
+.sommaire a{display:inline-flex;align-items:baseline;gap:7px;background:var(--panneau);border:1px solid var(--trait);border-radius:5px;padding:9px 14px;font-size:13.5px;font-weight:700;color:var(--froid);text-decoration:none;transition:border-color .15s}
+.sommaire a:hover{border-color:var(--ambre);color:var(--ambre)}
+.sommaire a span{font-size:12px;font-weight:600;color:var(--sourd)}
+.sommaire a:hover span{color:var(--ambre)}
+@media(max-width:560px){.sommaire a{width:100%;justify-content:space-between}}
+section[id]{scroll-margin-top:78px}
 header.h{padding:60px 0 6px}
 header.h .eyebrow{font-size:11.5px;font-weight:800;letter-spacing:.09em;color:var(--ambre);margin-bottom:12px}
 header.h h1{font-size:clamp(30px,5.4vw,46px);font-weight:800;letter-spacing:-.03em;line-height:1.06;max-width:22ch}
@@ -201,15 +210,25 @@ nav .burger{display:none}
   <div class="eyebrow">OFFRES</div>
   <h1>Des prix écrits, avant qu'on se parle</h1>
   <p class="sub">Tout est en forfait ou en abonnement sans engagement. Pas de taux horaire caché, pas de surprise en fin de mission. Ce que vous lisez ici est ce que vous lirez sur le devis.</p>
-  <div class="bandeau"><span class="tag">PRIX DE LANCEMENT</span><div><b>Valables pour les trois premiers clients.</b></div></div>
+  <div class="bandeau"><span class="tag">PRIX DE LANCEMENT</span><div><b>Valables pour les premiers clients.</b></div></div>
   <div class="liens2">
     <a href="realisations.html">Voir ce qui a déjà été fait →</a>
     <a href="rentabilite.html">Serais-je rentable ? →</a>
     <a href="exemples.html">25 exemples concrets →</a>
   </div>
+  <nav class="sommaire" aria-label="Sommaire de la page">
+    <div class="k">ALLER DIRECTEMENT À</div>
+    <div class="l">
+      <a href="#automatisation">Automatisation <span>dès 500 €</span></a>
+      <a href="#veille">Veille en abonnement <span>300 € puis dès 70 €/mois</span></a>
+      <a href="#donnees">Données et pilotage <span>450 à 700 €</span></a>
+      <a href="#ia">Accompagnement IA <span>dès 150 €</span></a>
+      <a href="#deroulement">Comment ça se passe <span>devis, acompte, délais</span></a>
+    </div>
+  </nav>
 </div></header>
 
-<section><div class="in">
+<section id="automatisation"><div class="in">
   <h2 class="lbl">AUTOMATISATION</h2>
   <div class="off">
   <div><h3>Automatiser un flux entrant</h3><p class="d">Demandes de réservation, de devis, de contact, de partenariat : chaque message reçoit une réponse immédiate et personnalisée, envoyée depuis vos adresses. Votre équipe ne traite plus que ce qui demande un jugement.</p><ul><li>Construit <b>sur vos comptes</b> : vous en restez propriétaire</li><li>Document de maintenance rédigé pour des non-techniciens</li><li>Session de passation d'une heure à votre référent interne</li><li>Aucune maintenance imposée — interventions ultérieures à l'heure, si vous le souhaitez</li></ul><p class="renta"><a href="rentabilite.html#auto">Ce que ça rapporte, en chiffres →</a></p><p class="exlien"><a href="exemples-automatisation.html">Sept exemples de flux automatisables →</a></p></div>
@@ -217,7 +236,7 @@ nav .burger{display:none}
 </div>
 </div></section>
 
-<section><div class="in">
+<section id="veille"><div class="in">
   <h2 class="lbl">VEILLE EN ABONNEMENT</h2>
   <div class="off">
   <div><h3>Veille en abonnement</h3><p class="d">Vous recevez par email ce qui a bougé sur votre marché : les prix, les avis, les offres et les nouveautés de vos concurrents, ou les usages de l'IA dans votre métier. Lisible en deux minutes. Le système tourne de mon côté — vous n'avez rien à installer ni à surveiller.</p><ul><li>Vous choisissez <b>le thème, la fréquence, le jour et l'heure</b> de réception</li><li>Formule de base : jusqu'à 5 concurrents ou 3 établissements suivis</li><li><b>Sans engagement</b>, résiliable avec un mois de préavis</li><li>Changement de fréquence possible à tout moment : <b>50 €</b> par changement, effet le mois suivant la demande</li></ul><p class="renta"><a href="rentabilite.html#veille">Ce que ça rapporte, en chiffres →</a></p><p class="exlien"><a href="exemples-veille.html">Six exemples de veilles →</a></p></div>
@@ -267,6 +286,10 @@ nav .burger{display:none}
     <div><b>Publications de vos concurrents</b>Nouveautés, opérations, angles éditoriaux. Je vous donne la matière, je ne tiens pas vos réseaux. Aux trois rythmes.</div>
   </div>
 
+  <div class="apres" style="grid-template-columns:1fr">
+    <div class="excep"><b>Une idée de veille que vous ne voyez pas dans cette liste&nbsp;?</b>Les sept thèmes ci-dessus sont ceux que je sais tenir dans la durée, pas la limite de ce qui est possible. Si vous suivez déjà quelque chose à la main — un fournisseur, un cadre de subvention, une place de marché, un sujet propre à votre métier — dites-le-moi&nbsp;: on regarde ensemble si la source est publique, stable et exploitable. Si elle l'est, on la cadre&nbsp;; si elle ne l'est pas, je vous le dis en trente minutes plutôt qu'après l'installation. <a href="contact.html" style="color:var(--ambre);font-weight:700;text-decoration:none">Parlez-m'en ici →</a></div>
+  </div>
+
   <h2 class="lbl" style="margin-top:34px">APPELS D'OFFRES — CE QU'IL FAUT SAVOIR AVANT</h2>
   <p class="socle" style="margin-top:0">Les marchés publics de votre métier arrivent chez vous pendant qu'il reste le temps d'y répondre. C'est un thème de veille comme les autres&nbsp;: même installation, mêmes rythmes, mêmes prix. Ce qui change, c'est ce qu'on y met et ce qu'on n'y met pas.</p>
   <div class="apres">
@@ -278,7 +301,7 @@ nav .burger{display:none}
   <p class="socle"><b>Ce que je ne promets pas.</b> Pas d'exhaustivité&nbsp;: depuis le 1<sup>er</sup> avril 2026, un marché de fournitures ou de services jusqu'à 60 000 € HT peut être passé sans publicité ni mise en concurrence, et depuis le 1<sup>er</sup> janvier 2026 le seuil est de 100 000 € HT pour les travaux — ces marchés-là ne sont publiés nulle part, personne ne peut les voir. Le dossier de consultation n'est pas récupéré&nbsp;: je signale et je donne le lien, vous le téléchargez avec votre compte sur la plateforme de l'acheteur. Je ne rédige pas les réponses, je n'analyse pas les pièces, et je ne vous dis pas s'il faut y aller. Ni veille juridique, ni veille réglementaire.</p>
 </div></section>
 
-<section><div class="in">
+<section id="donnees"><div class="in">
   <h2 class="lbl">DONNÉES ET PILOTAGE</h2>
   <div class="off">
   <div><h3>Tableau de bord</h3><p class="d">Vos exports de caisse ou de facturation deviennent un pilotage lisible : saisonnalité, performance par activité, écarts d'une année sur l'autre. Livré avec sa méthodologie.</p><ul><li>Vous m'envoyez vos exports, je nettoie, je fusionne, je construis</li><li>Lisible par un dirigeant en cinq minutes, pas un outil d'analyste</li><li>Option mise à jour périodique : <b>150 € par trimestre</b></li><li>Prérequis : pouvoir exporter vos données — c'est la première question que je pose</li></ul><p class="renta"><a href="rentabilite.html#data">Ce que ça rapporte, en chiffres →</a></p><p class="exlien"><a href="exemples-donnees.html">Des exemples concrets de tableaux de bord et d'études →</a></p></div>
@@ -318,7 +341,7 @@ nav .burger{display:none}
 </div>
 </div></section>
 
-<section><div class="in">
+<section id="ia"><div class="in">
   <h2 class="lbl">IA — MONTÉE EN COMPÉTENCE</h2>
   <div class="off">
   <div><h3>Accompagnement individuel</h3><p class="d">Deux heures en visio sur vos tâches réelles — pas de théorie — puis deux supports personnalisés rédigés d'après votre métier, l'un pour démarrer, l'autre pour aller plus loin.</p><ul><li>Pour un dirigeant, un libéral, un responsable</li><li>Un questionnaire vous est envoyé après signature, à me retourner <b>deux jours avant</b> la séance</li><li>Les deux supports vous sont remis par email après la séance — <b>la prestation s'arrête là</b>, il n'y a pas de support ouvert ensuite</li><li>Vous repartez avec des usages que vous pouvez reproduire le lendemain</li></ul><p class="renta"><a href="rentabilite.html#ia">Ce que ça rapporte, en chiffres →</a></p><p class="exlien"><a href="exemples-ia.html">Six exemples d'accompagnement →</a></p></div>
@@ -334,7 +357,7 @@ nav .burger{display:none}
 </div>
 </div></section>
 
-<section><div class="in">
+<section id="deroulement"><div class="in">
   <h2 class="lbl">COMMENT ÇA SE PASSE</h2>
   <div class="regles">
     <div class="card"><h3>Un premier échange, gratuit</h3><p>Trente minutes en visio pour comprendre ce qui vous coûte du temps. Si je ne suis pas le bon interlocuteur, je vous le dis à ce moment-là.</p></div>
