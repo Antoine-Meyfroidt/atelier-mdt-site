@@ -143,8 +143,10 @@ nav .burger{display:none}
 
 /* ── bloc des limites, en bas de page ── */
 section.limites{background:#0C1B32;border-top:1px solid var(--trait);border-bottom:1px solid var(--trait);padding:50px 0 54px;margin-top:56px}
-.cadre{display:grid;grid-template-columns:1fr 1fr;gap:14px;align-items:start}
-@media(max-width:780px){.cadre{grid-template-columns:1fr}}
+.cadre{display:grid;grid-template-columns:1fr;gap:14px;align-items:start}
+.cadre .non ul{columns:2;column-gap:30px}
+.cadre .non li{break-inside:avoid}
+@media(max-width:780px){.cadre .non ul{columns:1}}
 .cadre .oui,.cadre .non{border-radius:7px;padding:19px 21px}
 .cadre .oui{background:rgba(245,182,46,.06);border:1px solid rgba(245,182,46,.35)}
 .cadre .non{background:var(--panneau);border:1px solid var(--trait)}
@@ -188,7 +190,7 @@ section.limites{background:#0C1B32;border-top:1px solid var(--trait);border-bott
   <p class="fil"><a href="exemples.html">← Les 22 exemples</a></p>
   <div class="eyebrow">EXEMPLES · FAMILLE 02 — VEILLE EN ABONNEMENT</div>
   <h1>Trois veilles qui tournent sans vous</h1>
-  <p class="sub">Ce que votre marché publie, relevé, historisé, et livré dans votre boîte mail sous une forme lisible en deux minutes.</p>
+  <p class="sub">Un concurrent qui change ses prix, un marché public qui s'ouvre, un usage de l'IA qui arrive dans votre métier&nbsp;: ceux qui le voient tôt ont le temps de s'adapter. Je cherche à votre place, vous recevez l'essentiel par email, au rythme que vous choisissez.</p>
   <p class="chapo">Offre correspondante&nbsp;: <a href="offres.html">Veille en abonnement</a>, 300 € d'installation puis dès 70 €/mois selon le rythme.</p>
 </div></header>
 
@@ -203,14 +205,14 @@ section.limites{background:#0C1B32;border-top:1px solid var(--trait);border-bott
 </article>
 <article class="ex" id="veille-presse">
   <h2>Les tendances de votre secteur, chaque mois</h2>
-  <p class="src nb">Pas encore de cas publié · même brique que la <a href="realisation-04-veille.html">Réalisation 04</a></p>
+  <p class="src nb">Même fonctionnement que la <a href="realisation-04-veille.html">Réalisation 04</a></p>
   <p class="c"><span class="q">Vous avez mis quinze sources en favoris et vous n'en ouvrez aucune.</span></p>
   <p class="c">Une synthèse mensuelle courte, rédigée à partir des sources que vous auriez lues si vous en aviez eu le temps, avec le lien vers chaque article — rien n'est recopié. C'est l'offre la moins chère du catalogue et la plus facile à tenir — et elle vous donne matière à parler à vos clients d'autre chose que de vos prestations.</p>
   <details><summary>Ce dont j'ai besoin de votre côté</summary><p>Vos sources, ou une heure pour les choisir ensemble, et les trois ou quatre sujets à faire remonter en priorité.</p></details>
 </article>
 <article class="ex" id="veille-ia">
   <h2>L'IA appliquée à votre métier</h2>
-  <p class="src nb">Pas encore de cas publié · même brique que la <a href="realisation-04-veille.html">Réalisation 04</a></p>
+  <p class="src nb">Même fonctionnement que la <a href="realisation-04-veille.html">Réalisation 04</a></p>
   <p class="c"><span class="q">Le sujet bouge tous les mois, tout le monde en parle, et rien de ce qui se dit n'est trié pour votre métier.</span></p>
   <p class="c">Une livraison mensuelle qui ne raconte pas l'actualité de l'IA mais ce qui change pour vous : les outils que vous utilisez déjà et qui gagnent une fonction utile, ce qui marche ailleurs à votre taille, et ce qu'il ne faut pas essayer.</p>
   <details><summary>Ce dont j'ai besoin de votre côté</summary><p>Votre métier, vos outils actuels, la taille de l'équipe, et les sujets à exclure.</p></details>
@@ -221,16 +223,16 @@ section.limites{background:#0C1B32;border-top:1px solid var(--trait);border-bott
 <section class="limites"><div class="in">
   <h2 class="lbl">CE QUE JE PEUX FAIRE, ET CE QUE JE NE PEUX PAS</h2>
   <div class="cadre">
-    <div class="oui"><div class="k">CE QUI EST FAISABLE</div><p>Relever chaque semaine ou chaque mois ce que votre marché publie — prix affichés, notes et nouveautés de vos concurrents, consultations publiques, actualité de votre secteur et de l'IA dans votre métier — l'historiser pour que l'évolution devienne visible, le faire analyser, et vous l'envoyer sous une forme lisible en deux minutes, avec le lien vers chaque source et sans en reproduire le contenu. Le système reste de mon côté : la prestation, c'est la livraison régulière.</p></div>
+    <div class="oui"><div class="k">CE QUI EST FAISABLE</div><p>Relever ce que votre marché publie — prix, notes et nouveautés de vos concurrents, consultations publiques, actualité de votre secteur et de l'IA dans votre métier — puis l'historiser et vous l'envoyer lisible en deux minutes, avec le lien vers chaque source et sans en reproduire le contenu. Le système reste de mon côté.</p></div>
     <div class="non"><div class="k">CE QUI N'EST PAS FAISABLE</div>
       <ul>
-      <li><span class="dem">« Vous saurez tout ce qui se dit sur moi. »</span> Sources publiques uniquement, et pas celles dont les conditions d'utilisation interdisent la collecte automatique — LinkedIn en fait partie, et c'est pour ça que vous ne le verrez jamais dans un devis de veille.</li>
-      <li><span class="dem">« Donnez-moi les chiffres de mes concurrents. »</span> Chiffre d'affaires, marge et fréquentation ne sont pas publics. On relève ce qui est publié — c'est-à-dire beaucoup, mais pas ça.</li>
-      <li><span class="dem">« Une alerte en temps réel. »</span> Non, et c'est un choix : une alerte permanente n'est jamais lue. La valeur est dans un rendez-vous régulier, court, qui arrive toujours.</li>
-      <li><span class="dem">« Suivez mes avis, les publications et les prix de mes concurrents. »</span> Non : ces trois thèmes ne sont plus au catalogue. Ils reposent sur la collecte automatisée de sites tiers — Google, les réseaux sociaux, les sites marchands — dont les conditions d'utilisation la restreignent, et les avis contiennent des données personnelles. Je ne tranche pas ces questions seul : ils ne reviendront qu'avec un avis juridique écrit et un système fiable sur un cas réel.</li>
-      <li><span class="dem">« Vous ne raterez rien. »</span> Impossible à garantir. Une source publique peut tomber, changer de format, se fermer. Le rapport signale lui-même les sources qu'il n'a pas récupérées : une veille honnête dit ce qu'elle n'a pas vu.</li>
+      <li><span class="dem">« Vous saurez tout ce qui se dit sur moi. »</span> Sources publiques seulement, et jamais celles qui interdisent la collecte automatique — LinkedIn en fait partie.</li>
+      <li><span class="dem">« Donnez-moi les chiffres de mes concurrents. »</span> Chiffre d'affaires, marge et fréquentation ne sont pas publics.</li>
+      <li><span class="dem">« Une alerte en temps réel. »</span> Non : une alerte permanente n'est jamais lue. La valeur est dans un rendez-vous régulier, court.</li>
+      <li><span class="dem">« Suivez mes avis, les publications et les prix de mes concurrents. »</span> Retirés du catalogue : ils reposent sur la collecte de sites tiers qui la restreignent, et les avis contiennent des données personnelles. Retour seulement avec un avis juridique écrit et un système fiable.</li>
+      <li><span class="dem">« Vous ne raterez rien. »</span> Impossible à garantir : une source peut tomber ou changer. Le rapport dit lui-même ce qu'il n'a pas récupéré.</li>
       </ul>
-      <p class="fin"><b>Hors périmètre, définitivement :</b> veille réglementaire et veille juridique. Ce sont des métiers avec une responsabilité que je ne prends pas. La veille sur les <a href="offres.html#veille">appels d'offres</a> existe en revanche : elle signale les consultations publiées sur votre métier et votre territoire, sans jamais apprécier s'il faut y répondre.</p>
+      <p class="fin"><b>Hors périmètre :</b> veille réglementaire et veille juridique. La veille sur les <a href="offres.html#veille">appels d'offres</a> signale les consultations publiées, sans dire s'il faut y répondre.</p>
     </div>
   </div>
 </div></section>
@@ -253,7 +255,7 @@ section.limites{background:#0C1B32;border-top:1px solid var(--trait);border-bott
 </main>
 <footer><div class="in"><div class="row">
   <span>Atelier MDT · Automatisation · Veille · Tableaux de bord · Accompagnement IA</span>
-  <span><a href="mailto:antoine@atelier-mdt.fr">antoine@atelier-mdt.fr</a> · <a href="tel:+33743688097">07 43 68 80 97</a> · <a href="https://www.linkedin.com/in/antoine-meyfroidt/" rel="noopener">linkedin.com/in/antoine-meyfroidt</a> · <a href="mentions-legales.html">Mentions légales</a> · <a href="cgv.html">CGV</a></span>
+  <span><a href="mailto:antoine@atelier-mdt.fr">antoine@atelier-mdt.fr</a> · <a href="tel:+33743688097">07 43 68 80 97</a> · <a href="https://www.linkedin.com/in/antoine-meyfroidt/" rel="noopener">linkedin.com/in/antoine-meyfroidt</a> · <a href="questions.html">Questions fréquentes</a> · <a href="mentions-legales.html">Mentions légales</a> · <a href="cgv.html">CGV</a></span>
 </div></div></footer>
 <script>
 /* Menu mobile — autonome, aucune dépendance externe. */

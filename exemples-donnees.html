@@ -143,8 +143,10 @@ nav .burger{display:none}
 
 /* ── bloc des limites, en bas de page ── */
 section.limites{background:#0C1B32;border-top:1px solid var(--trait);border-bottom:1px solid var(--trait);padding:50px 0 54px;margin-top:56px}
-.cadre{display:grid;grid-template-columns:1fr 1fr;gap:14px;align-items:start}
-@media(max-width:780px){.cadre{grid-template-columns:1fr}}
+.cadre{display:grid;grid-template-columns:1fr;gap:14px;align-items:start}
+.cadre .non ul{columns:2;column-gap:30px}
+.cadre .non li{break-inside:avoid}
+@media(max-width:780px){.cadre .non ul{columns:1}}
 .cadre .oui,.cadre .non{border-radius:7px;padding:19px 21px}
 .cadre .oui{background:rgba(245,182,46,.06);border:1px solid rgba(245,182,46,.35)}
 .cadre .non{background:var(--panneau);border:1px solid var(--trait)}
@@ -203,14 +205,14 @@ section.limites{background:#0C1B32;border-top:1px solid var(--trait);border-bott
 </article>
 <article class="ex" id="data-rentabilite-client">
   <h2>Quel client vous rapporte vraiment</h2>
-  <p class="src nb">Pas encore de cas publié · même brique que la <a href="realisation-07-granites.html">Réalisation 07</a></p>
+  <p class="src nb">Même fonctionnement que la <a href="realisation-07-granites.html">Réalisation 07</a></p>
   <p class="c"><span class="q">Tout le monde connaît son plus gros client en chiffre d'affaires. Presque personne ne connaît son plus rentable.</span></p>
   <p class="c">Le croisement du temps passé, des remises et du facturé, client par client. Le résultat est souvent inconfortable : une partie du portefeuille travaille à perte, rarement celle qu'on croit. C'est l'étude qui a le plus d'effet sur le résultat, parce qu'elle ne demande aucun investissement pour être appliquée.</p>
   <details><summary>Ce dont j'ai besoin de votre côté</summary><p>Un suivi du temps même approximatif — sans lui l'étude n'est pas faisable, et je le dirai —, vos factures sur la période, et les remises accordées.</p></details>
 </article>
 <article class="ex" id="data-heures">
   <h2>Heures facturées contre heures facturables</h2>
-  <p class="src nb">Pas encore de cas publié · même brique que la <a href="realisation-05-data.html">Réalisation 05</a></p>
+  <p class="src nb">Même fonctionnement que la <a href="realisation-05-data.html">Réalisation 05</a></p>
   <p class="c"><span class="q">L'écart entre le temps saisi et le temps facturé est le premier poste de perte d'un cabinet, et il n'apparaît sur aucun document comptable.</span></p>
   <p class="c">Sa mesure par dossier, par associé et par type de mission, avec son évolution. De quoi refacturer ce qui doit l'être et réviser les forfaits systématiquement dépassés. Le gain, ce sont des heures déjà travaillées qui deviennent payées.</p>
   <details><summary>Ce dont j'ai besoin de votre côté</summary><p>Les exports de votre outil de saisie des temps, les montants facturés sur la même période, votre taux horaire cible, et l'accord de la direction sur le fait que les résultats seront lisibles par personne.</p></details>
@@ -231,7 +233,7 @@ section.limites{background:#0C1B32;border-top:1px solid var(--trait);border-bott
 </article>
 <article class="ex" id="data-adhesions">
   <h2>Adhésions, renouvellements, départs</h2>
-  <p class="src nb">Pas encore de cas publié · même brique que la <a href="realisation-05-data.html">Réalisation 05</a></p>
+  <p class="src nb">Même fonctionnement que la <a href="realisation-05-data.html">Réalisation 05</a></p>
   <p class="c"><span class="q">Une association sait combien elle a d'adhérents. Rarement combien elle en perd, ni à quel moment.</span></p>
   <p class="c">Le taux de renouvellement par catégorie et par ancienneté, et le moment précis où les gens partent : après la première année, après un changement d'horaire, après une hausse de cotisation. Utile aussi pour un dossier de subvention.</p>
   <details><summary>Ce dont j'ai besoin de votre côté</summary><p>Les listes des saisons passées même dans des fichiers différents, les tarifs et leurs évolutions, et un identifiant stable d'une année sur l'autre.</p></details>
@@ -242,15 +244,15 @@ section.limites{background:#0C1B32;border-top:1px solid var(--trait);border-bott
 <section class="limites"><div class="in">
   <h2 class="lbl">CE QUE JE PEUX FAIRE, ET CE QUE JE NE PEUX PAS</h2>
   <div class="cadre">
-    <div class="oui"><div class="k">CE QUI EST FAISABLE</div><p>Prendre des exports hétérogènes accumulés pendant des années, les normaliser en une base documentée, les rendre comparables, et en tirer des tableaux lisibles par quelqu'un qui n'est pas analyste — avec un manuel de lecture, parce qu'un tableau de bord sans mode d'emploi n'est pas utilisé. Et construire un modèle chiffré avant une décision : point mort, scénarios, comparatif de marché, hypothèses écrites et visibles.</p></div>
+    <div class="oui"><div class="k">CE QUI EST FAISABLE</div><p>Normaliser des exports accumulés pendant des années en une base comparable, en tirer des tableaux lisibles par quelqu'un qui n'est pas analyste, avec leur manuel de lecture. Et, avant une décision qui engage, un modèle chiffré aux hypothèses écrites.</p></div>
     <div class="non"><div class="k">CE QUI N'EST PAS FAISABLE</div>
       <ul>
-      <li><span class="dem">« Un tableau de bord en temps réel branché sur tout. »</span> Non. Je travaille sur exports. C'est un choix assumé : ça coûte cent fois moins cher, ça n'installe aucune infrastructure chez vous, et pour décider on n'a pas besoin de la minute — on a besoin du mois dernier, juste.</li>
-      <li><span class="dem">« Vous allez trouver de l'argent caché. »</span> Je rends les écarts lisibles. La décision reste la vôtre, et parfois la donnée confirme simplement ce que vous saviez : c'est un résultat aussi.</li>
-      <li><span class="dem">« Reconstituez les données que je n'ai pas gardées. »</span> Impossible. Si l'historique n'existe pas, il n'existe pas. Ce qui existe est parfois contradictoire : dans ce cas j'arbitre et j'écris l'arbitrage, je n'invente pas.</li>
-      <li><span class="dem">« Dites-moi ce que je ferai l'an prochain. »</span> Je projette des scénarios sur des hypothèses écrites, prudentes et discutables. Ce n'est pas une prévision, et une étude qui se présenterait comme telle vous mentirait.</li>
+      <li><span class="dem">« Un tableau de bord en temps réel branché sur tout. »</span> Non : je travaille sur exports. Pour décider, il faut le mois dernier, juste, pas la minute.</li>
+      <li><span class="dem">« Vous allez trouver de l'argent caché. »</span> Je rends les écarts lisibles. La décision reste la vôtre, et confirmer ce que vous saviez est aussi un résultat.</li>
+      <li><span class="dem">« Reconstituez les données que je n'ai pas gardées. »</span> Impossible. Quand deux fichiers se contredisent, j'arbitre et j'écris l'arbitrage.</li>
+      <li><span class="dem">« Dites-moi ce que je ferai l'an prochain. »</span> Des scénarios sur des hypothèses écrites et prudentes, pas une prévision.</li>
       </ul>
-      <p class="fin"><b>Hors périmètre :</b> conseil comptable, fiscal et juridique. Ce n'est pas ma qualification, et sur ces sujets je renvoie à votre expert-comptable ou à votre avocat.</p>
+      <p class="fin"><b>Hors périmètre :</b> conseil comptable, fiscal et juridique — c'est le rôle de votre expert-comptable ou de votre avocat.</p>
     </div>
   </div>
 </div></section>
@@ -273,7 +275,7 @@ section.limites{background:#0C1B32;border-top:1px solid var(--trait);border-bott
 </main>
 <footer><div class="in"><div class="row">
   <span>Atelier MDT · Automatisation · Veille · Tableaux de bord · Accompagnement IA</span>
-  <span><a href="mailto:antoine@atelier-mdt.fr">antoine@atelier-mdt.fr</a> · <a href="tel:+33743688097">07 43 68 80 97</a> · <a href="https://www.linkedin.com/in/antoine-meyfroidt/" rel="noopener">linkedin.com/in/antoine-meyfroidt</a> · <a href="mentions-legales.html">Mentions légales</a> · <a href="cgv.html">CGV</a></span>
+  <span><a href="mailto:antoine@atelier-mdt.fr">antoine@atelier-mdt.fr</a> · <a href="tel:+33743688097">07 43 68 80 97</a> · <a href="https://www.linkedin.com/in/antoine-meyfroidt/" rel="noopener">linkedin.com/in/antoine-meyfroidt</a> · <a href="questions.html">Questions fréquentes</a> · <a href="mentions-legales.html">Mentions légales</a> · <a href="cgv.html">CGV</a></span>
 </div></div></footer>
 <script>
 /* Menu mobile — autonome, aucune dépendance externe. */

@@ -4,14 +4,14 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Merci — Atelier MDT</title>
-<meta name="description" content="Votre demande est bien arrivée. Je reviens vers vous sous 48 heures ouvrées.">
+<meta name="description" content="Votre demande est bien arrivée. Choisissez maintenant le créneau de nos trente minutes en visio.">
 <meta name="robots" content="noindex, follow">
 <link rel="canonical" href="https://atelier-mdt.fr/merci.html">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://atelier-mdt.fr/merci.html">
 <meta property="og:site_name" content="Atelier MDT">
 <meta property="og:title" content="Merci — Atelier MDT">
-<meta property="og:description" content="Votre demande est bien arrivée. Je reviens vers vous sous 48 heures ouvrées.">
+<meta property="og:description" content="Votre demande est bien arrivée. Choisissez maintenant le créneau de nos trente minutes en visio.">
 <meta property="og:image" content="https://atelier-mdt.fr/assets/og-atelier-mdt.png">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
@@ -87,6 +87,17 @@ nav .burger{display:none}
 .rgpd-bloc h3{font-size:15.5px;font-weight:800;margin-bottom:7px}
 .rgpd-bloc p{font-size:13.5px}
 .rgpd-bloc a{color:var(--ambre)}
+/* ══ PRISE DE RENDEZ-VOUS — Cal.com, intégré dans cette page uniquement ══ */
+[hidden]{display:none!important}
+.cal-card{background:var(--panneau);border:1px solid var(--trait);border-radius:7px;padding:14px;overflow:hidden}
+#my-cal-inline-echanger-30-minutes{width:100%;min-height:560px;overflow:auto;-webkit-overflow-scrolling:touch}
+#my-cal-inline-echanger-30-minutes:empty{min-height:0}
+.repli{display:flex;flex-direction:column;align-items:flex-start;gap:14px;padding:10px 8px 8px}
+.repli p{font-size:15px;color:var(--sourd);max-width:52ch}
+.repli .btn{display:inline-flex;align-items:center;justify-content:center;height:46px;padding:0 20px;background:var(--ambre);color:#1A1608;border-radius:5px;font-weight:800;font-size:15px;text-decoration:none}
+.cal-aide{margin-top:14px;font-size:14.5px;color:var(--sourd)}
+.cal-aide a{color:var(--ambre);font-weight:700}
+@media(max-width:480px){.cal-card{padding:6px}.repli{padding:14px 10px}.repli .btn{width:100%}}
 </style>
 </head>
 <body>
@@ -107,8 +118,24 @@ nav .burger{display:none}
 <header class="h"><div class="in">
   <div class="eyebrow">MERCI</div>
   <h1>Votre demande est bien arrivée.</h1>
-  <p class="sub">Elle sera traitée dans les prochaines heures. Vous recevrez un accusé de réception par mail, et <b>je reviens vers vous d'ici 48 heures ouvrées</b> pour convenir d'un créneau de trente minutes en visio.</p>
+  <p class="sub">Un accusé de réception part vers votre boîte mail dans les prochaines minutes. <b>Il ne reste qu'à choisir le créneau</b> de nos trente minutes en visio, juste en dessous.</p>
 </div></header>
+
+<section id="creneau"><div class="in">
+  <h2 class="lbl">CHOISISSEZ VOTRE CRÉNEAU MAINTENANT</h2>
+  <div class="cal-card">
+    <div id="my-cal-inline-echanger-30-minutes"></div>
+    <noscript><div class="repli">
+      <p>Pour réserver nos trente minutes en visio, ouvrez l'agenda en ligne : vous y choisissez le jour et l'heure, la confirmation arrive par mail.</p>
+      <a class="btn" href="https://cal.com/atelier-mdt/echanger-30-minutes" rel="noopener">Choisir un créneau sur l'agenda →</a>
+    </div></noscript>
+    <div class="repli" id="cal-repli" hidden>
+      <p>Pour réserver nos trente minutes en visio, ouvrez l'agenda en ligne : vous y choisissez le jour et l'heure, la confirmation arrive par mail.</p>
+      <a class="btn" href="https://cal.com/atelier-mdt/echanger-30-minutes" rel="noopener">Choisir un créneau sur l'agenda →</a>
+    </div>
+  </div>
+  <p class="cal-aide">Aucun créneau ne vous convient ? <a href="mailto:antoine@atelier-mdt.fr?subject=Demande%20d%27%C3%A9change%20%E2%80%94%20aucun%20cr%C3%A9neau%20disponible">Écrivez-moi</a>, je vous propose d'autres horaires sous 48 heures ouvrées.</p>
+</div></section>
 
 <section><div class="in">
   <h2 class="lbl">LA SUITE, CONCRÈTEMENT</h2>
@@ -116,7 +143,7 @@ nav .burger{display:none}
     <div class="card"><h3>Où et comment</h3><p>À distance en priorité — visio pour l'échange comme pour la plupart des missions. Déplacement possible autour de Rennes quand c'est utile.</p></div>
     <div class="card"><h3>Ce que vous recevez après l'échange</h3><p>Un devis écrit sous quelques jours : périmètre, prix, délai, ce qui est inclus et ce qui ne l'est pas. Puis c'est vous qui décidez.</p></div>
   </div>
-  <div class="card rgpd-bloc"><h3>Ce que deviennent les informations que vous venez d'envoyer</h3><p>Elles me servent à vous répondre, puis à assurer le suivi de notre échange&nbsp;: elles sont enregistrées dans mon outil de suivi commercial et conservées trois ans à compter de notre dernier contact. Elles ne sont ni cédées ni revendues. Le formulaire transite par Formspree, dont l'hébergement est situé aux États-Unis. Vous pouvez à tout moment demander l'accès, la rectification ou la suppression de vos données, ou vous opposer à leur utilisation, en écrivant à <a href="mailto:antoine@atelier-mdt.fr">antoine@atelier-mdt.fr</a>. <a href="mentions-legales.html#donnees">Le détail dans les mentions légales</a>.</p></div>
+  <div class="card rgpd-bloc"><h3>Ce que deviennent les informations que vous venez d'envoyer</h3><p>Elles me servent à vous répondre, puis à assurer le suivi de notre échange&nbsp;: elles sont enregistrées dans mon outil de suivi commercial et conservées trois ans à compter de notre dernier contact. Elles ne sont ni cédées ni revendues. Le formulaire transite par Formspree, dont l'hébergement est situé aux États-Unis. Si vous réservez un créneau, votre nom, votre adresse email, l'horaire choisi et vos éventuelles notes sont transmis à Cal.com, Inc. (États-Unis), qui tient l'agenda et vous envoie la confirmation. Vous pouvez à tout moment demander l'accès, la rectification ou la suppression de vos données, ou vous opposer à leur utilisation, en écrivant à <a href="mailto:antoine@atelier-mdt.fr">antoine@atelier-mdt.fr</a>. <a href="mentions-legales.html#donnees">Le détail dans les mentions légales</a>.</p></div>
 </div></section>
 
 <section><div class="in">
@@ -133,8 +160,39 @@ nav .burger{display:none}
 </main>
 <footer><div class="in"><div class="row">
   <span>Atelier MDT · Automatisation · Veille · Tableaux de bord · Accompagnement IA</span>
-  <span><a href="mailto:antoine@atelier-mdt.fr">antoine@atelier-mdt.fr</a> · <a href="tel:+33743688097">07 43 68 80 97</a> · <a href="https://www.linkedin.com/in/antoine-meyfroidt/" rel="noopener">linkedin.com/in/antoine-meyfroidt</a> · <a href="mentions-legales.html">Mentions légales</a> · <a href="cgv.html">CGV</a></span>
+  <span><a href="mailto:antoine@atelier-mdt.fr">antoine@atelier-mdt.fr</a> · <a href="tel:+33743688097">07 43 68 80 97</a> · <a href="https://www.linkedin.com/in/antoine-meyfroidt/" rel="noopener">linkedin.com/in/antoine-meyfroidt</a> · <a href="questions.html">Questions fréquentes</a> · <a href="mentions-legales.html">Mentions légales</a> · <a href="cgv.html">CGV</a></span>
 </div></div></footer>
+<script>
+/* Prise de rendez-vous — Cal.com, chargé sur cette page seulement, après l'envoi du formulaire.
+   Les coordonnées viennent du stockage de session déposé par contact.html, jamais de l'adresse de la page ;
+   elles sont effacées dès qu'elles ont servi. Sans données (page ouverte directement) ou si le calendrier
+   ne s'affiche pas, un bouton vers l'agenda prend le relais. */
+(function(){
+  var repli=document.getElementById('cal-repli');
+  var prenom='',nom='',email='';
+  try{
+    prenom=sessionStorage.getItem('mdt_prenom')||'';
+    nom=sessionStorage.getItem('mdt_nom')||'';
+    email=sessionStorage.getItem('mdt_email')||'';
+    sessionStorage.removeItem('mdt_prenom');sessionStorage.removeItem('mdt_nom');sessionStorage.removeItem('mdt_email');
+  }catch(e){}
+  if(!email){repli.hidden=false;return;}
+  var NS='echanger-30-minutes';
+  /* Chargeur officiel Cal.com (généré par « Intégrer > En ligne »), inchangé. */
+  (function (C, A, L) { let p = function (a, ar) { a.q.push(ar); }; let d = C.document; C.Cal = C.Cal || function () { let cal = C.Cal; let ar = arguments; if (!cal.loaded) { cal.ns = {}; cal.q = cal.q || []; d.head.appendChild(d.createElement("script")).src = A; cal.loaded = true; } if (ar[0] === L) { const api = function () { p(api, arguments); }; const namespace = ar[1]; api.q = api.q || []; if(typeof namespace === "string"){cal.ns[namespace] = cal.ns[namespace] || api;p(cal.ns[namespace], ar);p(cal, ["initNamespace", namespace]);} else p(cal, ar); return;} p(cal, ar); }; })(window, "https://app.cal.com/embed/embed.js", "init");
+  Cal("init", NS, {origin:"https://app.cal.com"});
+  Cal.ns[NS]("inline", {
+    elementOrSelector:"#my-cal-inline-echanger-30-minutes",
+    config: {"layout":"month_view","theme":"dark","name":(prenom+' '+nom).trim(),"email":email},
+    calLink: "atelier-mdt/echanger-30-minutes"
+  });
+  Cal.ns[NS]("ui", {"theme":"dark","cssVarsPerTheme":{"light":{"cal-brand":"#B7811A","cal-brand-text":"#FFFFFF"},"dark":{"cal-brand":"#F5B62E","cal-brand-emphasis":"#B7811A","cal-brand-text":"#1A1608","cal-bg":"#182F52","cal-bg-emphasis":"#2A4470","cal-bg-subtle":"#10233F","cal-bg-muted":"#10233F","cal-text":"#E9EEF6","cal-text-emphasis":"#E9EEF6","cal-text-subtle":"#9FB0C8","cal-border":"#2A4470","cal-border-subtle":"#2A4470","cal-border-emphasis":"#8A9EBB","cal-border-booker":"#2A4470","cal-border-booker-width":"0px","radius":"7px"}},"hideEventTypeDetails":true,"showTimezoneWhenEventDetailsHidden":true,"layout":"month_view"});
+  var pret=false;
+  Cal.ns[NS]("on",{action:"linkReady",callback:function(){pret=true;repli.hidden=true;}});
+  Cal.ns[NS]("on",{action:"linkFailed",callback:function(){repli.hidden=false;}});
+  setTimeout(function(){if(!pret){repli.hidden=false;}},8000);
+})();
+</script>
 <script>
 /* Menu mobile — autonome, aucune dépendance externe. */
 (function(){

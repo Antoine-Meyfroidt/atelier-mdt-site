@@ -143,8 +143,10 @@ nav .burger{display:none}
 
 /* ── bloc des limites, en bas de page ── */
 section.limites{background:#0C1B32;border-top:1px solid var(--trait);border-bottom:1px solid var(--trait);padding:50px 0 54px;margin-top:56px}
-.cadre{display:grid;grid-template-columns:1fr 1fr;gap:14px;align-items:start}
-@media(max-width:780px){.cadre{grid-template-columns:1fr}}
+.cadre{display:grid;grid-template-columns:1fr;gap:14px;align-items:start}
+.cadre .non ul{columns:2;column-gap:30px}
+.cadre .non li{break-inside:avoid}
+@media(max-width:780px){.cadre .non ul{columns:1}}
 .cadre .oui,.cadre .non{border-radius:7px;padding:19px 21px}
 .cadre .oui{background:rgba(245,182,46,.06);border:1px solid rgba(245,182,46,.35)}
 .cadre .non{background:var(--panneau);border:1px solid var(--trait)}
@@ -210,14 +212,14 @@ section.limites{background:#0C1B32;border-top:1px solid var(--trait);border-bott
 </article>
 <article class="ex" id="auto-relance-devis">
   <h2>Les devis non signés se relancent seuls</h2>
-  <p class="src nb">Pas encore de cas publié · même brique que la <a href="realisation-03-lots.html">Réalisation 03</a></p>
+  <p class="src nb">Même fonctionnement que la <a href="realisation-03-lots.html">Réalisation 03</a></p>
   <p class="c"><span class="q">Un devis sans réponse n'est pas un refus, c'est un oubli. Relancer suppose de tenir une liste : personne ne le fait longtemps.</span></p>
   <p class="c">Chaque devis s'inscrit dans un classeur avec sa date. Un flux quotidien relance à J+7 puis à J+21, et s'arrête dès qu'il est signé ou refusé. Le gain n'est pas en heures : il est en affaires que personne ne comptait même comme perdues.</p>
   <details><summary>Ce dont j'ai besoin de votre côté</summary><p>Un moyen d'inscrire le devis au moment de l'envoi, vos textes de relance, le rythme voulu, et qui reçoit la copie.</p></details>
 </article>
 <article class="ex" id="auto-collecte-pieces">
   <h2>Les pièces manquantes se réclament toutes seules</h2>
-  <p class="src nb">Pas encore de cas publié · même brique que la <a href="realisation-03-lots.html">Réalisation 03</a></p>
+  <p class="src nb">Même fonctionnement que la <a href="realisation-03-lots.html">Réalisation 03</a></p>
   <p class="c"><span class="q">Un dossier attend une attestation. On rappelle, on note de rappeler, on oublie de noter. Le dossier dort trois semaines.</span></p>
   <p class="c">Les pièces attendues vivent dans un classeur. Tant qu'il en manque une, le rappel part seul ; dès qu'elle arrive, il cesse. Ce que vous gagnez, c'est le délai de bouclage — et la fin des dossiers découverts incomplets le jour de l'échéance.</p>
   <details><summary>Ce dont j'ai besoin de votre côté</summary><p>La liste type des pièces par nature de dossier, un endroit où elles arrivent que je puisse lire, et le ton des rappels — c'est la décision la plus sensible.</p></details>
@@ -231,14 +233,14 @@ section.limites{background:#0C1B32;border-top:1px solid var(--trait);border-bott
 </article>
 <article class="ex" id="auto-inscriptions">
   <h2>Inscriptions et adhésions complètes, sans relance manuelle</h2>
-  <p class="src nb">Pas encore de cas publié · même brique que la <a href="realisation-03-lots.html">Réalisations 01 et 03</a></p>
+  <p class="src nb">Même fonctionnement que les <a href="realisation-01-anniversaires.html">Réalisations 01</a> et <a href="realisation-03-lots.html">03</a></p>
   <p class="c"><span class="q">Un club rouvre ses inscriptions : les dossiers arrivent en quelques semaines, une bonne partie incomplets, et deux bénévoles y passent leurs soirées.</span></p>
   <p class="c">Confirmation immédiate, relance tant qu'il manque un certificat ou un paiement, et une jauge par créneau qui empêche de promettre une place qui n'existe plus. Le bénéfice se mesure en bénévoles qui ne démissionnent pas en octobre.</p>
   <details><summary>Ce dont j'ai besoin de votre côté</summary><p>Les catégories et leurs capacités, les pièces exigées, un formulaire, et votre arbitrage sur ce qui se passe quand une catégorie est pleine.</p></details>
 </article>
 <article class="ex" id="auto-onboarding">
   <h2>Le démarrage d'un client ou d'un salarié se déroule seul</h2>
-  <p class="src nb">Pas encore de cas publié · même brique que la <a href="realisation-03-lots.html">Réalisations 01 et 03</a></p>
+  <p class="src nb">Même fonctionnement que les <a href="realisation-01-anniversaires.html">Réalisations 01</a> et <a href="realisation-03-lots.html">03</a></p>
   <p class="c"><span class="q">À chaque signature, la même séquence : documents à envoyer, personnes à prévenir, accès à créer. Connue de tous, exécutée différemment à chaque fois.</span></p>
   <p class="c">Elle part entière et dans l'ordre, sans dépendre de qui était là ce jour-là. L'intérêt n'est pas le temps gagné sur un dossier, c'est la disparition des oublis qui se paient trois semaines plus tard.</p>
   <details><summary>Ce dont j'ai besoin de votre côté</summary><p>La séquence écrite avec ses délais, les personnes à prévenir, les documents, et le signal de départ : signature, date d'entrée, ligne saisie.</p></details>
@@ -249,16 +251,16 @@ section.limites{background:#0C1B32;border-top:1px solid var(--trait);border-bott
 <section class="limites"><div class="in">
   <h2 class="lbl">CE QUE JE PEUX FAIRE, ET CE QUE JE NE PEUX PAS</h2>
   <div class="cadre">
-    <div class="oui"><div class="k">CE QUI EST FAISABLE</div><p>Tout flux qui entre par un point numérique — formulaire, email, fichier déposé — peut déclencher une suite d'actions écrites à l'avance : accuser réception, trier, router vers la bonne personne, inscrire une ligne dans un classeur, relancer tant qu'une pièce manque, s'arrêter quand c'est réglé. Le flux tourne <b>sur vos comptes</b>, vous en restez propriétaire, et vous recevez un document de maintenance écrit pour quelqu'un qui n'est pas technicien.</p></div>
+    <div class="oui"><div class="k">CE QUI EST FAISABLE</div><p>Tout flux qui entre par un formulaire, un email ou un fichier peut déclencher une suite d'actions écrites à l'avance : accuser réception, trier, router, relancer, s'arrêter quand c'est réglé. <b>Sur vos comptes</b>, avec un document de maintenance écrit pour quelqu'un qui n'est pas technicien.</p></div>
     <div class="non"><div class="k">CE QUI N'EST PAS FAISABLE</div>
       <ul>
-      <li><span class="dem">« Une IA répondra à mes clients à ma place. »</span> Ce qui part automatiquement est un message écrit et validé en amont, dont seules les variables changent. L'IA sert à préparer des brouillons que quelqu'un valide, jamais à envoyer sans relecture.</li>
-      <li><span class="dem">« Branchez-vous sur mon logiciel métier. »</span> Uniquement s'il expose une interface de programmation ou un export automatique. Beaucoup de logiciels de TPE n'exposent rien : le point d'entrée sera alors un formulaire ou un email, pas le logiciel.</li>
-      <li><span class="dem">« Automatisez tout le processus. »</span> On automatise un flux, un seul, celui qui revient le plus. Un processus complet, c'est plusieurs missions successives.</li>
-      <li><span class="dem">« Ça remplacera un poste. »</span> Non. Ça rend des heures à un poste qui les passait à recopier.</li>
-      <li><span class="dem">« Ça marchera pour toujours. »</span> Les automatisations reposent sur des outils tiers qui évoluent. Aucune maintenance n'est incluse, et c'est écrit au devis.</li>
+      <li><span class="dem">« Une IA répondra à mes clients à ma place. »</span> Ce qui part est un message validé en amont. L'IA prépare des brouillons, quelqu'un les relit.</li>
+      <li><span class="dem">« Branchez-vous sur mon logiciel métier. »</span> Seulement s'il a une interface ou un export automatique. Sinon, on part d'un formulaire ou d'un email.</li>
+      <li><span class="dem">« Automatisez tout le processus. »</span> Un flux à la fois, celui qui revient le plus. Un processus complet, c'est plusieurs missions.</li>
+      <li><span class="dem">« Ça remplacera un poste. »</span> Non : ça rend des heures à un poste qui les passait à recopier.</li>
+      <li><span class="dem">« Ça marchera pour toujours. »</span> Les outils tiers évoluent et aucune maintenance n'est incluse : c'est écrit au devis.</li>
       </ul>
-      <p class="fin"><b>Et la condition que personne n'aime entendre :</b> sous un certain volume, un forfait ne se rembourse pas. Trois demandes par mois ne justifient pas une automatisation. Le premier échange sert à compter, et je vous le dis si le calcul ne tient pas.</p>
+      <p class="fin"><b>Et sous un certain volume, ça ne se rembourse pas :</b> trois demandes par mois ne justifient pas une automatisation. Le premier échange sert à compter, et je vous le dis si le calcul ne tient pas.</p>
     </div>
   </div>
 </div></section>
@@ -281,7 +283,7 @@ section.limites{background:#0C1B32;border-top:1px solid var(--trait);border-bott
 </main>
 <footer><div class="in"><div class="row">
   <span>Atelier MDT · Automatisation · Veille · Tableaux de bord · Accompagnement IA</span>
-  <span><a href="mailto:antoine@atelier-mdt.fr">antoine@atelier-mdt.fr</a> · <a href="tel:+33743688097">07 43 68 80 97</a> · <a href="https://www.linkedin.com/in/antoine-meyfroidt/" rel="noopener">linkedin.com/in/antoine-meyfroidt</a> · <a href="mentions-legales.html">Mentions légales</a> · <a href="cgv.html">CGV</a></span>
+  <span><a href="mailto:antoine@atelier-mdt.fr">antoine@atelier-mdt.fr</a> · <a href="tel:+33743688097">07 43 68 80 97</a> · <a href="https://www.linkedin.com/in/antoine-meyfroidt/" rel="noopener">linkedin.com/in/antoine-meyfroidt</a> · <a href="questions.html">Questions fréquentes</a> · <a href="mentions-legales.html">Mentions légales</a> · <a href="cgv.html">CGV</a></span>
 </div></div></footer>
 <script>
 /* Menu mobile — autonome, aucune dépendance externe. */

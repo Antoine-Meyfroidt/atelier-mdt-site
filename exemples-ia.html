@@ -143,8 +143,10 @@ nav .burger{display:none}
 
 /* ── bloc des limites, en bas de page ── */
 section.limites{background:#0C1B32;border-top:1px solid var(--trait);border-bottom:1px solid var(--trait);padding:50px 0 54px;margin-top:56px}
-.cadre{display:grid;grid-template-columns:1fr 1fr;gap:14px;align-items:start}
-@media(max-width:780px){.cadre{grid-template-columns:1fr}}
+.cadre{display:grid;grid-template-columns:1fr;gap:14px;align-items:start}
+.cadre .non ul{columns:2;column-gap:30px}
+.cadre .non li{break-inside:avoid}
+@media(max-width:780px){.cadre .non ul{columns:1}}
 .cadre .oui,.cadre .non{border-radius:7px;padding:19px 21px}
 .cadre .oui{background:rgba(245,182,46,.06);border:1px solid rgba(245,182,46,.35)}
 .cadre .non{background:var(--panneau);border:1px solid var(--trait)}
@@ -192,7 +194,7 @@ section.limites{background:#0C1B32;border-top:1px solid var(--trait);border-bott
   <p class="fil"><a href="exemples.html">← Les 22 exemples</a></p>
   <div class="eyebrow">EXEMPLES · FAMILLE 04 — ACCOMPAGNEMENT IA</div>
   <h1>Six briques pour rendre une équipe autonome</h1>
-  <p class="sub">Des assistants configurés par métier, avec leurs instructions et leurs interdits. Le but affiché : que vous n'ayez plus besoin de moi.</p>
+  <p class="sub">L'IA est l'un des virages à ne pas manquer. Reste à savoir comment le prendre&nbsp;: quoi lui confier, dans quel cadre, avec quelles limites. Je pars de votre niveau, évalué par un questionnaire avant de commencer, pour vous aider à rattraper vos concurrents ou à prendre de l'avance.</p>
   <p class="chapo">Offre correspondante&nbsp;: <a href="offres.html">Accompagnement, atelier, déploiement</a>, dès 150 € HT.</p>
 </div></header>
 
@@ -253,15 +255,15 @@ section.limites{background:#0C1B32;border-top:1px solid var(--trait);border-bott
 <section class="limites"><div class="in">
   <h2 class="lbl">CE QUE JE PEUX FAIRE, ET CE QUE JE NE PEUX PAS</h2>
   <div class="cadre">
-    <div class="oui"><div class="k">CE QUI EST FAISABLE</div><p>Configurer des assistants par métier avec leurs instructions, leur périmètre et leurs interdits écrits ; définir qui a accès à quoi ; transformer les gestes qui reviennent en modèles réutilisables ; et accompagner des personnes réelles sur leurs tâches réelles, pas sur des démonstrations. Le déploiement livré chez Kampus 137 tient parce qu'il est structuré, pas parce que l'outil est bon.</p></div>
+    <div class="oui"><div class="k">CE QUI EST FAISABLE</div><p>Configurer des assistants par métier avec leurs instructions et leurs interdits, définir qui a accès à quoi, transformer les gestes qui reviennent en modèles, et accompagner des personnes sur leurs tâches réelles, à partir de leur niveau.</p></div>
     <div class="non"><div class="k">CE QUI N'EST PAS FAISABLE</div>
       <ul>
-      <li><span class="dem">« Une IA qui connaîtra mon entreprise. »</span> Elle connaîtra ce qu'on lui aura écrit, et l'écrire est justement le travail. Il n'y a pas de raccourci.</li>
-      <li><span class="dem">« On accompagne l'équipe une fois et c'est réglé. »</span> Non. Sans couche comportementale ni référent interne, l'usage retombe en six semaines. C'est le mode d'échec le plus courant, et je l'ai constaté avant de le corriger.</li>
-      <li><span class="dem">« L'IA fera le travail. »</span> Sur tout sujet sensible — tarifs, ressources humaines, juridique, chiffres communiqués à un client — la vérification humaine avant envoi est obligatoire. C'est écrit dans les instructions que je livre.</li>
-      <li><span class="dem">« Développez-nous une IA sur mesure. »</span> Non. Pas de modèle entraîné, pas de développement lourd. Je configure des outils existants, ce qui est à la fois moins impressionnant et beaucoup plus utile à une structure de dix personnes.</li>
+      <li><span class="dem">« Une IA qui connaîtra mon entreprise. »</span> Elle connaîtra ce qu'on lui aura écrit : l'écrire, c'est justement le travail.</li>
+      <li><span class="dem">« On accompagne l'équipe une fois et c'est réglé. »</span> Sans règles écrites ni référent interne, l'usage retombe en six semaines.</li>
+      <li><span class="dem">« L'IA fera le travail. »</span> Sur tout sujet sensible, la vérification humaine avant envoi reste obligatoire, et c'est écrit dans les instructions.</li>
+      <li><span class="dem">« Développez-nous une IA sur mesure. »</span> Non : je configure des outils existants, sans modèle entraîné ni développement lourd.</li>
       </ul>
-      <p class="fin"><b>À cadrer dès le premier échange :</b> ce sont des accompagnements et des ateliers, facturés comme des prestations de conseil. Je ne détiens aucune certification qualité permettant une prise en charge : la prestation est payée par l'entreprise, comme toute autre mission.</p>
+      <p class="fin"><b>À savoir :</b> ce sont des accompagnements et des ateliers, facturés comme des prestations de conseil. Je ne détiens aucune certification qualité permettant une prise en charge : la prestation est payée par l'entreprise.</p>
     </div>
   </div>
 </div></section>
@@ -284,7 +286,7 @@ section.limites{background:#0C1B32;border-top:1px solid var(--trait);border-bott
 </main>
 <footer><div class="in"><div class="row">
   <span>Atelier MDT · Automatisation · Veille · Tableaux de bord · Accompagnement IA</span>
-  <span><a href="mailto:antoine@atelier-mdt.fr">antoine@atelier-mdt.fr</a> · <a href="tel:+33743688097">07 43 68 80 97</a> · <a href="https://www.linkedin.com/in/antoine-meyfroidt/" rel="noopener">linkedin.com/in/antoine-meyfroidt</a> · <a href="mentions-legales.html">Mentions légales</a> · <a href="cgv.html">CGV</a></span>
+  <span><a href="mailto:antoine@atelier-mdt.fr">antoine@atelier-mdt.fr</a> · <a href="tel:+33743688097">07 43 68 80 97</a> · <a href="https://www.linkedin.com/in/antoine-meyfroidt/" rel="noopener">linkedin.com/in/antoine-meyfroidt</a> · <a href="questions.html">Questions fréquentes</a> · <a href="mentions-legales.html">Mentions légales</a> · <a href="cgv.html">CGV</a></span>
 </div></div></footer>
 <script>
 /* Menu mobile — autonome, aucune dépendance externe. */

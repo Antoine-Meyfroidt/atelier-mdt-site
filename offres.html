@@ -196,6 +196,8 @@ nav .burger{display:none}
 }
 
 @media print{:root{--nuit:#fff;--panneau:#fff;--ambre:#8a5600;--sourd:#444;--trait:#bbb;--froid:#111}body{background:#fff!important;color:#111!important}nav,.burger,.cta-bloc,.btn-nav{display:none!important}a{color:#111!important;text-decoration:underline}section{background:transparent!important}}
+/* Le sommaire est un <nav> : il ne doit pas hériter de la barre du menu (collante, bordure basse). */
+nav.sommaire{position:static!important;top:auto!important;z-index:auto!important;background:none!important;-webkit-backdrop-filter:none!important;backdrop-filter:none!important;border-bottom:0!important}
 </style>
 </head>
 <body>
@@ -219,9 +221,10 @@ nav .burger{display:none}
   <p class="sub">Tout est en forfait ou en abonnement sans engagement. Pas de taux horaire caché, pas de surprise en fin de mission. Ce que vous lisez ici est ce que vous lirez sur le devis.</p>
   <div class="bandeau"><span class="tag">PRIX DE LANCEMENT</span><div><b>Valables pour les premiers clients.</b></div></div>
   <div class="liens2">
-    <a href="realisations.html">Voir ce qui a déjà été fait →</a>
-    <a href="rentabilite.html">Serais-je rentable ? →</a>
-    <a href="exemples.html">22 exemples concrets →</a>
+    <a href="realisations.html">Des preuves de ce qui est déjà fait&nbsp;? →</a>
+    <a href="rentabilite.html">L'investissement en vaut-il la peine&nbsp;? →</a>
+    <a href="exemples.html">Des exemples pour vous projeter&nbsp;? →</a>
+    <a href="qui-suis-je.html">Pourquoi faire confiance à un indépendant&nbsp;? →</a>
   </div>
   <nav class="sommaire" aria-label="Sommaire de la page">
     <div class="k">ALLER DIRECTEMENT À</div>
@@ -246,7 +249,7 @@ nav .burger{display:none}
 <section id="veille"><div class="in">
   <h2 class="lbl">VEILLE EN ABONNEMENT</h2>
   <div class="off">
-  <div><h3>Veille en abonnement</h3><p class="d">Vous recevez par email ce qui a bougé sur votre marché : les prix, les notes et les nouveautés de vos concurrents, les appels d'offres de votre métier, les tendances de votre secteur ou les usages de l'IA dans votre métier. Lisible en deux minutes. Le système tourne de mon côté — vous n'avez rien à installer ni à surveiller.</p><ul><li>Vous choisissez <b>le thème, la fréquence, le jour et l'heure</b> de réception</li><li>Formule de base : jusqu'à 5 concurrents suivis</li><li><b>Sans engagement</b>, résiliable avec un mois de préavis</li><li>Changement de fréquence possible à tout moment : <b>50 €</b> par changement, effet le mois suivant la demande</li></ul><p class="renta"><a href="rentabilite.html#veille">Ce que ça rapporte, en chiffres →</a></p><p class="exlien"><a href="exemples-veille.html">Trois exemples de veilles →</a></p></div>
+  <div><h3>Veille en abonnement</h3><p class="d">Les virages qu'une entreprise rate se paient rarement tout de suite, mais ils se paient. Savoir ce que font vos concurrents, ce qui s'ouvre sur votre marché et ce que l'IA change dans votre métier, c'est garder une longueur d'avance. Encore faut-il avoir le temps de chercher, et savoir où et quoi chercher&nbsp;: c'est ce que je fais pour vous. Vous recevez l'essentiel par email, lisible en deux minutes, au rythme de votre choix — sans rien installer.</p><ul><li>Vous choisissez <b>le thème, la fréquence, le jour et l'heure</b> de réception</li><li>Formule de base : jusqu'à 5 concurrents suivis</li><li><b>Sans engagement</b>, résiliable avec un mois de préavis</li><li>Changement de fréquence : <b>50 €</b>, effet le mois suivant</li></ul><p class="renta"><a href="rentabilite.html#veille">Ce que ça rapporte, en chiffres →</a></p><p class="exlien"><a href="exemples-veille.html">Trois exemples de veilles →</a></p></div>
   <div class="prix"><div class="from">INSTALLATION 300 € PUIS</div><b>dès 70 €</b><span>HT par mois · selon le rythme</span><span class="delai">1RE LIVRAISON SOUS 2 SEMAINES</span></div>
 </div>
   <div class="rythmes">
@@ -270,38 +273,38 @@ nav .burger{display:none}
   <p class="socle"><b>Installation : 300 € HT, quel que soit le rythme choisi.</b> Premier envoi sous deux semaines. Thème supplémentaire : +150 € à l'installation, puis le montant mensuel indiqué ci-dessus. Changement de rythme en cours d'abonnement : 50 € HT, effet le mois suivant. L'abonnement ne se met pas en pause : il se poursuit, ou il se résilie avec un mois de préavis.</p>
 
   <h2 class="lbl" style="margin-top:34px">COMMENT CHOISIR VOTRE FRÉQUENCE</h2>
-  <p class="socle" style="margin-top:0"><b>Le contenu est le même dans les trois cas.</b> Ce qui change, c'est la période couverte — donc la longueur du rapport — et ce que vous pouvez en faire.</p>
+  <p class="socle" style="margin-top:0"><b>Même contenu dans les trois cas</b>&nbsp;: seule change la période couverte, donc la longueur du rapport.</p>
   <div class="choisir">
-    <div class="r"><b>Hebdomadaire : vous suivez les mouvements</b>Un prix qui change, une consultation qui s'ouvre, une offre qui apparaît : vous le savez dans les jours qui suivent et vous avez encore le temps d'y répondre. Le rapport est court et finit par s'installer dans votre semaine. C'est le rythme que je recommande, et celui que choisissent les entreprises dont le marché bouge : commerce, loisirs, restauration, services aux particuliers.</div>
-    <div><b>Toutes les deux semaines : vous gardez le fil</b>Assez fréquent pour ne pas découvrir les choses trop tard, assez espacé pour ne pas y penser entre deux envois. Le bon compromis si votre marché évolue sans à-coups, ou si vous démarrez et préférez voir ce que la veille vous apporte avant d'accélérer.</div>
-    <div><b>Mensuelle : vous prenez du recul</b>Le rapport est plus long, simplement parce qu'il couvre quatre semaines d'un coup : vous y voyez des tendances plutôt que des mouvements. Suffisant pour une décision de fond — repositionner une offre, préparer une saison — mais trop lent pour réagir à ce qui se passe cette semaine.</div>
+    <div class="r"><b>Hebdomadaire : vous suivez les mouvements</b>Un prix qui change, une consultation qui s'ouvre&nbsp;: vous le savez à temps pour réagir. Le rythme que je recommande si votre marché bouge vite.</div>
+    <div><b>Toutes les deux semaines : vous gardez le fil</b>Le bon compromis si votre marché évolue sans à-coups, ou pour démarrer avant d'accélérer.</div>
+    <div><b>Mensuelle : vous prenez du recul</b>Un rapport plus long, qui montre des tendances&nbsp;: utile pour une décision de fond, trop lent pour réagir à la semaine.</div>
   </div>
   <div class="apres" style="grid-template-columns:1fr">
-    <div><b>Vous choisissez le jour et le créneau</b>Le lundi matin pour ouvrir la semaine avec, le vendredi pour faire le point avant de partir : le rapport arrive quand ça vous arrange. La collecte tourne pendant la nuit, la livraison se fait le matin — ce qui me laisse le temps de rattraper un incident avant que vous ne le voyiez. Tous les thèmes sont disponibles aux trois rythmes.</div>
+    <div><b>Vous choisissez le jour et le créneau</b>La collecte tourne la nuit, le rapport arrive le matin du jour choisi — le lundi pour ouvrir la semaine, le vendredi pour faire le point. Tous les thèmes sont disponibles aux trois rythmes.</div>
   </div>
 
   <h2 class="lbl" style="margin-top:34px">LES THÈMES DISPONIBLES</h2>
   <p class="socle" style="margin-top:0">Un thème est compris dans l'abonnement. Chaque thème supplémentaire est facturé +150 € à l'installation, puis le montant mensuel de votre rythme.</p>
   <div class="choisir themes">
-    <div><b>Veille concurrentielle</b>Prix affichés, notes et volume d'avis, nouveautés et activité publique de vos concurrents directs — des chiffres relevés, jamais le texte des avis. Aux trois rythmes.</div>
+    <div><b>Veille concurrentielle</b>Prix affichés, notes et volume d'avis, nouveautés et activité publique de vos concurrents directs — des chiffres relevés, jamais le texte des avis.</div>
     <div class="r"><b>Appels d'offres et marchés publics</b>Les consultations publiées au BOAMP et au TED qui correspondent à votre activité et à votre zone. Hebdomadaire vivement recommandé.</div>
-    <div><b>IA appliquée à votre métier</b>Ce qui change pour vous, pas l'actualité de l'IA : une synthèse rédigée, avec le lien vers chaque source. Aux trois rythmes.</div>
-    <div><b>Tendances de votre secteur</b>Une revue de presse construite sur vos sources et vos sujets, résumée avec le lien vers chaque article. Aux trois rythmes.</div>
+    <div><b>IA appliquée à votre métier</b>Ce qui change pour vous, pas l'actualité de l'IA : une synthèse rédigée, avec le lien vers chaque source.</div>
+    <div><b>Tendances de votre secteur</b>Une revue de presse construite sur vos sources et vos sujets, résumée avec le lien vers chaque article.</div>
   </div>
 
   <div class="apres" style="grid-template-columns:1fr">
-    <div class="excep"><b>Une idée de veille que vous ne voyez pas dans cette liste&nbsp;?</b>Les quatre thèmes ci-dessus sont ceux que je sais tenir dans la durée et vendre sans réserve, pas la limite de ce qui est possible. Si vous suivez déjà quelque chose à la main — un fournisseur, un cadre de subvention, une place de marché, un sujet propre à votre métier — dites-le-moi&nbsp;: on regarde ensemble si la source est publique, stable, exploitable, et si ses conditions d'utilisation autorisent la collecte. Si elle l'est, on la cadre&nbsp;; si elle ne l'est pas, je vous le dis en trente minutes plutôt qu'après l'installation. <a href="contact.html" style="color:var(--ambre);font-weight:700;text-decoration:none">Échanger 30 minutes →</a></div>
+    <div class="excep"><b>Une idée de veille que vous ne voyez pas dans cette liste&nbsp;?</b>Ces quatre thèmes sont ceux que je sais tenir dans la durée, pas la limite du possible. Si vous suivez déjà quelque chose à la main, dites-le-moi&nbsp;: on vérifie que la source est publique, stable, et que ses conditions d'utilisation autorisent la collecte. Sinon, je vous le dis en trente minutes. <a href="contact.html" style="color:var(--ambre);font-weight:700;text-decoration:none">Échanger 30 minutes →</a></div>
   </div>
 
   <h2 class="lbl" style="margin-top:34px">APPELS D'OFFRES — CE QU'IL FAUT SAVOIR AVANT</h2>
-  <p class="socle" style="margin-top:0">Les marchés publics de votre métier arrivent chez vous pendant qu'il reste le temps d'y répondre. C'est un thème de veille comme les autres&nbsp;: même installation, mêmes rythmes, mêmes prix. Ce qui change, c'est ce qu'on y met et ce qu'on n'y met pas.</p>
+  <p class="socle" style="margin-top:0">Les marchés publics de votre métier arrivent chez vous pendant qu'il reste le temps d'y répondre. Même installation, mêmes rythmes, mêmes prix que les autres thèmes&nbsp;; voici ce qui change.</p>
   <div class="apres">
-    <div><b>Ce que vous recevez</b>Pour chaque consultation parue depuis l'édition précédente&nbsp;: l'objet, l'acheteur, la référence et la date de publication de l'avis, la date limite de réception des offres lorsqu'elle est publiée, et le lien vers l'avis d'origine. Les consultations sont classées par échéance et par proximité avec votre périmètre.</div>
-    <div><b>Vos codes et votre zone</b>Le périmètre de base couvre un métier et un territoire. Le métier est défini par un ensemble de codes CPV relevant d'une même activité, jusqu'à vingt-cinq codes — en retenir moins ne change pas le prix. Le territoire est d'une région, ou de cinq départements de votre choix.</div>
-    <div><b>Les sources, écrites noir sur blanc</b>Le BOAMP, où la publication est obligatoire au-delà de 90 000 € HT, et le portail européen TED au-dessus des seuils de procédure formalisée. Rien d'autre. Ne sont pas couverts&nbsp;: les profils d'acheteurs propres à chaque collectivité, les supports d'annonces légales, la presse, et les marchés privés — qui ne font l'objet d'aucune publication obligatoire.</div>
-    <div class="excep"><b>Pourquoi l'hebdomadaire est recommandé ici</b>En appel d'offres ouvert, le délai minimal de remise est de 35 jours, ramené à 30 quand les offres peuvent être transmises par voie électronique et à 15 en cas d'urgence justifiée. En procédure adaptée — la plus fréquente sur les montants qui vous concernent — le code n'impose aucun délai minimal. Une consultation peut donc vivre moins de deux semaines&nbsp;: en mensuel, celles ouvertes et refermées entre deux envois ne seront pas vues.</div>
+    <div><b>Ce que vous recevez</b>Pour chaque consultation parue depuis l'édition précédente&nbsp;: objet, acheteur, référence, date de publication, date limite de réception des offres quand elle est publiée, et lien vers l'avis d'origine. Classement par échéance et par proximité avec votre périmètre.</div>
+    <div><b>Vos codes et votre zone</b>Un métier — jusqu'à vingt-cinq codes CPV d'une même activité, en retenir moins ne change pas le prix — et un territoire&nbsp;: une région, ou cinq départements de votre choix.</div>
+    <div><b>Les sources, écrites noir sur blanc</b>Le BOAMP, où la publication est obligatoire au-delà de 90 000 € HT, et le portail européen TED au-dessus des seuils de procédure formalisée. Rien d'autre&nbsp;: ni profils d'acheteurs, ni annonces légales, ni presse, ni marchés privés.</div>
+    <div class="excep"><b>Pourquoi l'hebdomadaire est recommandé ici</b>En appel d'offres ouvert, le délai minimal de remise est de 35 jours (30 avec transmission électronique, 15 en urgence justifiée)&nbsp;; en procédure adaptée, aucun délai minimal n'est imposé. Une consultation peut vivre moins de deux semaines&nbsp;: en mensuel, certaines ne seront pas vues.</div>
   </div>
-  <p class="socle"><b>Ce que je ne promets pas.</b> Pas d'exhaustivité&nbsp;: depuis le 1<sup>er</sup> avril 2026, un marché de fournitures ou de services jusqu'à 60 000 € HT peut être passé sans publicité ni mise en concurrence, et depuis le 1<sup>er</sup> janvier 2026 le seuil est de 100 000 € HT pour les travaux — ces marchés-là ne sont publiés nulle part, personne ne peut les voir. Le dossier de consultation n'est pas récupéré&nbsp;: je signale et je donne le lien, vous le téléchargez avec votre compte sur la plateforme de l'acheteur. Je ne rédige pas les réponses, je n'analyse pas les pièces, et je ne vous dis pas s'il faut y aller. Ni veille juridique, ni veille réglementaire.</p>
+  <p class="socle"><b>Ce que je ne promets pas.</b> L'exhaustivité&nbsp;: depuis le 1<sup>er</sup> avril 2026, un marché de fournitures ou de services jusqu'à 60 000 € HT peut être passé sans publicité ni mise en concurrence, et depuis le 1<sup>er</sup> janvier 2026 le seuil est de 100 000 € HT pour les travaux — ces marchés-là ne sont publiés nulle part. Je signale et je donne le lien&nbsp;; je ne récupère pas le dossier, je ne rédige pas les réponses, je n'analyse pas les pièces et je ne vous dis pas s'il faut y aller. Ni veille juridique, ni veille réglementaire.</p>
 </div></section>
 
 <section id="donnees"><div class="in">
@@ -311,7 +314,7 @@ nav .burger{display:none}
   <div class="prix"><div class="from">FORFAIT, DE</div><b>450 à 700 €</b><span>HT · quatre paliers, détail ci-dessous</span><span class="delai">LIVRÉ EN 2 SEMAINES</span></div>
 </div>
   <div style="padding-bottom:24px;border-bottom:1px solid var(--trait)">
-    <p class="pourquoi"><b>Pourquoi le prix varie.</b> Construire le tableau prend le même temps chez tout le monde. Ce qui change, c'est ce qu'il y a avant : remettre vos exports en ordre. Un an de ventes exportées d'un seul logiciel, c'est une demi-journée. Trois ans exportés de deux logiciels qui ont changé de format en cours de route, c'est trois fois plus long — et c'est la partie que personne n'a envie de faire. Le prix dépend donc de la quantité de données à remettre en ordre, pas du tableau lui-même. Vous connaissez déjà les réponses : elles sont dans votre logiciel de caisse.</p>
+    <p class="pourquoi"><b>Pourquoi le prix varie.</b> Construire le tableau prend le même temps chez tout le monde&nbsp;; ce qui change, c'est la remise en ordre de vos exports. Un an d'un seul logiciel, c'est une demi-journée&nbsp;; trois ans de deux logiciels qui ont changé de format, trois fois plus. Le prix suit la quantité de données à remettre en ordre, pas le tableau lui-même.</p>
     <div class="paliers" tabindex="0" role="region" aria-label="Les quatre paliers du tableau de bord — tableau à faire défiler horizontalement">
       <table>
         <thead><tr>
@@ -332,10 +335,10 @@ nav .burger{display:none}
     </div>
     <p class="glisser">Faites glisser le tableau vers la gauche pour voir les quatre paliers.</p>
     <div class="incl">
-      <div><b>Comment lire ce tableau</b>Le palier retenu est celui du critère le plus élevé : un seul critère dans une colonne supérieure fait basculer l'ensemble. Une seule source mais quatre ans d'historique, et vous êtes en Complet.</div>
-      <div><b>Inclus dans les quatre paliers</b>Le nettoyage et la fusion de vos exports, un tableau lisible en cinq minutes, la méthodologie écrite pour que vous sachiez d'où vient chaque chiffre, une série de modifications après livraison, et le fichier qui reste chez vous, sans licence à payer.</div>
-      <div><b>Ce qui peut faire basculer en sur mesure</b>Les paliers valent pour des exports que votre logiciel produit en Excel ou en CSV lisible. Si les fichiers sont illisibles ou doivent être reconstitués, je vous le dis avant de commencer, pas à la facture — et vous décidez de continuer ou non.</div>
-      <div><b>Vous ne savez pas dans quel palier vous êtes ?</b>C'est normal, et c'est le but des trente minutes d'échange. Quatre questions suffisent à trancher, et vous repartez avec le prix ferme, écrit.</div>
+      <div><b>Comment lire ce tableau</b>Le palier retenu est celui du critère le plus élevé&nbsp;: une seule source mais quatre ans d'historique, c'est Complet.</div>
+      <div><b>Inclus dans les quatre paliers</b>Le nettoyage et la fusion de vos exports, un tableau lisible en cinq minutes, la méthodologie écrite, une série de modifications après livraison, et le fichier qui reste chez vous, sans licence.</div>
+      <div><b>Ce qui peut faire basculer en sur mesure</b>Les paliers valent pour des exports Excel ou CSV lisibles. S'ils doivent être reconstitués, je vous le dis avant de commencer, pas à la facture.</div>
+      <div><b>Vous ne savez pas dans quel palier vous êtes ?</b>C'est le but des trente minutes d'échange&nbsp;: quatre questions suffisent, et vous repartez avec le prix ferme, écrit.</div>
     </div>
   </div>
   <div class="off">
@@ -346,16 +349,17 @@ nav .burger{display:none}
 
 <section id="ia"><div class="in">
   <h2 class="lbl">IA — MONTÉE EN COMPÉTENCE</h2>
+  <p class="socle" style="margin-top:0;margin-bottom:6px;font-size:14.5px;max-width:70ch">L'IA est l'un des virages à ne pas manquer. La question n'est plus de savoir s'il faut le prendre, mais comment&nbsp;: quoi lui confier, dans quel cadre, avec quelles limites, dans votre métier. Que vous cherchiez à rattraper vos concurrents ou à prendre de l'avance, je pars de votre niveau&nbsp;: un questionnaire vous est envoyé entre la signature du devis et la première séance, et l'accompagnement se construit sur vos réponses.</p>
   <div class="off">
-  <div><h3>Accompagnement individuel</h3><p class="d">Deux heures en visio sur vos tâches réelles — pas de théorie — puis deux supports personnalisés rédigés d'après votre métier, l'un pour démarrer, l'autre pour aller plus loin.</p><ul><li>Pour un dirigeant, un libéral, un responsable</li><li>Un questionnaire vous est envoyé après signature, à me retourner <b>deux jours avant</b> la séance</li><li>Les deux supports vous sont remis par email après la séance — <b>la prestation s'arrête là</b>, il n'y a pas de support ouvert ensuite</li><li>Vous repartez avec des usages que vous pouvez reproduire le lendemain</li></ul><p class="renta"><a href="rentabilite.html#ia">Ce que ça rapporte, en chiffres →</a></p><p class="exlien"><a href="exemples-ia.html">Six exemples d'accompagnement →</a></p></div>
+  <div><h3>Accompagnement individuel</h3><p class="d">Deux heures en visio sur vos tâches réelles — pas de théorie — puis deux supports personnalisés d'après votre métier, l'un pour démarrer, l'autre pour aller plus loin.</p><ul><li>Pour un dirigeant, un libéral, un responsable</li><li>Questionnaire de niveau envoyé après signature, à me retourner <b>deux jours avant</b> la séance</li><li>Deux supports remis par email après la séance — <b>la prestation s'arrête là</b>, sans support ouvert ensuite</li><li>Des usages que vous pouvez reproduire le lendemain</li></ul><p class="renta"><a href="rentabilite.html#ia">Ce que ça rapporte, en chiffres →</a></p><p class="exlien"><a href="exemples-ia.html">Six exemples d'accompagnement →</a></p></div>
   <div class="prix"><div class="from">FORFAIT</div><b>150 €</b><span>HT</span><span class="delai">SOUS 2 SEMAINES</span></div>
 </div>
   <div class="off">
-  <div><h3>Atelier d'équipe</h3><p class="d"><b>Trois heures trente, pause comprise</b>, sur les cas concrets de votre équipe. Chaque participant reçoit ensuite un complément personnalisé.</p><ul><li>Jusqu'à 4 participants inclus</li><li>Participant supplémentaire, complément inclus : <b>+50 €</b> — plafond 8 personnes</li><li><b>Je me déplace chez vous</b>, sous réserve de mes disponibilités — en visio si vous préférez, mais l'atelier fonctionne mieux sur place</li><li>Frais de déplacement : <b>compris</b> dans Rennes et 15 km alentour · <b>60 €</b> de 15 à 40 km · <b>120 €</b> de 40 à 80 km · au-delà, visio ou devis spécifique</li></ul><p class="renta"><a href="rentabilite.html#ia">Ce que ça rapporte, en chiffres →</a></p><p class="exlien"><a href="exemples-ia.html">Six exemples d'accompagnement →</a></p></div>
+  <div><h3>Atelier d'équipe</h3><p class="d"><b>Trois heures trente, pause comprise</b>, sur les cas concrets de votre équipe. Chaque participant reçoit ensuite un complément personnalisé.</p><ul><li>Jusqu'à 4 participants inclus · <b>+50 €</b> par participant supplémentaire, complément compris · 8 au plus</li><li>Questionnaire de niveau envoyé aux participants après signature</li><li><b>Je me déplace chez vous</b>, selon mes disponibilités — en visio si vous préférez, mais l'atelier fonctionne mieux sur place</li><li>Déplacement : <b>compris</b> dans Rennes et 15 km alentour · <b>60 €</b> de 15 à 40 km · <b>120 €</b> de 40 à 80 km · au-delà, visio ou devis</li></ul><p class="renta"><a href="rentabilite.html#ia">Ce que ça rapporte, en chiffres →</a></p><p class="exlien"><a href="exemples-ia.html">Six exemples d'accompagnement →</a></p></div>
   <div class="prix"><div class="from">FORFAIT, À PARTIR DE</div><b>400 €</b><span>HT · 3 h 30 sur place</span><span class="delai">SOUS 2 SEMAINES</span></div>
 </div>
   <div class="off">
-  <div><h3>Déploiement IA structuré</h3><p class="d">Pour les structures de dix personnes et plus : un espace de travail organisé par domaine métier, avec instructions sur mesure et documents de référence, comme celui présenté dans les réalisations. <b>Socle et atelier ne se vendent pas séparément</b> — des outils livrés sans accompagnement ne servent pas.</p><ul><li><b>Socle, 600 € : jusqu'à six domaines métier</b> — assistants par métier, niveaux d'accès, couche comportementale (ce que l'assistant ne doit pas faire), guide d'accueil</li><li>Domaine métier supplémentaire : <b>+60 €</b></li><li><b>Atelier de 3 h 30 inclus, 400 €</b> — il fait partie du déploiement et ne s'en détache pas ; s'il se tient sur site, le même barème de déplacement s'applique</li><li>Passation d'une heure à votre référent interne, comprise</li><li>Livrable individuel au-delà de quatre participants : <b>+50 € par personne</b>, jusqu'à 20 personnes</li><li>Les modèles réutilisables (une tâche récurrente = un modèle prêt à l'emploi) sont <b>facturés à l'unité, hors socle</b></li><li><b>Proposé sur Claude.</b> Sur un autre environnement, la base reste la même mais les finitions changent : on en parle au cas par cas</li><li>L'abonnement à l'outil est souscrit par vous et reste à votre charge — ce n'est pas une ligne de mon devis. Ordre de grandeur pour le plan Team d'Anthropic : <b>20 à 25 $ par personne et par mois</b> selon l'engagement, à partir de deux utilisateurs <span style="color:#8FA3C0">(relevé sur la grille officielle en septembre 2026, à revérifier avant de signer)</span></li></ul><p class="renta"><a href="rentabilite.html#ia">Ce que ça rapporte, en chiffres →</a></p><p class="exlien"><a href="exemples-ia.html">Six exemples d'accompagnement →</a></p></div>
+  <div><h3>Déploiement IA structuré</h3><p class="d">Pour les structures de dix personnes et plus : un espace de travail organisé par domaine métier, avec instructions et documents de référence, comme celui présenté dans les réalisations. <b>Socle et atelier ne se vendent pas séparément</b> : des outils livrés sans accompagnement ne servent pas.</p><ul><li><b>Socle, 600 € : jusqu'à six domaines métier</b> — assistants par métier, niveaux d'accès, ce que l'assistant ne doit pas faire, guide d'accueil · <b>+60 €</b> par domaine supplémentaire</li><li><b>Atelier de 3 h 30 inclus, 400 €</b> — même barème de déplacement s'il se tient sur site</li><li>Passation d'une heure à votre référent interne, comprise · livrable individuel au-delà de quatre participants : <b>+50 € par personne</b>, jusqu'à 20</li><li>Modèles réutilisables (une tâche récurrente = un modèle prêt à l'emploi) <b>facturés à l'unité, hors socle</b></li><li><b>Proposé sur Claude</b>&nbsp;; ailleurs, on en parle au cas par cas</li><li>Abonnement à l'outil souscrit et payé par vous, hors devis — plan Team d'Anthropic : <b>20 à 25 $ par personne et par mois</b> selon l'engagement, dès deux utilisateurs <span style="color:#8FA3C0">(grille officielle relevée en septembre 2026, à revérifier avant de signer)</span></li></ul><p class="renta"><a href="rentabilite.html#ia">Ce que ça rapporte, en chiffres →</a></p><p class="exlien"><a href="exemples-ia.html">Six exemples d'accompagnement →</a></p></div>
   <div class="prix"><div class="from">À PARTIR DE</div><b>1 000 €</b><span>HT · socle 600 € + atelier 400 €</span><span class="delai">LIVRÉ EN 3 SEMAINES</span></div>
 </div>
 </div></section>
@@ -379,7 +383,7 @@ nav .burger{display:none}
 </main>
 <footer><div class="in"><div class="row">
   <span>Atelier MDT · Automatisation · Veille · Tableaux de bord · Accompagnement IA</span>
-  <span><a href="mailto:antoine@atelier-mdt.fr">antoine@atelier-mdt.fr</a> · <a href="tel:+33743688097">07 43 68 80 97</a> · <a href="https://www.linkedin.com/in/antoine-meyfroidt/" rel="noopener">linkedin.com/in/antoine-meyfroidt</a> · <a href="mentions-legales.html">Mentions légales</a> · <a href="cgv.html">CGV</a></span>
+  <span><a href="mailto:antoine@atelier-mdt.fr">antoine@atelier-mdt.fr</a> · <a href="tel:+33743688097">07 43 68 80 97</a> · <a href="https://www.linkedin.com/in/antoine-meyfroidt/" rel="noopener">linkedin.com/in/antoine-meyfroidt</a> · <a href="questions.html">Questions fréquentes</a> · <a href="mentions-legales.html">Mentions légales</a> · <a href="cgv.html">CGV</a></span>
 </div></div></footer>
 <script>
 /* Menu mobile — autonome, aucune dépendance externe. */

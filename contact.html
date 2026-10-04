@@ -154,7 +154,7 @@ nav .burger{display:none}
 <header class="h"><div class="in">
   <div class="eyebrow">CONTACT</div>
   <h1>On regarde ce que vous perdez ?</h1>
-  <p class="sub">Trente minutes en visio, gratuites, pour identifier la tâche qui vous coûte le plus de temps. Vous repartez avec un devis chiffré et vous décidez ensuite — aucun engagement. Réponse sous 48 heures ouvrées.</p>
+  <p class="sub">Trente minutes en visio, gratuites, pour identifier la tâche qui vous coûte le plus de temps. Vous repartez avec un devis chiffré et vous décidez ensuite — aucun engagement. Une fois le formulaire envoyé, vous choisissez votre créneau dans la foulée ; si vous préférez m'écrire, réponse sous 48 heures ouvrées.</p>
 </div></header>
 
 <section><div class="in">
@@ -178,7 +178,7 @@ nav .burger{display:none}
             <input id="email" name="email" type="email" required autocomplete="email">
           </div>
           <div>
-            <label for="telephone">Votre téléphone <span style="font-weight:400;opacity:.7">(facultatif)</span></label>
+            <label for="telephone">Votre téléphone <span style="font-weight:400;color:#8FA3C0">(facultatif)</span></label>
             <input id="telephone" name="telephone" type="tel" maxlength="20" autocomplete="tel" inputmode="tel">
           </div>
         </div>
@@ -232,7 +232,7 @@ nav .burger{display:none}
 </main>
 <footer><div class="in"><div class="row">
   <span>Atelier MDT · Automatisation · Veille · Tableaux de bord · Accompagnement IA</span>
-  <span><a href="mailto:antoine@atelier-mdt.fr">antoine@atelier-mdt.fr</a> · <a href="tel:+33743688097">07 43 68 80 97</a> · <a href="https://www.linkedin.com/in/antoine-meyfroidt/" rel="noopener">linkedin.com/in/antoine-meyfroidt</a> · <a href="mentions-legales.html">Mentions légales</a> · <a href="cgv.html">CGV</a></span>
+  <span><a href="mailto:antoine@atelier-mdt.fr">antoine@atelier-mdt.fr</a> · <a href="tel:+33743688097">07 43 68 80 97</a> · <a href="https://www.linkedin.com/in/antoine-meyfroidt/" rel="noopener">linkedin.com/in/antoine-meyfroidt</a> · <a href="questions.html">Questions fréquentes</a> · <a href="mentions-legales.html">Mentions légales</a> · <a href="cgv.html">CGV</a></span>
 </div></div></footer>
 <script>
 /* Envoi du formulaire : Formspree en AJAX puis redirection vers merci.html.
@@ -254,7 +254,16 @@ nav .burger{display:none}
       fetch(MAKE_URL,{method:'POST',mode:'no-cors',keepalive:true,body:d}).catch(function(){});
     }catch(x){}
     fetch(f.action,{method:'POST',body:new FormData(f),headers:{'Accept':'application/json'}})
-      .then(function(r){if(r.ok){window.location.href='merci.html';}else{throw new Error(r.status);}})
+      .then(function(r){if(r.ok){
+        /* Pour pré-remplir le calendrier de merci.html : stockage de session, jamais dans l'adresse. */
+        try{
+          var el=f.elements;
+          sessionStorage.setItem('mdt_prenom',(el['prenom'].value||'').trim());
+          sessionStorage.setItem('mdt_nom',(el['nom'].value||'').trim());
+          sessionStorage.setItem('mdt_email',(el['email'].value||'').trim());
+        }catch(x){}
+        window.location.href='merci.html';
+      }else{throw new Error(r.status);}})
       .catch(function(){btn.disabled=false;btn.textContent='Envoyer';err.hidden=false;});
   });
 })();
