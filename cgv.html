@@ -11,7 +11,10 @@
 <meta property="og:site_name" content="Atelier MDT">
 <meta property="og:title" content="Conditions générales — Atelier MDT">
 <meta property="og:description" content="Conditions générales d'Atelier MDT : devis, paiement, automatisations, abonnements de veille, ateliers et déploiement IA, données personnelles et responsabilité.">
-<meta property="og:image" content="https://atelier-mdt.fr/assets/verrouillage-baseline-ambre.png">
+<meta property="og:image" content="https://atelier-mdt.fr/assets/og-atelier-mdt.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Atelier MDT — Votre temps vaut mieux que ça">
 <meta property="og:locale" content="fr_FR">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="theme-color" content="#10233F">
@@ -86,7 +89,7 @@ nav .links{display:flex;align-items:center;gap:22px}
 nav .links a{color:var(--sourd,#9FB0C8);text-decoration:none;font-size:14px;font-weight:600;white-space:nowrap}
 nav .links a:hover,nav .links a.on{color:var(--froid,#E9EEF6)}
 nav .links a.btn-nav{background:var(--ambre,#F5B62E);color:#1A1608;padding:10px 16px;border-radius:5px;font-weight:800;margin:0;display:inline-block;line-height:1.2}
-@media(max-width:760px){nav .links a:not(.btn-nav){display:none}nav .brand .wm em{display:none}}
+@media(max-width:800px){nav .links a:not(.btn-nav){display:none}nav .brand .wm em{display:none}}
 footer{margin-top:60px;border-top:1px solid var(--trait,#2A4470);padding:24px 0 46px;font-size:12.5px;color:var(--sourd,#9FB0C8)}
 footer .row{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
 footer a{color:var(--sourd,#9FB0C8)}
@@ -102,17 +105,18 @@ nav .brand svg{color:var(--ambre,#F5B62E)!important;flex:none!important;width:32
 nav .brand .wm{font-size:18px!important;font-weight:800!important;letter-spacing:-.025em!important;line-height:1!important;color:var(--froid,#E9EEF6)!important}
 nav .brand .wm em{display:block!important;font-style:normal!important;font-size:7.5px!important;font-weight:800!important;letter-spacing:.09em!important;color:var(--ambre,#F5B62E)!important;margin-top:4px!important;white-space:nowrap!important}
 nav .links{display:flex!important;align-items:center!important;gap:16px!important;height:100%!important}
+@media(min-width:801px) and (max-width:880px){nav .links{gap:11px!important}nav .links a.btn-nav{padding:0 14px!important}}
 nav .links a{display:inline-flex!important;align-items:center!important;height:36px!important;margin:0!important;color:var(--sourd,#9FB0C8)!important;text-decoration:none!important;font-size:14px!important;font-weight:600!important;white-space:nowrap!important;border-bottom:2px solid transparent!important;line-height:1!important;font-size:13.5px!important}
 nav .links a:hover{color:var(--froid,#E9EEF6)!important}
 nav .links a.on{color:var(--froid,#E9EEF6)!important;border-bottom:2px solid var(--ambre,#F5B62E)!important}
 nav .links a.btn-nav{background:var(--ambre,#F5B62E)!important;color:#1A1608!important;padding:0 18px!important;border-radius:5px!important;font-weight:800!important;border-bottom:2px solid transparent!important;height:40px!important}
 nav .links a.btn-nav:hover{color:#1A1608!important}
-@media(max-width:760px){nav .links a:not(.btn-nav){display:none!important}nav .brand .wm em{display:none!important}nav .in{min-height:62px!important}}
+@media(max-width:800px){nav .links a:not(.btn-nav){display:none!important}nav .brand .wm em{display:none!important}nav .in{min-height:62px!important}}
 
 
 /* ══ MENU MOBILE — bloc autonome, aucune dépendance externe ══ */
 nav .burger{display:none}
-@media(max-width:760px){
+@media(max-width:800px){
   nav .burger{display:flex;flex:none;flex-direction:column;justify-content:center;gap:5px;width:44px;height:38px;padding:0 11px;background:transparent;border:1px solid var(--trait,#2A4470);border-radius:5px;cursor:pointer;-webkit-tap-highlight-color:transparent}
   nav .burger span{display:block;height:2px;background:var(--froid,#E9EEF6);border-radius:1px;transition:transform .2s ease,opacity .2s ease}
   nav.ouvert .burger span:nth-child(1){transform:translateY(7px) rotate(45deg)}
@@ -124,6 +128,8 @@ nav .burger{display:none}
   nav.ouvert .in .links a.on{color:var(--ambre,#F5B62E)!important}
   nav.ouvert .in .links a.btn-nav{justify-content:center!important;margin-top:16px!important;height:46px!important;padding:0 18px!important;border:0!important;border-radius:5px!important;background:var(--ambre,#F5B62E)!important;color:#1A1608!important;font-weight:800!important}
 }
+
+@media print{:root{--nuit:#fff;--panneau:#fff;--ambre:#8a5600;--sourd:#444;--trait:#bbb;--froid:#111}body{background:#fff!important;color:#111!important}nav,.burger,.cta-bloc,.btn-nav{display:none!important}a{color:#111!important;text-decoration:underline}section{background:transparent!important}}
 </style>
 </head>
 <body>
@@ -135,10 +141,11 @@ nav .burger{display:none}
       <a href="exemples.html">Exemples</a>
       <a href="rentabilite.html">Rentabilité</a>
       <a href="qui-suis-je.html">Qui suis-je</a>
-      <a class="btn-nav" href="contact.html">Échanger 30 min</a>
+      <a class="btn-nav" href="contact.html">Échanger 30 minutes</a>
   </div>
   <button class="burger" type="button" aria-label="Ouvrir le menu" aria-expanded="false" aria-controls="nav-liens"><span></span><span></span><span></span></button>
 </div></nav>
+<main id="contenu">
 
 <header class="h"><div class="in">
   <div class="eyebrow">CONDITIONS GÉNÉRALES</div>
@@ -149,7 +156,7 @@ nav .burger{display:none}
 
 <section><div class="in">
   <div class="doc">
-    <div class="head"><div class="t">Conditions générales de prestation de services</div><div class="s">Atelier MDT — Antoine Meyfroidt, entrepreneur individuel · 17 rue des Potiers, 35133 Lécousse · SIRET 109 757 526 00016 · Version du 22 septembre 2026</div></div>
+    <div class="head"><div class="t">Conditions générales de prestation de services</div><div class="s">Atelier MDT — Antoine Meyfroidt, entrepreneur individuel · 17 rue des Potiers, 35133 Lécousse · SIRET 109 757 526 00016 · Version du 2 octobre 2026</div></div>
     <h2>Article 1 — Objet et champ d'application</h2>
 <p>Les présentes conditions générales régissent l'ensemble des prestations fournies par Atelier MDT, entreprise individuelle sous régime de la micro-entreprise, dont le siège est situé 17 rue des Potiers, 35133 Lécousse, immatriculée sous le numéro SIRET 109 757 526 00016, ci-après « le Prestataire », à toute personne morale ou physique agissant dans le cadre de son activité professionnelle, ci-après « le Client ».</p>
 <p>Elles s'appliquent à toutes les prestations : accompagnement et ateliers à l'usage des outils numériques et d'intelligence artificielle, déploiement d'espaces de travail structurés, conception et mise en place d'automatisations de flux, création de tableaux de bord et études ponctuelles, et veille informationnelle sur abonnement.</p>
@@ -189,7 +196,7 @@ nav .burger{display:none}
 
 <h2>Article 6 — Prestations de veille sur abonnement</h2>
 <p><b>6.1 Nature de la prestation.</b> L'abonnement porte sur la <b>livraison périodique d'un livrable de veille</b>, non sur la fourniture d'un système. Les outils, scénarios et configurations mis en œuvre demeurent la propriété exclusive du Prestataire, sont hébergés sur ses propres comptes et ne sont pas transférés au Client, en tout ou partie, à quelque titre que ce soit.</p>
-<p><b>6.2 Périmètre et rythme.</b> Le périmètre est arrêté lors du cadrage initial et précisé au devis : thème(s) suivi(s), sources, rythme de livraison, jour et créneau de réception, destinataires. Le rythme est mensuel, bimensuel ou hebdomadaire. Sauf stipulation contraire, le périmètre est limité à cinq (5) concurrents suivis ou trois (3) établissements. Toute extension fait l'objet d'un thème supplémentaire facturé. Le thème de suivi des avis n'est proposé qu'en rythme hebdomadaire ou bimensuel. Pour le thème « appels d'offres », le périmètre métier, territorial et de sources est défini à l'article 6.8, qui déroge au présent alinéa.</p>
+<p><b>6.2 Périmètre et rythme.</b> Le périmètre est arrêté lors du cadrage initial et précisé au devis : thème(s) suivi(s), sources, rythme de livraison, jour et créneau de réception, destinataires. Le rythme est mensuel, bimensuel ou hebdomadaire. Sauf stipulation contraire, le périmètre est limité à cinq (5) concurrents suivis. Toute extension fait l'objet d'un thème supplémentaire facturé. Pour le thème « appels d'offres », le périmètre métier, territorial et de sources est défini à l'article 6.8, qui déroge au présent alinéa.</p>
 <p><b>6.3 Changement de rythme.</b> Le Client peut demander à tout moment le passage d'un rythme à un autre. <b>Chaque changement est facturé cinquante (50) euros hors taxes et prend effet le mois suivant la demande.</b> Aucun nouveau frais d'installation n'est dû.</p>
 <p><b>6.4 Limites.</b> La veille est réalisée à partir de sources publiquement accessibles. Le Prestataire met en œuvre les moyens nécessaires à sa fiabilité mais <b>ne garantit ni l'exhaustivité, ni la disponibilité permanente des sources tierces</b>. La veille constitue un complément d'information et ne saurait se substituer à la vigilance propre du Client ni engager la responsabilité du Prestataire au titre d'une information non relevée.</p>
 <p><b>6.5 Durée, absence de suspension et résiliation.</b> L'abonnement est conclu sans engagement de durée. <b>Il ne peut faire l'objet d'aucune suspension à l'initiative du Client : il se poursuit, ou il est résilié.</b> Il peut être résilié par l'une ou l'autre des parties, par simple courrier électronique, moyennant un préavis de trente (30) jours. Les sommes dues au titre de la période en cours restent exigibles. Les frais d'installation ne sont pas remboursables.</p>
@@ -230,7 +237,7 @@ nav .burger{display:none}
 
 <h2>Article 8 — Modifications et retouches</h2>
 <p>Chaque prestation comprend <b>un (1) aller-retour de modifications</b>, dans la limite du périmètre défini au devis.</p>
-<p>Toute demande supplémentaire, ou toute demande excédant ce périmètre, fait l'objet d'un devis complémentaire ou d'une facturation horaire au tarif de cinquante (50) euros hors taxes de l'heure. Ce tarif est communiqué sur demande et s'applique à l'ensemble des interventions non comprises dans un forfait.</p>
+<p>Toute demande supplémentaire, ou toute demande excédant ce périmètre, fait l'objet d'un devis complémentaire ou d'une facturation horaire au tarif de cinquante (50) euros hors taxes de l'heure, annoncé au Client avant toute intervention. Ce tarif s'applique à l'ensemble des interventions non comprises dans un forfait.</p>
 
 <h2>Article 9 — Propriété intellectuelle</h2>
 <p>Les livrables produits spécifiquement pour le Client (documents de maintenance, guides, supports personnalisés, tableaux de bord, modèles réutilisables) lui sont cédés à compter du paiement intégral du prix, pour ses besoins internes.</p>
@@ -261,9 +268,10 @@ nav .burger{display:none}
   </div>
 </div></section>
 
+</main>
 <footer><div class="in"><div class="row">
   <span>Atelier MDT · Automatisation · Veille · Tableaux de bord · Accompagnement IA</span>
-  <span><a href="mailto:antoine@atelier-mdt.fr">antoine@atelier-mdt.fr</a> · <a href="mentions-legales.html">Mentions légales</a> · <a href="cgv.html">CGV</a></span>
+  <span><a href="mailto:antoine@atelier-mdt.fr">antoine@atelier-mdt.fr</a> · <a href="tel:+33743688097">07 43 68 80 97</a> · <a href="https://www.linkedin.com/in/antoine-meyfroidt/" rel="noopener">linkedin.com/in/antoine-meyfroidt</a> · <a href="mentions-legales.html">Mentions légales</a> · <a href="cgv.html">CGV</a></span>
 </div></div></footer>
 <script>
 /* Menu mobile — autonome, aucune dépendance externe. */
@@ -279,7 +287,7 @@ nav .burger{display:none}
   l.addEventListener('click',function(e){if(e.target.closest('a'))etat(false);});
   document.addEventListener('click',function(e){if(n.classList.contains('ouvert')&&!n.contains(e.target))etat(false);});
   document.addEventListener('keydown',function(e){if(e.key==='Escape')etat(false);});
-  window.addEventListener('resize',function(){if(window.innerWidth>760)etat(false);});
+  window.addEventListener('resize',function(){if(window.innerWidth>800)etat(false);});
 })();
 </script>
 </body>

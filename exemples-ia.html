@@ -11,7 +11,10 @@
 <meta property="og:site_name" content="Atelier MDT">
 <meta property="og:title" content="Exemples · Accompagnement IA — Atelier MDT">
 <meta property="og:description" content="Six exemples d'accompagnement à l'IA : assistants par métier, niveaux d'accès, règles de comportement, modèles réutilisables, ateliers, guide d'accueil.">
-<meta property="og:image" content="https://atelier-mdt.fr/assets/verrouillage-baseline-ambre.png">
+<meta property="og:image" content="https://atelier-mdt.fr/assets/og-atelier-mdt.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Atelier MDT — Votre temps vaut mieux que ça">
 <meta property="og:locale" content="fr_FR">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="theme-color" content="#10233F">
@@ -70,7 +73,7 @@ nav .links{display:flex;align-items:center;gap:22px}
 nav .links a{color:var(--sourd,#9FB0C8);text-decoration:none;font-size:14px;font-weight:600;white-space:nowrap}
 nav .links a:hover,nav .links a.on{color:var(--froid,#E9EEF6)}
 nav .links a.btn-nav{background:var(--ambre,#F5B62E);color:#1A1608;padding:10px 16px;border-radius:5px;font-weight:800;margin:0;display:inline-block;line-height:1.2}
-@media(max-width:760px){nav .links a:not(.btn-nav){display:none}nav .brand .wm em{display:none}}
+@media(max-width:800px){nav .links a:not(.btn-nav){display:none}nav .brand .wm em{display:none}}
 footer{margin-top:60px;border-top:1px solid var(--trait,#2A4470);padding:24px 0 46px;font-size:12.5px;color:var(--sourd,#9FB0C8)}
 footer .row{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
 footer a{color:var(--sourd,#9FB0C8)}
@@ -86,17 +89,18 @@ nav .brand svg{color:var(--ambre,#F5B62E)!important;flex:none!important;width:32
 nav .brand .wm{font-size:18px!important;font-weight:800!important;letter-spacing:-.025em!important;line-height:1!important;color:var(--froid,#E9EEF6)!important}
 nav .brand .wm em{display:block!important;font-style:normal!important;font-size:7.5px!important;font-weight:800!important;letter-spacing:.09em!important;color:var(--ambre,#F5B62E)!important;margin-top:4px!important;white-space:nowrap!important}
 nav .links{display:flex!important;align-items:center!important;gap:16px!important;height:100%!important}
+@media(min-width:801px) and (max-width:880px){nav .links{gap:11px!important}nav .links a.btn-nav{padding:0 14px!important}}
 nav .links a{display:inline-flex!important;align-items:center!important;height:36px!important;margin:0!important;color:var(--sourd,#9FB0C8)!important;text-decoration:none!important;font-size:14px!important;font-weight:600!important;white-space:nowrap!important;border-bottom:2px solid transparent!important;line-height:1!important;font-size:13.5px!important}
 nav .links a:hover{color:var(--froid,#E9EEF6)!important}
 nav .links a.on{color:var(--froid,#E9EEF6)!important;border-bottom:2px solid var(--ambre,#F5B62E)!important}
 nav .links a.btn-nav{background:var(--ambre,#F5B62E)!important;color:#1A1608!important;padding:0 18px!important;border-radius:5px!important;font-weight:800!important;border-bottom:2px solid transparent!important;height:40px!important}
 nav .links a.btn-nav:hover{color:#1A1608!important}
-@media(max-width:760px){nav .links a:not(.btn-nav){display:none!important}nav .brand .wm em{display:none!important}nav .in{min-height:62px!important}}
+@media(max-width:800px){nav .links a:not(.btn-nav){display:none!important}nav .brand .wm em{display:none!important}nav .in{min-height:62px!important}}
 
 
 /* ══ MENU MOBILE — bloc autonome, aucune dépendance externe ══ */
 nav .burger{display:none}
-@media(max-width:760px){
+@media(max-width:800px){
   nav .burger{display:flex;flex:none;flex-direction:column;justify-content:center;gap:5px;width:44px;height:38px;padding:0 11px;background:transparent;border:1px solid var(--trait,#2A4470);border-radius:5px;cursor:pointer;-webkit-tap-highlight-color:transparent}
   nav .burger span{display:block;height:2px;background:var(--froid,#E9EEF6);border-radius:1px;transition:transform .2s ease,opacity .2s ease}
   nav.ouvert .burger span:nth-child(1){transform:translateY(7px) rotate(45deg)}
@@ -113,29 +117,29 @@ nav .burger{display:none}
 .fil{font-size:12.5px;margin-bottom:18px}
 .fil a{color:var(--sourd);text-decoration:none;font-weight:700}
 .fil a:hover{color:var(--froid)}
-.chapo{margin-top:22px;border-left:2px solid var(--trait);padding-left:16px;font-size:13.8px;color:#7E93B4;max-width:74ch;line-height:1.6}
+.chapo{margin-top:22px;border-left:2px solid var(--trait);padding-left:16px;font-size:13.8px;color:#8A9EBB;max-width:74ch;line-height:1.6}
 .chapo b{color:var(--sourd)}
 .chapo a{color:var(--ambre);text-decoration:none;font-weight:700}
 
 .liste{margin-top:6px;border-top:1px solid var(--trait)}
 .ex{padding:26px 0;border-bottom:1px solid var(--trait);scroll-margin-top:88px}
-.ex h3{font-size:19px;font-weight:800;letter-spacing:-.015em;line-height:1.25;color:var(--froid)}
+.ex h2{font-size:19px;font-weight:800;letter-spacing:-.015em;line-height:1.25;color:var(--froid)}
 .ex .src{margin-top:5px;font-size:11.5px;font-weight:700;letter-spacing:.02em}
 .ex .src a{color:var(--ambre);text-decoration:none}
 .ex .src a:hover{text-decoration:underline}
-.ex .src.nb{color:#61748F;font-weight:600}
-.ex .src.nb a{color:#7E93B4;font-weight:700}
+.ex .src.nb{color:#8FA3C0;font-weight:600}
+.ex .src.nb a{color:#8A9EBB;font-weight:700}
 .ex p.c{margin-top:12px;font-size:14.6px;color:var(--sourd);max-width:74ch;line-height:1.65}
 .ex p.c b{color:var(--froid)}
-.ex p.c .q{color:#7E93B4}
+.ex p.c .q{color:#8A9EBB}
 .ex details{margin-top:13px;max-width:74ch}
-.ex summary{cursor:pointer;font-size:12.5px;font-weight:800;letter-spacing:.03em;color:#7E93B4;list-style:none;display:inline-flex;align-items:center;gap:7px}
+.ex summary{cursor:pointer;font-size:12.5px;font-weight:800;letter-spacing:.03em;color:#8A9EBB;list-style:none;display:inline-flex;align-items:center;gap:7px}
 .ex summary::-webkit-details-marker{display:none}
 .ex summary::before{content:"+";display:inline-flex;align-items:center;justify-content:center;width:16px;height:16px;border:1px solid var(--trait);border-radius:3px;font-size:12px;font-weight:700;line-height:1}
 .ex details[open] summary::before{content:"–"}
 .ex summary:hover{color:var(--ambre)}
 .ex details[open] summary{color:var(--ambre)}
-.ex details p{margin-top:10px;font-size:13.8px;color:#7E93B4;line-height:1.6;padding-left:23px}
+.ex details p{margin-top:10px;font-size:13.8px;color:#8A9EBB;line-height:1.6;padding-left:23px}
 
 /* ── bloc des limites, en bas de page ── */
 section.limites{background:#0C1B32;border-top:1px solid var(--trait);border-bottom:1px solid var(--trait);padding:50px 0 54px;margin-top:56px}
@@ -168,6 +172,7 @@ section.limites{background:#0C1B32;border-top:1px solid var(--trait);border-bott
 .appart.a{background:transparent;color:var(--sourd);border:1px solid var(--trait)}
 .appart.u{background:transparent;color:var(--froid);border:1px solid var(--ambre)}
 </style>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Accueil", "item": "https://atelier-mdt.fr/"}, {"@type": "ListItem", "position": 2, "name": "Exemples", "item": "https://atelier-mdt.fr/exemples.html"}, {"@type": "ListItem", "position": 3, "name": "Six briques pour rendre une équipe autonome", "item": "https://atelier-mdt.fr/exemples-ia.html"}]}</script>
 </head>
 <body>
 <nav><div class="in">
@@ -178,12 +183,13 @@ section.limites{background:#0C1B32;border-top:1px solid var(--trait);border-bott
       <a href="exemples.html" class="on">Exemples</a>
       <a href="rentabilite.html">Rentabilité</a>
       <a href="qui-suis-je.html">Qui suis-je</a>
-      <a class="btn-nav" href="contact.html">Échanger 30 min</a>
+      <a class="btn-nav" href="contact.html">Échanger 30 minutes</a>
   </div>
   <button class="burger" type="button" aria-label="Ouvrir le menu" aria-expanded="false" aria-controls="nav-liens"><span></span><span></span><span></span></button>
 </div></nav>
+<main id="contenu">
 <header class="h"><div class="in">
-  <p class="fil"><a href="exemples.html">← Les 25 exemples</a></p>
+  <p class="fil"><a href="exemples.html">← Les 22 exemples</a></p>
   <div class="eyebrow">EXEMPLES · FAMILLE 04 — ACCOMPAGNEMENT IA</div>
   <h1>Six briques pour rendre une équipe autonome</h1>
   <p class="sub">Des assistants configurés par métier, avec leurs instructions et leurs interdits. Le but affiché : que vous n'ayez plus besoin de moi.</p>
@@ -194,7 +200,7 @@ section.limites{background:#0C1B32;border-top:1px solid var(--trait);border-bott
   <div class="liste">
 <article class="ex" id="ia-assistants">
   <div class="appart s">COMPRIS DANS LE SOCLE</div>
-  <h3>Un assistant par métier, avec ses interdits</h3>
+  <h2>Un assistant par métier, avec ses interdits</h2>
   <p class="src"><a href="realisation-06-ia.html">Réalisation 06 — voir les pièces →</a></p>
   <p class="c"><span class="q">Ouvrir l'accès à tout le monde et attendre que ça prenne. Ça ne prend pas : chacun tâtonne, les réponses sont génériques, l'outil est abandonné en deux mois.</span></p>
   <p class="c">Un espace par domaine métier, avec le rôle, le périmètre et les interdits écrits. L'utilisateur n'explique plus le contexte : il demande, il obtient quelque chose d'utilisable. Sur le cas livré, dix domaines dans une structure de dix personnes.</p>
@@ -202,7 +208,7 @@ section.limites{background:#0C1B32;border-top:1px solid var(--trait);border-bott
 </article>
 <article class="ex" id="ia-acces">
   <div class="appart s">COMPRIS DANS LE SOCLE</div>
-  <h3>Qui a le droit de demander quoi</h3>
+  <h2>Qui a le droit de demander quoi</h2>
   <p class="src"><a href="realisation-06-ia.html">Réalisation 06 — voir les pièces →</a></p>
   <p class="c"><span class="q">Le même outil sert à un animateur étudiant et au dirigeant. Les données commerciales ne peuvent pas être ouvertes à tous.</span></p>
   <p class="c">Trois niveaux — ouvert, élargi, restreint — appliqués aux espaces de travail. Ça évite qu'une information tarifaire circule là où elle n'a rien à faire, et qu'un nouvel arrivant se retrouve devant vingt espaces dont dix-huit ne le concernent pas.</p>
@@ -210,7 +216,7 @@ section.limites{background:#0C1B32;border-top:1px solid var(--trait);border-bott
 </article>
 <article class="ex" id="ia-comportement">
   <div class="appart s">COMPRIS DANS LE SOCLE</div>
-  <h3>Ce que l'assistant ne doit pas faire</h3>
+  <h2>Ce que l'assistant ne doit pas faire</h2>
   <p class="src"><a href="realisation-06-ia.html">Réalisation 06 — voir les pièces →</a></p>
   <p class="c"><span class="q">Un assistant bien renseigné produit quand même des livrables à retraiter : on lui a dit ce qu'il sait, jamais comment se comporter.</span></p>
   <p class="c">La couche qui manque presque partout : ce qu'il fait, ce qu'il ne fait pas, et quand il doit poser une question au lieu de deviner. C'est ce qui fait passer un livrable de « à reprendre » à « utilisable tel quel ». Ajoutée après deux mois d'exploitation sur le cas livré ; livrée maintenant dès le départ.</p>
@@ -218,7 +224,7 @@ section.limites{background:#0C1B32;border-top:1px solid var(--trait);border-bott
 </article>
 <article class="ex" id="ia-skills">
   <div class="appart u">HORS SOCLE — FACTURÉ À L'UNITÉ</div>
-  <h3>Les gestes qui reviennent, écrits une fois</h3>
+  <h2>Les gestes qui reviennent, écrits une fois</h2>
   <p class="src"><a href="realisation-06-ia.html">Réalisation 06 — voir les pièces →</a></p>
   <p class="c"><span class="q">La même demande est reformulée différemment chaque semaine par quatre personnes, et le résultat varie autant que la formulation.</span></p>
   <p class="c">Les tâches récurrentes deviennent des modèles réutilisables, distribués avec leur mode d'emploi. Le résultat devient constant quel que soit l'utilisateur — ce qui compte plus que la qualité maximale, parce que c'est ce qui permet de déléguer.</p>
@@ -227,7 +233,7 @@ section.limites{background:#0C1B32;border-top:1px solid var(--trait);border-bott
 </article>
 <article class="ex" id="ia-atelier">
   <div class="appart a">MODULE ATELIER — INCLUS AU DÉPLOIEMENT</div>
-  <h3>Un atelier par fonction, pas un atelier générique</h3>
+  <h2>Un atelier par fonction, pas un atelier générique</h2>
   <p class="src"><a href="realisation-06-ia.html">Réalisation 06 — voir les pièces →</a></p>
   <p class="c"><span class="q">Une démonstration générale intéresse tout le monde pendant une heure et ne change le travail de personne.</span></p>
   <p class="c">Trois heures trente sur les tâches réelles des participants, avec leurs propres cas, et un livrable individuel. Le critère de réussite n'est pas la satisfaction en fin de séance, c'est l'usage trois semaines après.</p>
@@ -235,7 +241,7 @@ section.limites{background:#0C1B32;border-top:1px solid var(--trait);border-bott
 </article>
 <article class="ex" id="ia-guide">
   <div class="appart s">COMPRIS DANS LE SOCLE</div>
-  <h3>Apprendre à formuler avant d'apprendre à outiller</h3>
+  <h2>Apprendre à formuler avant d'apprendre à outiller</h2>
   <p class="src"><a href="realisation-06-ia.html">Réalisation 06 — voir les pièces →</a></p>
   <p class="c"><span class="q">On installe des assistants pour des gens qui ne savent pas encore formuler une demande. Le prérequis n'est jamais couvert parce qu'il paraît évident.</span></p>
   <p class="c">Un guide d'accueil : comment formuler, vers quel espace aller, des exemples par rôle. C'est ce qui rend autonome quelqu'un qui arrive trois mois après le déploiement. Je l'avais oublié au départ sur le cas livré ; l'erreur vous est épargnée.</p>
@@ -264,20 +270,21 @@ section.limites{background:#0C1B32;border-top:1px solid var(--trait);border-bott
   <h2 class="lbl">LES AUTRES FAMILLES</h2>
   <div class="suite">
     <a href="exemples-automatisation.html"><b>Automatisation d'un flux</b><span>7 exemples</span><span class="go">Voir →</span></a>
-    <a href="exemples-veille.html"><b>Veille en abonnement</b><span>6 exemples</span><span class="go">Voir →</span></a>
+    <a href="exemples-veille.html"><b>Veille en abonnement</b><span>3 exemples</span><span class="go">Voir →</span></a>
     <a href="exemples-donnees.html"><b>Données et études</b><span>6 exemples</span><span class="go">Voir →</span></a>
   </div>
-  <p class="retour"><a href="exemples.html">← Les 25 exemples</a> &nbsp;·&nbsp; <a href="offres.html">Les offres et les prix</a> &nbsp;·&nbsp; <a href="index.html">L'accueil</a></p>
+  <p class="retour"><a href="exemples.html">← Les 22 exemples</a> &nbsp;·&nbsp; <a href="offres.html">Les offres et les prix</a> &nbsp;·&nbsp; <a href="index.html">L'accueil</a></p>
 </div></section>
 
 <div class="in"><div class="cta-bloc">
   <h2>Lequel de ces cas est le vôtre&nbsp;?</h2>
   <p>Trente minutes en visio pour identifier la tâche qui vous coûte le plus de temps, vérifier qu'elle est automatisable ou mesurable, et la chiffrer. Si aucun de ces exemples ne correspond, je vous le dis à ce moment-là.</p>
-  <a href="contact.html">Prendre contact</a>
+  <a href="contact.html">Échanger 30 minutes</a>
 </div></div>
+</main>
 <footer><div class="in"><div class="row">
   <span>Atelier MDT · Automatisation · Veille · Tableaux de bord · Accompagnement IA</span>
-  <span><a href="mailto:antoine@atelier-mdt.fr">antoine@atelier-mdt.fr</a> · <a href="mentions-legales.html">Mentions légales</a> · <a href="cgv.html">CGV</a></span>
+  <span><a href="mailto:antoine@atelier-mdt.fr">antoine@atelier-mdt.fr</a> · <a href="tel:+33743688097">07 43 68 80 97</a> · <a href="https://www.linkedin.com/in/antoine-meyfroidt/" rel="noopener">linkedin.com/in/antoine-meyfroidt</a> · <a href="mentions-legales.html">Mentions légales</a> · <a href="cgv.html">CGV</a></span>
 </div></div></footer>
 <script>
 /* Menu mobile — autonome, aucune dépendance externe. */
@@ -293,7 +300,7 @@ section.limites{background:#0C1B32;border-top:1px solid var(--trait);border-bott
   l.addEventListener('click',function(e){if(e.target.closest('a'))etat(false);});
   document.addEventListener('click',function(e){if(n.classList.contains('ouvert')&&!n.contains(e.target))etat(false);});
   document.addEventListener('keydown',function(e){if(e.key==='Escape')etat(false);});
-  window.addEventListener('resize',function(){if(window.innerWidth>760)etat(false);});
+  window.addEventListener('resize',function(){if(window.innerWidth>800)etat(false);});
 })();
 </script>
 </body>

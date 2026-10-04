@@ -11,7 +11,10 @@
 <meta property="og:site_name" content="Atelier MDT">
 <meta property="og:title" content="Offres — Atelier MDT">
 <meta property="og:description" content="Tarifs d'Atelier MDT : automatisation dès 500 €, veille 300 € puis dès 70 €/mois, tableau de bord de 450 à 700 € en quatre paliers, accompagnement IA dès 150 €.">
-<meta property="og:image" content="https://atelier-mdt.fr/assets/verrouillage-baseline-ambre.png">
+<meta property="og:image" content="https://atelier-mdt.fr/assets/og-atelier-mdt.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Atelier MDT — Votre temps vaut mieux que ça">
 <meta property="og:locale" content="fr_FR">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="theme-color" content="#10233F">
@@ -97,7 +100,7 @@ footer a{color:var(--sourd)}
 .regles .card p{font-size:14px;color:var(--sourd)}
 .pourquoi{border-left:3px solid var(--ambre);padding-left:15px;margin:18px 0 4px;font-size:14.5px;color:var(--sourd);max-width:70ch}
 .pourquoi b{color:var(--froid)}
-.paliers{margin-top:20px;overflow-x:auto;-webkit-overflow-scrolling:touch}
+.paliers{margin-top:20px;overflow-x:auto;-webkit-overflow-scrolling:touch}.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
 .paliers table{width:100%;min-width:620px;border-collapse:collapse;font-size:13.2px}
 .paliers th,.paliers td{padding:10px 12px;text-align:left;border-bottom:1px solid var(--trait);vertical-align:top}
 .paliers thead th{font-size:11px;font-weight:800;letter-spacing:.04em;color:var(--sourd);text-transform:uppercase;border-bottom:1px solid var(--ambre)}
@@ -106,7 +109,7 @@ footer a{color:var(--sourd)}
 .paliers tbody th{font-weight:700;color:var(--froid);width:150px}
 .paliers td{color:var(--sourd)}
 .paliers tr:last-child th,.paliers tr:last-child td{border-bottom:0}
-.glisser{font-size:11.5px;color:#6E82A0;margin-top:7px;display:none}
+.glisser{font-size:11.5px;color:#8FA3C0;margin-top:7px;display:none}
 @media(max-width:700px){.glisser{display:block}}
 .incl{margin-top:18px;display:grid;grid-template-columns:1fr 1fr;gap:12px}
 @media(max-width:640px){.incl{grid-template-columns:1fr}}
@@ -128,8 +131,8 @@ footer a{color:var(--sourd)}
 .ry .det .m{white-space:nowrap}
 .socle{margin-top:12px;font-size:13.5px;color:var(--sourd);line-height:1.6}
 .socle b{color:var(--froid)}
-.choisir{margin-top:26px;display:grid;grid-template-columns:1fr 1fr 1fr;gap:14px}
-@media(max-width:820px){.choisir{grid-template-columns:1fr}}
+.choisir{margin-top:26px;display:grid;grid-template-columns:1fr 1fr 1fr;gap:14px}.choisir.themes{grid-template-columns:1fr 1fr}
+@media(max-width:820px){.choisir,.choisir.themes{grid-template-columns:1fr}}
 .choisir div{border-left:2px solid var(--trait);padding-left:15px;font-size:13.8px;color:var(--sourd);line-height:1.6}
 .choisir div b{display:block;color:var(--froid);font-size:14.5px;margin-bottom:5px}
 .choisir div.r{border-left-color:var(--ambre)}
@@ -152,7 +155,7 @@ nav .links{display:flex;align-items:center;gap:22px}
 nav .links a{color:var(--sourd,#9FB0C8);text-decoration:none;font-size:14px;font-weight:600;white-space:nowrap}
 nav .links a:hover,nav .links a.on{color:var(--froid,#E9EEF6)}
 nav .links a.btn-nav{background:var(--ambre,#F5B62E);color:#1A1608;padding:10px 16px;border-radius:5px;font-weight:800;margin:0;display:inline-block;line-height:1.2}
-@media(max-width:760px){nav .links a:not(.btn-nav){display:none}nav .brand .wm em{display:none}}
+@media(max-width:800px){nav .links a:not(.btn-nav){display:none}nav .brand .wm em{display:none}}
 footer{margin-top:60px;border-top:1px solid var(--trait,#2A4470);padding:24px 0 46px;font-size:12.5px;color:var(--sourd,#9FB0C8)}
 footer .row{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
 footer a{color:var(--sourd,#9FB0C8)}
@@ -168,17 +171,18 @@ nav .brand svg{color:var(--ambre,#F5B62E)!important;flex:none!important;width:32
 nav .brand .wm{font-size:18px!important;font-weight:800!important;letter-spacing:-.025em!important;line-height:1!important;color:var(--froid,#E9EEF6)!important}
 nav .brand .wm em{display:block!important;font-style:normal!important;font-size:7.5px!important;font-weight:800!important;letter-spacing:.09em!important;color:var(--ambre,#F5B62E)!important;margin-top:4px!important;white-space:nowrap!important}
 nav .links{display:flex!important;align-items:center!important;gap:16px!important;height:100%!important}
+@media(min-width:801px) and (max-width:880px){nav .links{gap:11px!important}nav .links a.btn-nav{padding:0 14px!important}}
 nav .links a{display:inline-flex!important;align-items:center!important;height:36px!important;margin:0!important;color:var(--sourd,#9FB0C8)!important;text-decoration:none!important;font-size:14px!important;font-weight:600!important;white-space:nowrap!important;border-bottom:2px solid transparent!important;line-height:1!important;font-size:13.5px!important}
 nav .links a:hover{color:var(--froid,#E9EEF6)!important}
 nav .links a.on{color:var(--froid,#E9EEF6)!important;border-bottom:2px solid var(--ambre,#F5B62E)!important}
 nav .links a.btn-nav{background:var(--ambre,#F5B62E)!important;color:#1A1608!important;padding:0 18px!important;border-radius:5px!important;font-weight:800!important;border-bottom:2px solid transparent!important;height:40px!important}
 nav .links a.btn-nav:hover{color:#1A1608!important}
-@media(max-width:760px){nav .links a:not(.btn-nav){display:none!important}nav .brand .wm em{display:none!important}nav .in{min-height:62px!important}}
+@media(max-width:800px){nav .links a:not(.btn-nav){display:none!important}nav .brand .wm em{display:none!important}nav .in{min-height:62px!important}}
 
 
 /* ══ MENU MOBILE — bloc autonome, aucune dépendance externe ══ */
 nav .burger{display:none}
-@media(max-width:760px){
+@media(max-width:800px){
   nav .burger{display:flex;flex:none;flex-direction:column;justify-content:center;gap:5px;width:44px;height:38px;padding:0 11px;background:transparent;border:1px solid var(--trait,#2A4470);border-radius:5px;cursor:pointer;-webkit-tap-highlight-color:transparent}
   nav .burger span{display:block;height:2px;background:var(--froid,#E9EEF6);border-radius:1px;transition:transform .2s ease,opacity .2s ease}
   nav.ouvert .burger span:nth-child(1){transform:translateY(7px) rotate(45deg)}
@@ -190,6 +194,8 @@ nav .burger{display:none}
   nav.ouvert .in .links a.on{color:var(--ambre,#F5B62E)!important}
   nav.ouvert .in .links a.btn-nav{justify-content:center!important;margin-top:16px!important;height:46px!important;padding:0 18px!important;border:0!important;border-radius:5px!important;background:var(--ambre,#F5B62E)!important;color:#1A1608!important;font-weight:800!important}
 }
+
+@media print{:root{--nuit:#fff;--panneau:#fff;--ambre:#8a5600;--sourd:#444;--trait:#bbb;--froid:#111}body{background:#fff!important;color:#111!important}nav,.burger,.cta-bloc,.btn-nav{display:none!important}a{color:#111!important;text-decoration:underline}section{background:transparent!important}}
 </style>
 </head>
 <body>
@@ -201,10 +207,11 @@ nav .burger{display:none}
       <a href="exemples.html">Exemples</a>
       <a href="rentabilite.html">Rentabilité</a>
       <a href="qui-suis-je.html">Qui suis-je</a>
-      <a class="btn-nav" href="contact.html">Échanger 30 min</a>
+      <a class="btn-nav" href="contact.html">Échanger 30 minutes</a>
   </div>
   <button class="burger" type="button" aria-label="Ouvrir le menu" aria-expanded="false" aria-controls="nav-liens"><span></span><span></span><span></span></button>
 </div></nav>
+<main id="contenu">
 
 <header class="h"><div class="in">
   <div class="eyebrow">OFFRES</div>
@@ -214,7 +221,7 @@ nav .burger{display:none}
   <div class="liens2">
     <a href="realisations.html">Voir ce qui a déjà été fait →</a>
     <a href="rentabilite.html">Serais-je rentable ? →</a>
-    <a href="exemples.html">25 exemples concrets →</a>
+    <a href="exemples.html">22 exemples concrets →</a>
   </div>
   <nav class="sommaire" aria-label="Sommaire de la page">
     <div class="k">ALLER DIRECTEMENT À</div>
@@ -239,7 +246,7 @@ nav .burger{display:none}
 <section id="veille"><div class="in">
   <h2 class="lbl">VEILLE EN ABONNEMENT</h2>
   <div class="off">
-  <div><h3>Veille en abonnement</h3><p class="d">Vous recevez par email ce qui a bougé sur votre marché : les prix, les avis, les offres et les nouveautés de vos concurrents, ou les usages de l'IA dans votre métier. Lisible en deux minutes. Le système tourne de mon côté — vous n'avez rien à installer ni à surveiller.</p><ul><li>Vous choisissez <b>le thème, la fréquence, le jour et l'heure</b> de réception</li><li>Formule de base : jusqu'à 5 concurrents ou 3 établissements suivis</li><li><b>Sans engagement</b>, résiliable avec un mois de préavis</li><li>Changement de fréquence possible à tout moment : <b>50 €</b> par changement, effet le mois suivant la demande</li></ul><p class="renta"><a href="rentabilite.html#veille">Ce que ça rapporte, en chiffres →</a></p><p class="exlien"><a href="exemples-veille.html">Six exemples de veilles →</a></p></div>
+  <div><h3>Veille en abonnement</h3><p class="d">Vous recevez par email ce qui a bougé sur votre marché : les prix, les notes et les nouveautés de vos concurrents, les appels d'offres de votre métier, les tendances de votre secteur ou les usages de l'IA dans votre métier. Lisible en deux minutes. Le système tourne de mon côté — vous n'avez rien à installer ni à surveiller.</p><ul><li>Vous choisissez <b>le thème, la fréquence, le jour et l'heure</b> de réception</li><li>Formule de base : jusqu'à 5 concurrents suivis</li><li><b>Sans engagement</b>, résiliable avec un mois de préavis</li><li>Changement de fréquence possible à tout moment : <b>50 €</b> par changement, effet le mois suivant la demande</li></ul><p class="renta"><a href="rentabilite.html#veille">Ce que ça rapporte, en chiffres →</a></p><p class="exlien"><a href="exemples-veille.html">Trois exemples de veilles →</a></p></div>
   <div class="prix"><div class="from">INSTALLATION 300 € PUIS</div><b>dès 70 €</b><span>HT par mois · selon le rythme</span><span class="delai">1RE LIVRAISON SOUS 2 SEMAINES</span></div>
 </div>
   <div class="rythmes">
@@ -265,29 +272,25 @@ nav .burger{display:none}
   <h2 class="lbl" style="margin-top:34px">COMMENT CHOISIR VOTRE FRÉQUENCE</h2>
   <p class="socle" style="margin-top:0"><b>Le contenu est le même dans les trois cas.</b> Ce qui change, c'est la période couverte — donc la longueur du rapport — et ce que vous pouvez en faire.</p>
   <div class="choisir">
-    <div class="r"><b>Hebdomadaire : vous suivez les mouvements</b>Un prix qui change, un avis qui tombe, une offre qui apparaît : vous le savez dans les jours qui suivent et vous avez encore le temps d'y répondre. Le rapport est court et finit par s'installer dans votre semaine. C'est le rythme que je recommande, et celui que choisissent les entreprises dont le marché bouge : commerce, loisirs, restauration, services aux particuliers.</div>
+    <div class="r"><b>Hebdomadaire : vous suivez les mouvements</b>Un prix qui change, une consultation qui s'ouvre, une offre qui apparaît : vous le savez dans les jours qui suivent et vous avez encore le temps d'y répondre. Le rapport est court et finit par s'installer dans votre semaine. C'est le rythme que je recommande, et celui que choisissent les entreprises dont le marché bouge : commerce, loisirs, restauration, services aux particuliers.</div>
     <div><b>Toutes les deux semaines : vous gardez le fil</b>Assez fréquent pour ne pas découvrir les choses trop tard, assez espacé pour ne pas y penser entre deux envois. Le bon compromis si votre marché évolue sans à-coups, ou si vous démarrez et préférez voir ce que la veille vous apporte avant d'accélérer.</div>
     <div><b>Mensuelle : vous prenez du recul</b>Le rapport est plus long, simplement parce qu'il couvre quatre semaines d'un coup : vous y voyez des tendances plutôt que des mouvements. Suffisant pour une décision de fond — repositionner une offre, préparer une saison — mais trop lent pour réagir à ce qui se passe cette semaine.</div>
   </div>
-  <div class="apres">
-    <div><b>Vous choisissez le jour et le créneau</b>Le lundi matin pour ouvrir la semaine avec, le vendredi pour faire le point avant de partir : le rapport arrive quand ça vous arrange. La collecte tourne pendant la nuit, la livraison se fait le matin — ce qui me laisse le temps de rattraper un incident avant que vous ne le voyiez.</div>
-    <div class="excep"><b>Une exception : le suivi des avis</b>Ce thème n'est proposé qu'en hebdomadaire ou toutes les deux semaines. Un avis négatif que vous découvrez trois semaines plus tard, vous ne pouvez plus rien en faire — et je préfère ne pas vous vendre une alerte qui arrive trop tard. Les autres thèmes sont disponibles aux trois rythmes.</div>
+  <div class="apres" style="grid-template-columns:1fr">
+    <div><b>Vous choisissez le jour et le créneau</b>Le lundi matin pour ouvrir la semaine avec, le vendredi pour faire le point avant de partir : le rapport arrive quand ça vous arrange. La collecte tourne pendant la nuit, la livraison se fait le matin — ce qui me laisse le temps de rattraper un incident avant que vous ne le voyiez. Tous les thèmes sont disponibles aux trois rythmes.</div>
   </div>
 
   <h2 class="lbl" style="margin-top:34px">LES THÈMES DISPONIBLES</h2>
   <p class="socle" style="margin-top:0">Un thème est compris dans l'abonnement. Chaque thème supplémentaire est facturé +150 € à l'installation, puis le montant mensuel de votre rythme.</p>
-  <div class="choisir">
-    <div><b>Veille concurrentielle</b>Prix, notes, volume d'avis, nouveautés et activité publique de vos concurrents directs. Aux trois rythmes.</div>
-    <div class="r"><b>Appels d'offres et marchés publics</b>Les consultations publiées qui correspondent à votre activité et à votre zone. Hebdomadaire vivement recommandé.</div>
-    <div><b>Suivi de vos avis</b>Chaque nouvel avis, sa note, sa tonalité, son évolution. Hebdomadaire ou toutes les deux semaines uniquement.</div>
-    <div><b>Prix d'un panier de références</b>Les écarts sur les références que vous vendez et que d'autres vendent aussi. Aux trois rythmes.</div>
-    <div><b>IA appliquée à votre métier</b>Ce qui change pour vous, pas l'actualité de l'IA. Aux trois rythmes.</div>
-    <div><b>Tendances de votre secteur</b>Une revue de presse construite sur vos sources et vos sujets. Aux trois rythmes.</div>
-    <div><b>Publications de vos concurrents</b>Nouveautés, opérations, angles éditoriaux. Je vous donne la matière, je ne tiens pas vos réseaux. Aux trois rythmes.</div>
+  <div class="choisir themes">
+    <div><b>Veille concurrentielle</b>Prix affichés, notes et volume d'avis, nouveautés et activité publique de vos concurrents directs — des chiffres relevés, jamais le texte des avis. Aux trois rythmes.</div>
+    <div class="r"><b>Appels d'offres et marchés publics</b>Les consultations publiées au BOAMP et au TED qui correspondent à votre activité et à votre zone. Hebdomadaire vivement recommandé.</div>
+    <div><b>IA appliquée à votre métier</b>Ce qui change pour vous, pas l'actualité de l'IA : une synthèse rédigée, avec le lien vers chaque source. Aux trois rythmes.</div>
+    <div><b>Tendances de votre secteur</b>Une revue de presse construite sur vos sources et vos sujets, résumée avec le lien vers chaque article. Aux trois rythmes.</div>
   </div>
 
   <div class="apres" style="grid-template-columns:1fr">
-    <div class="excep"><b>Une idée de veille que vous ne voyez pas dans cette liste&nbsp;?</b>Les sept thèmes ci-dessus sont ceux que je sais tenir dans la durée, pas la limite de ce qui est possible. Si vous suivez déjà quelque chose à la main — un fournisseur, un cadre de subvention, une place de marché, un sujet propre à votre métier — dites-le-moi&nbsp;: on regarde ensemble si la source est publique, stable et exploitable. Si elle l'est, on la cadre&nbsp;; si elle ne l'est pas, je vous le dis en trente minutes plutôt qu'après l'installation. <a href="contact.html" style="color:var(--ambre);font-weight:700;text-decoration:none">Parlez-m'en ici →</a></div>
+    <div class="excep"><b>Une idée de veille que vous ne voyez pas dans cette liste&nbsp;?</b>Les quatre thèmes ci-dessus sont ceux que je sais tenir dans la durée et vendre sans réserve, pas la limite de ce qui est possible. Si vous suivez déjà quelque chose à la main — un fournisseur, un cadre de subvention, une place de marché, un sujet propre à votre métier — dites-le-moi&nbsp;: on regarde ensemble si la source est publique, stable, exploitable, et si ses conditions d'utilisation autorisent la collecte. Si elle l'est, on la cadre&nbsp;; si elle ne l'est pas, je vous le dis en trente minutes plutôt qu'après l'installation. <a href="contact.html" style="color:var(--ambre);font-weight:700;text-decoration:none">Échanger 30 minutes →</a></div>
   </div>
 
   <h2 class="lbl" style="margin-top:34px">APPELS D'OFFRES — CE QU'IL FAUT SAVOIR AVANT</h2>
@@ -309,10 +312,10 @@ nav .burger{display:none}
 </div>
   <div style="padding-bottom:24px;border-bottom:1px solid var(--trait)">
     <p class="pourquoi"><b>Pourquoi le prix varie.</b> Construire le tableau prend le même temps chez tout le monde. Ce qui change, c'est ce qu'il y a avant : remettre vos exports en ordre. Un an de ventes exportées d'un seul logiciel, c'est une demi-journée. Trois ans exportés de deux logiciels qui ont changé de format en cours de route, c'est trois fois plus long — et c'est la partie que personne n'a envie de faire. Le prix dépend donc de la quantité de données à remettre en ordre, pas du tableau lui-même. Vous connaissez déjà les réponses : elles sont dans votre logiciel de caisse.</p>
-    <div class="paliers">
+    <div class="paliers" tabindex="0" role="region" aria-label="Les quatre paliers du tableau de bord — tableau à faire défiler horizontalement">
       <table>
         <thead><tr>
-          <th></th>
+          <th scope="col"><span class="sr">Critère</span></th>
           <th class="p">Essentiel<em>450 €</em></th>
           <th class="p">Étendu<em>550 €</em></th>
           <th class="p">Complet<em>700 €</em></th>
@@ -352,7 +355,7 @@ nav .burger{display:none}
   <div class="prix"><div class="from">FORFAIT, À PARTIR DE</div><b>400 €</b><span>HT · 3 h 30 sur place</span><span class="delai">SOUS 2 SEMAINES</span></div>
 </div>
   <div class="off">
-  <div><h3>Déploiement IA structuré</h3><p class="d">Pour les structures de dix personnes et plus : un espace de travail organisé par domaine métier, avec instructions sur mesure et documents de référence, comme celui présenté dans les réalisations. <b>Socle et atelier ne se vendent pas séparément</b> — des outils livrés sans accompagnement ne servent pas.</p><ul><li><b>Socle, 600 € : jusqu'à six domaines métier</b> — assistants par métier, niveaux d'accès, couche comportementale (ce que l'assistant ne doit pas faire), guide d'accueil</li><li>Domaine métier supplémentaire : <b>+60 €</b></li><li><b>Atelier de 3 h 30 inclus, 400 €</b> — il fait partie du déploiement et ne s'en détache pas ; s'il se tient sur site, le même barème de déplacement s'applique</li><li>Passation d'une heure à votre référent interne, comprise</li><li>Livrable individuel au-delà de quatre participants : <b>+50 € par personne</b>, jusqu'à 20 personnes</li><li>Les modèles réutilisables (une tâche récurrente = un modèle prêt à l'emploi) sont <b>facturés à l'unité, hors socle</b></li><li><b>Proposé sur Claude.</b> Sur un autre environnement, la base reste la même mais les finitions changent : on en parle au cas par cas</li><li>L'abonnement à l'outil est souscrit par vous et reste à votre charge — ce n'est pas une ligne de mon devis. Ordre de grandeur pour le plan Team d'Anthropic : <b>20 à 25 $ par personne et par mois</b> selon l'engagement, à partir de deux utilisateurs <span style="color:#6E82A0">(relevé sur la grille officielle en septembre 2026, à revérifier avant de signer)</span></li></ul><p class="renta"><a href="rentabilite.html#ia">Ce que ça rapporte, en chiffres →</a></p><p class="exlien"><a href="exemples-ia.html">Six exemples d'accompagnement →</a></p></div>
+  <div><h3>Déploiement IA structuré</h3><p class="d">Pour les structures de dix personnes et plus : un espace de travail organisé par domaine métier, avec instructions sur mesure et documents de référence, comme celui présenté dans les réalisations. <b>Socle et atelier ne se vendent pas séparément</b> — des outils livrés sans accompagnement ne servent pas.</p><ul><li><b>Socle, 600 € : jusqu'à six domaines métier</b> — assistants par métier, niveaux d'accès, couche comportementale (ce que l'assistant ne doit pas faire), guide d'accueil</li><li>Domaine métier supplémentaire : <b>+60 €</b></li><li><b>Atelier de 3 h 30 inclus, 400 €</b> — il fait partie du déploiement et ne s'en détache pas ; s'il se tient sur site, le même barème de déplacement s'applique</li><li>Passation d'une heure à votre référent interne, comprise</li><li>Livrable individuel au-delà de quatre participants : <b>+50 € par personne</b>, jusqu'à 20 personnes</li><li>Les modèles réutilisables (une tâche récurrente = un modèle prêt à l'emploi) sont <b>facturés à l'unité, hors socle</b></li><li><b>Proposé sur Claude.</b> Sur un autre environnement, la base reste la même mais les finitions changent : on en parle au cas par cas</li><li>L'abonnement à l'outil est souscrit par vous et reste à votre charge — ce n'est pas une ligne de mon devis. Ordre de grandeur pour le plan Team d'Anthropic : <b>20 à 25 $ par personne et par mois</b> selon l'engagement, à partir de deux utilisateurs <span style="color:#8FA3C0">(relevé sur la grille officielle en septembre 2026, à revérifier avant de signer)</span></li></ul><p class="renta"><a href="rentabilite.html#ia">Ce que ça rapporte, en chiffres →</a></p><p class="exlien"><a href="exemples-ia.html">Six exemples d'accompagnement →</a></p></div>
   <div class="prix"><div class="from">À PARTIR DE</div><b>1 000 €</b><span>HT · socle 600 € + atelier 400 €</span><span class="delai">LIVRÉ EN 3 SEMAINES</span></div>
 </div>
 </div></section>
@@ -365,17 +368,18 @@ nav .burger{display:none}
     <div class="card"><h3>Acompte de 30 % dès 400 €</h3><p>Rien en dessous. Le solde à la livraison, par virement à 30 jours.</p></div>
     <div class="card"><h3>Un aller-retour inclus</h3><p>Une série de modifications comprise dans chaque forfait. Au-delà, 50 € HT de l'heure, annoncé à l'avance.</p></div>
   </div>
-  <div class="filet"><b>Ce que je ne fais pas :</b> création graphique, réseaux sociaux, développement lourd, veille réglementaire ou juridique. Si votre besoin est là, je vous le dis au premier échange. · TVA non applicable, article 293 B du CGI · <a href="cgv.html" style="color:var(--ambre)">Conditions générales</a></div>
+  <div class="filet"><b>Ce que je ne fais pas :</b> création graphique, réseaux sociaux, développement lourd, veille réglementaire ou juridique. Si votre besoin est là, je vous le dis au premier échange. · TVA non applicable, article 293 B du CGI · <a href="cgv.html" style="color:var(--ambre)">Conditions générales</a> · <a href="questions.html" style="color:var(--ambre)">Les questions qu'on me pose avant de signer</a></div>
 </div></section>
 <div class="in"><div class="cta-bloc">
   <h2>On regarde ce que vous perdez ?</h2>
   <p>Trente minutes en visio pour identifier la tâche qui vous coûte le plus de temps. Vous repartez avec un devis chiffré, et vous décidez ensuite. Aucun engagement.</p>
-  <a href="contact.html">Prendre contact</a>
+  <a href="contact.html">Échanger 30 minutes</a>
 </div></div>
 
+</main>
 <footer><div class="in"><div class="row">
   <span>Atelier MDT · Automatisation · Veille · Tableaux de bord · Accompagnement IA</span>
-  <span><a href="mailto:antoine@atelier-mdt.fr">antoine@atelier-mdt.fr</a> · <a href="mentions-legales.html">Mentions légales</a> · <a href="cgv.html">CGV</a></span>
+  <span><a href="mailto:antoine@atelier-mdt.fr">antoine@atelier-mdt.fr</a> · <a href="tel:+33743688097">07 43 68 80 97</a> · <a href="https://www.linkedin.com/in/antoine-meyfroidt/" rel="noopener">linkedin.com/in/antoine-meyfroidt</a> · <a href="mentions-legales.html">Mentions légales</a> · <a href="cgv.html">CGV</a></span>
 </div></div></footer>
 <script>
 /* Menu mobile — autonome, aucune dépendance externe. */
@@ -391,7 +395,7 @@ nav .burger{display:none}
   l.addEventListener('click',function(e){if(e.target.closest('a'))etat(false);});
   document.addEventListener('click',function(e){if(n.classList.contains('ouvert')&&!n.contains(e.target))etat(false);});
   document.addEventListener('keydown',function(e){if(e.key==='Escape')etat(false);});
-  window.addEventListener('resize',function(){if(window.innerWidth>760)etat(false);});
+  window.addEventListener('resize',function(){if(window.innerWidth>800)etat(false);});
 })();
 </script>
 </body>

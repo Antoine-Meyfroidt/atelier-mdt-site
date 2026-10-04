@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Questions — Atelier MDT</title>
+<meta name="description" content="Les questions qu’on me pose avant de signer : propriété de ce qui est construit, délais, prix de lancement, maintenance, veille, données, déplacements.">
+<link rel="canonical" href="https://atelier-mdt.fr/questions.html">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://atelier-mdt.fr/questions.html">
+<meta property="og:site_name" content="Atelier MDT">
+<meta property="og:title" content="Questions — Atelier MDT">
+<meta property="og:description" content="Les questions qu’on me pose avant de signer : propriété, délais, prix de lancement, maintenance, veille, données, déplacements.">
+<meta property="og:image" content="https://atelier-mdt.fr/assets/og-atelier-mdt.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Atelier MDT — Votre temps vaut mieux que ça">
+<meta property="og:locale" content="fr_FR">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#10233F">
+<link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32.png">
+<link rel="apple-touch-icon" sizes="180x180" href="assets/favicon-180.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{--nuit:#10233F;--panneau:#182F52;--ambre:#F5B62E;--sourd:#9FB0C8;--trait:#2A4470;--froid:#E9EEF6}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{background:var(--nuit);color:var(--froid);font-family:'Manrope',system-ui,-apple-system,sans-serif;line-height:1.6;font-size:16px;-webkit-font-smoothing:antialiased}
+a{color:inherit}
+.in{max-width:900px;margin:0 auto;padding:0 22px}
+nav{position:sticky;top:0;z-index:20;background:rgba(16,35,63,.93);backdrop-filter:blur(8px);border-bottom:1px solid var(--trait)}
+nav .in{display:flex;align-items:center;justify-content:space-between;gap:14px;padding:13px 22px}
+nav .brand{display:flex;align-items:center;gap:10px;text-decoration:none}
+nav .brand svg{color:var(--ambre);flex:none}
+nav .brand span{font-size:16px;font-weight:800;letter-spacing:-.025em}
+nav .links{display:flex;align-items:center;gap:20px}
+nav .links a{color:var(--sourd);text-decoration:none;font-size:13.5px;font-weight:600}
+nav .links a:hover,nav .links a.on{color:var(--froid)}
+nav .cta{background:var(--ambre)!important;color:#1A1608!important;padding:9px 15px;border-radius:5px;font-weight:800!important}
+@media(max-width:700px){nav .links a:not(.cta){display:none}}
+header.h{padding:60px 0 6px}
+header.h .eyebrow{font-size:11.5px;font-weight:800;letter-spacing:.09em;color:var(--ambre);margin-bottom:12px}
+header.h h1{font-size:clamp(30px,5.4vw,46px);font-weight:800;letter-spacing:-.03em;line-height:1.06;max-width:22ch}
+header.h .sub{margin-top:15px;font-size:17px;color:var(--sourd);max-width:58ch}
+section{padding:58px 0 0;scroll-margin-top:64px}
+h2.lbl{font-size:11.5px;font-weight:800;letter-spacing:.09em;color:var(--ambre);padding-bottom:10px;border-bottom:1px solid var(--trait);margin-bottom:24px}
+.txt p{font-size:15.5px;max-width:68ch;margin-bottom:12px;color:#C9D4E4}
+.txt p strong{color:#fff}
+.btn{display:inline-block;padding:13px 22px;font-size:15px;font-weight:700;text-decoration:none;border-radius:5px}
+.btn.p{background:var(--ambre);color:#1A1608}
+.btn.s{background:transparent;color:var(--froid);border:1px solid var(--trait)}
+.card{background:var(--panneau);border:1px solid var(--trait);border-radius:7px;padding:20px 22px}
+.filet{border-left:3px solid var(--ambre);padding-left:14px;margin:18px 0;font-size:14.5px;color:var(--sourd);max-width:68ch}
+.filet b{color:var(--froid)}
+footer{margin-top:60px;border-top:1px solid var(--trait);padding:24px 0 46px;font-size:12.5px;color:var(--sourd)}
+footer .row{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
+footer a{color:var(--sourd)}
+.cta{background:var(--ambre);color:#1A1608;border-radius:8px;padding:32px 30px;margin-top:56px}
+.cta h2{font-size:clamp(22px,3.4vw,28px);font-weight:800;letter-spacing:-.02em;line-height:1.15}
+.cta p{font-size:15.5px;margin-top:10px;max-width:62ch}
+.cta a{display:inline-block;margin-top:18px;background:#1A1608;color:var(--ambre);padding:12px 20px;border-radius:5px;font-weight:800;font-size:15px;text-decoration:none}
+
+/* ── commun à toutes les pages ── */
+.in{max-width:900px!important;margin:0 auto;padding:0 22px}
+nav{position:sticky;top:0;z-index:20;background:rgba(16,35,63,.94);backdrop-filter:blur(8px);border-bottom:1px solid var(--trait,#2A4470)}
+nav .in{display:flex;align-items:center;justify-content:space-between;gap:16px;padding:15px 22px}
+nav .brand{display:flex;align-items:center;gap:12px;text-decoration:none}
+nav .brand svg{color:var(--ambre,#F5B62E);flex:none}
+nav .brand .wm{font-size:18px;font-weight:800;letter-spacing:-.025em;line-height:1;color:var(--froid,#E9EEF6)}
+nav .brand .wm em{display:block;font-style:normal;font-size:7.5px;font-weight:800;letter-spacing:.09em;color:var(--ambre,#F5B62E);margin-top:4px;white-space:nowrap}
+nav .links{display:flex;align-items:center;gap:22px}
+nav .links a{color:var(--sourd,#9FB0C8);text-decoration:none;font-size:14px;font-weight:600;white-space:nowrap}
+nav .links a:hover,nav .links a.on{color:var(--froid,#E9EEF6)}
+nav .links a.btn-nav{background:var(--ambre,#F5B62E);color:#1A1608;padding:10px 16px;border-radius:5px;font-weight:800;margin:0;display:inline-block;line-height:1.2}
+@media(max-width:800px){nav .links a:not(.btn-nav){display:none}nav .brand .wm em{display:none}}
+footer{margin-top:60px;border-top:1px solid var(--trait,#2A4470);padding:24px 0 46px;font-size:12.5px;color:var(--sourd,#9FB0C8)}
+footer .row{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
+footer a{color:var(--sourd,#9FB0C8)}
+.cta-bloc{background:var(--ambre,#F5B62E);color:#1A1608;border-radius:8px;padding:32px 30px;margin-top:56px}
+.cta-bloc h2{font-size:clamp(22px,3.4vw,28px);font-weight:800;letter-spacing:-.02em;line-height:1.15}
+.cta-bloc p{font-size:15.5px;margin-top:10px;max-width:62ch;color:#1A1608}
+.cta-bloc a{display:inline-block;margin-top:18px;background:#1A1608;color:var(--ambre,#F5B62E);padding:12px 20px;border-radius:5px;font-weight:800;font-size:15px;text-decoration:none}
+
+/* ── NAVIGATION UNIFIÉE (bloc final, prioritaire) ── */
+nav .in{display:flex!important;align-items:center!important;justify-content:space-between!important;gap:18px!important;padding:0 22px!important;min-height:74px!important}
+nav .brand{display:flex!important;align-items:center!important;gap:12px!important;text-decoration:none!important}
+nav .brand svg{color:var(--ambre,#F5B62E)!important;flex:none!important;width:32px!important;height:32px!important}
+nav .brand .wm{font-size:18px!important;font-weight:800!important;letter-spacing:-.025em!important;line-height:1!important;color:var(--froid,#E9EEF6)!important}
+nav .brand .wm em{display:block!important;font-style:normal!important;font-size:7.5px!important;font-weight:800!important;letter-spacing:.09em!important;color:var(--ambre,#F5B62E)!important;margin-top:4px!important;white-space:nowrap!important}
+nav .links{display:flex!important;align-items:center!important;gap:16px!important;height:100%!important}
+@media(min-width:801px) and (max-width:880px){nav .links{gap:11px!important}nav .links a.btn-nav{padding:0 14px!important}}
+nav .links a{display:inline-flex!important;align-items:center!important;height:36px!important;margin:0!important;color:var(--sourd,#9FB0C8)!important;text-decoration:none!important;font-size:14px!important;font-weight:600!important;white-space:nowrap!important;border-bottom:2px solid transparent!important;line-height:1!important;font-size:13.5px!important}
+nav .links a:hover{color:var(--froid,#E9EEF6)!important}
+nav .links a.on{color:var(--froid,#E9EEF6)!important;border-bottom:2px solid var(--ambre,#F5B62E)!important}
+nav .links a.btn-nav{background:var(--ambre,#F5B62E)!important;color:#1A1608!important;padding:0 18px!important;border-radius:5px!important;font-weight:800!important;border-bottom:2px solid transparent!important;height:40px!important}
+nav .links a.btn-nav:hover{color:#1A1608!important}
+@media(max-width:800px){nav .links a:not(.btn-nav){display:none!important}nav .brand .wm em{display:none!important}nav .in{min-height:62px!important}}
+
+
+/* ══ MENU MOBILE — bloc autonome, aucune dépendance externe ══ */
+nav .burger{display:none}
+@media(max-width:800px){
+  nav .burger{display:flex;flex:none;flex-direction:column;justify-content:center;gap:5px;width:44px;height:38px;padding:0 11px;background:transparent;border:1px solid var(--trait,#2A4470);border-radius:5px;cursor:pointer;-webkit-tap-highlight-color:transparent}
+  nav .burger span{display:block;height:2px;background:var(--froid,#E9EEF6);border-radius:1px;transition:transform .2s ease,opacity .2s ease}
+  nav.ouvert .burger span:nth-child(1){transform:translateY(7px) rotate(45deg)}
+  nav.ouvert .burger span:nth-child(2){opacity:0}
+  nav.ouvert .burger span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
+  nav .in .links{display:none!important;position:absolute;top:100%;left:0;right:0;flex-direction:column!important;align-items:stretch!important;gap:0!important;height:auto!important;background:var(--nuit,#10233F);border-bottom:1px solid var(--trait,#2A4470);padding:4px 22px 20px!important;box-shadow:0 16px 34px rgba(0,0,0,.45)}
+  nav.ouvert .in .links{display:flex!important}
+  nav.ouvert .in .links a{display:flex!important;align-items:center!important;width:100%;height:auto!important;margin:0!important;padding:15px 0!important;font-size:16px!important;font-weight:600!important;color:var(--sourd,#9FB0C8)!important;background:transparent!important;border:0!important;border-bottom:1px solid var(--trait,#2A4470)!important;border-radius:0!important}
+  nav.ouvert .in .links a.on{color:var(--ambre,#F5B62E)!important}
+  nav.ouvert .in .links a.btn-nav{justify-content:center!important;margin-top:16px!important;height:46px!important;padding:0 18px!important;border:0!important;border-radius:5px!important;background:var(--ambre,#F5B62E)!important;color:#1A1608!important;font-weight:800!important}
+}
+
+.fam{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+@media(max-width:700px){.fam{grid-template-columns:1fr}}
+.fam a{display:flex;flex-direction:column;background:var(--panneau);border:1px solid var(--trait);border-radius:7px;padding:22px 24px;text-decoration:none;transition:border-color .15s}
+.fam a:hover{border-color:var(--ambre)}
+.fam a .n{font-size:10.5px;font-weight:800;letter-spacing:.08em;color:var(--ambre);margin-bottom:9px}
+.fam a b{font-size:20px;font-weight:800;letter-spacing:-.015em;line-height:1.2}
+.fam a .d{font-size:14px;color:var(--sourd);margin-top:8px;flex:1;line-height:1.6}
+.fam a .meta{margin-top:14px;padding-top:11px;border-top:1px solid var(--trait);font-size:12.5px;color:#8FA3C0}
+.fam a .meta b{color:var(--ambre);font-size:12.5px;font-weight:800}
+.chapo{margin-top:22px;border-left:2px solid var(--trait);padding-left:16px;font-size:13.8px;color:#8A9EBB;max-width:74ch;line-height:1.6}
+.chapo b{color:var(--sourd)}
+.chapo a{color:var(--ambre);text-decoration:none;font-weight:700}
+.retour{margin-top:22px;font-size:14px}
+.retour a{color:var(--ambre);text-decoration:none;font-weight:700}
+
+.faq{margin-top:18px;display:grid;gap:10px}.faq details{background:var(--panneau);border:1px solid var(--trait);border-radius:7px;padding:0}.faq summary{cursor:pointer;list-style:none;padding:16px 18px;font-weight:800;font-size:17px;color:var(--froid);display:flex;justify-content:space-between;gap:14px;align-items:baseline}.faq summary::-webkit-details-marker{display:none}.faq summary::after{content:'+';color:var(--ambre);font-weight:800;font-size:20px;line-height:1}.faq details[open] summary::after{content:'–'}.faq details p{margin:0;padding:0 18px 18px;color:var(--sourd);font-size:15.5px;line-height:1.65}.faq details p a{color:var(--ambre)}
+</style>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Et si vous n'êtes plus là ?", "acceptedAnswer": {"@type": "Answer", "text": "Tout ce qui est construit l'est sur vos comptes, documenté pour votre équipe et transmis à un référent chez vous pendant une passation d'une heure. Si on arrête de travailler ensemble, rien ne casse et rien ne vous échappe. Seule la veille tourne de mon côté : elle s'arrête avec un mois de préavis, et vous gardez tous les rapports déjà reçus."}}, {"@type": "Question", "name": "Claude, ChatGPT ou Copilot ?", "acceptedAnswer": {"@type": "Answer", "text": "Le déploiement IA structuré est proposé sur Claude ; sur un autre environnement, la base reste la même mais les finitions changent, et on en parle au cas par cas. L'accompagnement individuel et l'atelier d'équipe partent de vos tâches réelles, pas d'un outil : la question se règle au premier échange."}}, {"@type": "Question", "name": "Vous êtes salarié ailleurs : quand êtes-vous disponible ?", "acceptedAnswer": {"@type": "Answer", "text": "Je travaille à distance en priorité, par visio, et je réponds sous 48 heures ouvrées. Les créneaux d'échange et les dates de livraison se fixent ensemble et sont écrits au devis — un délai annoncé est un délai tenu, c'est pour ça qu'il est écrit plutôt qu'annoncé à l'oral."}}, {"@type": "Question", "name": "Pourquoi si peu cher ?", "acceptedAnswer": {"@type": "Answer", "text": "Toutes mes réalisations ont été menées chez Kampus 137, mon employeur, qui m'autorise à les citer. C'est mon seul terrain à ce jour : je cherche des références externes, et je préfère que ça se voie dans le devis plutôt que dans le discours. Ce sont des prix de lancement, valables pour les premiers clients ; ensuite la grille est revue."}}, {"@type": "Question", "name": "Et si ça ne marche pas ?", "acceptedAnswer": {"@type": "Answer", "text": "Vous voyez le système tourner sur vos vraies données avant de valider, et un aller-retour de modifications est inclus dans chaque forfait. Et si le calcul ne tient pas chez vous — trop peu de demandes pour qu'une automatisation se rembourse, des exports inexploitables —, je vous le dis pendant les trente minutes, pas à la livraison."}}, {"@type": "Question", "name": "Pourquoi aucune maintenance n'est incluse ?", "acceptedAnswer": {"@type": "Answer", "text": "Parce que je ne vends pas d'abonnement pour quelque chose qui tourne. Les automatisations sont sur vos comptes et documentées ; si un outil tiers change et casse un flux, l'intervention est facturée à l'heure, 50 € HT, annoncée à l'avance."}}, {"@type": "Question", "name": "Comment ça se passe, concrètement ?", "acceptedAnswer": {"@type": "Answer", "text": "Un premier échange de trente minutes en visio, gratuit. Puis un devis écrit : périmètre, prix, délai, ce qui est inclus et ce qui ne l'est pas. Rien ne démarre sans votre signature. Acompte de 30 % à partir de 400 €, solde à la livraison, payable à trente jours par virement. Un aller-retour de modifications est compris."}}, {"@type": "Question", "name": "Est-ce pris en charge par mon OPCO ?", "acceptedAnswer": {"@type": "Answer", "text": "Non. Ce sont des accompagnements et des ateliers, facturés comme des prestations de conseil. Je ne détiens aucune certification qualité permettant une prise en charge : la prestation est payée par l'entreprise, comme toute autre mission."}}, {"@type": "Question", "name": "Que se passe-t-il si une source de veille disparaît ?", "acceptedAnswer": {"@type": "Answer", "text": "Une source publique peut tomber, changer de format ou se fermer. Le rapport signale lui-même les sources qu'il n'a pas récupérées d'une édition sur l'autre : une veille honnête dit ce qu'elle n'a pas vu. Je ne garantis ni l'exhaustivité, ni la disponibilité permanente des sources tierces, et c'est écrit dans les conditions générales."}}, {"@type": "Question", "name": "Puis-je arrêter la veille quand je veux ?", "acceptedAnswer": {"@type": "Answer", "text": "Oui : sans engagement, résiliable par simple email avec un mois de préavis. L'abonnement ne se met pas en pause — il se poursuit ou il se résilie. Changer de rythme coûte 50 € HT et prend effet le mois suivant ; l'installation n'est pas remboursable."}}, {"@type": "Question", "name": "Qui est propriétaire de ce qui est construit ?", "acceptedAnswer": {"@type": "Answer", "text": "Vous. Les automatisations sont déployées sur vos comptes et vous en êtes seul titulaire ; les livrables produits pour vous — documents de maintenance, guides, supports, tableaux de bord — vous sont cédés au paiement intégral. Je garde seulement mes méthodes et mes trames. Pour la veille, le système reste chez moi et les rapports restent chez vous."}}, {"@type": "Question", "name": "Que deviennent les informations que je vous transmets ?", "acceptedAnswer": {"@type": "Answer", "text": "Ce que vous envoyez par le formulaire sert à vous répondre et à suivre notre échange, et reste conservé trois ans. Les documents transmis pour une mission sont gardés un an après sa fin, puis supprimés — plus tôt sur simple email. Les sous-traitants qui les acheminent sont nommés dans les mentions légales."}}, {"@type": "Question", "name": "Vous déplacez-vous ?", "acceptedAnswer": {"@type": "Answer", "text": "À distance en priorité. Pour un atelier sur site : Rennes et quinze kilomètres alentour sans frais, 60 € HT de quinze à quarante kilomètres, 120 € HT de quarante à quatre-vingts. Au-delà, en visio ou sur devis spécifique."}}, {"@type": "Question", "name": "Travaillez-vous avec de plus grandes structures ?", "acceptedAnswer": {"@type": "Answer", "text": "Les offres sont pensées pour des structures de une à vingt personnes ; le déploiement IA structuré s'adresse aux équipes de dix personnes et plus. Au-delà, ou si je ne suis pas le bon interlocuteur, je vous le dis au premier échange."}}]}</script>
+</head>
+<body>
+<nav><div class="in">
+  <a class="brand" href="index.html"><svg width="32" height="32" viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="3.4" stroke-linecap="square" aria-hidden="true"><path d="M14 8 H6 V56 H14" fill="none"/><path d="M50 8 H58 V56 H50" fill="none"/><path d="M18 44 V22 L32 36 L46 22 V44" stroke-width="4" fill="none"/></svg><span class="wm">Atelier MDT<em>VOTRE TEMPS VAUT MIEUX QUE ÇA</em></span></a>
+  <div class="links" id="nav-liens">
+      <a href="realisations.html">Réalisations</a>
+      <a href="offres.html">Offres</a>
+      <a href="exemples.html">Exemples</a>
+      <a href="rentabilite.html">Rentabilité</a>
+      <a href="qui-suis-je.html">Qui suis-je</a>
+      <a class="btn-nav" href="contact.html">Échanger 30 minutes</a>
+  </div>
+  <button class="burger" type="button" aria-label="Ouvrir le menu" aria-expanded="false" aria-controls="nav-liens"><span></span><span></span><span></span></button>
+</div></nav>
+<main id="contenu">
+<header class="h"><div class="in">
+  <div class="eyebrow">QUESTIONS</div>
+  <h1>Les questions qu'on me pose avant de signer</h1>
+  <p class="sub">Les réponses sont celles des pages offres, exemples, rentabilité et des conditions générales, rassemblées ici. Ce qui n'y est pas se règle en trente minutes.</p>
+</div></header>
+
+<section><div class="in">
+  <h2 class="lbl">QUATORZE QUESTIONS, QUATORZE RÉPONSES</h2>
+  <div class="faq">
+    <details open><summary>Et si vous n'êtes plus là ?</summary><p>Tout ce qui est construit l'est sur vos comptes, documenté pour votre équipe et transmis à un référent chez vous pendant une passation d'une heure. Si on arrête de travailler ensemble, rien ne casse et rien ne vous échappe. Seule la veille tourne de mon côté : elle s'arrête avec un mois de préavis, et vous gardez tous les rapports déjà reçus.</p></details>
+    <details><summary>Claude, ChatGPT ou Copilot ?</summary><p>Le déploiement IA structuré est proposé sur Claude ; sur un autre environnement, la base reste la même mais les finitions changent, et on en parle au cas par cas. L'accompagnement individuel et l'atelier d'équipe partent de vos tâches réelles, pas d'un outil : la question se règle au premier échange.</p></details>
+    <details><summary>Vous êtes salarié ailleurs : quand êtes-vous disponible ?</summary><p>Je travaille à distance en priorité, par visio, et je réponds sous 48 heures ouvrées. Les créneaux d'échange et les dates de livraison se fixent ensemble et sont écrits au devis — un délai annoncé est un délai tenu, c'est pour ça qu'il est écrit plutôt qu'annoncé à l'oral.</p></details>
+    <details><summary>Pourquoi si peu cher ?</summary><p>Toutes mes réalisations ont été menées chez Kampus 137, mon employeur, qui m'autorise à les citer. C'est mon seul terrain à ce jour : je cherche des références externes, et je préfère que ça se voie dans le devis plutôt que dans le discours. Ce sont des prix de lancement, valables pour les premiers clients ; ensuite la grille est revue.</p></details>
+    <details><summary>Et si ça ne marche pas ?</summary><p>Vous voyez le système tourner sur vos vraies données avant de valider, et un aller-retour de modifications est inclus dans chaque forfait. Et si le calcul ne tient pas chez vous — trop peu de demandes pour qu'une automatisation se rembourse, des exports inexploitables —, je vous le dis pendant les trente minutes, pas à la livraison.</p></details>
+    <details><summary>Pourquoi aucune maintenance n'est incluse ?</summary><p>Parce que je ne vends pas d'abonnement pour quelque chose qui tourne. Les automatisations sont sur vos comptes et documentées ; si un outil tiers change et casse un flux, l'intervention est facturée à l'heure, 50 € HT, annoncée à l'avance.</p></details>
+    <details><summary>Comment ça se passe, concrètement ?</summary><p>Un premier échange de trente minutes en visio, gratuit. Puis un devis écrit : périmètre, prix, délai, ce qui est inclus et ce qui ne l'est pas. Rien ne démarre sans votre signature. Acompte de 30 % à partir de 400 €, solde à la livraison, payable à trente jours par virement. Un aller-retour de modifications est compris.</p></details>
+    <details><summary>Est-ce pris en charge par mon OPCO ?</summary><p>Non. Ce sont des accompagnements et des ateliers, facturés comme des prestations de conseil. Je ne détiens aucune certification qualité permettant une prise en charge : la prestation est payée par l'entreprise, comme toute autre mission.</p></details>
+    <details><summary>Que se passe-t-il si une source de veille disparaît ?</summary><p>Une source publique peut tomber, changer de format ou se fermer. Le rapport signale lui-même les sources qu'il n'a pas récupérées d'une édition sur l'autre : une veille honnête dit ce qu'elle n'a pas vu. Je ne garantis ni l'exhaustivité, ni la disponibilité permanente des sources tierces, et c'est écrit dans les conditions générales.</p></details>
+    <details><summary>Puis-je arrêter la veille quand je veux ?</summary><p>Oui : sans engagement, résiliable par simple email avec un mois de préavis. L'abonnement ne se met pas en pause — il se poursuit ou il se résilie. Changer de rythme coûte 50 € HT et prend effet le mois suivant ; l'installation n'est pas remboursable.</p></details>
+    <details><summary>Qui est propriétaire de ce qui est construit ?</summary><p>Vous. Les automatisations sont déployées sur vos comptes et vous en êtes seul titulaire ; les livrables produits pour vous — documents de maintenance, guides, supports, tableaux de bord — vous sont cédés au paiement intégral. Je garde seulement mes méthodes et mes trames. Pour la veille, le système reste chez moi et les rapports restent chez vous.</p></details>
+    <details><summary>Que deviennent les informations que je vous transmets ?</summary><p>Ce que vous envoyez par le formulaire sert à vous répondre et à suivre notre échange, et reste conservé trois ans. Les documents transmis pour une mission sont gardés un an après sa fin, puis supprimés — plus tôt sur simple email. Les sous-traitants qui les acheminent sont nommés dans les mentions légales.</p></details>
+    <details><summary>Vous déplacez-vous ?</summary><p>À distance en priorité. Pour un atelier sur site : Rennes et quinze kilomètres alentour sans frais, 60 € HT de quinze à quarante kilomètres, 120 € HT de quarante à quatre-vingts. Au-delà, en visio ou sur devis spécifique.</p></details>
+    <details><summary>Travaillez-vous avec de plus grandes structures ?</summary><p>Les offres sont pensées pour des structures de une à vingt personnes ; le déploiement IA structuré s'adresse aux équipes de dix personnes et plus. Au-delà, ou si je ne suis pas le bon interlocuteur, je vous le dis au premier échange.</p></details>
+  </div>
+  <p class="retour"><a href="offres.html">Les offres et les prix →</a> &nbsp;·&nbsp; <a href="cgv.html">Les conditions générales →</a> &nbsp;·&nbsp; <a href="mentions-legales.html#donnees">Le traitement des données →</a></p>
+</div></section>
+
+<div class="in"><div class="cta-bloc">
+  <h2>Une question qui n'est pas ici&nbsp;?</h2>
+  <p>Trente minutes en visio pour la poser, identifier la tâche qui vous coûte le plus de temps et repartir avec un devis chiffré. Aucun engagement.</p>
+  <a href="contact.html">Échanger 30 minutes</a>
+</div></div>
+</main>
+<footer><div class="in"><div class="row">
+  <span>Atelier MDT · Automatisation · Veille · Tableaux de bord · Accompagnement IA</span>
+  <span><a href="mailto:antoine@atelier-mdt.fr">antoine@atelier-mdt.fr</a> · <a href="tel:+33743688097">07 43 68 80 97</a> · <a href="https://www.linkedin.com/in/antoine-meyfroidt/" rel="noopener">linkedin.com/in/antoine-meyfroidt</a> · <a href="mentions-legales.html">Mentions légales</a> · <a href="cgv.html">CGV</a></span>
+</div></div></footer>
+<script>
+/* Menu mobile — autonome, aucune dépendance externe. */
+(function(){
+  var n=document.querySelector('nav');if(!n)return;
+  var b=n.querySelector('.burger'),l=n.querySelector('.links');if(!b||!l)return;
+  function etat(o){
+    n.classList.toggle('ouvert',o);
+    b.setAttribute('aria-expanded',o?'true':'false');
+    b.setAttribute('aria-label',o?'Fermer le menu':'Ouvrir le menu');
+  }
+  b.addEventListener('click',function(){etat(!n.classList.contains('ouvert'));});
+  l.addEventListener('click',function(e){if(e.target.closest('a'))etat(false);});
+  document.addEventListener('click',function(e){if(n.classList.contains('ouvert')&&!n.contains(e.target))etat(false);});
+  document.addEventListener('keydown',function(e){if(e.key==='Escape')etat(false);});
+  window.addEventListener('resize',function(){if(window.innerWidth>800)etat(false);});
+})();
+</script>
+</body>
+</html>

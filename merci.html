@@ -12,7 +12,10 @@
 <meta property="og:site_name" content="Atelier MDT">
 <meta property="og:title" content="Merci — Atelier MDT">
 <meta property="og:description" content="Votre demande est bien arrivée. Je reviens vers vous sous 48 heures ouvrées.">
-<meta property="og:image" content="https://atelier-mdt.fr/assets/verrouillage-baseline-ambre.png">
+<meta property="og:image" content="https://atelier-mdt.fr/assets/og-atelier-mdt.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Atelier MDT — Votre temps vaut mieux que ça">
 <meta property="og:locale" content="fr_FR">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="theme-color" content="#10233F">
@@ -33,12 +36,13 @@ nav .brand{display:flex;align-items:center;gap:12px;text-decoration:none}
 nav .brand svg{color:var(--ambre);flex:none;width:32px;height:32px}
 nav .brand .wm{font-size:18px;font-weight:800;letter-spacing:-.025em;line-height:1;color:var(--froid)}
 nav .brand .wm em{display:block;font-style:normal;font-size:7.5px;font-weight:800;letter-spacing:.09em;color:var(--ambre);margin-top:4px;white-space:nowrap}
-nav .links{display:flex;align-items:center;gap:24px;height:100%}
+nav .links{display:flex;align-items:center;gap:16px;height:100%}
+@media(min-width:801px) and (max-width:880px){nav .links{gap:11px!important}nav .links a.btn-nav{padding:0 14px!important}}
 nav .links a{display:inline-flex;align-items:center;height:36px;color:var(--sourd);text-decoration:none;font-size:13.5px;font-weight:600;white-space:nowrap;border-bottom:2px solid transparent;line-height:1}
 nav .links a:hover{color:var(--froid)}
 nav .links a.on{color:var(--froid);border-bottom:2px solid var(--ambre)}
 nav .links a.btn-nav{background:var(--ambre);color:#1A1608;padding:0 18px;border-radius:5px;font-weight:800;border-bottom:2px solid transparent;height:40px}
-@media(max-width:760px){nav .links a:not(.btn-nav){display:none}nav .brand .wm em{display:none}nav .in{min-height:62px}}
+@media(max-width:800px){nav .links a:not(.btn-nav){display:none}nav .brand .wm em{display:none}nav .in{min-height:62px}}
 header.h{padding:60px 0 6px}
 header.h .eyebrow{font-size:11.5px;font-weight:800;letter-spacing:.09em;color:var(--ambre);margin-bottom:12px}
 header.h h1{font-size:clamp(30px,5.4vw,46px);font-weight:800;letter-spacing:-.03em;line-height:1.06;max-width:22ch}
@@ -67,7 +71,7 @@ footer a{color:var(--sourd)}
 
 /* ══ MENU MOBILE — bloc autonome, aucune dépendance externe ══ */
 nav .burger{display:none}
-@media(max-width:760px){
+@media(max-width:800px){
   nav .burger{display:flex;flex:none;flex-direction:column;justify-content:center;gap:5px;width:44px;height:38px;padding:0 11px;background:transparent;border:1px solid var(--trait,#2A4470);border-radius:5px;cursor:pointer;-webkit-tap-highlight-color:transparent}
   nav .burger span{display:block;height:2px;background:var(--froid,#E9EEF6);border-radius:1px;transition:transform .2s ease,opacity .2s ease}
   nav.ouvert .burger span:nth-child(1){transform:translateY(7px) rotate(45deg)}
@@ -94,10 +98,11 @@ nav .burger{display:none}
       <a href="exemples.html">Exemples</a>
       <a href="rentabilite.html">Rentabilité</a>
       <a href="qui-suis-je.html">Qui suis-je</a>
-      <a class="btn-nav" href="contact.html">Échanger 30 min</a>
+      <a class="btn-nav" href="contact.html">Échanger 30 minutes</a>
   </div>
   <button class="burger" type="button" aria-label="Ouvrir le menu" aria-expanded="false" aria-controls="nav-liens"><span></span><span></span><span></span></button>
 </div></nav>
+<main id="contenu">
 
 <header class="h"><div class="in">
   <div class="eyebrow">MERCI</div>
@@ -122,12 +127,13 @@ nav .burger{display:none}
     <a href="rentabilite.html"><b>La rentabilité</b><span>En combien de temps un forfait se rembourse, hypothèses écrites.</span><span class="go">Calculer →</span></a>
     <a href="qui-suis-je.html"><b>Qui suis-je</b><span>Parcours, façon de travailler, ce que je promets — et pas.</span><span class="go">En savoir plus →</span></a>
   </div>
-  <p class="retour"><a href="index.html">← Retourner à l'accueil</a></p>
+  <p class="retour"><a href="questions.html">Les questions qu'on me pose avant de signer →</a> &nbsp;·&nbsp; <a href="index.html">← Retourner à l'accueil</a></p>
 </div></section>
 
+</main>
 <footer><div class="in"><div class="row">
   <span>Atelier MDT · Automatisation · Veille · Tableaux de bord · Accompagnement IA</span>
-  <span><a href="mailto:antoine@atelier-mdt.fr">antoine@atelier-mdt.fr</a> · <a href="mentions-legales.html">Mentions légales</a> · <a href="cgv.html">CGV</a></span>
+  <span><a href="mailto:antoine@atelier-mdt.fr">antoine@atelier-mdt.fr</a> · <a href="tel:+33743688097">07 43 68 80 97</a> · <a href="https://www.linkedin.com/in/antoine-meyfroidt/" rel="noopener">linkedin.com/in/antoine-meyfroidt</a> · <a href="mentions-legales.html">Mentions légales</a> · <a href="cgv.html">CGV</a></span>
 </div></div></footer>
 <script>
 /* Menu mobile — autonome, aucune dépendance externe. */
@@ -143,7 +149,7 @@ nav .burger{display:none}
   l.addEventListener('click',function(e){if(e.target.closest('a'))etat(false);});
   document.addEventListener('click',function(e){if(n.classList.contains('ouvert')&&!n.contains(e.target))etat(false);});
   document.addEventListener('keydown',function(e){if(e.key==='Escape')etat(false);});
-  window.addEventListener('resize',function(){if(window.innerWidth>760)etat(false);});
+  window.addEventListener('resize',function(){if(window.innerWidth>800)etat(false);});
 })();
 </script>
 </body>

@@ -11,7 +11,10 @@
 <meta property="og:site_name" content="Atelier MDT">
 <meta property="og:title" content="Rentabilité — Atelier MDT">
 <meta property="og:description" content="Ce que chaque prestation coûte, ce qu'elle change, et en combien de temps elle se rembourse — hypothèses écrites.">
-<meta property="og:image" content="https://atelier-mdt.fr/assets/verrouillage-baseline-ambre.png">
+<meta property="og:image" content="https://atelier-mdt.fr/assets/og-atelier-mdt.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Atelier MDT — Votre temps vaut mieux que ça">
 <meta property="og:locale" content="fr_FR">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="theme-color" content="#10233F">
@@ -36,7 +39,7 @@ nav .links a{color:var(--sourd);text-decoration:none;font-size:13.5px;font-weigh
 nav .links a:hover,nav .links a.on{color:var(--froid)}
 nav .links a.on{border-bottom:2px solid var(--ambre);padding-bottom:2px}
 nav .cta{background:var(--ambre)!important;color:#1A1608!important;padding:9px 15px;border-radius:5px;font-weight:800!important;border-bottom:0!important}
-@media(max-width:760px){nav .links a:not(.cta){display:none}}
+@media(max-width:800px){nav .links a:not(.cta){display:none}}
 header.h{padding:60px 0 0}
 header.h .eyebrow{font-size:11.5px;font-weight:800;letter-spacing:.09em;color:var(--ambre);margin-bottom:12px}
 header.h h1{font-size:clamp(30px,5.4vw,46px);font-weight:800;letter-spacing:-.03em;line-height:1.06;max-width:22ch}
@@ -80,7 +83,7 @@ h3.t{font-size:24px;font-weight:800;letter-spacing:-.02em;line-height:1.15;margi
 .calc .row:last-of-type{border-bottom:0}
 .calc .row b{color:var(--ambre);font-size:19px;font-weight:800;white-space:nowrap}
 .calc .row span strong{color:var(--froid);font-weight:700}
-.calc .note{font-size:12px;color:#7E93B4;margin-top:12px;padding-top:11px;border-top:1px solid var(--trait);line-height:1.6}
+.calc .note{font-size:12px;color:#8A9EBB;margin-top:12px;padding-top:11px;border-top:1px solid var(--trait);line-height:1.6}
 @media(max-width:560px){.calc .row{grid-template-columns:1fr;gap:2px}}
 .prixbloc{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;align-items:baseline;margin-top:20px;padding-top:16px;border-top:1px solid var(--trait)}
 .prixbloc .p b{font-size:26px;font-weight:800;color:var(--ambre);line-height:1}
@@ -99,7 +102,7 @@ nav .links{display:flex;align-items:center;gap:22px}
 nav .links a{color:var(--sourd,#9FB0C8);text-decoration:none;font-size:14px;font-weight:600;white-space:nowrap}
 nav .links a:hover,nav .links a.on{color:var(--froid,#E9EEF6)}
 nav .links a.btn-nav{background:var(--ambre,#F5B62E);color:#1A1608;padding:10px 16px;border-radius:5px;font-weight:800;margin:0;display:inline-block;line-height:1.2}
-@media(max-width:760px){nav .links a:not(.btn-nav){display:none}nav .brand .wm em{display:none}}
+@media(max-width:800px){nav .links a:not(.btn-nav){display:none}nav .brand .wm em{display:none}}
 footer{margin-top:60px;border-top:1px solid var(--trait,#2A4470);padding:24px 0 46px;font-size:12.5px;color:var(--sourd,#9FB0C8)}
 footer .row{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
 footer a{color:var(--sourd,#9FB0C8)}
@@ -115,17 +118,18 @@ nav .brand svg{color:var(--ambre,#F5B62E)!important;flex:none!important;width:32
 nav .brand .wm{font-size:18px!important;font-weight:800!important;letter-spacing:-.025em!important;line-height:1!important;color:var(--froid,#E9EEF6)!important}
 nav .brand .wm em{display:block!important;font-style:normal!important;font-size:7.5px!important;font-weight:800!important;letter-spacing:.09em!important;color:var(--ambre,#F5B62E)!important;margin-top:4px!important;white-space:nowrap!important}
 nav .links{display:flex!important;align-items:center!important;gap:16px!important;height:100%!important}
+@media(min-width:801px) and (max-width:880px){nav .links{gap:11px!important}nav .links a.btn-nav{padding:0 14px!important}}
 nav .links a{display:inline-flex!important;align-items:center!important;height:36px!important;margin:0!important;color:var(--sourd,#9FB0C8)!important;text-decoration:none!important;font-size:14px!important;font-weight:600!important;white-space:nowrap!important;border-bottom:2px solid transparent!important;line-height:1!important;font-size:13.5px!important}
 nav .links a:hover{color:var(--froid,#E9EEF6)!important}
 nav .links a.on{color:var(--froid,#E9EEF6)!important;border-bottom:2px solid var(--ambre,#F5B62E)!important}
 nav .links a.btn-nav{background:var(--ambre,#F5B62E)!important;color:#1A1608!important;padding:0 18px!important;border-radius:5px!important;font-weight:800!important;border-bottom:2px solid transparent!important;height:40px!important}
 nav .links a.btn-nav:hover{color:#1A1608!important}
-@media(max-width:760px){nav .links a:not(.btn-nav){display:none!important}nav .brand .wm em{display:none!important}nav .in{min-height:62px!important}}
+@media(max-width:800px){nav .links a:not(.btn-nav){display:none!important}nav .brand .wm em{display:none!important}nav .in{min-height:62px!important}}
 
 
 /* ══ MENU MOBILE — bloc autonome, aucune dépendance externe ══ */
 nav .burger{display:none}
-@media(max-width:760px){
+@media(max-width:800px){
   nav .burger{display:flex;flex:none;flex-direction:column;justify-content:center;gap:5px;width:44px;height:38px;padding:0 11px;background:transparent;border:1px solid var(--trait,#2A4470);border-radius:5px;cursor:pointer;-webkit-tap-highlight-color:transparent}
   nav .burger span{display:block;height:2px;background:var(--froid,#E9EEF6);border-radius:1px;transition:transform .2s ease,opacity .2s ease}
   nav.ouvert .burger span:nth-child(1){transform:translateY(7px) rotate(45deg)}
@@ -148,10 +152,11 @@ nav .burger{display:none}
       <a href="exemples.html">Exemples</a>
       <a href="rentabilite.html" class="on">Rentabilité</a>
       <a href="qui-suis-je.html">Qui suis-je</a>
-      <a class="btn-nav" href="contact.html">Échanger 30 min</a>
+      <a class="btn-nav" href="contact.html">Échanger 30 minutes</a>
   </div>
   <button class="burger" type="button" aria-label="Ouvrir le menu" aria-expanded="false" aria-controls="nav-liens"><span></span><span></span><span></span></button>
 </div></nav>
+<main id="contenu">
 
 <header class="h"><div class="in">
   <div class="eyebrow">RENTABILITÉ</div>
@@ -195,20 +200,20 @@ nav .burger{display:none}
   <h3 class="t">Une longueur d'avance sur son marché</h3>
   <div class="txt">
     <p>On dit que l'information n'a pas de prix. Ici, elle en a un — et il est modeste au regard de ce qu'elle permet : <strong>connaître son environnement, s'y adapter avant les autres, et décider en sachant plutôt qu'en supposant.</strong></p>
-    <p>Un avis à une étoile qui reste quinze jours sans réponse pendant que vos futurs clients le lisent. Un concurrent qui baisse son menu du midi et que vous découvrez trois mois plus tard par un client qui négocie. Une note Google qui glisse sans que personne ne s'en aperçoive. Chacun de ces événements se joue en quelques jours ; celui qui le voit en premier a l'avantage.</p>
+    <p>Un concurrent qui baisse son menu du midi et que vous découvrez trois mois plus tard par un client qui négocie. Une consultation publique de votre métier, ouverte et refermée avant que vous l'ayez vue. Un outil que vous payez déjà et qui vient de gagner la fonction qui vous manquait. Chacun de ces événements se joue en quelques jours ; celui qui le voit en premier a l'avantage.</p>
     <p>Une veille ne fait pas gagner trois heures par semaine — la plupart des entreprises ne la font pas du tout, elles tiennent trois semaines puis abandonnent. La valeur n'est pas dans le temps économisé : <strong>elle est dans la régularité, et dans l'avance que cette régularité procure.</strong></p>
   </div>
   <div class="calc">
     <div class="t">LE CALCUL</div>
-    <div class="row"><b>1 client</b><span>conservé grâce à un avis négatif traité à temps <strong>couvre plusieurs mois d'abonnement</strong> — à vous de savoir ce que vaut un client chez vous</span></div>
+    <div class="row"><b>1 prix</b><span>ajusté en connaissant ceux de vos concurrents, ou une consultation publique vue à temps, <strong>couvre plusieurs mois d'abonnement</strong> — à vous de savoir ce que vaut une semaine d'avance chez vous</span></div>
     <div class="row"><b>1 500 €</b><span>la première année en hebdomadaire : 300 € d'installation puis 100 €/mois. <strong>1 200 € les années suivantes</strong></span></div>
     <div class="row"><b>≈ 48 h</b><span>ce que coûterait le même relevé fait à la main, une heure par semaine — <strong>1 200 € de temps interne, pour un travail qui n'est jamais tenu dans la durée</strong></span></div>
     <div class="row"><b>0</b><span>semaine manquée : le système tourne seul, il ne dépend de la disponibilité de personne</span></div>
     <div class="note">Hypothèses : rythme hebdomadaire, 300 € d'installation puis 100 €/mois ; relevé manuel estimé à une heure par semaine au coût horaire retenu. Les rythmes plus espacés coûtent moins cher — 85 €/mois toutes les deux semaines, 70 €/mois en mensuel — pour le même contenu sur une période plus large. Ce raisonnement est volontairement différent des autres : ici la valeur n'est pas le temps, c'est l'information reçue avant les autres, chaque semaine, sans exception.</div>
   </div>
   <div class="livre">
-    <div><b>Ce que vous recevez</b>Un email par semaine, lisible en deux minutes : ce qui a changé, ce qui mérite une action, et pour l'e-réputation la réponse déjà rédigée, prête à publier.</div>
-    <div><b>Ce que ça change</b>Vous répondez aux avis dans la journée, pas dans le mois. Vous ajustez vos prix en connaissant ceux des autres. Vous savez ce que font vos concurrents avant vos clients.</div>
+    <div><b>Ce que vous recevez</b>Un email par semaine, lisible en deux minutes : ce qui a changé, ce qui mérite une action, et pour les marchés publics les consultations à traiter avec leur date limite.</div>
+    <div><b>Ce que ça change</b>Vous ajustez vos prix en connaissant ceux des autres. Vous voyez les consultations publiques pendant qu'il reste le temps d'y répondre. Vous savez ce que font vos concurrents avant vos clients.</div>
   </div>
   <div class="prixbloc">
     <div class="p"><b>300 € puis dès 70 €/mois</b><span>Trois rythmes au choix · sans engagement · préavis d'un mois · première livraison sous 2 semaines</span></div>
@@ -278,12 +283,13 @@ nav .burger{display:none}
 <div class="in"><div class="cta-bloc">
   <h2>Refaisons ces calculs avec vos chiffres</h2>
   <p>Trente minutes en visio, gratuites. On identifie la tâche qui vous coûte le plus de temps, on la chiffre avec vos données réelles, et vous repartez avec un devis. Si le calcul ne tient pas chez vous, je vous le dirai.</p>
-  <a href="contact.html">Prendre contact</a>
+  <a href="contact.html">Échanger 30 minutes</a>
 </div></div>
 
+</main>
 <footer><div class="in"><div class="row">
   <span>Atelier MDT · Automatisation · Veille · Tableaux de bord · Accompagnement IA</span>
-  <span><a href="mailto:antoine@atelier-mdt.fr">antoine@atelier-mdt.fr</a> · <a href="mentions-legales.html">Mentions légales</a> · <a href="cgv.html">CGV</a></span>
+  <span><a href="mailto:antoine@atelier-mdt.fr">antoine@atelier-mdt.fr</a> · <a href="tel:+33743688097">07 43 68 80 97</a> · <a href="https://www.linkedin.com/in/antoine-meyfroidt/" rel="noopener">linkedin.com/in/antoine-meyfroidt</a> · <a href="mentions-legales.html">Mentions légales</a> · <a href="cgv.html">CGV</a></span>
 </div></div></footer>
 <script>
 /* Menu mobile — autonome, aucune dépendance externe. */
@@ -299,7 +305,7 @@ nav .burger{display:none}
   l.addEventListener('click',function(e){if(e.target.closest('a'))etat(false);});
   document.addEventListener('click',function(e){if(n.classList.contains('ouvert')&&!n.contains(e.target))etat(false);});
   document.addEventListener('keydown',function(e){if(e.key==='Escape')etat(false);});
-  window.addEventListener('resize',function(){if(window.innerWidth>760)etat(false);});
+  window.addEventListener('resize',function(){if(window.innerWidth>800)etat(false);});
 })();
 </script>
 </body>

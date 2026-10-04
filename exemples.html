@@ -4,14 +4,17 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Exemples — Atelier MDT</title>
-<meta name="description" content="Vingt-cinq exemples concrets, en quatre familles : automatisation de flux, veille en abonnement, tableaux de bord et études, accompagnement IA.">
+<meta name="description" content="Vingt-deux exemples concrets, en quatre familles : automatisation de flux, veille en abonnement, tableaux de bord et études, accompagnement IA.">
 <link rel="canonical" href="https://atelier-mdt.fr/exemples.html">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://atelier-mdt.fr/exemples.html">
 <meta property="og:site_name" content="Atelier MDT">
 <meta property="og:title" content="Exemples — Atelier MDT">
-<meta property="og:description" content="Vingt-cinq exemples concrets, en quatre familles : automatisation de flux, veille en abonnement, tableaux de bord et études, accompagnement IA.">
-<meta property="og:image" content="https://atelier-mdt.fr/assets/verrouillage-baseline-ambre.png">
+<meta property="og:description" content="Vingt-deux exemples concrets, en quatre familles : automatisation de flux, veille en abonnement, tableaux de bord et études, accompagnement IA.">
+<meta property="og:image" content="https://atelier-mdt.fr/assets/og-atelier-mdt.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Atelier MDT — Votre temps vaut mieux que ça">
 <meta property="og:locale" content="fr_FR">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="theme-color" content="#10233F">
@@ -70,7 +73,7 @@ nav .links{display:flex;align-items:center;gap:22px}
 nav .links a{color:var(--sourd,#9FB0C8);text-decoration:none;font-size:14px;font-weight:600;white-space:nowrap}
 nav .links a:hover,nav .links a.on{color:var(--froid,#E9EEF6)}
 nav .links a.btn-nav{background:var(--ambre,#F5B62E);color:#1A1608;padding:10px 16px;border-radius:5px;font-weight:800;margin:0;display:inline-block;line-height:1.2}
-@media(max-width:760px){nav .links a:not(.btn-nav){display:none}nav .brand .wm em{display:none}}
+@media(max-width:800px){nav .links a:not(.btn-nav){display:none}nav .brand .wm em{display:none}}
 footer{margin-top:60px;border-top:1px solid var(--trait,#2A4470);padding:24px 0 46px;font-size:12.5px;color:var(--sourd,#9FB0C8)}
 footer .row{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
 footer a{color:var(--sourd,#9FB0C8)}
@@ -86,17 +89,18 @@ nav .brand svg{color:var(--ambre,#F5B62E)!important;flex:none!important;width:32
 nav .brand .wm{font-size:18px!important;font-weight:800!important;letter-spacing:-.025em!important;line-height:1!important;color:var(--froid,#E9EEF6)!important}
 nav .brand .wm em{display:block!important;font-style:normal!important;font-size:7.5px!important;font-weight:800!important;letter-spacing:.09em!important;color:var(--ambre,#F5B62E)!important;margin-top:4px!important;white-space:nowrap!important}
 nav .links{display:flex!important;align-items:center!important;gap:16px!important;height:100%!important}
+@media(min-width:801px) and (max-width:880px){nav .links{gap:11px!important}nav .links a.btn-nav{padding:0 14px!important}}
 nav .links a{display:inline-flex!important;align-items:center!important;height:36px!important;margin:0!important;color:var(--sourd,#9FB0C8)!important;text-decoration:none!important;font-size:14px!important;font-weight:600!important;white-space:nowrap!important;border-bottom:2px solid transparent!important;line-height:1!important;font-size:13.5px!important}
 nav .links a:hover{color:var(--froid,#E9EEF6)!important}
 nav .links a.on{color:var(--froid,#E9EEF6)!important;border-bottom:2px solid var(--ambre,#F5B62E)!important}
 nav .links a.btn-nav{background:var(--ambre,#F5B62E)!important;color:#1A1608!important;padding:0 18px!important;border-radius:5px!important;font-weight:800!important;border-bottom:2px solid transparent!important;height:40px!important}
 nav .links a.btn-nav:hover{color:#1A1608!important}
-@media(max-width:760px){nav .links a:not(.btn-nav){display:none!important}nav .brand .wm em{display:none!important}nav .in{min-height:62px!important}}
+@media(max-width:800px){nav .links a:not(.btn-nav){display:none!important}nav .brand .wm em{display:none!important}nav .in{min-height:62px!important}}
 
 
 /* ══ MENU MOBILE — bloc autonome, aucune dépendance externe ══ */
 nav .burger{display:none}
-@media(max-width:760px){
+@media(max-width:800px){
   nav .burger{display:flex;flex:none;flex-direction:column;justify-content:center;gap:5px;width:44px;height:38px;padding:0 11px;background:transparent;border:1px solid var(--trait,#2A4470);border-radius:5px;cursor:pointer;-webkit-tap-highlight-color:transparent}
   nav .burger span{display:block;height:2px;background:var(--froid,#E9EEF6);border-radius:1px;transition:transform .2s ease,opacity .2s ease}
   nav.ouvert .burger span:nth-child(1){transform:translateY(7px) rotate(45deg)}
@@ -116,9 +120,9 @@ nav .burger{display:none}
 .fam a .n{font-size:10.5px;font-weight:800;letter-spacing:.08em;color:var(--ambre);margin-bottom:9px}
 .fam a b{font-size:20px;font-weight:800;letter-spacing:-.015em;line-height:1.2}
 .fam a .d{font-size:14px;color:var(--sourd);margin-top:8px;flex:1;line-height:1.6}
-.fam a .meta{margin-top:14px;padding-top:11px;border-top:1px solid var(--trait);font-size:12.5px;color:#6E82A0}
+.fam a .meta{margin-top:14px;padding-top:11px;border-top:1px solid var(--trait);font-size:12.5px;color:#8FA3C0}
 .fam a .meta b{color:var(--ambre);font-size:12.5px;font-weight:800}
-.chapo{margin-top:22px;border-left:2px solid var(--trait);padding-left:16px;font-size:13.8px;color:#7E93B4;max-width:74ch;line-height:1.6}
+.chapo{margin-top:22px;border-left:2px solid var(--trait);padding-left:16px;font-size:13.8px;color:#8A9EBB;max-width:74ch;line-height:1.6}
 .chapo b{color:var(--sourd)}
 .chapo a{color:var(--ambre);text-decoration:none;font-weight:700}
 .retour{margin-top:22px;font-size:14px}
@@ -134,13 +138,14 @@ nav .burger{display:none}
       <a href="exemples.html" class="on">Exemples</a>
       <a href="rentabilite.html">Rentabilité</a>
       <a href="qui-suis-je.html">Qui suis-je</a>
-      <a class="btn-nav" href="contact.html">Échanger 30 min</a>
+      <a class="btn-nav" href="contact.html">Échanger 30 minutes</a>
   </div>
   <button class="burger" type="button" aria-label="Ouvrir le menu" aria-expanded="false" aria-controls="nav-liens"><span></span><span></span><span></span></button>
 </div></nav>
+<main id="contenu">
 <header class="h"><div class="in">
   <div class="eyebrow">EXEMPLES</div>
-  <h1>Vingt-cinq choses que je peux faire chez vous</h1>
+  <h1>Vingt-deux choses que je peux faire chez vous</h1>
   <p class="sub">Quatre familles de prestations. Pour chacune : les exemples, puis ce qui est faisable et ce qui ne l'est pas.</p>
 </div></header>
 
@@ -148,7 +153,7 @@ nav .burger{display:none}
   <h2 class="lbl">LES QUATRE FAMILLES</h2>
   <div class="fam">
     <a href="exemples-automatisation.html"><div class="n">FAMILLE 01</div><b>Automatisation d'un flux</b><div class="d">Une demande arrive, une suite d'actions écrites à l'avance se déclenche. Construit sur vos comptes, documenté pour votre équipe.</div><div class="meta"><b>7 exemples</b> · offre dès 500 € HT</div></a>
-    <a href="exemples-veille.html"><div class="n">FAMILLE 02</div><b>Veille en abonnement</b><div class="d">Ce que votre marché publie, relevé, historisé, et livré dans votre boîte mail sous une forme lisible en deux minutes.</div><div class="meta"><b>6 exemples</b> · offre 300 € puis dès 70 €/mois</div></a>
+    <a href="exemples-veille.html"><div class="n">FAMILLE 02</div><b>Veille en abonnement</b><div class="d">Ce que votre marché publie, relevé, historisé, et livré dans votre boîte mail sous une forme lisible en deux minutes.</div><div class="meta"><b>3 exemples</b> · offre 300 € puis dès 70 €/mois</div></a>
     <a href="exemples-donnees.html"><div class="n">FAMILLE 03</div><b>Données et études</b><div class="d">Des exports en désordre transformés en tableaux lisibles. Et des modèles chiffrés avant une décision qui engage.</div><div class="meta"><b>6 exemples</b> · offre de 450 à 700 € HT</div></a>
     <a href="exemples-ia.html"><div class="n">FAMILLE 04</div><b>Accompagnement IA</b><div class="d">Des assistants configurés par métier, avec leurs instructions et leurs interdits. Le but affiché : que vous n'ayez plus besoin de moi.</div><div class="meta"><b>6 exemples</b> · offre dès 150 € HT</div></a>
   </div>
@@ -156,13 +161,14 @@ nav .burger{display:none}
 </div></section>
 
 <div class="in"><div class="cta-bloc">
-  <h2>Lequel de ces vingt-cinq cas est le vôtre&nbsp;?</h2>
+  <h2>Lequel de ces vingt-deux cas est le vôtre&nbsp;?</h2>
   <p>Trente minutes en visio pour identifier la tâche qui vous coûte le plus de temps, vérifier qu'elle est automatisable ou mesurable, et la chiffrer. Si aucun de ces exemples ne correspond, je vous le dis à ce moment-là.</p>
-  <a href="contact.html">Prendre contact</a>
+  <a href="contact.html">Échanger 30 minutes</a>
 </div></div>
+</main>
 <footer><div class="in"><div class="row">
   <span>Atelier MDT · Automatisation · Veille · Tableaux de bord · Accompagnement IA</span>
-  <span><a href="mailto:antoine@atelier-mdt.fr">antoine@atelier-mdt.fr</a> · <a href="mentions-legales.html">Mentions légales</a> · <a href="cgv.html">CGV</a></span>
+  <span><a href="mailto:antoine@atelier-mdt.fr">antoine@atelier-mdt.fr</a> · <a href="tel:+33743688097">07 43 68 80 97</a> · <a href="https://www.linkedin.com/in/antoine-meyfroidt/" rel="noopener">linkedin.com/in/antoine-meyfroidt</a> · <a href="mentions-legales.html">Mentions légales</a> · <a href="cgv.html">CGV</a></span>
 </div></div></footer>
 <script>
 /* Menu mobile — autonome, aucune dépendance externe. */
@@ -178,7 +184,7 @@ nav .burger{display:none}
   l.addEventListener('click',function(e){if(e.target.closest('a'))etat(false);});
   document.addEventListener('click',function(e){if(n.classList.contains('ouvert')&&!n.contains(e.target))etat(false);});
   document.addEventListener('keydown',function(e){if(e.key==='Escape')etat(false);});
-  window.addEventListener('resize',function(){if(window.innerWidth>760)etat(false);});
+  window.addEventListener('resize',function(){if(window.innerWidth>800)etat(false);});
 })();
 </script>
 </body>
