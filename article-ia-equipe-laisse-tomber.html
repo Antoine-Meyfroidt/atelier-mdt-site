@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Votre équipe a testé l&#x27;IA puis laissé tomber ? Ce qui a manqué — Atelier MDT</title>
+<meta name="description" content="Donner un accès à tout le monde et attendre ne suffit pas. Cadrer par métier, poser des règles, accompagner : la méthode suivie avec une équipe de dix personnes.">
+<link rel="canonical" href="https://atelier-mdt.fr/article-ia-equipe-laisse-tomber.html">
+<meta name="theme-color" content="#10233F">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://atelier-mdt.fr/article-ia-equipe-laisse-tomber.html">
+<meta property="og:site_name" content="Atelier MDT">
+<meta property="og:title" content="Votre équipe a testé l&#x27;IA puis laissé tomber ? Ce qui a manqué — Atelier MDT">
+<meta property="og:description" content="Donner un accès à tout le monde et attendre ne suffit pas. Cadrer par métier, poser des règles, accompagner : la méthode suivie avec une équipe de dix personnes.">
+<meta property="og:image" content="https://atelier-mdt.fr/assets/og-atelier-mdt.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Atelier MDT — Parce que votre temps est précieux.">
+<meta property="og:locale" content="fr_FR">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32.png">
+<link rel="apple-touch-icon" sizes="180x180" href="assets/favicon-180.png">
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{--nuit:#10233F;--panneau:#182F52;--ambre:#F5B62E;--sourd:#9FB0C8;--trait:#2A4470;--froid:#E9EEF6}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{background:var(--nuit);color:var(--froid);font-family:'Manrope',system-ui,-apple-system,sans-serif;line-height:1.6;font-size:16px;-webkit-font-smoothing:antialiased}
+a{color:inherit}
+header{padding:52px 0 0}
+header .retour{font-size:12.5px;color:var(--sourd);margin-bottom:18px}
+header .retour a{color:var(--sourd);text-decoration:none}
+header .retour a:hover{color:var(--froid)}
+header .eyebrow{font-size:11.5px;font-weight:800;letter-spacing:.09em;color:var(--ambre);margin-bottom:12px}
+header h1{font-size:clamp(28px,5vw,42px);font-weight:800;letter-spacing:-.03em;line-height:1.08;max-width:24ch}
+header .lede{margin-top:15px;font-size:17px;color:var(--sourd);max-width:60ch}
+header .meta{margin-top:16px;font-size:13px;color:var(--sourd)}
+header .meta b{color:var(--froid);font-weight:700}
+section{padding:52px 0 0}
+h2.lbl{font-size:11.5px;font-weight:800;letter-spacing:.09em;color:var(--ambre);padding-bottom:10px;border-bottom:1px solid var(--trait);margin-bottom:22px}
+.art{padding-top:34px;max-width:70ch}
+.art p{font-size:16.5px;line-height:1.7;margin-bottom:16px}
+.art p strong,.art li strong{color:#fff}
+.art h2{font-size:clamp(21px,3.2vw,25px);font-weight:800;letter-spacing:-.02em;line-height:1.2;margin:42px 0 14px}
+.art ul,.art ol{margin:0 0 18px 22px}
+.art li{font-size:16.5px;line-height:1.65;margin-bottom:9px;padding-left:4px}
+.art ul li::marker{color:var(--ambre)}
+.art ol li::marker{color:var(--ambre);font-weight:800}
+.art a{color:var(--ambre);text-decoration:underline;text-underline-offset:3px}
+.art .formule{background:var(--panneau);border-left:3px solid var(--ambre);border-radius:0 6px 6px 0;padding:18px 20px;margin:6px 0 20px;font-size:17px;font-weight:700;line-height:1.5;color:var(--froid)}
+.art .source{border:1px solid var(--trait);border-radius:6px;padding:12px 16px;margin:4px 0 20px;font-size:14px;color:var(--sourd)}
+.art .source a{font-weight:700}
+.art .bouton{display:inline-block;margin:10px 0 6px;background:var(--ambre);color:#10233F;padding:13px 22px;border-radius:5px;font-weight:800;font-size:15px;text-decoration:none}
+.suite-art{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:12px}
+.suite-art a{display:block;background:var(--panneau);border:1px solid var(--trait);border-radius:7px;padding:16px 18px;text-decoration:none}
+.suite-art a:hover{border-color:var(--ambre)}
+.suite-art .k{display:block;font-size:10.5px;font-weight:800;letter-spacing:.07em;color:var(--ambre);margin-bottom:5px}
+.suite-art b{display:block;font-size:15px;font-weight:700;line-height:1.35}
+@media(max-width:600px){.art p,.art li{font-size:16px}}
+
+/* ── commun à toutes les pages ── */
+.in{max-width:900px!important;margin:0 auto;padding:0 22px}
+nav{position:sticky;top:0;z-index:20;background:rgba(16,35,63,.94);backdrop-filter:blur(8px);border-bottom:1px solid var(--trait,#2A4470)}
+nav .in{display:flex;align-items:center;justify-content:space-between;gap:16px;padding:15px 22px}
+nav .brand{display:flex;align-items:center;gap:12px;text-decoration:none}
+nav .brand svg{color:var(--ambre,#F5B62E);flex:none}
+nav .brand .wm{font-size:18px;font-weight:800;letter-spacing:-.025em;line-height:1;color:var(--froid,#E9EEF6)}
+nav .brand .wm em{display:block;font-style:normal;font-size:7.5px;font-weight:800;letter-spacing:.09em;color:var(--ambre,#F5B62E);margin-top:4px;white-space:nowrap}
+nav .links{display:flex;align-items:center;gap:22px}
+nav .links a{color:var(--sourd,#9FB0C8);text-decoration:none;font-size:14px;font-weight:600;white-space:nowrap}
+nav .links a:hover,nav .links a.on{color:var(--froid,#E9EEF6)}
+nav .links a.btn-nav{background:var(--ambre,#F5B62E);color:#10233F;padding:10px 16px;border-radius:5px;font-weight:800;margin:0;display:inline-block;line-height:1.2}
+@media(max-width:800px){nav .links a:not(.btn-nav){display:none}nav .brand .wm em{display:none}}
+footer{margin-top:60px;border-top:1px solid var(--trait,#2A4470);padding:24px 0 46px;font-size:12.5px;color:var(--sourd,#9FB0C8)}
+footer .row{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
+footer a{color:var(--sourd,#9FB0C8)}
+.cta-bloc{background:var(--ambre,#F5B62E);color:#10233F;border-radius:8px;padding:32px 30px;margin-top:56px}
+.cta-bloc h2{font-size:clamp(22px,3.4vw,28px);font-weight:800;letter-spacing:-.02em;line-height:1.15}
+.cta-bloc p{font-size:15.5px;margin-top:10px;max-width:62ch;color:#10233F}
+.cta-bloc a{display:inline-block;margin-top:18px;background:#10233F;color:var(--ambre,#F5B62E);padding:12px 20px;border-radius:5px;font-weight:800;font-size:15px;text-decoration:none}
+
+/* ── NAVIGATION UNIFIÉE (bloc final, prioritaire) ── */
+nav .in{display:flex!important;align-items:center!important;justify-content:space-between!important;gap:18px!important;padding:0 22px!important;min-height:74px!important}
+nav .brand{display:flex!important;align-items:center!important;gap:12px!important;text-decoration:none!important}
+nav .brand svg{color:var(--ambre,#F5B62E)!important;flex:none!important;width:32px!important;height:32px!important}
+nav .brand .wm{font-size:18px!important;font-weight:800!important;letter-spacing:-.025em!important;line-height:1!important;color:var(--froid,#E9EEF6)!important}
+nav .brand .wm em{display:block!important;font-style:normal!important;font-size:7.5px!important;font-weight:800!important;letter-spacing:.09em!important;color:var(--ambre,#F5B62E)!important;margin-top:4px!important;white-space:nowrap!important}
+nav .links{display:flex!important;align-items:center!important;gap:16px!important;height:100%!important}
+@media(min-width:801px) and (max-width:880px){nav .links{gap:11px!important}nav .links a.btn-nav{padding:0 14px!important}}
+nav .links a{display:inline-flex!important;align-items:center!important;height:36px!important;margin:0!important;color:var(--sourd,#9FB0C8)!important;text-decoration:none!important;font-size:14px!important;font-weight:600!important;white-space:nowrap!important;border-bottom:2px solid transparent!important;line-height:1!important;font-size:13.5px!important}
+nav .links a:hover{color:var(--froid,#E9EEF6)!important}
+nav .links a.on{color:var(--froid,#E9EEF6)!important;border-bottom:2px solid var(--ambre,#F5B62E)!important}
+nav .links a.btn-nav{background:var(--ambre,#F5B62E)!important;color:#10233F!important;padding:0 18px!important;border-radius:5px!important;font-weight:800!important;border-bottom:2px solid transparent!important;height:40px!important}
+nav .links a.btn-nav:hover{color:#10233F!important}
+@media(max-width:800px){nav .links a:not(.btn-nav){display:none!important}nav .brand .wm em{display:none!important}nav .in{min-height:62px!important}}
+
+
+/* ══ MENU MOBILE — bloc autonome, aucune dépendance externe ══ */
+nav .burger{display:none}
+@media(max-width:800px){
+  nav .burger{display:flex;flex:none;flex-direction:column;justify-content:center;gap:5px;width:44px;height:38px;padding:0 11px;background:transparent;border:1px solid var(--trait,#2A4470);border-radius:5px;cursor:pointer;-webkit-tap-highlight-color:transparent}
+  nav .burger span{display:block;height:2px;background:var(--froid,#E9EEF6);border-radius:1px;transition:transform .2s ease,opacity .2s ease}
+  nav.ouvert .burger span:nth-child(1){transform:translateY(7px) rotate(45deg)}
+  nav.ouvert .burger span:nth-child(2){opacity:0}
+  nav.ouvert .burger span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
+  nav .in .links{display:none!important;position:absolute;top:100%;left:0;right:0;flex-direction:column!important;align-items:stretch!important;gap:0!important;height:auto!important;background:var(--nuit,#10233F);border-bottom:1px solid var(--trait,#2A4470);padding:4px 22px 20px!important}
+  nav.ouvert .in .links{display:flex!important}
+  nav.ouvert .in .links a{display:flex!important;align-items:center!important;width:100%;height:auto!important;margin:0!important;padding:15px 0!important;font-size:16px!important;font-weight:600!important;color:var(--sourd,#9FB0C8)!important;background:transparent!important;border:0!important;border-bottom:1px solid var(--trait,#2A4470)!important;border-radius:0!important}
+  nav.ouvert .in .links a.on{color:var(--ambre,#F5B62E)!important}
+  nav.ouvert .in .links a.btn-nav{justify-content:center!important;margin-top:16px!important;height:46px!important;padding:0 18px!important;border:0!important;border-radius:5px!important;background:var(--ambre,#F5B62E)!important;color:#10233F!important;font-weight:800!important}
+}
+@media(max-width:860px){nav .brand .wm em{display:none!important}}
+</style>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "BlogPosting", "headline": "Votre équipe a testé l'IA puis laissé tomber ? Ce qui a manqué", "description": "Donner un accès à tout le monde et attendre ne suffit pas. Cadrer par métier, poser des règles, accompagner : la méthode suivie avec une équipe de dix personnes.", "datePublished": "2026-10-20", "dateModified": "2026-10-20", "inLanguage": "fr-FR", "mainEntityOfPage": "https://atelier-mdt.fr/article-ia-equipe-laisse-tomber.html", "url": "https://atelier-mdt.fr/article-ia-equipe-laisse-tomber.html", "image": "https://atelier-mdt.fr/assets/og-atelier-mdt.png", "author": {"@type": "Person", "name": "Antoine Meyfroidt", "url": "https://atelier-mdt.fr/qui-suis-je.html"}, "publisher": {"@type": "Organization", "name": "Atelier MDT", "url": "https://atelier-mdt.fr/", "logo": {"@type": "ImageObject", "url": "https://atelier-mdt.fr/assets/favicon-180.png"}}}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Accueil", "item": "https://atelier-mdt.fr/"}, {"@type": "ListItem", "position": 2, "name": "Articles", "item": "https://atelier-mdt.fr/articles.html"}, {"@type": "ListItem", "position": 3, "name": "Votre équipe a testé l'IA puis laissé tomber ? Ce qui a manqué", "item": "https://atelier-mdt.fr/article-ia-equipe-laisse-tomber.html"}]}</script>
+</head>
+<body>
+<nav><div class="in">
+  <a class="brand" href="index.html"><svg width="32" height="32" viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="3.4" stroke-linecap="square" aria-hidden="true"><path d="M14 8 H6 V56 H14" fill="none"/><path d="M50 8 H58 V56 H50" fill="none"/><path d="M18 44 V22 L32 36 L46 22 V44" stroke-width="4" fill="none"/></svg><span class="wm">Atelier MDT<em>PARCE QUE VOTRE TEMPS EST PRÉCIEUX.</em></span></a>
+  <div class="links" id="nav-liens">
+      <a href="realisations.html">Réalisations</a>
+      <a href="offres.html">Offres</a>
+      <a href="exemples.html">Exemples</a>
+      <a href="rentabilite.html">Rentabilité</a>
+      <a href="qui-suis-je.html">Qui suis-je</a>
+      <a class="btn-nav" href="contact.html">Échanger 30 minutes</a>
+  </div>
+  <button class="burger" type="button" aria-label="Ouvrir le menu" aria-expanded="false" aria-controls="nav-liens"><span></span><span></span><span></span></button>
+</div></nav>
+<main id="contenu">
+<header><div class="in">
+  <p class="retour"><a href="articles.html">← Tous les articles</a></p>
+  <div class="eyebrow">ARTICLE</div>
+  <h1>Votre équipe a testé l&#x27;IA puis laissé tomber ? Ce qui a manqué</h1>
+  <p class="meta">Publié le <time datetime="2026-10-20">20 octobre 2026</time> · <b>Antoine Meyfroidt</b></p>
+</div></header>
+
+<div class="in"><article class="art">
+<p>Le scénario est courant. On ouvre des accès, on montre deux ou trois exemples, l'enthousiasme dure quelques semaines, puis chacun revient à ses habitudes. L'outil n'est pas en cause. Ce qui manque, le plus souvent, c'est un cadre.</p>
+<h2>Le scénario classique</h2>
+<p>La démarche habituelle consiste à donner un accès à tout le monde et à attendre que ça prenne. Chacun teste seul, sur des questions générales, et obtient des réponses générales. La conclusion arrive vite : « ça ne marche pas pour notre métier ».</p>
+<p>Ce n'est pas faux. Un assistant qui ne sait rien de votre métier, de vos clients ni de vos règles ne peut pas vous répondre comme un collègue.</p>
+<h2>Ce qui manque</h2>
+<ol>
+<li><strong>Un usage par métier.</strong> Le commercial, la comptabilité et l'accueil n'ont pas les mêmes besoins. Chaque domaine a son espace, avec ses instructions, son rôle, ses documents de référence et ses interdits.</li>
+<li><strong>Des règles écrites.</strong> Ce que l'assistant fait, ce qu'il ne fait pas, et quand il doit poser une question plutôt que deviner. Par exemple : l'assistant commercial prépare un devis, il ne le produit pas.</li>
+<li><strong>Des accès selon la sensibilité.</strong> Tout le monde n'a pas besoin de voir les chiffres de la direction. Dans l'exemple ci-dessous, trois niveaux ont suffi : ouvert, élargi, restreint.</li>
+<li><strong>Un temps d'appropriation accompagné.</strong> Un atelier sur les tâches réelles des participants, pas une démonstration générale.</li>
+</ol>
+<h2>Un exemple : une équipe de dix personnes</h2>
+<p>Chez Kampus 137, aucun des dix membres de l'équipe n'avait d'usage structuré de l'IA. Voici ce qui a été mis en place :</p>
+<ul>
+<li>dix espaces métier, chacun avec ses instructions ;</li>
+<li>trois niveaux d'accès selon la sensibilité des sujets ;</li>
+<li>un espace d'accueil, ajouté après coup, pour apprendre à formuler une demande et savoir où la poser ;</li>
+<li>deux ateliers, l'un de niveau 1, l'autre de niveau 2 ;</li>
+<li>quatre consignes réutilisables (des « skills ») pour les tâches qui reviennent, distribuées avec leur mode d'emploi.</li>
+</ul>
+<p>Je n'ai pas encore de mesure d'usage à vous donner : ni taux d'adoption, ni temps gagné. Ce que je peux montrer, c'est le dispositif, pièce par pièce, <a href="realisation-06-ia.html">sur la fiche réalisation</a>.</p>
+<h2>La seconde couche, deux mois après</h2>
+<p>Au bout de deux mois d'usage réel, on voit où l'assistant déraille : il invente quand il devrait demander, il en fait trop sur un sujet sensible. On a donc ajouté une seconde couche d'instructions : ce qu'il fait, ce qu'il ne fait pas, et quand il pose une question.</p>
+<p>La leçon : un déploiement ne s'arrête pas à la mise en service. Prévoyez un point à deux mois.</p>
+<h2>Trois choses à faire seul dès cette semaine</h2>
+<ol>
+<li><strong>Choisissez une tâche précise et répétée</strong>, un type d'email ou un compte rendu, plutôt que « l'IA en général ».</li>
+<li><strong>Écrivez une consigne de départ</strong> : qui vous êtes, pour qui vous écrivez, ce qu'il ne faut jamais faire. La plupart des assistants permettent de l'enregistrer pour ne pas la retaper.</li>
+<li><strong>N'y mettez rien de confidentiel</strong> (données clients, chiffres) tant que vous n'avez pas vérifié ce que votre abonnement fait de vos données.</li>
+</ol>
+<h2>Pour aller plus vite</h2>
+<p><a href="offres.html">Trois formats existent</a> : un accompagnement individuel, un atelier d'équipe sur vos tâches réelles, ou un déploiement complet comme celui décrit plus haut. On en parle 30 minutes pour voir lequel vous correspond.</p>
+<p><a class="bouton" href="contact.html">Échanger 30 minutes</a></p>
+</article></div>
+
+<section><div class="in">
+  <h2 class="lbl">POUR ALLER PLUS LOIN</h2>
+  <div class="suite-art">
+    <a href="realisation-06-ia.html"><span class="k">RÉALISATION 06</span><b>Une équipe de terrain qui utilise l&#x27;IA au quotidien</b></a>
+    <a href="exemples-ia.html"><span class="k">EXEMPLES</span><b>Six briques pour travailler avec l&#x27;IA, seul ou en équipe</b></a>
+    <a href="article-cout-taches-repetitives.html"><span class="k">ARTICLE</span><b>Combien vous coûtent vos tâches répétitives ? Le calcul en 5 minutes</b></a>
+    <a href="article-automatiser-demandes-de-devis.html"><span class="k">ARTICLE</span><b>Répondre à chaque demande de devis le jour même, sans y passer vos soirées</b></a>
+    <a href="article-tableau-de-bord-ventes.html"><span class="k">ARTICLE</span><b>Tableau de bord des ventes : 5 questions qu&#x27;il règle pour une TPE</b></a>
+  </div>
+</div></section>
+</main>
+<footer><div class="in"><div class="row">
+  <span>Atelier MDT · Automatisation · Veille · Tableaux de bord · Accompagnement IA</span>
+  <span><a href="mailto:antoine@atelier-mdt.fr">antoine@atelier-mdt.fr</a> · <a href="tel:+33743688097">07 43 68 80 97</a> · <a href="https://www.linkedin.com/in/antoine-meyfroidt/" rel="noopener">linkedin.com/in/antoine-meyfroidt</a> · <a href="questions.html">Questions fréquentes</a> · <a href="articles.html">Articles</a> · <a href="mentions-legales.html">Mentions légales</a> · <a href="cgv.html">CGV</a></span>
+</div></div></footer>
+<script>
+/* Menu mobile — autonome, aucune dépendance externe. */
+(function(){
+  var n=document.querySelector('nav');if(!n)return;
+  var b=n.querySelector('.burger'),l=n.querySelector('.links');if(!b||!l)return;
+  function etat(o){
+    n.classList.toggle('ouvert',o);
+    b.setAttribute('aria-expanded',o?'true':'false');
+    b.setAttribute('aria-label',o?'Fermer le menu':'Ouvrir le menu');
+  }
+  b.addEventListener('click',function(){etat(!n.classList.contains('ouvert'));});
+  l.addEventListener('click',function(e){if(e.target.closest('a'))etat(false);});
+  document.addEventListener('click',function(e){if(n.classList.contains('ouvert')&&!n.contains(e.target))etat(false);});
+  document.addEventListener('keydown',function(e){if(e.key==='Escape')etat(false);});
+  window.addEventListener('resize',function(){if(window.innerWidth>800)etat(false);});
+})();
+</script>
+</body>
+</html>
