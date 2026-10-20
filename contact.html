@@ -3,18 +3,18 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Contact — Atelier MDT</title>
+<title>Échanger 30 minutes — Atelier MDT</title>
 <meta name="description" content="Trente minutes gratuites en visio pour identifier la tâche qui vous coûte le plus de temps. Devis écrit, sans engagement.">
 <link rel="canonical" href="https://atelier-mdt.fr/contact.html">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://atelier-mdt.fr/contact.html">
 <meta property="og:site_name" content="Atelier MDT">
-<meta property="og:title" content="Contact — Atelier MDT">
+<meta property="og:title" content="Échanger 30 minutes — Atelier MDT">
 <meta property="og:description" content="Trente minutes gratuites en visio pour identifier la tâche qui vous coûte le plus de temps. Devis écrit, sans engagement.">
 <meta property="og:image" content="https://atelier-mdt.fr/assets/og-atelier-mdt.png">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
-<meta property="og:image:alt" content="Atelier MDT — Votre temps vaut mieux que ça">
+<meta property="og:image:alt" content="Atelier MDT — Parce que votre temps est précieux.">
 <meta property="og:locale" content="fr_FR">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="theme-color" content="#10233F">
@@ -134,11 +134,12 @@ nav .burger{display:none}
   nav.ouvert .in .links a.on{color:var(--ambre,#F5B62E)!important}
   nav.ouvert .in .links a.btn-nav{justify-content:center!important;margin-top:16px!important;height:46px!important;padding:0 18px!important;border:0!important;border-radius:5px!important;background:var(--ambre,#F5B62E)!important;color:#1A1608!important;font-weight:800!important}
 }
+@media(max-width:860px){nav .brand .wm em{display:none!important}}
 </style>
 </head>
 <body>
 <nav><div class="in">
-  <a class="brand" href="index.html"><svg width="32" height="32" viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="3.4" stroke-linecap="square" aria-hidden="true"><path d="M14 8 H6 V56 H14" fill="none"/><path d="M50 8 H58 V56 H50" fill="none"/><path d="M18 44 V22 L32 36 L46 22 V44" stroke-width="4" fill="none"/></svg><span class="wm">Atelier MDT<em>VOTRE TEMPS VAUT MIEUX QUE ÇA</em></span></a>
+  <a class="brand" href="index.html"><svg width="32" height="32" viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="3.4" stroke-linecap="square" aria-hidden="true"><path d="M14 8 H6 V56 H14" fill="none"/><path d="M50 8 H58 V56 H50" fill="none"/><path d="M18 44 V22 L32 36 L46 22 V44" stroke-width="4" fill="none"/></svg><span class="wm">Atelier MDT<em>PARCE QUE VOTRE TEMPS EST PRÉCIEUX.</em></span></a>
   <div class="links" id="nav-liens">
       <a href="realisations.html">Réalisations</a>
       <a href="offres.html">Offres</a>
@@ -154,7 +155,7 @@ nav .burger{display:none}
 <header class="h"><div class="in">
   <div class="eyebrow">CONTACT</div>
   <h1>On regarde ce que vous perdez ?</h1>
-  <p class="sub">Trente minutes en visio, gratuites, pour identifier la tâche qui vous coûte le plus de temps. Vous repartez avec un devis chiffré et vous décidez ensuite — aucun engagement. Une fois le formulaire envoyé, vous choisissez votre créneau dans la foulée ; si vous préférez m'écrire, réponse sous 48 heures ouvrées.</p>
+  <p class="sub">Trente minutes en visio, gratuites, pour identifier la tâche qui vous coûte le plus de temps. Vous recevez ensuite un devis écrit, et vous décidez — aucun engagement. Une fois le formulaire envoyé, vous choisissez votre créneau dans la foulée ; si vous préférez m'écrire, réponse sous 48 heures ouvrées. Les échanges ont lieu en fin de journée du lundi au jeudi, et le samedi.</p>
 </div></header>
 
 <section><div class="in">
@@ -182,13 +183,13 @@ nav .burger{display:none}
             <input id="telephone" name="telephone" type="tel" maxlength="20" autocomplete="tel" inputmode="tel">
           </div>
         </div>
-        <label for="entreprise">Nom de l'entreprise</label>
-        <input id="entreprise" name="entreprise" type="text" required autocomplete="organization" placeholder="Ex. : Cabinet Le Guen">
+        <label for="entreprise">Nom de l'entreprise <span style="font-weight:400;color:#8FA3C0">(facultatif)</span></label>
+        <input id="entreprise" name="entreprise" type="text" autocomplete="organization" placeholder="Ex. : Cabinet Le Guen">
         <div class="deux">
           <div>
-            <label for="effectif">Nombre de salariés</label>
-            <select id="effectif" name="effectif" required>
-              <option value="" selected disabled>Choisir…</option>
+            <label for="effectif">Nombre de salariés <span style="font-weight:400;color:#8FA3C0">(facultatif)</span></label>
+            <select id="effectif" name="effectif">
+              <option value="" selected>Choisir…</option>
               <option>Je travaille seul(e)</option>
               <option>2 à 5</option>
               <option>6 à 10</option>
@@ -210,7 +211,7 @@ nav .burger{display:none}
           <option>Autre chose</option>
         </select>
         <label for="message">En quelques lignes</label>
-        <textarea id="message" name="message" placeholder="Quelle tâche, à quelle fréquence, qui s'en occupe aujourd'hui…"></textarea>
+        <textarea id="message" name="message" placeholder="Quelle tâche, combien de fois par semaine, qui s'en occupe aujourd'hui…"></textarea>
         <input type="hidden" name="_subject" value="Demande de contact — atelier-mdt.fr">
         <label class="hp" for="_gotcha" aria-hidden="true">Ne pas remplir</label>
         <input class="hp" id="_gotcha" type="text" name="_gotcha" tabindex="-1" autocomplete="off" aria-hidden="true">
