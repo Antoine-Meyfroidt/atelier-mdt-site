@@ -4,14 +4,14 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Automatisation, veille et IA pour TPE à Rennes — Atelier MDT</title>
-<meta name="description" content="Je trouve la tâche répétitive qui vous coûte le plus de temps et je l'automatise, sur vos outils, avec un mode d'emploi. Rennes et à distance.">
+<meta name="description" content="Automatiser ce qui se répète, voir ce qui bouge sur votre marché, lire vos chiffres en cinq minutes, prendre le virage de l'IA. TPE, Rennes et à distance.">
 <link rel="canonical" href="https://atelier-mdt.fr/">
 <meta name="theme-color" content="#10233F">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://atelier-mdt.fr/">
 <meta property="og:site_name" content="Atelier MDT">
 <meta property="og:title" content="Automatisation, veille et IA pour TPE à Rennes — Atelier MDT">
-<meta property="og:description" content="Je trouve la tâche répétitive qui vous coûte le plus de temps et je l'automatise, sur vos outils, avec un mode d'emploi. Rennes et à distance.">
+<meta property="og:description" content="Automatiser ce qui se répète, voir ce qui bouge sur votre marché, lire vos chiffres en cinq minutes, prendre le virage de l'IA. TPE, Rennes et à distance.">
 <meta property="og:image" content="https://atelier-mdt.fr/assets/og-atelier-mdt.png">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
@@ -143,39 +143,90 @@ main a:focus-visible,main input:focus-visible{outline:2px solid var(--ambre);out
 
 /* accroche */
 header.hero{padding:56px 0 0}
-header.hero h1{margin-top:14px;font-size:clamp(34px,5.6vw,54px);font-weight:800;letter-spacing:-.03em;line-height:1.04;max-width:24ch}
-header.hero .sub{margin-top:18px;font-size:clamp(16.5px,1.8vw,18px);line-height:1.6;color:var(--sourd);max-width:56ch}
+header.hero h1{margin-top:14px;font-size:clamp(34px,5.6vw,54px);font-weight:800;letter-spacing:-.03em;line-height:1.04;max-width:20ch}
+header.hero .sub{margin-top:18px;font-size:clamp(16.5px,1.8vw,18px);line-height:1.6;color:var(--sourd);max-width:60ch}
 header.hero .acts{margin-top:26px;display:flex;gap:11px;flex-wrap:wrap}
 header.hero .note{margin-top:14px;font-size:13.5px;color:var(--sourd)}
 
-/* compteur */
+/* compteur à quatre entrées (version du 20 octobre 2026, v3) */
 #compteur{padding:34px 0 60px}
 .compteur{background:var(--panneau);border:1px solid var(--trait);border-radius:10px;padding:clamp(20px,3.4vw,32px);display:grid;gap:24px}
+.compteur [hidden]{display:none!important}
 .c-tete{display:flex;justify-content:space-between;align-items:baseline;gap:6px 14px;flex-wrap:wrap}
 .c-tete p{font-size:12.5px;color:var(--sourd)}
+.c-entrees,.c-choix{border:0;min-width:0}
+.c-entrees legend,.c-choix legend{padding:0;font-size:15px;font-weight:700;line-height:1.4}
+.c-entrees .grille{margin-top:10px;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:10px}
+.c-entree{display:flex;flex-direction:column;align-items:flex-start;gap:6px;min-height:64px;padding:12px 14px;text-align:left;cursor:pointer;border-radius:8px;font-family:inherit;color:var(--froid);background:transparent;border:2px solid var(--trait)}
+.c-entree:hover{border-color:var(--sourd)}
+.c-entree[aria-pressed="true"]{background:var(--nuit);border-color:var(--ambre)}
+.c-entree .n{font-size:11.5px;font-weight:800;letter-spacing:.08em;color:var(--ambre)}
+.c-entree .t{font-size:14.5px;font-weight:700;line-height:1.35}
 .c-curseurs{display:grid;grid-template-columns:1fr 1fr;gap:18px 34px}
 .curseur{display:flex;flex-direction:column;justify-content:space-between}
 .curseur label{display:flex;justify-content:space-between;align-items:baseline;gap:16px;font-size:15px;font-weight:700;line-height:1.4}
 .curseur output{color:var(--ambre);font-weight:800;white-space:nowrap}
 .curseur input{display:block;width:100%;height:44px;margin:2px 0 0;accent-color:#F5B62E;cursor:pointer;background:transparent}
+.curseur .bornes{display:flex;justify-content:space-between;gap:10px;font-size:12px;color:var(--sourd)}
+.c-choix .boutons{margin-top:10px;display:flex;flex-wrap:wrap;gap:8px}
+.c-choix button{min-height:44px;padding:8px 14px;border-radius:5px;font-family:inherit;font-size:13.5px;font-weight:700;cursor:pointer;background:transparent;color:var(--froid);border:1px solid var(--trait)}
+.c-choix button:hover{border-color:var(--sourd)}
+.c-choix button[aria-pressed="true"]{background:var(--ambre);color:var(--nuit);border-color:var(--ambre)}
+.c-format{margin-top:12px;font-size:13.5px;font-weight:700}
 .c-res{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px 26px}
 .c-res div{border-top:1px solid var(--trait);padding-top:14px;min-width:0}
-.c-res b{display:block;font-size:clamp(30px,4.2vw,42px);font-weight:800;letter-spacing:-.03em;line-height:1;white-space:nowrap}
-.c-res div:first-child b{color:var(--ambre)}
+.c-res b{display:block;font-size:clamp(30px,4.2vw,38px);font-weight:800;letter-spacing:-.03em;line-height:1;white-space:nowrap}
+.c-res div.fort b{color:var(--ambre)}
 .c-res span{display:block;margin-top:8px;font-size:13.5px;line-height:1.45;color:var(--sourd)}
-.semaines{display:grid;grid-template-columns:repeat(24,minmax(0,1fr));gap:4px}
-.semaines i{display:block;height:16px;border:1px solid var(--sourd);border-radius:2px}
-.semaines i.on{background:var(--ambre);border-color:var(--ambre)}
-.legende{display:flex;flex-wrap:wrap;gap:8px 22px;margin-top:11px;font-size:13px;line-height:1.4;color:var(--sourd)}
+.c-bloc{display:grid;gap:12px;padding-top:16px;border-top:1px solid var(--trait)}
+.c-bloc .entete{display:flex;justify-content:space-between;align-items:baseline;gap:4px 14px;flex-wrap:wrap}
+.c-bloc .titre{font-size:12px;font-weight:800;letter-spacing:.12em;line-height:1.4;color:var(--sourd)}
+.c-bloc .ex{font-size:12.5px;color:var(--sourd)}
+.cal-phrase{font-size:15.5px;font-weight:700;line-height:1.45}
+.cal{display:grid;grid-template-columns:1fr 1fr;gap:14px 8px}
+.cal .mois{display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:8px;margin-bottom:6px}
+.cal .mois span{font-size:12px;font-weight:600;color:var(--sourd);text-align:center;white-space:nowrap}
+.cal .mois span.on{font-weight:800;color:var(--ambre)}
+.cal .cases{display:grid;grid-auto-flow:column;grid-template-rows:repeat(4,18px);grid-template-columns:repeat(6,minmax(0,1fr));gap:4px 8px}
+.cal .cases i,.legende i{display:flex;align-items:center;justify-content:center;border-radius:3px;font-style:normal;font-weight:800;line-height:1;color:var(--nuit)}
+.cal .cases i{border:1px solid #4A6591;font-size:11px}
+.cal .cases i.r,.legende i.r{border:1px solid var(--ambre)}
+.cal .cases i.g,.legende i.g{background:var(--ambre);border-color:var(--ambre)}
+.cal .cases i.p,.legende i.p{background:var(--froid);border-color:var(--froid)}
+.legende{display:flex;flex-wrap:wrap;gap:8px 20px;font-size:12.5px;line-height:1.4;color:var(--sourd)}
 .legende > span{display:inline-flex;align-items:center;gap:8px}
-.legende i{display:block;flex:none;width:12px;height:12px;border-radius:2px}
-.legende i.pl{background:var(--ambre)}
-.legende i.vi{border:1px solid var(--sourd)}
+.legende i{flex:none;width:18px;height:12px;font-size:9px}
+.barre{display:grid;grid-template-columns:230px minmax(0,1fr);align-items:center;gap:6px 14px}
+.barre > span{font-size:13.5px;font-weight:700;color:var(--sourd)}
+.barre div{display:flex;align-items:center;gap:10px;min-width:0}
+.barre i{display:block;flex:none;height:14px;border-radius:0 4px 4px 0;background:var(--sourd)}
+.barre.v i{background:var(--ambre)}
+.barre b{font-size:13.5px;font-weight:700;white-space:nowrap}
+.cles{display:flex;flex-wrap:wrap;gap:6px 16px;font-size:12px;color:var(--sourd)}
+.cles span{display:inline-flex;align-items:center;gap:6px}
+.cles i{display:block;width:16px;height:7px;border-radius:0 3px 3px 0;background:var(--sourd)}
+.cles i.m{background:var(--ambre)}
+.d-ligne{display:grid;grid-template-columns:120px minmax(0,1fr) 290px;align-items:center;gap:6px 16px;padding:9px 0;border-top:1px solid var(--trait)}
+.d-ligne .nom{font-size:13.5px;font-weight:700}
+.d-ligne .bars{display:flex;flex-direction:column;gap:4px;min-width:0}
+.d-ligne .bars i{display:block;height:8px;border-radius:0 3px 3px 0;background:var(--sourd)}
+.d-ligne .bars i.m{background:var(--ambre)}
+.d-ligne .com{font-size:13px;font-weight:700;line-height:1.4}
+.d-note{font-size:12px;color:var(--sourd)}
 .c-pied{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:flex-end;gap:10px 22px;border-top:1px solid var(--trait);padding-top:16px}
 .c-pied p{flex:1 1 320px;font-size:13px;line-height:1.55;color:var(--sourd)}
+.c-pied .liens-c{display:flex;flex-direction:column;align-items:flex-start;gap:6px}
 .c-pied a{font-size:13.5px;font-weight:700;color:var(--ambre);text-decoration:none}
-@media(max-width:720px){.c-curseurs{grid-template-columns:1fr}}
-@media(max-width:560px){.c-res{grid-template-columns:1fr}.semaines{grid-template-columns:repeat(12,minmax(0,1fr))}}
+.c-pied a.preuve{color:var(--froid)}
+.c-pied a:hover{text-decoration:underline}
+.c-appel{display:flex;flex-wrap:wrap;align-items:center;gap:12px 18px}
+.c-appel span{font-size:13px;color:var(--sourd)}
+main button:focus-visible{outline:2px solid var(--ambre);outline-offset:3px}
+@media(max-width:860px){.c-entrees .grille{grid-template-columns:1fr 1fr}}
+@media(max-width:720px){.c-curseurs{grid-template-columns:1fr}.d-ligne{grid-template-columns:1fr}}
+@media(max-width:620px){.cal{grid-template-columns:1fr}.barre{grid-template-columns:1fr}}
+@media(max-width:560px){.c-res{grid-template-columns:1fr}}
+@media(max-width:480px){.c-entrees .grille{grid-template-columns:1fr}}
 
 /* bandeaux */
 .bande{background:var(--panneau);border-top:1px solid var(--trait);border-bottom:1px solid var(--trait)}
@@ -294,8 +345,8 @@ footer{margin-top:0}
 <header class="hero">
   <div class="in">
     <p class="sur">AUTOMATISATION · VEILLE · DONNÉES · IA — POUR LES TPE</p>
-    <h1>Combien d'heures avez-vous perdues cette semaine&nbsp;?</h1>
-    <p class="sub">Dans une petite entreprise, une bonne partie du travail se répète — et le reste se décide au ressenti. Je supprime ce qui se répète, je rends lisible ce qui compte, et je rends votre équipe autonome sur les outils d'aujourd'hui.</p>
+    <h1>Qu'est-ce qui vous freine cette semaine&nbsp;?</h1>
+    <p class="sub">Ce qui se répète peut tourner sans vous. Ce qui bouge sur votre marché peut arriver dans votre boîte mail. Vos chiffres peuvent se lire en cinq minutes. Et votre équipe peut prendre le virage de l'IA.</p>
     <div class="acts">
       <a class="btn p" href="contact.html">Échanger 30 minutes</a>
       <a class="btn s" href="realisations.html">Voir les réalisations</a>
@@ -309,33 +360,105 @@ footer{margin-top:0}
     <div class="compteur">
       <div class="c-tete">
         <h2 class="sur" id="compteur-titre">VOTRE COMPTEUR</h2>
-        <p>Déplacez les deux curseurs</p>
+        <p>Choisissez ce qui vous freine, puis réglez avec vos chiffres</p>
       </div>
-      <div class="c-curseurs">
-        <div class="curseur">
-          <label for="heures"><span>Heures perdues chaque semaine sur une tâche qui se répète</span><output id="v-heures" for="heures">3&nbsp;h</output></label>
-          <input id="heures" type="range" min="1" max="15" step="1" value="3" aria-valuetext="3 heures par semaine">
+      <fieldset class="c-entrees" id="c-entrees" hidden>
+        <legend>Ce qui vous freine le plus en ce moment</legend>
+        <div class="grille">
+          <button class="c-entree" type="button" data-mode="auto" aria-pressed="true"><span class="n">01 — AUTOMATISATION</span><span class="t">Les mêmes réponses, tapées à la main</span></button>
+          <button class="c-entree" type="button" data-mode="veille" aria-pressed="false"><span class="n">02 — VEILLE</span><span class="t">Mes concurrents bougent sans que je le voie</span></button>
+          <button class="c-entree" type="button" data-mode="donnees" aria-pressed="false"><span class="n">03 — DONNÉES</span><span class="t">Je décide au ressenti</span></button>
+          <button class="c-entree" type="button" data-mode="ia" aria-pressed="false"><span class="n">04 — IA</span><span class="t">Mon équipe tâtonne avec l'IA</span></button>
         </div>
-        <div class="curseur">
-          <label for="taux"><span>Coût horaire chargé de la personne qui la fait</span><output id="v-taux" for="taux">25&nbsp;€</output></label>
-          <input id="taux" type="range" min="15" max="60" step="5" value="25" aria-valuetext="25 euros de l'heure">
+      </fieldset>
+      <div class="c-panneau" data-panneau="auto">
+        <div class="c-curseurs">
+          <div class="curseur">
+            <label for="c-heures"><span>Heures passées chaque semaine à répondre à la main aux mêmes demandes</span><output id="o-heures" for="c-heures">3&nbsp;h</output></label>
+            <input id="c-heures" type="range" min="1" max="15" step="1" value="3" aria-valuetext="3 heures par semaine">
+          </div>
+          <div class="curseur">
+            <label for="c-taux-a"><span>Coût horaire chargé de la personne qui le fait</span><output id="o-taux-a" for="c-taux-a">25&nbsp;€</output></label>
+            <input id="c-taux-a" type="range" min="15" max="60" step="5" value="25" aria-valuetext="25 euros de l'heure">
+          </div>
         </div>
+      </div>
+      <div class="c-panneau" data-panneau="veille" hidden>
+        <div class="c-curseurs">
+          <div class="curseur">
+            <label for="c-freq"><span>À quel rythme allez-vous voir ce que font vos concurrents&nbsp;?</span><output id="o-freq" for="c-freq">Une fois par mois</output></label>
+            <input id="c-freq" type="range" min="0" max="5" step="1" value="3" aria-valuetext="Une fois par mois">
+            <div class="bornes" aria-hidden="true"><span>Jamais</span><span>Chaque semaine</span></div>
+          </div>
+          <fieldset class="c-choix">
+            <legend>Rythme de la veille</legend>
+            <div class="boutons">
+              <button type="button" data-rythme="mensuel" aria-pressed="false">Mensuelle · 70&nbsp;€&nbsp;HT/mois</button>
+              <button type="button" data-rythme="bimensuel" aria-pressed="false">Toutes les deux semaines · 85&nbsp;€&nbsp;HT/mois</button>
+              <button type="button" data-rythme="hebdo" aria-pressed="true">Hebdomadaire · 100&nbsp;€&nbsp;HT/mois</button>
+            </div>
+          </fieldset>
+        </div>
+      </div>
+      <div class="c-panneau" data-panneau="donnees" hidden>
+        <div class="c-curseurs">
+          <div class="curseur">
+            <label for="c-act"><span>Activités ou familles de produits que vous vendez</span><output id="o-act" for="c-act">6&nbsp;activités</output></label>
+            <input id="c-act" type="range" min="1" max="20" step="1" value="6" aria-valuetext="6 activités">
+          </div>
+          <div class="curseur">
+            <label for="c-ans"><span>Années de ventes dans vos exports</span><output id="o-ans" for="c-ans">2&nbsp;ans</output></label>
+            <input id="c-ans" type="range" min="1" max="4" step="1" value="2" aria-valuetext="2 ans">
+          </div>
+        </div>
+      </div>
+      <div class="c-panneau" data-panneau="ia" hidden>
+        <div class="c-curseurs">
+          <div class="curseur">
+            <label for="c-pers"><span>Personnes à accompagner</span><output id="o-pers" for="c-pers">1&nbsp;personne</output></label>
+            <input id="c-pers" type="range" min="1" max="20" step="1" value="1" aria-valuetext="1 personne">
+          </div>
+          <div class="curseur">
+            <label for="c-taux-i"><span>Coût horaire chargé moyen</span><output id="o-taux-i" for="c-taux-i">25&nbsp;€</output></label>
+            <input id="c-taux-i" type="range" min="15" max="60" step="5" value="25" aria-valuetext="25 euros de l'heure">
+          </div>
+        </div>
+        <p class="c-format" id="c-format">Format&nbsp;: accompagnement individuel — deux heures sur trois tâches de votre semaine, 150&nbsp;€&nbsp;HT</p>
       </div>
       <div class="c-res" aria-live="polite">
-        <div><b id="r-heures">≈&nbsp;144&nbsp;h</b><span>rendues sur un an</span></div>
-        <div><b id="r-euros">≈&nbsp;3&nbsp;600&nbsp;€</b><span>de temps payé, chaque année</span></div>
-        <div><b id="r-sem">≈&nbsp;7&nbsp;sem.</b><span>pour rembourser une automatisation à 500&nbsp;€&nbsp;HT</span></div>
+        <div class="fort" id="r1"><b>≈&nbsp;144&nbsp;h</b><span>rendues sur un an</span></div>
+        <div id="r2"><b>≈&nbsp;3&#8239;600&nbsp;€</b><span>de temps payé, chaque année</span></div>
+        <div id="r3"><b>≈&nbsp;7&nbsp;sem.</b><span>pour rembourser une automatisation à 500&nbsp;€&nbsp;HT</span></div>
       </div>
-      <div>
-        <div class="semaines" id="semaines" aria-hidden="true"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
-        <div class="legende">
-          <span><i class="pl"></i><span id="l-remb">7 semaines pour rembourser le forfait</span></span>
-          <span><i class="vi"></i><span id="l-rendu">41 semaines de temps rendu, la première année</span></span>
+      <div class="c-bloc" id="c-cal" hidden>
+        <div class="entete"><span class="titre">VOTRE PREMIÈRE ANNÉE, SEMAINE PAR SEMAINE</span><span class="ex" id="cal-ex"></span></div>
+        <p class="cal-phrase" id="cal-phrase"></p>
+        <div class="cal" aria-hidden="true">
+          <div><div class="mois" id="cal-mois-a"></div><div class="cases" id="cal-cases-a"></div></div>
+          <div><div class="mois" id="cal-mois-b"></div><div class="cases" id="cal-cases-b"></div></div>
         </div>
+        <div class="legende"><span><i class="r"></i>rembourse le forfait</span><span><i class="g"></i>temps gagné</span><span><i class="p" aria-hidden="true">✓</i>semaine du remboursement</span><span>Une case&nbsp;= une semaine travaillée, quatre par mois</span></div>
+      </div>
+      <div class="c-bloc" id="c-barres" hidden>
+        <span class="titre">DÉLAI MOYEN ENTRE UN CHANGEMENT CHEZ UN CONCURRENT ET LE MOMENT OÙ VOUS LE VOYEZ</span>
+        <div class="barre"><span>Aujourd'hui</span><div><i id="b-now-w"></i><b id="b-now-t"></b></div></div>
+        <div class="barre v"><span id="b-v-l"></span><div><i id="b-v-w"></i><b id="b-v-t"></b></div></div>
+      </div>
+      <div class="c-bloc" id="c-donnees" hidden>
+        <div class="entete"><span class="titre">CE QUE LE TABLEAU VOUS MONTRE</span><span class="cles" aria-hidden="true"><span><i></i>part des ventes</span><span><i class="m"></i>part de la marge</span></span></div>
+        <div id="d-lignes"></div>
+        <p class="d-note">Illustration&nbsp;: vos activités et vos chiffres remplaceront ceux-ci.</p>
       </div>
       <div class="c-pied">
-        <p>Hypothèses écrites&nbsp;: 48 semaines travaillées. Un ordre de grandeur, pas une promesse&nbsp;: le vrai chiffre se fait avec vos données, pendant nos trente minutes.</p>
-        <a href="rentabilite.html">Le détail, offre par offre →</a>
+        <p id="c-hypo">Hypothèses écrites&nbsp;: 48 semaines travaillées. Un ordre de grandeur, pas une promesse&nbsp;: le vrai chiffre se fait avec vos données, pendant nos trente minutes.</p>
+        <div class="liens-c">
+          <a id="c-detail" href="rentabilite.html#auto">Le détail de ce calcul →</a>
+          <a class="preuve" id="c-preuve" href="realisation-01-anniversaires.html">Le cas réel&nbsp;: les demandes d'anniversaire →</a>
+        </div>
+      </div>
+      <div class="c-appel">
+        <a class="btn p" id="c-cta" href="contact.html">Échanger 30 minutes</a>
+        <span>En visio, sans engagement. Vous recevez ensuite un devis écrit, et vous décidez.</span>
       </div>
     </div>
   </div>
@@ -483,7 +606,7 @@ footer{margin-top:0}
 </main>
 <footer><div class="in"><div class="row">
   <span>Atelier MDT · Automatisation · Veille · Tableaux de bord · Accompagnement IA</span>
-  <span><a href="mailto:antoine@atelier-mdt.fr">antoine@atelier-mdt.fr</a> · <a href="tel:+33743688097">07 43 68 80 97</a> · <a href="https://www.linkedin.com/in/antoine-meyfroidt/" rel="noopener">linkedin.com/in/antoine-meyfroidt</a> · <a href="questions.html">Questions fréquentes</a> · <a href="mentions-legales.html">Mentions légales</a> · <a href="cgv.html">CGV</a></span>
+  <span><a href="mailto:antoine@atelier-mdt.fr">antoine@atelier-mdt.fr</a> · <a href="tel:+33743688097">07 43 68 80 97</a> · <a href="https://www.linkedin.com/in/antoine-meyfroidt/" rel="noopener">linkedin.com/in/antoine-meyfroidt</a> · <a href="questions.html">Questions fréquentes</a> · <a href="articles.html">Articles</a> · <a href="mentions-legales.html">Mentions légales</a> · <a href="cgv.html">CGV</a></span>
 </div></div></footer>
 
 <script>
@@ -504,27 +627,180 @@ footer{margin-top:0}
 })();
 </script>
 <script>
-/* Compteur d'heures — autonome, aucune dépendance externe. Sans JavaScript, la page affiche le calcul par défaut (3 h, 25 €). */
+/* Compteur à quatre entrées — autonome, aucune dépendance externe. Sans JavaScript, la page affiche le calcul d'automatisation par défaut (3 h, 25 €). */
 (function(){
-  var h=document.getElementById('heures'),t=document.getElementById('taux');if(!h||!t)return;
-  var NB=' ',cases=document.querySelectorAll('#semaines i');
-  function grp(n){return String(Math.round(n)).replace(/\B(?=(\d{3})+(?!\d))/g,NB);}
-  function sem(n){return n+' semaine'+(n>1?'s':'');}
-  function ecrit(id,v){var e=document.getElementById(id);if(e)e.textContent=v;}
-  function maj(){
-    var hv=Number(h.value)||3,tv=Number(t.value)||25,an=hv*48;
-    var rb=Math.max(1,Math.ceil(500/(hv*tv)));
-    ecrit('v-heures',hv+NB+'h');ecrit('v-taux',tv+NB+'€');
-    h.setAttribute('aria-valuetext',hv+(hv>1?' heures':' heure')+' par semaine');
-    t.setAttribute('aria-valuetext',tv+" euros de l'heure");
-    ecrit('r-heures','≈'+NB+grp(an)+NB+'h');
-    ecrit('r-euros','≈'+NB+grp(an*tv)+NB+'€');
-    ecrit('r-sem','≈'+NB+rb+NB+'sem.');
-    ecrit('l-remb',sem(rb)+' pour rembourser le forfait');
-    ecrit('l-rendu',sem(Math.max(0,48-rb))+' de temps rendu, la première année');
-    for(var i=0;i<cases.length;i++){cases[i].className=i<rb?'on':'';}
+  var racine=document.querySelector('#compteur .compteur');if(!racine)return;
+  function $(id){return document.getElementById(id);}
+  var NB=' ',FIN=' ';
+  var c={heures:$('c-heures'),tauxA:$('c-taux-a'),freq:$('c-freq'),act:$('c-act'),ans:$('c-ans'),pers:$('c-pers'),tauxI:$('c-taux-i'),entrees:$('c-entrees'),cal:$('c-cal'),barres:$('c-barres'),donnees:$('c-donnees'),lignes:$('d-lignes')};
+  for(var k in c){if(!c[k])return;}
+  var boutons=racine.querySelectorAll('.c-entree'),panneaux=racine.querySelectorAll('.c-panneau'),rythmes=racine.querySelectorAll('[data-rythme]');
+  var etat={mode:'auto',rythme:'hebdo'};
+
+  function fr(s){return String(s).replace(/ ([:;?!»])/g,NB+'$1').replace(/« /g,'«'+NB);}
+  function grp(n){return String(Math.round(n)).replace(/\B(?=(\d{3})+(?!\d))/g,FIN);}
+  function nb(n,un,plusieurs){return n+NB+(n>1?plusieurs:un);}
+  function jours(x){return x>=60?Math.round(x/30.4)+NB+'mois':(x%1===0?String(x):String(x).replace('.',','))+NB+'jours';}
+  function ecrit(id,v){var e=$(id);if(e)e.textContent=fr(v);}
+  function euros(n){return grp(n)+NB+'€';}
+  function resultat(i,fig,label,fort){var d=$('r'+i);d.className=fort?'fort':'';d.querySelector('b').textContent=fig;d.querySelector('span').textContent=fr(label);}
+
+  /* calendrier : 12 mois nommés à partir du mois suivant, 4 semaines par mois */
+  var MC=['janv.','févr.','mars','avr.','mai','juin','juil.','août','sept.','oct.','nov.','déc.'];
+  var ML=['janvier','février','mars','avril','mai','juin','juillet','août','septembre','octobre','novembre','décembre'];
+  var debut=(new Date().getMonth()+1)%12,mois=[],cases=[];
+  ['a','b'].forEach(function(cote){
+    var m=$('cal-mois-'+cote),q=$('cal-cases-'+cote),i;
+    for(i=0;i<6;i++){var s=document.createElement('span');m.appendChild(s);mois.push(s);}
+    for(i=0;i<24;i++){var x=document.createElement('i');q.appendChild(x);cases.push(x);}
+  });
+  function calendrier(sem,texte){
+    var mp=sem>0?Math.ceil(sem/4)-1:-1,i;
+    for(i=0;i<12;i++){mois[i].textContent=MC[(debut+i)%12];mois[i].className=i===mp?'on':'';}
+    for(i=1;i<=48;i++){var x=cases[i-1];x.textContent='';x.className='';
+      if(sem>0){if(i<sem)x.className='r';else if(i===sem){x.className='p';x.textContent='✓';}else x.className='g';}}
+    var phrase=texte||'';
+    if(sem>0){
+      var r=((sem-1)%4)+1,nom=ML[(debut+mp)%12],quand=r===1?'début '+nom:(r===4?'fin '+nom:'mi-'+nom),reste=48-sem;
+      phrase='Remboursé en '+nb(sem,'semaine','semaines')+' — '+quand+', dans cet exemple.';
+      if(reste>1)phrase+=' Les '+reste+' semaines suivantes, le temps rendu est du temps gagné.';
+      else if(reste===1)phrase+=' La dernière semaine, le temps rendu est du temps gagné.';
+    }
+    ecrit('cal-phrase',phrase);
+    ecrit('cal-ex','Exemple : mise en service début '+ML[debut]);
   }
-  h.addEventListener('input',maj);t.addEventListener('input',maj);
+
+  var FREQ=[['Jamais',0],['Une fois par an',365],['Une fois par trimestre',90],['Une fois par mois',30],['Toutes les deux semaines',14],['Chaque semaine',7]];
+  var RY={mensuel:{m:70,gap:30,nom:'mensuelle'},bimensuel:{m:85,gap:14,nom:'toutes les deux semaines'},hebdo:{m:100,gap:7,nom:'hebdomadaire'}};
+  var JEUX={
+    1:[[100,100]],
+    2:[[68,31],[32,69]],
+    3:[[52,24],[30,36],[18,40]],
+    4:[[42,16],[28,33],[18,22],[12,29]],
+    5:[[36,12],[25,27],[17,20],[13,30],[9,11]],
+    6:[[34,9],[22,24],[15,17],[9,21],[6,7],[14,22]]
+  };
+  var ROLES={1:['seule'],2:['revoir','pousser'],3:['revoir','pilier','pousser'],4:['revoir','pilier','saison','pousser'],5:['revoir','pilier','saison','pousser','petite'],6:['revoir','pilier','saison','pousser','petite','autres']};
+  var PALIERS=[['Essentiel','450'+NB+'€'+NB+'HT'],['Étendu','550'+NB+'€'+NB+'HT'],['Complet','700'+NB+'€'+NB+'HT'],['Sur mesure','Sur devis']];
+  var ANS=['un an','deux ans','trois ans','plus de trois ans'],ANS_C=['Un an','2 ans','3 ans','Plus de 3 ans'];
+
+  function liens(detail,dTexte,preuve,pTexte,cta){
+    var d=$('c-detail'),p=$('c-preuve'),a=$('c-cta');
+    d.href=detail;d.textContent=fr(dTexte);p.href=preuve;p.textContent=fr(pTexte);a.textContent=cta;
+  }
+  function taux(){return Number(c.tauxA.value)||25;}
+
+  function maj(){
+    var m=etat.mode;
+    c.cal.hidden=!(m==='auto'||m==='ia');c.barres.hidden=m!=='veille';c.donnees.hidden=m!=='donnees';
+    var t=taux();ecrit('o-taux-a',t+NB+'€');ecrit('o-taux-i',t+NB+'€');
+    c.tauxA.setAttribute('aria-valuetext',t+" euros de l'heure");c.tauxI.setAttribute('aria-valuetext',t+" euros de l'heure");
+
+    if(m==='auto'){
+      var h=Number(c.heures.value)||3,an=h*48,sem=Math.max(1,Math.ceil(500/(h*t)));
+      ecrit('o-heures',h+NB+'h');c.heures.setAttribute('aria-valuetext',h+(h>1?' heures':' heure')+' par semaine');
+      resultat(1,'≈'+NB+grp(an)+NB+'h','rendues sur un an',true);
+      resultat(2,'≈'+NB+euros(an*t),'de temps payé, chaque année',false);
+      resultat(3,'≈'+NB+sem+NB+'sem.','pour rembourser une automatisation à 500'+NB+'€'+NB+'HT',false);
+      calendrier(sem,'');
+      ecrit('c-hypo','Hypothèses écrites : 48 semaines travaillées. Un ordre de grandeur, pas une promesse : le vrai chiffre se fait avec vos données, pendant nos trente minutes.');
+      liens('rentabilite.html#auto','Le détail de ce calcul →','realisation-01-anniversaires.html',"Le cas réel : les demandes d'anniversaire →",'Échanger 30 minutes');
+    }
+
+    if(m==='veille'){
+      var f=FREQ[Math.max(0,Math.min(5,Number(c.freq.value)))],ry=RY[etat.rythme]||RY.hebdo;
+      var avant=f[1]?f[1]/2:null,apres=ry.gap/2,an1=300+12*ry.m,l2;
+      ecrit('o-freq',f[0]);c.freq.setAttribute('aria-valuetext',f[0]);
+      if(avant===null)resultat(1,'Par un client',"aujourd'hui : vous l'apprenez le jour où un client négocie",false);
+      else resultat(1,'≈'+NB+jours(avant),"aujourd'hui, en moyenne, entre un changement chez un concurrent et le moment où vous le voyez",false);
+      if(avant===null||apres<avant)l2='avec la veille '+ry.nom+', au plus '+jours(ry.gap)+' — sans y passer une minute';
+      else if(apres===avant)l2='avec la veille '+ry.nom+" : le même rythme qu'aujourd'hui, sans le relevé à faire vous-même";
+      else l2='avec la veille '+ry.nom+" : moins souvent que vous aujourd'hui — prenez un rythme plus court";
+      resultat(2,'≈'+NB+jours(apres),l2,true);
+      resultat(3,euros(an1)+NB+'HT',"la première année : 300 € HT d'installation, puis "+ry.m+NB+'€'+NB+'HT par mois',false);
+      var larg=function(d){return Math.max(2,Math.min(80,d/90*80)).toFixed(1)+'%';};
+      $('b-now-w').style.width=avant===null?'80%':larg(avant);
+      ecrit('b-now-t',avant===null?'par un client, le jour où il négocie':'≈'+NB+jours(avant));
+      ecrit('b-v-l','Avec la veille '+ry.nom);$('b-v-w').style.width=larg(apres);ecrit('b-v-t','≈'+NB+jours(apres));
+      var hy="Hypothèse : un changement arrive à un moment quelconque, on le voit donc en moyenne à mi-chemin entre deux visites. Suivre ses concurrents à la main coûte une à deux heures par semaine et finit toujours abandonné. La veille relève ce qu'ils publient sur leur site — offres, tarifs affichés, nouveautés —, jusqu'à cinq concurrents.";
+      if(f[1]===7)hy+=" Vous le faites déjà chaque semaine : la veille ne vous donne pas d'avance, elle vous rend l'heure de relevé, soit ≈ 48 h par an selon la page Rentabilité.";
+      ecrit('c-hypo',hy);
+      liens('rentabilite.html#veille','Le détail de ce calcul →','realisation-04-veille.html','Le cas réel : chaque lundi à 8'+NB+'h'+NB+'01 depuis juin 2026 →','Échanger 30 minutes');
+    }
+
+    if(m==='donnees'){
+      var a=Number(c.act.value)||1,y=Math.max(1,Math.min(4,Number(c.ans.value)||1)),cle=Math.min(a,6),jeu=JEUX[cle],roles=ROLES[cle],yoy=y>=2;
+      ecrit('o-act',nb(a,'activité','activités'));c.act.setAttribute('aria-valuetext',nb(a,'activité','activités'));
+      ecrit('o-ans',ANS_C[y-1]);c.ans.setAttribute('aria-valuetext',ANS_C[y-1]);
+      var pal=PALIERS[Math.max(a<=5?0:(a<=10?1:(a<=15?2:3)),y-1)];
+      resultat(1,nb(a,'activité','activités'),(a===1?'suivie mois par mois':'comparées entre elles, mois par mois')+(yoy?" et d'une année sur l'autre":''),true);
+      resultat(2,pal[1],'palier '+pal[0]+' : '+nb(a,'activité','activités')+', '+ANS[y-1]+" d'historique",false);
+      resultat(3,'5'+NB+'min','pour lire où vous gagnez et où vous perdez, manuel de lecture compris',false);
+      var pct=function(v){return v+NB+'%';};
+      var parts=function(r){return pct(r[0])+' des ventes, '+pct(r[1])+' de la marge';};
+      var commentaire=function(role,r){
+        if(role==='seule')return yoy?"Votre seule activité : chaque mois comparé au même mois de l'an dernier":'Votre seule activité : le tableau montre ses jours forts et ses mois creux';
+        if(role==='revoir')return parts(r)+' : à revoir';
+        if(role==='pousser')return parts(r)+' : à pousser';
+        if(role==='pilier')return (cle===3&&yoy)?'−12'+NB+'% sur un an : elle décroche':parts(r)+' : un pilier, à protéger';
+        if(role==='saison')return yoy?'−12'+NB+'% sur un an : elle décroche':'La moitié de ses ventes en trois mois : à anticiper';
+        if(role==='petite')return yoy?'+18'+NB+'% sur un an : elle monte, à suivre':parts(r)+' : marginale, à arbitrer';
+        return '';
+      };
+      c.lignes.textContent='';
+      jeu.forEach(function(r,i){
+        var nom=roles[i]==='autres'?(a-5===1?'1 autre activité':(a-5)+' autres'):(a===1?'Votre activité':'Activité '+'ABCDE'.charAt(i));
+        var l=document.createElement('div');l.className='d-ligne';
+        var n=document.createElement('span');n.className='nom';n.textContent=nom;
+        var b=document.createElement('div');b.className='bars';b.setAttribute('aria-hidden','true');
+        var i1=document.createElement('i');i1.style.width=r[0]+'%';var i2=document.createElement('i');i2.className='m';i2.style.width=r[1]+'%';
+        b.appendChild(i1);b.appendChild(i2);
+        var co=document.createElement('span');co.className='com';co.textContent=fr(commentaire(roles[i],r));
+        l.appendChild(n);l.appendChild(b);l.appendChild(co);c.lignes.appendChild(l);
+      });
+      ecrit('c-hypo',"Un tableau de bord ne vous fait ni gagner ni économiser d'argent tout seul : il vous montre quelle activité vous coûte plus qu'elle ne rapporte, et laquelle mérite d'être poussée. La décision reste la vôtre — vous la prenez en sachant pourquoi. Le palier suit le critère le plus élevé ; le prix ferme vient après nos trente minutes.");
+      liens('offres.html#donnees','Les quatre paliers, critère par critère →','realisation-05-data.html','Le cas réel : trois ans de ventes devenus lisibles →','Échanger 30 minutes');
+    }
+
+    if(m==='ia'){
+      var p=Number(c.pers.value)||1,fmt=null,pr;
+      ecrit('o-pers',nb(p,'personne','personnes'));c.pers.setAttribute('aria-valuetext',nb(p,'personne','personnes'));
+      if(p===1)fmt=['l\'accompagnement individuel',150,'Format : accompagnement individuel — deux heures sur trois tâches de votre semaine, 150'+NB+'€'+NB+'HT'];
+      else if(p<=8){pr=400+50*Math.max(0,p-4);fmt=["l'atelier d'équipe",pr,p<=4?"Format : atelier d'équipe de 3 h 30, 400"+NB+'€'+NB+"HT jusqu'à quatre personnes":"Format : atelier d'équipe de 3 h 30, 400"+NB+'€'+NB+'HT + 50'+NB+'€'+NB+'HT par personne au-delà de quatre, soit '+pr+NB+'€'+NB+'HT'];}
+      else if(p>=10){pr=1000+50*(p-4);fmt=['le déploiement structuré',pr,'Format : déploiement structuré — socle 600'+NB+'€'+NB+'HT + atelier 400'+NB+'€'+NB+'HT, + 50'+NB+'€'+NB+'HT par personne au-delà de quatre, soit '+euros(pr)+NB+'HT'];}
+      var anI=p*48;
+      resultat(1,'≈'+NB+grp(anI)+NB+'h','rendues sur un an, à une heure par personne et par semaine',true);
+      resultat(2,'≈'+NB+euros(anI*t),'de temps rendu, chaque année',false);
+      if(fmt){
+        var semI=Math.max(1,Math.ceil(fmt[1]/(p*t)));
+        resultat(3,'≈'+NB+semI+NB+'sem.','pour rembourser '+fmt[0]+' à '+euros(fmt[1])+NB+'HT',false);
+        calendrier(semI,'');ecrit('c-format',fmt[2]);
+      }else{
+        resultat(3,'Sur devis',"entre l'atelier, huit personnes au plus, et le déploiement, dès dix",false);
+        calendrier(0,'Le prix ferme, et donc le remboursement, se calculent pendant nos trente minutes.');
+        ecrit('c-format',"Format : sur devis — l'atelier va jusqu'à huit personnes, le déploiement commence à dix");
+      }
+      ecrit('c-hypo','Hypothèse : une heure gagnée par semaine et par personne, le plancher prudent de la page Rentabilité ; 48 semaines. La compétence reste quand la mission est finie.');
+      liens('rentabilite.html#ia','Le détail de ce calcul →','realisation-06-ia.html','Le cas réel : 10 projets IA dans une équipe de dix →','Échanger 30 minutes');
+    }
+  }
+
+  function choisir(mode){
+    etat.mode=mode;
+    for(var i=0;i<boutons.length;i++)boutons[i].setAttribute('aria-pressed',boutons[i].getAttribute('data-mode')===mode?'true':'false');
+    for(var j=0;j<panneaux.length;j++)panneaux[j].hidden=panneaux[j].getAttribute('data-panneau')!==mode;
+    maj();
+  }
+  for(var i=0;i<boutons.length;i++)boutons[i].addEventListener('click',function(){choisir(this.getAttribute('data-mode'));});
+  for(var j=0;j<rythmes.length;j++)rythmes[j].addEventListener('click',function(){
+    etat.rythme=this.getAttribute('data-rythme');
+    for(var r=0;r<rythmes.length;r++)rythmes[r].setAttribute('aria-pressed',rythmes[r]===this?'true':'false');
+    maj();
+  });
+  c.tauxA.addEventListener('input',function(){c.tauxI.value=c.tauxA.value;maj();});
+  c.tauxI.addEventListener('input',function(){c.tauxA.value=c.tauxI.value;maj();});
+  [c.heures,c.freq,c.act,c.ans,c.pers].forEach(function(x){x.addEventListener('input',maj);});
+  c.entrees.hidden=false;
   maj();
 })();
 </script>
