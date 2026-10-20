@@ -76,6 +76,13 @@ footer a{color:var(--sourd)}
 .form .deux{display:grid;grid-template-columns:1fr 1fr;gap:0 14px}
 @media(max-width:480px){.form .deux{grid-template-columns:1fr}}
 .form .hp{position:absolute;left:-9999px;width:1px;height:1px;overflow:hidden}
+.form details.plus{margin-top:16px;border-top:1px solid var(--trait);padding-top:4px}
+.form details.plus summary{cursor:pointer;list-style:none;font-size:13.5px;font-weight:800;color:var(--ambre);padding:10px 0;display:flex;align-items:center;gap:8px}
+.form details.plus summary::-webkit-details-marker{display:none}
+.form details.plus summary::before{content:"+";display:inline-block;width:14px;font-weight:800}
+.form details.plus[open] summary::before{content:"\2212"}
+.form details.plus summary span{font-weight:400;color:var(--sourd)}
+.form details.plus summary:focus-visible{outline:2px solid var(--ambre);outline-offset:3px;border-radius:3px}
 .form button:disabled{opacity:.6;cursor:wait}
 .form .erreur{margin-top:14px;border:1px solid var(--ambre);border-radius:5px;padding:12px 14px;font-size:13.5px;color:var(--froid);background:var(--panneau)}
 .form .erreur a{color:var(--ambre);font-weight:700}
@@ -179,39 +186,49 @@ nav .burger{display:none}
             <input id="email" name="email" type="email" required autocomplete="email">
           </div>
           <div>
-            <label for="telephone">Votre téléphone <span style="font-weight:400;color:#9FB0C8">(facultatif)</span></label>
-            <input id="telephone" name="telephone" type="tel" maxlength="20" autocomplete="tel" inputmode="tel">
-          </div>
-        </div>
-        <label for="entreprise">Nom de l'entreprise <span style="font-weight:400;color:#9FB0C8">(facultatif)</span></label>
-        <input id="entreprise" name="entreprise" type="text" autocomplete="organization" placeholder="Ex. : Cabinet Le Guen">
-        <div class="deux">
-          <div>
-            <label for="effectif">Nombre de salariés <span style="font-weight:400;color:#9FB0C8">(facultatif)</span></label>
-            <select id="effectif" name="effectif">
-              <option value="" selected>Choisir…</option>
-              <option>Je travaille seul(e)</option>
-              <option>2 à 5</option>
-              <option>6 à 10</option>
-              <option>11 à 20</option>
-              <option>Plus de 20</option>
-            </select>
-          </div>
-          <div>
             <label for="activite">Activité / domaine</label>
             <input id="activite" name="activite" type="text" required placeholder="Ex. : kinésithérapie, boulangerie">
           </div>
         </div>
-        <label for="sujet">Ce qui vous prend du temps</label>
-        <select id="sujet" name="sujet">
-          <option>Des demandes clients à traiter à la main</option>
-          <option>Suivre mes concurrents ou mon marché</option>
-          <option>Comprendre mes chiffres de vente</option>
-          <option>Rendre mon équipe autonome avec l'IA</option>
-          <option>Autre chose</option>
-        </select>
-        <label for="message">En quelques lignes</label>
-        <textarea id="message" name="message" placeholder="Quelle tâche, combien de fois par semaine, qui s'en occupe aujourd'hui…"></textarea>
+        <details class="plus">
+          <summary>Préciser votre demande <span>(facultatif)</span></summary>
+          <div class="deux">
+            <div>
+              <label for="telephone">Votre téléphone</label>
+              <input id="telephone" name="telephone" type="tel" maxlength="20" autocomplete="tel" inputmode="tel">
+            </div>
+            <div>
+              <label for="entreprise">Nom de l'entreprise</label>
+              <input id="entreprise" name="entreprise" type="text" autocomplete="organization" placeholder="Ex. : Cabinet Le Guen">
+            </div>
+          </div>
+          <div class="deux">
+            <div>
+              <label for="effectif">Nombre de salariés</label>
+              <select id="effectif" name="effectif">
+                <option value="" selected>Choisir…</option>
+                <option>Je travaille seul(e)</option>
+                <option>2 à 5</option>
+                <option>6 à 10</option>
+                <option>11 à 20</option>
+                <option>Plus de 20</option>
+              </select>
+            </div>
+            <div>
+              <label for="sujet">Ce qui vous prend du temps</label>
+              <select id="sujet" name="sujet">
+                <option value="" selected>Choisir…</option>
+                <option>Des demandes clients à traiter à la main</option>
+                <option>Suivre mes concurrents ou mon marché</option>
+                <option>Comprendre mes chiffres de vente</option>
+                <option>Rendre mon équipe autonome avec l'IA</option>
+                <option>Autre chose</option>
+              </select>
+            </div>
+          </div>
+          <label for="message">En quelques lignes</label>
+          <textarea id="message" name="message" placeholder="Quelle tâche, combien de fois par semaine, qui s'en occupe aujourd'hui…"></textarea>
+        </details>
         <input type="hidden" name="_subject" value="Demande de contact — atelier-mdt.fr">
         <label class="hp" for="_gotcha" aria-hidden="true">Ne pas remplir</label>
         <input class="hp" id="_gotcha" type="text" name="_gotcha" tabindex="-1" autocomplete="off" aria-hidden="true">
