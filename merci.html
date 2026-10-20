@@ -41,7 +41,7 @@ nav .links{display:flex;align-items:center;gap:16px;height:100%}
 nav .links a{display:inline-flex;align-items:center;height:36px;color:var(--sourd);text-decoration:none;font-size:13.5px;font-weight:600;white-space:nowrap;border-bottom:2px solid transparent;line-height:1}
 nav .links a:hover{color:var(--froid)}
 nav .links a.on{color:var(--froid);border-bottom:2px solid var(--ambre)}
-nav .links a.btn-nav{background:var(--ambre);color:#1A1608;padding:0 18px;border-radius:5px;font-weight:800;border-bottom:2px solid transparent;height:40px}
+nav .links a.btn-nav{background:var(--ambre);color:#10233F;padding:0 18px;border-radius:5px;font-weight:800;border-bottom:2px solid transparent;height:40px}
 @media(max-width:800px){nav .links a:not(.btn-nav){display:none}nav .brand .wm em{display:none}nav .in{min-height:62px}}
 header.h{padding:60px 0 6px}
 header.h .eyebrow{font-size:11.5px;font-weight:800;letter-spacing:.09em;color:var(--ambre);margin-bottom:12px}
@@ -77,11 +77,11 @@ nav .burger{display:none}
   nav.ouvert .burger span:nth-child(1){transform:translateY(7px) rotate(45deg)}
   nav.ouvert .burger span:nth-child(2){opacity:0}
   nav.ouvert .burger span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
-  nav .in .links{display:none!important;position:absolute;top:100%;left:0;right:0;flex-direction:column!important;align-items:stretch!important;gap:0!important;height:auto!important;background:var(--nuit,#10233F);border-bottom:1px solid var(--trait,#2A4470);padding:4px 22px 20px!important;box-shadow:0 16px 34px rgba(0,0,0,.45)}
+  nav .in .links{display:none!important;position:absolute;top:100%;left:0;right:0;flex-direction:column!important;align-items:stretch!important;gap:0!important;height:auto!important;background:var(--nuit,#10233F);border-bottom:1px solid var(--trait,#2A4470);padding:4px 22px 20px!important}
   nav.ouvert .in .links{display:flex!important}
   nav.ouvert .in .links a{display:flex!important;align-items:center!important;width:100%;height:auto!important;margin:0!important;padding:15px 0!important;font-size:16px!important;font-weight:600!important;color:var(--sourd,#9FB0C8)!important;background:transparent!important;border:0!important;border-bottom:1px solid var(--trait,#2A4470)!important;border-radius:0!important}
   nav.ouvert .in .links a.on{color:var(--ambre,#F5B62E)!important}
-  nav.ouvert .in .links a.btn-nav{justify-content:center!important;margin-top:16px!important;height:46px!important;padding:0 18px!important;border:0!important;border-radius:5px!important;background:var(--ambre,#F5B62E)!important;color:#1A1608!important;font-weight:800!important}
+  nav.ouvert .in .links a.btn-nav{justify-content:center!important;margin-top:16px!important;height:46px!important;padding:0 18px!important;border:0!important;border-radius:5px!important;background:var(--ambre,#F5B62E)!important;color:#10233F!important;font-weight:800!important}
 }
 .rgpd-bloc{margin-top:14px}
 .rgpd-bloc h3{font-size:15.5px;font-weight:800;margin-bottom:7px}
@@ -94,7 +94,7 @@ nav .burger{display:none}
 #my-cal-inline-echanger-30-minutes:empty{min-height:0}
 .repli{display:flex;flex-direction:column;align-items:flex-start;gap:14px;padding:10px 8px 8px}
 .repli p{font-size:15px;color:var(--sourd);max-width:52ch}
-.repli .btn{display:inline-flex;align-items:center;justify-content:center;height:46px;padding:0 20px;background:var(--ambre);color:#1A1608;border-radius:5px;font-weight:800;font-size:15px;text-decoration:none}
+.repli .btn{display:inline-flex;align-items:center;justify-content:center;height:46px;padding:0 20px;background:var(--ambre);color:#10233F;border-radius:5px;font-weight:800;font-size:15px;text-decoration:none}
 .cal-aide{margin-top:14px;font-size:14.5px;color:var(--sourd)}
 .cal-aide a{color:var(--ambre);font-weight:700}
 @media(max-width:480px){.cal-card{padding:6px}.repli{padding:14px 10px}.repli .btn{width:100%}}
@@ -187,7 +187,7 @@ nav .burger{display:none}
     config: {"layout":"month_view","theme":"dark","name":(prenom+' '+nom).trim(),"email":email},
     calLink: "atelier-mdt/echanger-30-minutes"
   });
-  Cal.ns[NS]("ui", {"theme":"dark","cssVarsPerTheme":{"light":{"cal-brand":"#B7811A","cal-brand-text":"#FFFFFF"},"dark":{"cal-brand":"#F5B62E","cal-brand-emphasis":"#B7811A","cal-brand-text":"#1A1608","cal-bg":"#182F52","cal-bg-emphasis":"#2A4470","cal-bg-subtle":"#10233F","cal-bg-muted":"#10233F","cal-text":"#E9EEF6","cal-text-emphasis":"#E9EEF6","cal-text-subtle":"#9FB0C8","cal-border":"#2A4470","cal-border-subtle":"#2A4470","cal-border-emphasis":"#8A9EBB","cal-border-booker":"#2A4470","cal-border-booker-width":"0px","radius":"7px"}},"hideEventTypeDetails":true,"showTimezoneWhenEventDetailsHidden":true,"layout":"month_view"});
+  Cal.ns[NS]("ui", {"theme":"dark","cssVarsPerTheme":{"light":{"cal-brand":"#10233F","cal-brand-text":"#FFFFFF"},"dark":{"cal-brand":"#F5B62E","cal-brand-emphasis":"#F5B62E","cal-brand-text":"#10233F","cal-bg":"#182F52","cal-bg-emphasis":"#2A4470","cal-bg-subtle":"#10233F","cal-bg-muted":"#10233F","cal-text":"#E9EEF6","cal-text-emphasis":"#E9EEF6","cal-text-subtle":"#9FB0C8","cal-border":"#2A4470","cal-border-subtle":"#2A4470","cal-border-emphasis":"#9FB0C8","cal-border-booker":"#2A4470","cal-border-booker-width":"0px","radius":"7px"}},"hideEventTypeDetails":true,"showTimezoneWhenEventDetailsHidden":true,"layout":"month_view"});
   var pret=false;
   Cal.ns[NS]("on",{action:"linkReady",callback:function(){pret=true;repli.hidden=true;}});
   Cal.ns[NS]("on",{action:"linkFailed",callback:function(){repli.hidden=false;}});
