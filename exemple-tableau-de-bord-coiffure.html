@@ -1,0 +1,546 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Exemple de tableau de bord pour un salon de coiffure — Atelier MDT</title>
+<meta name="description" content="Un tableau de bord interactif de démonstration pour un salon de coiffure : prestations, ticket moyen, jours pleins, revente de produits. Un an de caisse, palier Essentiel, données fictives.">
+<link rel="canonical" href="https://atelier-mdt.fr/exemple-tableau-de-bord-coiffure.html">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://atelier-mdt.fr/exemple-tableau-de-bord-coiffure.html">
+<meta property="og:site_name" content="Atelier MDT">
+<meta property="og:title" content="Exemple de tableau de bord pour un salon de coiffure — Atelier MDT">
+<meta property="og:description" content="Un tableau de bord interactif de démonstration pour un salon de coiffure : prestations, ticket moyen, jours pleins, revente de produits. Un an de caisse, palier Essentiel, données fictives.">
+<meta property="og:image" content="https://atelier-mdt.fr/assets/og-atelier-mdt.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Atelier MDT — Parce que votre temps est précieux.">
+<meta property="og:locale" content="fr_FR">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#10233F">
+<link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32.png">
+<link rel="apple-touch-icon" sizes="180x180" href="assets/favicon-180.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{--nuit:#10233F;--panneau:#182F52;--ambre:#F5B62E;--sourd:#9FB0C8;--trait:#2A4470;--froid:#E9EEF6}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{background:var(--nuit);color:var(--froid);font-family:'Manrope',system-ui,-apple-system,sans-serif;line-height:1.6;font-size:16px;-webkit-font-smoothing:antialiased}
+a{color:inherit}
+.in{max-width:900px;margin:0 auto;padding:0 22px}
+nav{position:sticky;top:0;z-index:20;background:rgba(16,35,63,.93);backdrop-filter:blur(8px);border-bottom:1px solid var(--trait)}
+nav .in{display:flex;align-items:center;justify-content:space-between;gap:14px;padding:13px 22px}
+nav .brand{display:flex;align-items:center;gap:10px;text-decoration:none}
+nav .brand svg{color:var(--ambre);flex:none}
+nav .brand span{font-size:16px;font-weight:800;letter-spacing:-.025em}
+nav .links{display:flex;align-items:center;gap:20px}
+nav .links a{color:var(--sourd);text-decoration:none;font-size:13.5px;font-weight:600}
+nav .links a:hover,nav .links a.on{color:var(--froid)}
+nav .cta{background:var(--ambre)!important;color:#10233F!important;padding:9px 15px;border-radius:5px;font-weight:800!important}
+@media(max-width:700px){nav .links a:not(.cta){display:none}}
+header.h{padding:60px 0 6px}
+header.h .eyebrow{font-size:11.5px;font-weight:800;letter-spacing:.09em;color:var(--ambre);margin-bottom:12px}
+header.h h1{font-size:clamp(30px,5.4vw,46px);font-weight:800;letter-spacing:-.03em;line-height:1.06;max-width:22ch}
+header.h .sub{margin-top:15px;font-size:17px;color:var(--sourd);max-width:58ch}
+section{padding:58px 0 0;scroll-margin-top:64px}
+h2.lbl{font-size:11.5px;font-weight:800;letter-spacing:.09em;color:var(--ambre);padding-bottom:10px;border-bottom:1px solid var(--trait);margin-bottom:24px}
+.txt p{font-size:15.5px;max-width:68ch;margin-bottom:12px;color:#E9EEF6}
+.txt p strong{color:#fff}
+.btn{display:inline-block;padding:13px 22px;font-size:15px;font-weight:700;text-decoration:none;border-radius:5px}
+.btn.p{background:var(--ambre);color:#10233F}
+.btn.s{background:transparent;color:var(--froid);border:1px solid var(--trait)}
+.card{background:var(--panneau);border:1px solid var(--trait);border-radius:7px;padding:20px 22px}
+.filet{border-left:3px solid var(--ambre);padding-left:14px;margin:18px 0;font-size:14.5px;color:var(--sourd);max-width:68ch}
+.filet b{color:var(--froid)}
+footer{margin-top:60px;border-top:1px solid var(--trait);padding:24px 0 46px;font-size:12.5px;color:var(--sourd)}
+footer .row{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
+footer a{color:var(--sourd)}
+.cta{background:var(--ambre);color:#10233F;border-radius:8px;padding:32px 30px;margin-top:56px}
+.cta h2{font-size:clamp(22px,3.4vw,28px);font-weight:800;letter-spacing:-.02em;line-height:1.15}
+.cta p{font-size:15.5px;margin-top:10px;max-width:62ch}
+.cta a{display:inline-block;margin-top:18px;background:#10233F;color:var(--ambre);padding:12px 20px;border-radius:5px;font-weight:800;font-size:15px;text-decoration:none}
+
+/* ── commun à toutes les pages ── */
+.in{max-width:900px!important;margin:0 auto;padding:0 22px}
+nav{position:sticky;top:0;z-index:20;background:rgba(16,35,63,.94);backdrop-filter:blur(8px);border-bottom:1px solid var(--trait,#2A4470)}
+nav .in{display:flex;align-items:center;justify-content:space-between;gap:16px;padding:15px 22px}
+nav .brand{display:flex;align-items:center;gap:12px;text-decoration:none}
+nav .brand svg{color:var(--ambre,#F5B62E);flex:none}
+nav .brand .wm{font-size:18px;font-weight:800;letter-spacing:-.025em;line-height:1;color:var(--froid,#E9EEF6)}
+nav .brand .wm em{display:block;font-style:normal;font-size:7.5px;font-weight:800;letter-spacing:.09em;color:var(--ambre,#F5B62E);margin-top:4px;white-space:nowrap}
+nav .links{display:flex;align-items:center;gap:22px}
+nav .links a{color:var(--sourd,#9FB0C8);text-decoration:none;font-size:14px;font-weight:600;white-space:nowrap}
+nav .links a:hover,nav .links a.on{color:var(--froid,#E9EEF6)}
+nav .links a.btn-nav{background:var(--ambre,#F5B62E);color:#10233F;padding:10px 16px;border-radius:5px;font-weight:800;margin:0;display:inline-block;line-height:1.2}
+@media(max-width:800px){nav .links a:not(.btn-nav){display:none}nav .brand .wm em{display:none}}
+footer{margin-top:60px;border-top:1px solid var(--trait,#2A4470);padding:24px 0 46px;font-size:12.5px;color:var(--sourd,#9FB0C8)}
+footer .row{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
+footer a{color:var(--sourd,#9FB0C8)}
+.cta-bloc{background:var(--ambre,#F5B62E);color:#10233F;border-radius:8px;padding:32px 30px;margin-top:56px}
+.cta-bloc h2{font-size:clamp(22px,3.4vw,28px);font-weight:800;letter-spacing:-.02em;line-height:1.15}
+.cta-bloc p{font-size:15.5px;margin-top:10px;max-width:62ch;color:#10233F}
+.cta-bloc a{display:inline-block;margin-top:18px;background:#10233F;color:var(--ambre,#F5B62E);padding:12px 20px;border-radius:5px;font-weight:800;font-size:15px;text-decoration:none}
+
+/* ── NAVIGATION UNIFIÉE (bloc final, prioritaire) ── */
+nav .in{display:flex!important;align-items:center!important;justify-content:space-between!important;gap:18px!important;padding:0 22px!important;min-height:74px!important}
+nav .brand{display:flex!important;align-items:center!important;gap:12px!important;text-decoration:none!important}
+nav .brand svg{color:var(--ambre,#F5B62E)!important;flex:none!important;width:32px!important;height:32px!important}
+nav .brand .wm{font-size:18px!important;font-weight:800!important;letter-spacing:-.025em!important;line-height:1!important;color:var(--froid,#E9EEF6)!important}
+nav .brand .wm em{display:block!important;font-style:normal!important;font-size:7.5px!important;font-weight:800!important;letter-spacing:.09em!important;color:var(--ambre,#F5B62E)!important;margin-top:4px!important;white-space:nowrap!important}
+nav .links{display:flex!important;align-items:center!important;gap:16px!important;height:100%!important}
+@media(min-width:801px) and (max-width:880px){nav .links{gap:11px!important}nav .links a.btn-nav{padding:0 14px!important}}
+nav .links a{display:inline-flex!important;align-items:center!important;height:36px!important;margin:0!important;color:var(--sourd,#9FB0C8)!important;text-decoration:none!important;font-size:14px!important;font-weight:600!important;white-space:nowrap!important;border-bottom:2px solid transparent!important;line-height:1!important;font-size:13.5px!important}
+nav .links a:hover{color:var(--froid,#E9EEF6)!important}
+nav .links a.on{color:var(--froid,#E9EEF6)!important;border-bottom:2px solid var(--ambre,#F5B62E)!important}
+nav .links a.btn-nav{background:var(--ambre,#F5B62E)!important;color:#10233F!important;padding:0 18px!important;border-radius:5px!important;font-weight:800!important;border-bottom:2px solid transparent!important;height:40px!important}
+nav .links a.btn-nav:hover{color:#10233F!important}
+@media(max-width:800px){nav .links a:not(.btn-nav){display:none!important}nav .brand .wm em{display:none!important}nav .in{min-height:62px!important}}
+
+
+/* ══ MENU MOBILE — bloc autonome, aucune dépendance externe ══ */
+nav .burger{display:none}
+@media(max-width:800px){
+  nav .burger{display:flex;flex:none;flex-direction:column;justify-content:center;gap:5px;width:44px;height:38px;padding:0 11px;background:transparent;border:1px solid var(--trait,#2A4470);border-radius:5px;cursor:pointer;-webkit-tap-highlight-color:transparent}
+  nav .burger span{display:block;height:2px;background:var(--froid,#E9EEF6);border-radius:1px;transition:transform .2s ease,opacity .2s ease}
+  nav.ouvert .burger span:nth-child(1){transform:translateY(7px) rotate(45deg)}
+  nav.ouvert .burger span:nth-child(2){opacity:0}
+  nav.ouvert .burger span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
+  nav .in .links{display:none!important;position:absolute;top:100%;left:0;right:0;flex-direction:column!important;align-items:stretch!important;gap:0!important;height:auto!important;background:var(--nuit,#10233F);border-bottom:1px solid var(--trait,#2A4470);padding:4px 22px 20px!important}
+  nav.ouvert .in .links{display:flex!important}
+  nav.ouvert .in .links a{display:flex!important;align-items:center!important;width:100%;height:auto!important;margin:0!important;padding:15px 0!important;font-size:16px!important;font-weight:600!important;color:var(--sourd,#9FB0C8)!important;background:transparent!important;border:0!important;border-bottom:1px solid var(--trait,#2A4470)!important;border-radius:0!important}
+  nav.ouvert .in .links a.on{color:var(--ambre,#F5B62E)!important}
+  nav.ouvert .in .links a.btn-nav{justify-content:center!important;margin-top:16px!important;height:46px!important;padding:0 18px!important;border:0!important;border-radius:5px!important;background:var(--ambre,#F5B62E)!important;color:#10233F!important;font-weight:800!important}
+}
+
+/* ── page Exemples : mise en page allégée ── */
+.fil{font-size:12.5px;margin-bottom:18px}
+.fil a{color:var(--sourd);text-decoration:none;font-weight:700}
+.fil a:hover{color:var(--froid)}
+.chapo{margin-top:22px;border-left:2px solid var(--trait);padding-left:16px;font-size:13.8px;color:#9FB0C8;max-width:74ch;line-height:1.6}
+.chapo b{color:var(--sourd)}
+.chapo a{color:var(--ambre);text-decoration:none;font-weight:700}
+
+.liste{margin-top:6px;border-top:1px solid var(--trait)}
+.ex{padding:26px 0;border-bottom:1px solid var(--trait);scroll-margin-top:88px}
+.ex h2{font-size:19px;font-weight:800;letter-spacing:-.015em;line-height:1.25;color:var(--froid)}
+.ex .src{margin-top:5px;font-size:11.5px;font-weight:700;letter-spacing:.02em}
+.ex .src a{color:var(--ambre);text-decoration:none}
+.ex .src a:hover{text-decoration:underline}
+.ex .src.nb{color:#9FB0C8;font-weight:600}
+.ex .src.nb a{color:#9FB0C8;font-weight:700}
+.ex p.c{margin-top:12px;font-size:14.6px;color:var(--sourd);max-width:74ch;line-height:1.65}
+.ex p.c b{color:var(--froid)}
+.ex p.c .q{color:#9FB0C8}
+.ex details{margin-top:13px;max-width:74ch}
+.ex summary{cursor:pointer;font-size:12.5px;font-weight:800;letter-spacing:.03em;color:#9FB0C8;list-style:none;display:inline-flex;align-items:center;gap:7px}
+.ex summary::-webkit-details-marker{display:none}
+.ex summary::before{content:"+";display:inline-flex;align-items:center;justify-content:center;width:16px;height:16px;border:1px solid var(--trait);border-radius:3px;font-size:12px;font-weight:700;line-height:1}
+.ex details[open] summary::before{content:"–"}
+.ex summary:hover{color:var(--ambre)}
+.ex details[open] summary{color:var(--ambre)}
+.ex details p{margin-top:10px;font-size:13.8px;color:#9FB0C8;line-height:1.6;padding-left:23px}
+
+/* ── bloc des limites, en bas de page ── */
+section.limites{background:var(--nuit);border-top:1px solid var(--trait);border-bottom:1px solid var(--trait);padding:50px 0 54px;margin-top:56px}
+.cadre{display:grid;grid-template-columns:1fr;gap:14px;align-items:start}
+.cadre .non ul{columns:2;column-gap:30px}
+.cadre .non li{break-inside:avoid}
+@media(max-width:780px){.cadre .non ul{columns:1}}
+.cadre .oui,.cadre .non{border-radius:7px;padding:19px 21px}
+.cadre .oui{background:rgba(245,182,46,.06);border:1px solid rgba(245,182,46,.35)}
+.cadre .non{background:var(--panneau);border:1px solid var(--trait)}
+.cadre .k{font-size:10.5px;font-weight:800;letter-spacing:.08em;margin-bottom:10px}
+.cadre .oui .k{color:var(--ambre)}
+.cadre .non .k{color:#9FB0C8}
+.cadre p{font-size:14px;color:var(--sourd);line-height:1.6}
+.cadre p b{color:var(--froid)}
+.cadre ul{list-style:none}
+.cadre li{font-size:13.5px;color:#9FB0C8;margin-bottom:11px;padding-left:16px;position:relative;line-height:1.55}
+.cadre li::before{content:"";position:absolute;left:0;top:9px;width:7px;height:1px;background:#4A6591}
+.cadre .dem{color:var(--froid);font-weight:700}
+.cadre .fin{margin-top:13px;padding-top:12px;border-top:1px solid var(--trait);font-size:13.5px;color:#9FB0C8}
+
+.suite{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:12px}
+.suite a{display:flex;flex-direction:column;gap:5px;background:var(--panneau);border:1px solid var(--trait);border-radius:7px;padding:17px 19px;text-decoration:none;transition:border-color .15s}
+.suite a:hover{border-color:var(--ambre)}
+.suite a b{font-size:15.5px;font-weight:800;letter-spacing:-.01em}
+.suite a span{font-size:12.5px;color:var(--sourd)}
+.suite a .go{margin-top:auto;padding-top:7px;font-size:12px;font-weight:800;color:var(--ambre)}
+.retour{margin-top:20px;font-size:14px}
+.retour a{color:var(--ambre);text-decoration:none;font-weight:700}
+@media(max-width:860px){nav .brand .wm em{display:none!important}}
+.loin{margin:0 0 34px;border-left:3px solid var(--ambre,#F5B62E);padding:4px 0 4px 14px;font-size:15px;color:var(--sourd,#9FB0C8)}
+.loin a{color:var(--ambre,#F5B62E);font-weight:700}
+
+/* ══ TABLEAU DE BORD DE DÉMONSTRATION — styles propres à cette page, préfixés .tb ══ */
+.large{max-width:1140px;margin:0 auto;padding:0 22px}
+.tb{--bg:#F2F5FA;--surface:#FFFFFF;--ink:#10233F;--ink-2:#4A6591;--ink-3:#7387A6;--rule:#D3DCE8;--s1:#10233F;--s-hi:#F5B62E;--s-ref:#7387A6;--grid:#D3DCE8;
+  background:var(--bg);color:var(--ink);border-radius:5px;overflow:hidden;font-size:14.5px;line-height:1.6;margin-top:26px;border:1px solid #2A4470}
+.tb *{box-sizing:border-box}
+.tb .band{background:#10233F;color:#E9EEF6;padding:22px 22px 18px;display:flex;flex-wrap:wrap;gap:12px 28px;align-items:flex-end;justify-content:space-between;border-bottom:1px solid #2A4470}
+.tb .band h2{font-size:clamp(19px,2.6vw,25px);font-weight:800;letter-spacing:-.02em;line-height:1.2;color:#fff;margin-top:8px}
+.tb .band .who{font-size:12.5px;color:#9FB0C8;margin-top:3px}
+.tb .badge{display:inline-block;background:#F5B62E;color:#10233F;font-size:10.5px;font-weight:800;letter-spacing:.07em;text-transform:uppercase;padding:4px 9px;border-radius:5px}
+.tb .band .meta{font-size:12.5px;color:#9FB0C8;text-align:right;line-height:1.5}
+@media(max-width:640px){.tb .band .meta{text-align:left}}
+.tb .corps{padding:0 22px 26px}
+.tb .filters{display:flex;flex-wrap:wrap;gap:10px 22px;align-items:center;padding:15px 0;border-bottom:1px solid var(--rule)}
+.tb .filters .lab{font-size:10.5px;font-weight:800;letter-spacing:.07em;text-transform:uppercase;color:var(--ink-3);margin-right:7px}
+.tb .seg{display:inline-flex;border:1px solid var(--rule);border-radius:5px;overflow:hidden;background:var(--surface);vertical-align:middle}
+.tb .seg button{font:inherit;font-size:13px;font-weight:600;color:var(--ink-2);background:none;border:0;padding:7px 12px;cursor:pointer}
+.tb .seg button[aria-pressed="true"]{background:var(--ink);color:#fff}
+.tb .seg button:focus-visible,.tb select:focus-visible,.tb tr.act:focus-visible{outline:2px solid #F5B62E;outline-offset:2px}
+.tb select{font:inherit;font-size:13px;font-weight:600;color:var(--ink);background:var(--surface);border:1px solid var(--rule);border-radius:5px;padding:7px 10px;max-width:100%;vertical-align:middle}
+.tb .fixe{font-size:13px;font-weight:600;color:var(--ink-2)}
+.tb .kpis{margin-top:16px;background:#10233F;border-radius:5px;display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr))}
+.tb .kpi{padding:15px 17px;border-left:1px solid #2A4470}
+.tb .kpi:first-child{border-left:0}
+.tb .kpi:first-child .v{color:#F5B62E}
+.tb .kpi .v{font-size:23px;font-weight:800;color:#E9EEF6;font-variant-numeric:tabular-nums;letter-spacing:-.01em;line-height:1.25}
+.tb .kpi .l{font-size:10.5px;font-weight:800;letter-spacing:.06em;text-transform:uppercase;color:#9FB0C8;margin-top:3px}
+.tb .kpi .d{font-size:12px;color:#E9EEF6;margin-top:3px;font-variant-numeric:tabular-nums}
+@media(max-width:700px){.tb .kpis{grid-template-columns:1fr 1fr}.tb .kpi{border-left:0;border-top:1px solid #2A4470}.tb .kpi:nth-child(-n+2){border-top:0}.tb .kpi:nth-child(odd):last-child{grid-column:1/-1}}
+.tb .insights{margin-top:18px;display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+@media(max-width:820px){.tb .insights{grid-template-columns:1fr}}
+.tb .insight{border-top:2px solid var(--ink);padding-top:9px;font-size:13.5px;color:var(--ink-2)}
+.tb .insight b{display:block;color:var(--ink);font-size:14.5px;margin-bottom:2px}
+.tb .grille{margin-top:22px;display:grid;grid-template-columns:3fr 2fr;gap:16px}
+@media(max-width:860px){.tb .grille{grid-template-columns:1fr}}
+.tb .bloc{background:var(--surface);border:1px solid var(--rule);border-radius:5px;padding:16px 18px;min-width:0}
+.tb .bloc.wide{grid-column:1/-1}
+.tb .bloc h3{font-size:15.5px;font-weight:800;color:var(--ink);line-height:1.3}
+.tb .bloc .sub{font-size:12.5px;color:var(--ink-3);margin-top:2px}
+.tb .legend{display:flex;flex-wrap:wrap;gap:6px 16px;font-size:12px;color:var(--ink-2);margin-top:8px}
+.tb .legend i{display:inline-block;width:12px;height:12px;border-radius:2px;margin-right:6px;vertical-align:-1px}
+.tb .legend i.line{height:2px;width:16px;vertical-align:3px}
+.tb svg{display:block;width:100%;height:auto;overflow:visible}
+.tb svg text{font-family:'Manrope',system-ui,sans-serif;fill:var(--ink-3);font-size:11px}
+.tb .defil{overflow-x:auto;-webkit-overflow-scrolling:touch}
+.tb .defil svg{min-width:540px}
+.tb .tw{overflow-x:auto;margin-top:10px;-webkit-overflow-scrolling:touch}
+.tb table{width:100%;border-collapse:collapse;font-size:13px;min-width:600px}
+.tb th{text-align:left;font-size:10.5px;font-weight:800;letter-spacing:.05em;text-transform:uppercase;color:var(--ink);background:var(--bg);padding:8px 10px;border-bottom:2px solid var(--ink);white-space:nowrap}
+.tb td{padding:9px 10px;border-bottom:1px solid var(--rule);vertical-align:middle;font-variant-numeric:tabular-nums;color:var(--ink)}
+.tb td.n,.tb th.n{text-align:right;white-space:nowrap}
+.tb td.src{color:var(--ink-3)}
+.tb tr:last-child td{border-bottom:0}
+.tb tr.act{cursor:pointer}
+.tb tr.act:hover td{background:var(--bg)}
+.tb tr.act.sel td{background:var(--bg);font-weight:800;box-shadow:inset 0 -2px 0 var(--ink)}
+.tb .barcell{width:30%}
+.tb .bar{height:10px;background:var(--s1);border-radius:0 4px 4px 0;flex:none}
+.tb .up{color:var(--ink);font-weight:700}.tb .down{color:#8A6210;font-weight:800}
+.tb .split{margin-top:16px}
+.tb .split .track{display:flex;height:14px;border-radius:4px;overflow:hidden;gap:2px}
+.tb .split .track span{display:block;height:100%}
+.tb .split .rows{display:flex;flex-wrap:wrap;justify-content:space-between;gap:6px 14px;margin-top:8px;font-size:13px;color:var(--ink-2)}
+.tb .split .rows b{color:var(--ink);font-variant-numeric:tabular-nums}
+.tb .split .rows i{display:inline-block;width:10px;height:10px;border-radius:2px;margin-right:6px}
+.tb .pied{margin-top:20px;padding-top:14px;border-top:1px solid var(--rule);font-size:12.5px;color:var(--ink-2)}
+.tb .pied b{color:var(--ink)}
+.tb-tip{position:fixed;pointer-events:none;background:#10233F;color:#E9EEF6;font-size:12px;padding:7px 9px;border-radius:5px;line-height:1.45;z-index:30;max-width:240px}
+.tb-tip b{color:#F5B62E}
+@media (prefers-reduced-motion:no-preference){.tb .bar{transition:width .3s}}
+.aide{margin-top:12px;font-size:13px;color:#9FB0C8}
+.aide b{color:var(--froid)}
+/* ── blocs de texte autour du tableau ── */
+.depart{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:6px}
+@media(max-width:780px){.depart{grid-template-columns:1fr}}
+.depart .card p{font-size:14.5px;color:var(--sourd);line-height:1.65}
+.depart .card p+p{margin-top:9px}
+.depart .card b{color:var(--froid)}
+.depart .k{font-size:10.5px;font-weight:800;letter-spacing:.08em;color:var(--ambre);margin-bottom:9px}
+.depart ol{margin:0;padding-left:20px}
+.depart li{font-size:14.5px;color:var(--froid);line-height:1.55;margin-bottom:8px}
+.depart li span{display:block;font-size:13px;color:var(--sourd)}
+.donnees-intro{font-size:15.5px;color:var(--froid);max-width:70ch;line-height:1.65}
+.donnees-intro b{color:#fff}
+.dtab{margin-top:20px;overflow-x:auto;-webkit-overflow-scrolling:touch;border:1px solid var(--trait);border-radius:5px}
+.dtab table{width:100%;border-collapse:collapse;min-width:640px;font-size:13.8px}
+.dtab th{text-align:left;font-size:10.5px;font-weight:800;letter-spacing:.07em;text-transform:uppercase;color:#9FB0C8;background:var(--panneau);padding:11px 14px;border-bottom:1px solid var(--trait)}
+.dtab td{padding:12px 14px;border-bottom:1px solid var(--trait);vertical-align:top;color:var(--sourd);line-height:1.55}
+.dtab tr:last-child td{border-bottom:0}
+.dtab td:first-child{color:var(--froid);font-weight:700;width:26%}
+.dtab .ok,.dtab .part,.dtab .non{display:inline-block;font-size:11px;font-weight:800;letter-spacing:.04em;padding:2px 7px;border-radius:5px;margin-bottom:4px}
+.dtab .ok{background:var(--froid);color:var(--nuit)}
+.dtab .part{border:1px solid var(--sourd);color:var(--froid)}
+.dtab .non{border:1px dashed var(--trait);color:var(--sourd)}
+.dtab td small{display:block;font-size:12.8px}
+.palier{display:grid;grid-template-columns:repeat(5,1fr);gap:1px;background:var(--trait);border:1px solid var(--trait);border-radius:5px;overflow:hidden;margin-top:6px}
+@media(max-width:780px){.palier{grid-template-columns:1fr 1fr}}
+.palier div{background:var(--panneau);padding:15px 16px}
+.palier .k{font-size:10.5px;font-weight:800;letter-spacing:.07em;color:#9FB0C8;text-transform:uppercase}
+.palier .v{font-size:17px;font-weight:800;color:var(--froid);margin-top:4px;line-height:1.3}
+.palier .m{font-size:12.5px;color:var(--sourd);margin-top:3px}
+.note-palier{margin-top:14px;font-size:14px;color:var(--sourd);max-width:72ch}
+.note-palier a{color:var(--ambre);font-weight:700;text-decoration:none}
+</style>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Accueil", "item": "https://atelier-mdt.fr/"}, {"@type": "ListItem", "position": 2, "name": "Exemples", "item": "https://atelier-mdt.fr/exemples.html"}, {"@type": "ListItem", "position": 3, "name": "Six façons de décider sur des chiffres", "item": "https://atelier-mdt.fr/exemples-donnees.html"}, {"@type": "ListItem", "position": 4, "name": "Exemple : tableau de bord d'un salon de coiffure", "item": "https://atelier-mdt.fr/exemple-tableau-de-bord-coiffure.html"}]}</script>
+</head>
+<body>
+<nav><div class="in">
+  <a class="brand" href="index.html"><svg width="32" height="32" viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="3.4" stroke-linecap="square" aria-hidden="true"><path d="M14 8 H6 V56 H14" fill="none"/><path d="M50 8 H58 V56 H50" fill="none"/><path d="M18 44 V22 L32 36 L46 22 V44" stroke-width="4" fill="none"/></svg><span class="wm">Atelier MDT<em>PARCE QUE VOTRE TEMPS EST PRÉCIEUX.</em></span></a>
+  <div class="links" id="nav-liens">
+      <a href="realisations.html">Réalisations</a>
+      <a href="offres.html">Offres</a>
+      <a href="exemples.html" class="on">Exemples</a>
+      <a href="rentabilite.html">Rentabilité</a>
+      <a href="qui-suis-je.html">Qui suis-je</a>
+      <a class="btn-nav" href="contact.html">Échanger 30 minutes</a>
+  </div>
+  <button class="burger" type="button" aria-label="Ouvrir le menu" aria-expanded="false" aria-controls="nav-liens"><span></span><span></span><span></span></button>
+</div></nav>
+<main id="contenu">
+<header class="h"><div class="in">
+  <p class="fil"><a href="exemples-donnees.html">← Six façons de décider sur des chiffres</a></p>
+  <div class="eyebrow">EXEMPLE INTERACTIF · TABLEAU DE BORD · PALIER ESSENTIEL</div>
+  <h1>Salon de coiffure : quels jours remplir, quelles prestations pousser</h1>
+  <p class="sub">Une caisse, un an d'historique. De quoi caler le planning sur les vrais jours d'affluence et suivre le ticket moyen.</p>
+  <p class="chapo"><b>Entreprise fictive, données inventées.</b> Le Salon Brosse Ronde n'existe pas : le salon, ses chiffres et ses prestations sont inventés pour montrer à quoi ressemble le livrable. Le fonctionnement, lui, est celui d'une vraie mission.</p>
+</div></header>
+
+<section><div class="in">
+  <h2 class="lbl">LA SITUATION DE DÉPART</h2>
+  <div class="depart">
+    <div class="card"><div class="k">CE QUE LA GÉRANTE AVAIT</div><p><b>Une caisse de salon</b>, avec une ligne par prestation ou par produit vendu, datée. Quatre exports trimestriels identiques.</p><p>Une quarantaine de libellés différents en caisse, de « coupe brushing » à « balayage long ».</p><p>Elle savait que le samedi était plein. Elle ne savait pas de combien, ni ce que pesait vraiment la revente.</p></div>
+    <div class="card"><div class="k">SES QUESTIONS</div><ol><li>Quels jours faut-il renforcer l'équipe ?<span>Et lesquels pourraient accueillir une formule à prix doux.</span></li><li>Le ticket moyen tient-il ?<span>Mois après mois, sur les prestations.</span></li><li>La revente de produits vaut-elle sa place ?<span>En vitrine et en temps passé à conseiller.</span></li></ol></div>
+  </div>
+</div></section>
+
+<section><div class="large">
+  <div class="in" style="padding:0"><h2 class="lbl">LE TABLEAU DE BORD LIVRÉ</h2>
+  <p class="aide"><b>Essayez-le.</b> Changez la période, choisissez une activité, ou cliquez une ligne du tableau du bas : tout se recalcule. Survolez ou touchez une barre pour lire le détail.</p></div>
+  <div class="tb" id="tb">
+    <div class="band">
+      <div><span class="badge">Exemple · données fictives</span><h2>Salon Brosse Ronde — activité de l'année</h2><div class="who">Salon fictif · mardi au samedi</div></div>
+      <div class="meta">Octobre 2025 à septembre 2026<br>Source : caisse du salon</div>
+    </div>
+    <div class="corps">
+      <div class="filters">
+        <div><span class="lab">Période</span><span id="tb-per"></span></div>
+        <div><label class="lab" for="tb-act">Activité</label><select id="tb-act"></select></div>
+      </div>
+      <div class="kpis" id="tb-kpis" aria-label="Indicateurs clés"></div>
+      <div class="insights" id="tb-insights" aria-label="Ce que montre le tableau"></div>
+      <div class="grille">
+        <div class="bloc"><h3>Chiffre d'affaires mensuel</h3><div class="sub" id="tb-mois-sub"></div><div class="legend" id="tb-mois-lg"></div><div class="defil" id="tb-mois" style="margin-top:8px"></div></div>
+        <div class="bloc"><h3>Ventes par jour d'ouverture</h3><div class="sub">Part du chiffre de caisse, 12 mois. Salon fermé dimanche et lundi.</div><div id="tb-repart" style="margin-top:12px"></div><div class="split" id="tb-split"></div></div>
+        <div class="bloc wide"><h3>Par activité</h3><div class="sub">Cliquez une ligne pour filtrer tout le tableau de bord.</div>
+          <div class="tw"><table><thead id="tb-thead"></thead><tbody id="tb-tbody"></tbody></table></div></div>
+      </div>
+      <div class="pied"><b>À lire avant tout.</b> Montants hors taxes. Le ticket moyen porte sur les prestations, hors vente de produits. Un an d'historique : pas encore de comparaison d'une année sur l'autre.</div>
+    </div>
+  </div>
+</div></section>
+
+<section><div class="in">
+  <h2 class="lbl">CE QUE LE TABLEAU DOIT À VOS EXPORTS</h2>
+  <p class="donnees-intro">Un tableau de bord ne montre que ce que vos fichiers contiennent. Voici ce qu'il a fallu trouver dans la caisse du Salon Brosse Ronde, et ce qui manquait.</p>
+  <div class="dtab"><table>
+    <thead><tr><th>Analyse</th><th>Ce qu'il faut dans vos exports</th><th>Dans cet exemple</th></tr></thead>
+    <tbody>
+<tr><td>Chiffre d'affaires mensuel</td><td>La date et le montant de chaque vente.</td><td><span class="ok">✓ PRÉSENT</span><small>Douze mois, un seul format.</small></td></tr>
+<tr><td>Lecture par prestation</td><td>Un libellé de prestation sur chaque ligne de ticket.</td><td><span class="ok">✓ PRÉSENT</span><small>Une quarantaine de libellés regroupés en cinq familles, avec la gérante.</small></td></tr>
+<tr><td>Jours d'affluence</td><td>La date de chaque ticket.</td><td><span class="ok">✓ PRÉSENT</span><small>Présente dans l'export.</small></td></tr>
+<tr><td>Ticket moyen</td><td>Le nombre de passages.</td><td><span class="ok">✓ PRÉSENT</span><small>Un ticket par passage en caisse.</small></td></tr>
+<tr><td>Chiffre par coiffeuse</td><td>Le nom de la personne qui a réalisé la prestation.</td><td><span class="non">✕ ABSENT</span><small>La caisse n'enregistre pas qui a coiffé.</small></td></tr>
+<tr><td>Fidélité des clientes</td><td>Un identifiant client sur chaque ticket.</td><td><span class="non">✕ ABSENT</span><small>Passages anonymes : impossible de savoir qui revient.</small></td></tr>
+<tr><td>Marge sur les produits</td><td>Le prix d'achat de chaque produit revendu.</td><td><span class="non">✕ ABSENT</span><small>Possible avec les factures du fournisseur : deuxième source, donc palier Étendu.</small></td></tr>
+    </tbody>
+  </table></div>
+  <p class="filet" style="margin-top:20px"><b>Le rendu dépend de la quantité et de la qualité de vos données.</b> Je construis uniquement à partir de ce que vos logiciels exportent. Sans adresse client, pas d'analyse géographique ; sans catégorie sur chaque vente, pas de lecture par activité ; avec un an d'historique, pas de comparaison d'une année sur l'autre. Je vérifie vos exports avant le devis : ce qui ne pourra pas être produit est écrit dessus.</p>
+</div></section>
+
+<section><div class="in">
+  <h2 class="lbl">CE QUE COUVRE LE PALIER ESSENTIEL</h2>
+  <div class="palier"><div><div class="k">Sources</div><div class="v">1</div><div class="m">ici la caisse</div></div><div><div class="k">Fichiers</div><div class="v">jusqu'à 6</div><div class="m">ici 4 exports trimestriels</div></div><div><div class="k">Historique</div><div class="v">1 an</div><div class="m">ici oct. 2025 – sept. 2026</div></div><div><div class="k">Formats</div><div class="v">identique</div><div class="m">ici un seul logiciel</div></div><div><div class="k">Activités</div><div class="v">jusqu'à 5</div><div class="m">ici 5</div></div></div>
+  <p class="note-palier">Le palier se décide sur le critère le plus élevé : c'est la quantité de données à remettre en ordre qui fait le prix, pas le tableau lui-même. <a href="offres.html#donnees">Les quatre paliers et leurs prix →</a></p>
+</div></section>
+
+<section><div class="in">
+  <h2 class="lbl">D'AUTRES TABLEAUX DE BORD À ESSAYER</h2>
+  <div class="suite"><a href="exemple-tableau-de-bord-paliers.html"><span class="k" style="font-size:10.5px;font-weight:800;letter-spacing:.07em;color:var(--ambre)">LES TROIS PALIERS</span><b>Une boulangerie, trois paliers</b><span>Le même commerce vu en Essentiel, Étendu et Complet : ce que chaque palier fait apparaître.</span><span class="go">Voir →</span></a><a href="exemple-tableau-de-bord-fleuriste.html"><span class="k" style="font-size:10.5px;font-weight:800;letter-spacing:.07em;color:var(--ambre)">PALIER ÉTENDU</span><b>Fleuriste : boutique et professionnels</b><span>Deux ans, deux logiciels : quelle activité fait vivre la boutique.</span><span class="go">Voir →</span></a><a href="exemple-tableau-de-bord-avocats.html"><span class="k" style="font-size:10.5px;font-weight:800;letter-spacing:.07em;color:var(--ambre)">PALIER ÉTENDU</span><b>Cabinet d'avocats : heures et honoraires</b><span>Deux ans de temps saisis et de factures : ce qui est facturé, ce qui ne l'est pas.</span><span class="go">Voir →</span></a></div>
+  <p class="retour"><a href="exemples-donnees.html">← Tous les exemples de tableaux de bord et d'études</a></p>
+</div></section>
+
+<div class="in"><div class="cta-bloc">
+  <h2>Et avec vos exports&nbsp;?</h2>
+  <p>Trente minutes en visio pour regarder ce que vos logiciels savent exporter, ce que le tableau pourra montrer, et ce qu'il ne pourra pas. Vous recevez ensuite un devis écrit, et vous décidez.</p>
+  <a href="contact.html">Échanger 30 minutes</a>
+</div></div>
+</main>
+<footer><div class="in"><div class="row">
+  <span>Atelier MDT · Automatisation · Veille · Tableaux de bord · Accompagnement IA</span>
+  <span><a href="mailto:antoine@atelier-mdt.fr">antoine@atelier-mdt.fr</a> · <a href="tel:+33743688097">07 43 68 80 97</a> · <a href="https://www.linkedin.com/in/antoine-meyfroidt/" rel="noopener">linkedin.com/in/antoine-meyfroidt</a> · <a href="https://www.malt.fr/profile/antoinemeyfroidt" rel="noopener">Malt</a> · <a href="https://share.google/6U1bBCivJdjeVEOeF" rel="noopener">Fiche Google</a> · <a href="questions.html">Questions fréquentes</a> · <a href="articles.html">Articles</a> · <a href="mentions-legales.html">Mentions légales</a> · <a href="cgv.html">CGV</a></span>
+</div></div></footer>
+<script>
+/* Menu mobile — autonome, aucune dépendance externe. */
+(function(){
+  var n=document.querySelector('nav');if(!n)return;
+  var b=n.querySelector('.burger'),l=n.querySelector('.links');if(!b||!l)return;
+  function etat(o){
+    n.classList.toggle('ouvert',o);
+    b.setAttribute('aria-expanded',o?'true':'false');
+    b.setAttribute('aria-label',o?'Fermer le menu':'Ouvrir le menu');
+  }
+  b.addEventListener('click',function(){etat(!n.classList.contains('ouvert'));});
+  l.addEventListener('click',function(e){if(e.target.closest('a'))etat(false);});
+  document.addEventListener('click',function(e){if(n.classList.contains('ouvert')&&!n.contains(e.target))etat(false);});
+  document.addEventListener('keydown',function(e){if(e.key==='Escape')etat(false);});
+  window.addEventListener('resize',function(){if(window.innerWidth>800)etat(false);});
+})();
+</script>
+<script>
+var C = {"mois": ["2025-10", "2025-11", "2025-12", "2026-01", "2026-02", "2026-03", "2026-04", "2026-05", "2026-06", "2026-07", "2026-08", "2026-09"], "periodes": [12], "activites": [{"id": "femme", "nom": "Coupes femme", "source": "Caisse"}, {"id": "homme", "nom": "Coupes homme et enfant", "source": "Caisse"}, {"id": "couleur", "nom": "Couleurs et mèches", "source": "Caisse"}, {"id": "soins", "nom": "Soins et coiffage", "source": "Caisse"}, {"id": "produits", "nom": "Vente de produits", "source": "Caisse"}], "ca": {"femme": [5583, 5421, 7425, 4556, 4744, 5516, 5448, 6099, 6587, 6235, 3947, 5708], "homme": [2968, 2924, 3867, 2763, 2642, 3219, 2942, 3328, 3495, 3371, 2259, 2921], "couleur": [5873, 6183, 8069, 5011, 5906, 6532, 5912, 6450, 6818, 6667, 4403, 5950], "soins": [1228, 1135, 2449, 1090, 1112, 1188, 1366, 1645, 2367, 1840, 924, 1584], "produits": [1374, 1524, 2427, 1279, 1330, 1327, 1240, 1259, 1407, 1302, 944, 1300]}, "libCA": "Chiffre d'affaires HT", "libCAcourt": "CA HT", "sources": {"Caisse": "Caisse"}, "volume": {"label": "Passages en caisse", "unite": "tickets de prestation", "sources": ["Caisse"], "serie": [333, 333, 464, 286, 306, 350, 333, 373, 410, 385, 245, 344], "moyenne": "Ticket moyen", "moyenneDetail": "prestations, par passage", "horsChamp": ""}, "repart": {"titre": "Ventes par jour d'ouverture", "format": "pct", "data": {"Mar": 0.14, "Mer": 0.17, "Jeu": 0.16, "Ven": 0.22, "Sam": 0.31}}, "insight2": "<b>Vente de produits : 8 % du chiffre</b>Avec un pic en décembre : la vitrine travaille surtout avant les fêtes.", "saisonTexte": "Le mois le plus fort et le plus creux de l'année : à anticiper pour les plannings et les congés."};
+function lancerTB(C){
+/* Tableau de bord de démonstration — autonome, aucune bibliothèque externe. Données dans C. */
+var MOISFR=["janv.","févr.","mars","avr.","mai","juin","juil.","août","sept.","oct.","nov.","déc."];
+var MOISLONG=["janvier","février","mars","avril","mai","juin","juillet","août","septembre","octobre","novembre","décembre"];
+var N=C.mois.length, ACTS=C.activites, byId={};
+ACTS.forEach(function(a){byId[a.id]=a;});
+var AVEC_MARGE=ACTS.every(function(a){return typeof a.marge==="number";});
+var state={per:C.periodes[0],act:"all"};
+function $(id){return document.getElementById(id);}
+function lab(k,long){var m=parseInt(k.slice(5),10)-1;return (long?MOISLONG[m]:MOISFR[m])+" "+k.slice(0,4);}
+function eur(n){return Math.round(n).toLocaleString("fr-FR")+" €";}
+function eurM(n){return n<100?n.toLocaleString("fr-FR",{minimumFractionDigits:2,maximumFractionDigits:2})+"\u00a0€":eur(n);}
+function keur(n){return (n/1000).toLocaleString("fr-FR",{maximumFractionDigits:1})+" k€";}
+function pct(n,d){return (n*100).toLocaleString("fr-FR",{maximumFractionDigits:d==null?0:d})+" %";}
+function sgn(n,d){return (n>=0?"+":"−")+pct(Math.abs(n),d);}
+function sum(a){return a.reduce(function(s,x){return s+x;},0);}
+function range(){return [N-state.per,N];}
+function comparable(){return state.per===12&&N>=24;}
+function caAct(id,a,b){return sum(C.ca[id].slice(a,b));}
+function selActs(){return state.act==="all"?ACTS:[byId[state.act]];}
+function caMois(i){return sum(selActs().map(function(x){return C.ca[x.id][i];}));}
+function caTotal(a,b){var s=0;for(var i=a;i<b;i++)s+=caMois(i);return s;}
+function margeTotal(a,b){return sum(selActs().map(function(x){return caAct(x.id,a,b)*x.marge;}));}
+function periodeTxt(a,b){return MOISFR[parseInt(C.mois[a].slice(5),10)-1]+" "+C.mois[a].slice(0,4)+" – "+MOISFR[parseInt(C.mois[b-1].slice(5),10)-1]+" "+C.mois[b-1].slice(0,4);}
+
+/* info-bulle : survol à la souris, toucher sur mobile */
+var tip=document.querySelector(".tb-tip");if(!tip){tip=document.createElement("div");tip.className="tb-tip";tip.hidden=true;document.body.appendChild(tip);window.addEventListener("scroll",function(){tip.hidden=true;},{passive:true});}
+function showTip(e,h){tip.innerHTML=h;tip.hidden=false;var x=e.clientX+14,y=e.clientY+14,w=tip.offsetWidth,hh=tip.offsetHeight;
+  if(x+w>window.innerWidth-8)x=e.clientX-w-14;if(y+hh>window.innerHeight-8)y=e.clientY-hh-14;tip.style.left=Math.max(8,x)+"px";tip.style.top=Math.max(8,y)+"px";}
+function hideTip(){tip.hidden=true;}
+
+/* filtres */
+var fp=$("tb-per");
+if(C.periodes.length>1){
+  fp.innerHTML="<span class=\"seg\" role=\"group\" aria-label=\"Période\">"+C.periodes.map(function(p){return "<button type=\"button\" data-p=\""+p+"\" aria-pressed=\""+(p===state.per)+"\">"+(p===12?"12 derniers mois":p+" mois")+"</button>";}).join("")+"</span>";
+  fp.querySelectorAll("button").forEach(function(b){b.addEventListener("click",function(){state.per=+b.getAttribute("data-p");fp.querySelectorAll("button").forEach(function(x){x.setAttribute("aria-pressed",x===b);});render();});});
+}else{fp.innerHTML="<span class=\"fixe\">"+periodeTxt(0,N)+"</span>";}
+var sel0=$("tb-act"),sel=sel0.cloneNode(false);sel0.parentNode.replaceChild(sel,sel0);
+sel.innerHTML="<option value=\"all\">Toutes les activités</option>"+ACTS.map(function(a){return "<option value=\""+a.id+"\">"+a.nom+"</option>";}).join("");
+sel.addEventListener("change",function(){state.act=sel.value;render();});
+
+function renderKpis(){
+  var r=range(),a=r[0],b=r[1],ca=caTotal(a,b);
+  var items=[{v:keur(ca),l:C.libCA,d:periodeTxt(a,b)}];
+  if(N>=24)items.push(comparable()?{v:sgn(ca/caTotal(a-12,b-12)-1,1),l:"Évolution sur un an",d:"vs les 12 mois précédents"}:{v:"—",l:"Évolution sur un an",d:"choisir « 12 derniers mois »"});
+  if(AVEC_MARGE){var mg=margeTotal(a,b);items.push({v:pct(mg/ca),l:C.libMarge||"Marge brute estimée",d:keur(mg)});}
+  if(C.volume){
+    var V=C.volume,dans=state.act==="all"||V.sources.indexOf(byId[state.act].source)>=0;
+    var vv=sum(V.serie.slice(a,b));
+    var caV=sum(ACTS.filter(function(x){return V.sources.indexOf(x.source)>=0;}).map(function(x){return caAct(x.id,a,b);}));
+    items.push({v:dans?vv.toLocaleString("fr-FR"):"—",l:V.label,d:dans?V.unite:V.horsChamp});
+    var moy=caV/vv,dm="";
+    if(comparable()){var vp=sum(V.serie.slice(a-12,b-12)),cp=sum(ACTS.filter(function(x){return V.sources.indexOf(x.source)>=0;}).map(function(x){return caAct(x.id,a-12,b-12);}));dm=sgn(moy/(cp/vp)-1,1)+" sur un an";}
+    else dm=V.moyenneDetail||"en moyenne";
+    items.push({v:dans?eurM(moy):"—",l:V.moyenne,d:dans?dm:V.horsChamp});
+  }
+  $("tb-kpis").innerHTML=items.map(function(k){return "<div class=\"kpi\"><div class=\"v\">"+k.v+"</div><div class=\"l\">"+k.l+"</div><div class=\"d\">"+k.d+"</div></div>";}).join("");
+}
+
+function renderInsights(){
+  var a=N-12,b=N,h=[];
+  var tot12=sum(ACTS.map(function(x){return caAct(x.id,a,b);}));
+  if(N>=24){
+    var best=null;ACTS.forEach(function(x){var g=caAct(x.id,a,b)/caAct(x.id,a-12,b-12)-1;if(!best||g>best.g)best={a:x,g:g};});
+    h.push("<b>"+best.a.nom+" : "+sgn(best.g)+" en un an</b>La plus forte progression sur les 12 derniers mois.");
+  }else{
+    var big=ACTS.slice().sort(function(p,q){return caAct(q.id,a,b)-caAct(p.id,a,b);})[0];
+    h.push("<b>"+big.nom+" : "+pct(caAct(big.id,a,b)/tot12)+" du chiffre</b>L'activité qui pèse le plus sur l'année.");
+  }
+  if(AVEC_MARGE){
+    var w=ACTS.slice().sort(function(p,q){return p.marge-q.marge;})[0];
+    h.push("<b>"+w.nom+" : "+pct(w.marge)+" de marge</b>La marge la plus basse, pour "+pct(caAct(w.id,a,b)/tot12)+" du chiffre d'affaires. Un poste à surveiller.");
+  }else if(C.insight2){h.push(C.insight2);}
+  var t=[];for(var i=a;i<b;i++)t.push(sum(ACTS.map(function(x){return C.ca[x.id][i];})));
+  var mx=Math.max.apply(null,t),mi=Math.min.apply(null,t);
+  h.push("<b>"+lab(C.mois[a+t.indexOf(mx)],true)+" pèse "+(mx/mi).toLocaleString("fr-FR",{maximumFractionDigits:1})+" fois "+lab(C.mois[a+t.indexOf(mi)],true)+"</b>"+(C.saisonTexte||"Le mois le plus fort et le plus creux de l'année : à anticiper en trésorerie."));
+  $("tb-insights").innerHTML=h.map(function(x){return "<div class=\"insight\">"+x+"</div>";}).join("");
+}
+
+function niceMax(v){var p=Math.pow(10,Math.floor(Math.log10(v))),n=v/p,s=n<=1?1:n<=2?2:n<=2.5?2.5:n<=5?5:10;return s*p;}
+function barre(x,y0,yy,bw,col){var r=Math.min(4,bw/2,(y0-yy)/2);return "<path d=\"M"+x+","+y0+" V"+(yy+r)+" Q"+x+","+yy+" "+(x+r)+","+yy+" H"+(x+bw-r)+" Q"+(x+bw)+","+yy+" "+(x+bw)+","+(yy+r)+" V"+y0+" Z\" fill=\""+col+"\"/>";}
+
+function renderMois(){
+  var r=range(),a=r[0],b=r[1],n=b-a,vals=[],refs=[];
+  for(var i=a;i<b;i++){vals.push(caMois(i));refs.push(comparable()?caMois(i-12):null);}
+  var maxV=niceMax(Math.max.apply(null,vals.concat(refs.filter(function(x){return x!=null;}))));
+  var W=640,H=260,L=48,R=8,T=14,B=28,pw=W-L-R,ph=H-T-B,slot=pw/n,bw=Math.max(5,Math.min(28,slot-6));
+  var y=function(v){return T+ph-v/maxV*ph;};
+  var s="<svg viewBox=\"0 0 "+W+" "+H+"\" role=\"img\" aria-label=\""+C.libCA+" par mois\">";
+  for(var t=0;t<=4;t++){var v=maxV*t/4,yy=y(v);s+="<line x1=\""+L+"\" x2=\""+(W-R)+"\" y1=\""+yy+"\" y2=\""+yy+"\" stroke=\"var(--grid)\"/><text x=\""+(L-6)+"\" y=\""+(yy+4)+"\" text-anchor=\"end\">"+(v/1000).toLocaleString("fr-FR")+" k€</text>";}
+  var iMax=vals.indexOf(Math.max.apply(null,vals));
+  vals.forEach(function(v,k){
+    var x=L+k*slot+(slot-bw)/2;s+=barre(x,T+ph,y(v),bw,k===iMax?"var(--s-hi)":"var(--s1)");
+    s+="<rect x=\""+(L+k*slot)+"\" y=\""+T+"\" width=\""+slot+"\" height=\""+ph+"\" fill=\"transparent\" data-k=\""+k+"\" class=\"hit\"/>";
+    var m=C.mois[a+k];if(n<=12||k%3===0)s+="<text x=\""+(L+k*slot+slot/2)+"\" y=\""+(H-8)+"\" text-anchor=\"middle\">"+MOISFR[parseInt(m.slice(5),10)-1]+(n>12?" "+m.slice(2,4):"")+"</text>";
+  });
+  if(comparable()){
+    s+="<polyline points=\""+refs.map(function(v,k){return (L+k*slot+slot/2)+","+y(v);}).join(" ")+"\" fill=\"none\" stroke=\"var(--s-ref)\" stroke-width=\"2\" stroke-linejoin=\"round\"/>";
+    refs.forEach(function(v,k){s+="<circle cx=\""+(L+k*slot+slot/2)+"\" cy=\""+y(v)+"\" r=\"3.5\" fill=\"var(--surface)\" stroke=\"var(--s-ref)\" stroke-width=\"2\"/>";});
+  }
+  s+="<text x=\""+(L+iMax*slot+slot/2)+"\" y=\""+(y(vals[iMax])-8)+"\" text-anchor=\"middle\" style=\"fill:var(--ink);font-weight:700\">"+keur(vals[iMax])+"</text></svg>";
+  var box=$("tb-mois");box.innerHTML=s;
+  box.querySelectorAll(".hit").forEach(function(rc){
+    var f=function(e){var k=+rc.getAttribute("data-k"),h="<b>"+lab(C.mois[a+k],true)+"</b><br>"+eur(vals[k]);
+      if(refs[k]!=null){var g=vals[k]/refs[k]-1;h+="<br>Un an plus tôt : "+eur(refs[k])+" ("+sgn(g)+")";}showTip(e,h);};
+    rc.addEventListener("mousemove",f);rc.addEventListener("click",f);rc.addEventListener("mouseleave",hideTip);
+  });
+  $("tb-mois-sub").textContent=(C.mention||"Hors taxes")+", "+(state.act==="all"?"toutes activités":byId[state.act].nom.toLowerCase())+". Le mois le plus fort est en ambre.";
+  $("tb-mois-lg").innerHTML=comparable()?"<span><i style=\"background:var(--s1)\"></i>12 derniers mois</span><span><i class=\"line\" style=\"background:var(--s-ref)\"></i>Même mois, un an plus tôt</span>":"";
+}
+
+function renderRepart(){
+  var R=C.repart,keys=Object.keys(R.data),vals=keys.map(function(k){return R.data[k];});
+  var W=360,H=190,L=6,Rr=6,T=20,B=R.etiquettesLongues?40:24,pw=W-L-Rr,ph=H-T-B,slot=pw/keys.length,bw=Math.min(40,slot-12);
+  var max=niceMax(Math.max.apply(null,vals)*1.08),top=vals.indexOf(Math.max.apply(null,vals));
+  var s="<svg viewBox=\"0 0 "+W+" "+H+"\" role=\"img\" aria-label=\""+R.titre+"\"><line x1=\""+L+"\" x2=\""+(W-Rr)+"\" y1=\""+(T+ph)+"\" y2=\""+(T+ph)+"\" stroke=\"var(--grid)\"/>";
+  keys.forEach(function(k,i){var v=vals[i],x=L+i*slot+(slot-bw)/2,yy=T+ph-v/max*ph;
+    s+=barre(x,T+ph,yy,bw,i===top?"var(--s-hi)":"var(--s1)");
+    s+="<text x=\""+(x+bw/2)+"\" y=\""+(yy-5)+"\" text-anchor=\"middle\" style=\"fill:var(--ink);font-weight:"+(i===top?700:500)+"\">"+(R.format==="pct"?pct(v):v.toLocaleString("fr-FR"))+"</text>";
+    var parts=k.split("|");parts.forEach(function(p,j){s+="<text x=\""+(x+bw/2)+"\" y=\""+(H-B+15+j*12)+"\" text-anchor=\"middle\">"+p+"</text>";});
+  });
+  $("tb-repart").innerHTML=s+"</svg>";
+  var srcs=Object.keys(C.sources);$("tb-split").innerHTML="";
+  if(srcs.length>1){
+    var r=range(),tots=srcs.map(function(sr){return sum(ACTS.filter(function(x){return x.source===sr;}).map(function(x){return caAct(x.id,r[0],r[1]);}));}),T2=sum(tots);
+    var cols=["var(--s1)","var(--s-ref)","var(--rule)"];
+    $("tb-split").innerHTML="<div class=\"sub\" style=\"margin-bottom:6px\">Répartition du chiffre par source, période choisie</div><div class=\"track\">"+tots.map(function(v,i){return "<span style=\"width:"+(v/T2*100)+"%;background:"+cols[i]+"\"></span>";}).join("")+"</div><div class=\"rows\">"+srcs.map(function(sr,i){return "<span><i style=\"background:"+cols[i]+"\"></i>"+C.sources[sr]+" <b>"+pct(tots[i]/T2)+"</b></span>";}).join("")+"</div>";
+  }
+}
+
+function renderTable(){
+  var r=range(),a=r[0],b=r[1],tot=sum(ACTS.map(function(x){return caAct(x.id,a,b);}));
+  var rows=ACTS.map(function(x){var ca=caAct(x.id,a,b);return {x:x,ca:ca,part:ca/tot,ev:comparable()?ca/caAct(x.id,a-12,b-12)-1:null};}).sort(function(p,q){return q.ca-p.ca;});
+  var maxP=rows[0].part,multi=Object.keys(C.sources).length>1;
+  $("tb-thead").innerHTML="<tr><th>Activité</th>"+(multi?"<th>Source</th>":"")+"<th class=\"n\">"+C.libCAcourt+"</th><th class=\"barcell\">Part</th>"+(AVEC_MARGE?"<th class=\"n\">"+(C.libMargeCourt||"Marge brute")+"</th>":"")+(N>=24?"<th class=\"n\">Sur un an</th>":"")+"</tr>";
+  $("tb-tbody").innerHTML=rows.map(function(rw){
+    var ev=rw.ev==null?"<span style=\"color:var(--ink-3)\">—</span>":"<span class=\""+(rw.ev>=0?"up":"down")+"\">"+(rw.ev>=0?"▲ ":"▼ ")+sgn(rw.ev)+"</span>";
+    return "<tr class=\"act"+(state.act===rw.x.id?" sel":"")+"\" data-id=\""+rw.x.id+"\" tabindex=\"0\"><td>"+rw.x.nom+"</td>"+(multi?"<td class=\"src\">"+C.sources[rw.x.source].split(" (")[0]+"</td>":"")+"<td class=\"n\">"+eur(rw.ca)+"</td><td class=\"barcell\"><div style=\"display:flex;align-items:center;gap:8px\"><div class=\"bar\" style=\"width:"+(rw.part/maxP*75)+"%\"></div><span style=\"font-size:12px;color:var(--ink-2)\">"+pct(rw.part)+"</span></div></td>"+(AVEC_MARGE?"<td class=\"n\">"+pct(rw.x.marge)+"</td>":"")+(N>=24?"<td class=\"n\">"+ev+"</td>":"")+"</tr>";
+  }).join("");
+  document.querySelectorAll(".tb tr.act").forEach(function(tr){
+    var go=function(){var id=tr.getAttribute("data-id");state.act=state.act===id?"all":id;sel.value=state.act;render();};
+    tr.addEventListener("click",go);tr.addEventListener("keydown",function(e){if(e.key==="Enter"||e.key===" "){e.preventDefault();go();}});
+  });
+}
+function render(){hideTip();renderKpis();renderInsights();renderMois();renderRepart();renderTable();}
+render();
+}
+lancerTB(C);
+</script>
+</body>
+</html>
