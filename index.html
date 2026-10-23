@@ -293,6 +293,16 @@ h2.grand{margin-top:12px;font-size:clamp(28px,3.6vw,40px);font-weight:800;letter
 @media(max-width:700px){.deux{grid-template-columns:1fr}}
 
 /* témoignages */
+.ress{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:24px}
+@media(max-width:700px){.ress{grid-template-columns:1fr}}
+.ress-col{border:1px solid var(--trait);border-radius:5px;padding:20px 22px;background:var(--panneau);display:flex;flex-direction:column}
+.ress-col h3{font-size:11px;font-weight:800;letter-spacing:.1em;text-transform:uppercase;color:var(--sourd);margin-bottom:10px}
+.ress-col ul{list-style:none;flex:1}
+.ress-col li{border-top:1px solid var(--trait)}
+.ress-col li:first-child{border-top:0}
+.ress-col li a{display:block;padding:11px 0;font-size:15px;font-weight:700;line-height:1.4;color:var(--froid);text-decoration:none}
+.ress-col li a:hover{color:var(--ambre)}
+.ress-col .tous{margin-top:12px;font-size:14px;font-weight:700;color:var(--ambre);text-decoration:none}
 .t-tete{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:flex-end;gap:12px 24px}
 .t-tete p{margin-top:10px;font-size:14.5px;color:var(--sourd);max-width:60ch}
 .t-tete a{font-size:15px;font-weight:700;color:var(--froid);text-decoration:none}
@@ -588,6 +598,39 @@ footer{margin-top:0}
   </div>
 </section>
 
+<section id="ressources" class="bloc">
+  <div class="in">
+    <div class="t-tete">
+      <div>
+        <h2 class="sur">POUR ALLER PLUS LOIN</h2>
+        <p>Quatre articles tirés des réalisations, et les questions qu'on me pose avant de signer.</p>
+      </div>
+    </div>
+    <div class="ress">
+      <div class="ress-col">
+        <h3>Articles</h3>
+        <ul>
+          <li><a href="article-cout-taches-repetitives.html">Combien vous coûtent vos tâches répétitives&nbsp;? Le calcul en 5 minutes</a></li>
+          <li><a href="article-automatiser-demandes-de-devis.html">Répondre à chaque demande de devis le jour même, sans y passer vos soirées</a></li>
+          <li><a href="article-tableau-de-bord-ventes.html">Tableau de bord des ventes&nbsp;: 5 questions qu'il règle pour une TPE</a></li>
+          <li><a href="article-ia-equipe-laisse-tomber.html">Votre équipe a testé l'IA puis laissé tomber&nbsp;? Ce qui a manqué</a></li>
+        </ul>
+        <a class="tous" href="articles.html">Tous les articles →</a>
+      </div>
+      <div class="ress-col">
+        <h3>Questions fréquentes</h3>
+        <ul>
+          <li><a href="questions.html#si-vous-n-etes-plus-la">Et si vous n'êtes plus là&nbsp;?</a></li>
+          <li><a href="questions.html#pourquoi-si-peu-cher">Pourquoi si peu cher&nbsp;?</a></li>
+          <li><a href="questions.html#si-ca-ne-marche-pas">Et si ça ne marche pas&nbsp;?</a></li>
+          <li><a href="questions.html#disponibilites">Vous êtes salarié ailleurs&nbsp;: quand êtes-vous disponible&nbsp;?</a></li>
+        </ul>
+        <a class="tous" href="questions.html">Les quatorze questions →</a>
+      </div>
+    </div>
+  </div>
+</section>
+
 <section id="contact" class="appel">
   <div class="in">
     <div>
@@ -804,5 +847,6 @@ footer{margin-top:0}
   maj();
 })();
 </script>
+<!-- Cloudflare Web Analytics --><script type='module' src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "4ee482cc16a74712b603b71a2d98cfa1"}'></script><!-- End Cloudflare Web Analytics -->
 </body>
 </html>

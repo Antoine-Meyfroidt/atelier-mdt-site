@@ -1,0 +1,398 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Exemple d’édition de veille — Atelier MDT</title>
+<meta name="description" content="Démonstration : une édition de veille telle que le client la reçoit, en quatre thèmes et trois rythmes. IA appliquée au métier d&#x27;avocat et tendances de la boulangerie : vraie veille du 23 octobre 2026.">
+<link rel="canonical" href="https://atelier-mdt.fr/exemple-veille.html">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://atelier-mdt.fr/exemple-veille.html">
+<meta property="og:site_name" content="Atelier MDT">
+<meta property="og:title" content="Exemple d’édition de veille — Atelier MDT">
+<meta property="og:description" content="Démonstration : une édition de veille telle que le client la reçoit, en quatre thèmes et trois rythmes. IA appliquée au métier d&#x27;avocat et tendances de la boulangerie : vraie veille du 23 octobre 2026.">
+<meta property="og:image" content="https://atelier-mdt.fr/assets/og-atelier-mdt.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Atelier MDT — Parce que votre temps est précieux.">
+<meta property="og:locale" content="fr_FR">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#10233F">
+<link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32.png">
+<link rel="apple-touch-icon" sizes="180x180" href="assets/favicon-180.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{--nuit:#10233F;--panneau:#182F52;--ambre:#F5B62E;--sourd:#9FB0C8;--trait:#2A4470;--froid:#E9EEF6}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{background:var(--nuit);color:var(--froid);font-family:'Manrope',system-ui,-apple-system,sans-serif;line-height:1.6;font-size:16px;-webkit-font-smoothing:antialiased}
+a{color:inherit}
+.in{max-width:900px;margin:0 auto;padding:0 22px}
+nav{position:sticky;top:0;z-index:20;background:rgba(16,35,63,.93);backdrop-filter:blur(8px);border-bottom:1px solid var(--trait)}
+nav .in{display:flex;align-items:center;justify-content:space-between;gap:14px;padding:13px 22px}
+nav .brand{display:flex;align-items:center;gap:10px;text-decoration:none}
+nav .brand svg{color:var(--ambre);flex:none}
+nav .brand span{font-size:16px;font-weight:800;letter-spacing:-.025em}
+nav .links{display:flex;align-items:center;gap:20px}
+nav .links a{color:var(--sourd);text-decoration:none;font-size:13.5px;font-weight:600}
+nav .links a:hover,nav .links a.on{color:var(--froid)}
+nav .cta{background:var(--ambre)!important;color:#10233F!important;padding:9px 15px;border-radius:5px;font-weight:800!important}
+@media(max-width:700px){nav .links a:not(.cta){display:none}}
+header.h{padding:60px 0 6px}
+header.h .eyebrow{font-size:11.5px;font-weight:800;letter-spacing:.09em;color:var(--ambre);margin-bottom:12px}
+header.h h1{font-size:clamp(30px,5.4vw,46px);font-weight:800;letter-spacing:-.03em;line-height:1.06;max-width:22ch}
+header.h .sub{margin-top:15px;font-size:17px;color:var(--sourd);max-width:58ch}
+section{padding:58px 0 0;scroll-margin-top:64px}
+h2.lbl{font-size:11.5px;font-weight:800;letter-spacing:.09em;color:var(--ambre);padding-bottom:10px;border-bottom:1px solid var(--trait);margin-bottom:24px}
+.txt p{font-size:15.5px;max-width:68ch;margin-bottom:12px;color:#E9EEF6}
+.txt p strong{color:#fff}
+.btn{display:inline-block;padding:13px 22px;font-size:15px;font-weight:700;text-decoration:none;border-radius:5px}
+.btn.p{background:var(--ambre);color:#10233F}
+.btn.s{background:transparent;color:var(--froid);border:1px solid var(--trait)}
+.card{background:var(--panneau);border:1px solid var(--trait);border-radius:7px;padding:20px 22px}
+.filet{border-left:3px solid var(--ambre);padding-left:14px;margin:18px 0;font-size:14.5px;color:var(--sourd);max-width:68ch}
+.filet b{color:var(--froid)}
+footer{margin-top:60px;border-top:1px solid var(--trait);padding:24px 0 46px;font-size:12.5px;color:var(--sourd)}
+footer .row{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
+footer a{color:var(--sourd)}
+.cta{background:var(--ambre);color:#10233F;border-radius:8px;padding:32px 30px;margin-top:56px}
+.cta h2{font-size:clamp(22px,3.4vw,28px);font-weight:800;letter-spacing:-.02em;line-height:1.15}
+.cta p{font-size:15.5px;margin-top:10px;max-width:62ch}
+.cta a{display:inline-block;margin-top:18px;background:#10233F;color:var(--ambre);padding:12px 20px;border-radius:5px;font-weight:800;font-size:15px;text-decoration:none}
+
+/* ── commun à toutes les pages ── */
+.in{max-width:900px!important;margin:0 auto;padding:0 22px}
+nav{position:sticky;top:0;z-index:20;background:rgba(16,35,63,.94);backdrop-filter:blur(8px);border-bottom:1px solid var(--trait,#2A4470)}
+nav .in{display:flex;align-items:center;justify-content:space-between;gap:16px;padding:15px 22px}
+nav .brand{display:flex;align-items:center;gap:12px;text-decoration:none}
+nav .brand svg{color:var(--ambre,#F5B62E);flex:none}
+nav .brand .wm{font-size:18px;font-weight:800;letter-spacing:-.025em;line-height:1;color:var(--froid,#E9EEF6)}
+nav .brand .wm em{display:block;font-style:normal;font-size:7.5px;font-weight:800;letter-spacing:.09em;color:var(--ambre,#F5B62E);margin-top:4px;white-space:nowrap}
+nav .links{display:flex;align-items:center;gap:22px}
+nav .links a{color:var(--sourd,#9FB0C8);text-decoration:none;font-size:14px;font-weight:600;white-space:nowrap}
+nav .links a:hover,nav .links a.on{color:var(--froid,#E9EEF6)}
+nav .links a.btn-nav{background:var(--ambre,#F5B62E);color:#10233F;padding:10px 16px;border-radius:5px;font-weight:800;margin:0;display:inline-block;line-height:1.2}
+@media(max-width:800px){nav .links a:not(.btn-nav){display:none}nav .brand .wm em{display:none}}
+footer{margin-top:60px;border-top:1px solid var(--trait,#2A4470);padding:24px 0 46px;font-size:12.5px;color:var(--sourd,#9FB0C8)}
+footer .row{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
+footer a{color:var(--sourd,#9FB0C8)}
+.cta-bloc{background:var(--ambre,#F5B62E);color:#10233F;border-radius:8px;padding:32px 30px;margin-top:56px}
+.cta-bloc h2{font-size:clamp(22px,3.4vw,28px);font-weight:800;letter-spacing:-.02em;line-height:1.15}
+.cta-bloc p{font-size:15.5px;margin-top:10px;max-width:62ch;color:#10233F}
+.cta-bloc a{display:inline-block;margin-top:18px;background:#10233F;color:var(--ambre,#F5B62E);padding:12px 20px;border-radius:5px;font-weight:800;font-size:15px;text-decoration:none}
+
+/* ── NAVIGATION UNIFIÉE (bloc final, prioritaire) ── */
+nav .in{display:flex!important;align-items:center!important;justify-content:space-between!important;gap:18px!important;padding:0 22px!important;min-height:74px!important}
+nav .brand{display:flex!important;align-items:center!important;gap:12px!important;text-decoration:none!important}
+nav .brand svg{color:var(--ambre,#F5B62E)!important;flex:none!important;width:32px!important;height:32px!important}
+nav .brand .wm{font-size:18px!important;font-weight:800!important;letter-spacing:-.025em!important;line-height:1!important;color:var(--froid,#E9EEF6)!important}
+nav .brand .wm em{display:block!important;font-style:normal!important;font-size:7.5px!important;font-weight:800!important;letter-spacing:.09em!important;color:var(--ambre,#F5B62E)!important;margin-top:4px!important;white-space:nowrap!important}
+nav .links{display:flex!important;align-items:center!important;gap:16px!important;height:100%!important}
+@media(min-width:801px) and (max-width:880px){nav .links{gap:11px!important}nav .links a.btn-nav{padding:0 14px!important}}
+nav .links a{display:inline-flex!important;align-items:center!important;height:36px!important;margin:0!important;color:var(--sourd,#9FB0C8)!important;text-decoration:none!important;font-size:14px!important;font-weight:600!important;white-space:nowrap!important;border-bottom:2px solid transparent!important;line-height:1!important;font-size:13.5px!important}
+nav .links a:hover{color:var(--froid,#E9EEF6)!important}
+nav .links a.on{color:var(--froid,#E9EEF6)!important;border-bottom:2px solid var(--ambre,#F5B62E)!important}
+nav .links a.btn-nav{background:var(--ambre,#F5B62E)!important;color:#10233F!important;padding:0 18px!important;border-radius:5px!important;font-weight:800!important;border-bottom:2px solid transparent!important;height:40px!important}
+nav .links a.btn-nav:hover{color:#10233F!important}
+@media(max-width:800px){nav .links a:not(.btn-nav){display:none!important}nav .brand .wm em{display:none!important}nav .in{min-height:62px!important}}
+
+
+/* ══ MENU MOBILE — bloc autonome, aucune dépendance externe ══ */
+nav .burger{display:none}
+@media(max-width:800px){
+  nav .burger{display:flex;flex:none;flex-direction:column;justify-content:center;gap:5px;width:44px;height:38px;padding:0 11px;background:transparent;border:1px solid var(--trait,#2A4470);border-radius:5px;cursor:pointer;-webkit-tap-highlight-color:transparent}
+  nav .burger span{display:block;height:2px;background:var(--froid,#E9EEF6);border-radius:1px;transition:transform .2s ease,opacity .2s ease}
+  nav.ouvert .burger span:nth-child(1){transform:translateY(7px) rotate(45deg)}
+  nav.ouvert .burger span:nth-child(2){opacity:0}
+  nav.ouvert .burger span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
+  nav .in .links{display:none!important;position:absolute;top:100%;left:0;right:0;flex-direction:column!important;align-items:stretch!important;gap:0!important;height:auto!important;background:var(--nuit,#10233F);border-bottom:1px solid var(--trait,#2A4470);padding:4px 22px 20px!important}
+  nav.ouvert .in .links{display:flex!important}
+  nav.ouvert .in .links a{display:flex!important;align-items:center!important;width:100%;height:auto!important;margin:0!important;padding:15px 0!important;font-size:16px!important;font-weight:600!important;color:var(--sourd,#9FB0C8)!important;background:transparent!important;border:0!important;border-bottom:1px solid var(--trait,#2A4470)!important;border-radius:0!important}
+  nav.ouvert .in .links a.on{color:var(--ambre,#F5B62E)!important}
+  nav.ouvert .in .links a.btn-nav{justify-content:center!important;margin-top:16px!important;height:46px!important;padding:0 18px!important;border:0!important;border-radius:5px!important;background:var(--ambre,#F5B62E)!important;color:#10233F!important;font-weight:800!important}
+}
+
+/* ── page Exemples : mise en page allégée ── */
+.fil{font-size:12.5px;margin-bottom:18px}
+.fil a{color:var(--sourd);text-decoration:none;font-weight:700}
+.fil a:hover{color:var(--froid)}
+.chapo{margin-top:22px;border-left:2px solid var(--trait);padding-left:16px;font-size:13.8px;color:#9FB0C8;max-width:74ch;line-height:1.6}
+.chapo b{color:var(--sourd)}
+.chapo a{color:var(--ambre);text-decoration:none;font-weight:700}
+
+.liste{margin-top:6px;border-top:1px solid var(--trait)}
+.ex{padding:26px 0;border-bottom:1px solid var(--trait);scroll-margin-top:88px}
+.ex h2{font-size:19px;font-weight:800;letter-spacing:-.015em;line-height:1.25;color:var(--froid)}
+.ex .src{margin-top:5px;font-size:11.5px;font-weight:700;letter-spacing:.02em}
+.ex .src a{color:var(--ambre);text-decoration:none}
+.ex .src a:hover{text-decoration:underline}
+.ex .src.nb{color:#9FB0C8;font-weight:600}
+.ex .src.nb a{color:#9FB0C8;font-weight:700}
+.ex p.c{margin-top:12px;font-size:14.6px;color:var(--sourd);max-width:74ch;line-height:1.65}
+.ex p.c b{color:var(--froid)}
+.ex p.c .q{color:#9FB0C8}
+.ex details{margin-top:13px;max-width:74ch}
+.ex summary{cursor:pointer;font-size:12.5px;font-weight:800;letter-spacing:.03em;color:#9FB0C8;list-style:none;display:inline-flex;align-items:center;gap:7px}
+.ex summary::-webkit-details-marker{display:none}
+.ex summary::before{content:"+";display:inline-flex;align-items:center;justify-content:center;width:16px;height:16px;border:1px solid var(--trait);border-radius:3px;font-size:12px;font-weight:700;line-height:1}
+.ex details[open] summary::before{content:"–"}
+.ex summary:hover{color:var(--ambre)}
+.ex details[open] summary{color:var(--ambre)}
+.ex details p{margin-top:10px;font-size:13.8px;color:#9FB0C8;line-height:1.6;padding-left:23px}
+
+/* ── bloc des limites, en bas de page ── */
+section.limites{background:var(--nuit);border-top:1px solid var(--trait);border-bottom:1px solid var(--trait);padding:50px 0 54px;margin-top:56px}
+.cadre{display:grid;grid-template-columns:1fr;gap:14px;align-items:start}
+.cadre .non ul{columns:2;column-gap:30px}
+.cadre .non li{break-inside:avoid}
+@media(max-width:780px){.cadre .non ul{columns:1}}
+.cadre .oui,.cadre .non{border-radius:7px;padding:19px 21px}
+.cadre .oui{background:rgba(245,182,46,.06);border:1px solid rgba(245,182,46,.35)}
+.cadre .non{background:var(--panneau);border:1px solid var(--trait)}
+.cadre .k{font-size:10.5px;font-weight:800;letter-spacing:.08em;margin-bottom:10px}
+.cadre .oui .k{color:var(--ambre)}
+.cadre .non .k{color:#9FB0C8}
+.cadre p{font-size:14px;color:var(--sourd);line-height:1.6}
+.cadre p b{color:var(--froid)}
+.cadre ul{list-style:none}
+.cadre li{font-size:13.5px;color:#9FB0C8;margin-bottom:11px;padding-left:16px;position:relative;line-height:1.55}
+.cadre li::before{content:"";position:absolute;left:0;top:9px;width:7px;height:1px;background:#4A6591}
+.cadre .dem{color:var(--froid);font-weight:700}
+.cadre .fin{margin-top:13px;padding-top:12px;border-top:1px solid var(--trait);font-size:13.5px;color:#9FB0C8}
+
+.suite{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:12px}
+.suite a{display:flex;flex-direction:column;gap:5px;background:var(--panneau);border:1px solid var(--trait);border-radius:7px;padding:17px 19px;text-decoration:none;transition:border-color .15s}
+.suite a:hover{border-color:var(--ambre)}
+.suite a b{font-size:15.5px;font-weight:800;letter-spacing:-.01em}
+.suite a span{font-size:12.5px;color:var(--sourd)}
+.suite a .go{margin-top:auto;padding-top:7px;font-size:12px;font-weight:800;color:var(--ambre)}
+.retour{margin-top:20px;font-size:14px}
+.retour a{color:var(--ambre);text-decoration:none;font-weight:700}
+@media(max-width:860px){nav .brand .wm em{display:none!important}}
+.loin{margin:0 0 34px;border-left:3px solid var(--ambre,#F5B62E);padding:4px 0 4px 14px;font-size:15px;color:var(--sourd,#9FB0C8)}
+.loin a{color:var(--ambre,#F5B62E);font-weight:700}
+
+/* ══ DÉMONSTRATIONS — commun ══ */
+.large{max-width:1140px;margin:0 auto;padding:0 22px}
+.aide{margin-top:12px;font-size:13.5px;color:#9FB0C8;max-width:74ch}
+.aide b{color:var(--froid)}
+.choix{display:flex;flex-wrap:wrap;align-items:center;gap:10px 16px}
+.choix .lab{font-size:11px;font-weight:800;letter-spacing:.08em;color:#9FB0C8}
+.seg{display:inline-flex;flex-wrap:wrap;border:1px solid var(--trait);border-radius:5px;overflow:hidden}
+.seg button{font:inherit;font-size:14.5px;font-weight:800;color:var(--sourd);background:var(--panneau);border:0;border-left:1px solid var(--trait);padding:10px 16px;cursor:pointer;min-height:44px;text-align:left}
+.seg button:first-child{border-left:0}
+.seg button[aria-pressed="true"]{background:var(--ambre);color:#10233F}
+.seg button:focus-visible,.cl button:focus-visible,.cl select:focus-visible,.cl input:focus-visible,.cl textarea:focus-visible{outline:2px solid #F5B62E;outline-offset:2px}
+.seg button small{display:block;font-size:11.5px;font-weight:600;opacity:.85}
+@media(max-width:640px){.seg{display:grid;grid-template-columns:1fr}.seg button{border-left:0;border-top:1px solid var(--trait)}.seg button:first-child{border-top:0}}
+/* panneau clair : un livrable ou un outil du client, posé sur la page sombre */
+.cl{--p:#FFFFFF;--doux:#F2F5FA;--encre:#10233F;--enc2:#4A6591;--leg:#7387A6;--tr:#D3DCE8;--amb:#8A6210;
+  background:var(--p);color:var(--encre);border-radius:5px;border:1px solid var(--trait);overflow:hidden;font-size:14.5px;line-height:1.6;min-width:0}
+.cl *{box-sizing:border-box}
+.cl .barre{display:flex;align-items:center;justify-content:space-between;gap:10px;background:var(--doux);border-bottom:1px solid var(--tr);padding:9px 14px;font-size:12px;color:var(--leg)}
+.cl .barre b{color:var(--encre);font-weight:800}
+.badge{display:inline-block;background:#F5B62E;color:#10233F;font-size:10.5px;font-weight:800;letter-spacing:.07em;text-transform:uppercase;padding:3px 8px;border-radius:5px;white-space:nowrap}
+.dtab{margin-top:20px;overflow-x:auto;-webkit-overflow-scrolling:touch;border:1px solid var(--trait);border-radius:5px}
+.dtab table{width:100%;border-collapse:collapse;min-width:620px;font-size:13.8px}
+.dtab th{text-align:left;font-size:10.5px;font-weight:800;letter-spacing:.07em;text-transform:uppercase;color:#9FB0C8;background:var(--panneau);padding:11px 14px;border-bottom:1px solid var(--trait)}
+.dtab td{padding:12px 14px;border-bottom:1px solid var(--trait);vertical-align:top;color:var(--sourd);line-height:1.55}
+.dtab tr:last-child td{border-bottom:0}
+.dtab td:first-child{color:var(--froid);font-weight:700;width:26%}
+.deux{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+@media(max-width:780px){.deux{grid-template-columns:1fr}}
+.deux .card .k{font-size:10.5px;font-weight:800;letter-spacing:.08em;color:#9FB0C8;margin-bottom:9px}
+.deux .card p,.deux .card li{font-size:14.5px;color:var(--sourd);line-height:1.6}
+.deux .card ul{list-style:none}
+.deux .card li{padding-left:18px;position:relative;margin-bottom:7px}
+.deux .card li::before{content:"–";position:absolute;left:0;color:#9FB0C8}
+.deux .card b{color:var(--froid)}
+.note-offre{margin-top:16px;font-size:14px;color:var(--sourd);max-width:72ch}
+.note-offre a{color:var(--ambre);font-weight:700;text-decoration:none}
+@media (prefers-reduced-motion:reduce){*{transition:none!important;animation:none!important}}
+
+.v-reglages{display:grid;gap:14px}
+.v-reglages .lab{display:block;font-size:11px;font-weight:800;letter-spacing:.08em;color:#9FB0C8;margin-bottom:8px}
+.puces{display:flex;flex-wrap:wrap;gap:8px}
+.puces button{font:inherit;font-size:14px;font-weight:700;color:var(--sourd);background:var(--panneau);border:1px solid var(--trait);border-radius:5px;padding:9px 12px;cursor:pointer;min-height:42px;text-align:left}
+.puces button small{display:block;font-size:11.5px;font-weight:600;color:#9FB0C8}
+.puces button[aria-pressed="true"]{background:var(--froid);border-color:var(--froid);color:#10233F}
+.puces button[aria-pressed="true"] small{color:#4A6591}
+.puces button:focus-visible{outline:2px solid #F5B62E;outline-offset:2px}
+.v-statut{margin-top:4px;font-size:13px;color:var(--sourd)}
+.v-statut b{color:var(--froid)}
+.mailbox{margin-top:16px}
+.mailbox .tete{padding:12px 18px;border-bottom:1px solid var(--tr);font-size:13px;color:var(--enc2);line-height:1.6}
+.mailbox .tete b{color:var(--encre)}
+.ed{padding:22px 24px 26px;max-width:720px}
+@media(max-width:560px){.ed{padding:18px 16px 22px}}
+.ed h3{font-size:21px;font-weight:800;line-height:1.25}
+.ed .ryt{font-size:13px;color:var(--enc2);margin-top:3px}
+.ed .acc{margin-top:14px;font-size:15.5px;font-weight:700;line-height:1.5;border-left:3px solid #F5B62E;padding-left:12px}
+.ed .sec{margin-top:22px;padding-top:14px;border-top:1px solid var(--tr)}
+.ed .sec>.k{font-size:11px;font-weight:800;letter-spacing:.08em;text-transform:uppercase;color:var(--amb)}
+.ed .fict{margin-top:8px;font-size:12.5px;color:var(--enc2);background:var(--doux);border-radius:5px;padding:8px 10px}
+.it{margin-top:16px}
+.it .rep{display:flex;flex-wrap:wrap;gap:6px;align-items:center;font-size:11px;font-weight:800;letter-spacing:.04em;text-transform:uppercase}
+.it .rep .p1{color:#10233F;border:1px solid #10233F;border-radius:5px;padding:2px 7px}
+.it .rep .p2{color:var(--enc2);border:1px dashed var(--leg);border-radius:5px;padding:2px 7px}
+.it .rep .nat{color:var(--leg)}
+.it h4{font-size:16.5px;font-weight:800;line-height:1.35;margin-top:6px}
+.it p{font-size:14.5px;margin-top:5px;line-height:1.6}
+.it .cc{margin-top:8px;font-size:13.5px}
+.it .cc b{font-size:12px;font-weight:800}
+.it .cc ul{margin:4px 0 0 18px}
+.it .cc li{margin-top:3px;color:var(--enc2)}
+.it .src{margin-top:6px;font-size:12.5px;color:var(--leg)}
+.it .src a{color:#10233F;font-weight:700}
+.ed ul.ret{margin:8px 0 0 18px;font-size:14.5px}
+.ed ul.ret li{margin-top:4px}
+.ed .test{margin-top:8px;font-size:14.5px}
+.ed ul.sc{margin:6px 0 0 18px;font-size:13px;color:var(--enc2)}
+.ed .pied{margin-top:22px;padding-top:12px;border-top:1px solid var(--tr);font-size:12.5px;color:var(--leg)}
+.vide{font-size:14.5px;color:var(--enc2);margin-top:10px}
+</style>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Accueil", "item": "https://atelier-mdt.fr/"}, {"@type": "ListItem", "position": 2, "name": "Exemples", "item": "https://atelier-mdt.fr/exemples.html"}, {"@type": "ListItem", "position": 3, "name": "Trois veilles qui tournent sans vous", "item": "https://atelier-mdt.fr/exemples-veille.html"}, {"@type": "ListItem", "position": 4, "name": "Exemple : une édition de veille", "item": "https://atelier-mdt.fr/exemple-veille.html"}]}</script>
+</head>
+<body>
+<nav><div class="in">
+  <a class="brand" href="index.html"><svg width="32" height="32" viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="3.4" stroke-linecap="square" aria-hidden="true"><path d="M14 8 H6 V56 H14" fill="none"/><path d="M50 8 H58 V56 H50" fill="none"/><path d="M18 44 V22 L32 36 L46 22 V44" stroke-width="4" fill="none"/></svg><span class="wm">Atelier MDT<em>PARCE QUE VOTRE TEMPS EST PRÉCIEUX.</em></span></a>
+  <div class="links" id="nav-liens">
+      <a href="realisations.html">Réalisations</a>
+      <a href="offres.html">Offres</a>
+      <a href="exemples.html" class="on">Exemples</a>
+      <a href="rentabilite.html">Rentabilité</a>
+      <a href="qui-suis-je.html">Qui suis-je</a>
+      <a class="btn-nav" href="contact.html">Échanger 30 minutes</a>
+  </div>
+  <button class="burger" type="button" aria-label="Ouvrir le menu" aria-expanded="false" aria-controls="nav-liens"><span></span><span></span><span></span></button>
+</div></nav>
+<main id="contenu">
+<header class="h"><div class="in">
+  <p class="fil"><a href="exemples-veille.html">← Trois veilles qui tournent sans vous</a></p>
+  <div class="eyebrow">EXEMPLE INTERACTIF · VEILLE EN ABONNEMENT</div>
+  <h1>Recevez l'édition comme le client</h1>
+  <p class="sub">Choisissez un thème et un rythme : l'édition s'affiche telle qu'elle arrive dans la boîte mail. Chaque fait a sa source et sa date, et ce que ça peut changer chez le client est écrit.</p>
+  <p class="chapo"><b>Deux thèmes réels, deux thèmes fictifs.</b> L'IA appliquée au métier d'avocat et les tendances de la boulangerie sont une vraie veille, relevée le 23&nbsp;octobre&nbsp;2026. La veille concurrentielle et les appels d'offres sont inventés, faute de pouvoir publier la veille d'un vrai client.</p>
+</div></header>
+
+<section><div class="large">
+  <div class="in" style="padding:0">
+    <h2 class="lbl">LA DÉMONSTRATION</h2>
+    <div class="v-reglages">
+      <div><span class="lab" id="lab-theme">LE THÈME</span><div class="puces" id="themes" role="group" aria-labelledby="lab-theme"></div></div>
+      <div><span class="lab" id="lab-ryt">LE RYTHME</span><div class="puces" id="rythmes" role="group" aria-labelledby="lab-ryt"></div></div>
+    </div>
+    <p class="v-statut" id="statut"></p>
+  </div>
+  <div class="cl mailbox" aria-live="polite">
+    <div class="barre"><span><b>Boîte de réception du client</b> · aperçu</span><span class="badge">Exemple</span></div>
+    <div class="tete" id="tete"></div>
+    <div class="ed" id="ed"></div>
+  </div>
+</div></section>
+
+<section><div class="in">
+  <h2 class="lbl">CE QUE LA VEILLE DOIT À SES SOURCES</h2>
+  <p class="donnees-intro" style="font-size:15.5px;color:var(--froid);max-width:70ch;line-height:1.65">Une veille ne vaut que par ses sources. Chaque thème a un périmètre écrit, et ce qui en sort ne passe pas.</p>
+  <div class="dtab"><table>
+    <thead><tr><th>Thème</th><th>Ce que je suis</th><th>Ce que je ne suis pas</th></tr></thead>
+    <tbody>
+      <tr><td>Veille concurrentielle</td><td>Ce que vos concurrents publient sur leur propre site&nbsp;: offres, tarifs affichés, nouveautés, événements. Jusqu'à cinq concurrents.</td><td>Les réseaux sociaux, les avis, les prix qu'ils ne publient pas.</td></tr>
+      <tr><td>Appels d'offres</td><td>Le BOAMP et le portail européen TED, sur vos codes CPV et votre territoire.</td><td>Les marchés passés sans publicité, les profils d'acheteurs, les annonces légales, les marchés privés. Je ne réponds pas à votre place.</td></tr>
+      <tr><td>IA appliquée à votre métier</td><td>Une synthèse sur les sources choisies avec vous, avec ce que ça peut changer chez vous.</td><td>Une veille juridique&nbsp;: quand un article cite une décision, je rapporte l'article, je n'analyse pas la décision.</td></tr>
+      <tr><td>Tendances de votre secteur</td><td>Une revue de presse sur vos sources et vos sujets, résumée, chaque article lié.</td><td>Les articles payants que je ne peux pas lire, et tout ce qui n'est pas daté sur la période.</td></tr>
+    </tbody>
+  </table></div>
+  <div class="deux" style="margin-top:16px">
+    <div class="card"><div class="k">LES RÈGLES DE CHAQUE ÉDITION</div><ul>
+      <li>Chaque fait a sa source et sa date. Sans source vérifiable, l'information ne passe pas.</li>
+      <li>Une période creuse se dit, plutôt que de remplir.</li>
+      <li>Aucun conseil d'action&nbsp;: ce que ça peut changer, ce qui reste à vérifier, et vous décidez.</li>
+    </ul></div>
+    <div class="card"><div class="k">LE RYTHME</div><p>Le contenu est le même aux trois rythmes&nbsp;: seule la période couverte change. <b>Changez de rythme</b> dans la démonstration&nbsp;: l'édition hebdomadaire ne garde que la semaine, la mensuelle reprend tout le mois.</p></div>
+  </div>
+  <p class="filet" style="margin-top:20px"><b>Deux thèmes réels, deux thèmes fictifs.</b> Pour l'IA appliquée au métier d'avocat et les tendances de la boulangerie, l'édition est une vraie veille, relevée et rédigée le 23&nbsp;octobre&nbsp;2026&nbsp;: les liens mènent aux articles d'origine, et elle vieillira comme toute édition. Pour la veille concurrentielle et les appels d'offres, les concurrents, les acheteurs et les avis sont inventés&nbsp;: je ne publie pas la veille d'un vrai client. Les entreprises clientes sont fictives.</p>
+  <p class="note-offre">Offre correspondante&nbsp;: <a href="offres.html#veille">veille en abonnement, trois rythmes, quatre thèmes →</a></p>
+</div></section>
+
+<section><div class="in">
+  <h2 class="lbl">LES AUTRES DÉMONSTRATIONS</h2>
+  <div class="suite"><a href="exemple-automatisation.html"><span style="font-size:10.5px;font-weight:800;letter-spacing:.07em;color:#9FB0C8">AUTOMATISATION</span><b>Envoyez une demande, regardez ce qui se passe</b><span>Devis, pièces manquantes, réservation de groupe : la chaîne complète, simulée.</span><span class="go">Essayer →</span></a><a href="exemple-accompagnement-ia.html"><span style="font-size:10.5px;font-weight:800;letter-spacing:.07em;color:#9FB0C8">ACCOMPAGNEMENT IA</span><b>Votre parcours, puis l'espace d'une équipe</b><span>Ce qu'on travaillerait dans votre métier, et un espace de travail type.</span><span class="go">Essayer →</span></a><a href="exemple-tableau-de-bord-paliers.html"><span style="font-size:10.5px;font-weight:800;letter-spacing:.07em;color:#9FB0C8">TABLEAU DE BORD</span><b>Une boulangerie, trois paliers</b><span>Le même commerce vu avec de plus en plus de données.</span><span class="go">Essayer →</span></a></div>
+  <p class="retour"><a href="exemples.html">← Tous les exemples</a></p>
+</div></section>
+
+<div class="in"><div class="cta-bloc">
+  <h2>Et chez vous&nbsp;?</h2>
+  <p>Trente minutes en visio pour regarder ce qui vous prend du temps et ce qui peut tourner seul. Vous recevez ensuite un devis écrit, et vous décidez.</p>
+  <a href="contact.html">Échanger 30 minutes</a>
+</div></div>
+</main>
+<footer><div class="in"><div class="row">
+  <span>Atelier MDT · Automatisation · Veille · Tableaux de bord · Accompagnement IA</span>
+  <span><a href="mailto:antoine@atelier-mdt.fr">antoine@atelier-mdt.fr</a> · <a href="tel:+33743688097">07 43 68 80 97</a> · <a href="https://www.linkedin.com/in/antoine-meyfroidt/" rel="noopener">linkedin.com/in/antoine-meyfroidt</a> · <a href="https://www.malt.fr/profile/antoinemeyfroidt" rel="noopener">Malt</a> · <a href="https://share.google/6U1bBCivJdjeVEOeF" rel="noopener">Fiche Google</a> · <a href="questions.html">Questions fréquentes</a> · <a href="articles.html">Articles</a> · <a href="mentions-legales.html">Mentions légales</a> · <a href="cgv.html">CGV</a></span>
+</div></div></footer>
+<script>
+/* Menu mobile — autonome, aucune dépendance externe. */
+(function(){
+  var n=document.querySelector('nav');if(!n)return;
+  var b=n.querySelector('.burger'),l=n.querySelector('.links');if(!b||!l)return;
+  function etat(o){
+    n.classList.toggle('ouvert',o);
+    b.setAttribute('aria-expanded',o?'true':'false');
+    b.setAttribute('aria-label',o?'Fermer le menu':'Ouvrir le menu');
+  }
+  b.addEventListener('click',function(){etat(!n.classList.contains('ouvert'));});
+  l.addEventListener('click',function(e){if(e.target.closest('a'))etat(false);});
+  document.addEventListener('click',function(e){if(n.classList.contains('ouvert')&&!n.contains(e.target))etat(false);});
+  document.addEventListener('keydown',function(e){if(e.key==='Escape')etat(false);});
+  window.addEventListener('resize',function(){if(window.innerWidth>800)etat(false);});
+})();
+</script>
+<script>
+var D = {"periodes": {"semaine": ["2026-10-16", "2026-10-22", "le point chaque semaine", "du 16 au 22 octobre 2026"], "quinzaine": ["2026-10-09", "2026-10-22", "le point tous les quinze jours", "du 9 au 22 octobre 2026"], "mois": ["2026-09-23", "2026-10-22", "le point chaque mois", "du 23 septembre au 22 octobre 2026"]}, "themes": {"ia": {"nom": "IA appliquée au métier", "client": "Trois Ponts Avocats", "objet": "IA et métier d’avocat", "reel": true, "cadrage": "Cabinet de trois avocats : droit du travail, de la famille, des contrats. Sources : presse juridique, CNB, presse spécialisée IA.", "accroche": {"semaine": "Semaine calme sur ce thème : un seul élément vérifiable, une levée de fonds qui annonce des offres d'IA juridique plus offensives en Europe.", "quinzaine": "Les éditeurs accélèrent : une levée record et une plateforme présentée à la Convention nationale des avocats.", "mois": "Le point qui compte pour votre cabinet : la jurisprudence sur la consultation du CSE avant un déploiement d'IA, que vos clients employeurs vont vous demander."}, "items": [{"date": "2026-10-21", "prio": 2, "nature": "Annonce", "titre": "Legora lève 550 millions de dollars", "texte": "L'éditeur Legora, qui vend aux cabinets et aux directions juridiques une plateforme d'IA « agentique », annonce une levée de 550 millions de dollars en série E, menée par Atreides Management, pour une valorisation de 8,8 milliards de dollars. Les fonds doivent financer son expansion en Europe et en Asie-Pacifique.", "change": ["Les éditeurs d'IA juridique ont les moyens de démarcher les cabinets européens : les sollicitations commerciales vont se multiplier.", "L'article ne cite aucun cabinet français : rien ne dit encore ce qui sera proposé aux petites structures."], "retenir": "Legora lève 550 M$ pour s'étendre en Europe.", "source": ["Le Monde du droit", "https://www.lemondedudroit.fr/mag/378-intelligence-artificielle/106334-legora-leve-550-millions-de-dollars-en-serie-e.html"]}, {"date": "2026-10-12", "prio": 2, "nature": "Annonce commerciale", "titre": "Septeo Legal présenté à la Convention nationale des avocats", "texte": "Septeo annonce Septeo Legal, une plateforme qui réunit gestion du cabinet, production juridique et IA, appuyée sur les contenus de Lexbase, racheté en septembre. Le lancement officiel est prévu à la Convention nationale des avocats, organisée par le CNB à Toulouse, Albi et Montauban du 21 au 23 octobre. L'article décrit un suivi du dossier étape par étape, l'avocat relisant et validant chaque production.", "change": ["Si votre logiciel de cabinet vient de cet éditeur, l'IA pourrait arriver dans l'outil que vous utilisez déjà : ni le prix ni les conditions ne sont publiés.", "L'article reprend la présentation de l'éditeur, sans test indépendant : à lire comme une annonce."], "retenir": "Septeo Legal, IA intégrée au logiciel de cabinet, lancé à la Convention nationale.", "source": ["Décideurs Juridiques", "https://www.decideurs-juridiques.com/legaltech-juridiques/65411-ia-juridique-septeo-legal-veut-redonner-a-l-avocat-du-temps-pour-exercer-pleinement.html"], "source2": ["Convention nationale des avocats 2026", "https://www.cna2026.fr/"]}, {"date": "2026-10-07", "prio": 1, "nature": "Analyse", "titre": "IA en entreprise : quand le CSE doit être consulté", "texte": "ActuIA recense les décisions rendues depuis février 2025 sur des déploiements d'outils d'IA sans consultation du CSE, en s'appuyant notamment sur l'article L. 2312-8 du Code du travail. Plusieurs déploiements ont été suspendus en référé (Nanterre, Créteil, Paris) ; d'autres n'ont pas été soumis à consultation, comme Copilot 365 à Paris le 10 février 2026. Selon l'article, les juges regardent les effets de l'outil, usage obligatoire ou données d'évaluation, plutôt que son étiquette : un « pilote » peut suffire.", "change": ["Un sujet de questions à attendre de vos clients employeurs qui déploient des outils d'IA.", "L'article dit s'appuyer surtout sur des sources secondaires pour l'arrêt de la cour d'appel de Paris du 21 mai 2026 : à lire dans la décision elle-même avant toute utilisation."], "retenir": "Consultation du CSE avant un déploiement d'IA : une jurisprudence qui s'étoffe.", "source": ["ActuIA", "https://actuia.com/actualite/quand-consulter-le-cse-avant-de-deployer-lia-octobre-2026"]}, {"date": "2026-09-24", "prio": 2, "nature": "Annonce", "titre": "Le barreau de Paris lance une Académie IA gratuite", "texte": "Le barreau de Paris propose à ses avocats une journée gratuite, en petit groupe, à la Maison des avocats : les fondamentaux de l'IA et ses enjeux déontologiques, un panorama indépendant des outils du marché, puis trois heures d'atelier sur des cas d'usage de cabinet. Selon l'article, elle est validée au titre des heures annuelles obligatoires des avocats.", "change": ["Réservée aux avocats inscrits à Paris : reste à vérifier ce que propose votre propre barreau.", "Le signe que les ordres organisent l'apprentissage de l'IA, après le guide déontologique du CNB publié en mars 2026."], "retenir": "Le barreau de Paris ouvre une Académie IA gratuite à ses avocats.", "source": ["Le Monde du droit", "https://www.lemondedudroit.fr/mag/378-intelligence-artificielle/105914-le-barreau-de-paris-se-dote-dune-academie-ia-pour-ses-avocats.html"]}], "tester": "Prenez un arrêt publié sur Légifrance, sans rien de vos dossiers. Demandez à votre outil un résumé en cinq points, en indiquant pour chacun le paragraphe de l'arrêt d'où il vient. Puis vérifiez chaque renvoi : c'est la façon la plus rapide de voir où l'outil invente.", "consultees": ["Le Monde du droit (rubrique Intelligence artificielle)", "Décideurs Juridiques", "ActuIA", "Site du CNB et de la Convention nationale des avocats"], "indispo": ["Baromètre CNB/Ifop 2026 « État de la profession » (Le Monde du droit, 9 octobre) : aucun chiffre sur l'IA dans la partie accessible de l'article, non retenu.", "Programme de la Convention nationale des avocats : les sessions consacrées à l'IA ne sont pas détaillées sur la page d'accueil."]}, "tendances": {"nom": "Tendances du secteur", "client": "Fournil Grain d'Ardoise", "objet": "Tendances de la boulangerie", "reel": true, "cadrage": "Boulangerie-pâtisserie de quartier, avec clients professionnels et commande en ligne. Sources : presse professionnelle de la boulangerie, presse agricole.", "accroche": {"semaine": "Semaine calme : un seul élément, le blé qui recule sur Euronext.", "quinzaine": "Deux enquêtes du 15 octobre : les Français tiennent à leur boulangerie, les artisans ont le moral en baisse.", "mois": "Le chiffre à garder : 88 % des Français veulent une boulangerie près de chez eux. Et à Paris, la fermeture hebdomadaire imposée tombe."}, "items": [{"date": "2026-10-22", "prio": 2, "nature": "Marché", "titre": "Le blé meunier recule vers 232 €/t sur Euronext", "texte": "À la clôture du 21 octobre, l'échéance de décembre 2026 du blé meunier cotait 232,75 €/t sur Euronext, en baisse de 8,75 €/t sur la séance. Selon Réussir, les abondantes disponibilités mondiales et de nouveaux espoirs de négociations entre les États-Unis, la Russie et l'Ukraine pèsent sur les cours.", "change": ["Un repère avant vos prochaines discussions avec votre meunier ; l'article ne dit rien du prix de la farine, qui reste à lui demander.", "Une seule séance : une tendance se lit sur plusieurs semaines."], "retenir": "Blé meunier : 232,75 €/t le 21 octobre, en baisse.", "source": ["Réussir, La Dépêche", "https://reussir.fr/articles/marche-des-cereales-du-21-octobre-2026-labondance-de-loffre-mondiale-pese-sur-les-cereales"]}, {"date": "2026-10-15", "prio": 1, "nature": "Étude", "titre": "La boulangerie reste le commerce qu'on veut garder près de chez soi", "texte": "Selon la cinquième vague de l'enquête CGAD-CSA, 88 % des Français citent la boulangerie comme le commerce important à avoir près de chez eux, devant le primeur (75 %). 52 % disent que leur pouvoir d'achat a baissé sur douze mois, mais 56 % fréquentent toujours autant les commerces alimentaires de proximité. Leurs attentes : des prix accessibles, plus de produits locaux, plus de transparence sur l'origine et la fabrication.", "change": ["L'origine et la fabrication figurent parmi les attentes citées : un sujet sur lequel vos clients pourraient vous interroger.", "La taille de l'échantillon n'est pas indiquée dans l'article."], "retenir": "88 % des Français tiennent à une boulangerie près de chez eux (CGAD-CSA).", "source": ["Les Nouvelles de la Boulangerie", "https://lesnouvellesdelaboulangerie.fr/actualites/actualites-nationales/les-francais-attaches-aux-commerces-alimentaires-de-proximite-malgre-la-baisse-du-pouvoir-dachat/"]}, {"date": "2026-10-15", "prio": 2, "nature": "Baromètre", "titre": "Artisanat : le moral se dégrade", "texte": "Le baromètre de rentrée de CMA France compte 46 % d'artisans pessimistes sur l'avenir de leur entreprise, contre 31 % d'optimistes. 29 % se disent confiants pour investir dans les prochains mois, en recul de 37 points sur un an, et 74 % ne prévoient d'embaucher ni salarié ni apprenti.", "change": ["Une photographie de tout l'artisanat : elle ne dit rien de la boulangerie en particulier.", "Ni l'échantillon ni les dates de l'enquête ne sont précisés."], "retenir": "Artisans : 46 % pessimistes, 29 % prêts à investir (CMA France).", "source": ["Les Nouvelles de la Boulangerie", "https://lesnouvellesdelaboulangerie.fr/actualites/dossiers/artisanat-le-moral-des-entreprises-en-baisse-malgre-une-passion-intacte/"]}, {"date": "2026-10-04", "prio": 1, "nature": "Décision de justice", "titre": "Paris : l'arrêté imposant un jour de fermeture hebdomadaire jugé illégal", "texte": "Par un jugement du 9 juillet 2026, rendu public depuis, le tribunal administratif a jugé illégal l'arrêté préfectoral parisien du 21 janvier 1997 qui imposait aux commerces vendant du pain de fermer au moins un jour par semaine. Le préfet doit l'abroger avant le 9 novembre 2026 ; un autre recours, porté par des fédérations de la distribution, est toujours pendant.", "change": ["Le jugement ne vise que Paris. À vérifier : s'il existe un arrêté de fermeture hebdomadaire en Ille-et-Vilaine, et ce qu'il prévoit."], "retenir": "Paris : fin programmée de la fermeture hebdomadaire imposée aux boulangeries.", "source": ["L'Express Franchise", "https://lexpress-franchise.com/actualites/boulangeries-paris-fermeture-hebdomadaire-arrete/"]}, {"date": "2026-10-01", "prio": 2, "nature": "Annonce", "titre": "Deux farines à faible volatilité contre les poussières", "texte": "Le Moulin Pichard lance une T65 et une T80 biologiques à faible indice de pulvérulence, présentées comme un moyen de limiter l'exposition des boulangers aux microparticules et aux allergènes de la farine (asthme, rhinite). L'article mentionne une aide « Métiers de bouche » de certaines Carsat, pouvant aller jusqu'à 70 %.", "change": ["L'article ne donne aucune mesure de l'indice de pulvérulence : à demander au meunier.", "L'aide, son périmètre et ses conditions sont à vérifier auprès de la Carsat Bretagne."], "retenir": "Farines à faible volatilité : une aide Carsat évoquée, à vérifier.", "source": ["Les Nouvelles de la Boulangerie", "https://lesnouvellesdelaboulangerie.fr/actualites/actualites-nationales/le-moulin-pichard-lance-deux-nouvelles-farines-a-faible-volatilite/"]}], "consultees": ["Les Nouvelles de la Boulangerie", "Réussir (marchés des céréales)", "L'Express Franchise"], "indispo": ["« ANMF : une faible rentabilité malgré des marges en hausse » (Les Nouvelles de la Boulangerie, 1er octobre) : article payant au-delà de l'introduction, non retenu.", "Observatoire FIDUCIAL 2026 de la boulangerie-pâtisserie (Honoré le Mag, 8 septembre) : antérieur à la période."]}, "concurrence": {"nom": "Veille concurrentielle", "client": "Le Bistrot des Grands Prés", "objet": "Veille concurrentielle", "reel": false, "cadrage": "Restaurant de quartier avec activité traiteur. Quatre concurrents suivis sur leur propre site.", "accroche": {"semaine": "Le premier menu de fêtes du quartier est en ligne, et une formule du midi passe au-dessus de la vôtre.", "quinzaine": "Les fêtes et les entreprises : deux concurrents se positionnent avant vous sur ce que vous vendez en décembre.", "mois": "Un mois chargé : menus de fêtes, plateaux-repas, ouverture le dimanche. Trois mouvements sur vos créneaux forts."}, "items": [{"date": "2026-10-20", "prio": 1, "nature": "Nouvelle offre", "titre": "Concurrent A publie son menu de fêtes", "texte": "Trois formules, de 39 à 59 € par personne, pour les groupes à partir de huit couverts. Réservation ouverte à partir du 1er novembre, acompte de 30 % demandé.", "change": ["Votre menu de groupe de décembre n'est pas encore en ligne : celui de A est le premier visible dans le quartier.", "Les prix sont ceux affichés sur sa page ; les conditions de groupe détaillées ne sont pas publiées."], "retenir": "Concurrent A a publié son menu de fêtes (39 à 59 €).", "source": ["Site du concurrent A, page « Menus »", null]}, {"date": "2026-10-17", "prio": 2, "nature": "Tarif", "titre": "Concurrent B augmente sa formule du midi", "texte": "La formule entrée-plat ou plat-dessert passe de 16,50 € à 17,50 €. Le contenu de la formule ne change pas.", "change": ["Votre formule à 17 € se retrouve désormais sous la sienne.", "Un seul relevé : rien ne dit encore si d'autres suivront."], "retenir": "Concurrent B passe sa formule du midi à 17,50 €.", "source": ["Site du concurrent B, page d'accueil", null]}, {"date": "2026-10-12", "prio": 1, "nature": "Nouvelle offre", "titre": "Concurrent C livre des plateaux-repas aux entreprises", "texte": "Une nouvelle page « Traiteur » propose des plateaux-repas livrés, à partir de dix plateaux, commandés la veille avant 16 h.", "change": ["C arrive sur les plateaux-repas d'entreprise, l'une de vos activités traiteur.", "Ni les tarifs ni la zone de livraison ne sont publiés."], "retenir": "Concurrent C se lance sur les plateaux-repas d'entreprise.", "source": ["Site du concurrent C, page « Traiteur »", null]}, {"date": "2026-09-30", "prio": 2, "nature": "Horaires", "titre": "Concurrent D ouvrira le dimanche midi", "texte": "Un bandeau annonce l'ouverture le dimanche midi à partir du 2 novembre, avec une carte réduite.", "change": ["Le dimanche midi est le créneau de votre brunch."], "retenir": "Concurrent D ouvre le dimanche midi dès le 2 novembre.", "source": ["Site du concurrent D, bandeau d'accueil", null]}, {"date": "2026-09-25", "prio": 2, "nature": "Service", "titre": "Concurrent B met en ligne la réservation de groupe", "texte": "Un formulaire permet désormais de réserver pour un groupe en ligne, avec un acompte payé à la réservation.", "change": ["Vos réservations de groupe passent encore par téléphone."], "retenir": "Concurrent B prend les réservations de groupe en ligne.", "source": ["Site du concurrent B, page « Groupes »", null]}], "consultees": ["Sites des concurrents A, B, C et D : pages d'accueil, menus, tarifs et actualités (relevés fictifs)."], "indispo": ["Concurrent D : page « Tarifs » en maintenance lors du relevé du 22 octobre (exemple)."]}, "ao": {"nom": "Appels d'offres", "client": "Arc-en-Ille Électricité", "objet": "Appels d'offres électricité, Ille-et-Vilaine", "reel": false, "cadrage": "Électricien, travaux d'installation et de rénovation électrique. Codes CPV du lot électricité, territoire : l'Ille-et-Vilaine.", "accroche": {"semaine": "Deux consultations dans votre métier cette semaine, dont un lot électricité sur un groupe scolaire.", "quinzaine": "Trois consultations, dont une mise en conformité de logements qui ferme le 6 novembre.", "mois": "Cinq consultations sur le mois. La plus proche ferme demain : la maintenance de bâtiments du syndicat F."}, "items": [{"date": "2026-10-21", "prio": 1, "nature": "Consultation", "titre": "Lot 05 électricité : extension d'un groupe scolaire", "texte": "Acheteur : Communauté de communes B (35). Procédure adaptée, lot 05 « Électricité courants forts et faibles ». Visite de site obligatoire le 4 novembre. Date limite de réception des offres : 20 novembre 2026, 12 h.", "change": ["Dans votre métier et votre zone ; la visite obligatoire est à caler avant le 4 novembre.", "Le montant estimé n'est pas publié dans l'avis."], "retenir": "Lot électricité d'un groupe scolaire (CC B) : visite obligatoire le 4/11, offres au 20/11.", "source": ["BOAMP, avis n° 26-0000 (fictif)", null]}, {"date": "2026-10-19", "prio": 2, "nature": "Consultation", "titre": "Éclairage LED d'une salle des sports", "texte": "Acheteur : Commune A (35), environ 6 000 habitants. Procédure adaptée, lot unique. Date limite : 13 novembre 2026, 12 h.", "change": ["Marché de petite taille, souvent ouvert aux entreprises locales."], "retenir": "Éclairage LED, commune A : offres au 13/11.", "source": ["BOAMP, avis n° 26-0001 (fictif)", null]}, {"date": "2026-10-13", "prio": 1, "nature": "Consultation", "titre": "Mise en conformité électrique de 40 logements", "texte": "Acheteur : bailleur social C (35). Procédure adaptée. Date limite : 6 novembre 2026, 12 h.", "change": ["Votre activité de rénovation électrique ; délai de réponse court."], "retenir": "Conformité de 40 logements (bailleur C) : offres au 6/11.", "source": ["BOAMP, avis n° 26-0002 (fictif)", null]}, {"date": "2026-10-02", "prio": 2, "nature": "Consultation", "titre": "Bornes de recharge sur six sites départementaux", "texte": "Acheteur : Département E (35). Fourniture et pose, accord-cadre de deux ans. Date limite : 30 octobre 2026, 12 h.", "change": ["Votre activité bornes ; les références demandées sont à lire dans le règlement de consultation."], "retenir": "Bornes de recharge, département E : offres au 30/10.", "source": ["BOAMP, avis n° 26-0003 (fictif)", null]}, {"date": "2026-09-25", "prio": 1, "nature": "Consultation", "titre": "Maintenance des installations électriques de bâtiments publics", "texte": "Acheteur : syndicat intercommunal F (35). Accord-cadre de maintenance, trois ans. Date limite : 24 octobre 2026, 12 h.", "change": ["Ferme demain, 24 octobre : signalé pour mémoire."], "retenir": "Maintenance, syndicat F : ferme le 24/10.", "source": ["BOAMP, avis n° 26-0004 (fictif)", null]}], "consultees": ["BOAMP et TED, sur vos codes CPV et l'Ille-et-Vilaine (relevé fictif pour cette démonstration)."], "indispo": ["Les marchés passés sans publicité ne sont publiés nulle part : ils échappent à toute veille."]}}};
+</script>
+<script>
+
+(function(){
+var NB=' ';
+function esc(s){return String(s).replace(/[&<>"']/g,function(c){return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c];});}
+function fr(s){return esc(s).replace(/ ([:;?!»%])/g,NB+'$1').replace(/« /g,'«'+NB).replace(/(\d) (\d{3})/g,'$1'+NB+'$2').replace(/(\d) (€|h\b|M\$)/g,'$1'+NB+'$2');}
+var MOIS=['janvier','février','mars','avril','mai','juin','juillet','août','septembre','octobre','novembre','décembre'];
+function dfr(d){var p=d.split('-');return (+p[2]===1?'1er':+p[2])+' '+MOIS[+p[1]-1]+' '+p[0];}
+var st={t:'ia',r:'quinzaine'};
+function puces(el,items,cle){
+ el.innerHTML=items.map(function(it){return '<button type="button" data-k="'+it[0]+'" aria-pressed="'+(st[cle]===it[0])+'">'+it[1]+'</button>';}).join('');
+ [].forEach.call(el.querySelectorAll('button'),function(b){b.addEventListener('click',function(){st[cle]=b.getAttribute('data-k');[].forEach.call(el.querySelectorAll('button'),function(x){x.setAttribute('aria-pressed',x===b?'true':'false');});rendre();});});
+}
+function rendre(){
+ var T=D.themes[st.t],P=D.periodes[st.r];
+ var items=T.items.filter(function(i){return i.date>=P[0]&&i.date<=P[1];}).sort(function(a,b){return a.prio-b.prio||(a.date<b.date?1:-1);});
+ document.getElementById('statut').innerHTML='<b>'+(T.reel?'Veille réelle':'Relevé fictif')+'</b> · '+items.length+' élément'+(items.length>1?'s':'')+' sur la période · édition du vendredi 23 octobre 2026';
+ document.getElementById('tete').innerHTML='De'+NB+': <b>Veille Atelier MDT</b><br>À'+NB+': '+esc(T.client)+' (fictif)<br>Objet'+NB+': <b>'+fr(T.objet)+' — '+fr(P[3])+'</b>';
+ var h='<h3>'+fr(T.objet)+'</h3><p class="ryt">'+fr(P[2])+' · '+fr(P[3])+' · même contenu aux trois rythmes, seule la période change</p>';
+ h+='<p class="acc">'+fr(T.accroche[st.r])+'</p>';
+ h+='<div class="sec"><div class="k">'+fr(T.nom)+'</div>';
+ if(!T.reel)h+='<p class="fict">Relevé fictif pour la démonstration : '+(st.t==='ao'?'acheteurs anonymisés, avis inventés, aucun lien.':'concurrents anonymisés, relevés inventés.')+' La forme est celle d’une vraie édition.</p>';
+ if(!items.length)h+='<p class="vide">Rien de vérifiable sur la période.</p>';
+ h+=items.map(function(i){
+  var src=i.source[1]?'<a href="'+i.source[1]+'" rel="noopener" target="_blank">'+fr(i.source[0])+'</a>':fr(i.source[0]);
+  if(i.source2)src+=' · <a href="'+i.source2[1]+'" rel="noopener" target="_blank">'+fr(i.source2[0])+'</a>';
+  return '<div class="it"><div class="rep"><span class="'+(i.prio===1?'p1':'p2')+'">'+(i.prio===1?'À retenir en priorité':'À surveiller')+'</span><span class="nat">'+fr(i.nature)+'</span></div><h4>'+fr(i.titre)+'</h4><p>'+fr(i.texte)+'</p><div class="cc"><b>Ce que ça peut changer</b><ul>'+i.change.map(function(c){return '<li>'+fr(c)+'</li>';}).join('')+'</ul></div><p class="src">Source'+NB+': '+src+' · '+dfr(i.date)+'</p></div>';
+ }).join('');
+ h+='</div>';
+ if(items.length){h+='<div class="sec"><div class="k">À retenir</div><ul class="ret">'+items.slice(0,2).map(function(i){return '<li>'+fr(i.retenir)+'</li>';}).join('')+'</ul></div>';}
+ if(T.tester)h+='<div class="sec"><div class="k">À tester, cinq minutes</div><p class="test">'+fr(T.tester)+'</p></div>';
+ h+='<div class="sec"><div class="k">Sources consultées et indisponibles</div><ul class="sc">'+T.consultees.map(function(s){return '<li>'+fr(s)+'</li>';}).join('')+T.indispo.map(function(s){return '<li>'+fr(s)+'</li>';}).join('')+'</ul></div>';
+ h+='<p class="pied">Veille préparée par Atelier MDT — vérifiez toujours la source avant de modifier votre pratique. Sans engagement, préavis de trente jours.</p>';
+ document.getElementById('ed').innerHTML=h;
+}
+puces(document.getElementById('themes'),Object.keys(D.themes).map(function(k){var T=D.themes[k];return [k,esc(T.nom)+'<small>'+esc(T.client)+' · '+(T.reel?'réel':'fictif')+'</small>'];}),'t');
+puces(document.getElementById('rythmes'),[['semaine','Hebdomadaire'],['quinzaine','Toutes les deux semaines'],['mois','Mensuel']],'r');
+rendre();
+})();
+
+</script>
+<!-- Cloudflare Web Analytics --><script type='module' src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "4ee482cc16a74712b603b71a2d98cfa1"}'></script><!-- End Cloudflare Web Analytics -->
+</body>
+</html>

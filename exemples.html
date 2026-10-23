@@ -128,6 +128,17 @@ nav .burger{display:none}
 .retour{margin-top:22px;font-size:14px}
 .retour a{color:var(--ambre);text-decoration:none;font-weight:700}
 @media(max-width:860px){nav .brand .wm em{display:none!important}}
+
+.demo-intro{font-size:15px;color:var(--sourd);max-width:68ch;line-height:1.6;margin-bottom:18px}
+.demo-intro a{color:var(--froid);font-weight:700;text-decoration:underline;text-decoration-color:var(--trait);text-underline-offset:3px}
+.demos{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}
+@media(max-width:860px){.demos{grid-template-columns:1fr 1fr}}
+@media(max-width:520px){.demos{grid-template-columns:1fr}}
+.demos a{display:flex;flex-direction:column;gap:6px;background:var(--panneau);border:1px solid var(--trait);border-radius:5px;padding:16px 17px;text-decoration:none;transition:border-color .15s}
+.demos a:hover{border-color:var(--ambre)}
+.demos .k{font-size:10.5px;font-weight:800;letter-spacing:.07em;color:#9FB0C8}
+.demos b{font-size:15.5px;font-weight:800;line-height:1.3;color:var(--froid)}
+.demos .go{margin-top:auto;padding-top:6px;font-size:12px;font-weight:800;color:var(--ambre)}
 </style>
 </head>
 <body>
@@ -161,6 +172,12 @@ nav .burger{display:none}
   <p class="retour"><a href="offres.html">Les offres et les prix →</a> &nbsp;·&nbsp; <a href="realisations.html">Les huit réalisations documentées →</a></p>
 </div></section>
 
+<section><div class="in">
+  <h2 class="lbl">ESSAYER EN DIRECT</h2>
+  <p class="demo-intro">Quatre démonstrations interactives, sur des entreprises fictives&nbsp;: le livrable tel que vous le recevriez, et ce qu'il doit à vos données. Six autres tableaux de bord, métier par métier, sur la page <a href="exemples-donnees.html#demonstrations">données et études</a>.</p>
+  <div class="demos"><a href="exemple-automatisation.html"><span class="k">AUTOMATISATION</span><b>Envoyez une demande, regardez ce qui se passe</b><span class="go">Essayer →</span></a><a href="exemple-veille.html"><span class="k">VEILLE</span><b>Recevez l'édition comme le client</b><span class="go">Essayer →</span></a><a href="exemple-tableau-de-bord-paliers.html"><span class="k">TABLEAU DE BORD</span><b>Une boulangerie, trois paliers</b><span class="go">Essayer →</span></a><a href="exemple-accompagnement-ia.html"><span class="k">ACCOMPAGNEMENT IA</span><b>Ce qu'on travaillerait chez vous</b><span class="go">Essayer →</span></a></div>
+</div></section>
+
 <div class="in"><div class="cta-bloc">
   <h2>Lequel de ces vingt-deux cas est le vôtre&nbsp;?</h2>
   <p>Trente minutes en visio pour identifier la tâche qui vous coûte le plus de temps, vérifier qu'elle est automatisable ou mesurable, et la chiffrer. Si aucun de ces exemples ne correspond, je vous le dis à ce moment-là.</p>
@@ -188,5 +205,6 @@ nav .burger{display:none}
   window.addEventListener('resize',function(){if(window.innerWidth>800)etat(false);});
 })();
 </script>
+<!-- Cloudflare Web Analytics --><script type='module' src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "4ee482cc16a74712b603b71a2d98cfa1"}'></script><!-- End Cloudflare Web Analytics -->
 </body>
 </html>

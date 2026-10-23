@@ -1,0 +1,424 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Exemple d&#x27;accompagnement IA — Atelier MDT</title>
+<meta name="description" content="Démonstration interactive : choisissez votre métier et votre niveau pour voir ce qu&#x27;on travaillerait en deux heures, puis explorez l&#x27;espace de travail IA d&#x27;une équipe de quinze personnes. Entreprises fictives.">
+<link rel="canonical" href="https://atelier-mdt.fr/exemple-accompagnement-ia.html">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://atelier-mdt.fr/exemple-accompagnement-ia.html">
+<meta property="og:site_name" content="Atelier MDT">
+<meta property="og:title" content="Exemple d&#x27;accompagnement IA — Atelier MDT">
+<meta property="og:description" content="Démonstration interactive : choisissez votre métier et votre niveau pour voir ce qu&#x27;on travaillerait en deux heures, puis explorez l&#x27;espace de travail IA d&#x27;une équipe de quinze personnes. Entreprises fictives.">
+<meta property="og:image" content="https://atelier-mdt.fr/assets/og-atelier-mdt.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Atelier MDT — Parce que votre temps est précieux.">
+<meta property="og:locale" content="fr_FR">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#10233F">
+<link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32.png">
+<link rel="apple-touch-icon" sizes="180x180" href="assets/favicon-180.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{--nuit:#10233F;--panneau:#182F52;--ambre:#F5B62E;--sourd:#9FB0C8;--trait:#2A4470;--froid:#E9EEF6}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{background:var(--nuit);color:var(--froid);font-family:'Manrope',system-ui,-apple-system,sans-serif;line-height:1.6;font-size:16px;-webkit-font-smoothing:antialiased}
+a{color:inherit}
+.in{max-width:900px;margin:0 auto;padding:0 22px}
+nav{position:sticky;top:0;z-index:20;background:rgba(16,35,63,.93);backdrop-filter:blur(8px);border-bottom:1px solid var(--trait)}
+nav .in{display:flex;align-items:center;justify-content:space-between;gap:14px;padding:13px 22px}
+nav .brand{display:flex;align-items:center;gap:10px;text-decoration:none}
+nav .brand svg{color:var(--ambre);flex:none}
+nav .brand span{font-size:16px;font-weight:800;letter-spacing:-.025em}
+nav .links{display:flex;align-items:center;gap:20px}
+nav .links a{color:var(--sourd);text-decoration:none;font-size:13.5px;font-weight:600}
+nav .links a:hover,nav .links a.on{color:var(--froid)}
+nav .cta{background:var(--ambre)!important;color:#10233F!important;padding:9px 15px;border-radius:5px;font-weight:800!important}
+@media(max-width:700px){nav .links a:not(.cta){display:none}}
+header.h{padding:60px 0 6px}
+header.h .eyebrow{font-size:11.5px;font-weight:800;letter-spacing:.09em;color:var(--ambre);margin-bottom:12px}
+header.h h1{font-size:clamp(30px,5.4vw,46px);font-weight:800;letter-spacing:-.03em;line-height:1.06;max-width:22ch}
+header.h .sub{margin-top:15px;font-size:17px;color:var(--sourd);max-width:58ch}
+section{padding:58px 0 0;scroll-margin-top:64px}
+h2.lbl{font-size:11.5px;font-weight:800;letter-spacing:.09em;color:var(--ambre);padding-bottom:10px;border-bottom:1px solid var(--trait);margin-bottom:24px}
+.txt p{font-size:15.5px;max-width:68ch;margin-bottom:12px;color:#E9EEF6}
+.txt p strong{color:#fff}
+.btn{display:inline-block;padding:13px 22px;font-size:15px;font-weight:700;text-decoration:none;border-radius:5px}
+.btn.p{background:var(--ambre);color:#10233F}
+.btn.s{background:transparent;color:var(--froid);border:1px solid var(--trait)}
+.card{background:var(--panneau);border:1px solid var(--trait);border-radius:7px;padding:20px 22px}
+.filet{border-left:3px solid var(--ambre);padding-left:14px;margin:18px 0;font-size:14.5px;color:var(--sourd);max-width:68ch}
+.filet b{color:var(--froid)}
+footer{margin-top:60px;border-top:1px solid var(--trait);padding:24px 0 46px;font-size:12.5px;color:var(--sourd)}
+footer .row{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
+footer a{color:var(--sourd)}
+.cta{background:var(--ambre);color:#10233F;border-radius:8px;padding:32px 30px;margin-top:56px}
+.cta h2{font-size:clamp(22px,3.4vw,28px);font-weight:800;letter-spacing:-.02em;line-height:1.15}
+.cta p{font-size:15.5px;margin-top:10px;max-width:62ch}
+.cta a{display:inline-block;margin-top:18px;background:#10233F;color:var(--ambre);padding:12px 20px;border-radius:5px;font-weight:800;font-size:15px;text-decoration:none}
+
+/* ── commun à toutes les pages ── */
+.in{max-width:900px!important;margin:0 auto;padding:0 22px}
+nav{position:sticky;top:0;z-index:20;background:rgba(16,35,63,.94);backdrop-filter:blur(8px);border-bottom:1px solid var(--trait,#2A4470)}
+nav .in{display:flex;align-items:center;justify-content:space-between;gap:16px;padding:15px 22px}
+nav .brand{display:flex;align-items:center;gap:12px;text-decoration:none}
+nav .brand svg{color:var(--ambre,#F5B62E);flex:none}
+nav .brand .wm{font-size:18px;font-weight:800;letter-spacing:-.025em;line-height:1;color:var(--froid,#E9EEF6)}
+nav .brand .wm em{display:block;font-style:normal;font-size:7.5px;font-weight:800;letter-spacing:.09em;color:var(--ambre,#F5B62E);margin-top:4px;white-space:nowrap}
+nav .links{display:flex;align-items:center;gap:22px}
+nav .links a{color:var(--sourd,#9FB0C8);text-decoration:none;font-size:14px;font-weight:600;white-space:nowrap}
+nav .links a:hover,nav .links a.on{color:var(--froid,#E9EEF6)}
+nav .links a.btn-nav{background:var(--ambre,#F5B62E);color:#10233F;padding:10px 16px;border-radius:5px;font-weight:800;margin:0;display:inline-block;line-height:1.2}
+@media(max-width:800px){nav .links a:not(.btn-nav){display:none}nav .brand .wm em{display:none}}
+footer{margin-top:60px;border-top:1px solid var(--trait,#2A4470);padding:24px 0 46px;font-size:12.5px;color:var(--sourd,#9FB0C8)}
+footer .row{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
+footer a{color:var(--sourd,#9FB0C8)}
+.cta-bloc{background:var(--ambre,#F5B62E);color:#10233F;border-radius:8px;padding:32px 30px;margin-top:56px}
+.cta-bloc h2{font-size:clamp(22px,3.4vw,28px);font-weight:800;letter-spacing:-.02em;line-height:1.15}
+.cta-bloc p{font-size:15.5px;margin-top:10px;max-width:62ch;color:#10233F}
+.cta-bloc a{display:inline-block;margin-top:18px;background:#10233F;color:var(--ambre,#F5B62E);padding:12px 20px;border-radius:5px;font-weight:800;font-size:15px;text-decoration:none}
+
+/* ── NAVIGATION UNIFIÉE (bloc final, prioritaire) ── */
+nav .in{display:flex!important;align-items:center!important;justify-content:space-between!important;gap:18px!important;padding:0 22px!important;min-height:74px!important}
+nav .brand{display:flex!important;align-items:center!important;gap:12px!important;text-decoration:none!important}
+nav .brand svg{color:var(--ambre,#F5B62E)!important;flex:none!important;width:32px!important;height:32px!important}
+nav .brand .wm{font-size:18px!important;font-weight:800!important;letter-spacing:-.025em!important;line-height:1!important;color:var(--froid,#E9EEF6)!important}
+nav .brand .wm em{display:block!important;font-style:normal!important;font-size:7.5px!important;font-weight:800!important;letter-spacing:.09em!important;color:var(--ambre,#F5B62E)!important;margin-top:4px!important;white-space:nowrap!important}
+nav .links{display:flex!important;align-items:center!important;gap:16px!important;height:100%!important}
+@media(min-width:801px) and (max-width:880px){nav .links{gap:11px!important}nav .links a.btn-nav{padding:0 14px!important}}
+nav .links a{display:inline-flex!important;align-items:center!important;height:36px!important;margin:0!important;color:var(--sourd,#9FB0C8)!important;text-decoration:none!important;font-size:14px!important;font-weight:600!important;white-space:nowrap!important;border-bottom:2px solid transparent!important;line-height:1!important;font-size:13.5px!important}
+nav .links a:hover{color:var(--froid,#E9EEF6)!important}
+nav .links a.on{color:var(--froid,#E9EEF6)!important;border-bottom:2px solid var(--ambre,#F5B62E)!important}
+nav .links a.btn-nav{background:var(--ambre,#F5B62E)!important;color:#10233F!important;padding:0 18px!important;border-radius:5px!important;font-weight:800!important;border-bottom:2px solid transparent!important;height:40px!important}
+nav .links a.btn-nav:hover{color:#10233F!important}
+@media(max-width:800px){nav .links a:not(.btn-nav){display:none!important}nav .brand .wm em{display:none!important}nav .in{min-height:62px!important}}
+
+
+/* ══ MENU MOBILE — bloc autonome, aucune dépendance externe ══ */
+nav .burger{display:none}
+@media(max-width:800px){
+  nav .burger{display:flex;flex:none;flex-direction:column;justify-content:center;gap:5px;width:44px;height:38px;padding:0 11px;background:transparent;border:1px solid var(--trait,#2A4470);border-radius:5px;cursor:pointer;-webkit-tap-highlight-color:transparent}
+  nav .burger span{display:block;height:2px;background:var(--froid,#E9EEF6);border-radius:1px;transition:transform .2s ease,opacity .2s ease}
+  nav.ouvert .burger span:nth-child(1){transform:translateY(7px) rotate(45deg)}
+  nav.ouvert .burger span:nth-child(2){opacity:0}
+  nav.ouvert .burger span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
+  nav .in .links{display:none!important;position:absolute;top:100%;left:0;right:0;flex-direction:column!important;align-items:stretch!important;gap:0!important;height:auto!important;background:var(--nuit,#10233F);border-bottom:1px solid var(--trait,#2A4470);padding:4px 22px 20px!important}
+  nav.ouvert .in .links{display:flex!important}
+  nav.ouvert .in .links a{display:flex!important;align-items:center!important;width:100%;height:auto!important;margin:0!important;padding:15px 0!important;font-size:16px!important;font-weight:600!important;color:var(--sourd,#9FB0C8)!important;background:transparent!important;border:0!important;border-bottom:1px solid var(--trait,#2A4470)!important;border-radius:0!important}
+  nav.ouvert .in .links a.on{color:var(--ambre,#F5B62E)!important}
+  nav.ouvert .in .links a.btn-nav{justify-content:center!important;margin-top:16px!important;height:46px!important;padding:0 18px!important;border:0!important;border-radius:5px!important;background:var(--ambre,#F5B62E)!important;color:#10233F!important;font-weight:800!important}
+}
+
+/* ── page Exemples : mise en page allégée ── */
+.fil{font-size:12.5px;margin-bottom:18px}
+.fil a{color:var(--sourd);text-decoration:none;font-weight:700}
+.fil a:hover{color:var(--froid)}
+.chapo{margin-top:22px;border-left:2px solid var(--trait);padding-left:16px;font-size:13.8px;color:#9FB0C8;max-width:74ch;line-height:1.6}
+.chapo b{color:var(--sourd)}
+.chapo a{color:var(--ambre);text-decoration:none;font-weight:700}
+
+.liste{margin-top:6px;border-top:1px solid var(--trait)}
+.ex{padding:26px 0;border-bottom:1px solid var(--trait);scroll-margin-top:88px}
+.ex h2{font-size:19px;font-weight:800;letter-spacing:-.015em;line-height:1.25;color:var(--froid)}
+.ex .src{margin-top:5px;font-size:11.5px;font-weight:700;letter-spacing:.02em}
+.ex .src a{color:var(--ambre);text-decoration:none}
+.ex .src a:hover{text-decoration:underline}
+.ex .src.nb{color:#9FB0C8;font-weight:600}
+.ex .src.nb a{color:#9FB0C8;font-weight:700}
+.ex p.c{margin-top:12px;font-size:14.6px;color:var(--sourd);max-width:74ch;line-height:1.65}
+.ex p.c b{color:var(--froid)}
+.ex p.c .q{color:#9FB0C8}
+.ex details{margin-top:13px;max-width:74ch}
+.ex summary{cursor:pointer;font-size:12.5px;font-weight:800;letter-spacing:.03em;color:#9FB0C8;list-style:none;display:inline-flex;align-items:center;gap:7px}
+.ex summary::-webkit-details-marker{display:none}
+.ex summary::before{content:"+";display:inline-flex;align-items:center;justify-content:center;width:16px;height:16px;border:1px solid var(--trait);border-radius:3px;font-size:12px;font-weight:700;line-height:1}
+.ex details[open] summary::before{content:"–"}
+.ex summary:hover{color:var(--ambre)}
+.ex details[open] summary{color:var(--ambre)}
+.ex details p{margin-top:10px;font-size:13.8px;color:#9FB0C8;line-height:1.6;padding-left:23px}
+
+/* ── bloc des limites, en bas de page ── */
+section.limites{background:var(--nuit);border-top:1px solid var(--trait);border-bottom:1px solid var(--trait);padding:50px 0 54px;margin-top:56px}
+.cadre{display:grid;grid-template-columns:1fr;gap:14px;align-items:start}
+.cadre .non ul{columns:2;column-gap:30px}
+.cadre .non li{break-inside:avoid}
+@media(max-width:780px){.cadre .non ul{columns:1}}
+.cadre .oui,.cadre .non{border-radius:7px;padding:19px 21px}
+.cadre .oui{background:rgba(245,182,46,.06);border:1px solid rgba(245,182,46,.35)}
+.cadre .non{background:var(--panneau);border:1px solid var(--trait)}
+.cadre .k{font-size:10.5px;font-weight:800;letter-spacing:.08em;margin-bottom:10px}
+.cadre .oui .k{color:var(--ambre)}
+.cadre .non .k{color:#9FB0C8}
+.cadre p{font-size:14px;color:var(--sourd);line-height:1.6}
+.cadre p b{color:var(--froid)}
+.cadre ul{list-style:none}
+.cadre li{font-size:13.5px;color:#9FB0C8;margin-bottom:11px;padding-left:16px;position:relative;line-height:1.55}
+.cadre li::before{content:"";position:absolute;left:0;top:9px;width:7px;height:1px;background:#4A6591}
+.cadre .dem{color:var(--froid);font-weight:700}
+.cadre .fin{margin-top:13px;padding-top:12px;border-top:1px solid var(--trait);font-size:13.5px;color:#9FB0C8}
+
+.suite{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:12px}
+.suite a{display:flex;flex-direction:column;gap:5px;background:var(--panneau);border:1px solid var(--trait);border-radius:7px;padding:17px 19px;text-decoration:none;transition:border-color .15s}
+.suite a:hover{border-color:var(--ambre)}
+.suite a b{font-size:15.5px;font-weight:800;letter-spacing:-.01em}
+.suite a span{font-size:12.5px;color:var(--sourd)}
+.suite a .go{margin-top:auto;padding-top:7px;font-size:12px;font-weight:800;color:var(--ambre)}
+.retour{margin-top:20px;font-size:14px}
+.retour a{color:var(--ambre);text-decoration:none;font-weight:700}
+@media(max-width:860px){nav .brand .wm em{display:none!important}}
+.loin{margin:0 0 34px;border-left:3px solid var(--ambre,#F5B62E);padding:4px 0 4px 14px;font-size:15px;color:var(--sourd,#9FB0C8)}
+.loin a{color:var(--ambre,#F5B62E);font-weight:700}
+
+/* ══ DÉMONSTRATIONS — commun ══ */
+.large{max-width:1140px;margin:0 auto;padding:0 22px}
+.aide{margin-top:12px;font-size:13.5px;color:#9FB0C8;max-width:74ch}
+.aide b{color:var(--froid)}
+.choix{display:flex;flex-wrap:wrap;align-items:center;gap:10px 16px}
+.choix .lab{font-size:11px;font-weight:800;letter-spacing:.08em;color:#9FB0C8}
+.seg{display:inline-flex;flex-wrap:wrap;border:1px solid var(--trait);border-radius:5px;overflow:hidden}
+.seg button{font:inherit;font-size:14.5px;font-weight:800;color:var(--sourd);background:var(--panneau);border:0;border-left:1px solid var(--trait);padding:10px 16px;cursor:pointer;min-height:44px;text-align:left}
+.seg button:first-child{border-left:0}
+.seg button[aria-pressed="true"]{background:var(--ambre);color:#10233F}
+.seg button:focus-visible,.cl button:focus-visible,.cl select:focus-visible,.cl input:focus-visible,.cl textarea:focus-visible{outline:2px solid #F5B62E;outline-offset:2px}
+.seg button small{display:block;font-size:11.5px;font-weight:600;opacity:.85}
+@media(max-width:640px){.seg{display:grid;grid-template-columns:1fr}.seg button{border-left:0;border-top:1px solid var(--trait)}.seg button:first-child{border-top:0}}
+/* panneau clair : un livrable ou un outil du client, posé sur la page sombre */
+.cl{--p:#FFFFFF;--doux:#F2F5FA;--encre:#10233F;--enc2:#4A6591;--leg:#7387A6;--tr:#D3DCE8;--amb:#8A6210;
+  background:var(--p);color:var(--encre);border-radius:5px;border:1px solid var(--trait);overflow:hidden;font-size:14.5px;line-height:1.6;min-width:0}
+.cl *{box-sizing:border-box}
+.cl .barre{display:flex;align-items:center;justify-content:space-between;gap:10px;background:var(--doux);border-bottom:1px solid var(--tr);padding:9px 14px;font-size:12px;color:var(--leg)}
+.cl .barre b{color:var(--encre);font-weight:800}
+.badge{display:inline-block;background:#F5B62E;color:#10233F;font-size:10.5px;font-weight:800;letter-spacing:.07em;text-transform:uppercase;padding:3px 8px;border-radius:5px;white-space:nowrap}
+.dtab{margin-top:20px;overflow-x:auto;-webkit-overflow-scrolling:touch;border:1px solid var(--trait);border-radius:5px}
+.dtab table{width:100%;border-collapse:collapse;min-width:620px;font-size:13.8px}
+.dtab th{text-align:left;font-size:10.5px;font-weight:800;letter-spacing:.07em;text-transform:uppercase;color:#9FB0C8;background:var(--panneau);padding:11px 14px;border-bottom:1px solid var(--trait)}
+.dtab td{padding:12px 14px;border-bottom:1px solid var(--trait);vertical-align:top;color:var(--sourd);line-height:1.55}
+.dtab tr:last-child td{border-bottom:0}
+.dtab td:first-child{color:var(--froid);font-weight:700;width:26%}
+.deux{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+@media(max-width:780px){.deux{grid-template-columns:1fr}}
+.deux .card .k{font-size:10.5px;font-weight:800;letter-spacing:.08em;color:#9FB0C8;margin-bottom:9px}
+.deux .card p,.deux .card li{font-size:14.5px;color:var(--sourd);line-height:1.6}
+.deux .card ul{list-style:none}
+.deux .card li{padding-left:18px;position:relative;margin-bottom:7px}
+.deux .card li::before{content:"–";position:absolute;left:0;color:#9FB0C8}
+.deux .card b{color:var(--froid)}
+.note-offre{margin-top:16px;font-size:14px;color:var(--sourd);max-width:72ch}
+.note-offre a{color:var(--ambre);font-weight:700;text-decoration:none}
+@media (prefers-reduced-motion:reduce){*{transition:none!important;animation:none!important}}
+
+.ia-grid{display:grid;grid-template-columns:minmax(0,4fr) minmax(0,7fr);gap:18px;margin-top:18px;align-items:start}
+@media(max-width:900px){.ia-grid{grid-template-columns:1fr}}
+.reglages{display:grid;gap:16px}
+.reglages .lab{display:block;font-size:11px;font-weight:800;letter-spacing:.08em;color:#9FB0C8;margin-bottom:8px}
+.puces{display:flex;flex-wrap:wrap;gap:8px}
+.puces button{font:inherit;font-size:14px;font-weight:700;color:var(--sourd);background:var(--panneau);border:1px solid var(--trait);border-radius:5px;padding:9px 12px;cursor:pointer;min-height:42px;text-align:left}
+.puces button small{display:block;font-size:11.5px;font-weight:600;color:#9FB0C8}
+.puces button[aria-pressed="true"]{background:var(--froid);border-color:var(--froid);color:#10233F}
+.puces button[aria-pressed="true"] small{color:#4A6591}
+.puces button:focus-visible{outline:2px solid #F5B62E;outline-offset:2px}
+.puces.col{flex-direction:column}
+.doc{padding:20px 22px 22px}
+.doc h3{font-size:19px;font-weight:800;line-height:1.3}
+.doc .pour{font-size:13px;color:var(--enc2);margin-top:2px}
+.doc h4{font-size:11px;font-weight:800;letter-spacing:.08em;text-transform:uppercase;color:var(--amb);margin:20px 0 9px;padding-top:14px;border-top:1px solid var(--tr)}
+.doc p.dep{font-size:14.5px;margin-top:12px;color:var(--encre)}
+.tache{border:1px solid var(--tr);border-radius:5px;padding:12px 14px;margin-top:8px}
+.tache b{display:block;font-size:15px;line-height:1.35}
+.tache .dd{display:grid;grid-template-columns:1fr 1fr;gap:6px 16px;margin-top:8px;font-size:13.5px;color:var(--enc2)}
+@media(max-width:560px){.tache .dd{grid-template-columns:1fr}}
+.tache .dd span{display:block;font-size:10.5px;font-weight:800;letter-spacing:.06em;text-transform:uppercase;color:var(--leg);margin-bottom:2px}
+.jamais{background:var(--doux);border-left:3px solid var(--encre);padding:11px 14px;font-size:14px}
+.av-ap{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+@media(max-width:560px){.av-ap{grid-template-columns:1fr}}
+.av-ap div{border:1px solid var(--tr);border-radius:5px;padding:12px 14px;font-size:14px}
+.av-ap div span{display:block;font-size:10.5px;font-weight:800;letter-spacing:.06em;text-transform:uppercase;color:var(--leg);margin-bottom:5px}
+.av-ap .ap{border-color:var(--encre)}
+.av-ap .ap span{color:var(--encre)}
+.petit{font-size:12.5px;color:var(--leg);margin-top:8px}
+.supports{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+@media(max-width:560px){.supports{grid-template-columns:1fr}}
+.supports div{background:var(--doux);border-radius:5px;padding:12px 14px;font-size:14px;font-weight:700}
+.supports div span{display:block;font-size:10.5px;font-weight:800;letter-spacing:.06em;color:var(--leg);margin-bottom:3px}
+.deroule{display:flex;flex-wrap:wrap;gap:6px;margin-top:4px}
+.deroule span{font-size:12.5px;font-weight:700;border:1px solid var(--tr);border-radius:5px;padding:4px 9px}
+/* déploiement */
+.esp-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-top:14px}
+@media(max-width:860px){.esp-grid{grid-template-columns:1fr 1fr}}
+@media(max-width:520px){.esp-grid{grid-template-columns:1fr}}
+.esp{font:inherit;text-align:left;background:var(--panneau);border:1px solid var(--trait);border-radius:5px;padding:13px 14px;cursor:pointer;color:var(--froid);min-height:84px;display:flex;flex-direction:column;gap:6px}
+.esp b{font-size:15px;line-height:1.3}
+.esp .acc{font-size:10.5px;font-weight:800;letter-spacing:.07em;color:#9FB0C8}
+.esp.ferme{opacity:.38}
+.esp.ferme .acc::after{content:" · non visible pour ce rôle"}
+.esp[aria-pressed="true"]{border-color:var(--froid);box-shadow:inset 0 0 0 1px var(--froid)}
+.esp:focus-visible{outline:2px solid #F5B62E;outline-offset:2px}
+.fiche-esp{margin-top:14px}
+.fiche-esp .doc h3{display:flex;flex-wrap:wrap;align-items:center;gap:8px 12px}
+.fiche-esp .acc-b{font-size:10.5px;font-weight:800;letter-spacing:.07em;color:var(--encre);border:1px solid var(--encre);border-radius:5px;padding:2px 7px}
+.fe-grid{display:grid;grid-template-columns:1fr 1fr 1fr;gap:10px;margin-top:12px}
+@media(max-width:720px){.fe-grid{grid-template-columns:1fr}}
+.fe-grid div{border:1px solid var(--tr);border-radius:5px;padding:11px 13px;font-size:14px}
+.fe-grid div span{display:block;font-size:10.5px;font-weight:800;letter-spacing:.06em;text-transform:uppercase;color:var(--leg);margin-bottom:4px}
+.fe-grid .pas{border-color:var(--encre)}
+.legende{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--trait);border:1px solid var(--trait);border-radius:5px;overflow:hidden;margin-top:16px}
+@media(max-width:720px){.legende{grid-template-columns:1fr 1fr}}
+.legende div{background:var(--panneau);padding:11px 13px;font-size:13px;color:var(--sourd)}
+.legende b{display:block;font-size:10.5px;font-weight:800;letter-spacing:.07em;color:var(--froid);margin-bottom:2px}
+</style>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Accueil", "item": "https://atelier-mdt.fr/"}, {"@type": "ListItem", "position": 2, "name": "Exemples", "item": "https://atelier-mdt.fr/exemples.html"}, {"@type": "ListItem", "position": 3, "name": "Six briques pour travailler avec l'IA, seul ou en équipe", "item": "https://atelier-mdt.fr/exemples-ia.html"}, {"@type": "ListItem", "position": 4, "name": "Exemple : accompagnement IA, seul ou en équipe", "item": "https://atelier-mdt.fr/exemple-accompagnement-ia.html"}]}</script>
+</head>
+<body>
+<nav><div class="in">
+  <a class="brand" href="index.html"><svg width="32" height="32" viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="3.4" stroke-linecap="square" aria-hidden="true"><path d="M14 8 H6 V56 H14" fill="none"/><path d="M50 8 H58 V56 H50" fill="none"/><path d="M18 44 V22 L32 36 L46 22 V44" stroke-width="4" fill="none"/></svg><span class="wm">Atelier MDT<em>PARCE QUE VOTRE TEMPS EST PRÉCIEUX.</em></span></a>
+  <div class="links" id="nav-liens">
+      <a href="realisations.html">Réalisations</a>
+      <a href="offres.html">Offres</a>
+      <a href="exemples.html" class="on">Exemples</a>
+      <a href="rentabilite.html">Rentabilité</a>
+      <a href="qui-suis-je.html">Qui suis-je</a>
+      <a class="btn-nav" href="contact.html">Échanger 30 minutes</a>
+  </div>
+  <button class="burger" type="button" aria-label="Ouvrir le menu" aria-expanded="false" aria-controls="nav-liens"><span></span><span></span><span></span></button>
+</div></nav>
+<main id="contenu">
+<header class="h"><div class="in">
+  <p class="fil"><a href="exemples-ia.html">← Six briques pour travailler avec l'IA, seul ou en équipe</a></p>
+  <div class="eyebrow">EXEMPLE INTERACTIF · ACCOMPAGNEMENT IA</div>
+  <h1>Ce qu'on travaillerait chez vous, seul ou en équipe</h1>
+  <p class="sub">Deux démonstrations. La première montre le parcours d'un accompagnement individuel, selon votre métier et votre niveau. La seconde, l'espace de travail d'une équipe : qui voit quoi, et ce que l'assistant ne doit pas faire.</p>
+  <p class="chapo"><b>Entreprises fictives, demandes rédigées pour l'exemple.</b> Les métiers et les tâches sont ceux que je rencontre chez les TPE&nbsp;; chez vous, on part de vos trois tâches réelles.</p>
+</div></header>
+
+<section><div class="large">
+  <div class="in" style="padding:0">
+    <h2 class="lbl">ACCOMPAGNEMENT INDIVIDUEL : VOTRE PARCOURS</h2>
+    <p class="aide"><b>Essayez-le.</b> Choisissez un métier et votre niveau : la page montre ce qu'on travaillerait pendant les deux heures, et les deux supports que vous recevriez ensuite.</p>
+  </div>
+  <div class="ia-grid">
+    <div class="reglages">
+      <div><span class="lab" id="lab-metier">VOTRE MÉTIER</span><div class="puces" id="metiers" role="group" aria-labelledby="lab-metier"></div></div>
+      <div><span class="lab" id="lab-niv">VOTRE NIVEAU</span><div class="puces col" id="niveaux" role="group" aria-labelledby="lab-niv"></div></div>
+    </div>
+    <div class="cl" aria-live="polite">
+      <div class="barre"><span><b>Support de séance</b> · aperçu</span><span class="badge">Exemple</span></div>
+      <div class="doc" id="doc"></div>
+    </div>
+  </div>
+</div></section>
+
+<section><div class="large">
+  <div class="in" style="padding:0">
+    <h2 class="lbl">DÉPLOIEMENT D'ÉQUIPE : L'ESPACE TYPE</h2>
+    <p class="donnees-intro" style="font-size:15.5px;color:var(--froid);max-width:70ch;line-height:1.65">Le Bistrot des Grands Prés, quinze personnes&nbsp;: la salle, la cuisine, le traiteur et la direction. Six espaces de travail, chacun avec ce qu'il sait, ce qu'il fait et ce qu'il ne doit pas faire.</p>
+    <p class="aide"><b>Choisissez un rôle</b> pour voir les espaces auxquels il a accès, puis <b>ouvrez un espace</b>.</p>
+    <div class="puces" id="roles" role="group" aria-label="Rôle" style="margin-top:12px"></div>
+  </div>
+  <div class="esp-grid" id="espaces"></div>
+  <div class="fiche-esp cl" id="fiche-esp" aria-live="polite"></div>
+  <div class="legende">
+    <div><b>OUVERT</b>Toute l'équipe</div>
+    <div><b>ÉLARGI</b>Le pôle concerné et la direction</div>
+    <div><b>RESTREINT</b>Quelques personnes nommées</div>
+    <div><b>DIRECTION</b>Les seuls gérants</div>
+  </div>
+</div></section>
+
+<section><div class="in">
+  <h2 class="lbl">CE QUE JE NE PROMETS PAS</h2>
+  <div class="deux">
+    <div class="card"><div class="k">L'ACCOMPAGNEMENT INDIVIDUEL</div><ul>
+      <li>Une prestation bornée&nbsp;: questionnaire de niveau, séance de deux heures, deux supports remis, et c'est terminé.</li>
+      <li>Je pars de vos tâches réelles, pas d'un outil&nbsp;: lequel utiliser se règle au premier échange.</li>
+      <li>Je ne détiens aucune certification permettant une prise en charge&nbsp;: la prestation est payée par l'entreprise.</li>
+    </ul></div>
+    <div class="card"><div class="k">LE DÉPLOIEMENT D'ÉQUIPE</div><ul>
+      <li>Aucun modèle entraîné, aucun développement sur mesure&nbsp;: je configure des outils existants, et le socle est proposé sur Claude.</li>
+      <li>Sans référent interne ni règles écrites, l'usage retombe en quelques semaines.</li>
+      <li>Sur les sujets sensibles, la vérification humaine est écrite dans les consignes de chaque espace.</li>
+    </ul></div>
+  </div>
+  <p class="filet" style="margin-top:20px"><b>Entreprises fictives, demandes rédigées pour l'exemple.</b> Cette page ne montre aucune réponse d'IA&nbsp;: une réponse change d'une fois sur l'autre, et c'est précisément pour ça qu'on apprend à vérifier. Le dispositif d'équipe reprend celui de la <a href="realisation-06-ia.html" style="color:var(--ambre)">réalisation&nbsp;06</a>, mis en place dans une équipe de dix personnes.</p>
+  <p class="note-offre">Offres correspondantes&nbsp;: <a href="offres.html#ia">accompagnement individuel, atelier d'équipe, déploiement structuré →</a></p>
+</div></section>
+
+<section><div class="in">
+  <h2 class="lbl">LES AUTRES DÉMONSTRATIONS</h2>
+  <div class="suite"><a href="exemple-automatisation.html"><span style="font-size:10.5px;font-weight:800;letter-spacing:.07em;color:#9FB0C8">AUTOMATISATION</span><b>Envoyez une demande, regardez ce qui se passe</b><span>Devis, pièces manquantes, réservation de groupe : la chaîne complète, simulée.</span><span class="go">Essayer →</span></a><a href="exemple-veille.html"><span style="font-size:10.5px;font-weight:800;letter-spacing:.07em;color:#9FB0C8">VEILLE</span><b>Recevez l'édition comme le client</b><span>Quatre thèmes, trois rythmes : le rapport tel qu'il arrive dans la boîte mail.</span><span class="go">Essayer →</span></a><a href="exemple-tableau-de-bord-paliers.html"><span style="font-size:10.5px;font-weight:800;letter-spacing:.07em;color:#9FB0C8">TABLEAU DE BORD</span><b>Une boulangerie, trois paliers</b><span>Le même commerce vu avec de plus en plus de données.</span><span class="go">Essayer →</span></a></div>
+  <p class="retour"><a href="exemples.html">← Tous les exemples</a></p>
+</div></section>
+
+<div class="in"><div class="cta-bloc">
+  <h2>Et chez vous&nbsp;?</h2>
+  <p>Trente minutes en visio pour regarder ce qui vous prend du temps et ce qui peut tourner seul. Vous recevez ensuite un devis écrit, et vous décidez.</p>
+  <a href="contact.html">Échanger 30 minutes</a>
+</div></div>
+</main>
+<footer><div class="in"><div class="row">
+  <span>Atelier MDT · Automatisation · Veille · Tableaux de bord · Accompagnement IA</span>
+  <span><a href="mailto:antoine@atelier-mdt.fr">antoine@atelier-mdt.fr</a> · <a href="tel:+33743688097">07 43 68 80 97</a> · <a href="https://www.linkedin.com/in/antoine-meyfroidt/" rel="noopener">linkedin.com/in/antoine-meyfroidt</a> · <a href="https://www.malt.fr/profile/antoinemeyfroidt" rel="noopener">Malt</a> · <a href="https://share.google/6U1bBCivJdjeVEOeF" rel="noopener">Fiche Google</a> · <a href="questions.html">Questions fréquentes</a> · <a href="articles.html">Articles</a> · <a href="mentions-legales.html">Mentions légales</a> · <a href="cgv.html">CGV</a></span>
+</div></div></footer>
+<script>
+/* Menu mobile — autonome, aucune dépendance externe. */
+(function(){
+  var n=document.querySelector('nav');if(!n)return;
+  var b=n.querySelector('.burger'),l=n.querySelector('.links');if(!b||!l)return;
+  function etat(o){
+    n.classList.toggle('ouvert',o);
+    b.setAttribute('aria-expanded',o?'true':'false');
+    b.setAttribute('aria-label',o?'Fermer le menu':'Ouvrir le menu');
+  }
+  b.addEventListener('click',function(){etat(!n.classList.contains('ouvert'));});
+  l.addEventListener('click',function(e){if(e.target.closest('a'))etat(false);});
+  document.addEventListener('click',function(e){if(n.classList.contains('ouvert')&&!n.contains(e.target))etat(false);});
+  document.addEventListener('keydown',function(e){if(e.key==='Escape')etat(false);});
+  window.addEventListener('resize',function(){if(window.innerWidth>800)etat(false);});
+})();
+</script>
+<script>
+var D = {"metiers": {"electricien": {"nom": "Électricien", "ent": "Arc-en-Ille Électricité", "qui": "le gérant", "taches": [["Rédiger le descriptif des devis à partir de vos notes de visite", "Transformer des notes prises sur le chantier en descriptif clair, poste par poste.", "Les quantités, les références et les normes citées : un outil peut inventer une référence qui n'existe pas."], ["Répondre aux avis Google", "Proposer une réponse polie, adaptée au ton de l'avis.", "Que rien n'y soit promis qui n'ait été convenu, et qu'aucun détail du chantier ne soit rendu public."], ["Préparer une fiche d'information client, par exemple avant la pose d'une borne", "La mise en forme et la clarté pour un particulier.", "Les aides et les règles citées, toujours sur la source officielle : elles changent."]], "jamais": "Les coordonnées de vos clients. Avant d'y mettre quoi que ce soit de sensible, on regarde ensemble les réglages de confidentialité de votre outil.", "avant": "Fais-moi un devis pour une rénovation électrique.", "apres": "Tu m'aides à rédiger le descriptif d'un devis d'électricien pour un particulier. Voici mes notes de visite : maison de 1975, tableau à remplacer, douze prises à ajouter dans le séjour et la cuisine. Rédige un descriptif clair, poste par poste, sans prix ni référence de matériel : je les ajoute moi-même. S'il te manque une information, pose-moi la question au lieu de la supposer."}, "coiffure": {"nom": "Coiffure", "ent": "Salon Brosse Ronde", "qui": "la gérante", "taches": [["Préparer les publications du mois", "Des idées et des légendes à partir de vos photos et de vos prestations.", "Les prix et les offres annoncés, et l'accord écrit de la cliente avant de publier sa photo."], ["Rédiger les messages aux clientes qui ne sont pas revenues", "Un premier jet de message, dans plusieurs tons.", "Le ton : c'est votre voix, pas celle de l'outil."], ["Comparer deux fournisseurs de produits", "Un tableau comparatif à partir de leurs fiches, que vous lui fournissez.", "Chaque chiffre, repris des fiches et non inventé."]], "jamais": "Les fiches techniques de vos clientes, surtout les réactions à une coloration : ce sont des informations sensibles.", "avant": "Écris un post Instagram pour mon salon.", "apres": "Tu écris pour un salon de coiffure de quartier, ton chaleureux, sans anglicismes. Propose trois légendes de moins de 300 caractères pour une photo de balayage miel sur cheveux longs. Pas de prix, pas de promesse de résultat. Termine par une invitation à réserver en ligne."}, "fleuriste": {"nom": "Fleuriste", "ent": "Fleurs de Vilaine", "qui": "la gérante", "taches": [["Répondre aux demandes de devis pour un mariage", "Une première réponse structurée : les questions à poser, le déroulé.", "Les prix et la disponibilité des fleurs à la saison du mariage."], ["Rédiger les fiches d'entretien des plantes vendues", "Une fiche courte et lisible pour chaque plante.", "Chaque conseil : l'outil peut confondre deux espèces."], ["Préparer la communication de la Toussaint et de la Saint-Valentin", "Les textes, les affiches, le calendrier des publications.", "Les dates et vos horaires."]], "jamais": "Les coordonnées de vos clients professionnels et les tarifs que vous leur avez accordés.", "avant": "Réponds à cette demande de mariage.", "apres": "Tu m'aides à répondre, en tant que fleuriste, à une demande de devis pour un mariage. Voici le message reçu : [message collé]. Rédige une réponse de dix lignes au plus, qui remercie, pose les quatre questions qui me manquent pour chiffrer (date, lieu, nombre de tables, couleurs) et propose un appel. Ne donne aucun prix."}, "avocats": {"nom": "Avocat", "ent": "Trois Ponts Avocats", "qui": "l'associée", "taches": [["Structurer une note de recherche à partir de vos propres sources", "Le plan, la reformulation, la mise en forme.", "Chaque référence : un outil généraliste peut citer une décision qui n'existe pas."], ["Rédiger les courriers simples aux clients", "Point d'étape, demande de pièces, prise de rendez-vous.", "Les termes juridiques et les délais annoncés."], ["Résumer un long document anonymisé", "Les points clés, avec un renvoi à chaque article.", "Que rien d'important n'ait été omis."]], "jamais": "Le nom de vos clients et leurs pièces : le secret professionnel s'applique. On anonymise d'abord, et l'on vérifie les conditions de l'outil au regard des recommandations de votre barreau.", "avant": "Résume ce contrat.", "apres": "Tu assistes une avocate en droit du travail. Voici un contrat de travail anonymisé. Résume-le en dix points au plus : durée, période d'essai, rémunération, clause de non-concurrence, et tout ce qui sort de l'ordinaire. Indique l'article du contrat pour chaque point. Si une clause est ambiguë, signale-la sans l'interpréter."}, "restaurant": {"nom": "Restaurant", "ent": "Le Bistrot des Grands Prés", "qui": "le gérant", "taches": [["Rédiger la carte et les descriptions des plats de saison", "Des descriptions courtes, dans le ton de la maison.", "Les allergènes : toujours depuis vos fiches techniques, jamais depuis l'outil."], ["Répondre aux avis en ligne", "Une réponse adaptée à chaque avis, positif ou non.", "Le ton, et que rien n'y soit promis."], ["Préparer les offres de groupe et de privatisation", "Les textes de présentation et les réponses types.", "Les prix et les conditions, repris de votre grille."]], "jamais": "La liste des allergènes d'un plat : elle vient de vos fiches, pas d'une déduction de l'outil.", "avant": "Écris la description de mon plat du jour.", "apres": "Tu écris pour la carte d'un bistrot. Rédige une description de vingt-cinq mots au plus pour : joue de bœuf braisée au vin rouge, purée de céleri. Ton simple, pas de superlatifs. N'indique aucun allergène : je les ajoute depuis mes fiches."}, "kine": {"nom": "Kinésithérapeute", "ent": "Cabinet des Lavandières", "qui": "la kinésithérapeute", "taches": [["Mettre en forme vos fiches d'exercices à domicile", "La présentation, lisible par un patient, à partir de vos propres protocoles.", "Chaque exercice et chaque consigne : c'est votre responsabilité de soignant."], ["Rédiger les informations pratiques du cabinet", "Horaires, règles d'annulation, cours collectifs.", "Les horaires et les règles annoncées."], ["Résumer un article scientifique que vous fournissez", "Les points clés, pour vous tenir à jour.", "Les chiffres et les conclusions, dans l'article original."]], "jamais": "Aucune donnée patient : ni nom, ni pathologie, ni compte rendu. L'outil ne sert qu'à des documents génériques.", "avant": "Donne-moi des exercices pour le genou.", "apres": "À partir de ma fiche protocole ci-dessous, anonyme et sans patient, mets en forme une fiche d'exercices à domicile lisible par un patient : un exercice par bloc, des consignes courtes, et le nombre de répétitions repris tel quel de ma fiche. N'ajoute aucun exercice."}, "boulangerie": {"nom": "Boulangerie", "ent": "Fournil Grain d'Ardoise", "qui": "la boulangère", "taches": [["Rédiger les fiches produits et les étiquettes", "Les descriptions et la mise en page.", "Les allergènes et les dénominations réglementées, comme le pain de tradition française : sur la source officielle."], ["Préparer la communication de l'année", "Galette, Pâques, fêtes : textes et calendrier.", "Les dates et les prix."], ["Répondre aux demandes de commande des professionnels", "Restaurants, entreprises, cantines : une réponse type adaptée à chacun.", "Les quantités et les délais que vous pouvez tenir."]], "jamais": "Vos recettes, si vous ne voulez pas qu'elles sortent : on vérifie d'abord les réglages de l'outil.", "avant": "Écris une affiche pour la galette.", "apres": "Tu écris pour l'affiche d'une boulangerie de quartier. Propose trois titres de six mots au plus et une phrase pour annoncer les galettes frangipane et pomme, en vente du 2 au 31 janvier. Ton chaleureux, sans jeu de mots sur les rois."}}, "niveaux": {"jamais": {"lab": "Je n'ai jamais essayé", "depart": "On commence par les bases : comment formuler une demande, comment vérifier une réponse. La première tâche est choisie pour donner un résultat visible pendant la séance.", "supports": ["Premiers pas : formuler, vérifier, recommencer", "Pour aller plus loin : vos trois tâches, pas à pas"], "astuce": ""}, "parfois": {"lab": "J'essaie de temps en temps", "depart": "On part de vos essais : ce qui a donné des réponses génériques, et pourquoi. La plupart du temps, il manquait le contexte et ce que l'outil ne devait pas faire.", "supports": ["Premiers pas, revus sur vos propres essais", "Pour aller plus loin : enregistrer vos consignes"], "astuce": ""}, "semaine": {"lab": "Je m'en sers chaque semaine", "depart": "On structure ce que vous faites déjà : des consignes enregistrées pour ne plus les retaper, vos documents de référence à portée de main, et les vérifications qui ne se négocient pas.", "supports": ["Vos trois tâches, outillées", "Pour aller plus loin : un espace par sujet"], "astuce": "Cette consigne s'enregistre une fois pour toutes : vous n'avez plus qu'à coller vos notes."}}, "espaces": [{"id": "accueil", "nom": "Accueil : comment utiliser l'assistant", "acces": "OUVERT", "qui": ["salle", "cuisine", "traiteur", "direction", "com"], "sait": "Un guide pour formuler une demande, et la liste des espaces : lequel ouvrir selon la question.", "fait": "Aide à reformuler une demande, oriente vers le bon espace.", "pas": "Répondre à la place des autres espaces : il renvoie vers celui qui sait.", "ex": "Je veux répondre à un client qui demande si on peut venir à 25 samedi soir : où est-ce que je pose la question ?"}, {"id": "salle", "nom": "Salle et service", "acces": "ÉLARGI", "qui": ["salle", "direction", "com"], "sait": "La carte en vigueur, les règles de réservation, les procédures d'accueil.", "fait": "Répond aux questions de clients, prépare le briefing de service.", "pas": "Indiquer un allergène : il renvoie toujours à la fiche du plat. Promettre une table : il renvoie au planning.", "ex": "Prépare le briefing du service de ce soir : les trois plats du jour, la réservation de groupe de 20 h, et ce qu'on dit si on nous demande le menu de Noël."}, {"id": "cuisine", "nom": "Cuisine", "acces": "ÉLARGI", "qui": ["cuisine", "direction"], "sait": "Les fiches techniques, le plan de nettoyage, les fournisseurs.", "fait": "Met en forme les fiches, prépare les listes de préparation.", "pas": "Modifier une fiche allergènes. Tout ce qui touche à l'hygiène passe par une vérification humaine.", "ex": "À partir des réservations de samedi (80 couverts, dont 30 en menu de groupe), fais la liste de préparation par poste, à partir des fiches."}, {"id": "traiteur", "nom": "Traiteur et événements", "acces": "RESTREINT", "qui": ["traiteur", "direction"], "sait": "La grille des menus de groupe, les conditions de privatisation, les devis passés.", "fait": "Rédige les propositions et les réponses aux demandes.", "pas": "Donner un prix hors grille : il le signale et laisse la décision à un humain.", "ex": "Réponds à cette demande de cocktail pour 60 personnes le 12 décembre, à partir de la grille. Signale ce qui sort de nos conditions."}, {"id": "com", "nom": "Communication", "acces": "RESTREINT", "qui": ["direction", "com"], "sait": "Le ton de la maison, la charte, le calendrier des temps forts.", "fait": "Propose les publications et les réponses aux avis.", "pas": "Publier : il propose, une personne publie.", "ex": "Propose trois publications pour annoncer le menu de Noël, dans le ton habituel, sans prix."}, {"id": "direction", "nom": "Direction", "acces": "DIRECTION", "qui": ["direction"], "sait": "Les tableaux de bord, les plannings, les documents du personnel.", "fait": "Prépare des synthèses et des comparaisons.", "pas": "Décider : il éclaire, la direction tranche. Les informations du personnel ne sortent pas de cet espace.", "ex": "Compare le chiffre du traiteur sur les trois derniers mois de l'an dernier et de cette année, à partir du tableau joint."}], "roles": [["salle", "Serveur ou serveuse"], ["cuisine", "Cuisinier ou cuisinière"], ["traiteur", "Responsable traiteur"], ["com", "Chargée de communication"], ["direction", "Direction"]]};
+</script>
+<script>
+
+(function(){
+function esc(s){return String(s).replace(/[&<>"']/g,function(c){return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c];});}
+function fr(s){return esc(s).replace(/ ([:;?!])/g,' $1');}
+var st={m:'fleuriste',n:'parfois',r:'salle',e:'salle'};
+function puces(el,items,cle,cb){
+ el.innerHTML=items.map(function(it){return '<button type="button" data-k="'+it[0]+'" aria-pressed="'+(st[cle]===it[0])+'">'+it[1]+'</button>';}).join('');
+ [].forEach.call(el.querySelectorAll('button'),function(b){b.addEventListener('click',function(){st[cle]=b.getAttribute('data-k');[].forEach.call(el.querySelectorAll('button'),function(x){x.setAttribute('aria-pressed',x===b?'true':'false');});cb();});});
+}
+function doc(){
+ var M=D.metiers[st.m],N=D.niveaux[st.n];
+ var h='<h3>'+fr(M.nom)+' : vos trois tâches</h3><p class="pour">Préparé pour '+fr(M.qui)+', '+fr(M.ent)+' (fictif) · niveau « '+fr(N.lab.toLowerCase())+' »</p>';
+ h+='<p class="dep">'+fr(N.depart)+'</p>';
+ h+='<h4>Pendant les deux heures</h4>'+M.taches.map(function(t){return '<div class="tache"><b>'+fr(t[0])+'</b><div class="dd"><div><span>Ce que vous confiez</span>'+fr(t[1])+'</div><div><span>Ce que vous vérifiez toujours</span>'+fr(t[2])+'</div></div></div>';}).join('');
+ h+='<h4>Ce que vous ne lui donnez jamais</h4><div class="jamais">'+fr(M.jamais)+'</div>';
+ h+='<h4>Une demande, avant et après</h4><div class="av-ap"><div><span>Avant</span>« '+fr(M.avant)+' »</div><div class="ap"><span>Après la séance</span>« '+fr(M.apres)+' »</div></div>';
+ h+='<p class="petit">Le contexte, ce qu’on attend, le format, et ce que l’outil ne doit pas faire.'+(N.astuce?' '+fr(N.astuce):'')+'</p>';
+ h+='<h4>Après la séance</h4><div class="supports"><div><span>SUPPORT 1</span>'+fr(N.supports[0])+'</div><div><span>SUPPORT 2</span>'+fr(N.supports[1])+'</div></div>';
+ h+='<h4>Le déroulé</h4><div class="deroule"><span>Échange de 30 minutes</span><span>Devis, créneaux et questionnaire en un envoi</span><span>Séance de 2 h en visio</span><span>Deux supports par email</span></div>';
+ document.getElementById('doc').innerHTML=h;
+}
+function espaces(){
+ var g=document.getElementById('espaces');
+ g.innerHTML=D.espaces.map(function(e){var ok=e.qui.indexOf(st.r)>=0;return '<button type="button" class="esp'+(ok?'':' ferme')+'" data-e="'+e.id+'" aria-pressed="'+(st.e===e.id)+'"><span class="acc">'+e.acces+'</span><b>'+fr(e.nom)+'</b></button>';}).join('');
+ [].forEach.call(g.querySelectorAll('.esp'),function(b){b.addEventListener('click',function(){st.e=b.getAttribute('data-e');espaces();});});
+ var e=D.espaces.filter(function(x){return x.id===st.e;})[0],ok=e.qui.indexOf(st.r)>=0;
+ var role=D.roles.filter(function(x){return x[0]===st.r;})[0][1];
+ document.getElementById('fiche-esp').innerHTML='<div class="barre"><span><b>Espace « '+fr(e.nom)+' »</b> · '+(ok?'visible pour : '+fr(role.toLowerCase()):'non visible pour : '+fr(role.toLowerCase()))+'</span><span class="badge">Exemple</span></div><div class="doc"><h3>'+fr(e.nom)+' <span class="acc-b">'+e.acces+'</span></h3><div class="fe-grid"><div><span>Ce qu’il sait</span>'+fr(e.sait)+'</div><div><span>Ce qu’il fait</span>'+fr(e.fait)+'</div><div class="pas"><span>Ce qu’il ne fait pas</span>'+fr(e.pas)+'</div></div><h4>Une demande type</h4><div class="jamais">« '+fr(e.ex)+' »</div></div>';
+}
+puces(document.getElementById('metiers'),Object.keys(D.metiers).map(function(k){return [k,esc(D.metiers[k].nom)+'<small>'+esc(D.metiers[k].ent)+'</small>'];}),'m',doc);
+puces(document.getElementById('niveaux'),Object.keys(D.niveaux).map(function(k){return [k,esc(D.niveaux[k].lab)];}),'n',doc);
+puces(document.getElementById('roles'),D.roles.map(function(r){return [r[0],esc(r[1])];}),'r',espaces);
+doc();espaces();
+})();
+
+</script>
+<!-- Cloudflare Web Analytics --><script type='module' src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "4ee482cc16a74712b603b71a2d98cfa1"}'></script><!-- End Cloudflare Web Analytics -->
+</body>
+</html>

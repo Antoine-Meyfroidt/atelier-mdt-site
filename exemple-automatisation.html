@@ -1,0 +1,561 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Exemple d&#x27;automatisation d&#x27;une demande — Atelier MDT</title>
+<meta name="description" content="Démonstration interactive : envoyez une demande de devis, des pièces ou une réservation de groupe, et regardez la chaîne automatique se dérouler. Entreprises fictives, rien n&#x27;est envoyé.">
+<link rel="canonical" href="https://atelier-mdt.fr/exemple-automatisation.html">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://atelier-mdt.fr/exemple-automatisation.html">
+<meta property="og:site_name" content="Atelier MDT">
+<meta property="og:title" content="Exemple d&#x27;automatisation d&#x27;une demande — Atelier MDT">
+<meta property="og:description" content="Démonstration interactive : envoyez une demande de devis, des pièces ou une réservation de groupe, et regardez la chaîne automatique se dérouler. Entreprises fictives, rien n&#x27;est envoyé.">
+<meta property="og:image" content="https://atelier-mdt.fr/assets/og-atelier-mdt.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Atelier MDT — Parce que votre temps est précieux.">
+<meta property="og:locale" content="fr_FR">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#10233F">
+<link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32.png">
+<link rel="apple-touch-icon" sizes="180x180" href="assets/favicon-180.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{--nuit:#10233F;--panneau:#182F52;--ambre:#F5B62E;--sourd:#9FB0C8;--trait:#2A4470;--froid:#E9EEF6}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{background:var(--nuit);color:var(--froid);font-family:'Manrope',system-ui,-apple-system,sans-serif;line-height:1.6;font-size:16px;-webkit-font-smoothing:antialiased}
+a{color:inherit}
+.in{max-width:900px;margin:0 auto;padding:0 22px}
+nav{position:sticky;top:0;z-index:20;background:rgba(16,35,63,.93);backdrop-filter:blur(8px);border-bottom:1px solid var(--trait)}
+nav .in{display:flex;align-items:center;justify-content:space-between;gap:14px;padding:13px 22px}
+nav .brand{display:flex;align-items:center;gap:10px;text-decoration:none}
+nav .brand svg{color:var(--ambre);flex:none}
+nav .brand span{font-size:16px;font-weight:800;letter-spacing:-.025em}
+nav .links{display:flex;align-items:center;gap:20px}
+nav .links a{color:var(--sourd);text-decoration:none;font-size:13.5px;font-weight:600}
+nav .links a:hover,nav .links a.on{color:var(--froid)}
+nav .cta{background:var(--ambre)!important;color:#10233F!important;padding:9px 15px;border-radius:5px;font-weight:800!important}
+@media(max-width:700px){nav .links a:not(.cta){display:none}}
+header.h{padding:60px 0 6px}
+header.h .eyebrow{font-size:11.5px;font-weight:800;letter-spacing:.09em;color:var(--ambre);margin-bottom:12px}
+header.h h1{font-size:clamp(30px,5.4vw,46px);font-weight:800;letter-spacing:-.03em;line-height:1.06;max-width:22ch}
+header.h .sub{margin-top:15px;font-size:17px;color:var(--sourd);max-width:58ch}
+section{padding:58px 0 0;scroll-margin-top:64px}
+h2.lbl{font-size:11.5px;font-weight:800;letter-spacing:.09em;color:var(--ambre);padding-bottom:10px;border-bottom:1px solid var(--trait);margin-bottom:24px}
+.txt p{font-size:15.5px;max-width:68ch;margin-bottom:12px;color:#E9EEF6}
+.txt p strong{color:#fff}
+.btn{display:inline-block;padding:13px 22px;font-size:15px;font-weight:700;text-decoration:none;border-radius:5px}
+.btn.p{background:var(--ambre);color:#10233F}
+.btn.s{background:transparent;color:var(--froid);border:1px solid var(--trait)}
+.card{background:var(--panneau);border:1px solid var(--trait);border-radius:7px;padding:20px 22px}
+.filet{border-left:3px solid var(--ambre);padding-left:14px;margin:18px 0;font-size:14.5px;color:var(--sourd);max-width:68ch}
+.filet b{color:var(--froid)}
+footer{margin-top:60px;border-top:1px solid var(--trait);padding:24px 0 46px;font-size:12.5px;color:var(--sourd)}
+footer .row{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
+footer a{color:var(--sourd)}
+.cta{background:var(--ambre);color:#10233F;border-radius:8px;padding:32px 30px;margin-top:56px}
+.cta h2{font-size:clamp(22px,3.4vw,28px);font-weight:800;letter-spacing:-.02em;line-height:1.15}
+.cta p{font-size:15.5px;margin-top:10px;max-width:62ch}
+.cta a{display:inline-block;margin-top:18px;background:#10233F;color:var(--ambre);padding:12px 20px;border-radius:5px;font-weight:800;font-size:15px;text-decoration:none}
+
+/* ── commun à toutes les pages ── */
+.in{max-width:900px!important;margin:0 auto;padding:0 22px}
+nav{position:sticky;top:0;z-index:20;background:rgba(16,35,63,.94);backdrop-filter:blur(8px);border-bottom:1px solid var(--trait,#2A4470)}
+nav .in{display:flex;align-items:center;justify-content:space-between;gap:16px;padding:15px 22px}
+nav .brand{display:flex;align-items:center;gap:12px;text-decoration:none}
+nav .brand svg{color:var(--ambre,#F5B62E);flex:none}
+nav .brand .wm{font-size:18px;font-weight:800;letter-spacing:-.025em;line-height:1;color:var(--froid,#E9EEF6)}
+nav .brand .wm em{display:block;font-style:normal;font-size:7.5px;font-weight:800;letter-spacing:.09em;color:var(--ambre,#F5B62E);margin-top:4px;white-space:nowrap}
+nav .links{display:flex;align-items:center;gap:22px}
+nav .links a{color:var(--sourd,#9FB0C8);text-decoration:none;font-size:14px;font-weight:600;white-space:nowrap}
+nav .links a:hover,nav .links a.on{color:var(--froid,#E9EEF6)}
+nav .links a.btn-nav{background:var(--ambre,#F5B62E);color:#10233F;padding:10px 16px;border-radius:5px;font-weight:800;margin:0;display:inline-block;line-height:1.2}
+@media(max-width:800px){nav .links a:not(.btn-nav){display:none}nav .brand .wm em{display:none}}
+footer{margin-top:60px;border-top:1px solid var(--trait,#2A4470);padding:24px 0 46px;font-size:12.5px;color:var(--sourd,#9FB0C8)}
+footer .row{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
+footer a{color:var(--sourd,#9FB0C8)}
+.cta-bloc{background:var(--ambre,#F5B62E);color:#10233F;border-radius:8px;padding:32px 30px;margin-top:56px}
+.cta-bloc h2{font-size:clamp(22px,3.4vw,28px);font-weight:800;letter-spacing:-.02em;line-height:1.15}
+.cta-bloc p{font-size:15.5px;margin-top:10px;max-width:62ch;color:#10233F}
+.cta-bloc a{display:inline-block;margin-top:18px;background:#10233F;color:var(--ambre,#F5B62E);padding:12px 20px;border-radius:5px;font-weight:800;font-size:15px;text-decoration:none}
+
+/* ── NAVIGATION UNIFIÉE (bloc final, prioritaire) ── */
+nav .in{display:flex!important;align-items:center!important;justify-content:space-between!important;gap:18px!important;padding:0 22px!important;min-height:74px!important}
+nav .brand{display:flex!important;align-items:center!important;gap:12px!important;text-decoration:none!important}
+nav .brand svg{color:var(--ambre,#F5B62E)!important;flex:none!important;width:32px!important;height:32px!important}
+nav .brand .wm{font-size:18px!important;font-weight:800!important;letter-spacing:-.025em!important;line-height:1!important;color:var(--froid,#E9EEF6)!important}
+nav .brand .wm em{display:block!important;font-style:normal!important;font-size:7.5px!important;font-weight:800!important;letter-spacing:.09em!important;color:var(--ambre,#F5B62E)!important;margin-top:4px!important;white-space:nowrap!important}
+nav .links{display:flex!important;align-items:center!important;gap:16px!important;height:100%!important}
+@media(min-width:801px) and (max-width:880px){nav .links{gap:11px!important}nav .links a.btn-nav{padding:0 14px!important}}
+nav .links a{display:inline-flex!important;align-items:center!important;height:36px!important;margin:0!important;color:var(--sourd,#9FB0C8)!important;text-decoration:none!important;font-size:14px!important;font-weight:600!important;white-space:nowrap!important;border-bottom:2px solid transparent!important;line-height:1!important;font-size:13.5px!important}
+nav .links a:hover{color:var(--froid,#E9EEF6)!important}
+nav .links a.on{color:var(--froid,#E9EEF6)!important;border-bottom:2px solid var(--ambre,#F5B62E)!important}
+nav .links a.btn-nav{background:var(--ambre,#F5B62E)!important;color:#10233F!important;padding:0 18px!important;border-radius:5px!important;font-weight:800!important;border-bottom:2px solid transparent!important;height:40px!important}
+nav .links a.btn-nav:hover{color:#10233F!important}
+@media(max-width:800px){nav .links a:not(.btn-nav){display:none!important}nav .brand .wm em{display:none!important}nav .in{min-height:62px!important}}
+
+
+/* ══ MENU MOBILE — bloc autonome, aucune dépendance externe ══ */
+nav .burger{display:none}
+@media(max-width:800px){
+  nav .burger{display:flex;flex:none;flex-direction:column;justify-content:center;gap:5px;width:44px;height:38px;padding:0 11px;background:transparent;border:1px solid var(--trait,#2A4470);border-radius:5px;cursor:pointer;-webkit-tap-highlight-color:transparent}
+  nav .burger span{display:block;height:2px;background:var(--froid,#E9EEF6);border-radius:1px;transition:transform .2s ease,opacity .2s ease}
+  nav.ouvert .burger span:nth-child(1){transform:translateY(7px) rotate(45deg)}
+  nav.ouvert .burger span:nth-child(2){opacity:0}
+  nav.ouvert .burger span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
+  nav .in .links{display:none!important;position:absolute;top:100%;left:0;right:0;flex-direction:column!important;align-items:stretch!important;gap:0!important;height:auto!important;background:var(--nuit,#10233F);border-bottom:1px solid var(--trait,#2A4470);padding:4px 22px 20px!important}
+  nav.ouvert .in .links{display:flex!important}
+  nav.ouvert .in .links a{display:flex!important;align-items:center!important;width:100%;height:auto!important;margin:0!important;padding:15px 0!important;font-size:16px!important;font-weight:600!important;color:var(--sourd,#9FB0C8)!important;background:transparent!important;border:0!important;border-bottom:1px solid var(--trait,#2A4470)!important;border-radius:0!important}
+  nav.ouvert .in .links a.on{color:var(--ambre,#F5B62E)!important}
+  nav.ouvert .in .links a.btn-nav{justify-content:center!important;margin-top:16px!important;height:46px!important;padding:0 18px!important;border:0!important;border-radius:5px!important;background:var(--ambre,#F5B62E)!important;color:#10233F!important;font-weight:800!important}
+}
+
+/* ── page Exemples : mise en page allégée ── */
+.fil{font-size:12.5px;margin-bottom:18px}
+.fil a{color:var(--sourd);text-decoration:none;font-weight:700}
+.fil a:hover{color:var(--froid)}
+.chapo{margin-top:22px;border-left:2px solid var(--trait);padding-left:16px;font-size:13.8px;color:#9FB0C8;max-width:74ch;line-height:1.6}
+.chapo b{color:var(--sourd)}
+.chapo a{color:var(--ambre);text-decoration:none;font-weight:700}
+
+.liste{margin-top:6px;border-top:1px solid var(--trait)}
+.ex{padding:26px 0;border-bottom:1px solid var(--trait);scroll-margin-top:88px}
+.ex h2{font-size:19px;font-weight:800;letter-spacing:-.015em;line-height:1.25;color:var(--froid)}
+.ex .src{margin-top:5px;font-size:11.5px;font-weight:700;letter-spacing:.02em}
+.ex .src a{color:var(--ambre);text-decoration:none}
+.ex .src a:hover{text-decoration:underline}
+.ex .src.nb{color:#9FB0C8;font-weight:600}
+.ex .src.nb a{color:#9FB0C8;font-weight:700}
+.ex p.c{margin-top:12px;font-size:14.6px;color:var(--sourd);max-width:74ch;line-height:1.65}
+.ex p.c b{color:var(--froid)}
+.ex p.c .q{color:#9FB0C8}
+.ex details{margin-top:13px;max-width:74ch}
+.ex summary{cursor:pointer;font-size:12.5px;font-weight:800;letter-spacing:.03em;color:#9FB0C8;list-style:none;display:inline-flex;align-items:center;gap:7px}
+.ex summary::-webkit-details-marker{display:none}
+.ex summary::before{content:"+";display:inline-flex;align-items:center;justify-content:center;width:16px;height:16px;border:1px solid var(--trait);border-radius:3px;font-size:12px;font-weight:700;line-height:1}
+.ex details[open] summary::before{content:"–"}
+.ex summary:hover{color:var(--ambre)}
+.ex details[open] summary{color:var(--ambre)}
+.ex details p{margin-top:10px;font-size:13.8px;color:#9FB0C8;line-height:1.6;padding-left:23px}
+
+/* ── bloc des limites, en bas de page ── */
+section.limites{background:var(--nuit);border-top:1px solid var(--trait);border-bottom:1px solid var(--trait);padding:50px 0 54px;margin-top:56px}
+.cadre{display:grid;grid-template-columns:1fr;gap:14px;align-items:start}
+.cadre .non ul{columns:2;column-gap:30px}
+.cadre .non li{break-inside:avoid}
+@media(max-width:780px){.cadre .non ul{columns:1}}
+.cadre .oui,.cadre .non{border-radius:7px;padding:19px 21px}
+.cadre .oui{background:rgba(245,182,46,.06);border:1px solid rgba(245,182,46,.35)}
+.cadre .non{background:var(--panneau);border:1px solid var(--trait)}
+.cadre .k{font-size:10.5px;font-weight:800;letter-spacing:.08em;margin-bottom:10px}
+.cadre .oui .k{color:var(--ambre)}
+.cadre .non .k{color:#9FB0C8}
+.cadre p{font-size:14px;color:var(--sourd);line-height:1.6}
+.cadre p b{color:var(--froid)}
+.cadre ul{list-style:none}
+.cadre li{font-size:13.5px;color:#9FB0C8;margin-bottom:11px;padding-left:16px;position:relative;line-height:1.55}
+.cadre li::before{content:"";position:absolute;left:0;top:9px;width:7px;height:1px;background:#4A6591}
+.cadre .dem{color:var(--froid);font-weight:700}
+.cadre .fin{margin-top:13px;padding-top:12px;border-top:1px solid var(--trait);font-size:13.5px;color:#9FB0C8}
+
+.suite{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:12px}
+.suite a{display:flex;flex-direction:column;gap:5px;background:var(--panneau);border:1px solid var(--trait);border-radius:7px;padding:17px 19px;text-decoration:none;transition:border-color .15s}
+.suite a:hover{border-color:var(--ambre)}
+.suite a b{font-size:15.5px;font-weight:800;letter-spacing:-.01em}
+.suite a span{font-size:12.5px;color:var(--sourd)}
+.suite a .go{margin-top:auto;padding-top:7px;font-size:12px;font-weight:800;color:var(--ambre)}
+.retour{margin-top:20px;font-size:14px}
+.retour a{color:var(--ambre);text-decoration:none;font-weight:700}
+@media(max-width:860px){nav .brand .wm em{display:none!important}}
+.loin{margin:0 0 34px;border-left:3px solid var(--ambre,#F5B62E);padding:4px 0 4px 14px;font-size:15px;color:var(--sourd,#9FB0C8)}
+.loin a{color:var(--ambre,#F5B62E);font-weight:700}
+
+/* ══ DÉMONSTRATIONS — commun ══ */
+.large{max-width:1140px;margin:0 auto;padding:0 22px}
+.aide{margin-top:12px;font-size:13.5px;color:#9FB0C8;max-width:74ch}
+.aide b{color:var(--froid)}
+.choix{display:flex;flex-wrap:wrap;align-items:center;gap:10px 16px}
+.choix .lab{font-size:11px;font-weight:800;letter-spacing:.08em;color:#9FB0C8}
+.seg{display:inline-flex;flex-wrap:wrap;border:1px solid var(--trait);border-radius:5px;overflow:hidden}
+.seg button{font:inherit;font-size:14.5px;font-weight:800;color:var(--sourd);background:var(--panneau);border:0;border-left:1px solid var(--trait);padding:10px 16px;cursor:pointer;min-height:44px;text-align:left}
+.seg button:first-child{border-left:0}
+.seg button[aria-pressed="true"]{background:var(--ambre);color:#10233F}
+.seg button:focus-visible,.cl button:focus-visible,.cl select:focus-visible,.cl input:focus-visible,.cl textarea:focus-visible{outline:2px solid #F5B62E;outline-offset:2px}
+.seg button small{display:block;font-size:11.5px;font-weight:600;opacity:.85}
+@media(max-width:640px){.seg{display:grid;grid-template-columns:1fr}.seg button{border-left:0;border-top:1px solid var(--trait)}.seg button:first-child{border-top:0}}
+/* panneau clair : un livrable ou un outil du client, posé sur la page sombre */
+.cl{--p:#FFFFFF;--doux:#F2F5FA;--encre:#10233F;--enc2:#4A6591;--leg:#7387A6;--tr:#D3DCE8;--amb:#8A6210;
+  background:var(--p);color:var(--encre);border-radius:5px;border:1px solid var(--trait);overflow:hidden;font-size:14.5px;line-height:1.6;min-width:0}
+.cl *{box-sizing:border-box}
+.cl .barre{display:flex;align-items:center;justify-content:space-between;gap:10px;background:var(--doux);border-bottom:1px solid var(--tr);padding:9px 14px;font-size:12px;color:var(--leg)}
+.cl .barre b{color:var(--encre);font-weight:800}
+.badge{display:inline-block;background:#F5B62E;color:#10233F;font-size:10.5px;font-weight:800;letter-spacing:.07em;text-transform:uppercase;padding:3px 8px;border-radius:5px;white-space:nowrap}
+.dtab{margin-top:20px;overflow-x:auto;-webkit-overflow-scrolling:touch;border:1px solid var(--trait);border-radius:5px}
+.dtab table{width:100%;border-collapse:collapse;min-width:620px;font-size:13.8px}
+.dtab th{text-align:left;font-size:10.5px;font-weight:800;letter-spacing:.07em;text-transform:uppercase;color:#9FB0C8;background:var(--panneau);padding:11px 14px;border-bottom:1px solid var(--trait)}
+.dtab td{padding:12px 14px;border-bottom:1px solid var(--trait);vertical-align:top;color:var(--sourd);line-height:1.55}
+.dtab tr:last-child td{border-bottom:0}
+.dtab td:first-child{color:var(--froid);font-weight:700;width:26%}
+.deux{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+@media(max-width:780px){.deux{grid-template-columns:1fr}}
+.deux .card .k{font-size:10.5px;font-weight:800;letter-spacing:.08em;color:#9FB0C8;margin-bottom:9px}
+.deux .card p,.deux .card li{font-size:14.5px;color:var(--sourd);line-height:1.6}
+.deux .card ul{list-style:none}
+.deux .card li{padding-left:18px;position:relative;margin-bottom:7px}
+.deux .card li::before{content:"–";position:absolute;left:0;color:#9FB0C8}
+.deux .card b{color:var(--froid)}
+.note-offre{margin-top:16px;font-size:14px;color:var(--sourd);max-width:72ch}
+.note-offre a{color:var(--ambre);font-weight:700;text-decoration:none}
+@media (prefers-reduced-motion:reduce){*{transition:none!important;animation:none!important}}
+
+.auto-grid{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,6fr);gap:18px;margin-top:18px;align-items:start}
+@media(max-width:900px){.auto-grid{grid-template-columns:1fr}}
+.colt{font-size:10.5px;font-weight:800;letter-spacing:.09em;color:#9FB0C8;margin-bottom:8px}
+.form{padding:18px 18px 20px;display:grid;gap:12px}
+.form h3{font-size:17px;font-weight:800;line-height:1.3}
+.form .intro-f{font-size:13px;color:var(--enc2);margin-top:-6px}
+.form label{display:block;font-size:12px;font-weight:800;color:var(--encre);margin-bottom:4px}
+.form input[type=text],.form input[type=email],.form input[type=number],.form select,.form textarea{width:100%;font:inherit;font-size:14px;color:var(--encre);background:var(--p);border:1px solid var(--tr);border-radius:5px;padding:9px 10px}
+.form textarea{min-height:64px;resize:vertical}
+.form .ligne{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+@media(max-width:480px){.form .ligne{grid-template-columns:1fr}}
+.form .coches{display:grid;gap:6px;font-size:14px}
+.form .coches label{display:flex;gap:8px;align-items:flex-start;font-weight:600;font-size:14px;margin:0}
+.form .coches input{margin-top:4px;accent-color:#10233F}
+.form .envoi{font:inherit;font-size:15px;font-weight:800;background:#10233F;color:#fff;border:0;border-radius:5px;padding:12px 16px;cursor:pointer;min-height:44px}
+.form .rien{font-size:12px;color:var(--leg)}
+.etapes{display:grid;gap:10px}
+.etape{background:var(--panneau);border:1px solid var(--trait);border-radius:5px;overflow:hidden}
+.etape>button{width:100%;display:flex;align-items:center;gap:12px;font:inherit;text-align:left;color:var(--froid);background:none;border:0;padding:13px 15px;cursor:pointer}
+.etape>button:disabled{cursor:default}
+.etape>button:focus-visible{outline:2px solid #F5B62E;outline-offset:-2px}
+.etape .num{flex:none;width:26px;height:26px;border-radius:50%;border:1px solid var(--trait);display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:800;color:#9FB0C8}
+.etape.fait .num{background:var(--froid);border-color:var(--froid);color:#10233F}
+.etape .tit{flex:1;font-size:15px;font-weight:800;line-height:1.35}
+.etape .tit small{display:block;font-size:12.5px;font-weight:600;color:var(--sourd)}
+.etape .st{flex:none;font-size:11px;font-weight:800;letter-spacing:.05em;text-transform:uppercase;color:#9FB0C8;border:1px solid var(--trait);border-radius:5px;padding:3px 7px;white-space:nowrap}
+.etape.fait .st{color:#10233F;background:var(--froid);border-color:var(--froid)}
+.etape.prog .st{border-style:dashed}
+.etape.attente{opacity:.6}
+.etape .det{padding:0 15px 15px}
+.etape .det[hidden]{display:none}
+.mail .tete{padding:10px 14px;border-bottom:1px solid var(--tr);font-size:12.5px;color:var(--enc2);line-height:1.5}
+.mail .tete b{color:var(--encre)}
+.mail .corps{padding:12px 14px 14px;font-size:14px;line-height:1.6}
+.mail .corps p+p{margin-top:8px}
+.mini{width:100%;border-collapse:collapse;font-size:12.5px;min-width:480px}
+.mini th{text-align:left;font-size:10px;font-weight:800;letter-spacing:.05em;text-transform:uppercase;background:var(--doux);padding:7px 8px;border-bottom:2px solid var(--encre);white-space:nowrap}
+.mini td{padding:7px 8px;border-bottom:1px solid var(--tr);white-space:nowrap}
+.mini tr.neuf td{font-weight:800}
+.mini tr.neuf td:first-child{box-shadow:inset 3px 0 0 #F5B62E}
+.defil{overflow-x:auto;-webkit-overflow-scrolling:touch}
+.alerte{padding:12px 14px;font-size:14px}
+.alerte .lab2{font-size:10.5px;font-weight:800;letter-spacing:.07em;text-transform:uppercase;color:var(--amb);margin-bottom:4px}
+.temps{display:flex;flex-wrap:wrap;gap:10px;margin-top:12px}
+.temps button{font:inherit;font-size:14px;font-weight:800;color:var(--froid);background:none;border:1px solid var(--froid);border-radius:5px;padding:10px 14px;cursor:pointer;min-height:44px}
+.temps button:focus-visible{outline:2px solid #F5B62E;outline-offset:2px}
+.attente-msg{font-size:13.5px;color:var(--sourd);margin-top:10px}
+.sa{margin-top:22px}
+</style>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Accueil", "item": "https://atelier-mdt.fr/"}, {"@type": "ListItem", "position": 2, "name": "Exemples", "item": "https://atelier-mdt.fr/exemples.html"}, {"@type": "ListItem", "position": 3, "name": "Sept flux que je peux automatiser", "item": "https://atelier-mdt.fr/exemples-automatisation.html"}, {"@type": "ListItem", "position": 4, "name": "Exemple : automatiser le traitement d'une demande", "item": "https://atelier-mdt.fr/exemple-automatisation.html"}]}</script>
+</head>
+<body>
+<nav><div class="in">
+  <a class="brand" href="index.html"><svg width="32" height="32" viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="3.4" stroke-linecap="square" aria-hidden="true"><path d="M14 8 H6 V56 H14" fill="none"/><path d="M50 8 H58 V56 H50" fill="none"/><path d="M18 44 V22 L32 36 L46 22 V44" stroke-width="4" fill="none"/></svg><span class="wm">Atelier MDT<em>PARCE QUE VOTRE TEMPS EST PRÉCIEUX.</em></span></a>
+  <div class="links" id="nav-liens">
+      <a href="realisations.html">Réalisations</a>
+      <a href="offres.html">Offres</a>
+      <a href="exemples.html" class="on">Exemples</a>
+      <a href="rentabilite.html">Rentabilité</a>
+      <a href="qui-suis-je.html">Qui suis-je</a>
+      <a class="btn-nav" href="contact.html">Échanger 30 minutes</a>
+  </div>
+  <button class="burger" type="button" aria-label="Ouvrir le menu" aria-expanded="false" aria-controls="nav-liens"><span></span><span></span><span></span></button>
+</div></nav>
+<main id="contenu">
+<header class="h"><div class="in">
+  <p class="fil"><a href="exemples-automatisation.html">← Sept flux que je peux automatiser</a></p>
+  <div class="eyebrow">EXEMPLE INTERACTIF · AUTOMATISATION</div>
+  <h1>Envoyez une demande, regardez ce qui se passe</h1>
+  <p class="sub">Trois cas que l'on retrouve dans presque toutes les TPE. À gauche, ce que voit le client. À droite, ce qui se passe chez vous, sans que personne n'ait à lever la tête.</p>
+  <p class="chapo"><b>Entreprises fictives, rien n'est envoyé.</b> Les règles et les textes sont des exemples&nbsp;; chez vous, ce sont les vôtres. Le fonctionnement, lui, est celui des automatisations livrées.</p>
+</div></header>
+
+<section><div class="large">
+  <div class="in" style="padding:0">
+    <h2 class="lbl">LA DÉMONSTRATION</h2>
+    <div class="choix"><span class="lab">CHOISIR UN CAS</span>
+      <span class="seg" id="cas" role="group" aria-label="Cas">
+        <button type="button" data-cas="devis" aria-pressed="true">Demande de devis<small>Arc-en-Ille Électricité</small></button>
+        <button type="button" data-cas="pieces" aria-pressed="false">Pièces manquantes<small>Trois Ponts Avocats</small></button>
+        <button type="button" data-cas="groupe" aria-pressed="false">Réservation de groupe<small>Le Bistrot des Grands Prés</small></button>
+      </span>
+    </div>
+    <p class="aide"><b>Essayez-le.</b> Modifiez les champs comme le ferait un client, puis envoyez : la chaîne se déroule à droite. <b>Rien n'est envoyé ni conservé</b>, tout se passe dans cette page.</p>
+  </div>
+  <div class="auto-grid">
+    <div>
+      <div class="colt">CÔTÉ CLIENT</div>
+      <div class="cl">
+        <div class="barre"><span id="site-nom"></span><span class="badge">Exemple</span></div>
+        <form class="form" id="form" novalidate></form>
+      </div>
+    </div>
+    <div>
+      <div class="colt">CÔTÉ ENTREPRISE</div>
+      <div class="etapes" id="etapes" aria-live="polite"></div>
+      <div class="temps" id="temps"></div>
+      <p class="attente-msg" id="attente"></p>
+    </div>
+  </div>
+  <div class="in sa" style="padding:0">
+    <div class="deux">
+      <div class="card"><div class="k">SANS AUTOMATISATION</div><p id="sans"></p></div>
+      <div class="card"><div class="k">AVEC</div><p id="avec"></p></div>
+    </div>
+  </div>
+</div></section>
+
+<section><div class="in">
+  <h2 class="lbl">CE QU'IL FAUT DE VOTRE CÔTÉ</h2>
+  <p class="donnees-intro" style="font-size:15.5px;color:var(--froid);max-width:70ch;line-height:1.65">Une automatisation ne devine rien : elle applique vos règles, sur vos outils. Voici ce que je vous demande pour la construire.</p>
+  <div class="dtab"><table>
+    <thead><tr><th>Élément</th><th>Pourquoi</th></tr></thead>
+    <tbody>
+      <tr><td>Un point d'entrée unique</td><td>Un formulaire sur votre site, ou une adresse dédiée. C'est lui qui impose les informations utiles : sans commune, pas de tri par zone&nbsp;; sans liste de pièces, pas de relance ciblée.</td></tr>
+      <tr><td>Une adresse d'envoi à vous</td><td>Les réponses partent de votre adresse, à votre nom. Le client ne voit jamais d'outil intermédiaire.</td></tr>
+      <tr><td>Un compte Microsoft&nbsp;365, Google Workspace ou Make</td><td>L'automatisation est construite sur vos comptes&nbsp;: vous en restez propriétaire, et rien ne s'arrête si l'on cesse de travailler ensemble.</td></tr>
+      <tr><td>Vos règles, écrites</td><td>Ce qui est urgent, votre zone, vos seuils (40&nbsp;personnes, les pièces obligatoires). Je les écris avec vous&nbsp;: ce sont elles qui font la différence entre une réponse utile et une réponse robot.</td></tr>
+      <tr><td>Les textes des réponses</td><td>Rédigés ensemble, validés par vous. Le ton des relances est la décision la plus sensible.</td></tr>
+      <tr><td>Un référent interne</td><td>Pour la passation d'une heure et le document de maintenance, rédigé pour des non-techniciens.</td></tr>
+    </tbody>
+  </table></div>
+  <div class="deux" style="margin-top:16px">
+    <div class="card"><div class="k">CE QUI RESTE À VOUS</div><ul>
+      <li>Chiffrer le devis après la visite.</li>
+      <li>Juger qu'une pièce est valable.</li>
+      <li>Accepter une privatisation, ou la refuser.</li>
+      <li>Répondre à une demande qui sort des cas prévus&nbsp;: elle arrive marquée «&nbsp;à traiter&nbsp;».</li>
+    </ul></div>
+    <div class="card"><div class="k">SUR UN CAS RÉEL</div><p>Le même principe tourne chez Kampus&nbsp;137&nbsp;: réponse aux demandes d'anniversaires, devis d'entreprise qualifiés, demandes de dons plafonnées. <b>Pièces à l'appui</b> dans les réalisations <a href="realisation-01-anniversaires.html" style="color:var(--ambre)">01</a>, <a href="realisation-02-devis-b2b.html" style="color:var(--ambre)">02</a> et <a href="realisation-03-lots.html" style="color:var(--ambre)">03</a>.</p></div>
+  </div>
+  <p class="filet" style="margin-top:20px"><b>Entreprises fictives, règles et textes d'exemple.</b> Arc-en-Ille Électricité, Trois Ponts Avocats et Le Bistrot des Grands Prés n'existent pas. Chez vous, les règles, les délais et les textes sont les vôtres. Cette page ne transmet rien&nbsp;: ce que vous tapez reste dans votre navigateur et disparaît à la fermeture.</p>
+  <p class="note-offre">Offre correspondante&nbsp;: <a href="offres.html#automatisation">Automatiser le traitement d'une demande →</a></p>
+</div></section>
+
+<section><div class="in">
+  <h2 class="lbl">LES AUTRES DÉMONSTRATIONS</h2>
+  <div class="suite"><a href="exemple-veille.html"><span style="font-size:10.5px;font-weight:800;letter-spacing:.07em;color:#9FB0C8">VEILLE</span><b>Recevez l'édition comme le client</b><span>Quatre thèmes, trois rythmes : le rapport tel qu'il arrive dans la boîte mail.</span><span class="go">Essayer →</span></a><a href="exemple-accompagnement-ia.html"><span style="font-size:10.5px;font-weight:800;letter-spacing:.07em;color:#9FB0C8">ACCOMPAGNEMENT IA</span><b>Votre parcours, puis l'espace d'une équipe</b><span>Ce qu'on travaillerait dans votre métier, et un espace de travail type.</span><span class="go">Essayer →</span></a><a href="exemple-tableau-de-bord-paliers.html"><span style="font-size:10.5px;font-weight:800;letter-spacing:.07em;color:#9FB0C8">TABLEAU DE BORD</span><b>Une boulangerie, trois paliers</b><span>Le même commerce vu avec de plus en plus de données.</span><span class="go">Essayer →</span></a></div>
+  <p class="retour"><a href="exemples.html">← Tous les exemples</a></p>
+</div></section>
+
+<div class="in"><div class="cta-bloc">
+  <h2>Et chez vous&nbsp;?</h2>
+  <p>Trente minutes en visio pour regarder ce qui vous prend du temps et ce qui peut tourner seul. Vous recevez ensuite un devis écrit, et vous décidez.</p>
+  <a href="contact.html">Échanger 30 minutes</a>
+</div></div>
+</main>
+<footer><div class="in"><div class="row">
+  <span>Atelier MDT · Automatisation · Veille · Tableaux de bord · Accompagnement IA</span>
+  <span><a href="mailto:antoine@atelier-mdt.fr">antoine@atelier-mdt.fr</a> · <a href="tel:+33743688097">07 43 68 80 97</a> · <a href="https://www.linkedin.com/in/antoine-meyfroidt/" rel="noopener">linkedin.com/in/antoine-meyfroidt</a> · <a href="https://www.malt.fr/profile/antoinemeyfroidt" rel="noopener">Malt</a> · <a href="https://share.google/6U1bBCivJdjeVEOeF" rel="noopener">Fiche Google</a> · <a href="questions.html">Questions fréquentes</a> · <a href="articles.html">Articles</a> · <a href="mentions-legales.html">Mentions légales</a> · <a href="cgv.html">CGV</a></span>
+</div></div></footer>
+<script>
+/* Menu mobile — autonome, aucune dépendance externe. */
+(function(){
+  var n=document.querySelector('nav');if(!n)return;
+  var b=n.querySelector('.burger'),l=n.querySelector('.links');if(!b||!l)return;
+  function etat(o){
+    n.classList.toggle('ouvert',o);
+    b.setAttribute('aria-expanded',o?'true':'false');
+    b.setAttribute('aria-label',o?'Fermer le menu':'Ouvrir le menu');
+  }
+  b.addEventListener('click',function(){etat(!n.classList.contains('ouvert'));});
+  l.addEventListener('click',function(e){if(e.target.closest('a'))etat(false);});
+  document.addEventListener('click',function(e){if(n.classList.contains('ouvert')&&!n.contains(e.target))etat(false);});
+  document.addEventListener('keydown',function(e){if(e.key==='Escape')etat(false);});
+  window.addEventListener('resize',function(){if(window.innerWidth>800)etat(false);});
+})();
+</script>
+<script>
+
+(function(){
+var NB=' ';
+function esc(s){return String(s).replace(/[&<>"']/g,function(c){return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c];});}
+function heure(){var d=new Date();return d.getHours()+NB+'h'+NB+String(d.getMinutes()).padStart(2,'0');}
+function jourTxt(){return new Date().toLocaleDateString('fr-FR',{day:'numeric',month:'2-digit'});}
+function mail(de,a,objet,corps){return '<div class="cl mail"><div class="tete">De'+NB+': <b>'+esc(de)+'</b><br>À'+NB+': '+esc(a)+'<br>Objet'+NB+': <b>'+esc(objet)+'</b></div><div class="corps">'+corps+'</div></div>';}
+function tableau(cols,lignes){return '<div class="cl defil"><table class="mini"><thead><tr>'+cols.map(function(c){return '<th>'+c+'</th>';}).join('')+'</tr></thead><tbody>'+lignes.map(function(l){return '<tr'+(l.neuf?' class="neuf"':'')+'>'+l.v.map(function(c){return '<td>'+c+'</td>';}).join('')+'</tr>';}).join('')+'</tbody></table></div>';}
+function alerte(lab,txt){return '<div class="cl alerte"><div class="lab2">'+lab+'</div>'+txt+'</div>';}
+function P(t){return '<p>'+t+'</p>';}
+
+var CAS={
+ devis:{
+  site:"Site d'Arc-en-Ille Électricité",
+  titre:'Demander un devis', bouton:'Envoyer la demande', intro:'Réponse sous 48 h ouvrées, ou dans l’heure pour un dépannage urgent.',
+  champs:[
+   {id:'prenom',lab:'Prénom',type:'text',val:'Claire'},
+   {id:'tel',lab:'Téléphone',type:'text',val:'06 00 00 00 00'},
+   {id:'email',lab:'Email',type:'email',val:'claire@example.com'},
+   {id:'commune',lab:'Commune',type:'select',opts:['Rennes','Cesson-Sévigné','Bruz','Vitré','Laval (Mayenne)'],val:'Cesson-Sévigné'},
+   {id:'type',lab:'Votre besoin',type:'select',opts:['Dépannage','Rénovation électrique','Installation neuve','Borne de recharge'],val:'Dépannage'},
+   {id:'urgence',lab:'Pour quand ?',type:'select',opts:["Aujourd'hui",'Cette semaine','Pas pressé'],val:"Aujourd'hui"},
+   {id:'msg',lab:'Votre message',type:'textarea',val:"Le disjoncteur saute dès qu'on lance le four."}
+  ],
+  sans:"Les demandes arrivent pendant que le gérant est sur un chantier. Il les lit le soir, rappelle le lendemain, et les urgences attendent comme les autres. Les devis envoyés ne sont relancés que quand il y pense.",
+  avec:"Le client a sa réponse tout de suite, adaptée à son besoin. L'urgence est repérée et signalée au gérant, la demande est déjà dans le classeur, et le devis non signé se relance seul.",
+  temps:[{j:7,lab:'Avancer de 7 jours'}],
+  calc:function(v,j){
+   var hz=v.commune.indexOf('Laval')===0, urg=v.type==='Dépannage'&&v.urgence==="Aujourd'hui";
+   var prio=hz?'Hors zone':(urg?'Urgent':(v.urgence==='Cette semaine'?'Normal':'À planifier'));
+   var corps;
+   if(hz){corps=P('Bonjour '+esc(v.prenom)+',')+P('Merci pour votre demande. '+esc(v.commune.replace(' (Mayenne)',''))+' est en dehors de notre zone d’intervention, l’Ille-et-Vilaine. Pour ne pas vous faire attendre, mieux vaut contacter un électricien plus proche de chez vous.')+P('Arc-en-Ille Électricité');}
+   else if(urg){corps=P('Bonjour '+esc(v.prenom)+',')+P('Votre demande de dépannage est bien arrivée. Elle est marquée <b>urgente</b>&nbsp;: nous vous rappelons au '+esc(v.tel)+' dans l’heure, du lundi au vendredi entre 8'+NB+'h et 18'+NB+'h.')+P('Arc-en-Ille Électricité');}
+   else{var d=v.urgence==='Cette semaine'?'sous trois jours ouvrés':'sous dix jours ouvrés';
+     corps=P('Bonjour '+esc(v.prenom)+',')+P('Votre demande ('+esc(v.type.toLowerCase())+', '+esc(v.commune)+') est bien arrivée. Nous vous proposons un créneau de visite '+d+'.')+P('Pour préparer le devis, vous pouvez répondre à ce message avec deux photos&nbsp;: le tableau électrique et l’endroit concerné.'+(v.type==='Borne de recharge'?' Pour une borne, ajoutez la puissance de votre abonnement, indiquée sur votre facture d’électricité.':''))+P('Arc-en-Ille Électricité');}
+   var lignes=[{v:['21/10','Marc','Bruz','Rénovation électrique','Normal','Visite le 27/10']},{v:['22/10','Sophie','Rennes','Borne de recharge','À planifier','Devis envoyé']},{neuf:1,v:[jourTxt(),esc(v.prenom),esc(v.commune.replace(' (Mayenne)','')),esc(v.type),prio,hz?'Clôturée':'Nouvelle']}];
+   var al=hz?alerte('Aucune alerte','La réponse est partie, la ligne est classée hors zone. Personne n’a eu à la lire.')
+      :urg?alerte('Notification sur le téléphone du gérant','Dépannage urgent — '+esc(v.prenom)+' — '+esc(v.commune)+' — '+esc(v.tel))
+      :alerte('Planning des visites','Demande ajoutée aux visites à caler '+(v.urgence==='Cette semaine'?'cette semaine':'dans les dix jours')+'. Aucune notification&nbsp;: rien d’urgent.');
+   var et=[
+    {t:'Accusé de réception envoyé',s:'Adapté au besoin, à la commune et à l’urgence',st:'fait',c:mail('Arc-en-Ille Électricité',v.email,hz?'Votre demande':'Votre demande de '+v.type.toLowerCase()+' est bien arrivée',corps)},
+    {t:'Ligne ajoutée au classeur',s:'Avec sa priorité, calculée par les règles',st:'fait',c:tableau(['Date','Client','Commune','Besoin','Priorité','Statut'],lignes)},
+    {t:hz?'Classement hors zone':(urg?'Gérant prévenu':'Visite à planifier'),s:'Selon vos règles',st:'fait',c:al}
+   ];
+   if(!hz){et.push(j>=7?{t:'Relance du devis non signé',s:'Partie 7 jours après l’envoi du devis',st:'fait',q:'J+7',c:mail('Arc-en-Ille Électricité',v.email,'Votre devis',P('Bonjour '+esc(v.prenom)+',')+P('Avez-vous pu regarder le devis envoyé après la visite&nbsp;? Je reste disponible pour en parler, ou pour l’ajuster.')+P('Arc-en-Ille Électricité')+'<p style="font-size:12.5px;color:#4A6591;margin-top:10px">Dès que le devis est signé, les relances s’arrêtent.</p>')}
+     :{t:'Relance du devis non signé',s:'Programmée 7 jours après l’envoi du devis',st:'prog',q:'J+7'});}
+   return et;
+  }
+ },
+ pieces:{
+  site:'Espace client de Trois Ponts Avocats',
+  titre:'Transmettre les pièces de votre dossier', bouton:'Transmettre', intro:'Dossier droit du travail. Cochez ce que vous transmettez aujourd’hui&nbsp;: dans cette démonstration, aucun fichier n’est demandé.',
+  champs:[
+   {id:'prenom',lab:'Prénom',type:'text',val:'Claire'},
+   {id:'email',lab:'Email',type:'email',val:'claire@example.com'},
+   {id:'ref',lab:'Référence du dossier',type:'text',val:'2026-147'},
+   {id:'pieces',lab:'Pièces transmises aujourd’hui',type:'coches',opts:['Contrat de travail','Trois derniers bulletins de salaire','Lettre de licenciement','Attestation employeur'],val:['Contrat de travail','Lettre de licenciement']}
+  ],
+  sans:"On rappelle, on note de rappeler, on oublie de noter. Le dossier dort trois semaines, et l'on découvre le jour de l'échéance qu'une pièce manque.",
+  avec:"Le client sait tout de suite ce qui manque. Les rappels partent seuls tant qu'une pièce manque, et s'arrêtent dès qu'elle arrive. L'avocat n'est prévenu qu'une fois le dossier complet.",
+  temps:[{j:3,lab:'Avancer de 3 jours'},{j:99,lab:'Le client envoie les pièces manquantes'}],
+  calc:function(v,j){
+   var tout=['Contrat de travail','Trois derniers bulletins de salaire','Lettre de licenciement','Attestation employeur'];
+   var recu=j>=99?tout.slice():v.pieces.slice(); var manque=tout.filter(function(p){return recu.indexOf(p)<0;});
+   var complet=manque.length===0;
+   function liste(a){return a.map(function(x){return esc(x.toLowerCase());}).join(', ');}
+   var corps=P('Bonjour '+esc(v.prenom)+',')+(v.pieces.length?P('Nous avons bien reçu pour le dossier '+esc(v.ref)+'&nbsp;: '+liste(v.pieces)+'.'):'')
+     +(v.pieces.length===4?P('<b>Votre dossier est complet.</b> Nous revenons vers vous dès son étude.'):P('Il manque encore&nbsp;: <b>'+liste(tout.filter(function(p){return v.pieces.indexOf(p)<0;}))+'</b>. Vous pouvez les déposer avec le même formulaire, en rappelant la référence '+esc(v.ref)+'.'))+P('Trois Ponts Avocats');
+   var lignes=tout.map(function(p){var ok=recu.indexOf(p)>=0;return {neuf:ok&&(j>=99&&v.pieces.indexOf(p)<0),v:[esc(v.ref),esc(p),ok?'Reçue':'En attente',ok?(v.pieces.indexOf(p)>=0?jourTxt():'J+5'):'—']};});
+   var et=[
+    {t:'Accusé de réception envoyé',s:'Il liste ce qui est reçu et ce qui manque',st:'fait',c:mail('Trois Ponts Avocats',v.email,'Dossier '+v.ref+' : pièces reçues',corps)},
+    {t:'Classeur des pièces mis à jour',s:'Une ligne par pièce attendue',st:'fait',c:tableau(['Dossier','Pièce','État','Reçue le'],lignes)}
+   ];
+   if(v.pieces.length===4){et.push({t:'Avocat prévenu',s:'Le dossier est complet',st:'fait',c:alerte('Notification','Dossier '+esc(v.ref)+' complet&nbsp;: prêt à être étudié.')});return et;}
+   et.push(j>=3?{t:'Relance envoyée',s:'3 jours après, pour les seules pièces manquantes',st:'fait',q:'J+3',c:mail('Trois Ponts Avocats',v.email,'Dossier '+v.ref+' : il manque encore des pièces',P('Bonjour '+esc(v.prenom)+',')+P('Pour avancer sur votre dossier '+esc(v.ref)+', il nous manque encore&nbsp;: <b>'+liste(tout.filter(function(p){return v.pieces.indexOf(p)<0;}))+'</b>.')+P('Vous pouvez les déposer avec le même formulaire. Si l’une d’elles vous pose difficulté, répondez simplement à ce message.')+P('Trois Ponts Avocats'))}
+     :{t:'Relance des pièces manquantes',s:'Programmée 3 jours après, puis tous les 4 jours',st:'prog',q:'J+3'});
+   et.push(complet?{t:'Relances arrêtées, avocat prévenu',s:'Dès que la dernière pièce arrive',st:'fait',q:'J+5',c:alerte('Notification','Dossier '+esc(v.ref)+' complet&nbsp;: prêt à être étudié. Les relances se sont arrêtées d’elles-mêmes.')}
+     :{t:'Avocat prévenu quand le dossier est complet',s:'Pas avant&nbsp;: rien à faire d’ici là',st:'attente',q:'à venir'});
+   return et;
+  }
+ },
+ groupe:{
+  site:'Site du Bistrot des Grands Prés',
+  titre:'Réserver pour un groupe', bouton:'Demander la réservation', intro:'À partir de 8 personnes. Une réponse immédiate, la confirmation sous 48 h.',
+  champs:[
+   {id:'prenom',lab:'Prénom',type:'text',val:'Claire'},
+   {id:'email',lab:'Email',type:'email',val:'claire@example.com'},
+   {id:'date',lab:'Date',type:'select',opts:['Vendredi 13 novembre','Samedi 28 novembre','Vendredi 18 décembre'],val:'Vendredi 18 décembre'},
+   {id:'moment',lab:'Moment',type:'select',opts:['Déjeuner','Dîner'],val:'Dîner'},
+   {id:'nb',lab:'Nombre de personnes',type:'number',val:'24',min:8,max:90},
+   {id:'occasion',lab:'Occasion',type:'select',opts:["Repas d'entreprise",'Anniversaire','Autre'],val:"Repas d'entreprise"}
+  ],
+  sans:"Le téléphone sonne pendant le service. On note sur un carnet, on rappelle le lendemain pour envoyer les menus, et l'on découvre la veille que le nombre de couverts a changé.",
+  avec:"Le client reçoit tout de suite les menus adaptés à la taille de son groupe. L'option est posée dans le planning de salle, la cuisine voit la date, et le rappel de confirmation part seul.",
+  temps:[{j:30,lab:'Avancer à 3 jours avant le repas'}],
+  calc:function(v,j){
+   var n=Math.max(8,Math.min(90,parseInt(v.nb,10)||8)), dec=v.date.indexOf('décembre')>0;
+   var form=n<=12?'Table regroupée':(n<=40?'Menu de groupe':'Privatisation');
+   var corps=P('Bonjour '+esc(v.prenom)+',')+P('Merci pour votre demande pour '+n+' personnes, '+esc(v.date.toLowerCase())+' au '+esc(v.moment.toLowerCase())+'. Une option est posée&nbsp;: elle est gardée 48'+NB+'h, le temps de la confirmer.');
+   if(form==='Table regroupée')corps+=P('Pour '+n+' personnes, nous regroupons des tables et vous commandez à la carte, comme d’habitude.');
+   else if(form==='Menu de groupe')corps+=P('Pour '+n+' personnes, nous vous proposons nos trois menus de groupe, en pièce jointe. Un seul menu pour toute la table&nbsp;: c’est ce qui permet de vous servir en même temps.')+(dec?P('En décembre, un acompte de 30'+NB+'% confirme la réservation.'):'');
+   else corps+=P('Au-delà de 40 personnes, nous privatisons la salle. Le gérant vous appelle sous 48'+NB+'h avec une proposition sur mesure.');
+   corps+=P('Le Bistrot des Grands Prés');
+   var lignes=[{v:['13/11','Déjeuner','12','Table regroupée','Confirmée']},{v:['28/11','Dîner','30','Menu de groupe','Option']},{neuf:1,v:[esc(v.date.replace(/^\S+ /,'')),esc(v.moment),String(n),form,'Option']}];
+   var et=[
+    {t:'Réponse envoyée',s:'Elle dépend de la taille du groupe et de la date',st:'fait',c:mail('Le Bistrot des Grands Prés',v.email,'Votre réservation de groupe',corps)},
+    {t:'Option posée dans le planning de salle',s:'La cuisine voit la date et le nombre',st:'fait',c:tableau(['Date','Moment','Couverts','Formule','État'],lignes)},
+    {t:form==='Privatisation'?'Gérant prévenu':'Rien à faire pour l’équipe',s:form==='Privatisation'?'Une privatisation se décide à la main':'La réponse est partie, l’option est posée',st:'fait',c:form==='Privatisation'?alerte('Notification au gérant','Privatisation demandée — '+n+' personnes — '+esc(v.date)+', '+esc(v.moment.toLowerCase())+' — '+esc(v.occasion)+'. À rappeler sous 48'+NB+'h.'):alerte('Aucune alerte','Personne n’a décroché le téléphone pendant le service.')}
+   ];
+   et.push(j>=30?{t:'Rappel de confirmation envoyé',s:'3 jours avant le repas',st:'fait',q:'J−3',c:mail('Le Bistrot des Grands Prés',v.email,'Votre repas du '+v.date.toLowerCase(),P('Bonjour '+esc(v.prenom)+',')+P('Votre repas approche&nbsp;: êtes-vous toujours '+n+'&nbsp;? Répondez simplement à ce message avec le nombre définitif, pour que la cuisine prépare au plus juste.')+P('Le Bistrot des Grands Prés'))}
+     :{t:'Rappel de confirmation',s:'Programmé 3 jours avant le repas',st:'prog',q:'J−3'});
+   return et;
+  }
+ }
+};
+
+var state={cas:'devis',envoye:false,j:0,vals:null};
+var F=document.getElementById('form'),E=document.getElementById('etapes'),TP=document.getElementById('temps'),AT=document.getElementById('attente');
+
+function champ(c){
+ var id='f-'+c.id,h;
+ if(c.type==='select')h='<select id="'+id+'" name="'+c.id+'">'+c.opts.map(function(o){return '<option'+(o===c.val?' selected':'')+'>'+esc(o)+'</option>';}).join('')+'</select>';
+ else if(c.type==='textarea')h='<textarea id="'+id+'" name="'+c.id+'">'+esc(c.val)+'</textarea>';
+ else if(c.type==='coches')return '<fieldset style="border:0"><legend style="font-size:12px;font-weight:800;margin-bottom:6px">'+c.lab+'</legend><div class="coches">'+c.opts.map(function(o,i){return '<label><input type="checkbox" name="'+c.id+'" value="'+esc(o)+'"'+(c.val.indexOf(o)>=0?' checked':'')+'> '+esc(o)+'</label>';}).join('')+'</div></fieldset>';
+ else h='<input id="'+id+'" name="'+c.id+'" type="'+c.type+'" value="'+esc(c.val)+'"'+(c.min?' min="'+c.min+'" max="'+c.max+'"':'')+(c.type==='email'?' autocomplete="off"':'')+'>';
+ return '<div><label for="'+id+'">'+c.lab+'</label>'+h+'</div>';
+}
+function rendreForm(){
+ var C=CAS[state.cas];
+ document.getElementById('site-nom').innerHTML='<b>'+C.site+'</b> · fictif';
+ var ch=C.champs.map(champ),out=[],i=0;
+ // deux champs courts par ligne quand c'est possible
+ while(i<ch.length){var c=C.champs[i],n=C.champs[i+1];
+   if(n&&c.type!=='textarea'&&c.type!=='coches'&&n.type!=='textarea'&&n.type!=='coches'){out.push('<div class="ligne">'+ch[i]+ch[i+1]+'</div>');i+=2;}
+   else{out.push(ch[i]);i++;}}
+ F.innerHTML='<h3>'+C.titre+'</h3><p class="intro-f">'+C.intro+'</p>'+out.join('')+'<button class="envoi" type="submit">'+C.bouton+'</button><p class="rien">Démonstration&nbsp;: rien ne quitte cette page.</p>';
+ document.getElementById('sans').textContent=C.sans;
+ document.getElementById('avec').textContent=C.avec;
+}
+function lire(){
+ var C=CAS[state.cas],v={};
+ C.champs.forEach(function(c){
+  if(c.type==='coches'){v[c.id]=[].slice.call(F.querySelectorAll('input[name="'+c.id+'"]:checked')).map(function(x){return x.value;});}
+  else{var el=F.elements[c.id];v[c.id]=(el&&el.value.trim())||c.val;}
+ });
+ return v;
+}
+function rendreEtapes(anim){
+ var C=CAS[state.cas];
+ if(!state.envoye){
+  var n=C.calc(lire(),0).length;
+  E.innerHTML=Array.apply(null,{length:n}).map(function(_,i){return '<div class="etape attente"><button type="button" disabled><span class="num">'+(i+1)+'</span><span class="tit">…</span><span class="st">en attente</span></button></div>';}).join('');
+  TP.innerHTML='';AT.textContent='Envoyez la demande à gauche pour lancer la chaîne.';return;
+ }
+ AT.textContent='';
+ var et=C.calc(state.vals,state.j),h=heure();
+ E.innerHTML=et.map(function(e,i){
+  var st=e.st==='fait'?(e.q?'fait · '+e.q:'fait à '+h):(e.st==='prog'?'programmé '+e.q:e.q||'en attente');
+  var ouvert=(i===0&&state.j===0)||(state.j>0&&e.st==='fait'&&i===et.map(function(x){return x.st;}).lastIndexOf('fait'));
+  return '<div class="etape '+e.st+'"'+(anim?' style="opacity:0"':'')+'><button type="button" aria-expanded="'+(ouvert?'true':'false')+'"'+(e.c?'':' disabled')+'><span class="num">'+(e.st==='fait'?'✓':i+1)+'</span><span class="tit">'+e.t+'<small>'+e.s+'</small></span><span class="st">'+st+'</span></button>'+(e.c?'<div class="det"'+(ouvert?'':' hidden')+'>'+e.c+'</div>':'')+'</div>';
+ }).join('');
+ [].forEach.call(E.querySelectorAll('.etape>button'),function(b){b.addEventListener('click',function(){if(b.disabled)return;var d=b.nextElementSibling;var o=b.getAttribute('aria-expanded')==='true';b.setAttribute('aria-expanded',o?'false':'true');d.hidden=o;});});
+ if(anim){var r=window.matchMedia('(prefers-reduced-motion: reduce)').matches;[].forEach.call(E.children,function(el,i){if(r){el.style.opacity='';return;}setTimeout(function(){el.style.transition='opacity .35s';el.style.opacity='';},180*i);});}
+ TP.innerHTML=C.temps.filter(function(t){return state.j<t.j;}).map(function(t){return '<button type="button" data-j="'+t.j+'">'+t.lab+' →</button>';}).join('')+'<button type="button" data-j="reset">Recommencer</button>';
+ [].forEach.call(TP.querySelectorAll('button'),function(b){b.addEventListener('click',function(){var j=b.getAttribute('data-j');if(j==='reset'){state.envoye=false;state.j=0;rendreForm();rendreEtapes(false);return;}state.j=Math.max(state.j,+j);rendreEtapes(false);});});
+}
+F.addEventListener('submit',function(e){e.preventDefault();state.vals=lire();state.envoye=true;state.j=0;rendreEtapes(true);if(window.innerWidth<900)E.scrollIntoView({behavior:'smooth',block:'start'});});
+F.addEventListener('input',function(){if(!state.envoye)rendreEtapes(false);});
+[].forEach.call(document.querySelectorAll('#cas button'),function(b){b.addEventListener('click',function(){
+ state.cas=b.getAttribute('data-cas');state.envoye=false;state.j=0;
+ [].forEach.call(document.querySelectorAll('#cas button'),function(x){x.setAttribute('aria-pressed',x===b?'true':'false');});
+ rendreForm();rendreEtapes(false);});});
+rendreForm();rendreEtapes(false);
+})();
+
+</script>
+<!-- Cloudflare Web Analytics --><script type='module' src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "4ee482cc16a74712b603b71a2d98cfa1"}'></script><!-- End Cloudflare Web Analytics -->
+</body>
+</html>
