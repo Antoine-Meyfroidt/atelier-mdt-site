@@ -111,27 +111,27 @@
   </url>
   <url>
     <loc>https://atelier-mdt.fr/articles.html</loc>
-    <lastmod>2026-10-22</lastmod>
+    <lastmod>2026-10-23</lastmod>
   </url>
   <url>
     <loc>https://atelier-mdt.fr/article-cout-taches-repetitives.html</loc>
-    <lastmod>2026-10-22</lastmod>
+    <lastmod>2026-10-23</lastmod>
   </url>
   <url>
     <loc>https://atelier-mdt.fr/article-automatiser-demandes-de-devis.html</loc>
-    <lastmod>2026-10-22</lastmod>
+    <lastmod>2026-10-23</lastmod>
   </url>
   <url>
     <loc>https://atelier-mdt.fr/article-ia-equipe-laisse-tomber.html</loc>
-    <lastmod>2026-10-22</lastmod>
+    <lastmod>2026-10-23</lastmod>
   </url>
   <url>
     <loc>https://atelier-mdt.fr/article-tableau-de-bord-ventes.html</loc>
-    <lastmod>2026-10-22</lastmod>
+    <lastmod>2026-10-23</lastmod>
   </url>
   <url>
     <loc>https://atelier-mdt.fr/exemple-tableau-de-bord-paliers.html</loc>
-    <lastmod>2026-10-22</lastmod>
+    <lastmod>2026-10-23</lastmod>
     <priority>0.5</priority>
   </url>
   <url>
@@ -146,7 +146,7 @@
   </url>
   <url>
     <loc>https://atelier-mdt.fr/exemple-tableau-de-bord-fleuriste.html</loc>
-    <lastmod>2026-10-22</lastmod>
+    <lastmod>2026-10-23</lastmod>
     <priority>0.5</priority>
   </url>
   <url>
@@ -161,7 +161,7 @@
   </url>
   <url>
     <loc>https://atelier-mdt.fr/exemple-tableau-de-bord-kine.html</loc>
-    <lastmod>2026-10-22</lastmod>
+    <lastmod>2026-10-23</lastmod>
     <priority>0.5</priority>
   </url>
   <url>
@@ -178,5 +178,10 @@
     <loc>https://atelier-mdt.fr/exemple-accompagnement-ia.html</loc>
     <lastmod>2026-10-23</lastmod>
     <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://atelier-mdt.fr/article-veille-tendances-secteur.html</loc>
+    <lastmod>2026-10-23</lastmod>
+    <priority>0.6</priority>
   </url>
 </urlset>

@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Veille sectorielle : suivre les tendances de votre secteur sans vous y noyer — Atelier MDT</title>
+<meta name="description" content="Quinze sources en favoris, aucune ouverte : comment choisir ses sources, ses sujets et son rythme pour une veille sectorielle lisible en deux minutes.">
+<link rel="canonical" href="https://atelier-mdt.fr/article-veille-tendances-secteur.html">
+<meta name="theme-color" content="#10233F">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://atelier-mdt.fr/article-veille-tendances-secteur.html">
+<meta property="og:site_name" content="Atelier MDT">
+<meta property="og:title" content="Veille sectorielle : suivre les tendances de votre secteur sans vous y noyer — Atelier MDT">
+<meta property="og:description" content="Quinze sources en favoris, aucune ouverte : comment choisir ses sources, ses sujets et son rythme pour une veille sectorielle lisible en deux minutes.">
+<meta property="og:image" content="https://atelier-mdt.fr/assets/og-atelier-mdt.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Atelier MDT — Parce que votre temps est précieux.">
+<meta property="og:locale" content="fr_FR">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32.png">
+<link rel="apple-touch-icon" sizes="180x180" href="assets/favicon-180.png">
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{--nuit:#10233F;--panneau:#182F52;--ambre:#F5B62E;--sourd:#9FB0C8;--trait:#2A4470;--froid:#E9EEF6}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{background:var(--nuit);color:var(--froid);font-family:'Manrope',system-ui,-apple-system,sans-serif;line-height:1.6;font-size:16px;-webkit-font-smoothing:antialiased}
+a{color:inherit}
+header{padding:52px 0 0}
+header .retour{font-size:12.5px;color:var(--sourd);margin-bottom:18px}
+header .retour a{color:var(--sourd);text-decoration:none}
+header .retour a:hover{color:var(--froid)}
+header .eyebrow{font-size:11.5px;font-weight:800;letter-spacing:.09em;color:var(--ambre);margin-bottom:12px}
+header h1{font-size:clamp(28px,5vw,42px);font-weight:800;letter-spacing:-.03em;line-height:1.08;max-width:24ch}
+header .lede{margin-top:15px;font-size:17px;color:var(--sourd);max-width:60ch}
+header .meta{margin-top:16px;font-size:13px;color:var(--sourd)}
+header .meta b{color:var(--froid);font-weight:700}
+section{padding:52px 0 0}
+h2.lbl{font-size:11.5px;font-weight:800;letter-spacing:.09em;color:var(--ambre);padding-bottom:10px;border-bottom:1px solid var(--trait);margin-bottom:22px}
+.art{padding-top:34px;max-width:70ch}
+.art p{font-size:16.5px;line-height:1.7;margin-bottom:16px}
+.art p strong,.art li strong{color:#fff}
+.art h2{font-size:clamp(21px,3.2vw,25px);font-weight:800;letter-spacing:-.02em;line-height:1.2;margin:42px 0 14px}
+.art ul,.art ol{margin:0 0 18px 22px}
+.art li{font-size:16.5px;line-height:1.65;margin-bottom:9px;padding-left:4px}
+.art ul li::marker{color:var(--ambre)}
+.art ol li::marker{color:var(--ambre);font-weight:800}
+.art a{color:var(--ambre);text-decoration:underline;text-underline-offset:3px}
+.art .formule{background:var(--panneau);border-left:3px solid var(--ambre);border-radius:0 6px 6px 0;padding:18px 20px;margin:6px 0 20px;font-size:17px;font-weight:700;line-height:1.5;color:var(--froid)}
+.art .source{border:1px solid var(--trait);border-radius:6px;padding:12px 16px;margin:4px 0 20px;font-size:14px;color:var(--sourd)}
+.art .source a{font-weight:700}
+.art .bouton{display:inline-block;margin:10px 0 6px;background:var(--ambre);color:#10233F;padding:13px 22px;border-radius:5px;font-weight:800;font-size:15px;text-decoration:none}
+.suite-art{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:12px}
+.suite-art a{display:block;background:var(--panneau);border:1px solid var(--trait);border-radius:7px;padding:16px 18px;text-decoration:none}
+.suite-art a:hover{border-color:var(--ambre)}
+.suite-art .k{display:block;font-size:10.5px;font-weight:800;letter-spacing:.07em;color:var(--ambre);margin-bottom:5px}
+.suite-art b{display:block;font-size:15px;font-weight:700;line-height:1.35}
+@media(max-width:600px){.art p,.art li{font-size:16px}}
+
+/* ── commun à toutes les pages ── */
+.in{max-width:900px!important;margin:0 auto;padding:0 22px}
+nav{position:sticky;top:0;z-index:20;background:rgba(16,35,63,.94);backdrop-filter:blur(8px);border-bottom:1px solid var(--trait,#2A4470)}
+nav .in{display:flex;align-items:center;justify-content:space-between;gap:16px;padding:15px 22px}
+nav .brand{display:flex;align-items:center;gap:12px;text-decoration:none}
+nav .brand svg{color:var(--ambre,#F5B62E);flex:none}
+nav .brand .wm{font-size:18px;font-weight:800;letter-spacing:-.025em;line-height:1;color:var(--froid,#E9EEF6)}
+nav .brand .wm em{display:block;font-style:normal;font-size:7.5px;font-weight:800;letter-spacing:.09em;color:var(--ambre,#F5B62E);margin-top:4px;white-space:nowrap}
+nav .links{display:flex;align-items:center;gap:22px}
+nav .links a{color:var(--sourd,#9FB0C8);text-decoration:none;font-size:14px;font-weight:600;white-space:nowrap}
+nav .links a:hover,nav .links a.on{color:var(--froid,#E9EEF6)}
+nav .links a.btn-nav{background:var(--ambre,#F5B62E);color:#10233F;padding:10px 16px;border-radius:5px;font-weight:800;margin:0;display:inline-block;line-height:1.2}
+@media(max-width:800px){nav .links a:not(.btn-nav){display:none}nav .brand .wm em{display:none}}
+footer{margin-top:60px;border-top:1px solid var(--trait,#2A4470);padding:24px 0 46px;font-size:12.5px;color:var(--sourd,#9FB0C8)}
+footer .row{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
+footer a{color:var(--sourd,#9FB0C8)}
+.cta-bloc{background:var(--ambre,#F5B62E);color:#10233F;border-radius:8px;padding:32px 30px;margin-top:56px}
+.cta-bloc h2{font-size:clamp(22px,3.4vw,28px);font-weight:800;letter-spacing:-.02em;line-height:1.15}
+.cta-bloc p{font-size:15.5px;margin-top:10px;max-width:62ch;color:#10233F}
+.cta-bloc a{display:inline-block;margin-top:18px;background:#10233F;color:var(--ambre,#F5B62E);padding:12px 20px;border-radius:5px;font-weight:800;font-size:15px;text-decoration:none}
+
+/* ── NAVIGATION UNIFIÉE (bloc final, prioritaire) ── */
+nav .in{display:flex!important;align-items:center!important;justify-content:space-between!important;gap:18px!important;padding:0 22px!important;min-height:74px!important}
+nav .brand{display:flex!important;align-items:center!important;gap:12px!important;text-decoration:none!important}
+nav .brand svg{color:var(--ambre,#F5B62E)!important;flex:none!important;width:32px!important;height:32px!important}
+nav .brand .wm{font-size:18px!important;font-weight:800!important;letter-spacing:-.025em!important;line-height:1!important;color:var(--froid,#E9EEF6)!important}
+nav .brand .wm em{display:block!important;font-style:normal!important;font-size:7.5px!important;font-weight:800!important;letter-spacing:.09em!important;color:var(--ambre,#F5B62E)!important;margin-top:4px!important;white-space:nowrap!important}
+nav .links{display:flex!important;align-items:center!important;gap:16px!important;height:100%!important}
+@media(min-width:801px) and (max-width:880px){nav .links{gap:11px!important}nav .links a.btn-nav{padding:0 14px!important}}
+nav .links a{display:inline-flex!important;align-items:center!important;height:36px!important;margin:0!important;color:var(--sourd,#9FB0C8)!important;text-decoration:none!important;font-size:14px!important;font-weight:600!important;white-space:nowrap!important;border-bottom:2px solid transparent!important;line-height:1!important;font-size:13.5px!important}
+nav .links a:hover{color:var(--froid,#E9EEF6)!important}
+nav .links a.on{color:var(--froid,#E9EEF6)!important;border-bottom:2px solid var(--ambre,#F5B62E)!important}
+nav .links a.btn-nav{background:var(--ambre,#F5B62E)!important;color:#10233F!important;padding:0 18px!important;border-radius:5px!important;font-weight:800!important;border-bottom:2px solid transparent!important;height:40px!important}
+nav .links a.btn-nav:hover{color:#10233F!important}
+@media(max-width:800px){nav .links a:not(.btn-nav){display:none!important}nav .brand .wm em{display:none!important}nav .in{min-height:62px!important}}
+
+
+/* ══ MENU MOBILE — bloc autonome, aucune dépendance externe ══ */
+nav .burger{display:none}
+@media(max-width:800px){
+  nav .burger{display:flex;flex:none;flex-direction:column;justify-content:center;gap:5px;width:44px;height:38px;padding:0 11px;background:transparent;border:1px solid var(--trait,#2A4470);border-radius:5px;cursor:pointer;-webkit-tap-highlight-color:transparent}
+  nav .burger span{display:block;height:2px;background:var(--froid,#E9EEF6);border-radius:1px;transition:transform .2s ease,opacity .2s ease}
+  nav.ouvert .burger span:nth-child(1){transform:translateY(7px) rotate(45deg)}
+  nav.ouvert .burger span:nth-child(2){opacity:0}
+  nav.ouvert .burger span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
+  nav .in .links{display:none!important;position:absolute;top:100%;left:0;right:0;flex-direction:column!important;align-items:stretch!important;gap:0!important;height:auto!important;background:var(--nuit,#10233F);border-bottom:1px solid var(--trait,#2A4470);padding:4px 22px 20px!important}
+  nav.ouvert .in .links{display:flex!important}
+  nav.ouvert .in .links a{display:flex!important;align-items:center!important;width:100%;height:auto!important;margin:0!important;padding:15px 0!important;font-size:16px!important;font-weight:600!important;color:var(--sourd,#9FB0C8)!important;background:transparent!important;border:0!important;border-bottom:1px solid var(--trait,#2A4470)!important;border-radius:0!important}
+  nav.ouvert .in .links a.on{color:var(--ambre,#F5B62E)!important}
+  nav.ouvert .in .links a.btn-nav{justify-content:center!important;margin-top:16px!important;height:46px!important;padding:0 18px!important;border:0!important;border-radius:5px!important;background:var(--ambre,#F5B62E)!important;color:#10233F!important;font-weight:800!important}
+}
+@media(max-width:860px){nav .brand .wm em{display:none!important}}
+</style>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "BlogPosting", "headline": "Les tendances de votre secteur, sans vous y noyer", "description": "Quinze sources en favoris, aucune ouverte : comment choisir ses sources, ses sujets et son rythme pour une veille sectorielle lisible en deux minutes.", "datePublished": "2026-10-23", "dateModified": "2026-10-23", "inLanguage": "fr-FR", "mainEntityOfPage": "https://atelier-mdt.fr/article-veille-tendances-secteur.html", "url": "https://atelier-mdt.fr/article-veille-tendances-secteur.html", "image": "https://atelier-mdt.fr/assets/og-atelier-mdt.png", "author": {"@type": "Person", "name": "Antoine Meyfroidt", "url": "https://atelier-mdt.fr/qui-suis-je.html"}, "publisher": {"@type": "Organization", "name": "Atelier MDT", "url": "https://atelier-mdt.fr/", "logo": {"@type": "ImageObject", "url": "https://atelier-mdt.fr/assets/favicon-180.png"}}}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Accueil", "item": "https://atelier-mdt.fr/"}, {"@type": "ListItem", "position": 2, "name": "Articles", "item": "https://atelier-mdt.fr/articles.html"}, {"@type": "ListItem", "position": 3, "name": "Les tendances de votre secteur, sans vous y noyer", "item": "https://atelier-mdt.fr/article-veille-tendances-secteur.html"}]}</script>
+</head>
+<body>
+<nav><div class="in">
+  <a class="brand" href="index.html"><svg width="32" height="32" viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="3.4" stroke-linecap="square" aria-hidden="true"><path d="M14 8 H6 V56 H14" fill="none"/><path d="M50 8 H58 V56 H50" fill="none"/><path d="M18 44 V22 L32 36 L46 22 V44" stroke-width="4" fill="none"/></svg><span class="wm">Atelier MDT<em>PARCE QUE VOTRE TEMPS EST PRÉCIEUX.</em></span></a>
+  <div class="links" id="nav-liens">
+      <a href="realisations.html">Réalisations</a>
+      <a href="offres.html">Offres</a>
+      <a href="exemples.html">Exemples</a>
+      <a href="rentabilite.html">Rentabilité</a>
+      <a href="qui-suis-je.html">Qui suis-je</a>
+      <a class="btn-nav" href="contact.html">Échanger 30 minutes</a>
+  </div>
+  <button class="burger" type="button" aria-label="Ouvrir le menu" aria-expanded="false" aria-controls="nav-liens"><span></span><span></span><span></span></button>
+</div></nav>
+<main id="contenu">
+<header><div class="in">
+  <p class="retour"><a href="articles.html">← Tous les articles</a></p>
+  <div class="eyebrow">ARTICLE</div>
+  <h1>Les tendances de votre secteur, sans vous y noyer</h1>
+  <p class="meta">Publié le <time datetime="2026-10-23">23 octobre 2026</time> · <b>Antoine Meyfroidt</b></p>
+</div></header>
+
+<div class="in"><article class="art">
+<p>Vous avez mis quinze sources en favoris&nbsp;: la presse de votre métier, deux newsletters, le site de votre fédération. Vous n'en ouvrez aucune. Le jour où une information compte vraiment, elle passe sous vos yeux sans que vous la voyiez, entre deux promotions et un article de plus sur l'IA.</p>
+<h2>Pourquoi on décroche</h2>
+<p>Ce n'est pas un manque de volonté. Une veille faite à la main se heurte toujours aux trois mêmes obstacles.</p>
+<p>Trop de sources, et chacune publie à son rythme. Rien n'est trié pour votre métier&nbsp;: un article écrit pour toute une profession ne dit pas ce qui change pour une entreprise de votre taille. Et rien ne vous oblige à lire&nbsp;: le premier lundi chargé, la veille saute, puis la suivante.</p>
+<h2>Trois décisions avant la première lecture</h2>
+<p><strong>Vos sources.</strong> Peu, mais régulières&nbsp;: celles que vous liriez si vous aviez le temps. Une source qui publie sans date, ou dont tout est payant, ne tiendra pas dans la durée.</p>
+<p><strong>Vos sujets.</strong> Trois ou quatre, pas plus&nbsp;: le prix de vos matières premières, les habitudes de vos clients, ce que lancent les grandes enseignes de votre métier. Tout ce qui sort de ces sujets passe à la trappe, et c'est voulu.</p>
+<p><strong>Votre rythme.</strong> Chaque semaine si votre marché bouge vite, tous les quinze jours pour garder le fil, chaque mois pour prendre du recul. Le contenu ne change pas d'un rythme à l'autre&nbsp;: seule la période couverte s'allonge.</p>
+<h2>Le format qui se lit en deux minutes</h2>
+<p>Une information utile tient en quatre lignes&nbsp;: ce que dit la source, ce que ça peut changer chez vous, ce qui reste à vérifier, et le lien vers l'article avec sa date.</p>
+<p>Trois règles évitent de se noyer.</p>
+<ul>
+<li><strong>Pas de source vérifiable, pas d'information.</strong> Un chiffre sans origine n'entre pas dans l'édition.</li>
+<li><strong>Une période creuse se dit.</strong> «&nbsp;Rien de vérifiable cette semaine&nbsp;» vaut mieux qu'un remplissage.</li>
+<li><strong>La veille ne décide pas à votre place.</strong> Elle dit ce qui a bougé et ce que ça peut changer&nbsp;; c'est vous qui tranchez.</li>
+</ul>
+<h2>Un exemple&nbsp;: une synthèse sectorielle chaque lundi</h2>
+<p>Chez Kampus&nbsp;137, parc de loisirs près de Rennes, deux veilles tournent seules. La première suit les concurrents. La seconde est une synthèse sectorielle&nbsp;: elle arrive chaque lundi matin, et chaque actualité y est accompagnée d'exemples d'application pour l'entreprise. Ce n'est pas une revue de presse recopiée, c'est une traduction dans le métier.</p>
+<p>Ce qui compte, c'est la régularité&nbsp;: une veille qui rate une semaine perd sa valeur. Les pièces de la réalisation montrent cinq exécutions hebdomadaires consécutives.</p>
+<p class="source">La réalisation complète&nbsp;: <a href="realisation-04-veille.html">Chaque lundi à 8&nbsp;h, la veille est déjà faite</a></p>
+<h2>À quoi ressemble une édition</h2>
+<p>La page de démonstration affiche une vraie édition, relevée le 23&nbsp;octobre&nbsp;2026, pour une boulangerie fictive. Sur le mois, l'élément jugé prioritaire est une enquête CGAD-CSA&nbsp;: 88&nbsp;% des Français citent la boulangerie comme le commerce important à avoir près de chez eux. Sa limite est écrite à côté&nbsp;: l'article source n'indique pas la taille de l'échantillon.</p>
+<p>Deux articles ont été écartés, l'un payant au-delà de l'introduction, l'autre antérieur à la période. L'édition le dit, dans la liste des sources consultées. Et en rythme hebdomadaire, la semaine ne compte qu'un élément&nbsp;: l'édition l'annonce comme une semaine calme, au lieu de remplir.</p>
+<p class="source">Voir l'édition&nbsp;: <a href="exemple-veille.html">Recevez l'édition comme le client</a></p>
+<h2>Ce que vous en faites</h2>
+<p>Une tendance repérée tôt se discute avant de s'imposer&nbsp;: avec votre fournisseur quand un prix bouge, avec votre équipe quand une habitude de clientèle change.</p>
+<p>Elle vous donne aussi de quoi parler à vos clients d'autre chose que de vos prestations. Et gardez les éditions&nbsp;: relues trois mois plus tard, elles montrent ce qui a duré et ce qui n'était que du bruit.</p>
+<h2>Ce qu'une veille ne fait pas</h2>
+<p>Elle ne lit pas les articles payants auxquels vous n'êtes pas abonné. Elle ne couvre pas tout ce qui se publie&nbsp;: elle suit vos sources et vos sujets, et le dit. Elle ne remplace ni votre expert-comptable ni votre avocat&nbsp;: quand un article cite un texte ou une décision, elle rapporte l'article, elle n'analyse pas le texte.</p>
+<h2>Le faire soi-même, ou le confier</h2>
+<p>Vous pouvez la tenir vous-même&nbsp;: une liste de sources, trois sujets, un créneau fixe chaque semaine, et le même format à chaque fois. Le plus difficile n'est pas de commencer, c'est de tenir le troisième mois.</p>
+<p>Si vous préférez la confier, la <a href="offres.html#veille">veille en abonnement</a> d'Atelier MDT coûte 300&nbsp;€ HT d'installation, puis dès 70&nbsp;€ HT par mois selon le rythme. Première édition sous deux semaines, sans engagement, résiliable avec trente jours de préavis.</p>
+<p>Vous avez des sources en favoris que vous n'ouvrez plus&nbsp;? On regarde en 30&nbsp;minutes lesquelles valent d'être suivies.</p>
+<p><a class="bouton" href="contact.html">Échanger 30 minutes</a></p>
+</article></div>
+
+<section><div class="in">
+  <h2 class="lbl">POUR ALLER PLUS LOIN</h2>
+  <div class="suite-art">
+    <a href="realisation-04-veille.html"><span class="k">RÉALISATION 04</span><b>Chaque lundi à 8&nbsp;h, la veille est déjà faite</b></a>
+    <a href="exemple-veille.html"><span class="k">DÉMONSTRATION</span><b>Recevez l'édition comme le client</b></a>
+    <a href="exemples-veille.html"><span class="k">EXEMPLES</span><b>Trois veilles qui tournent sans vous</b></a>
+    <a href="article-cout-taches-repetitives.html"><span class="k">ARTICLE</span><b>Combien vous coûtent vos tâches répétitives ? Le calcul en 5 minutes</b></a>
+    <a href="article-automatiser-demandes-de-devis.html"><span class="k">ARTICLE</span><b>Répondre à chaque demande de devis le jour même, sans y passer vos soirées</b></a>
+    <a href="article-ia-equipe-laisse-tomber.html"><span class="k">ARTICLE</span><b>Votre équipe a testé l&#x27;IA puis laissé tomber ? Ce qui a manqué</b></a>
+    <a href="article-tableau-de-bord-ventes.html"><span class="k">ARTICLE</span><b>Tableau de bord des ventes : 5 questions qu&#x27;il règle pour une TPE</b></a>
+  </div>
+</div></section>
+</main>
+<footer><div class="in"><div class="row">
+  <span>Atelier MDT · Automatisation · Veille · Tableaux de bord · Accompagnement IA</span>
+  <span><a href="mailto:antoine@atelier-mdt.fr">antoine@atelier-mdt.fr</a> · <a href="tel:+33743688097">07 43 68 80 97</a> · <a href="https://www.linkedin.com/in/antoine-meyfroidt/" rel="noopener">linkedin.com/in/antoine-meyfroidt</a> · <a href="https://www.malt.fr/profile/antoinemeyfroidt" rel="noopener">Malt</a> · <a href="https://share.google/6U1bBCivJdjeVEOeF" rel="noopener">Fiche Google</a> · <a href="questions.html">Questions fréquentes</a> · <a href="articles.html">Articles</a> · <a href="mentions-legales.html">Mentions légales</a> · <a href="cgv.html">CGV</a></span>
+</div></div></footer>
+<script>
+/* Menu mobile — autonome, aucune dépendance externe. */
+(function(){
+  var n=document.querySelector('nav');if(!n)return;
+  var b=n.querySelector('.burger'),l=n.querySelector('.links');if(!b||!l)return;
+  function etat(o){
+    n.classList.toggle('ouvert',o);
+    b.setAttribute('aria-expanded',o?'true':'false');
+    b.setAttribute('aria-label',o?'Fermer le menu':'Ouvrir le menu');
+  }
+  b.addEventListener('click',function(){etat(!n.classList.contains('ouvert'));});
+  l.addEventListener('click',function(e){if(e.target.closest('a'))etat(false);});
+  document.addEventListener('click',function(e){if(n.classList.contains('ouvert')&&!n.contains(e.target))etat(false);});
+  document.addEventListener('keydown',function(e){if(e.key==='Escape')etat(false);});
+  window.addEventListener('resize',function(){if(window.innerWidth>800)etat(false);});
+})();
+</script>
+<!-- Cloudflare Web Analytics --><script type='module' src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "4ee482cc16a74712b603b71a2d98cfa1"}'></script><!-- End Cloudflare Web Analytics -->
+</body>
+</html>
