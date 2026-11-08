@@ -254,23 +254,16 @@ nav .burger{display:none}
 </div></div></footer>
 <script>
 /* Envoi du formulaire : Formspree en AJAX puis redirection vers merci.html.
+   Le classeur et l'accusé de réception partent de la notification Formspree (Make),
+   jamais depuis cette page : aucune adresse ni clé d'automatisation ici.
    Sans JavaScript, le formulaire s'envoie normalement (POST classique). */
 (function(){
   var f=document.getElementById('form-contact');if(!f)return;
   var btn=f.querySelector('button[type=submit]'),err=document.getElementById('form-erreur');
-  /* Copie parallèle vers Make (classeur + accusé), sans attente : si Make
-     échoue, Formspree et la redirection fonctionnent quand même. */
-  var MAKE_URL='https://hook.eu1.make.com/8ujqew8r14citbkg4x40fjb3jod830e5';
-  var MAKE_CLE='6jh2HE4rrYuoUNxPIqrPdU5l';
   f.addEventListener('submit',function(e){
     e.preventDefault();
     if(!f.checkValidity()){f.reportValidity();return;}
     btn.disabled=true;btn.textContent='Envoi en cours…';err.hidden=true;
-    try{
-      var d=new URLSearchParams(new FormData(f));
-      d.append('cle',MAKE_CLE);
-      fetch(MAKE_URL,{method:'POST',mode:'no-cors',keepalive:true,body:d}).catch(function(){});
-    }catch(x){}
     fetch(f.action,{method:'POST',body:new FormData(f),headers:{'Accept':'application/json'}})
       .then(function(r){if(r.ok){
         /* Pour pré-remplir le calendrier de merci.html : stockage de session, jamais dans l'adresse. */
