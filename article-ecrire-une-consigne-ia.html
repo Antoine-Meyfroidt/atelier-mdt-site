@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Écrire une consigne IA qui marche : la méthode en cinq points — Atelier MDT</title>
+<meta name="description" content="Une demande vague donne une réponse vague. Rôle, tâche, matière, interdits, questions : la méthode pour écrire une consigne que l&#x27;IA suit vraiment.">
+<link rel="canonical" href="https://atelier-mdt.fr/article-ecrire-une-consigne-ia.html">
+<meta name="theme-color" content="#10233F">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://atelier-mdt.fr/article-ecrire-une-consigne-ia.html">
+<meta property="og:site_name" content="Atelier MDT">
+<meta property="og:title" content="Écrire une consigne IA qui marche : la méthode en cinq points — Atelier MDT">
+<meta property="og:description" content="Une demande vague donne une réponse vague. Rôle, tâche, matière, interdits, questions : la méthode pour écrire une consigne que l&#x27;IA suit vraiment.">
+<meta property="og:image" content="https://atelier-mdt.fr/assets/og-atelier-mdt.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Atelier MDT — Parce que votre temps est précieux.">
+<meta property="og:locale" content="fr_FR">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32.png">
+<link rel="apple-touch-icon" sizes="180x180" href="assets/favicon-180.png">
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{--nuit:#10233F;--panneau:#182F52;--ambre:#F5B62E;--sourd:#9FB0C8;--trait:#2A4470;--froid:#E9EEF6}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{background:var(--nuit);color:var(--froid);font-family:'Manrope',system-ui,-apple-system,sans-serif;line-height:1.6;font-size:16px;-webkit-font-smoothing:antialiased}
+a{color:inherit}
+header{padding:52px 0 0}
+header .retour{font-size:12.5px;color:var(--sourd);margin-bottom:18px}
+header .retour a{color:var(--sourd);text-decoration:none}
+header .retour a:hover{color:var(--froid)}
+header .eyebrow{font-size:11.5px;font-weight:800;letter-spacing:.09em;color:var(--ambre);margin-bottom:12px}
+header h1{font-size:clamp(28px,5vw,42px);font-weight:800;letter-spacing:-.03em;line-height:1.08;max-width:24ch}
+header .lede{margin-top:15px;font-size:17px;color:var(--sourd);max-width:60ch}
+header .meta{margin-top:16px;font-size:13px;color:var(--sourd)}
+header .meta b{color:var(--froid);font-weight:700}
+section{padding:52px 0 0}
+h2.lbl{font-size:11.5px;font-weight:800;letter-spacing:.09em;color:var(--ambre);padding-bottom:10px;border-bottom:1px solid var(--trait);margin-bottom:22px}
+.art{padding-top:34px;max-width:70ch}
+.art p{font-size:16.5px;line-height:1.7;margin-bottom:16px}
+.art p strong,.art li strong{color:#fff}
+.art h2{font-size:clamp(21px,3.2vw,25px);font-weight:800;letter-spacing:-.02em;line-height:1.2;margin:42px 0 14px}
+.art ul,.art ol{margin:0 0 18px 22px}
+.art li{font-size:16.5px;line-height:1.65;margin-bottom:9px;padding-left:4px}
+.art ul li::marker{color:var(--ambre)}
+.art ol li::marker{color:var(--ambre);font-weight:800}
+.art a{color:var(--ambre);text-decoration:underline;text-underline-offset:3px}
+.art .formule{background:var(--panneau);border-left:3px solid var(--ambre);border-radius:0 6px 6px 0;padding:18px 20px;margin:6px 0 20px;font-size:17px;font-weight:700;line-height:1.5;color:var(--froid)}
+.art .source{border:1px solid var(--trait);border-radius:6px;padding:12px 16px;margin:4px 0 20px;font-size:14px;color:var(--sourd)}
+.art .source a{font-weight:700}
+.art .bouton{display:inline-block;margin:10px 0 6px;background:var(--ambre);color:#10233F;padding:13px 22px;border-radius:5px;font-weight:800;font-size:15px;text-decoration:none}
+.suite-art{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:12px}
+.suite-art a{display:block;background:var(--panneau);border:1px solid var(--trait);border-radius:7px;padding:16px 18px;text-decoration:none}
+.suite-art a:hover{border-color:var(--ambre)}
+.suite-art .k{display:block;font-size:10.5px;font-weight:800;letter-spacing:.07em;color:var(--ambre);margin-bottom:5px}
+.suite-art b{display:block;font-size:15px;font-weight:700;line-height:1.35}
+@media(max-width:600px){.art p,.art li{font-size:16px}}
+
+/* ── commun à toutes les pages ── */
+.in{max-width:900px!important;margin:0 auto;padding:0 22px}
+nav{position:sticky;top:0;z-index:20;background:rgba(16,35,63,.94);backdrop-filter:blur(8px);border-bottom:1px solid var(--trait,#2A4470)}
+nav .in{display:flex;align-items:center;justify-content:space-between;gap:16px;padding:15px 22px}
+nav .brand{display:flex;align-items:center;gap:12px;text-decoration:none}
+nav .brand svg{color:var(--ambre,#F5B62E);flex:none}
+nav .brand .wm{font-size:18px;font-weight:800;letter-spacing:-.025em;line-height:1;color:var(--froid,#E9EEF6)}
+nav .brand .wm em{display:block;font-style:normal;font-size:7.5px;font-weight:800;letter-spacing:.09em;color:var(--ambre,#F5B62E);margin-top:4px;white-space:nowrap}
+nav .links{display:flex;align-items:center;gap:22px}
+nav .links a{color:var(--sourd,#9FB0C8);text-decoration:none;font-size:14px;font-weight:600;white-space:nowrap}
+nav .links a:hover,nav .links a.on{color:var(--froid,#E9EEF6)}
+nav .links a.btn-nav{background:var(--ambre,#F5B62E);color:#10233F;padding:10px 16px;border-radius:5px;font-weight:800;margin:0;display:inline-block;line-height:1.2}
+@media(max-width:800px){nav .links a:not(.btn-nav){display:none}nav .brand .wm em{display:none}}
+footer{margin-top:60px;border-top:1px solid var(--trait,#2A4470);padding:24px 0 46px;font-size:12.5px;color:var(--sourd,#9FB0C8)}
+footer .row{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
+footer a{color:var(--sourd,#9FB0C8)}
+.cta-bloc{background:var(--ambre,#F5B62E);color:#10233F;border-radius:8px;padding:32px 30px;margin-top:56px}
+.cta-bloc h2{font-size:clamp(22px,3.4vw,28px);font-weight:800;letter-spacing:-.02em;line-height:1.15}
+.cta-bloc p{font-size:15.5px;margin-top:10px;max-width:62ch;color:#10233F}
+.cta-bloc a{display:inline-block;margin-top:18px;background:#10233F;color:var(--ambre,#F5B62E);padding:12px 20px;border-radius:5px;font-weight:800;font-size:15px;text-decoration:none}
+
+/* ── NAVIGATION UNIFIÉE (bloc final, prioritaire) ── */
+nav .in{display:flex!important;align-items:center!important;justify-content:space-between!important;gap:18px!important;padding:0 22px!important;min-height:74px!important}
+nav .brand{display:flex!important;align-items:center!important;gap:12px!important;text-decoration:none!important}
+nav .brand svg{color:var(--ambre,#F5B62E)!important;flex:none!important;width:32px!important;height:32px!important}
+nav .brand .wm{font-size:18px!important;font-weight:800!important;letter-spacing:-.025em!important;line-height:1!important;color:var(--froid,#E9EEF6)!important}
+nav .brand .wm em{display:block!important;font-style:normal!important;font-size:7.5px!important;font-weight:800!important;letter-spacing:.09em!important;color:var(--ambre,#F5B62E)!important;margin-top:4px!important;white-space:nowrap!important}
+nav .links{display:flex!important;align-items:center!important;gap:16px!important;height:100%!important}
+@media(min-width:801px) and (max-width:880px){nav .links{gap:11px!important}nav .links a.btn-nav{padding:0 14px!important}}
+nav .links a{display:inline-flex!important;align-items:center!important;height:36px!important;margin:0!important;color:var(--sourd,#9FB0C8)!important;text-decoration:none!important;font-size:14px!important;font-weight:600!important;white-space:nowrap!important;border-bottom:2px solid transparent!important;line-height:1!important;font-size:13.5px!important}
+nav .links a:hover{color:var(--froid,#E9EEF6)!important}
+nav .links a.on{color:var(--froid,#E9EEF6)!important;border-bottom:2px solid var(--ambre,#F5B62E)!important}
+nav .links a.btn-nav{background:var(--ambre,#F5B62E)!important;color:#10233F!important;padding:0 18px!important;border-radius:5px!important;font-weight:800!important;border-bottom:2px solid transparent!important;height:40px!important}
+nav .links a.btn-nav:hover{color:#10233F!important}
+@media(max-width:800px){nav .links a:not(.btn-nav){display:none!important}nav .brand .wm em{display:none!important}nav .in{min-height:62px!important}}
+
+
+/* ══ MENU MOBILE — bloc autonome, aucune dépendance externe ══ */
+nav .burger{display:none}
+@media(max-width:800px){
+  nav .burger{display:flex;flex:none;flex-direction:column;justify-content:center;gap:5px;width:44px;height:38px;padding:0 11px;background:transparent;border:1px solid var(--trait,#2A4470);border-radius:5px;cursor:pointer;-webkit-tap-highlight-color:transparent}
+  nav .burger span{display:block;height:2px;background:var(--froid,#E9EEF6);border-radius:1px;transition:transform .2s ease,opacity .2s ease}
+  nav.ouvert .burger span:nth-child(1){transform:translateY(7px) rotate(45deg)}
+  nav.ouvert .burger span:nth-child(2){opacity:0}
+  nav.ouvert .burger span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
+  nav .in .links{display:none!important;position:absolute;top:100%;left:0;right:0;flex-direction:column!important;align-items:stretch!important;gap:0!important;height:auto!important;background:var(--nuit,#10233F);border-bottom:1px solid var(--trait,#2A4470);padding:4px 22px 20px!important}
+  nav.ouvert .in .links{display:flex!important}
+  nav.ouvert .in .links a{display:flex!important;align-items:center!important;width:100%;height:auto!important;margin:0!important;padding:15px 0!important;font-size:16px!important;font-weight:600!important;color:var(--sourd,#9FB0C8)!important;background:transparent!important;border:0!important;border-bottom:1px solid var(--trait,#2A4470)!important;border-radius:0!important}
+  nav.ouvert .in .links a.on{color:var(--ambre,#F5B62E)!important}
+  nav.ouvert .in .links a.btn-nav{justify-content:center!important;margin-top:16px!important;height:46px!important;padding:0 18px!important;border:0!important;border-radius:5px!important;background:var(--ambre,#F5B62E)!important;color:#10233F!important;font-weight:800!important}
+}
+@media(max-width:860px){nav .brand .wm em{display:none!important}}
+</style>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "BlogPosting", "headline": "Écrire une consigne IA qui marche : la méthode en cinq points", "description": "Une demande vague donne une réponse vague. Rôle, tâche, matière, interdits, questions : la méthode pour écrire une consigne que l'IA suit vraiment.", "datePublished": "2026-11-23", "dateModified": "2026-11-23", "inLanguage": "fr-FR", "mainEntityOfPage": "https://atelier-mdt.fr/article-ecrire-une-consigne-ia.html", "url": "https://atelier-mdt.fr/article-ecrire-une-consigne-ia.html", "image": "https://atelier-mdt.fr/assets/og-atelier-mdt.png", "author": {"@type": "Person", "name": "Antoine Meyfroidt", "url": "https://atelier-mdt.fr/qui-suis-je.html"}, "publisher": {"@type": "Organization", "name": "Atelier MDT", "url": "https://atelier-mdt.fr/", "logo": {"@type": "ImageObject", "url": "https://atelier-mdt.fr/assets/favicon-180.png"}}}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Accueil", "item": "https://atelier-mdt.fr/"}, {"@type": "ListItem", "position": 2, "name": "Articles", "item": "https://atelier-mdt.fr/articles.html"}, {"@type": "ListItem", "position": 3, "name": "Écrire une consigne IA qui marche : la méthode en cinq points", "item": "https://atelier-mdt.fr/article-ecrire-une-consigne-ia.html"}]}</script>
+</head>
+<body>
+<nav><div class="in">
+  <a class="brand" href="index.html"><svg width="32" height="32" viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="3.4" stroke-linecap="square" aria-hidden="true"><path d="M14 8 H6 V56 H14" fill="none"/><path d="M50 8 H58 V56 H50" fill="none"/><path d="M18 44 V22 L32 36 L46 22 V44" stroke-width="4" fill="none"/></svg><span class="wm">Atelier MDT<em>PARCE QUE VOTRE TEMPS EST PRÉCIEUX.</em></span></a>
+  <div class="links" id="nav-liens">
+      <a href="realisations.html">Réalisations</a>
+      <a href="offres.html">Offres</a>
+      <a href="exemples.html">Exemples</a>
+      <a href="rentabilite.html">Rentabilité</a>
+      <a href="qui-suis-je.html">Qui suis-je</a>
+      <a class="btn-nav" href="contact.html">Échanger 30 minutes</a>
+  </div>
+  <button class="burger" type="button" aria-label="Ouvrir le menu" aria-expanded="false" aria-controls="nav-liens"><span></span><span></span><span></span></button>
+</div></nav>
+<main id="contenu">
+<header><div class="in">
+  <p class="retour"><a href="articles.html">← Tous les articles</a></p>
+  <div class="eyebrow">ARTICLE</div>
+  <h1>Écrire une consigne IA qui marche : la méthode</h1>
+  <p class="meta">Publié le <time datetime="2026-11-23">23 novembre 2026</time> · <b>Antoine Meyfroidt</b></p>
+</div></header>
+
+<div class="in"><article class="art">
+<p>Vous avez demandé à un assistant IA de rédiger un email. Le résultat était poli, long, et ne ressemblait à rien de ce que vous auriez écrit. Vous avez conclu que l'outil n'était pas fait pour vous.</p>
+<p>Le plus souvent, l'outil n'est pas en cause. La demande l'est. Une consigne vague produit une réponse moyenne. Une consigne précise produit une réponse utilisable.</p>
+<h2>Pourquoi la réponse déçoit</h2>
+<p>Un assistant ne sait rien de vous. Il ignore votre métier, vos clients, votre ton, ce que vous avez déjà essayé. Quand l'information manque, il comble le vide avec ce qui est le plus probable en général. D'où ces textes lisses, qui conviennent à tout le monde et donc à personne.</p>
+<p>Écrire une bonne consigne, c'est lui donner ce qu'un nouveau collègue recevrait le premier jour : le contexte, la tâche, les documents, les règles.</p>
+<h2>La méthode en cinq points</h2>
+<ol>
+<li><strong>Le rôle et le contexte.</strong> Dites qui vous êtes, ce que fait votre entreprise et pour qui le texte est écrit. « Je dirige un cabinet de trois personnes, j'écris à un client de longue date » change tout.</li>
+<li><strong>La tâche et le résultat attendu.</strong> Une seule tâche par demande. Précisez le format : un email de dix lignes, un tableau à trois colonnes, trois propositions de titre. Plus le résultat est décrit, moins vous aurez à corriger.</li>
+<li><strong>La matière.</strong> Collez le texte à reprendre, les notes de la réunion, un exemple d'email que vous aimez. L'assistant travaille bien mieux à partir d'un modèle qu'à partir de rien.</li>
+<li><strong>Les interdits.</strong> Ce qu'il ne doit jamais faire : inventer un chiffre, promettre un délai, employer un mot que vous détestez. C'est la partie la plus souvent oubliée, et celle qui évite le plus d'erreurs.</li>
+<li><strong>Quand poser une question.</strong> Demandez-lui de vous interroger s'il lui manque une information, plutôt que de deviner. Une ligne suffit : « Si une information te manque, pose-moi la question avant de rédiger. »</li>
+</ol>
+<h2>Un exemple, avant et après</h2>
+<p><em>Exemple fictif, pour illustrer la méthode.</em></p>
+<p><strong>Avant :</strong></p>
+<div class="formule">« Écris un email pour relancer un client. »</div>
+<p><strong>Après :</strong></p>
+<div class="formule">« Je gère une petite entreprise de rénovation. Écris un email de relance à un client à qui j'ai envoyé un devis il y a dix jours. Ton cordial, sans insister, huit lignes maximum. Rappelle l'objet du devis en une phrase, propose un appel. N'invente aucune date ni aucun montant. Si une information te manque, demande-la-moi. »</div>
+<p>La seconde consigne prend une minute de plus à écrire. Elle évite trois allers-retours.</p>
+<h2>Ce qu'une équipe de dix personnes m'a appris</h2>
+<p>Chez Kampus 137, j'ai mis en place l'IA pour une équipe de dix personnes qui n'en avait pas d'usage structuré : dix espaces métier, chacun avec ses instructions, et quatre consignes réutilisables distribuées avec leur mode d'emploi. Le détail est sur la <a href="realisation-06-ia.html">fiche réalisation</a>.</p>
+<p>Deux enseignements touchent directement à la formulation.</p>
+<p><strong>Le premier : apprendre à formuler passe avant les outils.</strong> Un espace d'accueil a dû être ajouté après coup, pour apprendre à formuler une demande et savoir où la poser. Je ne l'avais pas prévu au départ. Ce guide d'accueil fait désormais partie du socle, comme l'indique la page <a href="exemples-ia.html">Exemples IA</a>.</p>
+<p><strong>Le second : une consigne se corrige à l'usage.</strong> Deux mois après la mise en service, on a ajouté une seconde couche d'instructions : ce que l'assistant fait, ce qu'il ne fait pas, et quand il pose une question. Ce sont exactement les points 4 et 5 de la méthode. On ne les voit manquer qu'en situation réelle.</p>
+<p>Je n'ai pas de mesure de temps gagné à vous donner. Ce que je peux montrer, ce sont les pièces.</p>
+<h2>Enregistrez ce qui marche</h2>
+<p>Une consigne qui fonctionne mérite d'être gardée. La plupart des assistants permettent d'enregistrer des instructions permanentes, ou de créer un espace par sujet. Vous n'avez alors plus à retaper le contexte : il est là à chaque demande.</p>
+<p>Commencez par une seule tâche qui revient chaque semaine. Écrivez la consigne, testez-la sur trois cas réels, corrigez ce qui cloche, puis enregistrez-la. Une fois la première au point, la deuxième va beaucoup plus vite.</p>
+<h2>Une précaution</h2>
+<p>Ne mettez rien de confidentiel dans une consigne, ni données clients ni chiffres sensibles, tant que vous n'avez pas vérifié ce que votre abonnement fait de vos données. Les conditions varient selon l'outil et la formule. Ce point relève de votre propre vérification, pas d'une règle générale.</p>
+<h2>Pour aller plus loin</h2>
+<p>Si vous voulez écrire vos premières consignes avec quelqu'un à côté, l'accompagnement individuel y consacre deux heures, sur trois tâches de votre semaine, pour 150 € HT. Pour une équipe, dans le cadre d'un déploiement, un atelier par fonction travaille sur les tâches réelles des participants. Le détail est sur la page <a href="offres.html">Offres</a> ; la question des équipes qui abandonnent est traitée dans l'article <a href="article-ia-equipe-laisse-tomber.html">Votre équipe a testé l'IA puis laissé tomber ?</a></p>
+<p>On en parle 30 minutes pour voir ce qui vous correspond.</p>
+<p><a class="bouton" href="contact.html">Échanger 30 minutes</a></p>
+</article></div>
+
+<section><div class="in">
+  <h2 class="lbl">POUR ALLER PLUS LOIN</h2>
+  <div class="suite-art">
+    <a href="realisation-06-ia.html"><span class="k">RÉALISATION 06</span><b>Une équipe de terrain qui utilise l&#x27;IA au quotidien</b></a>
+    <a href="exemples-ia.html"><span class="k">EXEMPLES</span><b>Six briques pour travailler avec l&#x27;IA, seul ou en équipe</b></a>
+    <a href="article-ia-equipe-laisse-tomber.html"><span class="k">ARTICLE</span><b>Votre équipe a testé l&#x27;IA puis laissé tomber ? Ce qui a manqué</b></a>
+    <a href="article-cout-taches-repetitives.html"><span class="k">ARTICLE</span><b>Combien vous coûtent vos tâches répétitives ? Le calcul en 5 minutes</b></a>
+    <a href="article-automatiser-demandes-de-devis.html"><span class="k">ARTICLE</span><b>Répondre à chaque demande de devis le jour même, sans y passer vos soirées</b></a>
+    <a href="article-veille-tendances-secteur.html"><span class="k">ARTICLE</span><b>Les tendances de votre secteur, sans vous y noyer</b></a>
+  </div>
+</div></section>
+</main>
+<footer><div class="in"><div class="row">
+  <span>Atelier MDT · Automatisation · Veille · Tableaux de bord · Accompagnement IA</span>
+  <span><a href="mailto:antoine@atelier-mdt.fr">antoine@atelier-mdt.fr</a> · <a href="tel:+33743688097">07 43 68 80 97</a> · <a href="https://www.linkedin.com/in/antoine-meyfroidt/" rel="noopener">linkedin.com/in/antoine-meyfroidt</a> · <a href="https://www.malt.fr/profile/antoinemeyfroidt" rel="noopener">Malt</a> · <a href="https://share.google/6U1bBCivJdjeVEOeF" rel="noopener">Fiche Google</a> · <a href="questions.html">Questions fréquentes</a> · <a href="articles.html">Articles</a> · <a href="mentions-legales.html">Mentions légales</a> · <a href="cgv.html">CGV</a></span>
+</div></div></footer>
+<script>
+/* Menu mobile — autonome, aucune dépendance externe. */
+(function(){
+  var n=document.querySelector('nav');if(!n)return;
+  var b=n.querySelector('.burger'),l=n.querySelector('.links');if(!b||!l)return;
+  function etat(o){
+    n.classList.toggle('ouvert',o);
+    b.setAttribute('aria-expanded',o?'true':'false');
+    b.setAttribute('aria-label',o?'Fermer le menu':'Ouvrir le menu');
+  }
+  b.addEventListener('click',function(){etat(!n.classList.contains('ouvert'));});
+  l.addEventListener('click',function(e){if(e.target.closest('a'))etat(false);});
+  document.addEventListener('click',function(e){if(n.classList.contains('ouvert')&&!n.contains(e.target))etat(false);});
+  document.addEventListener('keydown',function(e){if(e.key==='Escape')etat(false);});
+  window.addEventListener('resize',function(){if(window.innerWidth>800)etat(false);});
+})();
+</script>
+<!-- Cloudflare Web Analytics --><script type='module' src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "4ee482cc16a74712b603b71a2d98cfa1"}'></script><!-- End Cloudflare Web Analytics -->
+</body>
+</html>
